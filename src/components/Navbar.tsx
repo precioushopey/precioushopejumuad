@@ -20,7 +20,6 @@ export const Navbar = () => {
     useState<NavItem["category"]>("home");
 
   useEffect(() => {
-    // Set active category based on pathname
     const currentPath = window.location.pathname;
 
     const matchedNav = navItems.find((item) =>
@@ -41,12 +40,11 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`w-full bg-transparent fixed top-0 left-0 z-50 transition-all duration-300 ${
-        isScrolled ? "py-3 backdrop-blur-sm shadow-lg" : "py-5"
+      className={`w-full fixed top-0 left-0 z-50 animate-fade-in transition-all duration-300 ${
+        isScrolled ? "py-4 backdrop-blur-sm shadow-lg" : "py-6"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
+      <div className="mx-auto flex items-center justify-between px-8">
         <a href="/#" className="font-semibold">
           <span className="relative z-10">
             <span className="font-noto text-glow text-base">
@@ -59,7 +57,7 @@ export const Navbar = () => {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-8 font-medium">
+        <div className="hidden md:flex space-x-4 font-medium">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -74,6 +72,14 @@ export const Navbar = () => {
               {item.name}
             </a>
           ))}
+          <div className="border-r-[1.5px] border-white"></div>
+          <a
+            href="mailto:jumuad.precious@gmail.com"
+            target="_blank"
+            className="white-button text-sm"
+          >
+            hello@hope
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -88,8 +94,8 @@ export const Navbar = () => {
 
       {/* Mobile Nav */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-black/50 p-6 z-40">
-          <div className="flex flex-col space-y-6 text-base font-medium">
+        <div className="md:hidden flex items-center justify-center z-40 p-12 animate-fade-in">
+          <div className="flex flex-col space-y-4 text-base font-medium">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -98,15 +104,23 @@ export const Navbar = () => {
                   setActiveCategory(item.category);
                   setIsMenuOpen(false);
                 }}
-                className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
+                className={`w-48 px-4 py-2 rounded-full transition-colors duration-300 capitalize ${
                   activeCategory === item.category
-                    ? "text-[var(--yellow-accent)] text-glow"
-                    : ""
+                    ? "white-button text-sm"
+                    : "transparent-button border text-sm"
                 }`}
               >
                 {item.name}
               </a>
             ))}
+            <div className="border-b-[1.5px] border-white"></div>
+            <a
+              href="mailto:jumuad.precious@gmail.com"
+              target="_blank"
+              className="white-button text-sm"
+            >
+              hello@hope
+            </a>
           </div>
         </div>
       )}

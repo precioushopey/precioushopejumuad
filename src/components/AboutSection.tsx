@@ -41,68 +41,68 @@ const roles: RoleCard[] = [
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="pt-16 px-8">
-      <div className="container mx-auto max-w-5xl space-y-4">
-        <h2 className="relative -ml-12 sm:-ml-16 font-noto text-3xl sm:text-4xl font-bold text-center text-glow">
-          About
-          <span className="absolute top-1 -ml-4 pinyon-script text-5xl sm:text-6xl">
-            Me
-          </span>
+    <section
+      id="about"
+      className="container mx-auto max-w-5xl space-y-4 pt-16 px-8"
+    >
+      <div className="flex justify-center font-bold text-glow animate-fade-in">
+        <h2 className="font-noto text-3xl sm:text-4xl">About</h2>
+        <h2 className="pinyon-script text-5xl sm:text-6xl -ml-2 sm:-ml-4">
+          Me
         </h2>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-6">
-          <div className="space-y-2">
-            <div className="place-items-center">
-              <img
-                src="/assets/images/about.png"
-                alt="Precious Hope T. Jumuad"
-                width={200}
-                className="opacity-0 animate-fade-in"
-              />
-            </div>
-
-            <h3 className="font-semibold text-2xl">
-              Computer Engineer & UI/UX Designer
-            </h3>
-
-            <p>
-              As a Computer Engineering graduate at USTP-CDO, I specialize in
-              front-end development, UI/UX design, and multimedia content
-              creation. I am passionate about building thoughtful, user-centered
-              solutions, ranging from automated systems to game interfaces,
-              using modern tools like Next.js, React, Figma, and Tailwind CSS.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-              <a href="#contact" className="white-button">
-                Hire Me!
-              </a>
-              <a
-                href="https://drive.google.com/file/d/1Ht0vyHKKtTYDkNvNKNMpTn9Ppy886jza/view?usp=sharing"
-                target="_blank"
-                className="transparent-button border"
-              >
-                Download CV
-              </a>
-            </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="space-y-2">
+          <div className="place-items-center animate-fade-in-delay-1">
+            <img
+              src="/assets/images/about.png"
+              alt="Precious Hope T. Jumuad"
+              width={200}
+            />
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
-            {roles.map((role, index) => (
-              <div
-                key={index}
-                className="backdrop-blur-sm border rounded-4xl p-4 card-hover"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="bg-white rounded-full p-2">{role.icon}</div>
-                  <div className="text-left">
-                    <h4 className="font-medium text-lg">{role.title}</h4>
-                    <p>{role.description}</p>
-                  </div>
+          <h3 className="font-semibold text-2xl animate-fade-in-delay-2">
+            Computer Engineer & UI/UX Designer
+          </h3>
+
+          <p className="animate-fade-in-delay-3">
+            As a Computer Engineering graduate at USTP-CDO, I specialize in
+            front-end development, UI/UX design, and multimedia content
+            creation. I am passionate about building thoughtful, user-centered
+            solutions, ranging from automated systems to game interfaces, using
+            modern tools like Next.js, React, Figma, and Tailwind CSS.
+          </p>
+
+          <div className="flex justify-center gap-4 pt-2 animate-fade-in-delay-4">
+            <a href="#contact" className="white-button text-sm sm:text-base">
+              Hire Me!
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1Ht0vyHKKtTYDkNvNKNMpTn9Ppy886jza/view?usp=sharing"
+              target="_blank"
+              className="transparent-button border text-sm sm:text-base"
+            >
+              Download CV
+            </a>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6">
+          {roles.map((role, index) => (
+            <div
+              key={index}
+              className="rounded-4xl backdrop-blur-sm border shadow-xs p-4 card-hover animate-fade-in-delay-1"
+            >
+              <div className="flex items-start gap-4">
+                <div className="bg-white rounded-full p-2">{role.icon}</div>
+                <div className="text-left">
+                  <h4 className="font-medium text-lg">{role.title}</h4>
+                  <p>{role.description}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

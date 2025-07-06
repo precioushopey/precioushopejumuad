@@ -113,56 +113,56 @@ export const SkillsSection = () => {
   );
 
   return (
-    <section id="skills" className="pt-20 px-8">
-      <div className="container mx-auto max-w-5xl space-y-6">
-        <h2 className="relative -ml-24 sm:-ml-28 font-noto text-3xl sm:text-4xl font-bold text-center text-glow">
-          My
-          <span className="absolute top-1 -ml-1 pinyon-script text-5xl sm:text-6xl">
-            Skills
-          </span>
-        </h2>
+    <section
+      id="skills"
+      className="container mx-auto max-w-5xl space-y-4 pt-20 px-8"
+    >
+      <div className="flex justify-center font-bold text-glow animate-fade-in">
+        <h2 className="font-noto text-3xl sm:text-4xl">My</h2>
+        <h2 className="pinyon-script text-5xl sm:text-6xl">Skills</h2>
+      </div>
 
-        <div className="flex flex-wrap justify-center gap-4 pt-2">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
-                activeCategory === category
-                  ? "white-button"
-                  : "transparent-button border"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+      <div className="flex flex-wrap justify-center gap-4 animate-fade-in-delay-1">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
+              activeCategory === category
+                ? "white-button"
+                : "transparent-button border"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
-          {filteredSkills.map((skill) => (
-            <div
-              key={skill.name}
-              className="flex flex-col justify-center rounded-4xl backdrop-blur-sm border shadow-xs card-hover gap-3 p-4"
-            >
-              <div className="flex flex-row items-center gap-x-4">
-                <img src={skill.logo} alt="Logo" width={50} />
-                <div className="text-left">
-                  <h3 className="font-semibold text-lg">{skill.name}</h3>
-                </div>
-              </div>
-              <div className="w-full bg-white/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-white h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: `${skill.level}%` }}
-                />
-              </div>
-
-              <div className="text-right -mt-2">
-                <span>{skill.level}%</span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 animate-fade-in-delay-2">
+        {filteredSkills.map((skill) => (
+          <div
+            key={skill.name}
+            className="flex flex-col justify-center rounded-4xl backdrop-blur-sm border shadow-xs card-hover gap-3 p-4"
+          >
+            <div className="flex flex-row items-center gap-x-4">
+              <img src={skill.logo} alt="Logo" width={50} />
+              <div className="text-left">
+                <h3 className="font-semibold text-lg">{skill.name}</h3>
               </div>
             </div>
-          ))}
-        </div>
+
+            <div className="w-full bg-white/50 h-2 rounded-full overflow-hidden">
+              <div
+                className="bg-white h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
+                style={{ width: `${skill.level}%` }}
+              />
+            </div>
+
+            <div className="text-right -mt-2">
+              <span>{skill.level}%</span>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

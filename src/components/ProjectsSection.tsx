@@ -1,5 +1,4 @@
 import { JSX, useState } from "react";
-import { Link } from "react-router-dom";
 import { FiGithub, FiFigma, FiFacebook, FiGlobe } from "react-icons/fi";
 import {
   MdOutlineKeyboardArrowRight,
@@ -101,7 +100,7 @@ const projects: Project[] = [
     title: "ICpEP.SE - USTP Redesign",
     description:
       "A website redesign project for ICpEP.SE, USTP-CDO's Computer Engineering student organization. The project aimed to enhance the platform’s visual appeal and functionality while effectively showcasing the organization's activities, events, and initiatives.",
-    image: "/assets/images/icpep1.png",
+    image: "/assets/images/icpep1.jpg",
     tags: ["Figma", "Canva", "Photoshop"],
     demoUrl: "https://www.icpepse-ustp.org/",
     tool1Url:
@@ -129,7 +128,7 @@ const projects: Project[] = [
     title: "CpEngage 2025",
     description:
       "CpEngage is a design project for ICpEP.SE–USTP’s community outreach program, created to promote computer engineering knowledge and skills among senior high school students.",
-    image: "/assets/images/cpengage1.png",
+    image: "/assets/images/cpengage1.jpg",
     tags: ["Canva", "Photoshop", "Meta Business"],
     demoUrl: "/projects",
     tool1Url: "https://www.facebook.com/share/p/16ybJQt49a/",
@@ -140,7 +139,7 @@ const projects: Project[] = [
     title: "CpE Building Blocks 2024",
     description:
       "Also known as CpE BB Time, is an ICT Month initiative where I led all creative design efforts for seminars, workshops, and training sessions, supporting the event’s educational goals.",
-    image: "/assets/images/bbtime1.png",
+    image: "/assets/images/bbtime1.jpg",
     tags: ["Canva", "Photoshop", "Meta Business"],
     demoUrl: "/projects",
     tool1Url: "https://www.facebook.com/share/p/1AafZxaxSo/",
@@ -193,7 +192,7 @@ const projects: Project[] = [
     title: "USTP University Digital Arts - Art Projects",
     description:
       "As former content writer and contributor to UDA, I produced a range of creative works including a Christmas countdown poster, DTIYS challenge entries, and illustrations for campus-wide digital art initiatives that showcased talent and creativity.",
-    image: "/assets/images/uda1.png",
+    image: "/assets/images/uda1.jpg",
     tags: ["Canva", "Photoshop", "Illustrator", "Lightroom", "IbisPaint"],
     demoUrl: "/projects",
     category: "multimedia",
@@ -202,7 +201,7 @@ const projects: Project[] = [
     title: "Imagine Me in this Anime!",
     description:
       "This is a personal digital art project where I illustrate myself in various anime styles, exploring character design, visual storytelling, and stylistic adaptation to deepen my creative and technical skills.",
-    image: "/assets/images/meinaot1.png",
+    image: "/assets/images/meinaot1.jpg",
     tags: ["Canva", "Photoshop", "Illustrator", "IbisPaint"],
     demoUrl: "/projects",
     category: "multimedia",
@@ -254,152 +253,157 @@ export const ProjectsSection = () => {
   );
 
   return (
-    <section id="projects" className="pt-20 px-8">
-      <div className="container mx-auto max-w-5xl space-y-6">
-        <h2 className="relative -ml-34 sm:-ml-42 font-noto text-3xl sm:text-4xl font-bold text-center text-glow">
-          Featured
-          <span className="absolute top-1 -ml-1 pinyon-script text-5xl sm:text-6xl">
-            Projects
-          </span>
-        </h2>
+    <section
+      id="projects"
+      className="container mx-auto max-w-5xl space-y-4 pt-20 px-8"
+    >
+      <div className="flex justify-center font-bold text-glow animate-fade-in">
+        <h2 className="font-noto text-3xl sm:text-4xl">Featured</h2>
+        <h2 className="pinyon-script text-5xl sm:text-6xl">Projects</h2>
+      </div>
 
-        <div className="flex flex-wrap justify-center gap-4 pt-4">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
-                activeCategory === category
-                  ? "white-button"
-                  : "transparent-button border"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+      <div className="flex flex-wrap justify-center gap-4 animate-fade-in-delay-1">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
+              activeCategory === category
+                ? "white-button"
+                : "transparent-button border"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.title}
-              className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
-            >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 animate-fade-in-delay-2">
+        {filteredProjects.map((project) => (
+          <div
+            key={project.title}
+            className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+          >
+            <div className="h-48 overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+
+            <div className="p-6">
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="rounded-full border text-xs font-light px-2 py-1"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
 
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="rounded-full border text-xs font-light px-2 py-1"
+              <h3 className="font-semibold text-lg pt-4">{project.title}</h3>
+              <p className="pt-2">{project.description}</p>
+              <div className="flex justify-between items-center pt-4">
+                <div className="flex space-x-2">
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="white-button p-1.5"
                     >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                      <MdOutlineOpenInNew
+                        size={16}
+                        className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
+                      />
+                    </a>
+                  )}
 
-                <h3 className="font-semibold text-lg mb-1">{project.title}</h3>
-                <p className="mb-4">{project.description}</p>
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-2">
-                    {project.demoUrl && (
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="white-button p-1.5"
-                      >
-                        <MdOutlineOpenInNew
-                          size={16}
-                          className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
-                        />
-                      </a>
-                    )}
-                    {project.category === "frontend" && project.fileUrl && (
-                      <a
-                        href={project.fileUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="white-button p-1.5"
-                      >
-                        <MdOutlineFolder
-                          size={16}
-                          className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
-                        />
-                      </a>
-                    )}
-                    {project.category === "frontend" && project.tool1Url && (
-                      <a
-                        href={project.tool1Url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="white-button p-1.5"
-                      >
-                        {project.toolIcon1}
-                      </a>
-                    )}
-                    {project.category === "frontend" && project.tool2Url && (
-                      <a
-                        href={project.tool2Url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="white-button p-1.5"
-                      >
-                        {project.toolIcon2}
-                      </a>
-                    )}
-                    {project.category === "design" && project.tool1Url && (
-                      <a
-                        href={project.tool1Url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="white-button p-1.5"
-                      >
-                        {project.toolIcon1}
-                      </a>
-                    )}
-                    {project.category === "design" && project.tool2Url && (
-                      <a
-                        href={project.tool2Url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="white-button p-1.5"
-                      >
-                        {project.toolIcon2}
-                      </a>
-                    )}
-                    {project.category === "socials" && project.tool1Url && (
-                      <a
-                        href={project.tool1Url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="white-button p-1.5"
-                      >
-                        {project.toolIcon1}
-                      </a>
-                    )}
-                  </div>
+                  {project.category === "frontend" && project.fileUrl && (
+                    <a
+                      href={project.fileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="white-button p-1.5"
+                    >
+                      <MdOutlineFolder
+                        size={16}
+                        className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
+                      />
+                    </a>
+                  )}
+
+                  {project.category === "frontend" && project.tool1Url && (
+                    <a
+                      href={project.tool1Url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="white-button p-1.5"
+                    >
+                      {project.toolIcon1}
+                    </a>
+                  )}
+
+                  {project.category === "frontend" && project.tool2Url && (
+                    <a
+                      href={project.tool2Url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="white-button p-1.5"
+                    >
+                      {project.toolIcon2}
+                    </a>
+                  )}
+
+                  {project.category === "design" && project.tool1Url && (
+                    <a
+                      href={project.tool1Url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="white-button p-1.5"
+                    >
+                      {project.toolIcon1}
+                    </a>
+                  )}
+
+                  {project.category === "design" && project.tool2Url && (
+                    <a
+                      href={project.tool2Url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="white-button p-1.5"
+                    >
+                      {project.toolIcon2}
+                    </a>
+                  )}
+
+                  {project.category === "socials" && project.tool1Url && (
+                    <a
+                      href={project.tool1Url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="white-button p-1.5"
+                    >
+                      {project.toolIcon1}
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
 
-        <div className="text-center mt-12">
-          <Link
-            to="/projects"
-            className="white-button w-fit flex items-center mx-auto gap-2"
-          >
-            See More Projects <MdOutlineKeyboardArrowRight size={16} />
-          </Link>
-        </div>
+      <div className="animate-fade-in-delay-3 pt-4">
+        <a
+          href="/projects"
+          className="white-button w-fit flex items-center mx-auto gap-2"
+        >
+          See More Projects <MdOutlineKeyboardArrowRight size={20} />
+        </a>
       </div>
     </section>
   );

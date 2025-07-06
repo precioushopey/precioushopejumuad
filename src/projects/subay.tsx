@@ -1,6 +1,7 @@
 import { Navbar } from "../components/Navbar";
 import { AiFillInstagram } from "react-icons/ai";
 import { MdEmail, MdFacebook, MdInsights } from "react-icons/md";
+import { SparkleBackground } from "../components/SparkleBackground";
 
 interface Contributor {
   name: string;
@@ -124,33 +125,38 @@ const Subay = () => {
   ];
 
   return (
-    <div>
+    <div className="min-h-screen overflow-x-hidden">
+      {/* Background Effects */}
+      <SparkleBackground />
+
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Main Content */}
       <Navbar />
       <main className="container mx-auto max-w-5xl space-y-12 py-24 px-8 text-sm sm:text-base">
-        <div className="space-y-6">
-          <h1 className="relative -ml-36 sm:-ml-50 font-noto text-5xl sm:text-6xl font-bold text-center text-glow">
-            SUBAY
-            <span className="absolute top-1 -ml-4 pinyon-script text-7xl sm:text-8xl">
+        <div>
+          <div className="flex justify-center font-bold text-glow animate-fade-in">
+            <h1 className="font-noto text-3xl sm:text-6xl">SUBAY</h1>
+            <h2 className="pinyon-script -ml-2 sm:-ml-4 text-5xl sm:text-8xl">
               Thesis
-            </span>
-          </h1>
+            </h2>
+          </div>
 
-          <div className="text-sm pt-4">
-            <div className="flex flex-wrap justify-center gap-4">
-              <span className="rounded-full border font-light px-4 py-1">
-                Next.js
-              </span>
-              <span className="rounded-full border font-light px-4 py-1">
-                TypeScript
-              </span>
-              <span className="rounded-full border font-light px-4 py-1">
-                TailwindCSS
-              </span>
-            </div>
+          <div className="flex flex-wrap justify-center gap-4 text-sm animate-fade-in-delay-1">
+            <span className="rounded-full border font-light px-4 py-1">
+              Next.js
+            </span>
+            <span className="rounded-full border font-light px-4 py-1">
+              TypeScript
+            </span>
+            <span className="rounded-full border font-light px-4 py-1">
+              TailwindCSS
+            </span>
           </div>
         </div>
 
-        <section className="space-y-6">
+        <section className="space-y-6 animate-fade-in-delay-2">
           <iframe
             src="https://www.youtube.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
             title="SUBAY Promotion"
@@ -204,20 +210,20 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-6 animate-fade-in-delay-3">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Demonstration
           </h2>
-          <div className="w-full flex items-center gap-12">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-6 lg:gap-12">
             <iframe
               src="https://www.youtube.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&controls=1"
               title="SUBAY Demonstration"
               allow="autoplay; encrypted-media; accelerometer; mute; clipboard-write; gyroscope; picture-in-picture; web-share"
-              className="w-full sm:w-2/3 aspect-[16/9] object-cover rounded-4xl border"
+              className="w-full lg:w-2/3 aspect-[16/9] object-cover rounded-4xl border"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
-            <div className="w-full sm:w-1/3 space-y-6">
+            <div className="w-full lg:w-1/3 flex flex-col justify-center space-y-6">
               <p className="text-sm">
                 To make the data actionable, I designed and developed a
                 web-based analytics dashboard that visualizes customer flow
@@ -229,7 +235,7 @@ const Subay = () => {
                 Usability Scale score of 87.5 indicated a high level of user
                 satisfaction.
               </p>
-              <div className="flex justify-center">
+              <button className="pt-2">
                 <a
                   href="https://thesis-subay-web.vercel.app/"
                   target="_blank"
@@ -237,10 +243,10 @@ const Subay = () => {
                 >
                   See Live Demo Here!
                 </a>
-              </div>
+              </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 lg:pt-0">
             {metrics.map((metric, index) => (
               <div
                 key={index}
@@ -263,7 +269,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-6 animate-fade-in-delay-3">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Contributors
           </h2>
@@ -277,20 +283,19 @@ const Subay = () => {
           <h3 className="font-medium text-base">
             The Team with adviser Engr. Jodie Rey D. Fernandez
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contributors.map((contributor, index) => (
               <a
                 key={index}
                 href={contributor.driveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+                className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
               >
                 <img
                   src={contributor.image}
                   alt={contributor.alt}
-                  width="200"
-                  className="aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="flex flex-col items-center justify-center p-4 space-y-2">
                   <h3 className="font-medium text-base">{contributor.name}</h3>
@@ -344,7 +349,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-6 animate-fade-in-delay-4">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             We Won Best Thesis and Best Prototype!
           </h2>
@@ -384,11 +389,11 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-6 animate-fade-in-delay-4">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Skills Earned
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <div
                 key={index}

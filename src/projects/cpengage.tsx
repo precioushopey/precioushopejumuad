@@ -1,17 +1,23 @@
 import { Navbar } from "../components/Navbar";
+import { SparkleBackground } from "../components/SparkleBackground";
 
 const CpEngage = () => {
   return (
-    <div>
+    <div className="min-h-screen overflow-x-hidden">
+      {/* Background Effects */}
+      <SparkleBackground />
+
+      {/* Navbar */}
+      <Navbar />
+
+      {/* Main Content */}
       <Navbar />
       <main className="py-24 px-8">
         <div className="container mx-auto max-w-5xl space-y-6">
-          <h1 className="relative -ml-30 sm:-ml-40 font-noto text-5xl sm:text-6xl font-bold text-center text-glow">
-            Coming
-            <span className="absolute top-2 -ml-2 pinyon-script text-7xl sm:text-8xl">
-              Soon
-            </span>
-          </h1>
+          <div className="flex justify-center font-bold text-glow animate-fade-in">
+            <h1 className="font-noto text-3xl sm:text-6xl">Coming</h1>
+            <h2 className="pinyon-script text-5xl sm:text-8xl">Soon</h2>
+          </div>
         </div>
       </main>
     </div>
