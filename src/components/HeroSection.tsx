@@ -28,8 +28,8 @@ export const HeroSection = () => {
         </div>
 
         <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-          <a href="#projects" target="_blank" className="white-button">
-            View My Work
+          <a href="#projects" className="white-button">
+            View My Work!
           </a>
         </div>
 

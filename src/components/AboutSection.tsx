@@ -66,15 +66,15 @@ export const AboutSection = () => {
             </h3>
 
             <p>
-              As a Computer Engineering graduate, I specialize in front-end
-              development, UI/UX design, and multimedia content creation. I am
-              passionate about building thoughtful, user-centered solutions,
-              ranging from automated systems to game interfaces, using modern
-              tools like Next.js, React, Figma, and Tailwind CSS.
+              As a Computer Engineering graduate at USTP-CDO, I specialize in
+              front-end development, UI/UX design, and multimedia content
+              creation. I am passionate about building thoughtful, user-centered
+              solutions, ranging from automated systems to game interfaces,
+              using modern tools like Next.js, React, Figma, and Tailwind CSS.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
-              <a href="#contact" target="_blank" className="white-button">
+              <a href="#contact" className="white-button">
                 Hire Me!
               </a>
               <a

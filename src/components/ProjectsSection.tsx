@@ -100,7 +100,7 @@ const projects: Project[] = [
   {
     title: "ICpEP.SE - USTP Redesign",
     description:
-      "A website redesign project for ICpEP.SE – USTP, USTP's Computer Engineering student organization. The project aimed to enhance the platform’s visual appeal and functionality while effectively showcasing the organization's activities, events, and initiatives.",
+      "A website redesign project for ICpEP.SE, USTP-CDO's Computer Engineering student organization. The project aimed to enhance the platform’s visual appeal and functionality while effectively showcasing the organization's activities, events, and initiatives.",
     image: "/assets/images/icpep1.png",
     tags: ["Figma", "Canva", "Photoshop"],
     demoUrl: "https://www.icpepse-ustp.org/",
@@ -148,6 +148,17 @@ const projects: Project[] = [
     category: "socials",
   },
   {
+    title: "CpExpo 2024",
+    description:
+      "An innovation showcase that I co-headed and also participated in as a presenting Computer Engineering student, displaying our research on microprocessor design and applications.",
+    image: "/assets/images/cpexpo1.png",
+    tags: ["Canva", "Photoshop", "Meta Business"],
+    demoUrl: "/projects",
+    tool1Url: "https://www.facebook.com/share/p/1W21t13bgV/",
+    toolIcon1: <FiFacebook size={16} />,
+    category: "socials",
+  },
+  {
     title: "CpE Days 2024",
     description:
       "This three-day intramurals event is where I, the president of ICpEP.SE–USTP, led the planning, organization, and branding design to ensure an engaging experience for the participants.",
@@ -166,17 +177,6 @@ const projects: Project[] = [
     tags: ["Canva", "Photoshop", "Meta Business"],
     demoUrl: "/projects",
     tool1Url: "https://www.facebook.com/share/p/1CVcjtJCZx/",
-    toolIcon1: <FiFacebook size={16} />,
-    category: "socials",
-  },
-  {
-    title: "The Leaderboard 2023",
-    description:
-      "The Leaderboard 2023 was a leadership development event focused on equipping students with essential leadership skills and knowledge, with all event design elements led by me.",
-    image: "/assets/images/leaderboard1.png",
-    tags: ["Canva", "Photoshop", "Meta Business"],
-    demoUrl: "/projects",
-    tool1Url: "https://www.facebook.com/share/p/16jEMmP3W2/",
     toolIcon1: <FiFacebook size={16} />,
     category: "socials",
   },
@@ -234,7 +234,7 @@ const projects: Project[] = [
     demoUrl: "/projects",
     category: "multimedia",
   },
-  // optional: cpexpo micro display, and cpexpress with sir mark
+  // optional: leaderboard, and cpexpress with sir mark
 ];
 
 const categories = [

@@ -14,7 +14,7 @@ import CpEngage from "./projects/cpengage";
 import BBTime from "./projects/bbtime";
 import CpEDays from "./projects/cpedays";
 import GenAss from "./projects/genass";
-import Leaderboard from "./projects/leaderboard";
+import CpExpo from "./projects/cpexpo";
 import ICpEPSE from "./projects/icpepse";
 import UDA from "./projects/uda";
 import MeInAOT from "./projects/meinaot";
@@ -42,7 +42,7 @@ function App() {
           <Route path="/projects/bbtime" element={<BBTime />} />
           <Route path="/projects/cpedays" element={<CpEDays />} />
           <Route path="/projects/genass" element={<GenAss />} />
-          <Route path="/projects/leaderboard" element={<Leaderboard />} />
+          <Route path="/projects/cpexpo" element={<CpExpo />} />
           <Route path="/projects/icpepse" element={<ICpEPSE />} />
           <Route path="/projects/uda" element={<UDA />} />
           <Route path="/projects/meinaot" element={<MeInAOT />} />

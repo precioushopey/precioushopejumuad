@@ -1,6 +1,6 @@
 import { Navbar } from "../components/Navbar";
 
-const ICpEP = () => {
+const CpExpo = () => {
   return (
     <div>
       <Navbar />
@@ -18,4 +18,4 @@ const ICpEP = () => {
   );
 };
 
-export default ICpEP;
+export default CpExpo;
