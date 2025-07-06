@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+@theme {
+  --font-afacad: Afacad, "sans-serif";
+  --font-noto: Noto Serif, "serif";
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --background: #462317;
+    --foreground: #885615;
+
+    --button-color: #fff;
+    --text-color: #fff;
+    --yellow-accent: #e5a11f;
+    --orange-accent: #de5010;
+    --brown-accent: #462317;
+    --hazel-accent: #885615;
+    --burgundy-accent: #8a2111;
+  }
+
+  * {
+    @apply border-[var(--border-color)];
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply text-[var(--text-color)] transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: url("/assets/images/background.png");
+    position: relative;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 70vh;
+    min-height: 100px;
+    background-position: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@utility text-glow {
+  @apply relative;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@utility card-hover {
+  @apply text-sm cursor-pointer transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)];
+}
+
+@utility white-button {
+  @apply px-6 py-1.5 rounded-full bg-[var(--button-color)] text-[var(--brown-accent)]
+         hover:text-[var(--yellow-accent)] text-base font-medium transition-all duration-300
+         hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:scale-105 active:scale-95 cursor-pointer;
+}
+
+@utility transparent-button {
+  @apply px-6 py-1.5 rounded-full font-medium transition-all duration-300 
+         backdrop-blur-sm hover:shadow-[0_0_10px_rgba(255,255,255,0.5)]
+         text-base hover:scale-105 active:scale-95 cursor-pointer;
+}
+
+@utility sparkle {
+  @apply absolute rounded-full bg-white;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+::selection {
+  color: #462317;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.pinyon-script {
+  font-family: "Pinyon Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.marquee-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.flip-img {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
