@@ -1,11 +1,6 @@
 import { Navbar } from "../components/Navbar";
 import { AiFillInstagram } from "react-icons/ai";
-import {
-  MdEmail,
-  MdFacebook,
-  MdInsights,
-  MdOutlineDiamond,
-} from "react-icons/md";
+import { MdEmail, MdFacebook, MdInsights } from "react-icons/md";
 
 interface Contributor {
   name: string;
