@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MdMenu, MdOutlineCancel } from "react-icons/md";
 
@@ -45,7 +46,7 @@ export const Navbar = () => {
       }`}
     >
       <div className="mx-auto flex items-center justify-between px-8">
-        <a href="/#" className="font-semibold">
+        <Link to="/#" className="font-semibold">
           <span className="relative z-10">
             <span className="font-noto text-glow text-base">
               Precious{" "}
@@ -54,14 +55,14 @@ export const Navbar = () => {
               </span>
             </span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex space-x-4 font-medium">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
+              to={item.href}
               className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
                 activeCategory === item.category
                   ? "white-button text-sm"
@@ -70,7 +71,7 @@ export const Navbar = () => {
               onClick={() => setActiveCategory(item.category)}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
           <div className="border-r-[1.5px] border-white"></div>
           <a
@@ -97,9 +98,9 @@ export const Navbar = () => {
         <div className="md:hidden flex items-center justify-center z-40 p-12 animate-fade-in">
           <div className="flex flex-col space-y-4 text-base font-medium">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 onClick={() => {
                   setActiveCategory(item.category);
                   setIsMenuOpen(false);
@@ -111,7 +112,7 @@ export const Navbar = () => {
                 }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <div className="border-b-[1.5px] border-white"></div>
             <a
