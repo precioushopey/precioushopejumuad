@@ -4,6 +4,7 @@ import {
   MdOutlinePeople,
   MdOutlineLaptopMac,
 } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 interface RoleCard {
   title: string;
@@ -75,13 +76,13 @@ export const AboutSection = () => {
           </p>
 
           <div className="flex justify-center gap-4 pt-2 animate-fade-in-delay-4">
-            <a href="#contact" className="white-button text-sm sm:text-base">
+            <Link to="#contact" className="white-button">
               Hire Me!
-            </a>
+            </Link>
             <a
               href="https://drive.google.com/file/d/1Ht0vyHKKtTYDkNvNKNMpTn9Ppy886jza/view?usp=sharing"
               target="_blank"
-              className="transparent-button border text-sm sm:text-base"
+              className="transparent-button border"
             >
               Download CV
             </a>

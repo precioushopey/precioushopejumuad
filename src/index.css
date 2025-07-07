@@ -66,6 +66,7 @@
   body {
     @apply text-[var(--text-color)] transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: #885615;
     background-image: url("/assets/images/background.jpg");
     position: relative;
     width: 100%;
@@ -114,11 +115,15 @@
 }
 
 @utility white-button {
-  @apply px-6 py-1.5 rounded-full bg-[var(--button-color)] text-[var(--brown-accent)] hover:text-[var(--yellow-accent)] text-base font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:scale-105 active:scale-95 cursor-pointer;
+  @apply px-6 py-1.5 rounded-full bg-[var(--button-color)] text-[var(--brown-accent)]
+         hover:text-[var(--yellow-accent)] text-base font-medium transition-all duration-300
+         hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:scale-105 active:scale-95 cursor-pointer;
 }
 
 @utility transparent-button {
-  @apply px-6 py-1.5 rounded-full font-medium transition-all duration-300 backdrop-blur-sm hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] text-base hover:scale-105 active:scale-95 cursor-pointer;
+  @apply px-6 py-1.5 rounded-full font-medium transition-all duration-300 
+         backdrop-blur-sm hover:shadow-[0_0_10px_rgba(255,255,255,0.5)]
+         text-base hover:scale-105 active:scale-95 cursor-pointer;
 }
 
 @utility sparkle {

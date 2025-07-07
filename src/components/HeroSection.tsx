@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { MdOutlineExpandMore } from "react-icons/md";
 
 export const HeroSection = () => {
@@ -26,12 +27,12 @@ export const HeroSection = () => {
       </div>
 
       <div className="flex justify-center gap-4 pt-4 animate-fade-in-delay-3">
-        <a href="/projects" className="white-button">
+        <Link to="/projects" className="white-button">
           View My Work
-        </a>
-        <a href="/blog" className="transparent-button border">
+        </Link>
+        <Link to="/blog" className="transparent-button border">
           Read My Blog
-        </a>
+        </Link>
       </div>
 
       <div className="place-items-center pt-4 animate-bounce">

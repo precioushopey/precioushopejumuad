@@ -1,4 +1,5 @@
 import { JSX, useState } from "react";
+import { Link } from "react-router-dom";
 import { FiGithub, FiFigma, FiFacebook, FiGlobe } from "react-icons/fi";
 import {
   MdOutlineKeyboardArrowRight,
@@ -398,12 +399,12 @@ export const ProjectsSection = () => {
       </div>
 
       <div className="animate-fade-in-delay-3 pt-4">
-        <a
-          href="/projects"
+        <Link
+          to="/projects"
           className="white-button w-fit flex items-center mx-auto gap-2"
         >
           See More Projects <MdOutlineKeyboardArrowRight size={20} />
-        </a>
+        </Link>
       </div>
     </section>
   );
