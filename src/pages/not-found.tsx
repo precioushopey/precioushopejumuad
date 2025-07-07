@@ -11,7 +11,6 @@ const NotFound = () => {
       <Navbar />
 
       {/* Main Content */}
-      <Navbar />
       <main className="py-24 px-8">
         <div className="container mx-auto max-w-5xl space-y-6">
           <div className="flex justify-center font-bold text-glow animate-fade-in">

@@ -3,6 +3,42 @@ import { useToast } from "../hooks/use-toast";
 import { MdOutlineEmail, MdOutlineSend } from "react-icons/md";
 import { FiLinkedin, FiFacebook, FiInstagram } from "react-icons/fi";
 
+type ContactItem = {
+  label: string;
+  href: string;
+  display: string;
+  Icon: React.ElementType;
+  isEmail?: boolean;
+};
+
+const contactItems: ContactItem[] = [
+  {
+    label: "Email",
+    href: "mailto:jumuad.precious@gmail.com",
+    display: "jumuad.precious@gmail",
+    Icon: MdOutlineEmail,
+    isEmail: true,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/precioushopejumuad/",
+    display: "in/precioushopejumuad",
+    Icon: FiLinkedin,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/precioushope.jumuad",
+    display: "precioushope.jumuad",
+    Icon: FiFacebook,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/yourprecioushope/",
+    display: "yourprecioushope",
+    Icon: FiInstagram,
+  },
+];
+
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -26,21 +62,21 @@ export const ContactSection = () => {
       id="contact"
       className="container mx-auto max-w-5xl space-y-4 py-20 px-8"
     >
-      <div className="flex justify-center font-bold text-glow animate-fade-in">
+      <div className="flex justify-center font-bold text-glow">
         <h2 className="font-noto text-3xl sm:text-4xl">Get In</h2>
         <h2 className="pinyon-script text-5xl sm:text-6xl -ml-2 sm:-ml-3">
           Touch
         </h2>
       </div>
 
-      <p className="text-center max-w-2xl mx-auto animate-fade-in-delay-1">
+      <p className="text-center max-w-2xl mx-auto">
         Got a project in mind or something you’d like to team up on? I’d love to
         hear about it—feel free to reach out anytime!
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="space-y-4">
-          <div className="place-items-center animate-fade-in-delay-2">
+          <div className="place-items-center">
             <img
               src="/assets/images/contact.png"
               alt="Precious Hope T. Jumuad"
@@ -48,92 +84,40 @@ export const ContactSection = () => {
             />
           </div>
 
-          <h3 className="text-2xl font-semibold animate-fade-in-delay-3">
-            Contact Information
-          </h3>
+          <h3 className="text-2xl font-semibold">Contact Information</h3>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-fade-in-delay-4">
-            <a
-              href="mailto:jumuad.precious@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start space-x-4"
-            >
-              <div className="card-hover bg-white rounded-full p-2">
-                <MdOutlineEmail
-                  size={20}
-                  className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
-                />
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-6 gap-x-12">
+            {contactItems.map(({ label, href, display, Icon, isEmail }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-4 hover:text-glow hover:scale-105 transition-transform duration-300"
+              >
+                <div className="card-hover bg-white rounded-full p-2">
+                  <Icon
+                    size={20}
+                    className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
+                  />
+                </div>
 
-              <div className="place-items-start">
-                <h4 className="font-medium">Email</h4>
-                <a href="mailto:jumuad.precious@gmail.com" target="_blank">
-                  jumuad.precious@gmail
-                </a>
-              </div>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/precioushopejumuad/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start space-x-4"
-            >
-              <div className="card-hover bg-white rounded-full p-2">
-                <FiLinkedin
-                  size={20}
-                  className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
-                />
-              </div>
-
-              <div className="place-items-start">
-                <h4 className="font-medium">LinkedIn</h4>
-                <p>in/precioushopejumuad</p>
-              </div>
-            </a>
-
-            <a
-              href="https://www.facebook.com/precioushope.jumuad"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start space-x-4"
-            >
-              <div className="card-hover bg-white rounded-full p-2">
-                <FiFacebook
-                  size={20}
-                  className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
-                />
-              </div>
-
-              <div className="place-items-start">
-                <h4 className="font-medium">Facebook</h4>
-                <p>precioushope.jumuad</p>
-              </div>
-            </a>
-
-            <a
-              href="https://www.instagram.com/yourprecioushope/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start space-x-4"
-            >
-              <div className="card-hover bg-white rounded-full p-2">
-                <FiInstagram
-                  size={20}
-                  className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
-                />
-              </div>
-
-              <div className="place-items-start">
-                <h4 className="font-medium">Instagram</h4>
-                <p>yourprecioushope</p>
-              </div>
-            </a>
+                <div className="place-items-start">
+                  <h4 className="font-medium">{label}</h4>
+                  {isEmail ? (
+                    <a href={href} target="_blank" className="hover:underline">
+                      {display}
+                    </a>
+                  ) : (
+                    <p>{display}</p>
+                  )}
+                </div>
+              </a>
+            ))}
           </div>
         </div>
 
-        <div className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover animate-fade-in-delay-1 p-8 space-y-4">
+        <div className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover p-8 space-y-4 mt-0 sm:mt-4">
           <h3 className="text-2xl font-semibold">Send a Message</h3>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -181,7 +165,7 @@ export const ContactSection = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`white-button w-full flex items-center justify-center gap-x-2`}
+              className={`white-button w-full flex items-center justify-center text-base gap-x-2`}
             >
               {isSubmitting ? "Sending..." : "Send Message"}
               <MdOutlineSend

@@ -41,7 +41,7 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-50 animate-fade-in transition-all duration-300 ${
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 ${
         isScrolled ? "py-4 backdrop-blur-sm shadow-lg" : "py-6"
       }`}
     >
@@ -65,8 +65,8 @@ export const Navbar = () => {
               to={item.href}
               className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
                 activeCategory === item.category
-                  ? "white-button text-sm"
-                  : "transparent-button border text-sm"
+                  ? "white-button"
+                  : "transparent-button border"
               }`}
               onClick={() => setActiveCategory(item.category)}
             >
@@ -77,7 +77,7 @@ export const Navbar = () => {
           <a
             href="mailto:jumuad.precious@gmail.com"
             target="_blank"
-            className="white-button text-sm"
+            className="white-button"
           >
             hello@hope
           </a>
@@ -95,7 +95,7 @@ export const Navbar = () => {
 
       {/* Mobile Nav */}
       {isMenuOpen && (
-        <div className="md:hidden flex items-center justify-center z-40 p-12 animate-fade-in">
+        <div className="md:hidden flex items-center justify-center z-40 p-12">
           <div className="flex flex-col space-y-4 text-base font-medium">
             {navItems.map((item) => (
               <Link
@@ -107,8 +107,8 @@ export const Navbar = () => {
                 }}
                 className={`w-48 px-4 py-2 rounded-full transition-colors duration-300 capitalize ${
                   activeCategory === item.category
-                    ? "white-button text-sm"
-                    : "transparent-button border text-sm"
+                    ? "white-button"
+                    : "transparent-button border"
                 }`}
               >
                 {item.name}
@@ -118,7 +118,7 @@ export const Navbar = () => {
             <a
               href="mailto:jumuad.precious@gmail.com"
               target="_blank"
-              className="white-button text-sm"
+              className="white-button"
             >
               hello@hope
             </a>

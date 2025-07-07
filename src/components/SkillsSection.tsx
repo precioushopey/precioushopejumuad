@@ -117,17 +117,17 @@ export const SkillsSection = () => {
       id="skills"
       className="container mx-auto max-w-5xl space-y-4 pt-20 px-8"
     >
-      <div className="flex justify-center font-bold text-glow animate-fade-in">
+      <div className="flex justify-center font-bold text-glow">
         <h2 className="font-noto text-3xl sm:text-4xl">My</h2>
         <h2 className="pinyon-script text-5xl sm:text-6xl">Skills</h2>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 animate-fade-in-delay-1">
+      <div className="flex flex-wrap justify-center gap-4">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
+            className={`px-4 py-1 text-base rounded-full transition-colors duration-300 capitalize ${
               activeCategory === category
                 ? "white-button"
                 : "transparent-button border"
@@ -138,11 +138,11 @@ export const SkillsSection = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 animate-fade-in-delay-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
         {filteredSkills.map((skill) => (
           <div
             key={skill.name}
-            className="flex flex-col justify-center rounded-4xl backdrop-blur-sm border shadow-xs card-hover gap-3 p-4"
+            className="flex flex-col justify-center rounded-4xl backdrop-blur-sm border shadow-xs gap-3 p-4 card-hover"
           >
             <div className="flex flex-row items-center gap-x-4">
               <img src={skill.logo} alt="Logo" width={50} />

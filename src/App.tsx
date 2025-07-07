@@ -21,6 +21,7 @@ import MeInAOT from "./projects/meinaot";
 import Pixels from "./projects/pixels";
 import Videos from "./projects/videos";
 import Photos from "./projects/photos";
+import Blog1 from "./blogs/in-the-midst-of-silence";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="/projects/pixels" element={<Pixels />} />
           <Route path="/projects/videos" element={<Videos />} />
           <Route path="/projects/photos" element={<Photos />} />
+          <Route path="/blogs/in-the-midst-of-silence" element={<Blog1 />} />
         </Routes>
       </BrowserRouter>
     </>

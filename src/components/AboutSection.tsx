@@ -6,11 +6,11 @@ import {
 } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-interface RoleCard {
+type RoleCard = {
   title: string;
   description: string;
   icon: JSX.Element;
-}
+};
 
 const roles: RoleCard[] = [
   {
@@ -46,7 +46,7 @@ export const AboutSection = () => {
       id="about"
       className="container mx-auto max-w-5xl space-y-4 pt-16 px-8"
     >
-      <div className="flex justify-center font-bold text-glow animate-fade-in">
+      <div className="flex justify-center font-bold text-glow">
         <h2 className="font-noto text-3xl sm:text-4xl">About</h2>
         <h2 className="pinyon-script text-5xl sm:text-6xl -ml-2 sm:-ml-4">
           Me
@@ -55,7 +55,7 @@ export const AboutSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="space-y-2">
-          <div className="place-items-center animate-fade-in-delay-1">
+          <div className="place-items-center">
             <img
               src="/assets/images/about.png"
               alt="Precious Hope T. Jumuad"
@@ -63,11 +63,11 @@ export const AboutSection = () => {
             />
           </div>
 
-          <h3 className="font-semibold text-2xl animate-fade-in-delay-2">
+          <h3 className="font-semibold text-2xl">
             Computer Engineer & UI/UX Designer
           </h3>
 
-          <p className="animate-fade-in-delay-3">
+          <p>
             As a Computer Engineering graduate at USTP-CDO, I specialize in
             front-end development, UI/UX design, and multimedia content
             creation. I am passionate about building thoughtful, user-centered
@@ -75,7 +75,7 @@ export const AboutSection = () => {
             modern tools like Next.js, React, Figma, and Tailwind CSS.
           </p>
 
-          <div className="flex justify-center gap-4 pt-2 animate-fade-in-delay-4">
+          <div className="flex justify-center gap-4 pt-2 text-base">
             <Link to="#contact" className="white-button">
               Hire Me!
             </Link>
@@ -93,7 +93,7 @@ export const AboutSection = () => {
           {roles.map((role, index) => (
             <div
               key={index}
-              className="rounded-4xl backdrop-blur-sm border shadow-xs p-4 card-hover animate-fade-in-delay-1"
+              className="rounded-4xl backdrop-blur-sm border shadow-xs p-4 card-hover"
             >
               <div className="flex items-start gap-4">
                 <div className="bg-white rounded-full p-2">{role.icon}</div>

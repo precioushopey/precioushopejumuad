@@ -12,7 +12,7 @@ export const HeroSection = () => {
           src="/assets/images/hero.png"
           alt="Precious Hope T. Jumuad"
           width={500}
-          className="opacity-0 animate-fade-in"
+          className="animate-fade-in"
         />
       </div>
 
@@ -20,13 +20,13 @@ export const HeroSection = () => {
         ENGINEER • DESIGNER
       </div>
 
-      <div className="max-w-lg mx-auto opacity-0 animate-fade-in-delay-2">
+      <div className="max-w-lg mx-auto animate-fade-in-delay-2">
         Precious Hope Jumuad is a computer engineering graduate who is
         passionate in front-end development, UI/UX design, and multimedia arts
         to create practical and user-focused digital solutions.
       </div>
 
-      <div className="flex justify-center gap-4 pt-4 animate-fade-in-delay-3">
+      <div className="flex justify-center gap-4 pt-4 text-base">
         <Link to="/projects" className="white-button">
           View My Work
         </Link>

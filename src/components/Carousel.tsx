@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 
-interface CarouselProps {
+type CarouselProps = {
   images: string[];
   autoSlide?: boolean;
   autoSlideInterval?: number;
-}
+};
 
 const Carousel: React.FC<CarouselProps> = ({
   images,

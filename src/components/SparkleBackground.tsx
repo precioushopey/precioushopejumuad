@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-interface Sparkle {
+type Sparkle = {
   id: number;
   size: number;
   x: number;
   y: number;
   opacity: number;
   animationDuration: number;
-}
+};
 
 export const SparkleBackground = () => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);

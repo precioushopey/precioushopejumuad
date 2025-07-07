@@ -3,7 +3,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { MdEmail, MdFacebook, MdInsights } from "react-icons/md";
 import { SparkleBackground } from "../components/SparkleBackground";
 
-interface Contributor {
+type Contributor = {
   name: string;
   image: string;
   alt: string;
@@ -12,7 +12,7 @@ interface Contributor {
   email: { address: string; label: string };
   facebook: { url: string; label: string };
   instagram: { url: string; label: string };
-}
+};
 
 const Subay = () => {
   const metrics = [
@@ -133,7 +133,6 @@ const Subay = () => {
       <Navbar />
 
       {/* Main Content */}
-      <Navbar />
       <main className="container mx-auto max-w-5xl space-y-12 py-24 px-8 text-sm sm:text-base">
         <div>
           <div className="flex justify-center font-bold text-glow animate-fade-in">
@@ -156,7 +155,7 @@ const Subay = () => {
           </div>
         </div>
 
-        <section className="space-y-6 animate-fade-in-delay-2">
+        <section className="space-y-6">
           <iframe
             src="https://www.youtube.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
             title="SUBAY Promotion"
@@ -210,7 +209,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-3">
+        <section className="space-y-6">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Demonstration
           </h2>
@@ -269,7 +268,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-3">
+        <section className="space-y-6">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Contributors
           </h2>
@@ -280,7 +279,7 @@ const Subay = () => {
               className="w-full aspect-[16/9] object-cover transition-transform duration-500 hover:scale-110"
             />
           </div>
-          <h3 className="font-medium text-base">
+          <h3 className="font-medium">
             The Team with adviser Engr. Jodie Rey D. Fernandez
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -298,7 +297,7 @@ const Subay = () => {
                   className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="flex flex-col items-center justify-center p-4 space-y-2">
-                  <h3 className="font-medium text-base">{contributor.name}</h3>
+                  <h3 className="font-medium">{contributor.name}</h3>
                   <p className="font-light italic text-sm">
                     {contributor.description}
                   </p>
@@ -349,7 +348,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-4">
+        <section className="space-y-6">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             We Won Best Thesis and Best Prototype!
           </h2>
@@ -389,7 +388,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-4">
+        <section className="space-y-6">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Skills Earned
           </h2>

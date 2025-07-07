@@ -258,17 +258,17 @@ export const ProjectsSection = () => {
       id="projects"
       className="container mx-auto max-w-5xl space-y-4 pt-20 px-8"
     >
-      <div className="flex justify-center font-bold text-glow animate-fade-in">
+      <div className="flex justify-center font-bold text-glow">
         <h2 className="font-noto text-3xl sm:text-4xl">Featured</h2>
         <h2 className="pinyon-script text-5xl sm:text-6xl">Projects</h2>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 animate-fade-in-delay-1">
+      <div className="flex flex-wrap justify-center gap-4">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
+            className={`px-4 py-1 text-base rounded-full transition-colors duration-300 capitalize ${
               activeCategory === category
                 ? "white-button"
                 : "transparent-button border"
@@ -279,7 +279,7 @@ export const ProjectsSection = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 animate-fade-in-delay-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
         {filteredProjects.map((project) => (
           <div
             key={project.title}
@@ -398,10 +398,10 @@ export const ProjectsSection = () => {
         ))}
       </div>
 
-      <div className="animate-fade-in-delay-3 pt-4">
+      <div className="pt-4">
         <Link
           to="/projects"
-          className="white-button w-fit flex items-center mx-auto gap-2"
+          className="mx-auto w-fit flex items-center text-base gap-2 white-button"
         >
           See More Projects <MdOutlineKeyboardArrowRight size={20} />
         </Link>
