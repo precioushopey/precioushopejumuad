@@ -197,79 +197,76 @@ const ProjectsPage = () => {
   );
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      {/* Background Effects */}
+    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 pt-24 px-8">
       <SparkleBackground />
 
-      {/* Navbar */}
-      <Navbar />
+      <header>
+        <Navbar />
+        <div className="flex justify-center font-bold text-glow animate-fade-in">
+          <h1 className="font-noto text-4xl sm:text-6xl">Project</h1>
+          <h2 className="pinyon-script text-6xl sm:text-8xl">Repository</h2>
+        </div>
+      </header>
 
-      {/* Main Content */}
-      <main className="pt-24 px-8">
-        <div className="container mx-auto max-w-5xl space-y-6">
-          <div className="flex justify-center font-bold text-glow animate-fade-in">
-            <h1 className="font-noto text-4xl sm:text-6xl">Project</h1>
-            <h2 className="pinyon-script text-6xl sm:text-8xl">Repository</h2>
-          </div>
+      <main className="space-y-6">
+        <div className="flex flex-wrap justify-center gap-4">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
+                activeCategory === category
+                  ? "white-button"
+                  : "transparent-button border"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
-                  activeCategory === category
-                    ? "white-button"
-                    : "transparent-button border"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
+          {filteredProjects.map((project) => (
+            <Link
+              to={project.url}
+              rel="noopener noreferrer"
+              key={project.title}
+              className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-110"
+              />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
-            {filteredProjects.map((project) => (
-              <Link
-                to={project.url}
-                rel="noopener noreferrer"
-                key={project.title}
-                className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="p-6">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="rounded-full border text-xs font-light px-2 py-1"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-row items-center  space-x-2">
-                    <h3 className="font-semibold text-lg">{project.title}</h3>
-                    {project.url && (
-                      <Link
-                        to={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[var(--yellow-accent)] text-glow hover:scale-110 active:scale-100 cursor-pointer"
-                      >
-                        <MdOutlineOpenInNew size={20} />
-                      </Link>
-                    )}
-                  </div>
+              <div className="p-6">
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="rounded-full border text-xs font-light px-2 py-1"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              </Link>
-            ))}
-          </div>
+
+                <div className="flex flex-row items-center  space-x-2">
+                  <h3 className="font-semibold text-lg">{project.title}</h3>
+                  {project.url && (
+                    <Link
+                      to={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[var(--yellow-accent)] text-glow hover:scale-110 active:scale-100 cursor-pointer"
+                    >
+                      <MdOutlineOpenInNew size={20} />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </main>
       <ContactSection />

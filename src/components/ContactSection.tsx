@@ -105,7 +105,7 @@ export const ContactSection = () => {
                 <div className="place-items-start">
                   <h4 className="font-medium">{label}</h4>
                   {isEmail ? (
-                    <a href={href} target="_blank" className="hover:underline">
+                    <a href={href} target="_blank">
                       {display}
                     </a>
                   ) : (

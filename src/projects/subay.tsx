@@ -15,12 +15,14 @@ type Contributor = {
 };
 
 const Subay = () => {
+  const tags = ["Next.js", "TypeScript", "TailwindCSS"];
+
   const metrics = [
     { value: "100%", label: "Detection Average Precision" },
     { value: "90.95%", label: "Detection Recall" },
     { value: "95.26%", label: "Detection F1-Score" },
     { value: "72.17%", label: "Re-identification F1-Score" },
-    { value: "91.9%", label: "Average Tracking Accuracy Overlap" },
+    { value: "91.9%", label: "Avg. Tracking Accuracy Overlap" },
     { value: "6.71-pixel", label: "Tracking Manual vs. System" },
     { value: "100%", label: "Functional Testing" },
     { value: "87.5", label: "System Usability Scale (SUS) Score" },
@@ -125,42 +127,38 @@ const Subay = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      {/* Background Effects */}
+    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-12 py-24 px-8 text-sm sm:text-base">
       <SparkleBackground />
 
-      {/* Navbar */}
-      <Navbar />
-
-      {/* Main Content */}
-      <main className="container mx-auto max-w-5xl space-y-12 py-24 px-8 text-sm sm:text-base">
+      <header>
+        <Navbar />
+        <div className="flex justify-center font-bold text-glow animate-fade-in">
+          <h1 className="font-noto text-3xl sm:text-6xl">SUBAY</h1>
+          <h2 className="pinyon-script -ml-2 sm:-ml-4 text-5xl sm:text-8xl">
+            Thesis
+          </h2>
+        </div>
         <div>
-          <div className="flex justify-center font-bold text-glow animate-fade-in">
-            <h1 className="font-noto text-3xl sm:text-6xl">SUBAY</h1>
-            <h2 className="pinyon-script -ml-2 sm:-ml-4 text-5xl sm:text-8xl">
-              Thesis
-            </h2>
-          </div>
-
           <div className="flex flex-wrap justify-center gap-4 text-sm animate-fade-in-delay-1">
-            <span className="rounded-full border font-light px-4 py-1">
-              Next.js
-            </span>
-            <span className="rounded-full border font-light px-4 py-1">
-              TypeScript
-            </span>
-            <span className="rounded-full border font-light px-4 py-1">
-              TailwindCSS
-            </span>
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="rounded-full border font-light px-4 py-1"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
+      </header>
 
+      <main className="space-y-18">
         <section className="space-y-6">
           <iframe
             src="https://www.youtube.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
             title="SUBAY Promotion"
             allow="autoplay; encrypted-media; accelerometer; mute; clipboard-write; gyroscope; picture-in-picture; web-share"
-            className="w-full aspect-[16/9] object-cover rounded-4xl border"
+            className="w-full aspect-[16/9] object-cover rounded-4xl border z-50"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
@@ -213,12 +211,12 @@ const Subay = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Demonstration
           </h2>
-          <div className="w-full flex flex-col lg:flex-row items-center gap-6 lg:gap-12">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-6">
             <iframe
               src="https://www.youtube.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&controls=1"
               title="SUBAY Demonstration"
               allow="autoplay; encrypted-media; accelerometer; mute; clipboard-write; gyroscope; picture-in-picture; web-share"
-              className="w-full lg:w-2/3 aspect-[16/9] object-cover rounded-4xl border"
+              className="w-full lg:w-2/3 aspect-[16/9] object-cover rounded-4xl border z-50"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
@@ -234,7 +232,7 @@ const Subay = () => {
                 Usability Scale score of 87.5 indicated a high level of user
                 satisfaction.
               </p>
-              <button className="pt-2">
+              <button className="flex justify-center">
                 <a
                   href="https://thesis-subay-web.vercel.app/"
                   target="_blank"
@@ -343,7 +341,7 @@ const Subay = () => {
               target="_blank"
               className="white-button"
             >
-              See GitHub Repository
+              View GitHub Repository
             </a>
           </div>
         </section>
