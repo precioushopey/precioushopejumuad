@@ -160,32 +160,30 @@ const Payroll = () => {
             The Challenge
           </h2>
           <div className="w-full flex flex-col lg:flex-row items-center gap-6">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-2/3">
               <Carousel images={images2} />
             </div>
-            <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
-              <p className="text-sm">
-                The biggest hurdle wasn’t just building a payroll system rather,
-                it was designing one that <em>understood</em> the nuances of
-                local government operations. Integrating biometric data posed
-                technical constraints, but the real challenge was building
-                trust: HR teams needed assurance that every peso, every record,
-                and every leave count was accurate to the last detail. This
-                meant rigorous testing, thoughtful UI design, and a flexible
-                backend that could handle edge cases from unexpected absences to
-                multiple pay grades without fail.
-              </p>
-              <button className="mx-auto flex justify-center">
-                <a
-                  href="https://hrmo-payroll-web.vercel.app/"
-                  target="_blank"
-                  className="flex white-button"
-                >
-                  Read User Manual
-                </a>
-              </button>
-            </div>
+            <p className="w-full lg:w-1/3">
+              The biggest hurdle wasn’t just building a payroll system rather,
+              it was designing one that <em>understood</em> the nuances of local
+              government operations. Integrating biometric data posed technical
+              constraints, but the real challenge was building trust: HR teams
+              needed assurance that every peso, every record, and every leave
+              count was accurate to the last detail. This meant rigorous
+              testing, thoughtful UI design, and a flexible backend that could
+              handle edge cases from unexpected absences to multiple pay grades
+              without fail.
+            </p>
           </div>
+          <button>
+            <a
+              href="https://hrmo-payroll-web.vercel.app/"
+              target="_blank"
+              className="white-button"
+            >
+              Read User Manual
+            </a>
+          </button>
         </section>
 
         <section className="space-y-6">

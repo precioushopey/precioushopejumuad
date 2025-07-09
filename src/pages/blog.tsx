@@ -33,7 +33,7 @@ const Blog = () => {
             </h3>
             <p className="font-light italic">
               I wrote this personal essay at the height of the COVID-19
-              pandemic—a time when the world seemed to pause, yet our inner
+              pandemic, a time when the world seemed to pause, yet our inner
               lives grew louder than ever. As someone who observes more than
               speaks, I felt the need to process the chaos, fear, and quiet
               blessings brought by that period. Writing became my outlet, a way

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MdMenu, MdOutlineCancel } from "react-icons/md";
 
@@ -15,26 +15,26 @@ const navItems: NavItem[] = [
 ];
 
 export const Navbar = () => {
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeCategory, setActiveCategory] =
     useState<NavItem["category"]>("home");
 
   useEffect(() => {
-    const currentPath = window.location.pathname;
+    const currentPath = location.pathname;
 
-    const matchedNav = navItems.find((item) =>
-      item.href === "/#" ? currentPath === "/" : item.href === currentPath
-    );
-
-    if (matchedNav) {
-      setActiveCategory(matchedNav.category);
+    if (currentPath.startsWith("/projects")) {
+      setActiveCategory("projects");
+    } else if (currentPath.startsWith("/blog")) {
+      setActiveCategory("blog");
+    } else {
+      setActiveCategory("home");
     }
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -68,7 +68,6 @@ export const Navbar = () => {
                   ? "white-button"
                   : "transparent-button border"
               }`}
-              onClick={() => setActiveCategory(item.category)}
             >
               {item.name}
             </Link>
@@ -102,7 +101,6 @@ export const Navbar = () => {
                 key={item.name}
                 to={item.href}
                 onClick={() => {
-                  setActiveCategory(item.category);
                   setIsMenuOpen(false);
                 }}
                 className={`w-48 px-4 py-2 rounded-full transition-colors duration-300 capitalize ${

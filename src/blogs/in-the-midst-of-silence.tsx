@@ -53,7 +53,7 @@ const Blog1 = () => {
             alt="In the Midst of Silence"
             className="w-full md:w-1/2 aspect-[1/1] rounded-4xl border object-cover transition-transform duration-500 group-hover:scale-110"
           />
-          <article className="space-y-6">
+          <article className="w-full md:w-1/2 space-y-6">
             <p>
               The world then stopped, the ever-crowded downtown now next to
               deserted ghost towns. Distances are widened, yet there is no brawl
