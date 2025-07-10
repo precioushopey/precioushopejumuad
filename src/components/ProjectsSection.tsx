@@ -73,7 +73,7 @@ const projects: Project[] = [
     description:
       "TaleMakers is an educational mobile game that empowers children to create interactive storybooks. It combines creative and accessible storytelling with engaging gameplay.",
     image: "/assets/images/talemakers1.png",
-    tags: ["Figma", "Canva", "Illustrator", "Aseprite"],
+    tags: ["Figma", "Canva", "Ibis Paint", "Aseprite"],
     demoUrl:
       "https://www.figma.com/proto/8fOWyiK87SDeMOOhH0oDZM/TaleMakers-App?node-id=1418-1728&p=f&t=FteYo7hMhkxWz2K9-1&scaling=scale-down-width&content-scaling=fixed&page-id=1418%3A1727&starting-point-node-id=1418%3A1728",
     tool1Url:
@@ -93,34 +93,6 @@ const projects: Project[] = [
     tool1Url:
       "https://www.figma.com/design/GGQyigCWlqYjvrcQpYGzIZ/ATHOMES---Website?node-id=0-1&t=ifIu5CBMsA1vIb7J-1",
     tool2Url: "https://www.facebook.com/athomescdorecruitement",
-    toolIcon1: <FiFigma size={16} />,
-    toolIcon2: <FiFacebook size={16} />,
-    category: "design",
-  },
-  {
-    title: "ICpEP.SE - USTP Redesign",
-    description:
-      "A website redesign project for ICpEP.SE, USTP-CDO's Computer Engineering student organization. The project aimed to enhance the platform’s visual appeal and functionality while effectively showcasing the organization's activities, events, and initiatives.",
-    image: "/assets/images/icpep1.jpg",
-    tags: ["Figma", "Canva", "Photoshop"],
-    demoUrl: "https://www.icpepse-ustp.org/",
-    tool1Url:
-      "https://www.figma.com/design/pxDfxLLZKL8d22Asol61ha/ICpEP.SE---USTP-Website-Redesign-Mood-Board?node-id=0-1&t=yAHRFon0HpdcwOu1-1",
-    tool2Url: "https://www.facebook.com/icpep.se.ustp",
-    toolIcon1: <FiFigma size={16} />,
-    toolIcon2: <FiFacebook size={16} />,
-    category: "design",
-  },
-  {
-    title: "CpExpress: CpE Confessions",
-    description:
-      "A moderated anonymous confession platform launched during Valentines Day 2024. This project was designed to provide students with a safe space to share their confessions.",
-    image: "/assets/images/cpexpress1.png",
-    tags: ["Figma", "Canva", "Photoshop"],
-    demoUrl: "https://express.icpepse-ustp.org/",
-    tool1Url:
-      "https://www.figma.com/design/dTxd4Ox50vsJvi0Ax91DCG/CpExpress--CpE-Confessions?node-id=76-3&t=P8zko3Wy6yn4J3Br-1",
-    tool2Url: "https://www.facebook.com/share/p/16auriyxyx/",
     toolIcon1: <FiFigma size={16} />,
     toolIcon2: <FiFacebook size={16} />,
     category: "design",
@@ -148,39 +120,6 @@ const projects: Project[] = [
     category: "socials",
   },
   {
-    title: "CpExpo 2024",
-    description:
-      "An innovation showcase that I co-headed and also participated in as a presenting Computer Engineering student, displaying our research on microprocessor design and applications.",
-    image: "/assets/images/cpexpo1.png",
-    tags: ["Canva", "Photoshop", "Meta Business"],
-    demoUrl: "/projects",
-    tool1Url: "https://www.facebook.com/share/p/1W21t13bgV/",
-    toolIcon1: <FiFacebook size={16} />,
-    category: "socials",
-  },
-  {
-    title: "CpE Days 2024",
-    description:
-      "This three-day intramurals event is where I, the president of ICpEP.SE–USTP, led the planning, organization, and branding design to ensure an engaging experience for the participants.",
-    image: "/assets/images/cpedays1.jpg",
-    tags: ["Canva", "Photoshop", "Meta Business"],
-    demoUrl: "/projects",
-    tool1Url: "https://www.facebook.com/share/p/16WscCyDag/",
-    toolIcon1: <FiFacebook size={16} />,
-    category: "socials",
-  },
-  {
-    title: "CpE GenAss 2023",
-    description:
-      "This event is an orientation welcoming freshmen to the university, with its theme and event design led by me as the president to foster a strong sense of community from day one.",
-    image: "/assets/images/genass1.jpg",
-    tags: ["Canva", "Photoshop", "Meta Business"],
-    demoUrl: "/projects",
-    tool1Url: "https://www.facebook.com/share/p/1CVcjtJCZx/",
-    toolIcon1: <FiFacebook size={16} />,
-    category: "socials",
-  },
-  {
     title: "Branding for ICpEP.SE - USTP A.Y. 2023-2024",
     description:
       "Branding for ICpEP.SE – USTP A.Y. 2023–2024 featured an 8-bit space adventure theme, which I spearheaded as president by leading the branding and creative direction to deliver a fun, engaging, and memorable experience for CpE students.",
@@ -198,43 +137,6 @@ const projects: Project[] = [
     demoUrl: "/projects",
     category: "multimedia",
   },
-  {
-    title: "Imagine Me in this Anime!",
-    description:
-      "This is a personal digital art project where I illustrate myself in various anime styles, exploring character design, visual storytelling, and stylistic adaptation to deepen my creative and technical skills.",
-    image: "/assets/images/meinaot1.jpg",
-    tags: ["Canva", "Photoshop", "Illustrator", "IbisPaint"],
-    demoUrl: "/projects",
-    category: "multimedia",
-  },
-  {
-    title: "PixelPlay!",
-    description:
-      "It is a collection of original pixel art projects featuring character sprites, environments, and game-ready assets designed to capture retro aesthetics and enhance 2D gameplay experiences.",
-    image: "/assets/images/pixel1.png",
-    tags: ["Aseprite", "Canva", "Photoshop"],
-    demoUrl: "/projects",
-    category: "multimedia",
-  },
-  {
-    title: "Video Editing Collection",
-    description:
-      "This collection features my works in video editing, combining rhythm, transitions, and narrative flow to produce engaging visual content for both creative and academic projects.",
-    image: "/assets/images/videos1.png",
-    tags: ["Capcut", "Blender"],
-    demoUrl: "/projects",
-    category: "multimedia",
-  },
-  {
-    title: "Photo Editing Collection",
-    description:
-      "This is a collection of creative photo edits showcasing retouching, color grading, and layout design, emphasizing storytelling through static visuals and digital enhancements.",
-    image: "/assets/images/photos1.jpg",
-    tags: ["Lightroom"],
-    demoUrl: "/projects",
-    category: "multimedia",
-  },
-  // optional: leaderboard, and cpexpress with sir mark
 ];
 
 const categories = [

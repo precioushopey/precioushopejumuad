@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { AiFillInstagram } from "react-icons/ai";
-import { MdEmail, MdFacebook, MdInsights } from "react-icons/md";
 import { SparkleBackground } from "../components/SparkleBackground";
+import {
+  MdEmail,
+  MdFacebook,
+  MdInsights,
+  MdOutlineKeyboardArrowLeft,
+} from "react-icons/md";
 
 type Contributor = {
   name: string;
@@ -221,7 +227,7 @@ const Subay = () => {
               allowFullScreen
             />
             <div className="w-full lg:w-1/3 flex flex-col justify-center space-y-6">
-              <p className="text-sm">
+              <p className="text-base lg:text-sm">
                 To make the data actionable, I designed and developed a
                 web-based analytics dashboard that visualizes customer flow
                 through interactive heat maps and charts, offering automated
@@ -414,6 +420,16 @@ const Subay = () => {
             ))}
           </div>
         </section>
+
+        <div className="flex justify-center">
+          <Link
+            to="/projects"
+            className="w-fit flex items-center gap-x-2 white-button"
+          >
+            <MdOutlineKeyboardArrowLeft size={20} />
+            Back to Projects
+          </Link>
+        </div>
       </main>
     </div>
   );

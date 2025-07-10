@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import { Navbar } from "../components/Navbar";
 import { SparkleBackground } from "../components/SparkleBackground";
@@ -6,19 +7,13 @@ import {
   MdLightbulbOutline,
   MdOutlineBuild,
   MdOutlineChecklist,
+  MdOutlineKeyboardArrowLeft,
   MdOutlineWbSunny,
 } from "react-icons/md";
 
-const Payroll = () => {
+const Ibrgy = () => {
   const tags = ["React", "JavaScript", "TailwindCSS", "Figma"];
   const images1 = ["/assets/images/ibrgy1.png", "/assets/images/ibrgy2.png"];
-  const images2 = [
-    "/assets/images/payroll3.jpg",
-    "/assets/images/payroll4.jfif",
-    "/assets/images/payroll5.jpg",
-    "/assets/images/payroll6.png",
-    "/assets/images/payroll7.jpg",
-  ];
 
   const designSteps = [
     {
@@ -235,9 +230,19 @@ const Payroll = () => {
             ))}
           </div>
         </section>
+
+        <div className="flex justify-center">
+          <Link
+            to="/projects"
+            className="w-fit flex items-center gap-x-2 white-button"
+          >
+            <MdOutlineKeyboardArrowLeft size={20} />
+            Back to Projects
+          </Link>
+        </div>
       </main>
     </div>
   );
 };
 
-export default Payroll;
+export default Ibrgy;

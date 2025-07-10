@@ -251,8 +251,8 @@ const ProjectsPage = () => {
                   ))}
                 </div>
 
-                <div className="flex flex-row items-center  space-x-2">
-                  <h3 className="font-semibold text-lg">{project.title}</h3>
+                <div className="flex flex-row items-center space-x-2">
+                  <h3 className="font-semibold text-xl">{project.title}</h3>
                   {project.url && (
                     <Link
                       to={project.url}

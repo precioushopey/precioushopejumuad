@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import { Navbar } from "../components/Navbar";
 import { SparkleBackground } from "../components/SparkleBackground";
@@ -6,6 +7,7 @@ import {
   MdLightbulbOutline,
   MdOutlineBuild,
   MdOutlineChecklist,
+  MdOutlineKeyboardArrowLeft,
   MdOutlineWbSunny,
 } from "react-icons/md";
 
@@ -239,6 +241,16 @@ const Payroll = () => {
             ))}
           </div>
         </section>
+
+        <div className="flex justify-center">
+          <Link
+            to="/projects"
+            className="w-fit flex items-center gap-x-2 white-button"
+          >
+            <MdOutlineKeyboardArrowLeft size={20} />
+            Back to Projects
+          </Link>
+        </div>
       </main>
     </div>
   );
