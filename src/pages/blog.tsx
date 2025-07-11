@@ -31,14 +31,18 @@ const Blog = () => {
               In the Midst of Silence: Reflections of a Bystander in a Time of
               Crisis
             </h3>
-            <p className="font-light italic">
+            <p className="line-clamp-5 font-light italic">
               I wrote this personal essay at the height of the COVID-19
               pandemic, a time when the world seemed to pause, yet our inner
               lives grew louder than ever. As someone who observes more than
               speaks, I felt the need to process the chaos, fear, and quiet
               blessings brought by that period. Writing became my outlet, a way
               to make sense of the global disruption and the unexpected gifts it
-              gave...
+              gave. This piece is not just a reflection on the physical toll of
+              the virus, but a deeply personal account of growth, surrender, and
+              introspection during a time of isolation. Through it, I hoped to
+              express the paradox of pain and peace that the pandemic planted in
+              my life.
             </p>
             <div className="flex items-center text-sm gap-x-2">
               <img
