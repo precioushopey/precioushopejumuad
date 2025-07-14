@@ -22,6 +22,7 @@ import Pixels from "./projects/pixels";
 import Videos from "./projects/videos";
 import Photos from "./projects/photos";
 import Blog1 from "./blogs/in-the-midst-of-silence";
+import Blog2 from "./blogs/have-i-not-breathed-for-a-moment";
 
 function App() {
   return (
@@ -51,6 +52,10 @@ function App() {
           <Route path="/projects/videos" element={<Videos />} />
           <Route path="/projects/photos" element={<Photos />} />
           <Route path="/blogs/in-the-midst-of-silence" element={<Blog1 />} />
+          <Route
+            path="/blogs/have-i-not-breathed-for-a-moment"
+            element={<Blog2 />}
+          />
         </Routes>
       </BrowserRouter>
     </>

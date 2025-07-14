@@ -8,7 +8,7 @@ const Blog1 = () => {
     <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
       <SparkleBackground />
 
-      <header>
+      <header className="space-y-6">
         <Navbar />
         <div className="flex flex-col items-center justify-center animate-fade-in">
           <h1 className="font-noto text-3xl sm:text-4xl font-bold text-glow">
@@ -29,9 +29,6 @@ const Blog1 = () => {
             </p>
           </div>
         </div>
-      </header>
-
-      <main className="space-y-6">
         <section className="animate-fade-in-delay-1">
           <p>
             I wrote this personal essay at the height of the COVID-19 pandemic,
@@ -46,13 +43,21 @@ const Blog1 = () => {
             paradox of pain and peace that the pandemic planted in my life.
           </p>
         </section>
+      </header>
 
-        <section className="flex flex-col md:flex-row gap-6 border-t-2 pt-8 animate-fade-in-delay-2">
-          <img
-            src="/assets/images/photos1.jpg"
-            alt="In the Midst of Silence"
-            className="w-full md:w-1/2 aspect-[1/1] rounded-4xl border object-cover transition-transform duration-500 group-hover:scale-110"
-          />
+      <main className="bg-[#462317]/50 rounded-4xl backdrop-blur-xs border shadow-xs font-medium tracking-normal p-8 space-y-6">
+        <section className="flex flex-col md:flex-row gap-6 animate-fade-in-delay-2">
+          <figure className="w-full md:w-1/2 space-y-4">
+            <img
+              src="/assets/images/photos1.jpg"
+              alt="In the Midst of Silence"
+              className="aspect-[1/1] rounded-4xl border object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <figcaption>
+              Fig.1 - Tranquil at JILA’s SmallVille, Lanise, Claveria, Misamis
+              Oriental.
+            </figcaption>
+          </figure>
           <article className="w-full md:w-1/2 space-y-6">
             <p>
               The world then stopped, the ever-crowded downtown now next to
@@ -81,7 +86,7 @@ const Blog1 = () => {
           </article>
         </section>
 
-        <article className="border-b-2 pb-6 animate-fade-in-delay-3">
+        <article className="animate-fade-in-delay-3">
           To conclude, the COVID-19 pandemic was a blessing and a curse, for it
           brought both opportunity and punishment to us. It is God's way of
           stopping time for most of us. To give rest to those who were restless
@@ -92,17 +97,17 @@ const Blog1 = () => {
           we are all soldiers. We must not fright but fight this enemy by
           washing our hands, staying calm, and praying always.
         </article>
-
-        <div className="flex justify-center pt-2">
-          <Link
-            to="/blog"
-            className="w-fit flex items-center gap-x-2 white-button"
-          >
-            <MdOutlineKeyboardArrowLeft size={20} />
-            Back to Blog
-          </Link>
-        </div>
       </main>
+
+      <footer className="flex justify-center pt-2">
+        <Link
+          to="/blog"
+          className="w-fit flex items-center gap-x-2 white-button"
+        >
+          <MdOutlineKeyboardArrowLeft size={20} />
+          Back to Blog
+        </Link>
+      </footer>
     </div>
   );
 };

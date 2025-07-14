@@ -105,6 +105,17 @@
   }
 }
 
+@utility blog-page {
+  width: 100%;
+  background-color: #fff;
+  color: #462317;
+  border-width: 1px; 
+  border-color: #ffffff; 
+  backdrop-blur: blur(4px); 
+  border-radius: 8rem 8rem 0 0;
+  padding: 2rem 12rem 0 12rem;
+}
+
 @utility text-glow {
   @apply relative;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
