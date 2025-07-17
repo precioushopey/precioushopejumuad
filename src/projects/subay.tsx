@@ -164,7 +164,7 @@ const Subay = () => {
             src="https://www.youtube.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
             title="SUBAY Promotion"
             allow="autoplay; encrypted-media; accelerometer; mute; clipboard-write; gyroscope; picture-in-picture; web-share"
-            className="w-full aspect-[16/9] object-cover rounded-4xl border z-50"
+            className="w-full aspect-[16/9] object-cover rounded-4xl border z-50 animate-fade-in-delay-2"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
@@ -222,7 +222,7 @@ const Subay = () => {
               src="https://www.youtube.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&controls=1"
               title="SUBAY Demonstration"
               allow="autoplay; encrypted-media; accelerometer; mute; clipboard-write; gyroscope; picture-in-picture; web-share"
-              className="w-full lg:w-2/3 aspect-[16/9] object-cover rounded-4xl border z-50"
+              className="w-full lg:w-2/3 aspect-[16/9] object-cover rounded-4xl border z-50 animate-fade-in-delay-3"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />

@@ -47,7 +47,7 @@ const Carousel: React.FC<CarouselProps> = ({
           <img
             src={image}
             alt="Project Images"
-            className="w-full aspect-[16/9] rounded-4xl border object-cover transition-transform duration-500 hover:scale-110"
+            className="w-full aspect-[16/9] rounded-4xl border object-cover transition-transform duration-500"
           />
         </div>
       ))}

@@ -76,9 +76,13 @@ export const AboutSection = () => {
           </p>
 
           <div className="flex justify-center gap-4 pt-2 text-base">
-            <Link to="#contact" className="white-button">
+            <a
+              href="mailto:jumuad.precious@gmail.com"
+              target="_blank"
+              className="white-button"
+            >
               Hire Me!
-            </Link>
+            </a>
             <a
               href="https://drive.google.com/file/d/1Ht0vyHKKtTYDkNvNKNMpTn9Ppy886jza/view?usp=sharing"
               target="_blank"

@@ -75,9 +75,9 @@ const AtHomes = () => {
       <header>
         <Navbar />
         <div className="flex justify-center font-bold text-glow animate-fade-in">
-          <h1 className="font-noto text-3xl sm:text-6xl">Tale</h1>
-          <h2 className="pinyon-script -ml-0 sm:-ml-8 text-5xl sm:text-8xl">
-            Makers
+          <h1 className="font-noto text-3xl sm:text-6xl">At</h1>
+          <h2 className="pinyon-script -ml-0 sm:-ml-4 text-5xl sm:text-8xl">
+            Homes
           </h2>
         </div>
         <div>
