@@ -67,15 +67,12 @@
     @apply text-[var(--text-color)] transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
     background-color: #885615;
-    background-image: url("/assets/images/background.jpg");
+    background: center top fixed no-repeat url("/assets/images/background.jpg");
+    background-size: cover;
     position: relative;
     width: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     height: 70vh;
     min-height: 100px;
-    background-position: center;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;

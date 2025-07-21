@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { SparkleBackground } from "../components/SparkleBackground";
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowLeft, MdOutlineOpenInNew } from "react-icons/md";
 
-const Blog2 = () => {
+const Blog3 = () => {
   return (
     <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
       <SparkleBackground />
@@ -286,14 +286,15 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="border-t-2 pt-8">
+        <section className="flex justify-center border-t-2 gap-2 pt-8">
           <a
             target="_blank"
             href="https://drive.google.com/file/d/1-hlM-3s_r_WvBfA_jC7Qx5awlJ4WM8_i/view"
             className="hover:underline"
           >
-            <p>BREATHE Reflections 2022.pdf. (n.d.). Google Docs.</p>
+            <p>BREATHE Reflections 2022.</p>
           </a>
+          <MdOutlineOpenInNew size={20} />
         </section>
       </main>
 
@@ -310,4 +311,4 @@ const Blog2 = () => {
   );
 };
 
-export default Blog2;
+export default Blog3;

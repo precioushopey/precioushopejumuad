@@ -22,7 +22,9 @@ import Pixels from "./projects/pixels";
 import Videos from "./projects/videos";
 import Photos from "./projects/photos";
 import Blog1 from "./blogs/in-the-midst-of-silence";
-import Blog2 from "./blogs/have-i-not-breathed-for-a-moment";
+import Blog2 from "./blogs/words-of-gratitude";
+import Blog3 from "./blogs/have-i-not-breathed-for-a-moment";
+import Blog4 from "./blogs/the-gumamela-I-offered-to-mary";
 
 function App() {
   return (
@@ -52,9 +54,14 @@ function App() {
           <Route path="/projects/videos" element={<Videos />} />
           <Route path="/projects/photos" element={<Photos />} />
           <Route path="/blogs/in-the-midst-of-silence" element={<Blog1 />} />
+          <Route path="/blogs/words-of-gratitude" element={<Blog2 />} />
           <Route
             path="/blogs/have-i-not-breathed-for-a-moment"
-            element={<Blog2 />}
+            element={<Blog3 />}
+          />
+          <Route
+            path="/blogs/the-gumamela-I-offered-to-mary"
+            element={<Blog4 />}
           />
         </Routes>
       </BrowserRouter>

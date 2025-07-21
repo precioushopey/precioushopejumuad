@@ -17,32 +17,33 @@ const Blog = () => {
 
       <main className="space-y-6">
         <Link
-          to="/blogs/in-the-midst-of-silence"
+          to="/blogs/the-gumamela-I-offered-to-mary"
           rel="noopener noreferrer"
           className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
         >
           <img
-            src="/assets/images/photos1.jpg"
-            alt="In the Midst of Silence"
+            src="/assets/images/gumamela2.jpg"
+            alt="The gumamela I offered to Mary"
             className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
           />
           <div className="flex flex-col items-center justify-center p-4 space-y-2">
             <h3 className="font-semibold text-lg">
-              In the Midst of Silence: Reflections of a Bystander in a Time of
-              Crisis
+              The <em>gumamela</em> I offered to Mary
             </h3>
             <p className="line-clamp-5 font-light italic">
-              I wrote this personal essay at the height of the COVID-19
-              pandemic, a time when the world seemed to pause, yet our inner
-              lives grew louder than ever. As someone who observes more than
-              speaks, I felt the need to process the chaos, fear, and quiet
-              blessings brought by that period. Writing became my outlet, a way
-              to make sense of the global disruption and the unexpected gifts it
-              gave. This piece is not just a reflection on the physical toll of
-              the virus, but a deeply personal account of growth, surrender, and
-              introspection during a time of isolation. Through it, I hoped to
-              express the paradox of pain and peace that the pandemic planted in
-              my life.
+              I wrote this short story during the height of the pandemic, when
+              the silence of isolation gave me the space to reflect on the
+              vibrant memories of my childhood, faith, and the quiet beauty of
+              my hometown church. I have always turned to writing to express the
+              emotions I could not say aloud. This piece captures not only my
+              early religious experiences but also a tender moment of first
+              love, wrapped in nostalgia and reverence for the Immaculate
+              Conception Parish Church of Jasaan. It is a deeply personal
+              tribute to a place that shaped my spiritual and emotional journey.
+              This story was honored with "The Trailblazer Editor’s Choice"
+              award in <em>Reflections 2023: 8-Bit Memory — Reimagined</em>, a
+              recognition that affirmed the quiet sincerity and cultural weight
+              it carries.
             </p>
             <div className="flex items-center text-sm gap-x-2">
               <img
@@ -52,7 +53,7 @@ const Blog = () => {
               />
               <p>Precious Hope T. Jumuad | </p>
               <p>
-                <time dateTime="2025-07-06">July 6, 2025</time>
+                <time dateTime="2025-07-18">July 18, 2025</time>
               </p>
             </div>
           </div>
@@ -99,6 +100,89 @@ const Blog = () => {
               <p>Precious Hope T. Jumuad | </p>
               <p>
                 <time dateTime="2025-07-13">July 13, 2025</time>
+              </p>
+            </div>
+          </div>
+        </Link>
+
+        <Link
+          to="/blogs/words-of-gratitude"
+          rel="noopener noreferrer"
+          className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+        >
+          <img
+            src="/assets/images/vale1.jpg"
+            alt="Words of Gratitude on Behalf of the Graduates"
+            className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="flex flex-col items-center justify-center p-4 space-y-2">
+            <h3 className="font-semibold text-lg">
+              Words of Gratitude on Behalf of the Graduates
+            </h3>
+            <p className="line-clamp-5 font-light italic">
+              This speech was written during the height of the COVID-19
+              pandemic, a time of immense disruption, uncertainty, and emotional
+              strain for students around the world. As the batch valedictorian
+              of St. Rita's College of Balingasag Senior High School Class of
+              2021, I delivered this message to honor not only our academic
+              journey but the strength and resilience our batch showed despite
+              the loss of traditional graduation rites. It was my way of
+              expressing heartfelt gratitude to our families, teachers, and
+              school leaders who supported us through remote learning, and to
+              reflect on how our faith, grit, and Ignacian-Marian values carried
+              us through a once-in-a-lifetime crisis.
+            </p>
+            <div className="flex items-center text-sm gap-x-2">
+              <img
+                src="/assets/images/precious.png"
+                alt="In the Midst of Silence"
+                className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
+              />
+              <p>Precious Hope T. Jumuad | </p>
+              <p>
+                <time dateTime="2025-07-12">July 12, 2025</time>
+              </p>
+            </div>
+          </div>
+        </Link>
+
+        <Link
+          to="/blogs/in-the-midst-of-silence"
+          rel="noopener noreferrer"
+          className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+        >
+          <img
+            src="/assets/images/photos1.jpg"
+            alt="In the Midst of Silence"
+            className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="flex flex-col items-center justify-center p-4 space-y-2">
+            <h3 className="font-semibold text-lg">
+              In the Midst of Silence: Reflections of a Bystander in a Time of
+              Crisis
+            </h3>
+            <p className="line-clamp-5 font-light italic">
+              I wrote this personal essay at the height of the COVID-19
+              pandemic, a time when the world seemed to pause, yet our inner
+              lives grew louder than ever. As someone who observes more than
+              speaks, I felt the need to process the chaos, fear, and quiet
+              blessings brought by that period. Writing became my outlet, a way
+              to make sense of the global disruption and the unexpected gifts it
+              gave. This piece is not just a reflection on the physical toll of
+              the virus, but a deeply personal account of growth, surrender, and
+              introspection during a time of isolation. Through it, I hoped to
+              express the paradox of pain and peace that the pandemic planted in
+              my life.
+            </p>
+            <div className="flex items-center text-sm gap-x-2">
+              <img
+                src="/assets/images/precious.png"
+                alt="In the Midst of Silence"
+                className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
+              />
+              <p>Precious Hope T. Jumuad | </p>
+              <p>
+                <time dateTime="2025-07-06">July 6, 2025</time>
               </p>
             </div>
           </div>
