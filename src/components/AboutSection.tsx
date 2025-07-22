@@ -4,7 +4,6 @@ import {
   MdOutlinePeople,
   MdOutlineLaptopMac,
 } from "react-icons/md";
-import { Link } from "react-router-dom";
 
 type RoleCard = {
   title: string;
