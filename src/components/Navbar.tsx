@@ -58,12 +58,12 @@ export const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex space-x-4 font-medium">
+        <div className="hidden md:flex space-x-4">
           {navItems.map((item) => (
             <Link
               key={item.name}
               to={item.href}
-              className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
+              className={`transition-colors duration-300 capitalize text-sm font-medium ${
                 activeCategory === item.category
                   ? "white-button"
                   : "transparent-button border"
@@ -72,7 +72,7 @@ export const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <div className="border-r-[1.5px] border-white"></div>
+          <div className="border-r-[1.5px] border-white text-sm font-medium"></div>
           <a
             href="mailto:jumuad.precious@gmail.com"
             target="_blank"
@@ -95,7 +95,7 @@ export const Navbar = () => {
       {/* Mobile Nav */}
       {isMenuOpen && (
         <div className="md:hidden flex items-center justify-center z-40 p-12">
-          <div className="flex flex-col space-y-4 text-base font-medium">
+          <div className="flex flex-col space-y-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -103,7 +103,7 @@ export const Navbar = () => {
                 onClick={() => {
                   setIsMenuOpen(false);
                 }}
-                className={`w-48 px-4 py-2 rounded-full transition-colors duration-300 capitalize ${
+                className={`w-48 transition-colors duration-300 capitalize text-sm font-medium ${
                   activeCategory === item.category
                     ? "white-button"
                     : "transparent-button border"

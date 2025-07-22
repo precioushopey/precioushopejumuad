@@ -3,7 +3,7 @@ import { Navbar } from "../components/Navbar";
 import { SparkleBackground } from "../components/SparkleBackground";
 import { MdOutlineKeyboardArrowLeft, MdOutlineOpenInNew } from "react-icons/md";
 
-const Blog4 = () => {
+const Blog6 = () => {
   return (
     <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
       <SparkleBackground />
@@ -33,7 +33,7 @@ const Blog4 = () => {
             />
             <p>Precious Hope T. Jumuad | </p>
             <p>
-              <time dateTime="2025-07-18">July 18, 2025</time>
+              <time dateTime="2025-07-20">July 20, 2025</time>
             </p>
           </div>
         </div>
@@ -295,4 +295,4 @@ const Blog4 = () => {
   );
 };
 
-export default Blog4;
+export default Blog6;

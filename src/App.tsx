@@ -24,7 +24,8 @@ import Photos from "./projects/photos";
 import Blog1 from "./blogs/in-the-midst-of-silence";
 import Blog2 from "./blogs/words-of-gratitude";
 import Blog3 from "./blogs/have-i-not-breathed-for-a-moment";
-import Blog4 from "./blogs/the-gumamela-I-offered-to-mary";
+import Blog5 from "./blogs/a-glimpse-of-my-future";
+import Blog6 from "./blogs/the-gumamela-I-offered-to-mary";
 
 function App() {
   return (
@@ -59,9 +60,10 @@ function App() {
             path="/blogs/have-i-not-breathed-for-a-moment"
             element={<Blog3 />}
           />
+          <Route path="/blogs/a-glimpse-of-my-future" element={<Blog5 />} />
           <Route
             path="/blogs/the-gumamela-I-offered-to-mary"
-            element={<Blog4 />}
+            element={<Blog6 />}
           />
         </Routes>
       </BrowserRouter>

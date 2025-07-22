@@ -53,7 +53,46 @@ const Blog = () => {
               />
               <p>Precious Hope T. Jumuad | </p>
               <p>
-                <time dateTime="2025-07-18">July 18, 2025</time>
+                <time dateTime="2025-07-20">July 20, 2025</time>
+              </p>
+            </div>
+          </div>
+        </Link>
+
+        <Link
+          to="/blogs/a-glimpse-of-my-future"
+          rel="noopener noreferrer"
+          className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+        >
+          <img
+            src="/assets/images/glimpse.jpg"
+            alt="A Glimpse Of My Future"
+            className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="flex flex-col items-center justify-center p-4 space-y-2">
+            <h3 className="font-semibold text-lg">A Glimpse Of My Future</h3>
+            <p className="line-clamp-5 font-light italic">
+              This time capsule letter is a deeply personal message written by
+              my 20-year-old self to the woman I hope to become. It captures my
+              reflections, struggles, and hopes during one of the most chaotic
+              yet formative seasons of my life. Framed through the powerful
+              lines of <cite>Invictus</cite>, it speaks to the resilience I’m
+              striving to build, the self-love I’m slowly learning, and the
+              clarity I seek in an uncertain future. As president of my student
+              organization and a young woman navigating adulthood, I wrote this
+              not just as a reminder of who I was but as a promise to who I will
+              become. It is both a conversation and a commitment to myself to
+              stay grounded, stay soft, and stay strong.
+            </p>
+            <div className="flex items-center text-sm gap-x-2">
+              <img
+                src="/assets/images/precious.png"
+                alt="In the Midst of Silence"
+                className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
+              />
+              <p>Precious Hope T. Jumuad | </p>
+              <p>
+                <time dateTime="2025-07-19">July 19, 2025</time>
               </p>
             </div>
           </div>
