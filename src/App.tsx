@@ -23,7 +23,8 @@ import Videos from "./projects/videos";
 import Photos from "./projects/photos";
 import Blog1 from "./blogs/in-the-midst-of-silence";
 import Blog2 from "./blogs/words-of-gratitude";
-import Blog3 from "./blogs/have-i-not-breathed-for-a-moment";
+import Blog3 from "./blogs/storyboard-a-five-year-plan";
+import Blog4 from "./blogs/have-i-not-breathed-for-a-moment";
 import Blog5 from "./blogs/a-glimpse-of-my-future";
 import Blog6 from "./blogs/the-gumamela-I-offered-to-mary";
 
@@ -57,8 +58,12 @@ function App() {
           <Route path="/blogs/in-the-midst-of-silence" element={<Blog1 />} />
           <Route path="/blogs/words-of-gratitude" element={<Blog2 />} />
           <Route
-            path="/blogs/have-i-not-breathed-for-a-moment"
+            path="/blogs/storyboard-a-five-year-plan"
             element={<Blog3 />}
+          />
+          <Route
+            path="/blogs/have-i-not-breathed-for-a-moment"
+            element={<Blog4 />}
           />
           <Route path="/blogs/a-glimpse-of-my-future" element={<Blog5 />} />
           <Route

@@ -48,7 +48,7 @@ const Blog = () => {
             <div className="flex items-center text-sm gap-x-2">
               <img
                 src="/assets/images/precious.png"
-                alt="In the Midst of Silence"
+                alt="Precious Hope T. Jumuad"
                 className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
               />
               <p>Precious Hope T. Jumuad | </p>
@@ -73,21 +73,24 @@ const Blog = () => {
             <h3 className="font-semibold text-lg">A Glimpse Of My Future</h3>
             <p className="line-clamp-5 font-light italic">
               This time capsule letter is a deeply personal message written by
-              my 20-year-old self to the woman I hope to become. It captures my
-              reflections, struggles, and hopes during one of the most chaotic
-              yet formative seasons of my life. Framed through the powerful
-              lines of <cite>Invictus</cite>, it speaks to the resilience I’m
-              striving to build, the self-love I’m slowly learning, and the
-              clarity I seek in an uncertain future. As president of my student
-              organization and a young woman navigating adulthood, I wrote this
-              not just as a reminder of who I was but as a promise to who I will
-              become. It is both a conversation and a commitment to myself to
-              stay grounded, stay soft, and stay strong.
+              my 20-year-old self to the woman I hope to become. I created it as
+              part of our essay activity in the subject Purposive Communication
+              during my second year in college—a task that challenged us to
+              articulate our identity, values, and vision through the lens of
+              self-reflection. It captures my thoughts, struggles, and hopes
+              during one of the most chaotic yet formative seasons of my life.
+              Framed through the powerful lines of <em>Invictus</em>, it speaks
+              to the resilience I’m striving to build, the self-love I’m slowly
+              learning, and the clarity I seek in an uncertain future. As a
+              young woman navigating adulthood, I wrote this not just as a
+              reminder of who I was but as a promise to who I will become. It is
+              both a conversation and a commitment to myself—to stay grounded,
+              stay soft, and stay strong.
             </p>
             <div className="flex items-center text-sm gap-x-2">
               <img
                 src="/assets/images/precious.png"
-                alt="In the Midst of Silence"
+                alt="Precious Hope T. Jumuad"
                 className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
               />
               <p>Precious Hope T. Jumuad | </p>
@@ -133,7 +136,52 @@ const Blog = () => {
             <div className="flex items-center text-sm gap-x-2">
               <img
                 src="/assets/images/precious.png"
-                alt="In the Midst of Silence"
+                alt="Precious Hope T. Jumuad"
+                className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
+              />
+              <p>Precious Hope T. Jumuad | </p>
+              <p>
+                <time dateTime="2025-07-18">July 18, 2025</time>
+              </p>
+            </div>
+          </div>
+        </Link>
+
+        <Link
+          to="/blogs/storyboard-a-five-year-plan"
+          rel="noopener noreferrer"
+          className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+        >
+          <img
+            src="/assets/images/storyboard.jfif"
+            alt="Storyboard: A Five-Year Plan for the Development of Myself"
+            className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="flex flex-col items-center justify-center p-4 space-y-2">
+            <h3 className="font-semibold text-lg">
+              Storyboard: A Five-Year Plan for the Development of Myself
+            </h3>
+            <p className="line-clamp-5 font-light italic">
+              This storyboard was created as my final Performance Innovative
+              Task for the subject Understanding the Self in my first year,
+              where we were asked to map out a personal five-year development
+              plan. It became an opportunity to reflect on who I am, the roles I
+              currently play, and the person I am intentionally becoming. Rooted
+              in my own values, experiences, and ambitions, this piece expresses
+              my commitment to personal growth, spiritual grounding, and
+              psychological resilience. The plan targets key aspects of the
+              self—philosophical, psychological, spiritual, and
+              political—highlighting my aspirations not only to be excellent in
+              academics and leadership but also to pursue authentic happiness
+              and self-actualization. My teacher appreciated the clarity and
+              depth of this vision and chose to showcase it as a sample for the
+              next batch, which affirmed its worthiness to be shared and
+              remembered.
+            </p>
+            <div className="flex items-center text-sm gap-x-2">
+              <img
+                src="/assets/images/precious.png"
+                alt="Precious Hope T. Jumuad"
                 className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
               />
               <p>Precious Hope T. Jumuad | </p>
@@ -174,7 +222,7 @@ const Blog = () => {
             <div className="flex items-center text-sm gap-x-2">
               <img
                 src="/assets/images/precious.png"
-                alt="In the Midst of Silence"
+                alt="Precious Hope T. Jumuad"
                 className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
               />
               <p>Precious Hope T. Jumuad | </p>
@@ -216,7 +264,7 @@ const Blog = () => {
             <div className="flex items-center text-sm gap-x-2">
               <img
                 src="/assets/images/precious.png"
-                alt="In the Midst of Silence"
+                alt="Precious Hope T. Jumuad"
                 className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
               />
               <p>Precious Hope T. Jumuad | </p>

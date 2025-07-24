@@ -3,7 +3,7 @@ import { Navbar } from "../components/Navbar";
 import { SparkleBackground } from "../components/SparkleBackground";
 import { MdOutlineKeyboardArrowLeft, MdOutlineOpenInNew } from "react-icons/md";
 
-const Blog3 = () => {
+const Blog4 = () => {
   return (
     <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
       <SparkleBackground />
@@ -22,12 +22,12 @@ const Blog3 = () => {
           <div className="flex items-center text-sm gap-x-2">
             <img
               src="/assets/images/precious.png"
-              alt="In the Midst of Silence"
+              alt="Precious Hope T. Jumuad"
               className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
             />
             <p>Precious Hope T. Jumuad | </p>
             <p>
-              <time dateTime="2025-07-13">July 13, 2025</time>
+              <time dateTime="2025-07-18">July 18, 2025</time>
             </p>
           </div>
         </div>
@@ -311,4 +311,4 @@ const Blog3 = () => {
   );
 };
 
-export default Blog3;
+export default Blog4;

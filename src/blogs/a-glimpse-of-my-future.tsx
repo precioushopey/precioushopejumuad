@@ -22,7 +22,7 @@ const Blog5 = () => {
           <div className="flex items-center text-sm gap-x-2">
             <img
               src="/assets/images/precious.png"
-              alt="In the Midst of Silence"
+              alt="Precious Hope T. Jumuad"
               className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
             />
             <p>Precious Hope T. Jumuad | </p>
@@ -34,16 +34,19 @@ const Blog5 = () => {
         <section className="animate-fade-in-delay-1">
           <p>
             This time capsule letter is a deeply personal message written by my
-            20-year-old self to the woman I hope to become. It captures my
-            reflections, struggles, and hopes during one of the most chaotic yet
-            formative seasons of my life. Framed through the powerful lines of{" "}
-            <cite>Invictus</cite>, it speaks to the resilience I’m striving to
-            build, the self-love I’m slowly learning, and the clarity I seek in
-            an uncertain future. As president of my student organization and a
-            young woman navigating adulthood, I wrote this not just as a
-            reminder of who I was but as a promise to who I will become. It is
-            both a conversation and a commitment to myself to stay grounded,
-            stay soft, and stay strong.
+            20-year-old self to the woman I hope to become. I created it as part
+            of our essay activity in the subject Purposive Communication during
+            my second year in college—a task that challenged us to articulate
+            our identity, values, and vision through the lens of
+            self-reflection. It captures my thoughts, struggles, and hopes
+            during one of the most chaotic yet formative seasons of my life.
+            Framed through the powerful lines of <em>Invictus</em>, it speaks to
+            the resilience I’m striving to build, the self-love I’m slowly
+            learning, and the clarity I seek in an uncertain future. As a young
+            woman navigating adulthood, I wrote this not just as a reminder of
+            who I was but as a promise to who I will become. It is both a
+            conversation and a commitment to myself—to stay grounded, stay soft,
+            and stay strong.
           </p>
         </section>
       </header>

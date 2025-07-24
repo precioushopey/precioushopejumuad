@@ -20,7 +20,7 @@ const Blog1 = () => {
           <div className="flex items-center text-sm gap-x-2 pt-4">
             <img
               src="/assets/images/precious.png"
-              alt="In the Midst of Silence"
+              alt="Precious Hope T. Jumuad"
               className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
             />
             <p>Precious Hope T. Jumuad | </p>
