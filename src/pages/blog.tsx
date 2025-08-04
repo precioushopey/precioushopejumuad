@@ -13,6 +13,24 @@ type BlogPost = {
 
 const blogPosts: BlogPost[] = [
   {
+    to: "/blogs/alls-well-that-ends-well-I-wish",
+    image: "/assets/images/essay3.png",
+    alt: "“all’s well that ends well,” I wish",
+    title: "“all’s well that ends well,” I wish",
+    description:
+      "If education is the key to success, why does it so often feel like a locked room with no exits. Just silence, dust, and a ticking clock?",
+    date: "2025-08-24",
+  },
+  {
+    to: "/blogs/dear-little-hope-looks-like-we-made-it",
+    image: "/assets/images/graduations.png",
+    alt: "Dear little Hope, looks like we made it..",
+    title: "Dear little Hope, looks like we made it..",
+    description:
+      "What would you say to the child you once were — the one who still believed the world was kind, that dreams came true, and victories meant everything?",
+    date: "2025-08-17",
+  },
+  {
     to: "/blogs/the-gumamela-I-offered-to-mary",
     image: "/assets/images/gumamela2.jpg",
     alt: "The gumamela I offered to Mary",
