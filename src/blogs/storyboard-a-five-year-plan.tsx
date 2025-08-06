@@ -17,7 +17,7 @@ const Blog3 = () => {
       <header className="space-y-6">
         <Navbar />
         <div className="flex flex-col items-center justify-center animate-fade-in">
-          <div className="flex flex-col md:flex-row gap-x-2">
+          <div className="flex flex-col lg:flex-row gap-x-2">
             <h1 className="font-noto text-3xl sm:text-4xl font-bold text-glow">
               Storyboard:
             </h1>
@@ -57,9 +57,9 @@ const Blog3 = () => {
         </section>
       </header>
 
-      <main className="bg-[#462317]/50 rounded-4xl backdrop-blur-xs border shadow-xs font-medium tracking-normal text-left p-8 space-y-6">
-        <section className="flex flex-col md:flex-row gap-6 animate-fade-in-delay-2">
-          <article className="w-full md:w-3/5 space-y-4">
+      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
+          <article className="w-full lg:w-3/5 space-y-4">
             <h3 className="pinyon-script text-3xl sm:text-4xl font-bold text-glow">
               General Plan
             </h3>
@@ -119,7 +119,7 @@ const Blog3 = () => {
               </li>
             </ul>
           </article>
-          <figure className="w-full md:w-2/5 space-y-4">
+          <figure className="w-full lg:w-2/5 space-y-4">
             <img
               src="/assets/images/storyboard.jfif"
               alt="Me in Umaru-chan merchandise hood III"
@@ -247,6 +247,7 @@ const Blog3 = () => {
       <footer className="flex justify-center pt-2">
         <Link
           to="/blog"
+          target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
           <MdOutlineKeyboardArrowLeft size={20} />

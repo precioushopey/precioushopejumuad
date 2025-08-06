@@ -11,7 +11,7 @@ const Blog14 = () => {
       <header className="space-y-6">
         <Navbar />
         <div className="flex flex-col items-center justify-center animate-fade-in">
-          <div className="flex flex-col md:flex-row gap-x-2">
+          <div className="flex flex-col lg:flex-row gap-x-2">
             <h1 className="font-noto text-3xl sm:text-4xl font-bold text-glow">
               “all’s well that ends well,”
             </h1>
@@ -34,14 +34,21 @@ const Blog14 = () => {
         <section className="animate-fade-in-delay-1">
           <p>
             <cite>"Success must not come at the cost of conscience."</cite> –
-            Vic Sotto
+            Vico Sotto
           </p>
         </section>
       </header>
 
-      <main className="bg-[#462317]/50 rounded-4xl backdrop-blur-xs border shadow-xs font-medium tracking-normal text-left p-8 space-y-6">
-        <section className="flex flex-col md:flex-row gap-6 animate-fade-in-delay-2">
-          <article className="w-full md:w-1/2 space-y-4">
+      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
+          <figure className="w-full lg:w-1/2 space-y-4">
+            <img
+              src="/assets/images/essay3.png"
+              alt="“all’s well that ends well,” I wish"
+              className="w-full aspect-[1/1] rounded-4xl border object-cover"
+            />
+          </figure>
+          <article className="w-full lg:w-1/2 space-y-4">
             <p>
               They say,{" "}
               <cite>“College is a preparation for the real world.”</cite> I
@@ -57,32 +64,25 @@ const Blog14 = () => {
               was also a girl from the province, a dreamer without a backup
               plan. I took up Computer Engineering not because I understood it,
               but because I was told it was "future-proof." That it had no board
-              exam. That I could start working right after. That I could be
-              called “Engineer” without too much red tape. But no one warned me
-              that this course, and the system behind it, would do everything to
-              make me feel less than human.
+              exam. That I could start working right after.
             </p>
           </article>
-          <figure className="w-full md:w-1/2 space-y-4">
-            <img
-              src="/assets/images/essay3.png"
-              alt="“all’s well that ends well,” I wish"
-              className="w-full aspect-[1/1] rounded-4xl border object-cover"
-            />
-          </figure>
         </section>
 
         <section className="space-y-4 animate-fade-in-delay-3">
           <p>
-            Let me make it clear: <b>the system failed me.</b> Not just the
-            professors who seemed allergic to empathy. Not just the admin who
-            floated in their ivory towers, unaware or uninterested in what was
-            happening below. The entire institution failed me, and thousands
-            like me, by forgetting its purpose.{" "}
-            <b>
+            That I could be called “Engineer” without too much red tape. But no
+            one warned me that this course, and the system behind it, would do
+            everything to make me feel less than human. Let me make it clear:{" "}
+            <u>the system failed me.</u> Not just the professors who seemed
+            allergic to empathy. Not just the admin who floated in their ivory
+            towers, unaware or uninterested in what was happening below. The
+            entire institution failed me, and thousands like me, by forgetting
+            its purpose.{" "}
+            <u>
               By mistaking authority for superiority, and students for
               statistics.
-            </b>
+            </u>
           </p>
           <p>
             I speak not from bitterness, but from truth. This is not just my
@@ -99,27 +99,27 @@ const Blog14 = () => {
           </p>
           <p>
             I would’ve endured all of that if I believed there was a purpose
-            behind it. But most of it was <b>compliance theater.</b> The kind
+            behind it. But most of it was <u>compliance theater.</u> The kind
             where form is favored over function. Where tasks are assigned just
             to make students busy. Where performance takes precedence over
             understanding.
           </p>
           <p>
             According to the{" "}
-            <b>World Bank’s 2023 Philippine Education Sector Report,</b> over
-            <b>
+            <u>World Bank’s 2023 Philippine Education Sector Report,</u> over
+            <u>
               {" "}
               90% of Filipino children aged 10 cannot read or understand a
               simple, age-appropriate text.
-            </b>{" "}
+            </u>{" "}
             And while that data applies primarily to basic education, the same
             lack of comprehension, engagement, and meaningful instruction bleeds
-            into college. The <b>Commission on Higher Education (CHED)</b>{" "}
+            into college. The <u>Commission on Higher Education (CHED)</u>{" "}
             admits that only{" "}
-            <b>
+            <u>
               53% of college graduates are considered employable within their
               fields,
-            </b>{" "}
+            </u>{" "}
             largely because schools are not teaching industry-relevant or
             skill-specific content.
           </p>
@@ -187,22 +187,22 @@ const Blog14 = () => {
             failures.
           </p>
           <p>
-            I learned that <b>I am not my grades.</b> That{" "}
-            <b>
+            I learned that <u>I am not my grades.</u> That{" "}
+            <u>
               a medal won through shortcuts is a heavier burden than no medal at
               all.
-            </b>{" "}
+            </u>{" "}
             That{" "}
-            <b>
+            <u>
               Latin honors often go to the most strategic, not the most learned.
-            </b>{" "}
+            </u>{" "}
             That groupmates will sometimes weaponize your competence, and
             professors will mistake silence for compliance. But most
             importantly, I learned that{" "}
-            <b>
+            <u>
               {" "}
               I will never again put myself in a place where I am not valued.
-            </b>
+            </u>
           </p>
           <p>
             After college, I quietly quit the version of myself that needed
@@ -217,11 +217,11 @@ const Blog14 = () => {
             <cite>Will I end up living paycheck to paycheck?</cite> The average
             starting salary for new grads here hovers between ₱15,000 to
             ₱20,000/month before tax. And that’s if you're lucky. According to
-            <b>
+            <u>
               {" "}
               PSA labor data (2024), underemployment among college graduates in
               the Philippines stands at over 17.9%,
-            </b>{" "}
+            </u>{" "}
             with many working jobs far outside their field or earning below
             livable wage standards.
           </p>
@@ -254,6 +254,7 @@ const Blog14 = () => {
       <footer className="flex justify-center pt-2">
         <Link
           to="/blog"
+          target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
           <MdOutlineKeyboardArrowLeft size={20} />

@@ -11,7 +11,7 @@ const Blog6 = () => {
       <header className="space-y-6">
         <Navbar />
         <div className="flex flex-col items-center justify-center animate-fade-in">
-          <div className="flex flex-col md:flex-row gap-x-2">
+          <div className="flex flex-col lg:flex-row gap-x-2">
             <span className="font-noto text-3xl sm:text-4xl font-bold text-glow">
               The
             </span>
@@ -55,16 +55,16 @@ const Blog6 = () => {
         </section>
       </header>
 
-      <main className="bg-[#462317]/50 rounded-4xl backdrop-blur-xs border shadow-xs font-medium tracking-normal p-8 space-y-6">
+      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
-          <figure className="space-y-4">
+          <figure className="space-y-4 text-center">
             <img
               src="/assets/images/gumamela1.jpg"
               alt="Immaculate Conception Parish Church of Jasaan"
               className="w-full aspect-[3/2] rounded-4xl border object-cover"
             />
             <figcaption>
-              Fig.1 - Immaculate Conception Parish Church of Jasaan (photo
+              Fig. 1 - Immaculate Conception Parish Church of Jasaan (photo
               courtesy of Arellano J. Galdo III){" "}
               <a
                 href="https://www.flickr.com/photos/125160336@N08/16169144711/in/photostream/"
@@ -110,18 +110,18 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col md:flex-row gap-6 animate-fade-in-delay-3">
-          <figure className="w-full md:w-1/2 space-y-4">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-3">
+          <figure className="w-full lg:w-1/2 space-y-4 text-center">
             <img
               src="/assets/images/gumamela2.jpg"
               alt="Me and My Sibling's First Communion"
               className="w-full aspect-[778/1037] rounded-4xl border object-cover"
             />
             <figcaption>
-              Fig.2 - Me and My Sibling's First Communion.
+              Fig. 2 - Me and My Sibling's First Communion.
             </figcaption>
           </figure>
-          <article className="w-full md:w-1/2 space-y-4">
+          <article className="w-full lg:w-1/2 space-y-4">
             <p>
               As a young girl growing up in a devout Catholic family, and from a
               very young age, I was introduced to the church's teachings and
@@ -175,8 +175,8 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col md:flex-row gap-6 animate-fade-in-delay-4">
-          <article className="w-full md:w-1/2 space-y-4">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
+          <article className="w-full lg:w-1/2 space-y-4">
             <p>
               His surroundings seemed to soften as he played his beloved piano.
               It was like soft flowers came bursting from behind; suddenly
@@ -194,14 +194,14 @@ const Blog6 = () => {
               the universe just conspires for this moment to happen.
             </p>
           </article>
-          <figure className="w-full md:w-1/2 space-y-4">
+          <figure className="w-full lg:w-1/2 space-y-4 text-center">
             <img
               src="/assets/images/gumamela3.jpg"
               alt="The Restored Retablo (photo courtesy of Arellano J. Galdo III)."
               className="w-full aspect-[4/3] rounded-4xl border object-cover"
             />
             <figcaption>
-              Fig.3 - The Restored Retablo (photo courtesy of Arellano J. Galdo
+              Fig. 3 - The Restored Retablo (photo courtesy of Arellano J. Galdo
               III){" "}
               <a
                 href="https://www.metrocagayandemisamis.com/2025/04/24/historic-jasaan-church-finally-gets-a-historical-marker/"
@@ -213,7 +213,7 @@ const Blog6 = () => {
           </figure>
         </section>
 
-        <section className="flex flex-col md:flex-row gap-6 animate-fade-in-delay-4">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
           <article className="space-y-4">
             <p>
               Oh, to be in love. Suddenly, the music stopped. My trance dance in
@@ -236,14 +236,14 @@ const Blog6 = () => {
               coming-of-age core memories, my <em>rondalla</em> recitals, and my
               forbidden romantic rendezvous. More importantly, this is my HOME.
             </p>
-            <figure className="space-y-4">
+            <figure className="space-y-4 text-center">
               <img
                 src="/assets/images/gumamela4.webp"
                 alt="Our Rondalla Performance in front of the Church"
                 className="w-full aspect-[3/2] rounded-4xl border object-cover"
               />
               <figcaption>
-                Fig.4 - Our Rondalla Performance in front of the Church{" "}
+                Fig. 4 - Our Rondalla Performance in front of the Church{" "}
                 <a
                   href="https://mindanews.com/photo-of-the-day/2014/06/jasaan-church/"
                   target="_blank"
@@ -285,6 +285,7 @@ const Blog6 = () => {
       <footer className="flex justify-center pt-2">
         <Link
           to="/blog"
+          target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
           <MdOutlineKeyboardArrowLeft size={20} />

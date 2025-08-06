@@ -229,6 +229,7 @@ const ProjectsPage = () => {
           {filteredProjects.map((project) => (
             <Link
               to={project.url}
+              target="_blank"
               rel="noopener noreferrer"
               key={project.title}
               className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"

@@ -11,7 +11,7 @@ const Blog5 = () => {
       <header className="space-y-6">
         <Navbar />
         <div className="flex flex-col items-center justify-center animate-fade-in">
-          <div className="flex flex-col md:flex-row gap-x-2">
+          <div className="flex flex-col lg:flex-row gap-x-2">
             <h1 className="font-noto text-3xl sm:text-4xl font-bold text-glow">
               A Glimpse Of
             </h1>
@@ -51,7 +51,7 @@ const Blog5 = () => {
         </section>
       </header>
 
-      <main className="bg-[#462317]/50 rounded-4xl backdrop-blur-xs border shadow-xs font-medium tracking-normal p-8 space-y-6">
+      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="text-right animate-fade-in-delay-2">
           <p>232, M.L. Quezon St., Lower Jasaan</p>
           <p>Jasaan 9003, Misamis Oriental</p>
@@ -68,7 +68,7 @@ const Blog5 = () => {
         <section className="flex flex-col gap-6 animate-fade-in-delay-4">
           <p className="text-left">Dear Engr. Jumuad,</p>
           <article className="space-y-4">
-            <p className="font-noto">
+            <p className="font-noto text-center">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>Out of the night that covers me,</p>
@@ -96,7 +96,7 @@ const Blog5 = () => {
               a moment to slow down, lie your back somewhere comfortable, and
               give all your attention to this message.
             </p>
-            <p className="font-noto">
+            <p className="font-noto text-center">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>In the fell clutch of circumstance</p>
@@ -132,7 +132,7 @@ const Blog5 = () => {
               spiritually.{" "}
               <u>I hope we illuminate that radiance to our fellows.</u>
             </p>
-            <p className="font-noto">
+            <p className="font-noto text-center">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>Beyond this place of wrath and tears</p>
@@ -168,7 +168,7 @@ const Blog5 = () => {
               feel proud that we did this to ourselves by the time you read
               this. Cheers to loving ourselves.
             </p>
-            <p className="font-noto">
+            <p className="font-noto text-center">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>It matters not how strait the gate,</p>
@@ -214,6 +214,7 @@ const Blog5 = () => {
       <footer className="flex justify-center pt-2">
         <Link
           to="/blog"
+          target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
           <MdOutlineKeyboardArrowLeft size={20} />

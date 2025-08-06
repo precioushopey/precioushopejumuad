@@ -217,7 +217,7 @@ const Subay = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Demonstration
           </h2>
-          <div className="w-full flex flex-col lg:flex-row items-center gap-6">
+          <div className="w-full flex flex-col md:flex-row items-center gap-6">
             <iframe
               src="https://www.youtube.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&controls=1"
               title="SUBAY Demonstration"
@@ -424,6 +424,7 @@ const Subay = () => {
         <div className="flex justify-center">
           <Link
             to="/projects"
+            target="_top"
             className="w-fit flex items-center gap-x-2 white-button"
           >
             <MdOutlineKeyboardArrowLeft size={20} />

@@ -27,8 +27,35 @@ const blogPosts: BlogPost[] = [
     alt: "Dear little Hope, looks like we made it..",
     title: "Dear little Hope, looks like we made it..",
     description:
-      "What would you say to the child you once were — the one who still believed the world was kind, that dreams came true, and victories meant everything?",
+      "What would you say to the child you once were? The one who still believed the world was kind, that dreams came true, and victories meant everything?",
     date: "2025-08-17",
+  },
+  {
+    to: "/blogs/i-know-that-i-know-nothing",
+    image: "/assets/images/college.png",
+    alt: "I know everything, that I know nothing",
+    title: "I know everything, that I know nothing",
+    description:
+      "They say college is the best time of your life, but what if it’s also the season you lose yourself?",
+    date: "2025-08-10",
+  },
+  {
+    to: "/blogs/alls-well-that-ends-well",
+    image: "/assets/images/all's_well.png",
+    alt: "All's Well That Ends Well",
+    title: "All's Well That Ends Well",
+    description:
+      "After four years of trials and tribulations, navigating a path beyond my passion but fueled by purpose, I can finally say — I am an engineer! Read my heartfelt reflection on how college shaped not just my skills, but my character through people, purpose, and grace.",
+    date: "2025-08-03",
+  },
+  {
+    to: "/blogs/coins-for-the-child",
+    image: "/assets/images/poem.jpg",
+    alt: "Coins for the Child",
+    title: "Coins for the Child",
+    description:
+      "“Coins for the Child” is a nostalgic reflection on my father’s childhood labor and the healing joy he finds in continuing that simple work as an adult. The coins he earns today bring the same joy to the child within him, reminding him, and us, that some treasures are timeless. This piece was written for The Trailblazer Publication’s Reflections Folio 2025, themed “A Toy’s Story”, which celebrates healing the inner child through memory and meaning.",
+    date: "2025-08-02",
   },
   {
     to: "/blogs/the-gumamela-I-offered-to-mary",
@@ -105,7 +132,7 @@ const Blog = () => {
           <Link
             key={post.to}
             to={post.to}
-            rel="noopener noreferrer"
+            target="_top"
             className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
           >
             <img
@@ -113,12 +140,12 @@ const Blog = () => {
               alt={post.alt}
               className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="flex flex-col items-center justify-center p-4 space-y-2">
+            <div className="flex flex-col items-start justify-center p-4 space-y-2 ml-2">
               <h3
                 className="font-semibold text-lg"
                 dangerouslySetInnerHTML={{ __html: post.title }}
               />
-              <p className="line-clamp-5 font-light italic">
+              <p className="line-clamp-3 font-light italic text-left">
                 {post.description}
               </p>
               <div className="flex items-center text-sm gap-x-2">

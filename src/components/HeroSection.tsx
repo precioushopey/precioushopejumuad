@@ -27,10 +27,10 @@ export const HeroSection = () => {
       </div>
 
       <div className="flex justify-center gap-4 pt-4 text-base">
-        <Link to="/projects" className="white-button">
+        <Link to="/projects" target="_top" className="white-button">
           View My Work
         </Link>
-        <Link to="/blog" className="transparent-button border">
+        <Link to="/blog" target="_top" className="transparent-button border">
           Read My Blog
         </Link>
       </div>

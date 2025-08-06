@@ -45,20 +45,20 @@ const Blog1 = () => {
         </section>
       </header>
 
-      <main className="bg-[#462317]/50 rounded-4xl backdrop-blur-xs border shadow-xs font-medium tracking-normal p-8 space-y-6">
-        <section className="flex flex-col md:flex-row gap-6 animate-fade-in-delay-2">
-          <figure className="w-full md:w-1/2 space-y-4">
+      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
+          <figure className="w-full lg:w-1/2 space-y-4 text-center">
             <img
               src="/assets/images/photos1.jpg"
               alt="In the Midst of Silence"
               className="aspect-[1/1] rounded-4xl border object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <figcaption>
-              Fig.1 - Tranquil at JILA’s SmallVille, Lanise, Claveria, Misamis
+              Fig. 1 - Tranquil at JILA’s SmallVille, Lanise, Claveria, Misamis
               Oriental.
             </figcaption>
           </figure>
-          <article className="w-full md:w-1/2 space-y-6">
+          <article className="w-full lg:w-1/2 space-y-6">
             <p>
               The world then stopped, the ever-crowded downtown now next to
               deserted ghost towns. Distances are widened, yet there is no brawl
@@ -77,22 +77,22 @@ const Blog1 = () => {
               and a curse. Curse because it brought blight and plight to the
               world, tormenting the health of millions as the{" "}
               <em>"invisible adversary"</em> and crushing the economy from
-              nation to nation. It is a blessing for me because, as an introvert
-              by nature, I had the grounds to stay at home and keep away from
-              unnecessary socialization. Also, I was able to nourish my skills
-              in music and the arts, as well as in academics. I also had the
-              chance to learn new things and discover new skills.
+              nation to nation.
             </p>
           </article>
         </section>
 
         <article className="animate-fade-in-delay-3">
-          To conclude, the COVID-19 pandemic was a blessing and a curse, for it
-          brought both opportunity and punishment to us. It is God's way of
-          stopping time for most of us. To give rest to those who were restless
-          and to give retreat to those who need to surrender. For a mere
-          bystander like me, I am blessed to submit to God during these times of
-          trials. Just like President Duterte said,{" "}
+          It is a blessing for me because, as an introvert by nature, I had the
+          grounds to stay at home and keep away from unnecessary socialization.
+          Also, I was able to nourish my skills in music and the arts, as well
+          as in academics. I also had the chance to learn new things and
+          discover new skills. To conclude, the COVID-19 pandemic was a blessing
+          and a curse, for it brought both opportunity and punishment to us. It
+          is God's way of stopping time for most of us. To give rest to those
+          who were restless and to give retreat to those who need to surrender.
+          For a mere bystander like me, I am blessed to submit to God during
+          these times of trials. Just like President Duterte said,{" "}
           <cite>"Only God can solve this problem."</cite> In this unseen battle,
           we are all soldiers. We must not fright but fight this enemy by
           washing our hands, staying calm, and praying always.
@@ -102,6 +102,7 @@ const Blog1 = () => {
       <footer className="flex justify-center pt-2">
         <Link
           to="/blog"
+          target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
           <MdOutlineKeyboardArrowLeft size={20} />
