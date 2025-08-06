@@ -277,7 +277,6 @@ const Blog2 = () => {
       <footer className="flex justify-center pt-2">
         <Link
           to="/blog"
-          target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
           <MdOutlineKeyboardArrowLeft size={20} />

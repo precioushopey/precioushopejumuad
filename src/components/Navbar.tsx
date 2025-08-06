@@ -46,7 +46,7 @@ export const Navbar = () => {
       }`}
     >
       <div className="mx-auto flex items-center justify-between px-8">
-        <Link to="/#" target="_top" className="font-semibold">
+        <Link to="/#" className="font-semibold">
           <span className="relative z-10">
             <span className="font-noto text-glow text-base">
               Precious{" "}
@@ -63,7 +63,6 @@ export const Navbar = () => {
             <Link
               key={item.name}
               to={item.href}
-              target="_top"
               className={`transition-colors duration-300 capitalize text-sm font-medium ${
                 activeCategory === item.category
                   ? "white-button"
@@ -101,7 +100,6 @@ export const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                target="_top"
                 onClick={() => {
                   setIsMenuOpen(false);
                 }}

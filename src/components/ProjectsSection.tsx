@@ -303,7 +303,6 @@ export const ProjectsSection = () => {
       <div className="pt-4">
         <Link
           to="/projects"
-          target="_top"
           className="mx-auto w-fit flex items-center text-base gap-2 white-button"
         >
           See More Projects <MdOutlineKeyboardArrowRight size={20} />

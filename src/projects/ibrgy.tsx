@@ -234,7 +234,6 @@ const Ibrgy = () => {
         <div className="flex justify-center">
           <Link
             to="/projects"
-            target="_top"
             className="w-fit flex items-center gap-x-2 white-button"
           >
             <MdOutlineKeyboardArrowLeft size={20} />
