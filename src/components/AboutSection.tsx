@@ -83,7 +83,7 @@ export const AboutSection = () => {
               Hire Me!
             </a>
             <a
-              href="https://drive.google.com/file/d/1Ht0vyHKKtTYDkNvNKNMpTn9Ppy886jza/view?usp=sharing"
+              href="https://docs.google.com/document/d/1Cz68WQiknHquCojj8JAsnDXZv-hUc8-Sjl3Ln8j6CTo/edit?usp=sharing"
               target="_blank"
               className="transparent-button border"
             >
