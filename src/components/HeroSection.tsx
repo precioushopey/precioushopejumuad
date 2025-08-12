@@ -21,16 +21,16 @@ export const HeroSection = () => {
       </div>
 
       <div className="max-w-lg mx-auto animate-fade-in-delay-2">
-        Precious Hope Jumuad is a computer engineering graduate who is
-        passionate in front-end development, UI/UX design, and multimedia arts
-        to create practical and user-focused digital solutions.
+        I am a computer engineering graduate passionate about UI/UX design,
+        front-end development, and multimedia content creation in creating
+        practical and user-focused digital solutions.
       </div>
 
       <div className="flex justify-center gap-4 pt-4 text-base">
-        <Link to="/projects" className="white-button">
+        <Link to="/projects" target="_top" className="white-button">
           View My Work
         </Link>
-        <Link to="/blog" className="transparent-button border">
+        <Link to="/blog" target="_top" className="transparent-button border">
           Read My Blog
         </Link>
       </div>

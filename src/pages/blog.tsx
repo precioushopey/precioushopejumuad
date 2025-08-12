@@ -132,6 +132,7 @@ const Blog = () => {
           <Link
             key={post.to}
             to={post.to}
+            target="_top"
             className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
           >
             <img

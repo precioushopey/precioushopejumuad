@@ -229,7 +229,7 @@ const ProjectsPage = () => {
           {filteredProjects.map((project) => (
             <Link
               to={project.url}
-              target="_blank"
+              target="_top"
               rel="noopener noreferrer"
               key={project.title}
               className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
@@ -257,7 +257,7 @@ const ProjectsPage = () => {
                   {project.url && (
                     <Link
                       to={project.url}
-                      target="_blank"
+                      target="_top"
                       rel="noopener noreferrer"
                       className="hover:text-[var(--yellow-accent)] text-glow hover:scale-110 active:scale-100 cursor-pointer"
                     >

@@ -13,9 +13,9 @@ type RoleCard = {
 
 const roles: RoleCard[] = [
   {
-    title: "Game Designer/Artist",
+    title: "Designer/Artist",
     description:
-      "I handled all-around creative tasks such as mobile app UI/UX design, illustration, and animation, contributing to the overall player experience and usability of the game interface.",
+      "I illustrated 2D assets, designed game UI/UX with a focus on accessibility, and produced marketing visuals and social media content to enhance player experience and brand engagement.",
     icon: (
       <MdOutlineVideogameAsset
         size={20}
@@ -68,10 +68,10 @@ export const AboutSection = () => {
 
           <p>
             As a Computer Engineering graduate at USTP-CDO, I specialize in
-            front-end development, UI/UX design, and multimedia content
+            UI/UX design, front-end development, and multimedia content
             creation. I am passionate about building thoughtful, user-centered
             solutions, ranging from automated systems to game interfaces, using
-            modern tools like Next.js, React, Figma, and Tailwind CSS.
+            modern tools like Next.js, React, Tailwind CSS, Figma, and Canva.
           </p>
 
           <div className="flex justify-center gap-4 pt-2 text-base">
