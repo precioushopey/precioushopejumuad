@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import NotFound from "./pages/not-found";
 import Home from "./pages/home";
+import About from "./pages/about";
 import ProjectsPage from "./pages/projects";
 import Blog from "./pages/blog";
 import Subay from "./projects/subay";
@@ -43,6 +44,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/projects/subay" element={<Subay />} />
           <Route path="/projects/payroll" element={<Payroll />} />

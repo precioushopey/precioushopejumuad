@@ -5,11 +5,12 @@ import { MdMenu, MdOutlineCancel } from "react-icons/md";
 type NavItem = {
   name: string;
   href: string;
-  category: "home" | "projects" | "blog";
+  category: "home" | "about" | "projects" | "blog";
 };
 
 const navItems: NavItem[] = [
   { name: "home", href: "/#", category: "home" },
+  { name: "about", href: "/about", category: "about" },
   { name: "projects", href: "/projects", category: "projects" },
   { name: "blog", href: "/blog", category: "blog" },
 ];
@@ -28,6 +29,8 @@ export const Navbar = () => {
       setActiveCategory("projects");
     } else if (currentPath.startsWith("/blog")) {
       setActiveCategory("blog");
+    } else if (currentPath.startsWith("/about")) {
+      setActiveCategory("about");
     } else {
       setActiveCategory("home");
     }
@@ -73,14 +76,6 @@ export const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <div className="border-r-[1.5px] border-white text-sm font-medium"></div>
-          <a
-            href="mailto:jumuad.precious@gmail.com"
-            target="_blank"
-            className="white-button"
-          >
-            hello@hope
-          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -114,14 +109,6 @@ export const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="border-b-[1.5px] border-white"></div>
-            <a
-              href="mailto:jumuad.precious@gmail.com"
-              target="_blank"
-              className="white-button"
-            >
-              hello@hope
-            </a>
           </div>
         </div>
       )}

@@ -43,8 +43,8 @@
 
 @layer base {
   :root {
-    --background: #462317;
-    --foreground: #885615;
+    --background: #885615;
+    --foreground: #fff;
 
     --button-color: #fff;
     --text-color: #fff;

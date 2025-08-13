@@ -197,7 +197,7 @@ const ProjectsPage = () => {
   );
 
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 pt-24 px-8">
+    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8">
       <SparkleBackground />
 
       <header>
@@ -270,7 +270,6 @@ const ProjectsPage = () => {
           ))}
         </div>
       </main>
-      <ContactSection />
     </div>
   );
 };
