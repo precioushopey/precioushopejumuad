@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { SparkleBackground } from "../components/SparkleBackground";
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowLeft, MdOutlineOpenInNew } from "react-icons/md";
 
 const About = () => {
   type Job = {
@@ -23,6 +23,15 @@ const About = () => {
     location: string;
     dates: string;
     description: string;
+  };
+
+  type Certifications = {
+    imgSrc: string;
+    alt: string;
+    certificate: string;
+    organization: string;
+    issued: string;
+    link: string;
   };
 
   const jobs: Job[] = [
@@ -98,6 +107,163 @@ const About = () => {
       location: "Jasaan, Misamis Oriental, Philippines",
       dates: "June 2017 - March 2019",
       description: `At St. Mary’s Academy of Jasaan, Inc. (SMAJ), I completed my Junior High School education with honors, graduating as Rank 3 of the batch. My year at SMAJ was marked by both academic excellence and active participation in school and faith-based activities. I was recognized as Catechist of the Year, Artist of the Year, and Best in Christian Living, reflecting my dedication to service, creativity, and values formation. My passion for writing and communication was acknowledged with a 4th Place finish in Sports Writing at the 2018 Division Schools Press Conference (DSPC), while my commitment to helping others learn earned me the 7th Grade Physics Tutor Award. This formative year not only honed my academic skills but also deepened my faith, strengthened my leadership, and nurtured my creative expression.`,
+    },
+  ];
+
+  const certificationData: Certifications[] = [
+    {
+      imgSrc: "/assets/images/wadhwani.jfif",
+      alt: "Impactful Writing Skills",
+      certificate: "Impactful Writing Skills",
+      organization: "Wadhwani Foundation",
+      issued: "Issued Jan 2025",
+      link: "https://web.certificate.wfglobal.org/en/certificate?certificateId=67949e6026d927dcfc4c7d0f",
+    },
+    {
+      imgSrc: "/assets/images/wadhwani.jfif",
+      alt: "Problem Solving and Innovation",
+      certificate: "Problem Solving and Innovation",
+      organization: "Wadhwani Foundation",
+      issued: "Issued Jan 2025",
+      link: "https://web.certificate.wfglobal.org/en/certificate?certificateId=679b3af0a8a720f14c9f4c42",
+    },
+    {
+      imgSrc: "/assets/images/cisco.jfif",
+      alt: "Introduction to Cybersecurity",
+      certificate: "Introduction to Cybersecurity",
+      organization: "Cisco Systems",
+      issued: "Issued May 2024",
+      link: "https://www.credly.com/badges/b64d86be-b17e-4da1-bf20-fec0f075aeb8/linked_in_profile",
+    },
+    {
+      imgSrc: "/assets/images/cisco.jfif",
+      alt: "CCNA: Enterprise Networking, Security, and Automation",
+      certificate: "CCNA: Enterprise Networking, Security, and Automation",
+      organization: "Cisco Systems",
+      issued: "Issued Apr 2024",
+      link: "https://www.credly.com/badges/3495fc90-3694-48fd-9690-9eab3b793ecd/linked_in_profile",
+    },
+    {
+      imgSrc: "/assets/images/cisco.jfif",
+      alt: "CCNA: Switching, Routing, and Wireless Essentials",
+      certificate: "CCCNA: Switching, Routing, and Wireless Essentials",
+      organization: "Cisco Systems",
+      issued: "Issued Feb 2024",
+      link: "https://www.credly.com/badges/8e389c6a-6003-4b6c-8bee-c126162530bb/linked_in_profile",
+    },
+    {
+      imgSrc: "/assets/images/cisco.jfif",
+      alt: "Networking Essentials",
+      certificate: "Networking Essentials",
+      organization: "Cisco Systems",
+      issued: "Issued Feb 2024",
+      link: "https://www.credly.com/badges/089ad2e1-0d53-45d8-b48c-f94fedd31ed5/linked_in_profile",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Capstone: Retrieving, Processing, and Visualizing Data with Python",
+      certificate:
+        "Capstone: Retrieving, Processing, and Visualizing Data with Python",
+      organization: "Coursera",
+      issued: "Issued Jan 2021",
+      link: "https://www.coursera.org/account/accomplishments/certificate/WUMMSK8VGYLQ",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Python Data Structures",
+      certificate: "Python Data Structures",
+      organization: "Coursera",
+      issued: "Issued Jan 2021",
+      link: "https://www.coursera.org/account/accomplishments/certificate/ZJ23AMHF8LCP",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Python for Everybody Specialization",
+      certificate: "Python for Everybody Specialization",
+      organization: "Coursera",
+      issued: "Issued Jan 2021",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/8EDBN6KTBXXW",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "The Science of Well-Being",
+      certificate: "The Science of Well-Being",
+      organization: "Coursera",
+      issued: "Issued Jan 2021",
+      link: "https://www.coursera.org/account/accomplishments/certificate/JMZQ29DQC86Z",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Using Databases with Python",
+      certificate: "Using Databases with Python",
+      organization: "Coursera",
+      issued: "Issued Jan 2021",
+      link: "https://www.coursera.org/account/accomplishments/certificate/79Z3ZF3CL6GU",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Using Python to Access Web Data",
+      certificate: "Using Python to Access Web Data",
+      organization: "Coursera",
+      issued: "Issued Jan 2021",
+      link: "https://www.coursera.org/account/accomplishments/certificate/DYMQVYUSX2A6",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Introduction to Chemistry: Structures and Solutions",
+      certificate: "Introduction to Chemistry: Structures and Solutions",
+      organization: "Coursera",
+      issued: "Issued Dec 2020",
+      link: "https://www.coursera.org/account/accomplishments/certificate/DC7PHFUSY2E8",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Programming for Everybody (Getting Started with Python)",
+      certificate: "Programming for Everybody (Getting Started with Python)",
+      organization: "Coursera",
+      issued: "Issued Dec 2020",
+      link: "https://www.coursera.org/account/accomplishments/certificate/WCB9MNXJLCXE",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Interfacing with the Arduino",
+      certificate: "Interfacing with the Arduino",
+      organization: "Coursera",
+      issued: "Issued Nov 2020",
+      link: "https://www.coursera.org/account/accomplishments/certificate/KJFE9Q8KJNZR",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Introduction to the Internet of Things and Embedded Systems",
+      certificate:
+        "Introduction to the Internet of Things and Embedded Systems",
+      organization: "Coursera",
+      issued: "Issued Nov 2020",
+      link: "https://www.coursera.org/account/accomplishments/certificate/BLMCLKHSKJJ8",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "How Things Work: An Introduction to Physics",
+      certificate: "How Things Work: An Introduction to Physics",
+      organization: "Coursera",
+      issued: "Issued Nov 2020",
+      link: "https://www.coursera.org/account/accomplishments/certificate/X7KT25LNFCVX",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "The Arduino Platform and C Programming",
+      certificate: "The Arduino Platform and C Programming",
+      organization: "Coursera",
+      issued: "Issued Nov 2020",
+      link: "https://www.coursera.org/account/accomplishments/certificate/GU44XRSLM7BR",
+    },
+    {
+      imgSrc: "/assets/images/coursera.png",
+      alt: "Introduction to Chemistry: Reactions and Ratios",
+      certificate: "Introduction to Chemistry: Reactions and Ratios",
+      organization: "Coursera",
+      issued: "Issued Oct 2020",
+      link: "https://www.coursera.org/account/accomplishments/certificate/X3HZUEBJHE97",
     },
   ];
 
@@ -238,6 +404,39 @@ const About = () => {
             Certifications
           </h2>
         </div>
+
+        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+          {certificationData.map((cert, index) => (
+            <div key={index} className="flex flex-col gap-4">
+              <div className="flex flex-col sm:flex-row gap-6">
+                <figure className="w-full md:w-1/8 text-center">
+                  <img
+                    src={cert.imgSrc}
+                    alt={cert.alt}
+                    className="w-full aspect-[1/1] rounded-4xl border object-cover"
+                  />
+                </figure>
+                <ul className="w-full md:w-7/8">
+                  <li className="text-base sm:text-lg font-semibold">
+                    <u>{cert.certificate}</u>
+                  </li>
+                  <li className="font-semibold">{cert.organization}</li>
+                  <li>{cert.issued}</li>
+                  <li>
+                    <a
+                      className="flex items-center gap-2"
+                      href={cert.link}
+                      target="_blank"
+                    >
+                      <span>Show Credential</span>
+                      <MdOutlineOpenInNew />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          ))}
+        </section>
       </main>
 
       <footer className="flex justify-center pt-2">

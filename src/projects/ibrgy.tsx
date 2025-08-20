@@ -138,11 +138,11 @@ const Ibrgy = () => {
           </div>
           <button className="mx-auto flex justify-center pt-2">
             <a
-              href="https://www.figma.com/design/GIHW4r5fqPlq3dLYuEdqpc/iBRGY-GUI-Design?node-id=0-1&t=m7OhCxVOTXC6iqgq-1"
+              href="https://drive.google.com/drive/folders/106qju_uRAZ9Md0lmTMTWLMOWU1Zu_eRo?usp=sharing"
               target="_blank"
               className="flex white-button"
             >
-              See Prototype
+              See User Manual
             </a>
           </button>
         </section>

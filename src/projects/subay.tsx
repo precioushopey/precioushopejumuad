@@ -219,7 +219,7 @@ const Subay = () => {
           </h2>
           <div className="w-full flex flex-col md:flex-row items-center gap-6">
             <iframe
-              src="https://www.youtube.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&controls=1"
+              src="https://www.youtube.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&mute=1&controls=1"
               title="SUBAY Demonstration"
               allow="autoplay; encrypted-media; accelerometer; mute; clipboard-write; gyroscope; picture-in-picture; web-share"
               className="w-full lg:w-2/3 aspect-[16/9] object-cover rounded-4xl border z-50 animate-fade-in-delay-3"
