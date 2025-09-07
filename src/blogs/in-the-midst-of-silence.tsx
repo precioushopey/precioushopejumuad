@@ -17,11 +17,11 @@ const Blog1 = () => {
           <h2 className="pinyon-script text-4xl sm:text-5xl font-bold text-glow">
             Reflections of a Bystander in a Time of Crisis
           </h2>
-          <div className="flex items-center text-sm gap-x-2 pt-4">
+          <div className="flex items-center text-[10px] sm:text-sm gap-x-2 pt-4">
             <img
               src="/assets/images/precious.png"
               alt="Precious Hope T. Jumuad"
-              className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
+              className="hidden sm:block w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
             />
             <p>Precious Hope T. Jumuad | </p>
             <p>

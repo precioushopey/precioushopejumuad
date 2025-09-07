@@ -16,7 +16,7 @@ export const HeroSection = () => {
         />
       </div>
 
-      <div className="absolute left-8 top-1/2 sm:left-1/3 backdrop-blur-sm rounded-full border tracking-widest text-glow animate-fade-in-delay-1 py-1 px-3">
+      <div className="absolute left-8 top-1/2 sm:left-1/3 backdrop-blur-sm rounded-full border tracking-widest text-glow animate-fade-in-delay-1 py-1 px-3 -mt-4">
         ENGINEER • DESIGNER
       </div>
 
@@ -26,7 +26,7 @@ export const HeroSection = () => {
         practical and user-focused digital solutions.
       </div>
 
-      <div className="flex justify-center gap-4 pt-4 text-base">
+      <div className="flex justify-center gap-4 pt-4">
         <Link to="/projects" target="_top" className="white-button">
           View My Work
         </Link>

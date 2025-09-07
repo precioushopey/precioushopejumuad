@@ -201,9 +201,11 @@ const ProjectsPage = () => {
 
       <header>
         <Navbar />
-        <div className="flex justify-center font-bold text-glow animate-fade-in">
+        <div className="flex flex-col sm:flex-row justify-center font-bold text-glow animate-fade-in text-center sm:text-left">
           <h1 className="font-noto text-4xl sm:text-6xl">Project</h1>
-          <h2 className="pinyon-script text-6xl sm:text-8xl">Repository</h2>
+          <h2 className="pinyon-script text-6xl sm:text-8xl sm:ml-2">
+            Repository
+          </h2>
         </div>
       </header>
 

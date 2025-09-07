@@ -148,11 +148,11 @@ const Blog = () => {
               <p className="line-clamp-3 font-light italic text-left">
                 {post.description}
               </p>
-              <div className="flex items-center text-sm gap-x-2">
+              <div className="flex items-center text-[10px] sm:text-sm gap-x-2">
                 <img
                   src="/assets/images/precious.png"
                   alt="Precious Hope T. Jumuad"
-                  className="w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
+                  className="hidden sm:block w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
                 />
                 <p>Precious Hope T. Jumuad | </p>
                 <p>

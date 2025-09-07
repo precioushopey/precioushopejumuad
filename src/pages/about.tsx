@@ -280,7 +280,7 @@ const About = () => {
       </header>
 
       <main className="tracking-normal leading-7 text-left space-y-6">
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-1">
+        <section className="flex flex-col lg:flex-row gap-6 border-b-2 pb-6 animate-fade-in-delay-1">
           <figure className="w-full lg:w-1/2 text-center">
             <img
               src="/assets/images/college.png"
@@ -330,14 +330,14 @@ const About = () => {
           </article>
         </section>
 
-        <div className="flex font-bold text-glow animate-fade-in-delay-2">
-          <h1 className="font-noto text-lg sm:text-3xl">My</h1>
-          <h2 className="pinyon-script text-2xl sm:text-5xl ml-1">
+        <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-2">
+          <h1 className="font-noto text-2xl sm:text-3xl">My</h1>
+          <h2 className="pinyon-script text-4xl sm:text-5xl ml-1">
             Experiences
           </h2>
         </div>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-2">
+        <section className="flex flex-col gap-6 border-b-2 pb-6 animate-fade-in-delay-2">
           {jobs.map((job, index) => (
             <div key={index} className="flex flex-col gap-4">
               <div className="flex flex-col sm:flex-row gap-6">
@@ -368,12 +368,12 @@ const About = () => {
           ))}
         </section>
 
-        <div className="flex font-bold text-glow animate-fade-in-delay-3">
-          <h1 className="font-noto text-lg sm:text-3xl">My</h1>
-          <h2 className="pinyon-script text-2xl sm:text-5xl ml-1">Education</h2>
+        <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-3">
+          <h1 className="font-noto text-2xl sm:text-3xl">My</h1>
+          <h2 className="pinyon-script text-4xl sm:text-5xl ml-1">Education</h2>
         </div>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+        <section className="flex flex-col gap-6 border-b-2 pb-6 animate-fade-in-delay-3">
           {educationData.map((edu, index) => (
             <div key={index} className="flex flex-col gap-4">
               <div className="flex flex-col sm:flex-row gap-6">
@@ -398,22 +398,22 @@ const About = () => {
           ))}
         </section>
 
-        <div className="flex font-bold text-glow animate-fade-in-delay-4">
-          <h1 className="font-noto text-lg sm:text-3xl">Licenses &</h1>
-          <h2 className="pinyon-script text-2xl sm:text-5xl ml-1">
+        <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-4">
+          <h1 className="font-noto text-2xl sm:text-3xl">My</h1>
+          <h2 className="pinyon-script text-4xl sm:text-5xl ml-1">
             Certifications
           </h2>
         </div>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-6 border-b-2 pb-6 animate-fade-in-delay-3">
           {certificationData.map((cert, index) => (
             <div key={index} className="flex flex-col gap-4">
-              <div className="flex flex-col sm:flex-row gap-6">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-6">
                 <figure className="w-full md:w-1/8 text-center">
                   <img
                     src={cert.imgSrc}
                     alt={cert.alt}
-                    className="w-full aspect-[1/1] rounded-4xl border object-cover"
+                    className="hidden sm:block w-full aspect-[1/1] rounded-4xl border object-cover"
                   />
                 </figure>
                 <ul className="w-full md:w-7/8">
