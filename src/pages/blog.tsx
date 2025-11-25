@@ -13,6 +13,15 @@ type BlogPost = {
 
 const blogPosts: BlogPost[] = [
   {
+    to: "/blogs/i-passed-the-cse-exam",
+    image: "/assets/images/csc3.jpg",
+    alt: "i-passed-the-cse-exam",
+    title: "I passed the Civil Service Professional Examination!",
+    description:
+      "I passed the Civil Service Professional Examination — but here’s the part I can’t stop thinking about: I was only one or two items away from hitting my personal goal of a 90% rating. After 10 weeks of building my own syllabus, creating a study plan, scheduling my time, and reviewing every subject area without skipping anything… I ended with 89.72% — a familiar kind of “almost,” reaching for an elusive prize that’s almost within reach, yet still slips away.",
+    date: "2025-11-24",
+  },
+  {
     to: "/blogs/alls-well-that-ends-well-I-wish",
     image: "/assets/images/essay3.png",
     alt: "“all’s well that ends well,” I wish",
@@ -149,12 +158,6 @@ const Blog = () => {
                 {post.description}
               </p>
               <div className="flex items-center text-[10px] sm:text-sm gap-x-2">
-                <img
-                  src="/assets/images/precious.png"
-                  alt="Precious Hope T. Jumuad"
-                  className="hidden sm:block w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
-                />
-                <p>Precious Hope T. Jumuad | </p>
                 <p>
                   <time dateTime={post.date}>
                     {new Date(post.date).toLocaleDateString("en-US", {

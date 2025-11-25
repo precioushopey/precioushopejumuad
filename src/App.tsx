@@ -29,11 +29,12 @@ import Blog3 from "./blogs/storyboard-a-five-year-plan";
 import Blog4 from "./blogs/have-i-not-breathed-for-a-moment";
 import Blog5 from "./blogs/a-glimpse-of-my-future";
 import Blog6 from "./blogs/the-gumamela-I-offered-to-mary";
-import Blog10 from "./blogs/coins-for-the-child";
-import Blog11 from "./blogs/alls-well-that-ends-well";
-import Blog12 from "./blogs/i-know-that-i-know-nothing";
-import Blog13 from "./blogs/dear-little-hope-looks-like-we-made-it";
-import Blog14 from "./blogs/alls-well-that-ends-well-I-wish";
+import Blog11 from "./blogs/coins-for-the-child";
+import Blog12 from "./blogs/alls-well-that-ends-well";
+import Blog13 from "./blogs/i-know-that-i-know-nothing";
+import Blog14 from "./blogs/dear-little-hope-looks-like-we-made-it";
+import Blog15 from "./blogs/alls-well-that-ends-well-I-wish";
+import Blog16 from "./blogs/i-passed-the-cse-exam";
 
 function App() {
   return (
@@ -79,20 +80,21 @@ function App() {
             path="/blogs/the-gumamela-I-offered-to-mary"
             element={<Blog6 />}
           />
-          <Route path="/blogs/coins-for-the-child" element={<Blog10 />} />
-          <Route path="/blogs/alls-well-that-ends-well" element={<Blog11 />} />
+          <Route path="/blogs/coins-for-the-child" element={<Blog11 />} />
+          <Route path="/blogs/alls-well-that-ends-well" element={<Blog12 />} />
           <Route
             path="/blogs/i-know-that-i-know-nothing"
-            element={<Blog12 />}
-          />
-          <Route
-            path="/blogs/dear-little-hope-looks-like-we-made-it"
             element={<Blog13 />}
           />
           <Route
-            path="/blogs/alls-well-that-ends-well-I-wish"
+            path="/blogs/dear-little-hope-looks-like-we-made-it"
             element={<Blog14 />}
           />
+          <Route
+            path="/blogs/alls-well-that-ends-well-I-wish"
+            element={<Blog15 />}
+          />
+          <Route path="/blogs/i-passed-the-cse-exam" element={<Blog16 />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -3,7 +3,7 @@ import { Navbar } from "../components/Navbar";
 import { SparkleBackground } from "../components/SparkleBackground";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
-const Blog12 = () => {
+const Blog13 = () => {
   return (
     <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
       <SparkleBackground />
@@ -20,12 +20,6 @@ const Blog12 = () => {
             </h2>
           </div>
           <div className="flex items-center text-[10px] sm:text-sm gap-x-2">
-            <img
-              src="/assets/images/precious.png"
-              alt="Precious Hope T. Jumuad"
-              className="hidden sm:block w-[40px] aspect-[1/1] object-cover rounded-full bg-white"
-            />
-            <p>Precious Hope T. Jumuad | </p>
             <p>
               <time dateTime="2025-08-10">August 10, 2025</time>
             </p>
@@ -188,4 +182,4 @@ const Blog12 = () => {
   );
 };
 
-export default Blog12;
+export default Blog13;
