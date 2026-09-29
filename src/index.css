@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-noto: Noto Serif, "serif";
+  --font-display: "Dela Gothic One", system-ui, sans-serif;
+  --font-sans: "Poppins", sans-serif;
+  --color-accent: #ffc93c;
+  --color-ink: #1f1a17;
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
@@ -42,16 +45,11 @@
 
 @layer base {
   :root {
-    --background: #885615;
-    --foreground: #fff;
-
+    --border-color: rgb(31 26 23 / 0.12);
     --button-color: #fff;
-    --text-color: #fff;
-    --yellow-accent: #e5a11f;
-    --orange-accent: #de5010;
-    --brown-accent: #462317;
-    --hazel-accent: #885615;
-    --burgundy-accent: #8a2111;
+    --text-color: #1f1a17;
+    --yellow-accent: #ffc93c;
+    --brown-accent: #1f1a17;
   }
 
   * {
@@ -63,28 +61,20 @@
   }
 
   body {
-    @apply text-[var(--text-color)] transition-colors duration-300;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    background-color: #885615;
-    background: center top fixed no-repeat url("/assets/images/background.jpg");
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    min-height: 100px;
-    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+    background-color: #f3e9d2;
+    font-family: var(--font-sans);
     font-weight: 400;
-    font-style: normal;
     font-size: 14px;
-    letter-spacing: 0.5px;
-    text-shadow: 0px 1px 2px rgb(0 0 0 / 0.1), 0px 3px 2px rgb(0 0 0 / 0.1), 0px 4px 8px rgb(0 0 0 / 0.1);
+    letter-spacing: 0.2px;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   @media (max-width: 640px) {
-  body {
-    font-size: 12px;
+    body {
+      font-size: 12px;
+    }
   }
-}
 }
 
 @utility container {
@@ -108,39 +98,70 @@
   }
 }
 
-@utility blog-page {
-  width: 100%;
-  background-color: #fff;
-  color: #462317;
-  border-width: 1px; 
-  border-color: #ffffff; 
-  backdrop-blur: blur(4px); 
-  border-radius: 8rem 8rem 0 0;
-  padding: 2rem 12rem 0 12rem;
+/* Fixed, blurred photo behind the panel. */
+@utility shell-bg {
+  position: fixed;
+  inset: -40px;
+  z-index: 0;
+  background: center / cover no-repeat url("/assets/images/background.jpg");
+  filter: blur(28px) saturate(1.15);
+}
+
+/* The big frosted panel. Falls back to near-opaque white without backdrop-filter. */
+@utility glass-panel {
+  border-radius: 2.5rem;
+  background: rgb(255 255 255 / 0.62);
+  border: 1px solid rgb(255 255 255 / 0.7);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.12);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  backdrop-filter: blur(24px) saturate(1.2);
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    background: rgb(255 255 255 / 0.92);
+  }
+}
+
+/* Nested cards inside the panel (bento cards, listing tiles). */
+@utility glass-card {
+  border-radius: 2rem;
+  background: rgb(255 255 255 / 0.55);
+  border: 1px solid rgb(255 255 255 / 0.75);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.06);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    background: rgb(255 255 255 / 0.9);
+  }
+}
+
+/* Yellow circular arrow button. */
+@utility arrow-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: var(--color-accent);
+  color: var(--color-ink);
 }
 
 @utility text-glow {
-  @apply relative;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  /* Legacy no-op: old pages still reference it. */
 }
 
 @utility card-hover {
-  @apply cursor-pointer transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.4)];
+  @apply cursor-pointer transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)];
 }
 
 @utility white-button {
-  @apply px-6 py-1.5 text-xs sm:text-base rounded-full bg-[var(--button-color)] text-[var(--brown-accent)] hover:text-[var(--yellow-accent)] font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:scale-105 active:scale-95 cursor-pointer;
-  text-shadow: none;
+  @apply inline-flex items-center justify-center px-6 py-1.5 text-xs sm:text-base rounded-full bg-white text-[var(--color-ink)] font-medium transition-all duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.12)] hover:scale-105 active:scale-95 cursor-pointer;
 }
 
 @utility transparent-button {
-  @apply px-6 py-1.5 text-xs sm:text-base rounded-full font-medium transition-all duration-300 backdrop-blur-sm hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] hover:scale-105 active:scale-95 cursor-pointer;
-  text-shadow: none;
-}
-
-@utility sparkle {
-  @apply absolute rounded-full bg-white;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  @apply inline-flex items-center justify-center px-6 py-1.5 text-xs sm:text-base rounded-full bg-white/40 border-white/70 backdrop-blur-sm font-medium transition-all duration-300 hover:bg-white/70 hover:scale-105 active:scale-95 cursor-pointer;
 }
 
 #root {
@@ -151,44 +172,11 @@
 }
 
 ::selection {
-  color: #462317;
-  background: rgba(255, 255, 255, 0.7);
+  color: #1f1a17;
+  background: rgb(255 201 60 / 0.6);
 }
 
-.pinyon-script {
-  font-family: "Pinyon Script", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-.marquee-wrapper {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-
-.marquee-content {
-  display: flex;
-  gap: 2rem;
-  white-space: nowrap;
-  animation: marquee 30s linear infinite;
-}
-
-.marquee-container:hover .marquee-content {
-  animation-play-state: paused;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.flip-img {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+.panel-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(31 26 23 / 0.25) transparent;
 }
