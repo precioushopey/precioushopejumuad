@@ -118,8 +118,8 @@ export const SkillsSection = () => {
       className="container mx-auto max-w-5xl space-y-4 pt-20 px-8"
     >
       <div className="flex justify-center font-bold text-glow">
-        <h2 className="font-noto text-3xl sm:text-4xl">My</h2>
-        <h2 className="pinyon-script text-5xl sm:text-6xl">Skills</h2>
+        <h2 className="text-3xl sm:text-4xl">My</h2>
+        <h2 className="font-display text-3xl sm:text-4xl">Skills</h2>
       </div>
 
       <div className="flex flex-wrap justify-center gap-4">

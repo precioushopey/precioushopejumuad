@@ -1,21 +1,14 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
-import { SparkleBackground } from "../components/SparkleBackground";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
 const Blog5 = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
-      <header className="space-y-6">
-        <Navbar />
-        <div className="flex flex-col items-center justify-center animate-fade-in">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">      <header className="space-y-6">        <div className="flex flex-col items-center justify-center animate-fade-in">
           <div className="flex flex-col lg:flex-row gap-x-2">
-            <h1 className="font-noto text-3xl sm:text-4xl font-bold text-glow">
+            <h1 className="text-3xl sm:text-4xl font-bold text-glow">
               A Glimpse Of
             </h1>
-            <h2 className="pinyon-script text-4xl sm:text-5xl font-bold text-glow">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-glow">
               My Future
             </h2>
           </div>
@@ -45,7 +38,7 @@ const Blog5 = () => {
         </section>
       </header>
 
-      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <main className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="text-right animate-fade-in-delay-2">
           <p>232, M.L. Quezon St., Lower Jasaan</p>
           <p>Jasaan 9003, Misamis Oriental</p>
@@ -62,7 +55,7 @@ const Blog5 = () => {
         <section className="flex flex-col gap-6 animate-fade-in-delay-4">
           <p className="text-left">Dear Engr. Jumuad,</p>
           <article className="space-y-4">
-            <p className="font-noto text-center">
+            <p className="text-center">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>Out of the night that covers me,</p>
@@ -90,7 +83,7 @@ const Blog5 = () => {
               a moment to slow down, lie your back somewhere comfortable, and
               give all your attention to this message.
             </p>
-            <p className="font-noto text-center">
+            <p className="text-center">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>In the fell clutch of circumstance</p>
@@ -126,7 +119,7 @@ const Blog5 = () => {
               spiritually.{" "}
               <u>I hope we illuminate that radiance to our fellows.</u>
             </p>
-            <p className="font-noto text-center">
+            <p className="text-center">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>Beyond this place of wrath and tears</p>
@@ -162,7 +155,7 @@ const Blog5 = () => {
               feel proud that we did this to ourselves by the time you read
               this. Cheers to loving ourselves.
             </p>
-            <p className="font-noto text-center">
+            <p className="text-center">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>It matters not how strait the gate,</p>

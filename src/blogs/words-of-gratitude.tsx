@@ -1,21 +1,14 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
-import { SparkleBackground } from "../components/SparkleBackground";
 import { MdOutlineKeyboardArrowLeft, MdOutlineOpenInNew } from "react-icons/md";
 
 const Blog2 = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
-      <header className="space-y-6">
-        <Navbar />
-        <div className="flex flex-col items-center justify-center animate-fade-in">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">      <header className="space-y-6">        <div className="flex flex-col items-center justify-center animate-fade-in">
           <div className="flex flex-col lg:flex-row gap-x-2">
-            <h1 className="font-noto text-3xl sm:text-4xl font-bold text-glow">
+            <h1 className="text-3xl sm:text-4xl font-bold text-glow">
               Words of Gratitude
             </h1>
-            <h2 className="pinyon-script text-4xl sm:text-5xl font-bold text-glow">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-glow">
               on Behalf of the Graduates
             </h2>
           </div>
@@ -42,7 +35,7 @@ const Blog2 = () => {
         </section>
       </header>
 
-      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <main className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img

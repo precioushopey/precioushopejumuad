@@ -63,8 +63,8 @@ export const ContactSection = () => {
       className="container mx-auto max-w-5xl space-y-4 py-20 px-8"
     >
       <div className="flex justify-center font-bold text-glow">
-        <h2 className="font-noto text-3xl sm:text-4xl">Get In</h2>
-        <h2 className="pinyon-script text-5xl sm:text-6xl -ml-2 sm:-ml-3">
+        <h2 className="text-3xl sm:text-4xl">Get In</h2>
+        <h2 className="font-display text-3xl sm:text-4xl -ml-2 sm:-ml-3">
           Touch
         </h2>
       </div>

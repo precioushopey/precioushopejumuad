@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
-import { SparkleBackground } from "../components/SparkleBackground";
 
 type BlogPost = {
   to: string;
@@ -125,14 +123,9 @@ const blogPosts: BlogPost[] = [
 
 const Blog = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
-      <header>
-        <Navbar />
-        <div className="flex justify-center font-bold text-glow animate-fade-in">
-          <h1 className="font-noto text-3xl sm:text-6xl">Blog</h1>
-          <h2 className="pinyon-script text-5xl sm:text-8xl">Page</h2>
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">      <header>        <div className="flex justify-center font-bold text-glow animate-fade-in">
+          <h1 className="text-3xl sm:text-6xl">Blog</h1>
+          <h2 className="font-display text-3xl sm:text-5xl">Page</h2>
         </div>
       </header>
 

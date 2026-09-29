@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
 import { MdOutlineOpenInNew } from "react-icons/md";
-import { SparkleBackground } from "../components/SparkleBackground";
 
 type Project = {
   title: string;
@@ -196,14 +194,9 @@ const ProjectsPage = () => {
   );
 
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8">
-      <SparkleBackground />
-
-      <header>
-        <Navbar />
-        <div className="flex flex-col sm:flex-row justify-center font-bold text-glow animate-fade-in text-center sm:text-left">
-          <h1 className="font-noto text-4xl sm:text-6xl">Project</h1>
-          <h2 className="pinyon-script text-6xl sm:text-8xl sm:ml-2">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8">      <header>        <div className="flex flex-col sm:flex-row justify-center font-bold text-glow animate-fade-in text-center sm:text-left">
+          <h1 className="text-4xl sm:text-6xl">Project</h1>
+          <h2 className="font-display text-4xl sm:text-5xl sm:ml-2">
             Repository
           </h2>
         </div>

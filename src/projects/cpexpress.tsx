@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import { Navbar } from "../components/Navbar";
-import { SparkleBackground } from "../components/SparkleBackground";
 import { FiHeart, FiTarget } from "react-icons/fi";
 import {
   MdLightbulbOutline,
@@ -70,14 +68,9 @@ const CpExpress = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
-      <header>
-        <Navbar />
-        <div className="flex justify-center font-bold text-glow animate-fade-in">
-          <h1 className="font-noto text-3xl sm:text-6xl">CpExpress:</h1>
-          <h2 className="pinyon-script text-5xl sm:text-8xl">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">      <header>        <div className="flex justify-center font-bold text-glow animate-fade-in">
+          <h1 className="text-3xl sm:text-6xl">CpExpress:</h1>
+          <h2 className="font-display text-3xl sm:text-5xl">
             CpE Confessions
           </h2>
         </div>

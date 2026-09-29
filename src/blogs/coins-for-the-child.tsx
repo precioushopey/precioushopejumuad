@@ -1,21 +1,14 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
-import { SparkleBackground } from "../components/SparkleBackground";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
 const Blog11 = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
-      <header className="space-y-6">
-        <Navbar />
-        <div className="flex flex-col items-center justify-center animate-fade-in">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">      <header className="space-y-6">        <div className="flex flex-col items-center justify-center animate-fade-in">
           <div className="flex flex-col lg:flex-row gap-x-2">
-            <h1 className="font-noto text-3xl sm:text-4xl font-bold text-glow">
+            <h1 className="text-3xl sm:text-4xl font-bold text-glow">
               Coins for
             </h1>
-            <h2 className="pinyon-script text-4xl sm:text-5xl font-bold text-glow">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-glow">
               the Child
             </h2>
           </div>
@@ -42,8 +35,8 @@ const Blog11 = () => {
         </section>
       </header>
 
-      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 p-8 space-y-6">
-        <section className="flex flex-col lg:flex-row gap-6 font-noto animate-fade-in-delay-4">
+      <main className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 p-8 space-y-6">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
           <figure className="w-full lg:w-3/5 space-y-4 text-center">
             <img
               src="/assets/images/poem.jpg"
@@ -83,7 +76,7 @@ const Blog11 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row justify-center gap-x-24 font-noto animate-fade-in-delay-4">
+        <section className="flex flex-col lg:flex-row justify-center gap-x-24 animate-fade-in-delay-4">
           <article className="space-y-4">
             <p>
               <cite>

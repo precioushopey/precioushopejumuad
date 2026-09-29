@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
 import { AiFillInstagram } from "react-icons/ai";
-import { SparkleBackground } from "../components/SparkleBackground";
 import {
   MdEmail,
   MdFacebook,
@@ -133,14 +131,9 @@ const Subay = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-12 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
-      <header>
-        <Navbar />
-        <div className="flex justify-center font-bold text-glow animate-fade-in">
-          <h1 className="font-noto text-3xl sm:text-6xl">SUBAY</h1>
-          <h2 className="pinyon-script -ml-2 sm:-ml-4 text-5xl sm:text-8xl">
+    <div className="container mx-auto max-w-5xl space-y-12 py-4 px-8 text-sm sm:text-base">      <header>        <div className="flex justify-center font-bold text-glow animate-fade-in">
+          <h1 className="text-3xl sm:text-6xl">SUBAY</h1>
+          <h2 className="font-display -ml-2 sm:-ml-4 text-3xl sm:text-5xl">
             Thesis
           </h2>
         </div>

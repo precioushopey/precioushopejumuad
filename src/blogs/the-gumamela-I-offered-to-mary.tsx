@@ -1,27 +1,20 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
-import { SparkleBackground } from "../components/SparkleBackground";
 import { MdOutlineKeyboardArrowLeft, MdOutlineOpenInNew } from "react-icons/md";
 
 const Blog6 = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
-      <header className="space-y-6">
-        <Navbar />
-        <div className="flex flex-col items-center justify-center animate-fade-in">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">      <header className="space-y-6">        <div className="flex flex-col items-center justify-center animate-fade-in">
           <div className="flex flex-col lg:flex-row gap-x-2">
-            <span className="font-noto text-3xl sm:text-4xl font-bold text-glow">
+            <span className="text-3xl sm:text-4xl font-bold text-glow">
               The
             </span>
-            <span className="pinyon-script text-4xl sm:text-5xl font-bold text-glow">
+            <span className="font-display text-2xl sm:text-3xl font-bold text-glow">
               gumamela
             </span>
-            <span className="font-noto text-3xl sm:text-4xl font-bold text-glow">
+            <span className="text-3xl sm:text-4xl font-bold text-glow">
               I offered to
             </span>
-            <span className="pinyon-script text-4xl sm:text-5xl font-bold text-glow">
+            <span className="font-display text-2xl sm:text-3xl font-bold text-glow">
               Mary
             </span>
           </div>
@@ -49,7 +42,7 @@ const Blog6 = () => {
         </section>
       </header>
 
-      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <main className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
