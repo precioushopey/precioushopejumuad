@@ -110,7 +110,7 @@
 /* The big frosted panel. Falls back to near-opaque white without backdrop-filter. */
 @utility glass-panel {
   border-radius: 2.5rem;
-  background: rgb(255 255 255 / 0.62);
+  background: rgb(255 255 255 / 0.72);
   border: 1px solid rgb(255 255 255 / 0.7);
   box-shadow: 0 20px 60px rgb(0 0 0 / 0.12);
   -webkit-backdrop-filter: blur(24px) saturate(1.2);
