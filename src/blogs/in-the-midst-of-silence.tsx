@@ -3,7 +3,9 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
 const Blog1 = () => {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">      <header className="space-y-6">        <div className="flex flex-col items-center justify-center animate-fade-in">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
+      <header className="space-y-6">
+        <div className="flex flex-col items-center justify-center animate-fade-in">
           <h1 className="text-3xl sm:text-4xl font-bold text-glow">
             In the Midst of Silence
           </h1>

@@ -71,7 +71,9 @@ const TaleMakers = () => {
   ];
 
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">      <header>        <div className="flex justify-center font-bold text-glow animate-fade-in">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
+      <header>
+        <div className="flex justify-center font-bold text-glow animate-fade-in">
           <h1 className="text-3xl sm:text-6xl">Tale</h1>
           <h2 className="font-display -ml-0 sm:-ml-8 text-3xl sm:text-5xl">
             Makers
