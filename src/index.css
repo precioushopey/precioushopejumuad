@@ -150,6 +150,7 @@
 
 @utility text-glow {
   /* Legacy no-op: old pages still reference it. */
+  text-shadow: none;
 }
 
 @utility card-hover {
