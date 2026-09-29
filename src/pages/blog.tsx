@@ -5,7 +5,7 @@ const Blog = () => {
   return (
     <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
       <header>
-        <div className="flex justify-center font-bold text-glow animate-fade-in">
+        <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
           <h1 className="text-3xl sm:text-6xl">Blog</h1>
           <h2 className="font-display text-3xl sm:text-5xl">Page</h2>
         </div>

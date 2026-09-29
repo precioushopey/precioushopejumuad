@@ -160,7 +160,7 @@ export const ProjectsSection = () => {
       id="projects"
       className="container mx-auto max-w-5xl space-y-4 pt-20 px-8"
     >
-      <div className="flex justify-center font-bold text-glow">
+      <div className="flex justify-center gap-x-2 font-bold text-glow">
         <h2 className="font-noto text-3xl sm:text-4xl">Featured</h2>
         <h2 className="pinyon-script text-5xl sm:text-6xl">Projects</h2>
       </div>

@@ -117,7 +117,7 @@ export const SkillsSection = () => {
       id="skills"
       className="container mx-auto max-w-5xl space-y-4 pt-20 px-8"
     >
-      <div className="flex justify-center font-bold text-glow">
+      <div className="flex justify-center gap-x-2 font-bold text-glow">
         <h2 className="text-3xl sm:text-4xl">My</h2>
         <h2 className="font-display text-3xl sm:text-4xl">Skills</h2>
       </div>
@@ -142,7 +142,7 @@ export const SkillsSection = () => {
         {filteredSkills.map((skill) => (
           <div
             key={skill.name}
-            className="flex flex-col justify-center rounded-4xl backdrop-blur-sm border shadow-xs gap-3 p-4 card-hover"
+            className="flex flex-col justify-center glass-card gap-3 p-4 card-hover"
           >
             <div className="flex flex-row items-center gap-x-4">
               <img src={skill.logo} alt="Logo" width={50} />
@@ -151,9 +151,9 @@ export const SkillsSection = () => {
               </div>
             </div>
 
-            <div className="w-full bg-white/50 h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-ink/10 h-2 rounded-full overflow-hidden">
               <div
-                className="bg-white h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
+                className="bg-accent h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
                 style={{ width: `${skill.level}%` }}
               />
             </div>

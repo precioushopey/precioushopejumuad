@@ -62,9 +62,9 @@ export const ContactSection = () => {
       id="contact"
       className="container mx-auto max-w-5xl space-y-4 py-20 px-8"
     >
-      <div className="flex justify-center font-bold text-glow">
+      <div className="flex justify-center gap-x-2 font-bold text-glow">
         <h2 className="text-3xl sm:text-4xl">Get In</h2>
-        <h2 className="font-display text-3xl sm:text-4xl -ml-2 sm:-ml-3">
+        <h2 className="font-display text-3xl sm:text-4xl ">
           Touch
         </h2>
       </div>
@@ -117,7 +117,7 @@ export const ContactSection = () => {
           </div>
         </div>
 
-        <div className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover p-8 space-y-4 mt-0 sm:mt-4">
+        <div className="group overflow-hidden glass-card card-hover p-8 space-y-4 mt-0 sm:mt-4">
           <h3 className="text-2xl font-semibold">Send a Message</h3>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
