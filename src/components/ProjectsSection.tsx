@@ -185,7 +185,7 @@ export const ProjectsSection = () => {
         {filteredProjects.map((project) => (
           <div
             key={project.title}
-            className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+            className="group overflow-hidden glass-card card-hover"
           >
             <div className="h-48 overflow-hidden">
               <img

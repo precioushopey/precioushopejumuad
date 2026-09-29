@@ -96,7 +96,7 @@ export const AboutSection = () => {
           {roles.map((role, index) => (
             <div
               key={index}
-              className="rounded-4xl backdrop-blur-sm border shadow-xs p-4 card-hover"
+              className="glass-card p-4 card-hover"
             >
               <div className="flex items-start gap-4">
                 <div className="bg-white rounded-full p-2">{role.icon}</div>

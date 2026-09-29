@@ -129,7 +129,7 @@ const TaleMakers = () => {
             {designSteps.map((step, index) => (
               <div
                 key={index}
-                className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs space-y-4 p-6 card-hover"
+                className="group overflow-hidden glass-card space-y-4 p-6 card-hover"
               >
                 <div className="flex items-center justify-center border-b pb-2 gap-x-3">
                   {step.icon}
@@ -202,7 +202,7 @@ const TaleMakers = () => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center rounded-4xl backdrop-blur-sm border shadow-xs card-hover gap-2 p-4"
+                className="flex flex-col justify-center glass-card card-hover gap-2 p-4"
               >
                 <div className="flex items-center gap-x-4">
                   <div className="text-left">

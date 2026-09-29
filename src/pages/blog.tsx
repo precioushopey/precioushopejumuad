@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { MdArrowOutward } from "react-icons/md";
 import { blogPosts } from "../data/blogPosts";
 
 const Blog = () => {
@@ -17,14 +18,14 @@ const Blog = () => {
             key={post.to}
             to={post.to}
             target="_top"
-            className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+            className="group flex flex-col md:flex-row overflow-hidden glass-card card-hover"
           >
             <img
               src={post.image}
               alt={post.alt}
               className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
             />
-            <div className="flex flex-col items-start justify-center p-4 space-y-2 ml-2">
+            <div className="flex flex-1 flex-col items-start justify-center p-4 space-y-2 ml-2">
               <h3
                 className="font-semibold text-lg"
                 dangerouslySetInnerHTML={{ __html: post.title }}
@@ -43,6 +44,9 @@ const Blog = () => {
                   </time>
                 </p>
               </div>
+              <span className="arrow-button self-end" aria-hidden>
+                <MdArrowOutward size={18} />
+              </span>
             </div>
           </Link>
         ))}

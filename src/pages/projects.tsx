@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { MdOutlineOpenInNew } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
 import { projects } from "../data/projects";
 
 const categories = [
@@ -54,7 +54,7 @@ const ProjectsPage = () => {
               target="_top"
               rel="noopener noreferrer"
               key={project.title}
-              className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+              className="group overflow-hidden glass-card card-hover"
             >
               <img
                 src={project.image}
@@ -67,25 +67,18 @@ const ProjectsPage = () => {
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="rounded-full border text-xs font-light px-2 py-1"
+                      className="rounded-full border bg-white/60 text-xs px-3 py-1"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex flex-row items-center space-x-2">
-                  <h3 className="font-semibold text-xl">{project.title}</h3>
-                  {project.url && (
-                    <Link
-                      to={project.url}
-                      target="_top"
-                      rel="noopener noreferrer"
-                      className="hover:text-[var(--yellow-accent)] text-glow hover:scale-110 active:scale-100 cursor-pointer"
-                    >
-                      <MdOutlineOpenInNew size={20} />
-                    </Link>
-                  )}
+                <div className="flex flex-row items-center justify-between gap-3">
+                  <h3 className="text-left text-xl font-semibold">{project.title}</h3>
+                  <span className="arrow-button" aria-hidden>
+                    <MdArrowOutward size={18} />
+                  </span>
                 </div>
               </div>
             </Link>

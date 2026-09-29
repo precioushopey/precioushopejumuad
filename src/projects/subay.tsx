@@ -271,7 +271,7 @@ const Subay = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Contributors
           </h2>
-          <div className="flex overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover">
+          <div className="flex overflow-hidden glass-card card-hover">
             <img
               src="/assets/images/team.jpg"
               alt="Team"
@@ -288,7 +288,7 @@ const Subay = () => {
                 href={contributor.driveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+                className="group flex flex-col md:flex-row overflow-hidden glass-card card-hover"
               >
                 <img
                   src={contributor.image}
@@ -352,14 +352,14 @@ const Subay = () => {
             We Won Best Thesis and Best Prototype!
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="flex overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover">
+            <div className="flex overflow-hidden glass-card card-hover">
               <img
                 src="/assets/images/best_thesis.jpg"
                 alt="Team"
                 className="w-full aspect-[85/73] object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
-            <div className="flex overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover">
+            <div className="flex overflow-hidden glass-card card-hover">
               <img
                 src="/assets/images/best_prototype.jpg"
                 alt="Team"
@@ -395,7 +395,7 @@ const Subay = () => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center rounded-4xl backdrop-blur-sm border shadow-xs card-hover gap-2 p-4"
+                className="flex flex-col justify-center glass-card card-hover gap-2 p-4"
               >
                 <div className="flex items-center gap-x-4">
                   <div className="text-left">
