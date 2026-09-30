@@ -117,10 +117,24 @@ export const Rail = () => {
       </div>
       {/* Desktop: the dock's tray, with the avatar and the Philippine time under it. */}
       <div className="hidden shrink-0 flex-col items-center gap-1.5 lg:flex">
+        {/* lg to xl: the profile is its own page, so the avatar opens it; from xl the profile is in
+            the right-hand column, so the avatar goes to About. */}
+        <Link
+          to="/profile"
+          aria-label="Profile and contact"
+          title="Profile and contact"
+          className="h-11 w-11 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent xl:hidden"
+        >
+          <img
+            src="/assets/images/precious.png"
+            alt=""
+            className="h-11 w-11 rounded-full border border-line bg-white object-cover"
+          />
+        </Link>
         <Link
           to="/about"
           aria-label="About me"
-          className="h-11 w-11 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="h-11 w-11 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent max-xl:hidden"
         >
           <img
             src="/assets/images/precious.png"

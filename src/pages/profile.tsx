@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { RightColumn } from "../components/shell/RightColumn";
 
-const DESKTOP = "(min-width: 1024px)";
+const DESKTOP = "(min-width: 1280px)";
 
 // The profile and contact cards as a page, for screens below lg where there is no room for the
 // right-hand column. On desktop the column is always visible, so this page sends you home.

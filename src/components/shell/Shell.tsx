@@ -82,17 +82,11 @@ export const Shell = () => {
             className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:relative lg:z-20 lg:flex lg:min-h-0 lg:flex-col lg:overflow-y-auto"
           >
             <Outlet />
-            {showSide && (
-              // From lg to xl the column sits at the bottom of the panel. Below lg the profile is its
-              // own page (/profile), reached from the phone bar; a blog post's other posts go at
-              // the bottom of the page at every size below xl.
-              <div
-                className={
-                  isDetail
-                    ? "pt-3 lg:px-8 lg:pt-6 xl:hidden"
-                    : "hidden px-5 pt-6 sm:px-8 lg:block xl:hidden"
-                }
-              >
+            {isDetail && (
+              // Other posts / projects at the bottom of the page below xl, where there is no room
+              // for the column beside the panel. (The profile and message form have no bottom slot:
+              // below xl they are their own page, /profile.)
+              <div className="pt-3 lg:px-8 lg:pt-6 xl:hidden">
                 {sideContent}
               </div>
             )}
