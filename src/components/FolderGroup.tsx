@@ -3,6 +3,7 @@ import {
   isValidElement,
   useId,
   useState,
+  type CSSProperties,
   type ReactElement,
   type ReactNode,
 } from "react";
@@ -125,10 +126,17 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
         aria-label={openFolder?.props.label}
       >
         {openFolder && (
-          // The key restarts the fade-in whenever another folder is opened.
+          // The key restarts the animation whenever another folder is opened. It grows out of the
+          // clicked folder: the origin's x is that folder's centre (4 columns from sm up, 2 below).
           <div
             key={openIndex}
-            className="animate-fade-in space-y-6 pt-6 motion-reduce:animate-none"
+            style={
+              {
+                "--ox": `${(((openIndex ?? 0) % 2) + 0.5) * 50}%`,
+                "--ox-sm": `${(((openIndex ?? 0) + 0.5) / folders.length) * 100}%`,
+              } as CSSProperties
+            }
+            className="animate-folder-emerge space-y-6 pt-6 [transform-origin:var(--ox)_0] motion-reduce:animate-none sm:[transform-origin:var(--ox-sm)_0]"
           >
             {openFolder.props.children}
           </div>
