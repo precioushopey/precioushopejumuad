@@ -10,7 +10,7 @@ const items: {
 }[] = [
   { to: "/", label: "Home", Icon: LuHouse, end: true },
   { to: "/about", label: "About", Icon: LuUser, end: false },
-  { to: "/projects", label: "Projects", Icon: LuBriefcase, end: false },
+  { to: "/projects", label: "Work", Icon: LuBriefcase, end: false },
   // Posts live under /blogs/<slug>, the listing under /blog.
   {
     to: "/blog",
