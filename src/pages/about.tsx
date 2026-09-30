@@ -521,7 +521,7 @@ const About = () => {
             count={companies.length}
             peek="/assets/images/ojtconnect_logo.png"
           >
-            <section className="flex flex-col gap-6 animate-fade-in-delay-2">
+            <section className="flex flex-col gap-6">
               {companies.map((group) => {
                 const first = group[0];
                 if (group.length === 1) {
@@ -643,7 +643,7 @@ const About = () => {
             count={educationData.length}
             peek="/assets/images/ustp.png"
           >
-            <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+            <section className="flex flex-col gap-6">
               {educationData.map((edu) => (
                 <AccordionCard
                   key={edu.school}
@@ -687,7 +687,7 @@ const About = () => {
           >
             <section
               aria-label="Certifications"
-              className="glass-card overflow-hidden animate-fade-in-delay-3"
+              className="glass-card overflow-hidden"
             >
               <WindowBar
                 icon={<LuAward size={14} />}
