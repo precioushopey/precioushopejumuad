@@ -125,7 +125,13 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
         aria-label={openFolder?.props.label}
       >
         {openFolder && (
-          <div className="space-y-6 pt-6">{openFolder.props.children}</div>
+          // The key restarts the fade-in whenever another folder is opened.
+          <div
+            key={openIndex}
+            className="animate-fade-in space-y-6 pt-6 motion-reduce:animate-none"
+          >
+            {openFolder.props.children}
+          </div>
         )}
       </div>
     </div>
