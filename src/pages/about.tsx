@@ -317,12 +317,12 @@ const About = () => {
       </header>
 
       <div className="tracking-normal leading-6 text-left space-y-6">
-        <section className="flex flex-col lg:flex-row gap-6 glass-card p-5 animate-fade-in-delay-1">
-          <figure className="w-full lg:w-1/2 text-center">
+        <section className="flex flex-col items-center gap-6 lg:flex-row animate-fade-in-delay-1">
+          <figure className="w-full lg:w-1/2">
             <img
-              src="/assets/images/college.png"
-              alt="My College Graduation Photo"
-              className="w-full aspect-[4/5] rounded-4xl border object-cover"
+              src="/assets/images/hero.png"
+              alt="Precious Hope Jumuad in her graduation gown"
+              className="h-auto w-full"
             />
           </figure>
           <article className="w-full lg:w-1/2 space-y-4">
