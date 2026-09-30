@@ -124,8 +124,8 @@ const Subay = () => {
 
   return (
     <ProjectLayout>
-      <div className="space-y-18">
-        <section className="space-y-6">
+      <div className="space-y-20">
+        <section className="space-y-8">
           <iframe
             src="https://www.youtube.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
             title="SUBAY Promotion"
@@ -179,7 +179,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-8">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Demonstration
           </h2>
@@ -192,7 +192,7 @@ const Subay = () => {
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
-            <div className="w-full lg:w-1/3 flex flex-col justify-center space-y-6">
+            <div className="w-full lg:w-1/3 flex flex-col justify-center space-y-8">
               <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
                 To make the data actionable, I designed and developed a
                 web-based analytics dashboard that visualizes customer flow
@@ -238,7 +238,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-8">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Contributors
           </h2>
@@ -318,7 +318,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-8">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             We Won Best Thesis and Best Prototype!
           </h2>
@@ -358,7 +358,7 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-8">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Skills Earned
           </h2>

@@ -21,8 +21,8 @@ const Blog6 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="space-y-6 animate-fade-in-delay-2">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+        <section className="space-y-8 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/gumamela1.jpg"
@@ -77,7 +77,7 @@ const Blog6 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
             <img
               src="/assets/images/blog/gumamela2.jpg"
               alt="Me and My Sibling's First Communion"
@@ -116,7 +116,7 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-3">
+        <section className="space-y-8 animate-fade-in-delay-3">
           <article className="space-y-4">
             <p>
               Everyone was out taking their snacks and playing outside the
@@ -142,7 +142,7 @@ const Blog6 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-8">
             <img
               src="/assets/images/blog/gumamela3.jpg"
               alt="The Restored Retablo (photo courtesy of Arellano J. Galdo III)."

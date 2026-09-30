@@ -13,9 +13,9 @@ const Blog14 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
         <section className="animate-fade-in-delay-1">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
             <img
               src="/assets/images/blog/college.png"
               alt="My College Graduation Photo"
@@ -49,7 +49,7 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-2">
+        <section className="space-y-8 animate-fade-in-delay-2">
           <article className="space-y-4">
             <p>
               They believed in me. They made me feel safe, smart, and seen. And
@@ -72,7 +72,7 @@ const Blog14 = () => {
         </section>
 
         <section className="animate-fade-in-delay-2">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-8">
             <img
               src="/assets/images/blog/vale1.jpg"
               alt="My Senior High School Graduatioj Photo"
@@ -108,7 +108,7 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-3">
+        <section className="space-y-8 animate-fade-in-delay-3">
           <article className="space-y-4">
             <p>
               Would she recognize this more jaded, tired, adult self? Would she
@@ -125,7 +125,7 @@ const Blog14 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
             <img
               src="/assets/images/blog/jhs.jpg"
               alt="My Junior High School Completion Photo"
@@ -163,7 +163,7 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-4">
+        <section className="space-y-8 animate-fade-in-delay-4">
           <article className="space-y-4">
             <p>
               They shape our beliefs about self-worth, love, failure, and trust.
@@ -220,7 +220,7 @@ const Blog14 = () => {
           </figure>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-4">
+        <section className="space-y-8 animate-fade-in-delay-4">
           <article className="space-y-4">
             <p>
               So I’ll keep going, stumbling, and striving, because you’re still

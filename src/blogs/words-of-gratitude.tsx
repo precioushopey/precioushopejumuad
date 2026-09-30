@@ -19,8 +19,8 @@ const Blog2 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="space-y-6 animate-fade-in-delay-2">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+        <section className="space-y-8 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/vale2.jpg"
@@ -68,7 +68,7 @@ const Blog2 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
             <img
               src="/assets/images/blog/vale1.jpg"
               alt="My Graduation Photo"
@@ -101,7 +101,7 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-3">
+        <section className="space-y-8 animate-fade-in-delay-3">
           <article className="space-y-4">
             <p>
               We saw families spending more time together. We saw new
@@ -139,7 +139,7 @@ const Blog2 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-8">
             <img
               src="/assets/images/blog/vale3.jpg"
               alt="My Classmates at Grade 12- STEM B St. Luke"

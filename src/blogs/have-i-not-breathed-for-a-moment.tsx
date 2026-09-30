@@ -24,8 +24,8 @@ const Blog4 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="space-y-6 animate-fade-in-delay-2">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+        <section className="space-y-8 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/photos3.jpg"
@@ -88,7 +88,7 @@ const Blog4 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
             <img
               src="/assets/images/blog/photos2.jpg"
               alt="Sunset on the Rubber Trees at Gumaod, Claveria, Misamis"
@@ -118,7 +118,7 @@ const Blog4 = () => {
           </article>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-3">
+        <section className="space-y-8 animate-fade-in-delay-3">
           <article className="space-y-4">
             <p>
               Mathematical equations came flying onto my face like some visual
@@ -160,7 +160,7 @@ const Blog4 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-8">
             <img
               src="/assets/images/blog/photos4.jpg"
               alt="Flowers at Gumaod, Claveria, Misamis Oriental"

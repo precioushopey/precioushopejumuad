@@ -18,8 +18,8 @@ const Blog16 = () => {
         </p>
       </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="space-y-6 animate-fade-in-delay-2">
+      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+        <section className="space-y-8 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/csc1.png"
@@ -67,7 +67,7 @@ const Blog16 = () => {
           </article>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-3">
+        <section className="space-y-8 animate-fade-in-delay-3">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/csc2.png"

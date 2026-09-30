@@ -3,7 +3,7 @@ import { LuChevronLeft } from "react-icons/lu";
 
 const NotFound = () => {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8">
+    <div className="container mx-auto max-w-5xl space-y-8 py-4 px-8">
       <div>
         <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
           <h1 className="text-3xl sm:text-6xl">Not</h1>

@@ -22,7 +22,7 @@ const styles = {
   // row (label on the left) and the message body below.
   card: {
     heading: "sr-only",
-    form: "space-y-3",
+    form: "space-y-4",
     group: "flex items-center gap-2 border-b border-line/40",
     label: "w-20 shrink-0 text-left text-xs text-cream/60",
     field:

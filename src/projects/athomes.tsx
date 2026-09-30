@@ -67,8 +67,8 @@ const AtHomes = () => {
 
   return (
     <ProjectLayout>
-      <div className="space-y-18 pt-8">
-        <section className="space-y-6">
+      <div className="space-y-20 pt-8">
+        <section className="space-y-8">
           <Carousel images={images1} />
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Project Overview
@@ -96,7 +96,7 @@ const AtHomes = () => {
           </button>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-8">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Design Thinking Process
           </h2>
@@ -127,7 +127,7 @@ const AtHomes = () => {
           </button>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-8">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             The Challenge
           </h2>
@@ -147,7 +147,7 @@ const AtHomes = () => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-8">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             The Impact
           </h2>
@@ -171,7 +171,7 @@ const AtHomes = () => {
           </button>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-8">
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Skills Earned
           </h2>

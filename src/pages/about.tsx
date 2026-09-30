@@ -451,8 +451,8 @@ const About = () => {
   );
 
   return (
-    <div className="space-y-6 p-0 text-sm lg:p-8">
-      <div className="tracking-normal leading-6 text-left space-y-6">
+    <div className="space-y-8 p-0 text-sm lg:p-8">
+      <div className="tracking-normal leading-6 text-left space-y-8">
         <section className="flex flex-col items-center gap-8 animate-fade-in-delay-1">
           <h1 className="sr-only">About Precious Hope Jumuad</h1>
           <figure className="relative w-full max-w-2xl">
@@ -468,7 +468,7 @@ const About = () => {
           </figure>
           <article className="glass-card w-full overflow-hidden bg-cream/[0.07] text-justify">
             <WindowBar icon={<LuStickyNote size={14} />} title="About me" />
-            <div className="space-y-6 bg-[repeating-linear-gradient(transparent_0_23px,rgb(245_234_214/0.08)_23px_24px)] bg-[position:0_1.25rem] px-8 pt-8 pb-8">
+            <div className="space-y-8 bg-[repeating-linear-gradient(transparent_0_23px,rgb(245_234_214/0.08)_23px_24px)] bg-[position:0_1.25rem] px-8 pt-8 pb-8">
               <p>
                 I’m <strong>Precious Hope T. Jumuad</strong>, a Design Engineer
                 (Product/UI/UX Designer and Front-End Developer) who believes
@@ -558,7 +558,7 @@ const About = () => {
                             <li>{first.location}</li>
                           </ul>
                         </div>
-                        <ul className="ml-6 list-disc">
+                        <ul className="ml-8 list-disc">
                           {first.responsibilities.map((task, idx) => (
                             <li key={idx}>{task}</li>
                           ))}
@@ -605,7 +605,7 @@ const About = () => {
                           <li>{first.location}</li>
                         </ul>
                       </div>
-                      <ol className="ml-2 space-y-6 border-l border-line pl-8">
+                      <ol className="ml-2 space-y-8 border-l border-line pl-8">
                         {group.map((job, index) => {
                           const range = rangeOf(job.date);
                           return (
@@ -622,7 +622,7 @@ const About = () => {
                                 {job.date} •{" "}
                                 {durationLabel(range.end - range.start + 1)}
                               </p>
-                              <ul className="mt-3 ml-6 list-disc">
+                              <ul className="mt-4 ml-8 list-disc">
                                 {job.responsibilities.map((task, idx) => (
                                   <li key={idx}>{task}</li>
                                 ))}

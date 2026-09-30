@@ -34,7 +34,7 @@ export const ProfileCard = () => {
         <span className="whitespace-nowrap">Design Engineer ·</span>{" "}
         <span className="whitespace-nowrap">Product Designer</span>
       </p>
-      <p className="mt-3 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
+      <p className="mt-4 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
         I’m passionate about designing and building great products that make
         people’s lives easier. I’ve spent over{" "}
         <strong className="font-semibold text-cream">{experience}</strong>{" "}

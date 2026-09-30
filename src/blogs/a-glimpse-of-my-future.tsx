@@ -22,7 +22,7 @@ const Blog5 = () => {
         </p>
       </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
         <section className="text-right [text-align-last:right] animate-fade-in-delay-2">
           <p>232, M.L. Quezon St., Lower Jasaan</p>
           <p>Jasaan 9003, Misamis Oriental</p>
@@ -36,7 +36,7 @@ const Blog5 = () => {
           <p>Computer Engineer</p>
         </section>
 
-        <section className="space-y-6 animate-fade-in-delay-4">
+        <section className="space-y-8 animate-fade-in-delay-4">
           <p className="text-left">Dear Engr. Jumuad,</p>
           <article className="space-y-4">
             <p className="text-center [text-align-last:center]">

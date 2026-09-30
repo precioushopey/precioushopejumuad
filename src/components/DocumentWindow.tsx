@@ -55,9 +55,9 @@ export const DocumentWindow = ({
       </div>
     </div>
 
-    <div className="mx-auto max-w-5xl space-y-6 p-4 text-sm sm:p-8 sm:text-base lg:p-8">
+    <div className="mx-auto max-w-5xl space-y-8 p-4 text-sm sm:p-8 sm:text-base lg:p-8">
       {title && (
-        <header className="space-y-3 text-left">
+        <header className="space-y-4 text-left">
           <h1 className="text-2xl font-semibold leading-tight sm:text-3xl">
             {title}
           </h1>

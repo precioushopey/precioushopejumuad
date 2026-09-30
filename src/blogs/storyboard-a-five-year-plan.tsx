@@ -23,9 +23,9 @@ const Blog3 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
         <section className="animate-fade-in-delay-2">
-          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-2/5 lg:float-right lg:ml-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-2/5 lg:float-right lg:ml-8">
             <img
               src="/assets/images/blog/storyboard.jfif"
               alt="Me in Umaru-chan merchandise hood III"

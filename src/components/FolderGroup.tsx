@@ -135,7 +135,7 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
                 "--ox": `${(((openIndex ?? 0) + 0.5) / folders.length) * 100}%`,
               } as CSSProperties
             }
-            className="animate-folder-emerge space-y-6 pt-8 [transform-origin:var(--ox)_0] motion-reduce:animate-none"
+            className="animate-folder-emerge space-y-8 pt-8 [transform-origin:var(--ox)_0] motion-reduce:animate-none"
           >
             {openFolder.props.children}
           </div>
