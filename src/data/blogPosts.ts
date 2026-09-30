@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/i-passed-the-cse-exam",
     category: "milestones",
-    image: "/assets/images/csc3.jpg",
+    image: "/assets/images/blog/csc3.jpg",
     alt: "i-passed-the-cse-exam",
     title: "I passed the Civil Service Professional Examination!",
     description:
@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/alls-well-that-ends-well-I-wish",
     category: "reflections",
-    image: "/assets/images/essay3.png",
+    image: "/assets/images/blog/essay3.png",
     alt: "“all’s well that ends well,” I wish",
     title: "“all’s well that ends well,” I wish",
     description:
@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/dear-little-hope-looks-like-we-made-it",
     category: "reflections",
-    image: "/assets/images/graduations.png",
+    image: "/assets/images/blog/graduations.png",
     alt: "Dear little Hope, looks like we made it..",
     title: "Dear little Hope, looks like we made it..",
     description:
@@ -51,7 +51,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/i-know-that-i-know-nothing",
     category: "reflections",
-    image: "/assets/images/college.png",
+    image: "/assets/images/blog/college.png",
     alt: "I know everything, that I know nothing",
     title: "I know everything, that I know nothing",
     description:
@@ -61,7 +61,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/alls-well-that-ends-well",
     category: "milestones",
-    image: "/assets/images/all's_well.png",
+    image: "/assets/images/blog/all's_well.png",
     alt: "All's Well That Ends Well",
     title: "All's Well That Ends Well",
     description:
@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/coins-for-the-child",
     category: "stories",
-    image: "/assets/images/poem.jpg",
+    image: "/assets/images/blog/poem.jpg",
     alt: "Coins for the Child",
     title: "Coins for the Child",
     description:
@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/the-gumamela-I-offered-to-mary",
     category: "stories",
-    image: "/assets/images/gumamela2.jpg",
+    image: "/assets/images/blog/gumamela2.jpg",
     alt: "The gumamela I offered to Mary",
     title: "The gumamela I offered to Mary",
     description:
@@ -91,7 +91,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/a-glimpse-of-my-future",
     category: "school",
-    image: "/assets/images/glimpse.jpg",
+    image: "/assets/images/blog/glimpse.jpg",
     alt: "A Glimpse Of My Future",
     title: "A Glimpse Of My Future",
     description:
@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/have-i-not-breathed-for-a-moment",
     category: "reflections",
-    image: "/assets/images/photos2.jpg",
+    image: "/assets/images/blog/photos2.jpg",
     alt: "Have I Not Breathed For A Moment",
     title: "Have I Not Breathed For A Moment",
     description:
@@ -111,7 +111,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/storyboard-a-five-year-plan",
     category: "school",
-    image: "/assets/images/storyboard.jfif",
+    image: "/assets/images/blog/storyboard.jfif",
     alt: "Storyboard: A Five-Year Plan for the Development of Myself",
     title: "Storyboard: A Five-Year Plan for the Development of Myself",
     description:
@@ -121,7 +121,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/words-of-gratitude",
     category: "school",
-    image: "/assets/images/vale1.jpg",
+    image: "/assets/images/blog/vale1.jpg",
     alt: "Words of Gratitude on Behalf of the Graduates",
     title: "Words of Gratitude on Behalf of the Graduates",
     description:
@@ -131,7 +131,7 @@ export const blogPosts: BlogPost[] = [
   {
     to: "/blogs/in-the-midst-of-silence",
     category: "reflections",
-    image: "/assets/images/photos1.jpg",
+    image: "/assets/images/projects/photos/photos1.jpg",
     alt: "In the Midst of Silence: Reflections of a Bystander in a Time of Crisis",
     title:
       "In the Midst of Silence: Reflections of a Bystander in a Time of Crisis",

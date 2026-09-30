@@ -160,7 +160,7 @@
   z-index: 0;
   background:
     linear-gradient(rgb(14 9 6 / 0.55), rgb(14 9 6 / 0.72)),
-    center / cover no-repeat url("/assets/images/background.jpg");
+    center / cover no-repeat url("/assets/images/site/background.jpg");
   filter: blur(28px) saturate(1.15);
 }
 

@@ -17,7 +17,7 @@ const Blog14 = () => {
         <section className="animate-fade-in-delay-1">
           <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
-              src="/assets/images/college.png"
+              src="/assets/images/blog/college.png"
               alt="My College Graduation Photo"
               className="w-full aspect-[4/5] rounded-4xl border object-cover"
             />
@@ -74,7 +74,7 @@ const Blog14 = () => {
         <section className="animate-fade-in-delay-2">
           <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
-              src="/assets/images/vale1.jpg"
+              src="/assets/images/blog/vale1.jpg"
               alt="My Senior High School Graduatioj Photo"
               className="w-full aspect-[4/5] rounded-4xl border object-cover"
             />
@@ -127,7 +127,7 @@ const Blog14 = () => {
         <section className="animate-fade-in-delay-3">
           <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
-              src="/assets/images/jhs.jpg"
+              src="/assets/images/blog/jhs.jpg"
               alt="My Junior High School Completion Photo"
               className="w-full aspect-[3/4] rounded-4xl border object-cover"
             />
@@ -189,7 +189,7 @@ const Blog14 = () => {
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-delay-4 clear-both">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
-              src="/assets/images/elementary.jpg"
+              src="/assets/images/blog/elementary.jpg"
               alt="My Elementary Graduation Photo"
               className="w-full aspect-[208/295] rounded-4xl border object-cover"
             />
@@ -212,7 +212,7 @@ const Blog14 = () => {
           </article>
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
-              src="/assets/images/preschool.jpg"
+              src="/assets/images/blog/preschool.jpg"
               alt="My Pre-School Graduation Photo"
               className="w-full aspect-[194/269] rounded-4xl border object-cover"
             />

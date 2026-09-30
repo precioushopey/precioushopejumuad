@@ -11,9 +11,9 @@ import { ProjectLayout } from "../components/ProjectLayout";
 
 const ICpEP = () => {
   const images1 = [
-    "/assets/images/icpep1.jpg",
-    "/assets/images/icpep2.jpg",
-    "/assets/images/icpep3.jpg",
+    "/assets/images/projects/icpep/icpep1.jpg",
+    "/assets/images/projects/icpep/icpep2.jpg",
+    "/assets/images/projects/icpep/icpep3.jpg",
   ];
 
   const designSteps = [

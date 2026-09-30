@@ -23,7 +23,7 @@ const Blog11 = () => {
         <section className="animate-fade-in-delay-4">
           <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-3/5 lg:float-left lg:mr-6">
             <img
-              src="/assets/images/poem.jpg"
+              src="/assets/images/blog/poem.jpg"
               alt="Coins for the Child"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
             />

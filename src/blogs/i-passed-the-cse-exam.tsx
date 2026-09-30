@@ -22,7 +22,7 @@ const Blog16 = () => {
         <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
-              src="/assets/images/csc1.png"
+              src="/assets/images/blog/csc1.png"
               alt="Immaculate Conception Parish Church of Jasaan"
               className="w-full aspect-[600/228] rounded-4xl border object-cover"
             />
@@ -70,7 +70,7 @@ const Blog16 = () => {
         <section className="space-y-6 animate-fade-in-delay-3">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
-              src="/assets/images/csc2.png"
+              src="/assets/images/blog/csc2.png"
               alt="Immaculate Conception Parish Church of Jasaan"
               className="w-full aspect-[600/304] rounded-4xl border object-cover"
             />

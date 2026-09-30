@@ -35,7 +35,7 @@ const items: {
   {
     to: "/profile",
     label: "Profile",
-    avatar: "/assets/images/precious.png",
+    avatar: "/assets/images/profile/precious.png",
     end: true,
     mobileOnly: true,
   },
@@ -126,7 +126,7 @@ export const Rail = () => {
           className="h-11 w-11 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent xl:hidden"
         >
           <img
-            src="/assets/images/precious.png"
+            src="/assets/images/profile/precious.png"
             alt=""
             className="h-11 w-11 rounded-full border border-line bg-white object-cover"
           />
@@ -137,7 +137,7 @@ export const Rail = () => {
           className="h-11 w-11 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent max-xl:hidden"
         >
           <img
-            src="/assets/images/precious.png"
+            src="/assets/images/profile/precious.png"
             alt=""
             className="h-11 w-11 rounded-full border border-line bg-white object-cover"
           />

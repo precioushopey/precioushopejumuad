@@ -53,7 +53,7 @@ const About = () => {
 
   const jobs: Job[] = [
     {
-      imgSrc: "/assets/images/ojtconnect_logo.png",
+      imgSrc: "/assets/images/experience/ojtconnect_logo.png",
       imgAlt: "OJT Connect",
       imgClass: "bg-white p-2",
       site: { href: "https://ojtconnect.com/", kind: "web" },
@@ -71,7 +71,7 @@ const About = () => {
       ],
     },
     {
-      imgSrc: "/assets/images/ojtconnect_logo.png",
+      imgSrc: "/assets/images/experience/ojtconnect_logo.png",
       imgAlt: "OJT Connect",
       imgClass: "bg-white p-2",
       title: "Operations Associate",
@@ -87,7 +87,7 @@ const About = () => {
       ],
     },
     {
-      imgSrc: "/assets/images/roostercat.png",
+      imgSrc: "/assets/images/experience/roostercat.png",
       imgAlt: "Roostercat LLC",
       site: { href: "https://roostercat.games/", kind: "web" },
       title: "Designer/Artist",
@@ -104,7 +104,7 @@ const About = () => {
       ],
     },
     {
-      imgSrc: "/assets/images/lgu_jasaan_hrmo.png",
+      imgSrc: "/assets/images/experience/lgu_jasaan_hrmo.png",
       imgAlt: "LGU Jasaan - Human Resource Management Office",
       site: {
         href: "https://www.facebook.com/profile.php?id=61572533124170",
@@ -120,7 +120,7 @@ const About = () => {
       ],
     },
     {
-      imgSrc: "/assets/images/lgu_jasaan_hrmo.png",
+      imgSrc: "/assets/images/experience/lgu_jasaan_hrmo.png",
       imgAlt: "LGU Jasaan - Human Resource Management Office",
       title: "On-the-Job Trainee",
       company: "LGU Jasaan - Human Resource Management Office",
@@ -133,7 +133,7 @@ const About = () => {
       ],
     },
     {
-      imgSrc: "/assets/images/rikersiv.jfif",
+      imgSrc: "/assets/images/experience/rikersiv.jfif",
       imgAlt: "rikersiv",
       site: {
         href: "https://www.facebook.com/rikersiv.whatmattersperfectlydesigned",
@@ -154,7 +154,7 @@ const About = () => {
 
   const educationData: Education[] = [
     {
-      imgSrc: "/assets/images/ustp.png",
+      imgSrc: "/assets/images/education/ustp.png",
       alt: "University of Science and Technology of Southern Philippines",
       school: "University of Science and Technology of Southern Philippines",
       site: { href: "https://www.ustp.edu.ph/", kind: "web" },
@@ -164,7 +164,7 @@ const About = () => {
       description: `At the University of Science and Technology of Southern Philippines Cagayan de Oro (USTP CDO), I earned my Bachelor of Science in Computer Engineering, graduating with notable achievements in both academic excellence and student leadership. Together with my team, I was honored with the Best Thesis and Best Prototype awards at CONVERGE 2025: CpE Research Colloquium for our capstone project “SUBAY: A Multi-Camera Detection System for Customer Tracking Using YOLOv10, DeepSORT, and OSNet for Re-Identification in Retail Environments”, recognized for its innovation and real-world application in retail analytics. As President of the Institute of Computer Engineers of the Philippines Student Edition – USTP, I led the organization to earn the SILVER Award for Outstanding Student Organization at the USTP Kahamili Awards 2024, a recognition of our collective dedication to excellence and community engagement. These experiences strengthened my skills in leadership, collaboration, and innovation while fueling my passion for technology and design.`,
     },
     {
-      imgSrc: "/assets/images/srcb.jfif",
+      imgSrc: "/assets/images/education/srcb.jfif",
       alt: "St. Rita’s College of Balingasag",
       school: "St. Rita’s College of Balingasag",
       site: { href: "https://www.srcb.edu.ph/", kind: "web" },
@@ -175,7 +175,7 @@ const About = () => {
       description: `At St. Rita’s College of Balingasag (SRCB), I graduated as the batch valedictorian, earning the Top 1 General Academic Excellence Award, and making history as the school's first top 1 from the STEM strand. My passion for technology and innovation was recognized through the Award of Excellence in Robotics, which I received for leading my team to a Top 2 finish in ROBOTEK 2021: Online Robotics Competition. Additionally, I was honored with a Service Award for my leadership and dedication as the Secretary General of the Marian Student Government, demonstrating my commitment to academic excellence, technological innovation, and student leadership.`,
     },
     {
-      imgSrc: "/assets/images/smaj.png",
+      imgSrc: "/assets/images/education/smaj.png",
       alt: "St. Mary's Academy of Jasaan, Inc.",
       school: "St. Mary's Academy of Jasaan, Inc.",
       site: { href: "https://www.facebook.com/smajasaan/", kind: "facebook" },
@@ -188,7 +188,7 @@ const About = () => {
 
   const certificationData: Certifications[] = [
     {
-      imgSrc: "/assets/images/wadhwani.jfif",
+      imgSrc: "/assets/images/certifications/wadhwani.jfif",
       alt: "Impactful Writing Skills",
       certificate: "Impactful Writing Skills",
       organization: "Wadhwani Foundation",
@@ -196,7 +196,7 @@ const About = () => {
       link: "https://web.certificate.wfglobal.org/en/certificate?certificateId=67949e6026d927dcfc4c7d0f",
     },
     {
-      imgSrc: "/assets/images/wadhwani.jfif",
+      imgSrc: "/assets/images/certifications/wadhwani.jfif",
       alt: "Problem Solving and Innovation",
       certificate: "Problem Solving and Innovation",
       organization: "Wadhwani Foundation",
@@ -204,7 +204,7 @@ const About = () => {
       link: "https://web.certificate.wfglobal.org/en/certificate?certificateId=679b3af0a8a720f14c9f4c42",
     },
     {
-      imgSrc: "/assets/images/cisco.jfif",
+      imgSrc: "/assets/images/certifications/cisco.jfif",
       alt: "Introduction to Cybersecurity",
       certificate: "Introduction to Cybersecurity",
       organization: "Cisco Systems",
@@ -212,7 +212,7 @@ const About = () => {
       link: "https://www.credly.com/badges/b64d86be-b17e-4da1-bf20-fec0f075aeb8/linked_in_profile",
     },
     {
-      imgSrc: "/assets/images/cisco.jfif",
+      imgSrc: "/assets/images/certifications/cisco.jfif",
       alt: "CCNA: Enterprise Networking, Security, and Automation",
       certificate: "CCNA: Enterprise Networking, Security, and Automation",
       organization: "Cisco Systems",
@@ -220,7 +220,7 @@ const About = () => {
       link: "https://www.credly.com/badges/3495fc90-3694-48fd-9690-9eab3b793ecd/linked_in_profile",
     },
     {
-      imgSrc: "/assets/images/cisco.jfif",
+      imgSrc: "/assets/images/certifications/cisco.jfif",
       alt: "CCNA: Switching, Routing, and Wireless Essentials",
       certificate: "CCNA: Switching, Routing, and Wireless Essentials",
       organization: "Cisco Systems",
@@ -228,7 +228,7 @@ const About = () => {
       link: "https://www.credly.com/badges/8e389c6a-6003-4b6c-8bee-c126162530bb/linked_in_profile",
     },
     {
-      imgSrc: "/assets/images/cisco.jfif",
+      imgSrc: "/assets/images/certifications/cisco.jfif",
       alt: "Networking Essentials",
       certificate: "Networking Essentials",
       organization: "Cisco Systems",
@@ -236,7 +236,7 @@ const About = () => {
       link: "https://www.credly.com/badges/089ad2e1-0d53-45d8-b48c-f94fedd31ed5/linked_in_profile",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Capstone: Retrieving, Processing, and Visualizing Data with Python",
       certificate:
         "Capstone: Retrieving, Processing, and Visualizing Data with Python",
@@ -245,7 +245,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/WUMMSK8VGYLQ",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Python Data Structures",
       certificate: "Python Data Structures",
       organization: "Coursera",
@@ -253,7 +253,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/ZJ23AMHF8LCP",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Python for Everybody Specialization",
       certificate: "Python for Everybody Specialization",
       organization: "Coursera",
@@ -261,7 +261,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/specialization/certificate/8EDBN6KTBXXW",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "The Science of Well-Being",
       certificate: "The Science of Well-Being",
       organization: "Coursera",
@@ -269,7 +269,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/JMZQ29DQC86Z",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Using Databases with Python",
       certificate: "Using Databases with Python",
       organization: "Coursera",
@@ -277,7 +277,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/79Z3ZF3CL6GU",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Using Python to Access Web Data",
       certificate: "Using Python to Access Web Data",
       organization: "Coursera",
@@ -285,7 +285,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/DYMQVYUSX2A6",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Introduction to Chemistry: Structures and Solutions",
       certificate: "Introduction to Chemistry: Structures and Solutions",
       organization: "Coursera",
@@ -293,7 +293,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/DC7PHFUSY2E8",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Programming for Everybody (Getting Started with Python)",
       certificate: "Programming for Everybody (Getting Started with Python)",
       organization: "Coursera",
@@ -301,7 +301,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/WCB9MNXJLCXE",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Interfacing with the Arduino",
       certificate: "Interfacing with the Arduino",
       organization: "Coursera",
@@ -309,7 +309,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/KJFE9Q8KJNZR",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Introduction to the Internet of Things and Embedded Systems",
       certificate:
         "Introduction to the Internet of Things and Embedded Systems",
@@ -318,7 +318,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/BLMCLKHSKJJ8",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "How Things Work: An Introduction to Physics",
       certificate: "How Things Work: An Introduction to Physics",
       organization: "Coursera",
@@ -326,7 +326,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/X7KT25LNFCVX",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "The Arduino Platform and C Programming",
       certificate: "The Arduino Platform and C Programming",
       organization: "Coursera",
@@ -334,7 +334,7 @@ const About = () => {
       link: "https://www.coursera.org/account/accomplishments/certificate/GU44XRSLM7BR",
     },
     {
-      imgSrc: "/assets/images/coursera.png",
+      imgSrc: "/assets/images/certifications/coursera.png",
       alt: "Introduction to Chemistry: Reactions and Ratios",
       certificate: "Introduction to Chemistry: Reactions and Ratios",
       organization: "Coursera",
@@ -461,7 +461,7 @@ const About = () => {
               className="pointer-events-none absolute inset-x-0 -inset-y-[5%] bg-[radial-gradient(ellipse_at_58%_55%,rgb(255_201_60/0.5),rgb(255_201_60/0.16)_40%,transparent_70%)] blur-2xl"
             />
             <img
-              src="/assets/images/hero.png"
+              src="/assets/images/profile/hero.png"
               alt="Precious Hope Jumuad in her graduation gown"
               className="relative h-auto w-full"
             />
@@ -519,7 +519,7 @@ const About = () => {
           <FolderSection
             label="Experiences"
             count={companies.length}
-            peek="/assets/images/ojtconnect_logo.png"
+            peek="/assets/images/experience/ojtconnect_logo.png"
           >
             <section className="flex flex-col gap-3 lg:gap-6">
               {companies.map((group) => {
@@ -641,7 +641,7 @@ const About = () => {
           <FolderSection
             label="Education"
             count={educationData.length}
-            peek="/assets/images/ustp.png"
+            peek="/assets/images/education/ustp.png"
           >
             <section className="flex flex-col gap-3 lg:gap-6">
               {educationData.map((edu) => (
@@ -683,7 +683,7 @@ const About = () => {
           <FolderSection
             label="Certifications"
             count={certificationData.length}
-            peek="/assets/images/cisco.jfif"
+            peek="/assets/images/certifications/cisco.jfif"
           >
             <section
               aria-label="Certifications"
@@ -749,7 +749,7 @@ const About = () => {
           <FolderSection
             label="Skills"
             count={skills.length}
-            peek="/assets/images/figma.png"
+            peek="/assets/images/skills/figma.png"
           >
             <SkillsSection />
           </FolderSection>

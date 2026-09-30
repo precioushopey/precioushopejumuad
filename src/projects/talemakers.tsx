@@ -11,12 +11,12 @@ import { ProjectLayout } from "../components/ProjectLayout";
 
 const TaleMakers = () => {
   const images1 = [
-    "/assets/images/talemakers1.png",
-    "/assets/images/talemakers2.png",
-    "/assets/images/talemakers3.png",
-    "/assets/images/talemakers4.png",
-    "/assets/images/talemakers5.png",
-    "/assets/images/talemakers6.png",
+    "/assets/images/projects/talemakers/talemakers1.png",
+    "/assets/images/projects/talemakers/talemakers2.png",
+    "/assets/images/projects/talemakers/talemakers3.png",
+    "/assets/images/projects/talemakers/talemakers4.png",
+    "/assets/images/projects/talemakers/talemakers5.png",
+    "/assets/images/projects/talemakers/talemakers6.png",
   ];
 
   const designSteps = [

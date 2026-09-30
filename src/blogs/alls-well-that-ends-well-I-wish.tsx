@@ -15,7 +15,7 @@ const Blog15 = () => {
         <section className="animate-fade-in-delay-2">
           <figure className="mb-4 lg:mb-2 space-y-4 lg:w-1/2 lg:float-left lg:mr-6">
             <img
-              src="/assets/images/essay3.png"
+              src="/assets/images/blog/essay3.png"
               alt="“all’s well that ends well,” I wish"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
             />

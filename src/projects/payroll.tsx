@@ -11,15 +11,15 @@ import { ProjectLayout } from "../components/ProjectLayout";
 
 const Payroll = () => {
   const images1 = [
-    "/assets/images/payroll1.png",
-    "/assets/images/payroll2.png",
+    "/assets/images/projects/payroll/payroll1.png",
+    "/assets/images/projects/payroll/payroll2.png",
   ];
   const images2 = [
-    "/assets/images/payroll3.jpg",
-    "/assets/images/payroll4.jfif",
-    "/assets/images/payroll5.jpg",
-    "/assets/images/payroll6.png",
-    "/assets/images/payroll7.jpg",
+    "/assets/images/projects/payroll/payroll3.jpg",
+    "/assets/images/projects/payroll/payroll4.jfif",
+    "/assets/images/projects/payroll/payroll5.jpg",
+    "/assets/images/projects/payroll/payroll6.png",
+    "/assets/images/projects/payroll/payroll7.jpg",
   ];
 
   const designSteps = [

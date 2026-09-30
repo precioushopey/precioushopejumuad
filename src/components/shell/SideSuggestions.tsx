@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
-import { Link } from "react-router-dom";
-import { LuArrowRight, LuFolderOpen, LuNewspaper } from "react-icons/lu";
+import { LuFolderOpen, LuNewspaper } from "react-icons/lu";
 import { blogPosts } from "../../data/blogPosts";
 import { projects } from "../../data/projects";
 import { ThumbnailTile } from "../ThumbnailTile";
@@ -35,16 +34,8 @@ const Suggestions = ({
     <WindowBar
       icon={icon}
       title={title}
-      status={
-        <Link
-          to={seeAllTo}
-          aria-label={`See all ${label.toLowerCase()}`}
-          title={`See all ${label.toLowerCase()}`}
-          className="flex h-6 w-6 items-center justify-center rounded-full text-cream/50 transition-colors duration-300 hover:text-cream"
-        >
-          <LuArrowRight size={14} aria-hidden />
-        </Link>
-      }
+      to={seeAllTo}
+      toLabel={label.replace(/^More /, "See all ")}
     />
     <div className="grid grid-cols-2 gap-x-2 gap-y-1 pt-3 lg:grid-cols-3 xl:grid-cols-1 xl:p-3">
       {items.map((item, index) => (

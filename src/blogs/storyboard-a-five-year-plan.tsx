@@ -27,7 +27,7 @@ const Blog3 = () => {
         <section className="animate-fade-in-delay-2">
           <figure className="mb-4 lg:mb-2 space-y-4 lg:w-2/5 lg:float-right lg:ml-6">
             <img
-              src="/assets/images/storyboard.jfif"
+              src="/assets/images/blog/storyboard.jfif"
               alt="Me in Umaru-chan merchandise hood III"
               className="w-full aspect-[3/4] rounded-4xl border object-cover"
             />

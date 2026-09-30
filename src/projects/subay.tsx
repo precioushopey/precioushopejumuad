@@ -38,7 +38,7 @@ const Subay = () => {
   const contributors: Contributor[] = [
     {
       name: "Xyrus Vincent Dominguez",
-      image: "/assets/images/xyrus.jpg",
+      image: "/assets/images/projects/subay/contributors/xyrus.jpg",
       alt: "Xyrus Vincent Dominguez",
       driveLink:
         "https://drive.google.com/file/d/1HiVoCt4xpYreHKzKaZIDsiCNrdC3bN2K/view?usp=sharing",
@@ -59,7 +59,7 @@ const Subay = () => {
     },
     {
       name: "Precious Hope T. Jumuad",
-      image: "/assets/images/precious.jpg",
+      image: "/assets/images/projects/subay/contributors/precious.jpg",
       alt: "Precious Hope T. Jumuad",
       driveLink:
         "https://drive.google.com/file/d/1a6xBQ8SLlQIqsPKs1xBa9YGMyfLzFtvu/view?usp=sharing",
@@ -80,7 +80,7 @@ const Subay = () => {
     },
     {
       name: "Rezzelle Tinoy Onahon",
-      image: "/assets/images/rezzelle.jpg",
+      image: "/assets/images/projects/subay/contributors/rezzelle.jpg",
       alt: "Rezzelle Tinoy Onahon",
       driveLink:
         "https://drive.google.com/file/d/1Kq2zzOl5cewyv_FyE16q_vf9rLSb80uq/view?usp=sharing",
@@ -101,7 +101,7 @@ const Subay = () => {
     },
     {
       name: "Venz Joshua Nolasco",
-      image: "/assets/images/venz.jpg",
+      image: "/assets/images/projects/subay/contributors/venz.jpg",
       alt: "Venz Joshua Nolasco",
       driveLink:
         "https://drive.google.com/file/d/1TIdTGCMhYX7KU6r4eYsUuPCqmyopf0TB/view?usp=sharing",
@@ -244,7 +244,7 @@ const Subay = () => {
           </h2>
           <div className="flex overflow-hidden glass-card card-hover">
             <img
-              src="/assets/images/team.jpg"
+              src="/assets/images/projects/subay/contributors/team.jpg"
               alt="Team"
               className="w-full aspect-[16/9] object-cover transition-transform duration-500 hover:scale-110"
             />
@@ -325,14 +325,14 @@ const Subay = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="flex overflow-hidden glass-card card-hover">
               <img
-                src="/assets/images/best_thesis.jpg"
+                src="/assets/images/projects/subay/best_thesis.jpg"
                 alt="Team"
                 className="w-full aspect-[85/73] object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
             <div className="flex overflow-hidden glass-card card-hover">
               <img
-                src="/assets/images/best_prototype.jpg"
+                src="/assets/images/projects/subay/best_prototype.jpg"
                 alt="Team"
                 className="w-full aspect-[85/73] object-cover transition-transform duration-500 hover:scale-110"
               />

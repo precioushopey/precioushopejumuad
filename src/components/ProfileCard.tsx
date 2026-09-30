@@ -12,19 +12,20 @@ export const ProfileCard = () => {
       aria-label="Profile"
       className="glass-card relative p-6 pb-8 text-center"
     >
-      <span className="absolute left-5 top-5 rounded-full border border-line px-3 py-0.5 text-xs">
+      <span className="pointer-events-none absolute left-5 top-5 z-10 rounded-full border border-line px-3 py-0.5 text-xs">
         Profile
       </span>
+      {/* The whole top strip (the "Profile" tag and the arrow) links to the About page. */}
       <Link
         to="/about"
         aria-label="About me"
         title="About me"
-        className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-cream/50 transition-colors duration-300 hover:text-cream"
+        className="group absolute inset-x-0 top-0 flex h-14 items-center justify-end rounded-t-[2rem] pr-5 text-cream/50 transition-colors hover:bg-cream/5 hover:text-cream"
       >
         <LuArrowRight size={14} aria-hidden />
       </Link>
       <img
-        src="/assets/images/precious.png"
+        src="/assets/images/profile/precious.png"
         alt="Precious Hope T. Jumuad"
         className="mx-auto mt-4 h-36 w-36 rounded-full border-2 border-line bg-white object-cover"
       />

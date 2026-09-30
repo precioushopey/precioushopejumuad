@@ -11,9 +11,9 @@ import { ProjectLayout } from "../components/ProjectLayout";
 
 const CpExpress = () => {
   const images1 = [
-    "/assets/images/cpexpress1.png",
-    "/assets/images/cpexpress2.png",
-    "/assets/images/cpexpress3.png",
+    "/assets/images/projects/cpexpress/cpexpress1.png",
+    "/assets/images/projects/cpexpress/cpexpress2.png",
+    "/assets/images/projects/cpexpress/cpexpress3.png",
   ];
 
   const designSteps = [

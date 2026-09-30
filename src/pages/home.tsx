@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LuActivity, LuArrowRight, LuFolderOpen } from "react-icons/lu";
+import { LuActivity, LuFolderOpen } from "react-icons/lu";
 import { WindowBar } from "../components/WindowBar";
 import { ProfileCard } from "../components/ProfileCard";
 import { ContactCard } from "../components/ContactCard";
@@ -44,16 +44,8 @@ const Home = () => {
           <WindowBar
             icon={<LuFolderOpen size={14} />}
             title="Recent Projects"
-            status={
-              <Link
-                to="/projects"
-                aria-label="See all projects"
-                title="See all projects"
-                className="flex h-6 w-6 items-center justify-center rounded-full text-cream/50 transition-colors duration-300 hover:text-cream"
-              >
-                <LuArrowRight size={14} aria-hidden />
-              </Link>
-            }
+            to="/projects"
+            toLabel="See all projects"
           />
           <div className="space-y-2 p-4 pt-3">
             {recent.map((p) => (

@@ -25,7 +25,7 @@ const Blog6 = () => {
         <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
-              src="/assets/images/gumamela1.jpg"
+              src="/assets/images/blog/gumamela1.jpg"
               alt="Immaculate Conception Parish Church of Jasaan"
               className="w-full aspect-[3/2] rounded-4xl border object-cover"
             />
@@ -79,7 +79,7 @@ const Blog6 = () => {
         <section className="animate-fade-in-delay-3">
           <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
-              src="/assets/images/gumamela2.jpg"
+              src="/assets/images/blog/gumamela2.jpg"
               alt="Me and My Sibling's First Communion"
               className="w-full aspect-[778/1037] rounded-4xl border object-cover"
             />
@@ -144,7 +144,7 @@ const Blog6 = () => {
         <section className="animate-fade-in-delay-4">
           <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
-              src="/assets/images/gumamela3.jpg"
+              src="/assets/images/blog/gumamela3.jpg"
               alt="The Restored Retablo (photo courtesy of Arellano J. Galdo III)."
               className="w-full aspect-[4/3] rounded-4xl border object-cover"
             />
@@ -204,7 +204,7 @@ const Blog6 = () => {
             </p>
             <figure className="space-y-4 text-center [text-align-last:center]">
               <img
-                src="/assets/images/gumamela4.webp"
+                src="/assets/images/blog/gumamela4.webp"
                 alt="Our Rondalla Performance in front of the Church"
                 className="w-full aspect-[3/2] rounded-4xl border object-cover"
               />

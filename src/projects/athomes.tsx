@@ -11,8 +11,8 @@ import { ProjectLayout } from "../components/ProjectLayout";
 
 const AtHomes = () => {
   const images1 = [
-    "/assets/images/athomes1.png",
-    "/assets/images/athomes2.png",
+    "/assets/images/projects/athomes/athomes1.png",
+    "/assets/images/projects/athomes/athomes2.png",
   ];
 
   const designSteps = [

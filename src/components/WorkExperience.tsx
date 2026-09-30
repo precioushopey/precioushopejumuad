@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { LuArrowRight, LuBriefcase } from "react-icons/lu";
+import { LuBriefcase } from "react-icons/lu";
 import { WindowBar } from "./WindowBar";
 
 // Work experience, most recent first. Logos sit on a tile: white for dark/coloured marks,
@@ -8,19 +7,19 @@ const highlights = [
   {
     title: "Product Designer/Developer",
     detail: "OJT Connect · Feb 2026 to present",
-    logo: "/assets/images/ojtconnect_logo.png",
+    logo: "/assets/images/experience/ojtconnect_logo.png",
     tile: "bg-white p-1",
   },
   {
     title: "Designer/Artist",
     detail: "Roostercat LLC · Jun 2025 to present",
-    logo: "/assets/images/roostercat.png",
+    logo: "/assets/images/experience/roostercat.png",
     tile: "bg-black p-1",
   },
   {
     title: "Frontend Web Developer",
     detail: "LGU Jasaan · Mar 2025 to present",
-    logo: "/assets/images/lgu_jasaan_hrmo.png",
+    logo: "/assets/images/experience/lgu_jasaan_hrmo.png",
     tile: "bg-white",
   },
 ];
@@ -33,16 +32,8 @@ export const WorkExperience = () => (
     <WindowBar
       icon={<LuBriefcase size={14} />}
       title="Work Experience"
-      status={
-        <Link
-          to="/about"
-          aria-label="See my full experience"
-          title="See my full experience"
-          className="flex h-6 w-6 items-center justify-center rounded-full text-cream/50 transition-colors duration-300 hover:text-cream"
-        >
-          <LuArrowRight size={14} aria-hidden />
-        </Link>
-      }
+      to="/about"
+      toLabel="See my full experience"
     />
     <ul className="flex flex-1 flex-col gap-2 p-4 pt-3">
       {highlights.map(({ title, detail, logo, tile }) => (

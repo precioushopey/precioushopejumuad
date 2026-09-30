@@ -23,7 +23,7 @@ const Blog2 = () => {
         <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
-              src="/assets/images/vale2.jpg"
+              src="/assets/images/blog/vale2.jpg"
               alt="Delivery of the Words of Gratitude Speech by Yours Truly"
               className="w-full aspect-[16/9] rounded-4xl border object-cover"
             />
@@ -70,7 +70,7 @@ const Blog2 = () => {
         <section className="animate-fade-in-delay-3">
           <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
-              src="/assets/images/vale1.jpg"
+              src="/assets/images/blog/vale1.jpg"
               alt="My Graduation Photo"
               className="w-full aspect-[4/5] rounded-4xl border object-cover"
             />
@@ -141,7 +141,7 @@ const Blog2 = () => {
         <section className="animate-fade-in-delay-4">
           <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
-              src="/assets/images/vale3.jpg"
+              src="/assets/images/blog/vale3.jpg"
               alt="My Classmates at Grade 12- STEM B St. Luke"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
             />
@@ -209,7 +209,7 @@ const Blog2 = () => {
             </p>
             <figure className="space-y-4 text-center [text-align-last:center]">
               <img
-                src="/assets/images/vale4.jpg"
+                src="/assets/images/blog/vale4.jpg"
                 alt="Presentation Slide with My Awards"
                 className="w-full aspect-[16/9] rounded-4xl border object-cover"
               />

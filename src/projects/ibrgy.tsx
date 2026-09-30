@@ -10,7 +10,7 @@ import {
 import { ProjectLayout } from "../components/ProjectLayout";
 
 const Ibrgy = () => {
-  const images1 = ["/assets/images/ibrgy1.png", "/assets/images/ibrgy2.png"];
+  const images1 = ["/assets/images/projects/ibrgy/ibrgy1.png", "/assets/images/projects/ibrgy/ibrgy2.png"];
 
   const designSteps = [
     {
