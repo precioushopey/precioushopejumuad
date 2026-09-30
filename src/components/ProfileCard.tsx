@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { LuArrowRight } from "react-icons/lu";
 import { experienceLabel } from "../lib/experience";
 
 export const ProfileCard = () => {
@@ -12,6 +13,14 @@ export const ProfileCard = () => {
       <span className="absolute left-5 top-5 rounded-full border border-line px-3 py-0.5 text-xs">
         Profile
       </span>
+      <Link
+        to="/about"
+        aria-label="About me"
+        title="About me"
+        className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-white transition-transform duration-300 hover:scale-110"
+      >
+        <LuArrowRight size={20} aria-hidden />
+      </Link>
       <img
         src="/assets/images/precious.png"
         alt="Precious Hope T. Jumuad"
@@ -30,9 +39,6 @@ export const ProfileCard = () => {
         units. A Computer Engineering graduate who loves art and design in
         technology, I’m excited to build with you!
       </p>
-      <Link to="/about" className="white-button mt-4">
-        About me
-      </Link>
     </section>
   );
 };
