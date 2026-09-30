@@ -375,49 +375,58 @@ const About = () => {
               className="relative h-auto w-full"
             />
           </figure>
-          <article className="w-full space-y-4 text-justify">
-            <p>
-              I’m <strong>Precious Hope T. Jumuad</strong>, a Design Engineer
-              (Product/UI/UX Designer and Front-End Developer) who believes that
-              design and technology should make life easier, more beautiful, and
-              more meaningful. My work sits at the intersection of product
-              thinking, user experience, visual design, and front-end
-              development, turning ideas and complex problems into digital
-              experiences that feel intuitive and purposeful.
-            </p>
-            <p>
-              I work across startups and digital projects, designing and
-              building web and mobile products, SaaS platforms, design systems,
-              and interactive prototypes. I enjoy taking products from the early
-              stages of an idea (understanding the problem, defining
-              requirements, mapping user flows, and exploring solutions) to
-              creating working interfaces that can be tested, refined, and
-              brought closer to production. I work primarily with Figma, React,
-              TypeScript, Tailwind, and AI-powered tools to move quickly without
-              losing sight of thoughtful design.
-            </p>
-            <p>
-              As a Design Engineer, I care about the space between design and
-              development. My workflow combines UX research and analysis,
-              product requirements, rapid prototyping, reusable components,
-              responsive behavior, accessibility, technical feasibility,
-              documentation, and developer handoff. I believe design shouldn’t
-              stop at static screens; sometimes the best way to communicate an
-              idea is to make it real, interactive, and something people can
-              experience.
-            </p>
-            <p>
-              I’m always curious about better ways to design, build, and solve
-              problems, especially where creativity and technology meet. I want
-              to work with people who value thoughtful design, collaboration,
-              experimentation, and purposeful products. If you’re building
-              something interesting, I’d love to connect. You can explore my
-              work{" "}
-              <Link to="/projects">
-                <u>here</u>
-              </Link>
-              .
-            </p>
+          <article className="glass-card w-full overflow-hidden bg-cream/[0.07] text-justify">
+            <div className="flex items-center gap-2 border-b border-line/40 px-5 py-3 text-left text-xs text-cream/70">
+              <span
+                aria-hidden
+                className="h-2.5 w-2.5 rounded-full bg-accent"
+              />
+              <span>About me</span>
+            </div>
+            <div className="space-y-6 bg-[repeating-linear-gradient(transparent_0_23px,rgb(245_234_214/0.08)_23px_24px)] bg-[position:0_1.25rem] px-5 pt-5 pb-6">
+              <p>
+                I’m <strong>Precious Hope T. Jumuad</strong>, a Design Engineer
+                (Product/UI/UX Designer and Front-End Developer) who believes
+                that design and technology should make life easier, more
+                beautiful, and more meaningful. My work sits at the intersection
+                of product thinking, user experience, visual design, and
+                front-end development, turning ideas and complex problems into
+                digital experiences that feel intuitive and purposeful.
+              </p>
+              <p>
+                I work across startups and digital projects, designing and
+                building web and mobile products, SaaS platforms, design
+                systems, and interactive prototypes. I enjoy taking products
+                from the early stages of an idea (understanding the problem,
+                defining requirements, mapping user flows, and exploring
+                solutions) to creating working interfaces that can be tested,
+                refined, and brought closer to production. I work primarily with
+                Figma, React, TypeScript, Tailwind, and AI-powered tools to move
+                quickly without losing sight of thoughtful design.
+              </p>
+              <p>
+                As a Design Engineer, I care about the space between design and
+                development. My workflow combines UX research and analysis,
+                product requirements, rapid prototyping, reusable components,
+                responsive behavior, accessibility, technical feasibility,
+                documentation, and developer handoff. I believe design shouldn’t
+                stop at static screens; sometimes the best way to communicate an
+                idea is to make it real, interactive, and something people can
+                experience.
+              </p>
+              <p>
+                I’m always curious about better ways to design, build, and solve
+                problems, especially where creativity and technology meet. I
+                want to work with people who value thoughtful design,
+                collaboration, experimentation, and purposeful products. If
+                you’re building something interesting, I’d love to connect. You
+                can explore my work{" "}
+                <Link to="/projects">
+                  <u>here</u>
+                </Link>
+                .
+              </p>
+            </div>
           </article>
         </section>
 
