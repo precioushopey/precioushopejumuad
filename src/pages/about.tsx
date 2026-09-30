@@ -332,47 +332,41 @@ const About = () => {
           <article className="w-full space-y-4 text-justify">
             <p>
               I’m <strong>Precious Hope T. Jumuad</strong>, a Design Engineer
-              (Product/UI/UX Designer and Front-End Developer) and Computer
-              Engineering graduate from the{" "}
-              <a href="https://www.ustp.edu.ph/" target="_blank">
-                <u>
-                  University of Science and Technology of Southern Philippines,
-                  Cagayan de Oro,
-                </u>
-              </a>{" "}
-              who believes that design and technology should make life easier,
-              more beautiful, and more meaningful. My work sits at the
-              intersection of product thinking, user experience, visual design,
-              and front-end development.
+              (Product/UI/UX Designer and Front-End Developer) who believes that
+              design and technology should make life easier, more beautiful, and
+              more meaningful. My work sits at the intersection of product
+              thinking, user experience, visual design, and front-end
+              development, turning ideas and complex problems into digital
+              experiences that feel intuitive and purposeful.
             </p>
             <p>
-              I design and build web and mobile products, SaaS platforms, design
-              systems, and interactive prototypes, taking ideas from the early
-              stages of understanding the problem and mapping user flows to
-              working interfaces that can be tested and refined. I work
-              primarily with Figma, React, TypeScript, Tailwind, and AI-powered
-              tools, and I care about the space between design and development:
-              reusable components, responsive behavior, accessibility, and
-              developer handoff.
+              I work across startups and digital projects, designing and
+              building web and mobile products, SaaS platforms, design systems,
+              and interactive prototypes. I enjoy taking products from the early
+              stages of an idea (understanding the problem, defining
+              requirements, mapping user flows, and exploring solutions) to
+              creating working interfaces that can be tested, refined, and
+              brought closer to production. I work primarily with Figma, React,
+              TypeScript, Tailwind, and AI-powered tools to move quickly without
+              losing sight of thoughtful design.
             </p>
             <p>
-              One of my proudest achievements was co-developing{" "}
-              <a href="https://thesis-subay-web.vercel.app/" target="_blank">
-                <u>SUBAY,</u>
-              </a>{" "}
-              our award-winning thesis project that used computer vision to help
-              businesses understand their customers better. I’ve also had the
-              privilege of leading our student organization to earn the{" "}
-              <a
-                href="https://www.facebook.com/share/16y7oPyerD/"
-                target="_blank"
-              >
-                <u>Silver Award for Outstanding Student Organization,</u>
-              </a>{" "}
-              a testament to the power of teamwork and shared vision. Today I’m
-              a Product Designer/Developer at OJT Connect, and I’m always
-              looking to work with people who value thoughtful design,
-              collaboration, and purposeful products.
+              As a Design Engineer, I care about the space between design and
+              development. My workflow combines UX research and analysis,
+              product requirements, rapid prototyping, reusable components,
+              responsive behavior, accessibility, technical feasibility,
+              documentation, and developer handoff. I believe design shouldn’t
+              stop at static screens; sometimes the best way to communicate an
+              idea is to make it real, interactive, and something people can
+              experience.
+            </p>
+            <p>
+              I’m always curious about better ways to design, build, and solve
+              problems, especially where creativity and technology meet. I want
+              to work with people who value thoughtful design, collaboration,
+              experimentation, and purposeful products. If you’re building
+              something interesting, I’d love to connect. You can explore my
+              work at precioushopejumuad.vercel.app.
             </p>
           </article>
         </section>
