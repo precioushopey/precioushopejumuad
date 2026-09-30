@@ -36,7 +36,7 @@ export const PillTabs = ({
     <nav
       ref={navRef}
       aria-label={label}
-      className="no-scrollbar flex gap-2 max-lg:overflow-x-auto lg:flex-wrap lg:gap-3"
+      className="no-scrollbar flex gap-2 max-lg:overflow-x-auto lg:flex-wrap lg:gap-4"
     >
       {categories.map((c) => (
         <Link

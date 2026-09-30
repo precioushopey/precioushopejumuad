@@ -179,7 +179,7 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4 lg:clear-both">
+        <section className="flex flex-col lg:flex-row gap-8 animate-fade-in-delay-4 lg:clear-both">
           <article className="space-y-4">
             <p>
               Oh, to be in love. Suddenly, the music stopped. My trance dance in

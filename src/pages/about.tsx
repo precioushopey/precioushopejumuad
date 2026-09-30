@@ -453,7 +453,7 @@ const About = () => {
   return (
     <div className="space-y-6 p-0 text-sm lg:p-8">
       <div className="tracking-normal leading-6 text-left space-y-6">
-        <section className="flex flex-col items-center gap-6 animate-fade-in-delay-1">
+        <section className="flex flex-col items-center gap-8 animate-fade-in-delay-1">
           <h1 className="sr-only">About Precious Hope Jumuad</h1>
           <figure className="relative w-full max-w-2xl">
             <div
@@ -521,7 +521,7 @@ const About = () => {
             count={companies.length}
             peek="/assets/images/experience/ojtconnect_logo.png"
           >
-            <section className="flex flex-col gap-3 lg:gap-6">
+            <section className="flex flex-col gap-4 lg:gap-8">
               {companies.map((group) => {
                 const first = group[0];
                 if (group.length === 1) {
@@ -539,7 +539,7 @@ const About = () => {
                       )}
                     >
                       <div className="flex flex-col gap-4 p-5">
-                        <div className="flex flex-col sm:flex-row gap-6">
+                        <div className="flex flex-col sm:flex-row gap-8">
                           <figure className="w-full md:w-1/8 text-center">
                             <img
                               src={first.imgSrc}
@@ -585,8 +585,8 @@ const About = () => {
                       group.map((job) => ({ name: job.title, date: job.date })),
                     )}
                   >
-                    <div className="flex flex-col gap-5 p-5">
-                      <div className="flex flex-col sm:flex-row gap-6">
+                    <div className="flex flex-col gap-8 p-5">
+                      <div className="flex flex-col sm:flex-row gap-8">
                         <figure className="w-full md:w-1/8 text-center">
                           <img
                             src={first.imgSrc}
@@ -643,7 +643,7 @@ const About = () => {
             count={educationData.length}
             peek="/assets/images/education/ustp.png"
           >
-            <section className="flex flex-col gap-3 lg:gap-6">
+            <section className="flex flex-col gap-4 lg:gap-8">
               {educationData.map((edu) => (
                 <AccordionCard
                   key={edu.school}
@@ -656,7 +656,7 @@ const About = () => {
                   )}
                 >
                   <div className="flex flex-col gap-4 p-5">
-                    <div className="flex flex-col sm:flex-row gap-6">
+                    <div className="flex flex-col sm:flex-row gap-8">
                       <figure className="w-full md:w-1/8 text-center">
                         <img
                           src={edu.imgSrc}
@@ -695,7 +695,7 @@ const About = () => {
               />
               <div
                 aria-hidden
-                className="hidden grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem] gap-3 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
+                className="hidden grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem] gap-4 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
               >
                 <span />
                 <span>Name</span>
@@ -713,7 +713,7 @@ const About = () => {
                       href={cert.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-3 px-6 py-2.5 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem]"
+                      className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-4 px-6 py-2.5 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem]"
                     >
                       <img
                         src={cert.imgSrc}

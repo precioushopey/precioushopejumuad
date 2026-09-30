@@ -161,7 +161,7 @@ const Subay = () => {
             effective tool for generating data-driven insights to inform retail
             space planning and marketing strategies.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-8">
             <a
               href="https://drive.google.com/file/d/1AjZTAdm0_rqY1ojUwzVSy6Km6fNDVAbA/view?usp=sharing"
               target="_blank"
@@ -183,7 +183,7 @@ const Subay = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Demonstration
           </h2>
-          <div className="w-full flex flex-col md:flex-row items-center gap-6">
+          <div className="w-full flex flex-col md:flex-row items-center gap-8">
             <iframe
               src="https://www.youtube.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&mute=1&controls=1"
               title="SUBAY Demonstration"
@@ -215,7 +215,7 @@ const Subay = () => {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 lg:pt-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-6 lg:pt-0">
             {metrics.map((metric, index) => (
               <div
                 key={index}
@@ -252,7 +252,7 @@ const Subay = () => {
           <h3 className="font-medium">
             The Team with adviser Engr. Jodie Rey D. Fernandez
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {contributors.map((contributor, index) => (
               <a
                 key={index}
@@ -322,7 +322,7 @@ const Subay = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             We Won Best Thesis and Best Prototype!
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="flex overflow-hidden glass-card card-hover">
               <img
                 src="/assets/images/projects/subay/best_thesis.jpg"
@@ -362,7 +362,7 @@ const Subay = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Skills Earned
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {skills.map((skill, index) => (
               <div
                 key={index}

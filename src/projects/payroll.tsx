@@ -107,13 +107,13 @@ const Payroll = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Design Thinking Process
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {designSteps.map((step, index) => (
               <div
                 key={index}
                 className="group overflow-hidden glass-card space-y-4 p-6 card-hover"
               >
-                <div className="flex items-center justify-center border-b pb-2 gap-x-3">
+                <div className="flex items-center justify-center border-b pb-2 gap-x-4">
                   {step.icon}
                   <h3 className="font-medium text-lg">{step.title}</h3>
                 </div>
@@ -138,7 +138,7 @@ const Payroll = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             The Challenge
           </h2>
-          <div className="w-full flex flex-col lg:flex-row items-center gap-6">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-8">
             <div className="w-full lg:w-2/3">
               <Carousel images={images2} />
             </div>
@@ -194,7 +194,7 @@ const Payroll = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Skills Earned
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {skills.map((skill, index) => (
               <div
                 key={index}

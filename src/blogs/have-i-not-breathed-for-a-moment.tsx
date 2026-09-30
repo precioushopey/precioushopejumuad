@@ -192,7 +192,7 @@ const Blog4 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4 lg:clear-both">
+        <section className="flex flex-col lg:flex-row gap-8 animate-fade-in-delay-4 lg:clear-both">
           <article className="space-y-4">
             <p>
               Tonight, it is an impossibly large globe of yellow-orange rose

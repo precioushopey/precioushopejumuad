@@ -39,7 +39,7 @@ export const WorkExperience = () => (
       {highlights.map(({ title, detail, logo, tile }) => (
         <li
           key={title}
-          className="flex flex-1 items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left"
+          className="flex flex-1 items-center gap-4 rounded-2xl bg-black/20 p-2.5 text-left"
         >
           <span
             className={`h-12 w-12 shrink-0 overflow-hidden rounded-xl ${tile}`}

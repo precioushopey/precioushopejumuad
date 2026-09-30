@@ -23,7 +23,7 @@ const Home = () => {
   const blogPercent = Math.round((blogPosts.length / BLOG_GOAL) * 100);
 
   return (
-    <div className="flex flex-col gap-3 p-0 lg:gap-5 lg:flex-1 lg:p-8">
+    <div className="flex flex-col gap-4 p-0 lg:gap-8 lg:flex-1 lg:p-8">
       {/* Phones and tablets: the profile card leads the page and the message form closes it. From lg
           up they live in the right-hand column instead. */}
       <div className="lg:hidden">
@@ -36,7 +36,7 @@ const Home = () => {
       </header>
 
       {/* Two rows of two. Cards in a row stretch to the same height; the Skills card fills its cell. */}
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-3 lg:flex-1 lg:gap-5 min-[1024px]:grid-cols-2">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 lg:flex-1 lg:gap-8 min-[1024px]:grid-cols-2">
         <section
           aria-label="Recent Projects"
           className="glass-card animate-fade-in-delay-1 opacity-0"
@@ -52,7 +52,7 @@ const Home = () => {
               <Link
                 key={p.url}
                 to={p.url}
-                className="flex min-w-0 items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
+                className="flex min-w-0 items-center gap-4 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
               >
                 <img
                   src={p.image}
@@ -72,10 +72,10 @@ const Home = () => {
           </div>
         </section>
 
-        <div className="order-first flex animate-fade-in-delay-2 flex-col gap-3 opacity-0 min-[1024px]:order-none lg:gap-5">
+        <div className="order-first flex animate-fade-in-delay-2 flex-col gap-4 opacity-0 min-[1024px]:order-none lg:gap-8">
           <section aria-label="At a glance" className="glass-card">
             <WindowBar icon={<LuActivity size={14} />} title="At a glance" />
-            <div className="flex flex-wrap items-center justify-around gap-x-2 gap-y-3 p-3">
+            <div className="flex flex-wrap items-center justify-around gap-x-2 gap-y-4 p-3">
               <PhilippineClock />
               <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
               <Stat value={projects.length} label="Projects" />
@@ -112,7 +112,7 @@ const Home = () => {
         {/* Bare photo cards, no container: they stretch to the height of Work Experience beside them. */}
         <section
           aria-label="Featured projects"
-          className="grid animate-fade-in-delay-4 grid-cols-[repeat(3,minmax(0,1fr))] gap-3 opacity-0"
+          className="grid animate-fade-in-delay-4 grid-cols-[repeat(3,minmax(0,1fr))] gap-4 opacity-0"
         >
           {featured.map((p) => (
             <Link

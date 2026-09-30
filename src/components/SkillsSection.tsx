@@ -16,7 +16,7 @@ export const SkillsSection = () => {
       />
       <div
         aria-hidden
-        className="hidden grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1.6fr)] gap-3 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
+        className="hidden grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1.6fr)] gap-4 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
       >
         <span />
         <span>Name</span>
@@ -27,7 +27,7 @@ export const SkillsSection = () => {
         {skills.map((skill) => (
           <li
             key={skill.name}
-            className="grid grid-cols-[2rem_minmax(0,1fr)_8rem] items-center gap-3 border-b border-line/30 px-6 py-2.5 text-left last:border-b-0 md:grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1.6fr)]"
+            className="grid grid-cols-[2rem_minmax(0,1fr)_8rem] items-center gap-4 border-b border-line/30 px-6 py-2.5 text-left last:border-b-0 md:grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1.6fr)]"
           >
             <img
               src={skill.logo}
@@ -38,7 +38,7 @@ export const SkillsSection = () => {
             <span className="hidden capitalize text-cream/70 md:block">
               {skill.category}
             </span>
-            <span className="flex items-center gap-3">
+            <span className="flex items-center gap-4">
               <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-cream/15">
                 <span
                   className="block h-full rounded-full bg-accent"

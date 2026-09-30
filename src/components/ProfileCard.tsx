@@ -42,8 +42,8 @@ export const ProfileCard = () => {
         units. A Computer Engineering graduate who loves art and design in
         technology, I’m excited to build with you!
       </p>
-      <div className="mt-4 flex flex-col items-center gap-3">
-        <ul className="flex items-center justify-center gap-3">
+      <div className="mt-4 flex flex-col items-center gap-4">
+        <ul className="flex items-center justify-center gap-4">
           {contactItems.map(({ label, href, Icon, isEmail }) => (
             <li key={label}>
               <a

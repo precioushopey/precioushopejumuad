@@ -186,7 +186,7 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-delay-4 clear-both">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-delay-4 clear-both">
           <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/elementary.jpg"

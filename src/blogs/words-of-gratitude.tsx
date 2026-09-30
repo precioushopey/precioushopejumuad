@@ -171,7 +171,7 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4 lg:clear-both">
+        <section className="flex flex-col lg:flex-row gap-8 animate-fade-in-delay-4 lg:clear-both">
           <article className="space-y-4">
             <p>
               It made us contemplate, "Do we deserve this?" Friends, we are
