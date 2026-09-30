@@ -5,10 +5,9 @@ import { skills } from "../data/skills";
 import {
   LuAward,
   LuBriefcase,
-  LuChevronDown,
   LuExternalLink,
   LuFacebook,
-  LuFolderOpen,
+  LuGraduationCap,
   LuGlobe,
   LuInstagram,
   LuStickyNote,
@@ -401,7 +400,10 @@ const About = () => {
   };
 
   // Task-Manager-style summary at the top of each experience card: one row per role.
-  const processTable = (group: Job[]) => (
+  const processTable = (
+    rows: { name: string; date: string }[],
+    labels = { running: "Running", ended: "Ended" },
+  ) => (
     <table className="w-full table-fixed border-b border-line/40 text-left text-xs">
       <thead className="text-cream/50">
         <tr>
@@ -416,23 +418,23 @@ const About = () => {
         </tr>
       </thead>
       <tbody>
-        {group.map((job, index) => {
-          const range = rangeOf(job.date);
-          const running = job.date.endsWith("Present");
+        {rows.map((row, index) => {
+          const range = rangeOf(row.date);
+          const running = row.date.endsWith("Present");
           return (
             <tr key={index} className="border-t border-line/20">
-              <td className="px-6 py-2 font-medium">{job.title}</td>
+              <td className="px-6 py-2 font-medium">{row.name}</td>
               <td className="whitespace-nowrap py-2 pr-3">
                 <span className="flex items-center gap-1.5">
                   <span
                     aria-hidden
                     className={`h-1.5 w-1.5 rounded-full ${running ? "bg-accent" : "bg-cream/40"}`}
                   />
-                  {running ? "Running" : "Ended"}
+                  {running ? labels.running : labels.ended}
                 </span>
               </td>
               <td className="hidden whitespace-nowrap py-2 pr-3 text-cream/70 sm:table-cell">
-                {job.date.split(" - ")[0]}
+                {row.date.split(" - ")[0]}
               </td>
               <td className="whitespace-nowrap py-2 pr-6 text-right text-cream/70">
                 {durationLabel(range.end - range.start + 1)}
@@ -525,7 +527,12 @@ const About = () => {
                       icon={<LuBriefcase size={14} />}
                       link={siteLink(first)}
                       title={first.company}
-                      summary={processTable(group)}
+                      summary={processTable(
+                        group.map((job) => ({
+                          name: job.title,
+                          date: job.date,
+                        })),
+                      )}
                     >
                       <div className="flex flex-col gap-4 p-5">
                         <div className="flex flex-col sm:flex-row gap-6">
@@ -570,7 +577,9 @@ const About = () => {
                     icon={<LuBriefcase size={14} />}
                     link={siteLink(first)}
                     title={first.company}
-                    summary={processTable(group)}
+                    summary={processTable(
+                      group.map((job) => ({ name: job.title, date: job.date })),
+                    )}
                   >
                     <div className="flex flex-col gap-5 p-5">
                       <div className="flex flex-col sm:flex-row gap-6">
@@ -630,55 +639,38 @@ const About = () => {
             count={educationData.length}
             peek="/assets/images/ustp.png"
           >
-            <section
-              aria-label="Education"
-              className="glass-card overflow-hidden animate-fade-in-delay-3"
-            >
-              <WindowBar icon={<LuFolderOpen size={14} />} title="Education" />
-              <div className="border-b border-line/40 px-6 py-2 text-left text-xs text-cream/60">
-                This PC <span aria-hidden>›</span> Education
-              </div>
-              <div
-                aria-hidden
-                className="hidden grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1.4fr)_9.5rem] gap-3 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
-              >
-                <span />
-                <span>Name</span>
-                <span>Degree</span>
-                <span>Date</span>
-              </div>
-              {educationData.map((edu, index) => (
-                <details
-                  key={index}
-                  open={index === 0}
-                  className="group border-b border-line/30 last:border-b-0"
+            <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+              {educationData.map((edu) => (
+                <AccordionCard
+                  key={edu.school}
+                  icon={<LuGraduationCap size={14} />}
+                  title={edu.school}
+                  summary={processTable(
+                    [{ name: edu.degree, date: edu.dates }],
+                    { running: "Studying", ended: "Graduated" },
+                  )}
                 >
-                  <summary className="grid cursor-pointer list-none grid-cols-[2rem_minmax(0,1fr)] items-center gap-x-3 gap-y-0.5 px-6 py-3 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1.4fr)_9.5rem] [&::-webkit-details-marker]:hidden">
-                    <img
-                      src={edu.imgSrc}
-                      alt=""
-                      className="row-span-3 h-8 w-8 rounded-lg border bg-white object-cover md:row-span-1"
-                    />
-                    <span className="flex items-center gap-2 font-semibold">
-                      <span className="min-w-0">{edu.school}</span>
-                      <LuChevronDown
-                        aria-hidden
-                        size={14}
-                        className="shrink-0 text-cream/50 transition-transform group-open:rotate-180"
-                      />
-                    </span>
-                    <span className="col-start-2 text-cream/70 md:col-start-auto">
-                      {edu.degree}
-                    </span>
-                    <span className="col-start-2 text-cream/70 md:col-start-auto">
-                      {edu.dates}
-                    </span>
-                  </summary>
-                  <div className="space-y-2 px-6 pb-4 text-left md:pl-[4.25rem]">
-                    <p className="text-cream/60">{edu.location}</p>
+                  <div className="flex flex-col gap-4 p-5">
+                    <div className="flex flex-col sm:flex-row gap-6">
+                      <figure className="w-full md:w-1/8 text-center">
+                        <img
+                          src={edu.imgSrc}
+                          alt={edu.alt}
+                          className="w-full aspect-[1/1] rounded-4xl border object-cover"
+                        />
+                      </figure>
+                      <ul className="w-full md:w-7/8">
+                        <li className="text-base font-semibold">
+                          <u>{edu.school}</u>
+                        </li>
+                        <li className="font-semibold">{edu.degree}</li>
+                        <li>{edu.location}</li>
+                        <li>{edu.dates}</li>
+                      </ul>
+                    </div>
                     <p className="text-justify">{edu.description}</p>
                   </div>
-                </details>
+                </AccordionCard>
               ))}
             </section>
           </FolderSection>
