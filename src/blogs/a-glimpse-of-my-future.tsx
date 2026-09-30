@@ -3,7 +3,7 @@ import { LuChevronLeft } from "react-icons/lu";
 
 const Blog5 = () => {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 lg:px-8 text-sm sm:text-base">
       <header className="space-y-6">
         <div className="flex flex-col items-center justify-center animate-fade-in">
           <div className="flex flex-col lg:flex-row gap-x-2">
@@ -40,7 +40,7 @@ const Blog5 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal leading-7 text-left p-8 space-y-6">
+      <div className="glass-card tracking-normal leading-7 text-left p-0 lg:p-8 space-y-6 max-lg:border-0 max-lg:bg-transparent max-lg:shadow-none max-lg:backdrop-blur-none">
         <section className="text-right animate-fade-in-delay-2">
           <p>232, M.L. Quezon St., Lower Jasaan</p>
           <p>Jasaan 9003, Misamis Oriental</p>

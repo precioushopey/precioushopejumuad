@@ -9,7 +9,7 @@ import {
 
 const Blog3 = () => {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 lg:px-8 text-sm sm:text-base">
       <header className="space-y-6">
         <div className="flex flex-col items-center justify-center animate-fade-in">
           <div className="flex flex-col lg:flex-row gap-x-2">
@@ -46,7 +46,7 @@ const Blog3 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal leading-7 text-left p-8 space-y-6">
+      <div className="glass-card tracking-normal leading-7 text-left p-0 lg:p-8 space-y-6 max-lg:border-0 max-lg:bg-transparent max-lg:shadow-none max-lg:backdrop-blur-none">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
           <article className="w-full lg:w-3/5 space-y-4">
             <h3 className="font-display text-xl sm:text-2xl font-bold text-glow">
