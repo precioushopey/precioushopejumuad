@@ -24,7 +24,7 @@ const Home = () => {
         <PillTabs active="all" />
       </header>
 
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-2">
         <section aria-label="Recent work" className="glass-card space-y-2 p-4">
           <div className="flex items-center justify-between px-1">
             <h2 className="text-sm text-cream/70">Recent work</h2>
@@ -40,7 +40,7 @@ const Home = () => {
             <Link
               key={p.url}
               to={p.url}
-              className="flex items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
+              className="flex min-w-0 items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
             >
               <img
                 src={p.image}
@@ -60,10 +60,10 @@ const Home = () => {
         <div className="space-y-5">
           <section
             aria-label="At a glance"
-            className="glass-card flex items-center justify-around gap-4 p-4"
+            className="glass-card flex flex-wrap items-center justify-around gap-x-4 gap-y-3 p-4"
           >
             <AnalogClock className="h-24 w-24 shrink-0 text-cream" />
-            <span aria-hidden className="h-20 w-px bg-line" />
+            <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
             <RingGauge value={projects.length} max={max} label="Projects" />
             <RingGauge value={blogPosts.length} max={max} label="Blog posts" />
           </section>
