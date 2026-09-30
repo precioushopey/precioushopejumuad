@@ -21,11 +21,9 @@ export const PhilippineClock = () => {
         seconds={seconds}
         className="h-24 w-24"
       />
-      <p className="text-sm font-medium">
-        <time dateTime={now.toISOString()}>{manilaTimeLabel(now)}</time>
-      </p>
-      <p className="max-w-[8rem] text-center text-[11px] leading-tight text-cream/70">
-        My current time in the Philippines
+      {/* Same style as the labels under the ring gauges. */}
+      <p className="text-xs text-cream/70">
+        <time dateTime={now.toISOString()}>{manilaTimeLabel(now)}</time> PH Time
       </p>
     </div>
   );
