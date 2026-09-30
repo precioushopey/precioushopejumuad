@@ -17,7 +17,7 @@ const formatDate = (date: string) =>
   });
 
 // A card of thumbnail tiles: one column when it is the right-hand column (xl and up), a grid when
-// it sits under the page (2 columns on phones, 3 from lg).
+// it sits under the page (2 columns on phones, 3 from lg, first three only).
 const Suggestions = ({
   title,
   label,
@@ -48,7 +48,13 @@ const Suggestions = ({
     />
     <div className="grid grid-cols-2 gap-x-2 gap-y-1 p-3 lg:grid-cols-3 xl:grid-cols-1">
       {items.map((item, index) => (
-        <ThumbnailTile key={item.to} {...item} index={index} />
+        // Under the page (below xl) only the first three are shown; the column at xl shows all.
+        <div
+          key={item.to}
+          className={index >= 3 ? "hidden xl:block" : undefined}
+        >
+          <ThumbnailTile {...item} index={index} />
+        </div>
       ))}
     </div>
   </section>
