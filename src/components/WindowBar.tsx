@@ -50,7 +50,7 @@ export const WindowBar = ({
         {content}
         <span
           aria-hidden
-          className="flex h-6 w-6 shrink-0 items-center justify-center text-cream/50 transition-colors group-hover:text-cream"
+          className="flex h-8 w-8 shrink-0 items-center justify-center text-cream/50 transition-colors group-hover:text-cream"
         >
           <LuArrowRight size={14} />
         </span>

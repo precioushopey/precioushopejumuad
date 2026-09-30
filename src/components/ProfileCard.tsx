@@ -12,7 +12,7 @@ export const ProfileCard = () => {
       aria-label="Profile"
       className="glass-card relative p-8 pb-8 text-center"
     >
-      <span className="pointer-events-none absolute left-5 top-5 z-10 rounded-full border border-line px-4 py-0.5 text-xs">
+      <span className="pointer-events-none absolute left-8 top-8 z-10 rounded-full border border-line px-4 py-0.5 text-xs">
         Profile
       </span>
       {/* The whole top strip (the "Profile" tag and the arrow) links to the About page. */}
@@ -20,7 +20,7 @@ export const ProfileCard = () => {
         to="/about"
         aria-label="About me"
         title="About me"
-        className="group absolute inset-x-0 top-0 flex h-14 items-center justify-end rounded-t-[2rem] pr-8 text-cream/50 transition-colors hover:bg-cream/5 hover:text-cream"
+        className="group absolute inset-x-0 top-0 flex h-16 items-center justify-end rounded-t-[2rem] pr-8 text-cream/50 transition-colors hover:bg-cream/5 hover:text-cream"
       >
         <LuArrowRight size={14} aria-hidden />
       </Link>
@@ -52,7 +52,7 @@ export const ProfileCard = () => {
                 rel="noopener noreferrer"
                 aria-label={label}
                 title={label}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-ink transition-transform duration-300 hover:scale-110"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-ink transition-transform duration-300 hover:scale-110"
               >
                 <Icon size={20} aria-hidden />
               </a>

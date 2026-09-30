@@ -156,7 +156,7 @@
 /* Fixed, blurred photo behind the panel. */
 @utility shell-bg {
   position: fixed;
-  inset: -40px;
+  inset: -48px;
   z-index: 0;
   background:
     linear-gradient(rgb(14 9 6 / 0.55), rgb(14 9 6 / 0.72)),
@@ -222,7 +222,7 @@
   border: 1px solid transparent;
   background: rgb(245 234 214 / 0.1);
   color: var(--color-cream);
-  padding: 0.4rem 1.4rem;
+  padding: 0.4rem 2rem;
   font-size: 0.875rem;
   transition:
     background 0.3s,
@@ -242,7 +242,7 @@
   border: 1.5px solid var(--color-accent);
   background: rgb(255 201 60 / 0.14);
   color: var(--color-accent);
-  padding: 0.4rem 1.4rem;
+  padding: 0.4rem 2rem;
   font-size: 0.875rem;
 }
 

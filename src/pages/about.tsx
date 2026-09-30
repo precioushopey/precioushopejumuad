@@ -612,7 +612,7 @@ const About = () => {
                             <li key={index} className="relative">
                               <span
                                 aria-hidden
-                                className="absolute top-2 -left-[29.5px] h-2.5 w-2.5 rounded-full bg-cream/50"
+                                className="absolute top-2 -left-[29.5px] h-4 w-4 rounded-full bg-cream/50"
                               />
                               <p className="text-base font-semibold">
                                 {job.title}

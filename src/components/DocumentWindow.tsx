@@ -36,7 +36,7 @@ export const DocumentWindow = ({
           to={backTo}
           aria-label={backLabel}
           title={backLabel}
-          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-cream/50 transition-colors hover:text-cream"
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-cream/50 transition-colors hover:text-cream"
         >
           <LuArrowLeft size={16} aria-hidden />
         </Link>

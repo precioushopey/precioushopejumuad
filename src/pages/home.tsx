@@ -57,7 +57,7 @@ const Home = () => {
                 <img
                   src={p.image}
                   alt=""
-                  className="h-14 w-16 shrink-0 rounded-xl object-cover"
+                  className="h-16 w-16 shrink-0 rounded-xl object-cover"
                 />
                 <span className="min-w-0">
                   <span className="block truncate text-sm font-medium">

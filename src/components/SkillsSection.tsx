@@ -45,7 +45,7 @@ export const SkillsSection = () => {
                   style={{ width: `${skill.level}%` }}
                 />
               </span>
-              <span className="w-9 shrink-0 text-right text-cream/70">
+              <span className="w-12 shrink-0 text-right text-cream/70">
                 {skill.level}%
               </span>
             </span>
