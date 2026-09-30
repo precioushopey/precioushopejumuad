@@ -20,7 +20,7 @@ const Blog15 = () => {
             </p>
           </div>
         </div>
-        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] animate-fade-in-delay-1">
+        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
           <p>
             <cite>"Success must not come at the cost of conscience."</cite> –
             Vico Sotto
@@ -28,7 +28,7 @@ const Blog15 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] p-4 lg:p-8 space-y-6">
+      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] p-4 lg:p-8 space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
           <figure className="w-full lg:w-1/2 space-y-4">
             <img

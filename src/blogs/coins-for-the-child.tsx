@@ -20,7 +20,7 @@ const Blog11 = () => {
             </p>
           </div>
         </div>
-        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] animate-fade-in-delay-1">
+        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
           <p>
             <em>“Coins for the Child”</em> is a nostalgic reflection on my
             father’s childhood labor and the healing joy he finds in continuing
@@ -37,7 +37,7 @@ const Blog11 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] p-4 lg:p-8 space-y-6">
+      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] p-4 lg:p-8 space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
           <figure className="w-full lg:w-3/5 space-y-4 text-center">
             <img

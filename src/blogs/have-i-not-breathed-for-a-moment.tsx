@@ -20,7 +20,7 @@ const Blog4 = () => {
             </p>
           </div>
         </div>
-        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] animate-fade-in-delay-1">
+        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
           <p>
             This essay was born in the quiet chaos of the pandemic, a period
             where isolation was no longer a choice but a collective reality.
@@ -42,7 +42,7 @@ const Blog4 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] p-4 lg:p-8 space-y-6">
+      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] p-4 lg:p-8 space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
