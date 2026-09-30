@@ -8,10 +8,16 @@ import { PillTabs } from "../components/PillTabs";
 import { RingGauge } from "../components/RingGauge";
 import { SkillsCard } from "../components/SkillsCard";
 
+// Blog goal: 1 blog at age 21, 2 at 22, 3 at 23 … 10 at 30, so 1 + 2 + … + 10 = 55.
+const GOAL_FIRST_AGE = 21;
+const GOAL_LAST_AGE = 30;
+const GOAL_YEARS = GOAL_LAST_AGE - GOAL_FIRST_AGE + 1;
+const BLOG_GOAL = (GOAL_YEARS * (GOAL_YEARS + 1)) / 2;
+
 const Home = () => {
   const featured = projects.slice(0, 3);
   const recent = projects.slice(0, 3);
-  const max = Math.max(projects.length, blogPosts.length);
+  const blogPercent = Math.round((blogPosts.length / BLOG_GOAL) * 100);
 
   return (
     <div className="flex flex-col gap-5 p-5 sm:p-8 lg:flex-1">
@@ -67,8 +73,32 @@ const Home = () => {
           >
             <PhilippineClock />
             <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
-            <RingGauge value={projects.length} max={max} label="Projects" />
-            <RingGauge value={blogPosts.length} max={max} label="Blog posts" />
+            <RingGauge
+              value={projects.length}
+              max={projects.length}
+              label="Projects"
+            />
+            <RingGauge
+              value={blogPosts.length}
+              max={BLOG_GOAL}
+              label="Blog posts"
+              tipAlign="right"
+              tip={
+                <>
+                  <strong className="block font-medium text-accent">
+                    Goal: {BLOG_GOAL} blogs by age {GOAL_LAST_AGE}
+                  </strong>
+                  <span className="block text-cream/80">
+                    1 blog at {GOAL_FIRST_AGE}, 2 at {GOAL_FIRST_AGE + 1}, 3 at{" "}
+                    {GOAL_FIRST_AGE + 2} … {GOAL_YEARS} at {GOAL_LAST_AGE}. That
+                    adds up to {BLOG_GOAL}.
+                  </span>
+                  <span className="block font-medium">
+                    {blogPosts.length} of {BLOG_GOAL} so far = {blogPercent}%
+                  </span>
+                </>
+              }
+            />
           </section>
 
           <SkillsCard />
