@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { SkillsSection } from "../components/SkillsSection";
-import { ContactSection } from "../components/ContactSection";
 import { LuChevronLeft, LuExternalLink } from "react-icons/lu";
 
 const About = () => {
@@ -431,7 +430,6 @@ const About = () => {
           ))}
         </section>
         <SkillsSection />
-        <ContactSection />
       </div>
 
       <footer className="flex justify-center pt-2">
