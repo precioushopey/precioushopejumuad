@@ -8,7 +8,7 @@ import { blogPosts } from "../data/blogPosts";
 import { WorkExperience } from "../components/WorkExperience";
 import { PhilippineClock } from "../components/PhilippineClock";
 import { PillTabs } from "../components/PillTabs";
-import { RingGauge } from "../components/RingGauge";
+import { Stat } from "../components/Stat";
 import { SkillsCard } from "../components/SkillsCard";
 
 // Blog goal: 1 blog at age 21, 2 at 22, 3 at 23 … 10 at 30, so 1 + 2 + … + 10 = 55.
@@ -78,14 +78,9 @@ const Home = () => {
             <div className="flex flex-wrap items-center justify-around gap-x-2 gap-y-3 p-3">
               <PhilippineClock />
               <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
-              <RingGauge
-                value={projects.length}
-                max={projects.length}
-                label="Projects"
-              />
-              <RingGauge
+              <Stat value={projects.length} label="Projects" />
+              <Stat
                 value={blogPosts.length}
-                max={BLOG_GOAL}
                 label="Blog posts"
                 tipAlign="right"
                 tip={
