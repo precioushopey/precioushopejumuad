@@ -27,7 +27,7 @@ export const DocumentWindow = ({
   meta?: ReactNode;
   children: ReactNode;
 }) => (
-  <article className="animate-fade-in overflow-hidden max-lg:glass-card">
+  <article className="shrink-0 animate-fade-in overflow-hidden max-lg:glass-card">
     <WindowBar icon={icon} title={fileName} />
     <div className="flex items-center gap-2 border-b border-line/40 px-4 py-2 text-left text-xs text-cream/60 sm:px-6">
       <Link
