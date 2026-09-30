@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Dela Gothic One", system-ui, sans-serif;
+  --font-display: "Unbounded", system-ui, sans-serif;
   --font-sans: "Poppins", sans-serif;
   --color-accent: #ffc93c;
   --color-ink: #1f1a17;
