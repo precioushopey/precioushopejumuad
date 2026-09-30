@@ -48,10 +48,17 @@ const Suggestions = ({
     />
     <div className="grid grid-cols-2 gap-x-2 gap-y-1 p-3 lg:grid-cols-3 xl:grid-cols-1">
       {items.map((item, index) => (
-        // Under the page (below xl) only the first three are shown; the column at xl shows all.
+        // Under the page (below xl) only three are shown, two while the grid has two columns (below lg, so
+        // no tile is left alone on a second row); the column at xl shows all.
         <div
           key={item.to}
-          className={index >= 3 ? "hidden xl:block" : undefined}
+          className={
+            index >= 3
+              ? "hidden xl:block"
+              : index === 2
+                ? "hidden lg:block"
+                : undefined
+          }
         >
           <ThumbnailTile {...item} index={index} />
         </div>
