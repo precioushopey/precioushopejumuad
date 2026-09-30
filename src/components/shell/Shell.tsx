@@ -41,7 +41,7 @@ export const Shell = () => {
           {showSide && (
             <aside
               aria-label="Profile and skills"
-              className="no-scrollbar hidden w-[22rem] shrink-0 xl:-m-4 xl:block xl:w-[24rem] xl:overflow-y-auto xl:p-4"
+              className="no-scrollbar hidden w-[22rem] shrink-0 xl:-mx-4 xl:block xl:w-[24rem] xl:overflow-y-auto xl:px-4"
             >
               <RightColumn />
             </aside>
