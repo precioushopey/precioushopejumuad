@@ -16,6 +16,8 @@ const About = () => {
   type Job = {
     imgSrc: string;
     imgAlt: string;
+    /** Extra classes for the logo, e.g. a white tile with padding. */
+    imgClass?: string;
     title: string;
     company: string;
     employmentType: string;
@@ -47,6 +49,7 @@ const About = () => {
     {
       imgSrc: "/assets/images/ojtconnect_logo.png",
       imgAlt: "OJT Connect",
+      imgClass: "bg-white p-2",
       title: "Product Designer/Developer",
       company: "OJT Connect",
       employmentType: "Part-time",
@@ -63,6 +66,7 @@ const About = () => {
     {
       imgSrc: "/assets/images/ojtconnect_logo.png",
       imgAlt: "OJT Connect",
+      imgClass: "bg-white p-2",
       title: "Operations Associate",
       company: "OJT Connect",
       employmentType: "Part-time",
@@ -410,12 +414,9 @@ const About = () => {
 
   return (
     <div className="space-y-6 p-5 text-sm sm:p-8">
-      <header className="animate-fade-in">
-        <h1 className="text-2xl font-medium sm:text-3xl">About</h1>
-      </header>
-
       <div className="tracking-normal leading-6 text-left space-y-6">
         <section className="flex flex-col items-center gap-6 animate-fade-in-delay-1">
+          <h1 className="sr-only">About Precious Hope Jumuad</h1>
           <figure className="relative w-full max-w-2xl">
             <div
               aria-hidden
@@ -502,7 +503,7 @@ const About = () => {
                             <img
                               src={first.imgSrc}
                               alt={first.imgAlt}
-                              className="w-full aspect-[1/1] rounded-4xl border object-cover"
+                              className={`w-full aspect-[1/1] rounded-4xl border object-cover ${first.imgClass ?? ""}`}
                             />
                           </figure>
                           <ul className="w-full md:w-7/8">
@@ -549,7 +550,7 @@ const About = () => {
                           <img
                             src={first.imgSrc}
                             alt={first.imgAlt}
-                            className="w-full aspect-[1/1] rounded-4xl border object-cover"
+                            className={`w-full aspect-[1/1] rounded-4xl border object-cover ${first.imgClass ?? ""}`}
                           />
                         </figure>
                         <ul className="w-full md:w-7/8">
