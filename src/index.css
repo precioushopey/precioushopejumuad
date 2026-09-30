@@ -65,6 +65,26 @@
     @apply border-[var(--border-color)];
   }
 
+  /* Tailwind's reset leaves buttons with the default arrow. Every clickable element gets the
+     pointer hand; utilities such as cursor-help still win over this (utilities layer). */
+  a[href],
+  button,
+  summary,
+  select,
+  label[for],
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  input[type="checkbox"],
+  input[type="radio"] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  input:disabled {
+    cursor: not-allowed;
+  }
+
   html {
     @apply scroll-smooth;
   }
@@ -81,7 +101,9 @@
     font-weight: 400;
     font-size: 14px;
     letter-spacing: 0.2px;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 
   @media (max-width: 640px) {
@@ -132,7 +154,9 @@
   -webkit-backdrop-filter: blur(24px) saturate(1.1);
   backdrop-filter: blur(24px) saturate(1.1);
 
-  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  @supports not (
+    (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+  ) {
     background: rgb(28 20 16 / 0.96);
   }
 }
@@ -146,7 +170,9 @@
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 
-  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  @supports not (
+    (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+  ) {
     background: rgb(40 29 22 / 0.96);
   }
 }
@@ -175,7 +201,9 @@
   color: var(--color-cream);
   padding: 0.4rem 1.4rem;
   font-size: 0.875rem;
-  transition: background 0.3s, transform 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.3s;
 
   &:hover {
     background: rgb(245 234 214 / 0.2);
