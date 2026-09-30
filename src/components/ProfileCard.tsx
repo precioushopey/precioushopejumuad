@@ -19,9 +19,9 @@ export const ProfileCard = () => {
         to="/about"
         aria-label="About me"
         title="About me"
-        className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-white transition-transform duration-300 hover:scale-110"
+        className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-cream/50 transition-colors duration-300 hover:text-cream"
       >
-        <LuArrowRight size={20} aria-hidden />
+        <LuArrowRight size={14} aria-hidden />
       </Link>
       <img
         src="/assets/images/precious.png"

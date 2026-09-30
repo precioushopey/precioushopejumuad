@@ -41,9 +41,9 @@ const Home = () => {
                 to="/projects"
                 aria-label="See all projects"
                 title="See all projects"
-                className="flex h-6 w-6 items-center justify-center rounded-full text-white transition-transform duration-300 hover:scale-110"
+                className="flex h-6 w-6 items-center justify-center rounded-full text-cream/50 transition-colors duration-300 hover:text-cream"
               >
-                <LuArrowRight size={16} aria-hidden />
+                <LuArrowRight size={14} aria-hidden />
               </Link>
             }
           />
