@@ -7,6 +7,15 @@ export type Project = {
   category: "frontend" | "design" | "socials" | "multimedia";
 };
 
+export const categories = [
+  "all",
+  "frontend",
+  "design",
+  "socials",
+  "multimedia",
+] as const;
+export type Category = (typeof categories)[number];
+
 export const projects: Project[] = [
   {
     title: "SUBAY",
