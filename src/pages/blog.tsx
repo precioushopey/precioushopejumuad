@@ -32,8 +32,10 @@ const Blog = () => {
 
   return (
     <div className="space-y-6 p-0 lg:p-8">
-      <header className="animate-fade-in space-y-4 text-center lg:text-left">
-        <h1 className="text-2xl font-medium sm:text-3xl">Blog</h1>
+      <header className="animate-fade-in text-center lg:space-y-4 lg:text-left">
+        <h1 className="text-2xl font-medium max-lg:sr-only sm:text-3xl">
+          Blog
+        </h1>
         <PillTabs
           active={active}
           markCurrent
