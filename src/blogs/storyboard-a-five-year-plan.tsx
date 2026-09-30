@@ -26,7 +26,7 @@ const Blog3 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             This storyboard was created as my final Performance Innovative Task
             for the subject Understanding the Self in my first year, where we

@@ -20,7 +20,7 @@ const Blog2 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             This speech was written during the height of the COVID-19 pandemic,
             a time of immense disruption, uncertainty, and emotional strain for

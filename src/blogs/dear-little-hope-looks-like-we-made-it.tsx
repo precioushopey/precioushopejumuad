@@ -20,7 +20,7 @@ const Blog14 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             <em>
               "Childhood is the most valuable coin in the pocket of memory.

@@ -20,7 +20,7 @@ const Blog11 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             <em>“Coins for the Child”</em> is a nostalgic reflection on my
             father’s childhood labor and the healing joy he finds in continuing

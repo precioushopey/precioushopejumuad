@@ -20,7 +20,7 @@ const Blog16 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             I passed the Civil Service Professional Examination! But here’s the
             part I can’t stop thinking about: I was only one or two items away

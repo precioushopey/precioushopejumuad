@@ -20,7 +20,7 @@ const Blog13 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             <cite>"I know that I know nothing."</cite> - Socrates
           </p>

@@ -20,7 +20,7 @@ const Blog5 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             This time capsule letter is a deeply personal message written by my
             20-year-old self to the woman I hope to become. I created it as part

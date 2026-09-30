@@ -18,7 +18,7 @@ const Blog1 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             I wrote this personal essay at the height of the COVID-19 pandemic,
             a time when the world seemed to pause, yet our inner lives grew

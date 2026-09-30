@@ -20,7 +20,7 @@ const Blog15 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             <cite>"Success must not come at the cost of conscience."</cite> –
             Vico Sotto

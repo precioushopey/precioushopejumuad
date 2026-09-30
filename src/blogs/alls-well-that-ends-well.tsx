@@ -20,7 +20,7 @@ const Blog12 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             After four years of trials and tribulations, navigating a path
             beyond my passion but fueled by purpose, I can finally say — I am an

@@ -26,7 +26,7 @@ const Blog6 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             I wrote this short story during the height of the pandemic, when the
             silence of isolation gave me the space to reflect on the vibrant

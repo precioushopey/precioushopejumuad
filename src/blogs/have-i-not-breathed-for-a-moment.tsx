@@ -20,7 +20,7 @@ const Blog4 = () => {
             </p>
           </div>
         </div>
-        <section className="animate-fade-in-delay-1">
+        <section className="text-justify animate-fade-in-delay-1">
           <p>
             This essay was born in the quiet chaos of the pandemic, a period
             where isolation was no longer a choice but a collective reality.
