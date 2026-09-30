@@ -53,10 +53,10 @@ export const Rail = () => {
   return (
     <nav
       aria-label="Main"
-      className="sticky bottom-4 z-40 mx-auto flex w-full items-center gap-3 rounded-full border border-line bg-black/50 p-2 shadow-lg backdrop-blur-md lg:absolute lg:bottom-auto lg:left-0 lg:top-1/2 lg:z-10 lg:mx-0 lg:w-24 lg:-translate-y-1/2 lg:h-[28rem] lg:max-h-[calc(100%-5rem)] lg:flex-col lg:justify-between lg:rounded-l-[2rem] lg:rounded-r-none lg:border-cream/20 lg:bg-cream/15 lg:p-6 lg:pr-12 lg:shadow-none lg:backdrop-blur-xl"
+      className="sticky bottom-4 z-40 mx-auto flex w-full items-center gap-3 rounded-full border border-line bg-black/50 p-2 shadow-lg max-lg:px-4 max-[339px]:px-2.5 backdrop-blur-md lg:absolute lg:bottom-auto lg:left-0 lg:top-1/2 lg:z-10 lg:mx-0 lg:w-24 lg:-translate-y-1/2 lg:h-[28rem] lg:max-h-[calc(100%-5rem)] lg:flex-col lg:justify-between lg:rounded-l-[2rem] lg:rounded-r-none lg:border-cream/20 lg:bg-cream/15 lg:p-6 lg:pr-12 lg:shadow-none lg:backdrop-blur-xl"
     >
       {/* On phones the icons spread across the whole bar; the active one expands to show its title. */}
-      <div className="flex flex-1 items-center justify-between max-lg:gap-1 min-[340px]:max-lg:gap-2 min-[400px]:max-lg:gap-3 min-[480px]:max-lg:gap-5 lg:flex-none lg:flex-col lg:justify-start lg:gap-2 2xl:gap-4">
+      <div className="flex flex-1 items-center justify-between max-lg:gap-0 min-[340px]:max-lg:gap-2 min-[400px]:max-lg:gap-3 min-[480px]:max-lg:gap-5 lg:flex-none lg:flex-col lg:justify-start lg:gap-2 2xl:gap-4">
         {items.map(
           ({ to, label, Icon, avatar, end, alsoMatch, mobileOnly }) => (
             <NavLink

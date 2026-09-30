@@ -92,7 +92,7 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="animate-fade-in-delay-2 opacity-0">
-      <div className="grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-4">
+      <div className="grid grid-cols-4 gap-x-1 gap-y-4 sm:gap-x-4">
         {folders.map((folder, index) => {
           const open = index === openIndex;
           const { label, count, peek } = folder.props;
@@ -103,16 +103,16 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
               aria-expanded={open}
               aria-controls={`${uid}-panel`}
               onClick={() => setOpenIndex(open ? null : index)}
-              className="group flex flex-col items-center gap-2 rounded-2xl px-2 py-3 text-center focus-visible:outline-2 focus-visible:outline-accent"
+              className="group flex flex-col items-center gap-1.5 rounded-2xl px-0.5 py-3 text-center sm:gap-2 sm:px-2 focus-visible:outline-2 focus-visible:outline-accent"
             >
               <FolderIcon peek={peek} open={open} />
               <span>
                 <span
-                  className={`block text-sm font-semibold transition-colors sm:text-base ${open ? "text-accent" : ""}`}
+                  className={`block text-[11px] font-semibold leading-tight max-[359px]:text-[10px] max-[339px]:text-[9px] transition-colors min-[400px]:text-xs sm:text-base ${open ? "text-accent" : ""}`}
                 >
                   {label}
                 </span>
-                <span className="block text-xs text-cream/60">
+                <span className="block text-[10px] text-cream/60 sm:text-xs">
                   {count} {count === 1 ? "item" : "items"}
                 </span>
               </span>
@@ -127,16 +127,15 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
       >
         {openFolder && (
           // The key restarts the animation whenever another folder is opened. It grows out of the
-          // clicked folder: the origin's x is that folder's centre (4 columns from sm up, 2 below).
+          // clicked folder: the origin's x is that folder's centre (always 4 columns).
           <div
             key={openIndex}
             style={
               {
-                "--ox": `${(((openIndex ?? 0) % 2) + 0.5) * 50}%`,
-                "--ox-sm": `${(((openIndex ?? 0) + 0.5) / folders.length) * 100}%`,
+                "--ox": `${(((openIndex ?? 0) + 0.5) / folders.length) * 100}%`,
               } as CSSProperties
             }
-            className="animate-folder-emerge space-y-6 pt-6 [transform-origin:var(--ox)_0] motion-reduce:animate-none sm:[transform-origin:var(--ox-sm)_0]"
+            className="animate-folder-emerge space-y-6 pt-6 [transform-origin:var(--ox)_0] motion-reduce:animate-none"
           >
             {openFolder.props.children}
           </div>
