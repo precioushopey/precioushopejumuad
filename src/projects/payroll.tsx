@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import {
-  LuChevronLeft,
   LuHeart,
   LuLightbulb,
   LuListChecks,
@@ -9,9 +7,9 @@ import {
   LuTarget,
   LuWrench,
 } from "react-icons/lu";
+import { ProjectLayout } from "../components/ProjectLayout";
 
 const Payroll = () => {
-  const tags = ["Next.js", "TypeScript", "TailwindCSS", "Figma", "Canva"];
   const images1 = [
     "/assets/images/payroll1.png",
     "/assets/images/payroll2.png",
@@ -75,26 +73,7 @@ const Payroll = () => {
   ];
 
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 lg:px-8 text-sm sm:text-base">
-      <header>
-        <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
-          <h1 className="text-3xl sm:text-6xl">Payroll</h1>
-          <h2 className="font-display text-3xl sm:text-5xl">System</h2>
-        </div>
-        <div>
-          <div className="flex flex-wrap justify-center gap-4 text-sm pt-4 animate-fade-in-delay-1">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="rounded-full border font-light px-4 py-1"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </header>
-
+    <ProjectLayout>
       <div className="space-y-18 pt-6">
         <section className="space-y-6">
           <Carousel images={images1} />
@@ -138,7 +117,9 @@ const Payroll = () => {
                   {step.icon}
                   <h3 className="font-medium text-lg">{step.title}</h3>
                 </div>
-                <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">{step.description}</p>
+                <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
@@ -237,19 +218,8 @@ const Payroll = () => {
             ))}
           </div>
         </section>
-
-        <div className="flex justify-center">
-          <Link
-            to="/projects"
-            target="_top"
-            className="w-fit flex items-center gap-x-2 white-button"
-          >
-            <LuChevronLeft size={20} />
-            Back to Projects
-          </Link>
-        </div>
       </div>
-    </div>
+    </ProjectLayout>
   );
 };
 

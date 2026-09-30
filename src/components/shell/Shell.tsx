@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Rail } from "./Rail";
-import { BlogSuggestions } from "./BlogSuggestions";
+import { BlogSuggestions, ProjectSuggestions } from "./SideSuggestions";
 import { RightColumn } from "./RightColumn";
 import { TopBar } from "./TopBar";
 
-// The top-level pages get the profile/contact column; a blog post gets a column of other posts
-// instead. Project pages use the full panel.
+// The top-level pages get the profile/contact column; a blog post or a project page gets a column
+// of other posts / projects instead.
 const WITH_SIDEBAR = new Set(["/", "/about", "/projects", "/blog"]);
 
 export const Shell = () => {
@@ -16,9 +16,18 @@ export const Shell = () => {
   const previousPath = useRef(pathname);
   const path = pathname.replace(/\/+$/, "") || "/";
   const isPost = path.startsWith("/blogs/");
-  const showSide = WITH_SIDEBAR.has(path) || isPost;
+  const isProject = path.startsWith("/projects/");
+  const isDetail = isPost || isProject;
+  const showSide = WITH_SIDEBAR.has(path) || isDetail;
+  const sideLabel = isPost
+    ? "More posts"
+    : isProject
+      ? "More projects"
+      : "Profile and contact";
   const sideContent = isPost ? (
     <BlogSuggestions currentPath={path} />
+  ) : isProject ? (
+    <ProjectSuggestions currentPath={path} />
   ) : (
     <RightColumn />
   );
@@ -79,7 +88,7 @@ export const Shell = () => {
               // the bottom of the page at every size below xl.
               <div
                 className={
-                  isPost
+                  isDetail
                     ? "pt-3 lg:px-8 lg:pt-6 xl:hidden"
                     : "hidden px-5 pt-6 sm:px-8 lg:block xl:hidden"
                 }
@@ -90,7 +99,7 @@ export const Shell = () => {
           </main>
           {showSide && (
             <aside
-              aria-label={isPost ? "More posts" : "Profile and contact"}
+              aria-label={sideLabel}
               className="no-scrollbar hidden w-[22rem] shrink-0 xl:-mx-4 xl:block xl:w-[24rem] xl:overflow-y-auto xl:px-4"
             >
               {sideContent}

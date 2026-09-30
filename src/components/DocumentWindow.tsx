@@ -1,0 +1,74 @@
+import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
+import { LuArrowLeft } from "react-icons/lu";
+import { WindowBar } from "./WindowBar";
+
+// The window a blog post or a project page is shown in: title bar with the file name, an address
+// bar with a back arrow and the path, the title with a line of details, the page itself, and a
+// status bar. On desktop the main panel already is the box, so the window adds none of its own;
+// below lg, where the panel has no box, the window is its own card.
+export const DocumentWindow = ({
+  icon,
+  fileName,
+  backTo,
+  backLabel,
+  crumbs,
+  title,
+  meta,
+  children,
+}: {
+  icon: ReactNode;
+  fileName: string;
+  backTo: string;
+  backLabel: string;
+  /** Path segments after "This PC"; missing ones are skipped. */
+  crumbs: (string | undefined)[];
+  title?: string;
+  meta?: ReactNode;
+  children: ReactNode;
+}) => (
+  <article className="animate-fade-in overflow-hidden max-lg:glass-card">
+    <WindowBar icon={icon} title={fileName} />
+    <div className="flex items-center gap-2 border-b border-line/40 px-4 py-2 text-left text-xs text-cream/60 sm:px-6">
+      <Link
+        to={backTo}
+        aria-label={backLabel}
+        title={backLabel}
+        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-cream/50 transition-colors hover:text-cream"
+      >
+        <LuArrowLeft size={16} aria-hidden />
+      </Link>
+      <span className="min-w-0 truncate">
+        This PC
+        {crumbs
+          .filter((c): c is string => Boolean(c))
+          .map((c) => (
+            <span key={c}>
+              {" "}
+              <span aria-hidden>›</span> <span className="capitalize">{c}</span>
+            </span>
+          ))}
+      </span>
+    </div>
+
+    <div className="mx-auto max-w-5xl space-y-6 p-4 text-sm sm:p-6 sm:text-base lg:p-8">
+      {title && (
+        <header className="space-y-3 text-left">
+          <h1 className="text-2xl font-semibold leading-tight sm:text-3xl">
+            {title}
+          </h1>
+          {meta && (
+            <p className="flex flex-wrap items-center gap-2 text-xs text-cream/60">
+              {meta}
+            </p>
+          )}
+        </header>
+      )}
+      {children}
+    </div>
+
+    <div className="border-t border-line/40 px-4 py-2 text-left text-xs text-cream/60 sm:px-6">
+      Precious Hope Jumuad
+    </div>
+  </article>
+);
