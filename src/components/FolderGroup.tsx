@@ -103,7 +103,7 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
               aria-expanded={open}
               aria-controls={`${uid}-panel`}
               onClick={() => setOpenIndex(open ? null : index)}
-              className="group flex flex-col items-center gap-1.5 rounded-2xl px-0.5 py-3 text-center sm:gap-2 sm:px-2 focus-visible:outline-2 focus-visible:outline-accent"
+              className="group flex flex-col items-center gap-1.5 rounded-2xl px-0.5 py-4 text-center sm:gap-2 sm:px-2 focus-visible:outline-2 focus-visible:outline-accent"
             >
               <FolderIcon peek={peek} open={open} />
               <span>
@@ -135,7 +135,7 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
                 "--ox": `${(((openIndex ?? 0) + 0.5) / folders.length) * 100}%`,
               } as CSSProperties
             }
-            className="animate-folder-emerge space-y-6 pt-6 [transform-origin:var(--ox)_0] motion-reduce:animate-none"
+            className="animate-folder-emerge space-y-6 pt-8 [transform-origin:var(--ox)_0] motion-reduce:animate-none"
           >
             {openFolder.props.children}
           </div>

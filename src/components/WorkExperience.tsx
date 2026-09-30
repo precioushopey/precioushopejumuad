@@ -35,11 +35,11 @@ export const WorkExperience = () => (
       to="/about"
       toLabel="See my full experience"
     />
-    <ul className="flex flex-1 flex-col gap-2 p-4 pt-3">
+    <ul className="flex flex-1 flex-col gap-2 p-4 pt-4">
       {highlights.map(({ title, detail, logo, tile }) => (
         <li
           key={title}
-          className="flex flex-1 items-center gap-4 rounded-2xl bg-black/20 p-2.5 text-left"
+          className="flex flex-1 items-center gap-4 rounded-2xl bg-black/20 p-4 text-left"
         >
           <span
             className={`h-12 w-12 shrink-0 overflow-hidden rounded-xl ${tile}`}

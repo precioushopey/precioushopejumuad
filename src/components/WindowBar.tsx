@@ -27,7 +27,7 @@ export const WindowBar = ({
   toLabel?: string;
 }) => {
   const base =
-    "flex items-center gap-2 border-b border-line/40 px-6 py-2.5 text-left text-xs text-cream/70";
+    "flex items-center gap-2 border-b border-line/40 px-8 py-4 text-left text-xs text-cream/70";
   const content = (
     <>
       {icon && (

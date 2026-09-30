@@ -37,7 +37,7 @@ const Suggestions = ({
       to={seeAllTo}
       toLabel={label.replace(/^More /, "See all ")}
     />
-    <div className="grid grid-cols-2 gap-x-2 gap-y-1 pt-3 lg:grid-cols-3 xl:grid-cols-1 xl:p-3">
+    <div className="grid grid-cols-2 gap-x-2 gap-y-1 pt-4 lg:grid-cols-3 xl:grid-cols-1 xl:p-4">
       {items.map((item, index) => (
         // Under the page (below xl) only three are shown, two while the grid has two columns (below lg, so
         // no tile is left alone on a second row); the column at xl shows all.

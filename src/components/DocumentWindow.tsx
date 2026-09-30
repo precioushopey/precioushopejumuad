@@ -31,7 +31,7 @@ export const DocumentWindow = ({
         hidden) so it is not a scroll container of its own and the bars stick to the panel. */}
     <div className="sticky top-0 z-10 bg-[rgb(28_20_16/0.99)] backdrop-blur-md">
       <WindowBar icon={icon} title={fileName} />
-      <div className="flex items-center gap-2 border-b border-line/40 px-4 py-2 text-left text-xs text-cream/60 sm:px-6">
+      <div className="flex items-center gap-2 border-b border-line/40 px-4 py-2 text-left text-xs text-cream/60 sm:px-8">
         <Link
           to={backTo}
           aria-label={backLabel}
@@ -55,7 +55,7 @@ export const DocumentWindow = ({
       </div>
     </div>
 
-    <div className="mx-auto max-w-5xl space-y-6 p-4 text-sm sm:p-6 sm:text-base lg:p-8">
+    <div className="mx-auto max-w-5xl space-y-6 p-4 text-sm sm:p-8 sm:text-base lg:p-8">
       {title && (
         <header className="space-y-3 text-left">
           <h1 className="text-2xl font-semibold leading-tight sm:text-3xl">

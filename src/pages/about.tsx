@@ -411,12 +411,12 @@ const About = () => {
     <table className="w-full table-fixed border-b border-line/40 text-left text-xs">
       <thead className="text-cream/50">
         <tr>
-          <th className="px-4 py-2 sm:px-6 font-normal">Name</th>
-          <th className="w-[5.75rem] py-2 pr-3 font-normal sm:w-28">Status</th>
-          <th className="hidden w-36 py-2 pr-3 font-normal sm:table-cell">
+          <th className="px-4 py-2 sm:px-8 font-normal">Name</th>
+          <th className="w-[5.75rem] py-2 pr-4 font-normal sm:w-28">Status</th>
+          <th className="hidden w-36 py-2 pr-4 font-normal sm:table-cell">
             Started
           </th>
-          <th className="w-[5.25rem] py-2 pr-4 text-left font-normal sm:w-32 sm:pr-6">
+          <th className="w-[5.25rem] py-2 pr-4 text-left font-normal sm:w-32 sm:pr-8">
             Duration
           </th>
         </tr>
@@ -427,8 +427,8 @@ const About = () => {
           const running = row.date.endsWith("Present");
           return (
             <tr key={index} className="border-t border-line/20">
-              <td className="px-4 py-2 sm:px-6 font-medium">{row.name}</td>
-              <td className="whitespace-nowrap py-2 pr-3">
+              <td className="px-4 py-2 sm:px-8 font-medium">{row.name}</td>
+              <td className="whitespace-nowrap py-2 pr-4">
                 <span className="flex items-center gap-1.5">
                   <span
                     aria-hidden
@@ -437,10 +437,10 @@ const About = () => {
                   {running ? labels.running : labels.ended}
                 </span>
               </td>
-              <td className="hidden whitespace-nowrap py-2 pr-3 text-cream/70 sm:table-cell">
+              <td className="hidden whitespace-nowrap py-2 pr-4 text-cream/70 sm:table-cell">
                 {row.date.split(" - ")[0]}
               </td>
-              <td className="whitespace-nowrap py-2 pr-4 sm:pr-6 text-left text-cream/70">
+              <td className="whitespace-nowrap py-2 pr-4 sm:pr-8 text-left text-cream/70">
                 {durationLabel(range.end - range.start + 1)}
               </td>
             </tr>
@@ -468,7 +468,7 @@ const About = () => {
           </figure>
           <article className="glass-card w-full overflow-hidden bg-cream/[0.07] text-justify">
             <WindowBar icon={<LuStickyNote size={14} />} title="About me" />
-            <div className="space-y-6 bg-[repeating-linear-gradient(transparent_0_23px,rgb(245_234_214/0.08)_23px_24px)] bg-[position:0_1.25rem] px-5 pt-5 pb-6">
+            <div className="space-y-6 bg-[repeating-linear-gradient(transparent_0_23px,rgb(245_234_214/0.08)_23px_24px)] bg-[position:0_1.25rem] px-8 pt-8 pb-8">
               <p>
                 I’m <strong>Precious Hope T. Jumuad</strong>, a Design Engineer
                 (Product/UI/UX Designer and Front-End Developer) who believes
@@ -538,7 +538,7 @@ const About = () => {
                         })),
                       )}
                     >
-                      <div className="flex flex-col gap-4 p-5">
+                      <div className="flex flex-col gap-4 p-8">
                         <div className="flex flex-col sm:flex-row gap-8">
                           <figure className="w-full md:w-1/8 text-center">
                             <img
@@ -585,7 +585,7 @@ const About = () => {
                       group.map((job) => ({ name: job.title, date: job.date })),
                     )}
                   >
-                    <div className="flex flex-col gap-8 p-5">
+                    <div className="flex flex-col gap-8 p-8">
                       <div className="flex flex-col sm:flex-row gap-8">
                         <figure className="w-full md:w-1/8 text-center">
                           <img
@@ -605,7 +605,7 @@ const About = () => {
                           <li>{first.location}</li>
                         </ul>
                       </div>
-                      <ol className="ml-2 space-y-6 border-l border-line pl-6">
+                      <ol className="ml-2 space-y-6 border-l border-line pl-8">
                         {group.map((job, index) => {
                           const range = rangeOf(job.date);
                           return (
@@ -655,7 +655,7 @@ const About = () => {
                     { running: "Studying", ended: "Graduated" },
                   )}
                 >
-                  <div className="flex flex-col gap-4 p-5">
+                  <div className="flex flex-col gap-4 p-8">
                     <div className="flex flex-col sm:flex-row gap-8">
                       <figure className="w-full md:w-1/8 text-center">
                         <img
@@ -695,7 +695,7 @@ const About = () => {
               />
               <div
                 aria-hidden
-                className="hidden grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem] gap-4 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
+                className="hidden grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem] gap-4 border-b border-line/40 px-8 py-2 text-left text-xs text-cream/50 md:grid"
               >
                 <span />
                 <span>Name</span>
@@ -713,7 +713,7 @@ const About = () => {
                       href={cert.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-4 px-6 py-2.5 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem]"
+                      className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-4 px-8 py-4 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem]"
                     >
                       <img
                         src={cert.imgSrc}

@@ -68,7 +68,7 @@ const CpExpress = () => {
 
   return (
     <ProjectLayout>
-      <div className="space-y-18 pt-6">
+      <div className="space-y-18 pt-8">
         <section className="space-y-6">
           <Carousel images={images1} />
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
@@ -103,7 +103,7 @@ const CpExpress = () => {
             {designSteps.map((step, index) => (
               <div
                 key={index}
-                className="group overflow-hidden glass-card space-y-4 p-6 card-hover"
+                className="group overflow-hidden glass-card space-y-4 p-8 card-hover"
               >
                 <div className="flex items-center justify-center border-b pb-2 gap-x-4">
                   {step.icon}

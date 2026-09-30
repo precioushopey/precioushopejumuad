@@ -42,7 +42,7 @@ export const Stat = ({ value, label, tip, tipAlign = "center" }: Props) => {
       aria-label={tip ? `${value} ${label}` : undefined}
       aria-describedby={tip ? tipId : undefined}
       tabIndex={tip ? 0 : undefined}
-      className={`relative flex min-w-24 flex-col items-center gap-1.5 rounded-2xl bg-accent/10 px-5 py-3 ${
+      className={`relative flex min-w-0 max-w-32 flex-1 flex-col items-center gap-1.5 rounded-2xl bg-accent/10 px-2 py-4 sm:px-4 ${
         tip ? "group cursor-help" : ""
       }`}
     >
@@ -57,7 +57,7 @@ export const Stat = ({ value, label, tip, tipAlign = "center" }: Props) => {
         <span
           id={tipId}
           role="tooltip"
-          className={`pointer-events-none absolute bottom-full z-30 mb-2 w-52 rounded-xl border border-line bg-black/90 px-3 py-2 text-left text-[11px] leading-snug text-cream opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100 ${
+          className={`pointer-events-none absolute bottom-full z-30 mb-2 w-52 rounded-xl border border-line bg-black/90 px-4 py-2 text-left text-[11px] leading-snug text-cream opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100 ${
             tipAlign === "right" ? "right-0" : "left-1/2 -translate-x-1/2"
           }`}
         >

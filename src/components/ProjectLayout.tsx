@@ -25,7 +25,7 @@ export const ProjectLayout = ({ children }: { children: ReactNode }) => {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-line bg-cream/10 px-2.5 py-0.5 text-cream/80"
+                className="rounded-full border border-line bg-cream/10 px-4 py-0.5 text-cream/80"
               >
                 {tag}
               </span>

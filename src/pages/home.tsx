@@ -47,12 +47,12 @@ const Home = () => {
             to="/projects"
             toLabel="See all projects"
           />
-          <div className="space-y-2 p-4 pt-3">
+          <div className="space-y-2 p-4 pt-4">
             {recent.map((p) => (
               <Link
                 key={p.url}
                 to={p.url}
-                className="flex min-w-0 items-center gap-4 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
+                className="flex min-w-0 items-center gap-4 rounded-2xl bg-black/20 p-4 text-left transition-colors hover:bg-black/35"
               >
                 <img
                   src={p.image}
@@ -75,7 +75,7 @@ const Home = () => {
         <div className="order-first flex animate-fade-in-delay-2 flex-col gap-4 opacity-0 min-[1024px]:order-none lg:gap-8">
           <section aria-label="At a glance" className="glass-card">
             <WindowBar icon={<LuActivity size={14} />} title="At a glance" />
-            <div className="flex flex-wrap items-center justify-around gap-x-2 gap-y-4 p-3">
+            <div className="flex flex-nowrap items-center justify-around gap-2 p-4">
               <PhilippineClock />
               <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
               <Stat value={projects.length} label="Projects" />
@@ -125,7 +125,7 @@ const Home = () => {
                 alt={p.title}
                 className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-10 text-left text-xs font-medium leading-tight">
+              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-12 text-left text-xs font-medium leading-tight">
                 {p.title}
               </span>
             </Link>

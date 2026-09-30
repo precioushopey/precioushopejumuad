@@ -12,7 +12,7 @@ export const ContactCard = () => (
     <div className="space-y-2 px-4 pb-4 pt-2">
       <p className="flex items-center gap-2 border-b border-line/40 py-2 text-left text-sm">
         <span className="w-20 shrink-0 text-xs text-cream/60">To</span>
-        <span className="min-w-0 truncate rounded-full bg-cream/10 px-2.5 py-0.5 text-xs">
+        <span className="min-w-0 truncate rounded-full bg-cream/10 px-4 py-0.5 text-xs">
           Precious Hope Jumuad
         </span>
       </p>

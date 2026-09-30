@@ -11,7 +11,7 @@ const styles = {
     group: "space-y-2",
     label: "block text-lg font-medium",
     field:
-      "w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent",
+      "w-full px-4 py-4 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent",
     messageGroup: "space-y-2",
     messageLabel: "block text-lg font-medium",
     messageField: "",

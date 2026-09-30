@@ -10,9 +10,9 @@ export const ProfileCard = () => {
   return (
     <section
       aria-label="Profile"
-      className="glass-card relative p-6 pb-8 text-center"
+      className="glass-card relative p-8 pb-8 text-center"
     >
-      <span className="pointer-events-none absolute left-5 top-5 z-10 rounded-full border border-line px-3 py-0.5 text-xs">
+      <span className="pointer-events-none absolute left-5 top-5 z-10 rounded-full border border-line px-4 py-0.5 text-xs">
         Profile
       </span>
       {/* The whole top strip (the "Profile" tag and the arrow) links to the About page. */}
@@ -20,7 +20,7 @@ export const ProfileCard = () => {
         to="/about"
         aria-label="About me"
         title="About me"
-        className="group absolute inset-x-0 top-0 flex h-14 items-center justify-end rounded-t-[2rem] pr-5 text-cream/50 transition-colors hover:bg-cream/5 hover:text-cream"
+        className="group absolute inset-x-0 top-0 flex h-14 items-center justify-end rounded-t-[2rem] pr-8 text-cream/50 transition-colors hover:bg-cream/5 hover:text-cream"
       >
         <LuArrowRight size={14} aria-hidden />
       </Link>
@@ -64,7 +64,7 @@ export const ProfileCard = () => {
             href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-cream/10 px-5 py-2 text-sm font-medium text-cream transition-transform duration-300 hover:scale-105 hover:bg-cream/20 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-cream/10 px-8 py-2 text-sm font-medium text-cream transition-transform duration-300 hover:scale-105 hover:bg-cream/20 active:scale-95"
           >
             <LuFileText size={18} aria-hidden />
             View my CV
