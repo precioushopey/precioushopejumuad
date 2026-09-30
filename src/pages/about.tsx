@@ -35,6 +35,37 @@ const About = () => {
 
   const jobs: Job[] = [
     {
+      imgSrc: "/assets/images/ojtconnect_logo.png",
+      imgAlt: "OJT Connect",
+      title: "Product Designer/Developer",
+      company: "OJT Connect",
+      employmentType: "Part-time",
+      date: "February 2026 - Present",
+      location: "San Diego, California, United States • Remote",
+      responsibilities: [
+        "Lead end-to-end product design and front-end development for OJT Connect’s SaaS products, translating business requirements and product concepts into structured user experiences, scalable interfaces, and development-ready solutions.",
+        "Drive the product design process from requirements and UX analysis through user flows, information architecture, wireframes, high-fidelity UI, interactive prototypes, design systems, responsive states, edge cases, and developer handoff.",
+        "Build and refine production-oriented interfaces using React, TypeScript, Tailwind CSS, HTML, and CSS, working closely with backend developers and stakeholders to align design decisions with technical requirements.",
+        "Developed a rapid product design and prototyping workflow using Figma, Figma Make, VS Code, GitHub, and AI tools such as Claude Code, ChatGPT, and Figma MCP to speed up research, prototyping, implementation, QA, documentation, and iteration.",
+        "Establish reusable components, UI patterns, design standards, and documentation to improve consistency and communication between design and development.",
+      ],
+    },
+    {
+      imgSrc: "/assets/images/ojtconnect_logo.png",
+      imgAlt: "OJT Connect",
+      title: "Operations Associate",
+      company: "OJT Connect",
+      employmentType: "Part-time",
+      date: "August 2025 - Present",
+      location: "San Diego, California, United States • Remote",
+      responsibilities: [
+        "Improved OJT Connect’s user experience and product funnel by contributing to UX/UI redesigns, design systems, development-ready landing pages, and multi-role user dashboards with cross-functional teams.",
+        "Supported day-to-day operations by managing high-volume email communications and newsletters, coordinating task tracking, documenting meetings, preparing presentations, and supporting internal workflows.",
+        "Strengthened OJT Connect’s digital presence through audience and trend research, content planning, graphic design, and social media copywriting.",
+        "Supported partner and stakeholder coordination by organizing information, following up on action items, and turning operational needs into clear deliverables for different teams.",
+      ],
+    },
+    {
       imgSrc: "/assets/images/roostercat.png",
       imgAlt: "Roostercat LLC",
       title: "Designer/Artist",
@@ -43,21 +74,34 @@ const About = () => {
       date: "June 2025 - Present",
       location: "Brookfield, Wisconsin, United States of America • Remote",
       responsibilities: [
-        "Designed game UI/UX in Figma, conducting intensive research on accessibility to ensure intuitive navigation, visual consistency, and an inclusive player experience.",
-        "Illustrated and animated 2D game assets in both pixel and vector styles using Canva, Photoshop, Aseprite, and IbisPaint, collaborating with managers and developers to bring creative concepts from idea to development.",
-        "Created graphic design materials and marketing visuals, and managed social media content across Facebook, Instagram, Threads, and X to enhance brand presence and drive community engagement.",
+        "Designed and developed Roostercat’s web presence from concept to implementation, including the landing page and Squarespace website, translating brand direction and business goals into cohesive, responsive digital experiences.",
+        "Designed UI/UX for web, mobile, and game products, turning product requirements and creative concepts into user flows, interfaces, and accessible experiences with implementation and technical feasibility in mind.",
+        "Created reusable UI components, design patterns, and visual systems to keep digital products and marketing experiences consistent, and collaborated with developers and cross-functional teams to bridge design and development.",
+        "Designed and illustrated 2D game assets and UI elements in pixel and vector styles using Aseprite, Photoshop, Canva, and IbisPaint.",
+        "Designed graphic and marketing materials for social media and digital campaigns across Facebook, Instagram, Threads, and X.",
       ],
     },
     {
       imgSrc: "/assets/images/lgu_jasaan_hrmo.png",
       imgAlt: "LGU Jasaan - Human Resource Management Office",
-      title: "Designer and Front-end Developer",
+      title: "Frontend Web Developer",
       company: "LGU Jasaan - Human Resource Management Office",
-      employmentType: "Job Order",
-      date: "January 2025 - Present",
+      employmentType: "Contract",
+      date: "March 2025 - Present",
       location: "Jasaan, Misamis Oriental, Philippines • Hybrid",
       responsibilities: [
         "Designed and developed the HRMO Payroll Management System Web App using React, Next.js, TypeScript, Tailwind CSS, MongoDB, and Prisma for development and Figma for design, aiming to automate payroll computation using biometric/DTR data and streamline HR processes.",
+      ],
+    },
+    {
+      imgSrc: "/assets/images/lgu_jasaan_hrmo.png",
+      imgAlt: "LGU Jasaan - Human Resource Management Office",
+      title: "On-the-Job Trainee",
+      company: "LGU Jasaan - Human Resource Management Office",
+      employmentType: "Internship",
+      date: "January 2025 - March 2025",
+      location: "Jasaan, Misamis Oriental, Philippines • Hybrid",
+      responsibilities: [
         "Managed content planning, graphic design, and caption writing for the HRMO Facebook page, contributing to public information efforts and enhancing the office’s online presence.",
         "Assisted with daily office operations, including Microsoft Excel data entry, HR document formatting, and employee record verification to ensure accurate data management for system integration.",
       ],
@@ -283,7 +327,8 @@ const About = () => {
           </figure>
           <article className="w-full lg:w-1/2 space-y-4">
             <p>
-              I’m <strong>Precious Hope T. Jumuad</strong>, a Computer
+              I’m <strong>Precious Hope T. Jumuad</strong>, a Design Engineer
+              (Product/UI/UX Designer and Front-End Developer) and Computer
               Engineering graduate from the{" "}
               <a href="https://www.ustp.edu.ph/" target="_blank">
                 <u>
@@ -292,9 +337,19 @@ const About = () => {
                 </u>
               </a>{" "}
               who believes that design and technology should make life easier,
-              more beautiful, and more meaningful. My journey has been shaped by
-              leadership roles, creative projects, and a drive to turn ideas
-              into experiences people enjoy using.
+              more beautiful, and more meaningful. My work sits at the
+              intersection of product thinking, user experience, visual design,
+              and front-end development.
+            </p>
+            <p>
+              I design and build web and mobile products, SaaS platforms, design
+              systems, and interactive prototypes, taking ideas from the early
+              stages of understanding the problem and mapping user flows to
+              working interfaces that can be tested and refined. I work
+              primarily with Figma, React, TypeScript, Tailwind, and AI-powered
+              tools, and I care about the space between design and development:
+              reusable components, responsive behavior, accessibility, and
+              developer handoff.
             </p>
             <p>
               One of my proudest achievements was co-developing{" "}
@@ -310,15 +365,10 @@ const About = () => {
               >
                 <u>Silver Award for Outstanding Student Organization,</u>
               </a>{" "}
-              a testament to the power of teamwork and shared vision.
-            </p>
-            <p>
-              Professionally, I’ve worked as a Designer/Artist, Marketing
-              Intern, and front-end developer Intern, creating everything from
-              web and mobile interfaces to game art and social media content.
-              Whether it’s wireframing in Figma, refining a brand’s visual
-              identity, or collaborating with developers, I pour care and
-              attention into every detail.
+              a testament to the power of teamwork and shared vision. Today I’m
+              a Product Designer/Developer at OJT Connect, and I’m always
+              looking to work with people who value thoughtful design,
+              collaboration, and purposeful products.
             </p>
           </article>
         </section>
