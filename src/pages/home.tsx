@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <div className="space-y-5 p-5 sm:p-8">
-      <header className="animate-fade-in space-y-4">
+      <header className="animate-fade-in space-y-4 text-left">
         <h1 className="text-2xl font-medium sm:text-3xl">Featured</h1>
         <PillTabs active="all" />
       </header>
