@@ -311,12 +311,12 @@ const About = () => {
   ];
 
   return (
-    <div className="space-y-6 p-5 text-base sm:p-8">
+    <div className="space-y-6 p-5 text-sm sm:p-8">
       <header className="animate-fade-in">
         <h1 className="text-2xl font-medium sm:text-3xl">About</h1>
       </header>
 
-      <div className="tracking-normal leading-7 text-left space-y-6">
+      <div className="tracking-normal leading-6 text-left space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 glass-card p-5 animate-fade-in-delay-1">
           <figure className="w-full lg:w-1/2 text-center">
             <img
