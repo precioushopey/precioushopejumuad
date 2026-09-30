@@ -29,8 +29,8 @@ export const ProfileCard = () => {
           {experience}
         </strong>{" "}
         creating digital experiences for SaaS startups to local government
-        units. A Computer Engineering graduate who also draws pixel art, I’m
-        excited to build something great with you!
+        units. A Computer Engineering graduate who loves art and design in tech,
+        I’m excited to build something great with you!
       </p>
       <Link to="/about" className="white-button mt-4">
         About me
