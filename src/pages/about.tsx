@@ -310,6 +310,52 @@ const About = () => {
     },
   ];
 
+  // Consecutive jobs at the same company are shown as one card, like LinkedIn does.
+  const MONTHS = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const now = new Date();
+  const nowIndex = now.getFullYear() * 12 + now.getMonth();
+  const monthIndex = (text: string) => {
+    const [month, year] = text.trim().split(" ");
+    return Number(year) * 12 + MONTHS.indexOf(month);
+  };
+  const rangeOf = (date: string) => {
+    const [from, to] = date.split(" - ");
+    return {
+      start: monthIndex(from),
+      end: to.trim() === "Present" ? nowIndex : monthIndex(to),
+    };
+  };
+  // Whole months, counting both the first and the last month (LinkedIn's rule).
+  const durationLabel = (months: number) => {
+    const years = Math.floor(months / 12);
+    const rest = months % 12;
+    return [
+      years ? `${years} yr${years > 1 ? "s" : ""}` : "",
+      rest ? `${rest} mo${rest > 1 ? "s" : ""}` : "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+  };
+  const companies = jobs.reduce<Job[][]>((groups, job) => {
+    const last = groups[groups.length - 1];
+    if (last && last[0].company === job.company) last.push(job);
+    else groups.push([job]);
+    return groups;
+  }, []);
+
   return (
     <div className="space-y-6 p-5 text-sm sm:p-8">
       <header className="animate-fade-in">
@@ -382,34 +428,100 @@ const About = () => {
         </div>
 
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
-          {jobs.map((job, index) => (
-            <div key={index} className="glass-card flex flex-col gap-4 p-5">
-              <div className="flex flex-col sm:flex-row gap-6">
-                <figure className="w-full md:w-1/8 text-center">
-                  <img
-                    src={job.imgSrc}
-                    alt={job.imgAlt}
-                    className="w-full aspect-[1/1] rounded-4xl border object-cover"
-                  />
-                </figure>
-                <ul className="w-full md:w-7/8">
-                  <li className="text-base font-semibold">
-                    <u>{job.title}</u>
-                  </li>
-                  <li className="font-semibold">
-                    {job.company} • {job.employmentType}
-                  </li>
-                  <li>{job.date}</li>
-                  <li>{job.location}</li>
-                </ul>
+          {companies.map((group) => {
+            const first = group[0];
+            if (group.length === 1) {
+              return (
+                <div
+                  key={first.company + first.date}
+                  className="glass-card flex flex-col gap-4 p-5"
+                >
+                  <div className="flex flex-col sm:flex-row gap-6">
+                    <figure className="w-full md:w-1/8 text-center">
+                      <img
+                        src={first.imgSrc}
+                        alt={first.imgAlt}
+                        className="w-full aspect-[1/1] rounded-4xl border object-cover"
+                      />
+                    </figure>
+                    <ul className="w-full md:w-7/8">
+                      <li className="text-base font-semibold">
+                        <u>{first.title}</u>
+                      </li>
+                      <li className="font-semibold">
+                        {first.company} • {first.employmentType}
+                      </li>
+                      <li>{first.date}</li>
+                      <li>{first.location}</li>
+                    </ul>
+                  </div>
+                  <ul className="ml-6 list-disc">
+                    {first.responsibilities.map((task, idx) => (
+                      <li key={idx}>{task}</li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            }
+            const ranges = group.map((job) => rangeOf(job.date));
+            const total =
+              Math.max(...ranges.map((r) => r.end)) -
+              Math.min(...ranges.map((r) => r.start)) +
+              1;
+            const sameType = group.every(
+              (job) => job.employmentType === first.employmentType,
+            );
+            return (
+              <div
+                key={first.company}
+                className="glass-card flex flex-col gap-5 p-5"
+              >
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <figure className="w-full md:w-1/8 text-center">
+                    <img
+                      src={first.imgSrc}
+                      alt={first.imgAlt}
+                      className="w-full aspect-[1/1] rounded-4xl border object-cover"
+                    />
+                  </figure>
+                  <ul className="w-full md:w-7/8">
+                    <li className="text-base font-semibold">
+                      <u>{first.company}</u>
+                    </li>
+                    <li>
+                      {sameType && `${first.employmentType} • `}
+                      {durationLabel(total)}
+                    </li>
+                    <li>{first.location}</li>
+                  </ul>
+                </div>
+                <ol className="ml-2 space-y-6 border-l border-line pl-6">
+                  {group.map((job, index) => {
+                    const range = rangeOf(job.date);
+                    return (
+                      <li key={index} className="relative">
+                        <span
+                          aria-hidden
+                          className="absolute top-2 -left-[29.5px] h-2.5 w-2.5 rounded-full bg-cream/50"
+                        />
+                        <p className="text-base font-semibold">{job.title}</p>
+                        {!sameType && <p>{job.employmentType}</p>}
+                        <p>
+                          {job.date} •{" "}
+                          {durationLabel(range.end - range.start + 1)}
+                        </p>
+                        <ul className="mt-3 ml-6 list-disc">
+                          {job.responsibilities.map((task, idx) => (
+                            <li key={idx}>{task}</li>
+                          ))}
+                        </ul>
+                      </li>
+                    );
+                  })}
+                </ol>
               </div>
-              <ul className="ml-6 list-disc">
-                {job.responsibilities.map((task, idx) => (
-                  <li key={idx}>{task}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            );
+          })}
         </section>
 
         <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-3">
