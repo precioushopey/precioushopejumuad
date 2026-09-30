@@ -62,10 +62,9 @@ export const ContactSection = () => {
       id="contact"
       className="container mx-auto max-w-5xl space-y-4 py-20 px-8"
     >
-      <div className="flex justify-center gap-x-2 font-bold text-glow">
-        <h2 className="text-3xl sm:text-4xl">Get In</h2>
-        <h2 className="font-display text-3xl sm:text-4xl ">
-          Touch
+      <div className="flex justify-center font-bold text-glow">
+        <h2 className="text-3xl sm:text-4xl">
+          Get In <span className="font-display">Touch</span>
         </h2>
       </div>
 
@@ -130,7 +129,7 @@ export const ContactSection = () => {
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent"
+                className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent"
 placeholder="Precious Hope Jumuad..."
               />
             </div>
@@ -144,7 +143,7 @@ placeholder="Precious Hope Jumuad..."
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent"
+                className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent"
 placeholder="jumuad.precious@gmail.com"
               />
             </div>
@@ -157,7 +156,7 @@ placeholder="jumuad.precious@gmail.com"
                 id="message"
                 name="message"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent resize-none"
+                className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent resize-none"
                 placeholder="Hi! Just wanted to share or talk about..."
               />
             </div>

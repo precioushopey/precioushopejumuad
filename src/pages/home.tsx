@@ -1,88 +1,105 @@
 import { Link } from "react-router-dom";
-import { MdArrowOutward } from "react-icons/md";
+import { MdMoreHoriz } from "react-icons/md";
 import { projects } from "../data/projects";
 import { blogPosts } from "../data/blogPosts";
+import { AnalogClock } from "../components/AnalogClock";
+import { PillTabs } from "../components/PillTabs";
+import { RingGauge } from "../components/RingGauge";
 
-type BentoLinkProps = { to: string; label: string };
+const tools = [
+  { name: "Figma", src: "/assets/images/figma.png" },
+  { name: "React", src: "/assets/images/react.png" },
+  { name: "TypeScript", src: "/assets/images/ts.png" },
+  { name: "Tailwind CSS", src: "/assets/images/tailwind.png" },
+];
 
-const BentoLink = ({ to, label }: BentoLinkProps) => (
-  <Link
-    to={to}
-    className="mt-4 flex items-center justify-between rounded-full bg-white py-2 pl-6 pr-2 text-base font-medium shadow-sm transition-transform duration-300 hover:scale-[1.02] active:scale-95"
-  >
-    {label}
-    <span className="arrow-button">
-      <MdArrowOutward size={18} aria-hidden />
-    </span>
-  </Link>
-);
+const Home = () => {
+  const featured = projects.slice(0, 3);
+  const max = Math.max(projects.length, blogPosts.length);
 
-const Stat = ({ value, label }: { value: number; label: string }) => (
-  <div className="flex flex-1 flex-col justify-center rounded-3xl bg-white/80 px-4 py-3 text-left">
-    <span className="text-3xl font-medium leading-none">{value}</span>
-    <span className="mt-1 text-xs text-ink/60">{label}</span>
-  </div>
-);
+  return (
+    <div className="space-y-5 p-5 sm:p-8">
+      <header className="animate-fade-in space-y-4">
+        <h1 className="text-2xl font-medium sm:text-3xl">Featured</h1>
+        <PillTabs active="all" />
+      </header>
 
-const Home = () => (
-  <div className="grid min-h-[600px] grid-rows-[1fr_auto] gap-4 lg:h-full">
-    <section aria-label="Introduction" className="relative min-h-[380px]">
-      <svg
-        aria-hidden
-        viewBox="0 0 600 400"
-        className="pointer-events-none absolute inset-0 h-full w-full text-accent/60"
-        preserveAspectRatio="xMidYMid slice"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1"
-      >
-        <circle cx="300" cy="220" r="120" />
-        <circle cx="300" cy="220" r="170" />
-        <circle cx="300" cy="220" r="220" />
-        <circle cx="300" cy="220" r="270" />
-      </svg>
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-2">
+        <section aria-label="Recent work" className="glass-card space-y-2 p-4">
+          <div className="flex items-center justify-between px-1">
+            <h2 className="text-sm text-cream/70">Recent work</h2>
+            <Link
+              to="/projects"
+              aria-label="See all projects"
+              className="rounded-full p-1 hover:bg-cream/15"
+            >
+              <MdMoreHoriz size={22} aria-hidden />
+            </Link>
+          </div>
+          {featured.map((p) => (
+            <Link
+              key={p.url}
+              to={p.url}
+              className="flex min-w-0 items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
+            >
+              <img
+                src={p.image}
+                alt=""
+                className="h-14 w-16 shrink-0 rounded-xl object-cover"
+              />
+              <span className="min-w-0">
+                <span className="block truncate text-sm font-medium">{p.title}</span>
+                <span className="block truncate text-xs text-cream/70">
+                  {p.tags.slice(0, 3).join(" · ")}
+                </span>
+              </span>
+            </Link>
+          ))}
+        </section>
 
-      <div className="relative z-10 max-w-[16rem] animate-fade-in text-left sm:max-w-sm">
-        <h1 className="font-display text-4xl leading-tight sm:text-6xl">
-          Precious Hope
-        </h1>
-        <p className="mt-3 text-sm tracking-widest sm:text-base">
-          COMPUTER ENGINEER · UI/UX DESIGNER
-        </p>
-      </div>
+        <div className="space-y-5">
+          <section
+            aria-label="At a glance"
+            className="glass-card flex flex-wrap items-center justify-around gap-x-4 gap-y-3 p-4"
+          >
+            <AnalogClock className="h-24 w-24 shrink-0 text-cream" />
+            <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
+            <RingGauge value={projects.length} max={max} label="Projects" />
+            <RingGauge value={blogPosts.length} max={max} label="Blog posts" />
+          </section>
 
-      <img
-        src="/assets/images/hero.png"
-        alt="Precious Hope T. Jumuad"
-        className="absolute bottom-0 left-1/2 z-0 h-full max-h-[560px] -translate-x-1/2 object-contain object-bottom"
-      />
-    </section>
-
-    <section
-      aria-label="Explore"
-      className="relative z-20 grid gap-4 lg:grid-cols-[1fr_minmax(0,22rem)_1fr]"
-    >
-      <div className="glass-card p-5 text-left">
-        <p className="text-base">Explore my</p>
-        <p className="font-display text-4xl sm:text-5xl">WORK</p>
-        <BentoLink to="/projects" label="See projects" />
-      </div>
-
-      <div className="glass-card flex flex-col p-4 text-left">
-        <p className="mb-2 px-1 text-base">At a glance</p>
-        <div className="flex flex-1 gap-3">
-          <Stat value={projects.length} label="Projects" />
-          <Stat value={blogPosts.length} label="Blog posts" />
+          <section aria-label="Tools" className="glass-card p-4">
+            <ul className="grid grid-cols-4 gap-3">
+              {tools.map((t) => (
+                <li key={t.name} className="tile-outline aspect-square bg-cream/90 p-3">
+                  <img src={t.src} alt={t.name} className="h-full w-full object-contain" />
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
       </div>
 
-      <div className="glass-card p-5 text-left">
-        <p className="text-base">Read my</p>
-        <p className="font-display text-4xl sm:text-5xl">STORIES</p>
-        <BentoLink to="/blog" label="Read blog" />
-      </div>
-    </section>
-  </div>
-);
+      <section aria-label="Featured projects" className="grid grid-cols-3 gap-3 sm:gap-5">
+        {featured.map((p) => (
+          <Link
+            key={p.url}
+            to={p.url}
+            className="group relative aspect-[3/4] overflow-hidden rounded-3xl border border-line"
+          >
+            <img
+              src={p.image}
+              alt={p.title}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-10 text-left text-xs font-medium sm:text-sm">
+              {p.title}
+            </span>
+          </Link>
+        ))}
+      </section>
+    </div>
+  );
+};
 
 export default Home;

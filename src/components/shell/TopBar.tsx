@@ -1,18 +1,11 @@
-import { Link } from "react-router-dom";
 import { SearchPill } from "./SearchPill";
 
 export const TopBar = () => (
-  <header className="flex items-center justify-between gap-4 px-5 py-5 sm:px-8">
-    <Link to="/" className="font-display text-xl sm:text-2xl">
-      Precious Hope
-    </Link>
-    <div className="flex items-center gap-3">
-      <SearchPill />
-      <img
-        src="/assets/images/logo.png"
-        alt=""
-        className="h-9 w-9 rounded-full border border-white object-cover"
-      />
-    </div>
+  <header className="flex flex-col items-start gap-3 md:flex-row md:items-center md:justify-between md:gap-4 lg:pl-8">
+    <p className="min-w-0 text-balance text-xl font-medium sm:text-2xl md:text-3xl">
+      Hello, I’m{" "}
+      <span className="font-display text-accent">Precious Hope</span>
+    </p>
+    <SearchPill />
   </header>
 );

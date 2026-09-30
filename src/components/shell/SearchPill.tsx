@@ -34,7 +34,7 @@ export const SearchPill = () => {
 
   return (
     <div ref={wrapRef} className="relative">
-      <label className="flex items-center gap-2 rounded-full border border-white/80 bg-white/70 px-4 py-2 shadow-sm">
+      <label className="flex items-center gap-2 rounded-full border-2 border-line bg-black/25 px-4 py-2 text-cream focus-within:border-accent">
         <MdOutlineSearch size={18} aria-hidden />
         <input
           type="search"
@@ -63,7 +63,7 @@ export const SearchPill = () => {
               go(results[active].to);
             }
           }}
-          className="w-28 bg-transparent text-sm outline-none placeholder:text-ink/50 sm:w-44"
+          className="w-28 bg-transparent text-sm outline-none placeholder:text-cream/60 sm:w-44 lg:w-64"
         />
       </label>
 
@@ -71,10 +71,10 @@ export const SearchPill = () => {
         <ul
           id={listId}
           role="listbox"
-          className="glass-card absolute right-0 top-full z-50 mt-2 w-72 overflow-hidden bg-white/95 p-2 text-left sm:w-96"
+          className="glass-card absolute right-0 top-full z-50 mt-2 w-72 overflow-hidden p-2 text-left sm:w-96"
         >
           {results.length === 0 && (
-            <li className="px-3 py-2 text-sm text-ink/60">No matches</li>
+            <li className="px-3 py-2 text-sm text-cream/60">No matches</li>
           )}
           {results.map((r, i) => (
             <li key={r.to} role="option" aria-selected={i === active}>
@@ -83,10 +83,10 @@ export const SearchPill = () => {
                 onMouseEnter={() => setActive(i)}
                 onClick={() => go(r.to)}
                 className={`block w-full rounded-2xl px-3 py-2 text-left ${
-                  i === active ? "bg-accent/40" : ""
+                  i === active ? "bg-accent/25" : ""
                 }`}
               >
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-ink/60">
+                <span className="text-[10px] font-semibold uppercase tracking-wider text-cream/60">
                   {r.kind}
                 </span>
                 <span className="block truncate text-sm font-medium">{r.title}</span>
