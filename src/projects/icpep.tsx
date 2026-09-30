@@ -69,7 +69,7 @@ const ICpEP = () => {
   ];
 
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 lg:px-8 text-sm sm:text-base">
       <header>
         <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
           <h1 className="text-3xl sm:text-6xl">ICpEP.SE</h1>

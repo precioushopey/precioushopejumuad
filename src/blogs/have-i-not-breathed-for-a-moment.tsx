@@ -3,7 +3,7 @@ import { LuChevronLeft, LuExternalLink } from "react-icons/lu";
 
 const Blog4 = () => {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 lg:px-8 text-sm sm:text-base">
       <header className="space-y-6">
         <div className="flex flex-col items-center justify-center animate-fade-in">
           <div className="flex flex-col lg:flex-row gap-x-2">
