@@ -1,20 +1,9 @@
-import { useState } from "react";
 import { LuWrench } from "react-icons/lu";
 import { skills } from "../data/skills";
 import { WindowBar } from "./WindowBar";
 
-const categories = ["all", "frontend", "design", "multimedia"] as const;
-type Category = (typeof categories)[number];
-
-// Skills as a file-list window, like the certifications: a title bar, category filters, and one
-// row per skill (icon, name, category and a proficiency bar).
+// Skills as a file-list window, like the certifications: a title bar and one row per skill (icon, name, category and a proficiency bar).
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState<Category>("all");
-
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory,
-  );
-
   return (
     <section
       id="skills"
@@ -23,23 +12,8 @@ export const SkillsSection = () => {
     >
       <WindowBar
         icon={<LuWrench size={14} />}
-        title={`Skills (${filteredSkills.length} items)`}
+        title={`Skills (${skills.length} items)`}
       />
-      <div className="flex flex-wrap gap-2 border-b border-line/40 px-6 py-3">
-        {categories.map((category) => (
-          <button
-            key={category}
-            type="button"
-            onClick={() => setActiveCategory(category)}
-            aria-pressed={activeCategory === category}
-            className={`capitalize ${
-              activeCategory === category ? "pill-outline" : "pill"
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
       <div
         aria-hidden
         className="hidden grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1.6fr)] gap-3 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
@@ -50,7 +24,7 @@ export const SkillsSection = () => {
         <span>Proficiency</span>
       </div>
       <ul>
-        {filteredSkills.map((skill) => (
+        {skills.map((skill) => (
           <li
             key={skill.name}
             className="grid grid-cols-[2rem_minmax(0,1fr)_8rem] items-center gap-3 border-b border-line/30 px-6 py-2.5 text-left last:border-b-0 md:grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1.6fr)]"
