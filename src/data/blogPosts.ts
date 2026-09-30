@@ -25,7 +25,7 @@ export const blogPosts: BlogPost[] = [
     alt: "i-passed-the-cse-exam",
     title: "I passed the Civil Service Professional Examination!",
     description:
-      "I passed the Civil Service Professional Examination — but here’s the part I can’t stop thinking about: I was only one or two items away from hitting my personal goal of a 90% rating. After 10 weeks of building my own syllabus, creating a study plan, scheduling my time, and reviewing every subject area without skipping anything… I ended with 89.72% — a familiar kind of “almost,” reaching for an elusive prize that’s almost within reach, yet still slips away.",
+      "I passed the Civil Service Professional Examination, but here’s the part I can’t stop thinking about: I was only one or two items away from hitting my personal goal of a 90% rating. After 10 weeks of building my own syllabus, creating a study plan, scheduling my time, and reviewing every subject area without skipping anything… I ended with 89.72%, a familiar kind of “almost,” reaching for an elusive prize that’s almost within reach, yet still slips away.",
     date: "2025-11-24",
   },
   {
@@ -65,7 +65,7 @@ export const blogPosts: BlogPost[] = [
     alt: "All's Well That Ends Well",
     title: "All's Well That Ends Well",
     description:
-      "After four years of trials and tribulations, navigating a path beyond my passion but fueled by purpose, I can finally say — I am an engineer! Read my heartfelt reflection on how college shaped not just my skills, but my character through people, purpose, and grace.",
+      "After four years of trials and tribulations, navigating a path beyond my passion but fueled by purpose, I can finally say: I am an engineer! Read my heartfelt reflection on how college shaped not just my skills, but my character through people, purpose, and grace.",
     date: "2025-08-03",
   },
   {
@@ -85,7 +85,7 @@ export const blogPosts: BlogPost[] = [
     alt: "The gumamela I offered to Mary",
     title: "The gumamela I offered to Mary",
     description:
-      "I wrote this short story during the height of the pandemic, when the silence of isolation gave me the space to reflect on the vibrant memories of my childhood, faith, and the quiet beauty of my hometown church. I have always turned to writing to express the emotions I could not say aloud. This piece captures not only my early religious experiences but also a tender moment of first love, wrapped in nostalgia and reverence for the Immaculate Conception Parish Church of Jasaan. It is a deeply personal tribute to a place that shaped my spiritual and emotional journey. This story was honored with The Trailblazer Editor’s Choice award in Reflections 2023: 8-Bit Memory — Reimagined, a recognition that affirmed the quiet sincerity and cultural weight it carries.",
+      "I wrote this short story during the height of the pandemic, when the silence of isolation gave me the space to reflect on the vibrant memories of my childhood, faith, and the quiet beauty of my hometown church. I have always turned to writing to express the emotions I could not say aloud. This piece captures not only my early religious experiences but also a tender moment of first love, wrapped in nostalgia and reverence for the Immaculate Conception Parish Church of Jasaan. It is a deeply personal tribute to a place that shaped my spiritual and emotional journey. This story was honored with The Trailblazer Editor’s Choice award in Reflections 2023: 8-Bit Memory - Reimagined, a recognition that affirmed the quiet sincerity and cultural weight it carries.",
     date: "2025-07-20",
   },
   {
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
     alt: "A Glimpse Of My Future",
     title: "A Glimpse Of My Future",
     description:
-      "This time capsule letter is a deeply personal message written by my 20-year-old self to the woman I hope to become. I created it as part of our essay activity in the subject Purposive Communication during my second year in college—a task that challenged us to articulate our identity, values, and vision through the lens of self-reflection. It captures my thoughts, struggles, and hopes during one of the most chaotic yet formative seasons of my life. Framed through the powerful lines of Invictus, it speaks to the resilience I’m striving to build, the self-love I’m slowly learning, and the clarity I seek in an uncertain future. As a young woman navigating adulthood, I wrote this not just as a reminder of who I was but as a promise to who I will become. It is both a conversation and a commitment to myself—to stay grounded, stay soft, and stay strong.",
+      "This time capsule letter is a deeply personal message written by my 20-year-old self to the woman I hope to become. I created it as part of our essay activity in the subject Purposive Communication during my second year in college, a task that challenged us to articulate our identity, values, and vision through the lens of self-reflection. It captures my thoughts, struggles, and hopes during one of the most chaotic yet formative seasons of my life. Framed through the powerful lines of Invictus, it speaks to the resilience I’m striving to build, the self-love I’m slowly learning, and the clarity I seek in an uncertain future. As a young woman navigating adulthood, I wrote this not just as a reminder of who I was but as a promise to who I will become. It is both a conversation and a commitment to myself: to stay grounded, stay soft, and stay strong.",
     date: "2025-07-19",
   },
   {
@@ -115,7 +115,7 @@ export const blogPosts: BlogPost[] = [
     alt: "Storyboard: A Five-Year Plan for the Development of Myself",
     title: "Storyboard: A Five-Year Plan for the Development of Myself",
     description:
-      "This storyboard was created as my final Performance Innovative Task for the subject Understanding the Self in my first year, where we were asked to map out a personal five-year development plan. It became an opportunity to reflect on who I am, the roles I currently play, and the person I am intentionally becoming. Rooted in my own values, experiences, and ambitions, this piece expresses my commitment to personal growth, spiritual grounding, and psychological resilience. The plan targets key aspects of the self—philosophical, psychological, spiritual, and political—highlighting my aspirations not only to be excellent in academics and leadership but also to pursue authentic happiness and self-actualization. My teacher appreciated the clarity and depth of this vision and chose to showcase it as a sample for the next batch, which affirmed its worthiness to be shared and remembered.",
+      "This storyboard was created as my final Performance Innovative Task for the subject Understanding the Self in my first year, where we were asked to map out a personal five-year development plan. It became an opportunity to reflect on who I am, the roles I currently play, and the person I am intentionally becoming. Rooted in my own values, experiences, and ambitions, this piece expresses my commitment to personal growth, spiritual grounding, and psychological resilience. The plan targets key aspects of the self: philosophical, psychological, spiritual, and political, highlighting my aspirations not only to be excellent in academics and leadership but also to pursue authentic happiness and self-actualization. My teacher appreciated the clarity and depth of this vision and chose to showcase it as a sample for the next batch, which affirmed its worthiness to be shared and remembered.",
     date: "2025-07-13",
   },
   {

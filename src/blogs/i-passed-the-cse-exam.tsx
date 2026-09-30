@@ -11,7 +11,7 @@ const Blog16 = () => {
           from hitting my personal goal of a 90% rating. After 10 weeks of
           building my own syllabus, creating a study plan, scheduling my time,
           and reviewing every subject area without skipping anything… I ended
-          with 89.72% — a familiar kind of “almost,” reaching for an elusive
+          with 89.72%, a familiar kind of “almost,” reaching for an elusive
           prize that’s almost within reach, yet still slips away. But what that
           near-miss taught me changed everything. Sometimes the “almost” has
           more to say than the win.

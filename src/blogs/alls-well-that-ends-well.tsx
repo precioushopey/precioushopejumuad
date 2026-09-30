@@ -7,9 +7,9 @@ const Blog12 = () => {
       <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
         <p>
           After four years of trials and tribulations, navigating a path beyond
-          my passion but fueled by purpose, I can finally say — I am an
-          engineer! Read my heartfelt reflection on how college shaped not just
-          my skills, but my character through people, purpose, and grace.
+          my passion but fueled by purpose, I can finally say: I am an engineer!
+          Read my heartfelt reflection on how college shaped not just my skills,
+          but my character through people, purpose, and grace.
         </p>
       </section>
 

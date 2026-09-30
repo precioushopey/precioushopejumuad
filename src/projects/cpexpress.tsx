@@ -80,7 +80,7 @@ const CpExpress = () => {
             digital initiative was built to create a safe, expressive space
             where students could share their thoughts, feelings, and hidden
             confessions without fear of judgment. It was more than just a
-            seasonal platform — it served as a moment of connection, laughter,
+            seasonal platform; it served as a moment of connection, laughter,
             and emotional relief during one of the most socially charged times
             of the year.
           </p>
@@ -139,8 +139,8 @@ const CpExpress = () => {
               could thrive without inviting toxicity. It required striking a
               delicate balance between freedom of expression and responsible
               community behavior. Designing a submission and moderation system
-              that was both real-time and protective was technically demanding —
-              and emotionally nuanced — especially when dealing with vulnerable
+              that was both real-time and protective was technically demanding
+              and emotionally nuanced, especially when dealing with vulnerable
               or humorous content in a public space.
             </p>
           </div>

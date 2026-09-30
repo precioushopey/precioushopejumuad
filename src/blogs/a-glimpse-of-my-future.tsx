@@ -9,7 +9,7 @@ const Blog5 = () => {
           This time capsule letter is a deeply personal message written by my
           20-year-old self to the woman I hope to become. I created it as part
           of our essay activity in the subject Purposive Communication during my
-          second year in college—a task that challenged us to articulate our
+          second year in college, a task that challenged us to articulate our
           identity, values, and vision through the lens of self-reflection. It
           captures my thoughts, struggles, and hopes during one of the most
           chaotic yet formative seasons of my life. Framed through the powerful
@@ -17,7 +17,7 @@ const Blog5 = () => {
           to build, the self-love I’m slowly learning, and the clarity I seek in
           an uncertain future. As a young woman navigating adulthood, I wrote
           this not just as a reminder of who I was but as a promise to who I
-          will become. It is both a conversation and a commitment to myself—to
+          will become. It is both a conversation and a commitment to myself: to
           stay grounded, stay soft, and stay strong.
         </p>
       </section>

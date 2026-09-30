@@ -16,7 +16,7 @@ const Blog6 = () => {
           Jasaan. It is a deeply personal tribute to a place that shaped my
           spiritual and emotional journey. This story was honored with "The
           Trailblazer Editor’s Choice" award in{" "}
-          <em>Reflections 2023: 8-Bit Memory — Reimagined</em>, a recognition
+          <em>Reflections 2023: 8-Bit Memory - Reimagined</em>, a recognition
           that affirmed the quiet sincerity and cultural weight it carries.
         </p>
       </section>
@@ -242,7 +242,7 @@ const Blog6 = () => {
             href="https://online.fliphtml5.com/yxrgv/tcvk/#p=32"
             className="hover:underline"
           >
-            <p>Reflections 2023: 8-Bit Memory — Reimagined.</p>
+            <p>Reflections 2023: 8-Bit Memory - Reimagined.</p>
           </a>
           <LuExternalLink size={20} />
         </section>

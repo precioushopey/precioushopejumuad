@@ -13,12 +13,13 @@ const Blog3 = () => {
           the person I am intentionally becoming. Rooted in my own values,
           experiences, and ambitions, this piece expresses my commitment to
           personal growth, spiritual grounding, and psychological resilience.
-          The plan targets key aspects of the self—philosophical, psychological,
-          spiritual, and political—highlighting my aspirations not only to be
-          excellent in academics and leadership but also to pursue authentic
-          happiness and self-actualization. My teacher appreciated the clarity
-          and depth of this vision and chose to showcase it as a sample for the
-          next batch, which affirmed its worthiness to be shared and remembered.
+          The plan targets key aspects of the self: philosophical,
+          psychological, spiritual, and political, highlighting my aspirations
+          not only to be excellent in academics and leadership but also to
+          pursue authentic happiness and self-actualization. My teacher
+          appreciated the clarity and depth of this vision and chose to showcase
+          it as a sample for the next batch, which affirmed its worthiness to be
+          shared and remembered.
         </p>
       </section>
 

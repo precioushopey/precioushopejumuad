@@ -39,7 +39,7 @@ const Payroll = () => {
       icon: <LuLightbulb size={20} />,
       title: "Ideate",
       description:
-        "I explored solutions that would reduce friction—automated syncing, real-time payroll previews, and a clean dashboard.",
+        "I explored solutions that would reduce friction: automated syncing, real-time payroll previews, and a clean dashboard.",
     },
     {
       icon: <LuWrench size={20} />,
@@ -82,15 +82,15 @@ const Payroll = () => {
           </h2>
           <p className="-mt-2 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             In the heart of LGU Jasaan’s Human Resource operations, manual
-            payroll processes once consumed hours of tedious work—cross-checking
-            biometric logs, calculating deductions, and generating payslips by
-            hand. To ease this burden, I, together with my partner, developed an
-            automated Payroll Management System tailored to their workflow.
-            Designed with seamless biometric integration, the system simplifies
-            complex payroll tasks into an intuitive digital experience,
-            empowering HR staff to focus more on people, not paperwork. It's
-            more than automation, it's a tool that restores time and ensures
-            accuracy where it matters most.
+            payroll processes once consumed hours of tedious work:
+            cross-checking biometric logs, calculating deductions, and
+            generating payslips by hand. To ease this burden, I, together with
+            my partner, developed an automated Payroll Management System
+            tailored to their workflow. Designed with seamless biometric
+            integration, the system simplifies complex payroll tasks into an
+            intuitive digital experience, empowering HR staff to focus more on
+            people, not paperwork. It's more than automation, it's a tool that
+            restores time and ensures accuracy where it matters most.
           </p>
           <button className="mx-auto flex justify-center">
             <a

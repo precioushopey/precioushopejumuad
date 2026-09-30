@@ -41,7 +41,7 @@ const Ibrgy = () => {
       icon: <LuListChecks size={20} />,
       title: "Test",
       description:
-        "Live trials confirmed it worked—no bugs, no errors—just satisfied residents and barangay officials praising its efficiency.",
+        "Live trials confirmed it worked: no bugs, no errors, just satisfied residents and barangay officials praising its efficiency.",
     },
     {
       icon: <LuSun size={20} />,
