@@ -1,11 +1,17 @@
 import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Rail } from "./Rail";
+import { RightColumn } from "./RightColumn";
 import { TopBar } from "./TopBar";
+
+// Only the top-level pages get the profile/latest column; detail pages use the full panel.
+const WITH_SIDEBAR = new Set(["/", "/about", "/projects", "/blog"]);
 
 export const Shell = () => {
   const { pathname } = useLocation();
   const scrollRef = useRef<HTMLElement>(null);
+  const path = pathname.replace(/\/+$/, "") || "/";
+  const showSide = WITH_SIDEBAR.has(path);
 
   // The panel scrolls internally on desktop, the window on mobile.
   useEffect(() => {
@@ -16,19 +22,32 @@ export const Shell = () => {
   return (
     <div className="relative min-h-dvh overflow-x-clip text-cream lg:h-dvh lg:overflow-hidden">
       <div aria-hidden className="shell-bg" />
-      <div className="relative z-10 mx-auto flex min-h-dvh max-w-[1400px] p-3 sm:p-6 lg:h-full lg:p-10">
-        <div className="glass-panel flex w-full min-w-0 flex-col lg:flex-row lg:overflow-hidden">
-          <div className="flex min-w-0 flex-1 flex-col lg:min-h-0">
-            <TopBar />
-            <main
-              ref={scrollRef}
-              className="panel-scroll flex-1 px-5 pb-6 sm:px-8 lg:min-h-0 lg:overflow-y-auto lg:pb-8"
+      <div className="relative z-10 mx-auto flex min-h-dvh max-w-[1500px] flex-col gap-4 p-3 sm:p-6 lg:h-full lg:min-h-0 lg:p-10">
+        <TopBar />
+        <div className="flex min-h-0 flex-1 flex-col gap-4 lg:ml-8 xl:flex-row">
+          <main
+            ref={scrollRef}
+            className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:min-h-0 lg:overflow-y-auto"
+          >
+            <Outlet />
+            {showSide && (
+              // Below xl the column sits at the bottom of the panel.
+              <div className="px-5 pt-6 sm:px-8 xl:hidden">
+                <RightColumn />
+              </div>
+            )}
+          </main>
+          {showSide && (
+            <aside
+              aria-label="Profile and latest"
+              className="hidden w-[22rem] shrink-0 xl:block xl:overflow-y-auto"
             >
-              <Outlet />
-            </main>
-          </div>
-          <Rail />
+              <RightColumn />
+            </aside>
+          )}
         </div>
+        {/* Last in the DOM so keyboard users reach content first; placed by CSS. */}
+        <Rail />
       </div>
     </div>
   );

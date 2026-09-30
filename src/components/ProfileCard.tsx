@@ -1,0 +1,23 @@
+import { Link } from "react-router-dom";
+
+export const ProfileCard = () => (
+  <section aria-label="Profile" className="glass-card relative p-6 text-center">
+    <span className="absolute left-5 top-5 rounded-full border border-line px-3 py-0.5 text-xs">
+      Profile
+    </span>
+    <img
+      src="/assets/images/profile.jpg"
+      alt="Precious Hope T. Jumuad"
+      className="mx-auto mt-4 h-36 w-36 rounded-full border-2 border-line object-cover"
+    />
+    <h2 className="mt-4 text-2xl font-medium">Precious Hope</h2>
+    <p className="text-sm text-accent">Computer Engineer · UI/UX Designer</p>
+    <p className="mt-3 text-sm leading-6 text-cream/80">
+      Computer Engineering graduate who believes design and technology should
+      make life easier, more beautiful, and more meaningful.
+    </p>
+    <Link to="/about" className="white-button mt-4">
+      About me
+    </Link>
+  </section>
+);
