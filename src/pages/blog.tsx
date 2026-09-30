@@ -26,10 +26,7 @@ const Blog = () => {
               className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="flex flex-1 flex-col items-start justify-center p-4 space-y-2 ml-2">
-              <h3
-                className="font-semibold text-lg"
-                dangerouslySetInnerHTML={{ __html: post.title }}
-              />
+              <h3 className="font-semibold text-lg">{post.title}</h3>
               <p className="line-clamp-3 font-light italic text-left">
                 {post.description}
               </p>
@@ -40,6 +37,7 @@ const Blog = () => {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
+                      timeZone: "UTC",
                     })}
                   </time>
                 </p>

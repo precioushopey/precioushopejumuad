@@ -130,8 +130,8 @@ export const ContactSection = () => {
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                placeholder="Precious Hope Jumuad..."
+                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent"
+placeholder="Precious Hope Jumuad..."
               />
             </div>
 
@@ -144,8 +144,8 @@ export const ContactSection = () => {
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                placeholder="jumuad.precious@gmail.com"
+                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent"
+placeholder="jumuad.precious@gmail.com"
               />
             </div>
 
@@ -157,7 +157,7 @@ export const ContactSection = () => {
                 id="message"
                 name="message"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent resize-none"
                 placeholder="Hi! Just wanted to share or talk about..."
               />
             </div>

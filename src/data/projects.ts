@@ -149,7 +149,7 @@ export const projects: Project[] = [
       "It is a collection of original pixel art projects featuring character sprites, environments, and game-ready assets designed to capture retro aesthetics and enhance 2D gameplay experiences.",
     image: "/assets/images/pixel1.png",
     tags: ["Aseprite", "Canva", "Photoshop"],
-    url: "/projects/pixel",
+    url: "/projects/pixels",
     category: "multimedia",
   },
   {

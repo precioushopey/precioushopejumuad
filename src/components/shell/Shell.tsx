@@ -9,8 +9,8 @@ export const Shell = () => {
 
   // The panel scrolls internally on desktop, the window on mobile.
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: 0 });
-    window.scrollTo({ top: 0 });
+    scrollRef.current?.scrollTo({ top: 0, behavior: "instant" });
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
 
   return (

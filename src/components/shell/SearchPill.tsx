@@ -59,7 +59,7 @@ export const SearchPill = () => {
             } else if (e.key === "ArrowUp" && results.length) {
               e.preventDefault();
               setActive((a) => (a - 1 + results.length) % results.length);
-            } else if (e.key === "Enter" && results[active]) {
+            } else if (e.key === "Enter" && showList && results[active]) {
               go(results[active].to);
             }
           }}
