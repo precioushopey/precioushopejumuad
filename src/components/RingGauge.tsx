@@ -1,4 +1,10 @@
-import { useId, type ReactNode } from "react";
+import {
+  useEffect,
+  useId,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from "react";
 
 type Props = {
   value: number;
@@ -13,6 +19,29 @@ type Props = {
 const RADIUS = 38;
 const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 
+// Counts the centre number up from 0 in step with the ring's sweep (see .ring-sweep in index.css).
+const useCountUp = (target: number) => {
+  const [shown, setShown] = useState(0);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShown(target);
+      return;
+    }
+    const DELAY = 700;
+    const DURATION = 1200;
+    let frame = 0;
+    const start = performance.now() + DELAY;
+    const tick = (now: number) => {
+      const t = Math.min(Math.max((now - start) / DURATION, 0), 1);
+      setShown(Math.round(target * (1 - Math.pow(1 - t, 4))));
+      if (t < 1) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [target]);
+  return shown;
+};
+
 export const RingGauge = ({
   value,
   max,
@@ -22,6 +51,7 @@ export const RingGauge = ({
 }: Props) => {
   const fraction = max > 0 ? Math.min(value / max, 1) : 0;
   const tipId = useId();
+  const shown = useCountUp(value);
   return (
     <div
       role={tip ? "group" : "img"}
@@ -57,10 +87,12 @@ export const RingGauge = ({
             strokeLinecap="round"
             strokeDasharray={CIRCUMFERENCE}
             strokeDashoffset={CIRCUMFERENCE * (1 - fraction)}
+            className="ring-sweep"
+            style={{ "--ring-full": CIRCUMFERENCE } as CSSProperties}
           />
         </svg>
         <span className="absolute inset-0 flex items-center justify-center text-2xl font-medium">
-          {value}
+          {shown}
         </span>
       </div>
       <span className="text-xs text-cream/70">{label}</span>

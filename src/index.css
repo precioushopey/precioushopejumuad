@@ -308,6 +308,21 @@
   }
 }
 
+/* Donut gauges sweep from empty to their value once on load, after the cards have faded in. */
+.ring-sweep {
+  animation: ring-sweep 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.7s backwards;
+}
+@keyframes ring-sweep {
+  from {
+    stroke-dashoffset: var(--ring-full);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ring-sweep {
+    animation: none;
+  }
+}
+
 @keyframes nav-label-in {
   from {
     opacity: 0;

@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type CSSProperties } from "react";
 import {
   LuCodeXml,
   LuLayoutDashboard,
@@ -87,6 +87,8 @@ export const SkillsCard = () => {
                     strokeLinecap="round"
                     strokeDasharray={CIRCUMFERENCE}
                     strokeDashoffset={CIRCUMFERENCE * (1 - percent / 100)}
+                    className="ring-sweep"
+                    style={{ "--ring-full": CIRCUMFERENCE } as CSSProperties}
                   />
                 </svg>
                 <span className="absolute inset-0 flex items-center justify-center">
