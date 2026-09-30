@@ -656,71 +656,75 @@ const About = () => {
           </section>
         </FolderSection>
 
-        <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-4">
-          <h2 className="text-2xl sm:text-3xl">
-            My <span className="font-display">Certifications</span>
-          </h2>
-        </div>
-
-        <section
-          aria-label="Certifications"
-          className="glass-card overflow-hidden animate-fade-in-delay-3"
+        <FolderSection
+          title={
+            <>
+              My <span className="font-display">Certifications</span>
+            </>
+          }
+          count={certificationData.length}
         >
-          <WindowBar
-            icon={<LuAward size={14} />}
-            title={`Certifications (${certificationData.length} items)`}
-          />
-          <div
-            aria-hidden
-            className="hidden grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem] gap-3 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
+          <section
+            aria-label="Certifications"
+            className="glass-card overflow-hidden animate-fade-in-delay-3"
           >
-            <span />
-            <span>Name</span>
-            <span>Issuer</span>
-            <span>Issued</span>
-            <span />
-          </div>
-          <ul>
-            {certificationData.map((cert, index) => (
-              <li
-                key={index}
-                className="border-b border-line/30 last:border-b-0"
-              >
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-3 px-6 py-2.5 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem]"
+            <WindowBar
+              icon={<LuAward size={14} />}
+              title={`Certifications (${certificationData.length} items)`}
+            />
+            <div
+              aria-hidden
+              className="hidden grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem] gap-3 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
+            >
+              <span />
+              <span>Name</span>
+              <span>Issuer</span>
+              <span>Issued</span>
+              <span />
+            </div>
+            <ul>
+              {certificationData.map((cert, index) => (
+                <li
+                  key={index}
+                  className="border-b border-line/30 last:border-b-0"
                 >
-                  <img
-                    src={cert.imgSrc}
-                    alt=""
-                    className="h-8 w-8 rounded-lg border bg-white object-cover"
-                  />
-                  <span className="min-w-0">
-                    <span className="block truncate font-medium">
-                      {cert.certificate}
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-3 px-6 py-2.5 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem]"
+                  >
+                    <img
+                      src={cert.imgSrc}
+                      alt=""
+                      className="h-8 w-8 rounded-lg border bg-white object-cover"
+                    />
+                    <span className="min-w-0">
+                      <span className="block truncate font-medium">
+                        {cert.certificate}
+                      </span>
+                      <span className="block truncate text-xs text-cream/60 md:hidden">
+                        {cert.organization} ·{" "}
+                        {cert.issued.replace("Issued ", "")}
+                      </span>
                     </span>
-                    <span className="block truncate text-xs text-cream/60 md:hidden">
-                      {cert.organization} · {cert.issued.replace("Issued ", "")}
+                    <span className="hidden truncate text-cream/70 md:block">
+                      {cert.organization}
                     </span>
-                  </span>
-                  <span className="hidden truncate text-cream/70 md:block">
-                    {cert.organization}
-                  </span>
-                  <span className="hidden text-cream/70 md:block">
-                    {cert.issued.replace("Issued ", "")}
-                  </span>
-                  <LuExternalLink
-                    aria-hidden
-                    size={14}
-                    className="text-cream/50"
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
+                    <span className="hidden text-cream/70 md:block">
+                      {cert.issued.replace("Issued ", "")}
+                    </span>
+                    <LuExternalLink
+                      aria-hidden
+                      size={14}
+                      className="text-cream/50"
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </FolderSection>
         <SkillsSection />
       </div>
 
