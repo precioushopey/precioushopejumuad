@@ -311,7 +311,7 @@ const About = () => {
   ];
 
   return (
-    <div className="space-y-6 p-5 text-sm sm:p-8 sm:text-base">
+    <div className="space-y-6 p-5 text-base sm:p-8">
       <header className="animate-fade-in">
         <h1 className="text-2xl font-medium sm:text-3xl">About</h1>
       </header>
@@ -391,7 +391,7 @@ const About = () => {
                   />
                 </figure>
                 <ul className="w-full md:w-7/8">
-                  <li className="text-base sm:text-lg font-semibold">
+                  <li className="text-base font-semibold">
                     <u>{job.title}</u>
                   </li>
                   <li className="font-semibold">
@@ -428,7 +428,7 @@ const About = () => {
                   />
                 </figure>
                 <ul className="w-full md:w-7/8">
-                  <li className="text-base sm:text-lg font-semibold">
+                  <li className="text-base font-semibold">
                     <u>{edu.school}</u>
                   </li>
                   <li className="font-semibold">{edu.degree}</li>
@@ -459,7 +459,7 @@ const About = () => {
                   />
                 </figure>
                 <ul className="w-full md:w-7/8">
-                  <li className="text-base sm:text-lg font-semibold">
+                  <li className="text-base font-semibold">
                     <u>{cert.certificate}</u>
                   </li>
                   <li className="font-semibold">{cert.organization}</li>
