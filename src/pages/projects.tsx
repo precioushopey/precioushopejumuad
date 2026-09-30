@@ -1,6 +1,7 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { categories, projects, type Category } from "../data/projects";
 import { PillTabs } from "../components/PillTabs";
+import { ThumbnailTile } from "../components/ThumbnailTile";
 
 const isCategory = (value: string | null): value is Category =>
   categories.some((c) => c === value);
@@ -29,25 +30,13 @@ const ProjectsPage = () => {
       ) : (
         <div className="grid grid-cols-2 gap-x-3 gap-y-2 sm:gap-x-4 lg:grid-cols-3">
           {filtered.map((project) => (
-            <Link
-              to={project.url}
+            <ThumbnailTile
               key={project.title}
-              className="group flex flex-col gap-2 rounded-2xl p-2 text-left sm:gap-3 sm:p-3 transition-colors hover:bg-cream/10"
-            >
-              <img
-                src={project.image}
-                alt=""
-                className="aspect-[16/10] w-full rounded-xl border border-line object-cover shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
-              />
-              <span className="min-w-0">
-                <span className="block truncate font-semibold sm:text-base">
-                  {project.title}
-                </span>
-                <span className="block text-xs text-cream/60">
-                  {project.tags.join(" · ")}
-                </span>
-              </span>
-            </Link>
+              to={project.url}
+              image={project.image}
+              title={project.title}
+              subtitle={project.tags.join(" · ")}
+            />
           ))}
         </div>
       )}
