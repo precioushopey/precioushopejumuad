@@ -318,11 +318,15 @@ const About = () => {
 
       <div className="tracking-normal leading-6 text-left space-y-6">
         <section className="flex flex-col items-center gap-6 animate-fade-in-delay-1">
-          <figure className="w-full max-w-2xl">
+          <figure className="relative w-full max-w-2xl">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 -inset-y-[5%] bg-[radial-gradient(ellipse_at_58%_55%,rgb(255_201_60/0.5),rgb(255_201_60/0.16)_40%,transparent_70%)] blur-2xl"
+            />
             <img
               src="/assets/images/hero.png"
               alt="Precious Hope Jumuad in her graduation gown"
-              className="h-auto w-full"
+              className="relative h-auto w-full"
             />
           </figure>
           <article className="w-full space-y-4 text-justify">
