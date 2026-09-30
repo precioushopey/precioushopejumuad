@@ -21,14 +21,14 @@ const Home = () => {
   const blogPercent = Math.round((blogPosts.length / BLOG_GOAL) * 100);
 
   return (
-    <div className="flex flex-col gap-4 p-0 lg:gap-5 lg:flex-1 lg:p-8">
+    <div className="flex flex-col gap-3 p-0 lg:gap-5 lg:flex-1 lg:p-8">
       <header className="animate-fade-in space-y-4 text-left">
         <h1 className="text-2xl font-medium sm:text-3xl">Featured</h1>
         <PillTabs active="all" />
       </header>
 
       {/* Two rows of two. Cards in a row stretch to the same height; the Skills card fills its cell. */}
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-4 lg:flex-1 lg:gap-5 lg:grid-cols-2">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-3 lg:flex-1 lg:gap-5 lg:grid-cols-2">
         <section
           aria-label="Recent Projects"
           className="glass-card animate-fade-in-delay-1 opacity-0"
@@ -72,7 +72,7 @@ const Home = () => {
           </div>
         </section>
 
-        <div className="flex animate-fade-in-delay-2 flex-col gap-4 opacity-0 lg:gap-5">
+        <div className="flex animate-fade-in-delay-2 flex-col gap-3 opacity-0 lg:gap-5">
           <section aria-label="At a glance" className="glass-card">
             <WindowBar icon={<LuActivity size={14} />} title="At a glance" />
             <div className="flex flex-wrap items-center justify-around gap-x-2 gap-y-3 p-3">
