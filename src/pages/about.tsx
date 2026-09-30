@@ -366,7 +366,11 @@ const About = () => {
               to work with people who value thoughtful design, collaboration,
               experimentation, and purposeful products. If you’re building
               something interesting, I’d love to connect. You can explore my
-              work at precioushopejumuad.vercel.app.
+              work{" "}
+              <Link to="/projects">
+                <u>here</u>
+              </Link>
+              .
             </p>
           </article>
         </section>
@@ -377,9 +381,9 @@ const About = () => {
           </h2>
         </div>
 
-        <section className="flex flex-col gap-6 glass-card p-5 animate-fade-in-delay-2">
+        <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           {jobs.map((job, index) => (
-            <div key={index} className="flex flex-col gap-4">
+            <div key={index} className="glass-card flex flex-col gap-4 p-5">
               <div className="flex flex-col sm:flex-row gap-6">
                 <figure className="w-full md:w-1/8 text-center">
                   <img
