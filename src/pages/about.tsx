@@ -35,6 +35,7 @@ const About = () => {
     imgSrc: string;
     alt: string;
     school: string;
+    site: { href: string; kind: "web" | "facebook" | "instagram" };
     degree: string;
     location: string;
     dates: string;
@@ -156,6 +157,7 @@ const About = () => {
       imgSrc: "/assets/images/ustp.png",
       alt: "University of Science and Technology of Southern Philippines",
       school: "University of Science and Technology of Southern Philippines",
+      site: { href: "https://www.ustp.edu.ph/", kind: "web" },
       degree: "Bachelor of Science in Computer Engineering",
       location: "Cagayan de Oro City, Philippines",
       dates: "August 2021 - July 2025",
@@ -165,6 +167,7 @@ const About = () => {
       imgSrc: "/assets/images/srcb.jfif",
       alt: "St. Rita’s College of Balingasag",
       school: "St. Rita’s College of Balingasag",
+      site: { href: "https://www.srcb.edu.ph/", kind: "web" },
       degree:
         "Senior High School - Science, Technology, Engineering, and Mathematics Strand",
       location: "Balingasag, Misamis Oriental, Philippines",
@@ -175,6 +178,7 @@ const About = () => {
       imgSrc: "/assets/images/smaj.png",
       alt: "St. Mary's Academy of Jasaan, Inc.",
       school: "St. Mary's Academy of Jasaan, Inc.",
+      site: { href: "https://www.facebook.com/smajasaan/", kind: "facebook" },
       degree: "Junior High School",
       location: "Jasaan, Misamis Oriental, Philippines",
       dates: "June 2017 - March 2019",
@@ -385,13 +389,13 @@ const About = () => {
     return groups;
   }, []);
 
-  const siteLink = (job: Job) => {
-    if (!job.site) return undefined;
-    const { href, kind } = job.site;
+  const siteLink = (name: string, site?: Job["site"]) => {
+    if (!site) return undefined;
+    const { href, kind } = site;
     const label = {
-      web: `Open the ${job.company} website`,
-      facebook: `Open ${job.company} on Facebook`,
-      instagram: `Open ${job.company} on Instagram`,
+      web: `Open the ${name} website`,
+      facebook: `Open ${name} on Facebook`,
+      instagram: `Open ${name} on Instagram`,
     }[kind];
     const Icon = { web: LuGlobe, facebook: LuFacebook, instagram: LuInstagram }[
       kind
@@ -525,7 +529,7 @@ const About = () => {
                     <AccordionCard
                       key={first.company + first.date}
                       icon={<LuBriefcase size={14} />}
-                      link={siteLink(first)}
+                      link={siteLink(first.company, first.site)}
                       title={first.company}
                       summary={processTable(
                         group.map((job) => ({
@@ -575,7 +579,7 @@ const About = () => {
                   <AccordionCard
                     key={first.company}
                     icon={<LuBriefcase size={14} />}
-                    link={siteLink(first)}
+                    link={siteLink(first.company, first.site)}
                     title={first.company}
                     summary={processTable(
                       group.map((job) => ({ name: job.title, date: job.date })),
@@ -645,6 +649,7 @@ const About = () => {
                   key={edu.school}
                   icon={<LuGraduationCap size={14} />}
                   title={edu.school}
+                  link={siteLink(edu.school, edu.site)}
                   summary={processTable(
                     [{ name: edu.degree, date: edu.dates }],
                     { running: "Studying", ended: "Graduated" },
