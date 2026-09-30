@@ -66,8 +66,9 @@ export const Shell = () => {
           >
             <Outlet />
             {showSide && (
-              // Below xl the column sits at the bottom of the panel.
-              <div className="px-5 pt-6 sm:px-8 xl:hidden">
+              // From lg to xl the column sits at the bottom of the panel. Below lg it is its own
+              // page (/profile), reached from the phone bar.
+              <div className="hidden px-5 pt-6 sm:px-8 lg:block xl:hidden">
                 <RightColumn />
               </div>
             )}

@@ -33,7 +33,7 @@ export const SearchPill = () => {
   const go = (to: string) => navigate(to);
 
   return (
-    <div ref={wrapRef} className="relative xl:w-[22rem]">
+    <div ref={wrapRef} className="relative w-full md:w-auto xl:w-[22rem]">
       <label className="flex items-center gap-2 rounded-full border-2 border-line bg-black/25 px-4 py-2 text-cream focus-within:border-accent">
         <LuSearch size={18} aria-hidden />
         <input
@@ -63,7 +63,7 @@ export const SearchPill = () => {
               go(results[active].to);
             }
           }}
-          className="w-28 bg-transparent text-sm outline-none placeholder:text-cream/60 sm:w-44 lg:w-64 xl:w-full"
+          className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-cream/60 md:w-44 md:flex-none lg:w-64 xl:w-full"
         />
       </label>
 

@@ -4,6 +4,7 @@ import { Shell } from "./components/shell/Shell";
 import NotFound from "./pages/not-found";
 import Home from "./pages/home";
 import About from "./pages/about";
+import ProfilePage from "./pages/profile";
 import ProjectsPage from "./pages/projects";
 import Blog from "./pages/blog";
 import Subay from "./projects/subay";
@@ -44,59 +45,63 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Shell />}>
-          <Route index element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/projects/subay" element={<Subay />} />
-          <Route path="/projects/payroll" element={<Payroll />} />
-          <Route path="/projects/ibrgy" element={<Ibrgy />} />
-          <Route path="/projects/talemakers" element={<TaleMakers />} />
-          <Route path="/projects/athomes" element={<AtHomes />} />
-          <Route path="/projects/icpep" element={<ICpEP />} />
-          <Route path="/projects/cpexpress" element={<CpExpress />} />
-          <Route path="/projects/cpengage" element={<CpEngage />} />
-          <Route path="/projects/bbtime" element={<BBTime />} />
-          <Route path="/projects/cpedays" element={<CpEDays />} />
-          <Route path="/projects/genass" element={<GenAss />} />
-          <Route path="/projects/cpexpo" element={<CpExpo />} />
-          <Route path="/projects/icpepse" element={<ICpEPSE />} />
-          <Route path="/projects/uda" element={<UDA />} />
-          <Route path="/projects/meinaot" element={<MeInAOT />} />
-          <Route path="/projects/pixels" element={<Pixels />} />
-          <Route path="/projects/videos" element={<Videos />} />
-          <Route path="/projects/photos" element={<Photos />} />
-          <Route path="/blogs/in-the-midst-of-silence" element={<Blog1 />} />
-          <Route path="/blogs/words-of-gratitude" element={<Blog2 />} />
-          <Route
-            path="/blogs/storyboard-a-five-year-plan"
-            element={<Blog3 />}
-          />
-          <Route
-            path="/blogs/have-i-not-breathed-for-a-moment"
-            element={<Blog4 />}
-          />
-          <Route path="/blogs/a-glimpse-of-my-future" element={<Blog5 />} />
-          <Route
-            path="/blogs/the-gumamela-I-offered-to-mary"
-            element={<Blog6 />}
-          />
-          <Route path="/blogs/coins-for-the-child" element={<Blog11 />} />
-          <Route path="/blogs/alls-well-that-ends-well" element={<Blog12 />} />
-          <Route
-            path="/blogs/i-know-that-i-know-nothing"
-            element={<Blog13 />}
-          />
-          <Route
-            path="/blogs/dear-little-hope-looks-like-we-made-it"
-            element={<Blog14 />}
-          />
-          <Route
-            path="/blogs/alls-well-that-ends-well-I-wish"
-            element={<Blog15 />}
-          />
-          <Route path="/blogs/i-passed-the-cse-exam" element={<Blog16 />} />
+            <Route index element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/projects/subay" element={<Subay />} />
+            <Route path="/projects/payroll" element={<Payroll />} />
+            <Route path="/projects/ibrgy" element={<Ibrgy />} />
+            <Route path="/projects/talemakers" element={<TaleMakers />} />
+            <Route path="/projects/athomes" element={<AtHomes />} />
+            <Route path="/projects/icpep" element={<ICpEP />} />
+            <Route path="/projects/cpexpress" element={<CpExpress />} />
+            <Route path="/projects/cpengage" element={<CpEngage />} />
+            <Route path="/projects/bbtime" element={<BBTime />} />
+            <Route path="/projects/cpedays" element={<CpEDays />} />
+            <Route path="/projects/genass" element={<GenAss />} />
+            <Route path="/projects/cpexpo" element={<CpExpo />} />
+            <Route path="/projects/icpepse" element={<ICpEPSE />} />
+            <Route path="/projects/uda" element={<UDA />} />
+            <Route path="/projects/meinaot" element={<MeInAOT />} />
+            <Route path="/projects/pixels" element={<Pixels />} />
+            <Route path="/projects/videos" element={<Videos />} />
+            <Route path="/projects/photos" element={<Photos />} />
+            <Route path="/blogs/in-the-midst-of-silence" element={<Blog1 />} />
+            <Route path="/blogs/words-of-gratitude" element={<Blog2 />} />
+            <Route
+              path="/blogs/storyboard-a-five-year-plan"
+              element={<Blog3 />}
+            />
+            <Route
+              path="/blogs/have-i-not-breathed-for-a-moment"
+              element={<Blog4 />}
+            />
+            <Route path="/blogs/a-glimpse-of-my-future" element={<Blog5 />} />
+            <Route
+              path="/blogs/the-gumamela-I-offered-to-mary"
+              element={<Blog6 />}
+            />
+            <Route path="/blogs/coins-for-the-child" element={<Blog11 />} />
+            <Route
+              path="/blogs/alls-well-that-ends-well"
+              element={<Blog12 />}
+            />
+            <Route
+              path="/blogs/i-know-that-i-know-nothing"
+              element={<Blog13 />}
+            />
+            <Route
+              path="/blogs/dear-little-hope-looks-like-we-made-it"
+              element={<Blog14 />}
+            />
+            <Route
+              path="/blogs/alls-well-that-ends-well-I-wish"
+              element={<Blog15 />}
+            />
+            <Route path="/blogs/i-passed-the-cse-exam" element={<Blog16 />} />
           </Route>
         </Routes>
       </BrowserRouter>
