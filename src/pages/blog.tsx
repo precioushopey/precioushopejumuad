@@ -4,12 +4,9 @@ import { blogPosts } from "../data/blogPosts";
 
 const Blog = () => {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
-      <header>
-        <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
-          <h1 className="text-3xl sm:text-6xl">Blog</h1>
-          <h2 className="font-display text-3xl sm:text-5xl">Page</h2>
-        </div>
+    <div className="space-y-6 p-5 text-sm sm:p-8 sm:text-base">
+      <header className="animate-fade-in">
+        <h1 className="text-2xl font-medium sm:text-3xl">Blog</h1>
       </header>
 
       <div className="space-y-6">
@@ -26,7 +23,7 @@ const Blog = () => {
               className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="flex flex-1 flex-col items-start justify-center p-4 space-y-2 ml-2">
-              <h3 className="font-semibold text-lg">{post.title}</h3>
+              <h2 className="text-lg font-semibold">{post.title}</h2>
               <p className="line-clamp-3 font-light italic text-left">
                 {post.description}
               </p>

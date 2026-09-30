@@ -1,81 +1,56 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
-import { projects } from "../data/projects";
+import { categories, projects, type Category } from "../data/projects";
+import { PillTabs } from "../components/PillTabs";
 
-const categories = [
-  "all",
-  "frontend",
-  "design",
-  "socials",
-  "multimedia",
-] as const;
-type Category = (typeof categories)[number];
+const isCategory = (value: string | null): value is Category =>
+  categories.some((c) => c === value);
 
 const ProjectsPage = () => {
-  const [activeCategory, setActiveCategory] = useState<Category>("all");
+  const [params] = useSearchParams();
+  const raw = params.get("category");
+  // Unknown or missing values fall back to "all".
+  const active: Category = isCategory(raw) ? raw : "all";
 
-  const filteredProjects = projects.filter(
-    (project) => activeCategory === "all" || project.category === activeCategory
+  const filtered = projects.filter(
+    (project) => active === "all" || project.category === active
   );
 
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8">
-      <header>
-        <div className="flex flex-col sm:flex-row justify-center font-bold text-glow animate-fade-in text-center sm:text-left">
-          <h1 className="text-4xl sm:text-6xl">Project</h1>
-          <h2 className="font-display text-4xl sm:text-5xl sm:ml-2">
-            Repository
-          </h2>
-        </div>
+    <div className="space-y-6 p-5 sm:p-8">
+      <header className="animate-fade-in space-y-4">
+        <h1 className="text-2xl font-medium sm:text-3xl">Projects</h1>
+        <PillTabs active={active} />
       </header>
 
-      <div className="space-y-6">
-        <div className="flex flex-wrap justify-center gap-4">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-4 py-1 rounded-full transition-colors duration-300 capitalize ${
-                activeCategory === category
-                  ? "white-button"
-                  : "transparent-button border"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8">
-          {filteredProjects.map((project) => (
+      {filtered.length === 0 ? (
+        <p className="text-cream/70">No projects in this category yet.</p>
+      ) : (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {filtered.map((project) => (
             <Link
               to={project.url}
-              target="_top"
-              rel="noopener noreferrer"
               key={project.title}
-              className="group overflow-hidden glass-card card-hover"
+              className="group glass-card card-hover overflow-hidden"
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full aspect-[16/9] object-cover transition-transform duration-500 group-hover:scale-110"
+                className="aspect-[16/9] w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, index) => (
+              <div className="p-5">
+                <div className="mb-4 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
                     <span
-                      key={index}
-                      className="rounded-full border bg-white/60 text-xs px-3 py-1"
+                      key={tag}
+                      className="rounded-full border border-line bg-cream/10 px-3 py-1 text-xs"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-
                 <div className="flex flex-row items-center justify-between gap-3">
-                  <h3 className="text-left text-xl font-semibold">{project.title}</h3>
+                  <h2 className="text-left text-xl font-semibold">{project.title}</h2>
                   <span className="arrow-button" aria-hidden>
                     <MdArrowOutward size={18} />
                   </span>
@@ -84,7 +59,7 @@ const ProjectsPage = () => {
             </Link>
           ))}
         </div>
-      </div>
+      )}
     </div>
   );
 };
