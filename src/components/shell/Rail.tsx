@@ -28,7 +28,7 @@ export const Rail = () => {
       aria-label="Main"
       className="sticky bottom-4 z-40 mx-auto flex w-fit items-center gap-3 rounded-full border border-line bg-black/50 p-2 shadow-lg backdrop-blur-md lg:absolute lg:bottom-auto lg:left-0 lg:top-1/2 lg:z-10 lg:mx-0 lg:w-24 lg:-translate-y-1/2 lg:h-[28rem] lg:max-h-[calc(100%-5rem)] lg:flex-col lg:justify-between lg:rounded-l-[2rem] lg:rounded-r-none lg:border-cream/20 lg:bg-cream/15 lg:p-6 lg:shadow-none lg:backdrop-blur-xl"
     >
-      <div className="flex gap-3 lg:flex-col lg:gap-4">
+      <div className="flex gap-3 lg:flex-col lg:gap-2 2xl:gap-4">
         {items.map(({ to, label, Icon, end, alsoMatch }) => (
           <NavLink
             key={to}
