@@ -27,13 +27,17 @@ const useCountUp = (target: number) => {
       setShown(target);
       return;
     }
-    const DELAY = 700;
-    const DURATION = 1200;
+    const DELAY = 1000;
+    const DURATION = 1600;
     let frame = 0;
     const start = performance.now() + DELAY;
     const tick = (now: number) => {
       const t = Math.min(Math.max((now - start) / DURATION, 0), 1);
-      setShown(Math.round(target * (1 - Math.pow(1 - t, 4))));
+      setShown(
+        Math.round(
+          target * (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2),
+        ),
+      );
       if (t < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);

@@ -308,9 +308,9 @@
   }
 }
 
-/* Donut gauges sweep from empty to their value once on load, after the cards have faded in. */
+/* Donut gauges sweep from empty to their value once on load, once the cards have finished fading in (about 1s). */
 .ring-sweep {
-  animation: ring-sweep 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.7s backwards;
+  animation: ring-sweep 1.6s cubic-bezier(0.65, 0, 0.35, 1) 1s backwards;
 }
 @keyframes ring-sweep {
   from {
