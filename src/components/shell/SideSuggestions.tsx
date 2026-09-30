@@ -54,11 +54,21 @@ const Suggestions = ({
   </section>
 );
 
-// Every other post, newest first. The current post is left out.
+// The list starting right after the current entry and wrapping round to the start, current left out:
+// on the third of five, that is the fourth, the fifth, then the first and the second.
+const nextFirst = <T,>(list: T[], isCurrent: (item: T) => boolean): T[] => {
+  const at = list.findIndex(isCurrent);
+  if (at === -1) return list;
+  return [...list.slice(at + 1), ...list.slice(0, at)];
+};
+
+// The posts newest first, starting from the one after the current post and wrapping round.
 export const BlogSuggestions = ({ currentPath }: { currentPath: string }) => {
-  const items = blogPosts
+  const items = nextFirst(
+    [...blogPosts].sort((a, b) => b.date.localeCompare(a.date)),
+    (p) => p.to === currentPath,
+  )
     .filter((p) => p.to !== currentPath)
-    .sort((a, b) => b.date.localeCompare(a.date))
     .map((p) => ({
       to: p.to,
       image: p.image,
@@ -77,22 +87,16 @@ export const BlogSuggestions = ({ currentPath }: { currentPath: string }) => {
   );
 };
 
-// Other projects, same category first, then the rest in the usual order. The current one is left out.
+// The projects in the Projects page order, starting from the one after the current project and
+// wrapping round.
 export const ProjectSuggestions = ({
   currentPath,
 }: {
   currentPath: string;
 }) => {
-  const current = projects.find((p) => p.url === currentPath);
-  const items = projects
+  const items = nextFirst(projects, (p) => p.url === currentPath)
     .filter((p) => p.url !== currentPath)
-    .map((p, index) => ({ p, index }))
-    .sort((a, b) => {
-      const sameA = current && a.p.category === current.category ? 0 : 1;
-      const sameB = current && b.p.category === current.category ? 0 : 1;
-      return sameA - sameB || a.index - b.index;
-    })
-    .map(({ p }) => ({
+    .map((p) => ({
       to: p.url,
       image: p.image,
       title: p.title,
