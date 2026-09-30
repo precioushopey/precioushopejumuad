@@ -1,17 +1,17 @@
-import { } from "react-icons/lu";
+import {} from "react-icons/lu";
 import { BlogPostLayout } from "../components/BlogPostLayout";
 
 const Blog12 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            After four years of trials and tribulations, navigating a path
-            beyond my passion but fueled by purpose, I can finally say — I am an
-            engineer! Read my heartfelt reflection on how college shaped not
-            just my skills, but my character through people, purpose, and grace.
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          After four years of trials and tribulations, navigating a path beyond
+          my passion but fueled by purpose, I can finally say — I am an
+          engineer! Read my heartfelt reflection on how college shaped not just
+          my skills, but my character through people, purpose, and grace.
+        </p>
+      </section>
 
       <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
@@ -39,16 +39,16 @@ const Blog12 = () => {
               believed in the same goal, classmates who brought levity to the
               hard days, and the friends who became family.
             </p>
+            <p>
+              College taught me more than what was on the syllabus. Leading
+              projects taught me how to organize chaos. Collaborating on
+              research taught me how to listen. And even failure (especially
+              failure) taught me resilience.
+            </p>
           </article>
         </section>
 
         <section className="space-y-4 animate-fade-in-delay-3">
-          <p>
-            College taught me more than what was on the syllabus. Leading
-            projects taught me how to organize chaos. Collaborating on research
-            taught me how to listen. And even failure (especially failure)
-            taught me resilience.
-          </p>
           <p>
             From building a multi-camera customer tracking system in our thesis
             to designing and developing web applications during my internships,
