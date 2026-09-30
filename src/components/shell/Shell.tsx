@@ -24,10 +24,11 @@ export const Shell = () => {
       <div aria-hidden className="shell-bg" />
       <div className="relative z-10 mx-auto flex min-h-dvh max-w-[1500px] flex-col gap-4 p-3 sm:p-6 lg:h-full lg:min-h-0 lg:p-10">
         <TopBar />
-        <div className="flex min-h-0 flex-1 flex-col gap-4 lg:ml-8 xl:flex-row">
+        {/* Relative so the rail can span the row's height; the panel sits above it and tucks over its edge. */}
+        <div className="relative flex min-h-0 flex-1 flex-col gap-4 lg:pl-[4.5rem] xl:flex-row">
           <main
             ref={scrollRef}
-            className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:min-h-0 lg:pl-6 lg:overflow-y-auto"
+            className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:relative lg:z-20 lg:min-h-0 lg:overflow-y-auto"
           >
             <Outlet />
             {showSide && (
@@ -45,9 +46,9 @@ export const Shell = () => {
               <RightColumn />
             </aside>
           )}
+          {/* Last in the DOM so keyboard users reach content first; placed by CSS. */}
+          <Rail />
         </div>
-        {/* Last in the DOM so keyboard users reach content first; placed by CSS. */}
-        <Rail />
       </div>
     </div>
   );
