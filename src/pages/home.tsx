@@ -80,7 +80,7 @@ const Home = () => {
           </div>
         </section>
 
-        <div className="flex animate-fade-in-delay-2 flex-col gap-3 opacity-0 lg:gap-5">
+        <div className="order-first flex animate-fade-in-delay-2 flex-col gap-3 opacity-0 lg:order-none lg:gap-5">
           <section aria-label="At a glance" className="glass-card">
             <WindowBar icon={<LuActivity size={14} />} title="At a glance" />
             <div className="flex flex-wrap items-center justify-around gap-x-2 gap-y-3 p-3">
