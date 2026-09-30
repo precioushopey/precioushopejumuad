@@ -30,7 +30,7 @@ const Home = () => {
       <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:flex-1 lg:grid-cols-2">
         <section
           aria-label="Recent Projects"
-          className="glass-card space-y-2 p-4"
+          className="glass-card animate-fade-in-delay-1 space-y-2 p-4 opacity-0"
         >
           <div className="flex items-center justify-between px-1">
             <h2 className="text-sm text-cream/70">Recent Projects</h2>
@@ -66,7 +66,7 @@ const Home = () => {
           ))}
         </section>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex animate-fade-in-delay-2 flex-col gap-5 opacity-0">
           <section
             aria-label="At a glance"
             className="glass-card flex flex-wrap items-center justify-around gap-x-4 gap-y-3 p-4"
@@ -104,12 +104,14 @@ const Home = () => {
           <SkillsCard />
         </div>
 
-        <WorkExperience />
+        <div className="flex animate-fade-in-delay-3 flex-col opacity-0">
+          <WorkExperience />
+        </div>
 
         {/* Bare photo cards, no container: they stretch to the height of Work Experience beside them. */}
         <section
           aria-label="Featured projects"
-          className="grid grid-cols-[repeat(3,minmax(0,1fr))] gap-3"
+          className="grid animate-fade-in-delay-4 grid-cols-[repeat(3,minmax(0,1fr))] gap-3 opacity-0"
         >
           {featured.map((p) => (
             <Link
