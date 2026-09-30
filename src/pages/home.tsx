@@ -36,7 +36,7 @@ const Home = () => {
       </header>
 
       {/* Two rows of two. Cards in a row stretch to the same height; the Skills card fills its cell. */}
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-3 lg:flex-1 lg:gap-5 lg:grid-cols-2">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-3 lg:flex-1 lg:gap-5 min-[1024px]:grid-cols-2">
         <section
           aria-label="Recent Projects"
           className="glass-card animate-fade-in-delay-1 opacity-0"
@@ -80,7 +80,7 @@ const Home = () => {
           </div>
         </section>
 
-        <div className="order-first flex animate-fade-in-delay-2 flex-col gap-3 opacity-0 lg:order-none lg:gap-5">
+        <div className="order-first flex animate-fade-in-delay-2 flex-col gap-3 opacity-0 min-[1024px]:order-none lg:gap-5">
           <section aria-label="At a glance" className="glass-card">
             <WindowBar icon={<LuActivity size={14} />} title="At a glance" />
             <div className="flex flex-wrap items-center justify-around gap-x-2 gap-y-3 p-3">
@@ -131,7 +131,7 @@ const Home = () => {
             <Link
               key={p.url}
               to={p.url}
-              className="group relative aspect-[3/4] min-w-0 overflow-hidden rounded-3xl border border-line lg:aspect-auto lg:min-h-32"
+              className="group relative aspect-[3/4] min-w-0 overflow-hidden rounded-3xl border border-line min-[1024px]:aspect-auto min-[1024px]:min-h-32"
             >
               <img
                 src={p.image}
