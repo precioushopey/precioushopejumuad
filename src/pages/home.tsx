@@ -25,9 +25,12 @@ const Home = () => {
       </header>
 
       <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-2">
-        <section aria-label="Recent work" className="glass-card space-y-2 p-4">
+        <section
+          aria-label="Recent Projects"
+          className="glass-card space-y-2 p-4"
+        >
           <div className="flex items-center justify-between px-1">
-            <h2 className="text-sm text-cream/70">Recent work</h2>
+            <h2 className="text-sm text-cream/70">Recent Projects</h2>
             <Link
               to="/projects"
               aria-label="See all projects"
@@ -60,7 +63,7 @@ const Home = () => {
           ))}
         </section>
 
-        {/* flex column so the tools card can stretch to the bottom of the row, level with Recent work */}
+        {/* flex column so the tools card can stretch to the bottom of the row, level with Recent Projects */}
         <div className="flex flex-col gap-5">
           <section
             aria-label="At a glance"
