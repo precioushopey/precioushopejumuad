@@ -16,7 +16,9 @@ const skills = [
 
 export const SkillsCard = () => (
   <section aria-label="Skills and expertise" className="glass-card p-4">
-    <h2 className="px-1 text-sm text-cream/70">Skills &amp; expertise</h2>
+    <h2 className="px-1 text-left text-sm text-cream/70">
+      Skills &amp; expertise
+    </h2>
     <ul className="mt-3 space-y-3">
       {skills.map(({ label, Icon }) => (
         <li

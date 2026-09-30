@@ -60,7 +60,8 @@ const Home = () => {
           ))}
         </section>
 
-        <div className="space-y-5">
+        {/* flex column so the tools card can stretch to the bottom of the row, level with Recent work */}
+        <div className="flex flex-col gap-5">
           <section
             aria-label="At a glance"
             className="glass-card flex flex-wrap items-center justify-around gap-x-4 gap-y-3 p-4"
@@ -71,8 +72,14 @@ const Home = () => {
             <RingGauge value={blogPosts.length} max={max} label="Blog posts" />
           </section>
 
-          <section aria-label="Tools" className="glass-card p-4">
-            <ul className="grid grid-cols-4 gap-3">
+          <section
+            aria-label="Tools"
+            className="glass-card flex flex-1 flex-col p-4"
+          >
+            <h2 className="px-1 text-left text-sm text-cream/70">
+              Tools I use
+            </h2>
+            <ul className="mt-2 grid w-full flex-1 grid-cols-4 content-center gap-3">
               {tools.map((t) => (
                 <li
                   key={t.name}
