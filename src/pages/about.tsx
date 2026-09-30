@@ -11,6 +11,7 @@ import {
   LuStickyNote,
 } from "react-icons/lu";
 import { WindowBar } from "../components/WindowBar";
+import { AccordionCard } from "../components/AccordionCard";
 
 const About = () => {
   type Job = {
@@ -488,15 +489,12 @@ const About = () => {
                 const first = group[0];
                 if (group.length === 1) {
                   return (
-                    <div
+                    <AccordionCard
                       key={first.company + first.date}
-                      className="glass-card overflow-hidden"
+                      icon={<LuBriefcase size={14} />}
+                      title={first.company}
+                      summary={processTable(group)}
                     >
-                      <WindowBar
-                        icon={<LuBriefcase size={14} />}
-                        title={first.company}
-                      />
-                      {processTable(group)}
                       <div className="flex flex-col gap-4 p-5">
                         <div className="flex flex-col sm:flex-row gap-6">
                           <figure className="w-full md:w-1/8 text-center">
@@ -523,7 +521,7 @@ const About = () => {
                           ))}
                         </ul>
                       </div>
-                    </div>
+                    </AccordionCard>
                   );
                 }
                 const ranges = group.map((job) => rangeOf(job.date));
@@ -535,15 +533,12 @@ const About = () => {
                   (job) => job.employmentType === first.employmentType,
                 );
                 return (
-                  <div
+                  <AccordionCard
                     key={first.company}
-                    className="glass-card overflow-hidden"
+                    icon={<LuBriefcase size={14} />}
+                    title={first.company}
+                    summary={processTable(group)}
                   >
-                    <WindowBar
-                      icon={<LuBriefcase size={14} />}
-                      title={first.company}
-                    />
-                    {processTable(group)}
                     <div className="flex flex-col gap-5 p-5">
                       <div className="flex flex-col sm:flex-row gap-6">
                         <figure className="w-full md:w-1/8 text-center">
@@ -591,7 +586,7 @@ const About = () => {
                         })}
                       </ol>
                     </div>
-                  </div>
+                  </AccordionCard>
                 );
               })}
             </section>
