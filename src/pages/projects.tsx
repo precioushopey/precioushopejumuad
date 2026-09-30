@@ -1,14 +1,12 @@
 import { Link, useSearchParams } from "react-router-dom";
-import { LuFolderOpen } from "react-icons/lu";
 import { categories, projects, type Category } from "../data/projects";
 import { PillTabs } from "../components/PillTabs";
-import { WindowBar } from "../components/WindowBar";
 
 const isCategory = (value: string | null): value is Category =>
   categories.some((c) => c === value);
 
-// The projects as a File Explorer window: title bar, address bar, category filters, a grid of
-// large-icon thumbnails and a status bar with the item count.
+// A "Projects" heading with the category pills (same look as Home's Featured header), then a
+// grid of large thumbnails with the name and tags underneath.
 const ProjectsPage = () => {
   const [params] = useSearchParams();
   const raw = params.get("category");
@@ -18,67 +16,41 @@ const ProjectsPage = () => {
   const filtered = projects.filter(
     (project) => active === "all" || project.category === active,
   );
-  const countLabel = `${filtered.length} ${filtered.length === 1 ? "item" : "items"}`;
 
   return (
-    <div className="p-5 sm:p-8">
-      <h1 className="sr-only">Projects</h1>
-      <section
-        aria-label="Projects"
-        className="glass-card animate-fade-in overflow-hidden"
-      >
-        <WindowBar
-          icon={<LuFolderOpen size={14} />}
-          title={`Projects (${projects.length} items)`}
-        />
-        <div className="border-b border-line/40 px-6 py-2 text-left text-xs text-cream/60">
-          This PC <span aria-hidden>›</span> Projects
-          {active !== "all" && (
-            <>
-              {" "}
-              <span aria-hidden>›</span>{" "}
-              <span className="capitalize">{active}</span>
-            </>
-          )}
-        </div>
-        <div className="border-b border-line/40 px-6 py-3">
-          <PillTabs active={active} markCurrent />
-        </div>
+    <div className="space-y-6 p-5 sm:p-8">
+      <header className="animate-fade-in space-y-4 text-left">
+        <h1 className="text-2xl font-medium sm:text-3xl">Projects</h1>
+        <PillTabs active={active} markCurrent />
+      </header>
 
-        {filtered.length === 0 ? (
-          <p className="px-6 py-10 text-cream/70">
-            No projects in this category yet.
-          </p>
-        ) : (
-          <div className="grid grid-cols-1 gap-x-4 gap-y-2 p-4 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((project) => (
-              <Link
-                to={project.url}
-                key={project.title}
-                className="group flex flex-col gap-3 rounded-2xl p-3 text-left transition-colors hover:bg-cream/10"
-              >
-                <img
-                  src={project.image}
-                  alt=""
-                  className="aspect-[16/10] w-full rounded-xl border border-line object-cover shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
-                />
-                <span className="min-w-0">
-                  <span className="block truncate font-semibold sm:text-base">
-                    {project.title}
-                  </span>
-                  <span className="block text-xs text-cream/60">
-                    {project.tags.join(" · ")}
-                  </span>
+      {filtered.length === 0 ? (
+        <p className="text-cream/70">No projects in this category yet.</p>
+      ) : (
+        <div className="grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+          {filtered.map((project) => (
+            <Link
+              to={project.url}
+              key={project.title}
+              className="group flex flex-col gap-3 rounded-2xl p-3 text-left transition-colors hover:bg-cream/10"
+            >
+              <img
+                src={project.image}
+                alt=""
+                className="aspect-[16/10] w-full rounded-xl border border-line object-cover shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+              <span className="min-w-0">
+                <span className="block truncate font-semibold sm:text-base">
+                  {project.title}
                 </span>
-              </Link>
-            ))}
-          </div>
-        )}
-
-        <div className="border-t border-line/40 px-6 py-2 text-left text-xs text-cream/60">
-          {countLabel}
+                <span className="block text-xs text-cream/60">
+                  {project.tags.join(" · ")}
+                </span>
+              </span>
+            </Link>
+          ))}
         </div>
-      </section>
+      )}
     </div>
   );
 };
