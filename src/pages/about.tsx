@@ -67,7 +67,7 @@ const About = () => {
       title: "Operations Associate",
       company: "OJT Connect",
       employmentType: "Part-time",
-      date: "August 2025 - Present",
+      date: "August 2025 - February 2026",
       location: "San Diego, California, United States • Remote",
       responsibilities: [
         "Improved OJT Connect’s user experience and product funnel by contributing to UX/UI redesigns, design systems, development-ready landing pages, and multi-role user dashboards with cross-functional teams.",
