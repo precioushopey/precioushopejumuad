@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { LuArrowRight, LuFileText, LuMail } from "react-icons/lu";
+import { LuArrowRight, LuFileText } from "react-icons/lu";
+import { contactItems } from "../data/contact";
 import { CV_URL } from "../data/links";
 import { experienceLabel } from "../lib/experience";
 
@@ -40,14 +41,23 @@ export const ProfileCard = () => {
         units. A Computer Engineering graduate who loves art and design in
         technology, I’m excited to build with you!
       </p>
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-        <Link
-          to="/about#contact"
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2 text-sm font-medium text-ink transition-transform duration-300 hover:scale-105 active:scale-95"
-        >
-          <LuMail size={18} aria-hidden />
-          Hire me
-        </Link>
+      <div className="mt-4 flex flex-col items-center gap-3">
+        <ul className="flex items-center justify-center gap-3">
+          {contactItems.map(({ label, href, Icon, isEmail }) => (
+            <li key={label}>
+              <a
+                href={href}
+                target={isEmail ? undefined : "_blank"}
+                rel="noopener noreferrer"
+                aria-label={label}
+                title={label}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-ink transition-transform duration-300 hover:scale-110"
+              >
+                <Icon size={20} aria-hidden />
+              </a>
+            </li>
+          ))}
+        </ul>
         {CV_URL && (
           <a
             href={CV_URL}

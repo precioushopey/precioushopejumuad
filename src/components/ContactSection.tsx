@@ -1,67 +1,7 @@
-import { FormEvent, useState } from "react";
-import { useToast } from "../hooks/use-toast";
-import {
-  LuFacebook,
-  LuInstagram,
-  LuLinkedin,
-  LuMail,
-  LuSend,
-} from "react-icons/lu";
-
-type ContactItem = {
-  label: string;
-  href: string;
-  display: string;
-  Icon: React.ElementType;
-  isEmail?: boolean;
-};
-
-const contactItems: ContactItem[] = [
-  {
-    label: "Email",
-    href: "mailto:jumuad.precious@gmail.com",
-    display: "jumuad.precious@gmail",
-    Icon: LuMail,
-    isEmail: true,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/precioushopejumuad/",
-    display: "in/precioushopejumuad",
-    Icon: LuLinkedin,
-  },
-  {
-    label: "Facebook",
-    href: "https://www.facebook.com/precioushope.jumuad",
-    display: "precioushope.jumuad",
-    Icon: LuFacebook,
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/yourprecioushope/",
-    display: "yourprecioushope",
-    Icon: LuInstagram,
-  },
-];
+import { contactItems } from "../data/contact";
+import { ContactForm } from "./ContactForm";
 
 export const ContactSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
-  };
-
   return (
     <section
       id="contact"
@@ -122,62 +62,7 @@ export const ContactSection = () => {
         </div>
 
         <div className="group overflow-hidden glass-card card-hover p-8 space-y-4 mt-0 sm:mt-4">
-          <h3 className="text-2xl font-semibold">Send a Message</h3>
-
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            <div className="space-y-2">
-              <label htmlFor="name" className="block text-lg font-medium">
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent"
-                placeholder="Precious Hope Jumuad..."
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="email" className="block text-lg font-medium">
-                Your Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent"
-                placeholder="jumuad.precious@gmail.com"
-              />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="message" className="block text-lg font-medium">
-                Your Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent resize-none"
-                placeholder="Hi! Just wanted to share or talk about..."
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={`white-button w-full flex items-center justify-center text-base gap-x-2`}
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-              <LuSend
-                size={20}
-                className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
-              />
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </div>
     </section>

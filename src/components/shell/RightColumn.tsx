@@ -1,9 +1,9 @@
-import { SkillsCard } from "../SkillsCard";
+import { ContactCard } from "../ContactCard";
 import { ProfileCard } from "../ProfileCard";
 
 export const RightColumn = () => (
   <div className="flex flex-col gap-4">
     <ProfileCard />
-    <SkillsCard />
+    <ContactCard />
   </div>
 );
