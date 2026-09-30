@@ -34,7 +34,7 @@ export const SearchPill = () => {
 
   return (
     <div ref={wrapRef} className="relative">
-      <label className="flex items-center gap-2 rounded-full border-2 border-line bg-black/25 px-4 py-2 text-cream">
+      <label className="flex items-center gap-2 rounded-full border-2 border-line bg-black/25 px-4 py-2 text-cream focus-within:border-accent">
         <MdOutlineSearch size={18} aria-hidden />
         <input
           type="search"

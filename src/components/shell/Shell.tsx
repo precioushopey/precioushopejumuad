@@ -27,7 +27,7 @@ export const Shell = () => {
         <div className="flex min-h-0 flex-1 flex-col gap-4 lg:ml-8 xl:flex-row">
           <main
             ref={scrollRef}
-            className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:min-h-0 lg:overflow-y-auto"
+            className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:min-h-0 lg:pl-6 lg:overflow-y-auto"
           >
             <Outlet />
             {showSide && (
@@ -40,7 +40,7 @@ export const Shell = () => {
           {showSide && (
             <aside
               aria-label="Profile and latest"
-              className="hidden w-[22rem] shrink-0 xl:block xl:overflow-y-auto"
+              className="hidden w-[22rem] shrink-0 xl:-m-4 xl:block xl:w-[24rem] xl:overflow-y-auto xl:p-4"
             >
               <RightColumn />
             </aside>

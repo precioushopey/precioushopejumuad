@@ -325,9 +325,8 @@ const About = () => {
         </section>
 
         <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-2">
-          <h1 className="text-2xl sm:text-3xl">My</h1>
-          <h2 className="font-display text-2xl sm:text-3xl ml-1">
-            Experiences
+          <h2 className="text-2xl sm:text-3xl">
+            My <span className="font-display">Experiences</span>
           </h2>
         </div>
 
@@ -363,8 +362,9 @@ const About = () => {
         </section>
 
         <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-3">
-          <h1 className="text-2xl sm:text-3xl">My</h1>
-          <h2 className="font-display text-2xl sm:text-3xl ml-1">Education</h2>
+          <h2 className="text-2xl sm:text-3xl">
+            My <span className="font-display">Education</span>
+          </h2>
         </div>
 
         <section className="flex flex-col gap-6 glass-card p-5 animate-fade-in-delay-3">
@@ -393,9 +393,8 @@ const About = () => {
         </section>
 
         <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-4">
-          <h1 className="text-2xl sm:text-3xl">My</h1>
-          <h2 className="font-display text-2xl sm:text-3xl ml-1">
-            Certifications
+          <h2 className="text-2xl sm:text-3xl">
+            My <span className="font-display">Certifications</span>
           </h2>
         </div>
 

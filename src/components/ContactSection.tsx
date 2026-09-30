@@ -130,7 +130,7 @@ export const ContactSection = () => {
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent"
+                className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent"
 placeholder="Precious Hope Jumuad..."
               />
             </div>
@@ -144,7 +144,7 @@ placeholder="Precious Hope Jumuad..."
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent"
+                className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent"
 placeholder="jumuad.precious@gmail.com"
               />
             </div>
@@ -157,7 +157,7 @@ placeholder="jumuad.precious@gmail.com"
                 id="message"
                 name="message"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent resize-none"
+                className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent resize-none"
                 placeholder="Hi! Just wanted to share or talk about..."
               />
             </div>

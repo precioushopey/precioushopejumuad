@@ -30,7 +30,7 @@ const Blog12 = () => {
         </section>
       </header>
 
-      <div className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <div className="glass-card tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
           <figure className="w-full lg:w-1/2 space-y-4">
             <img

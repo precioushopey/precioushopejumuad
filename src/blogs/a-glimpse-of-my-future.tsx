@@ -40,7 +40,7 @@ const Blog5 = () => {
         </section>
       </header>
 
-      <div className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <div className="glass-card tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="text-right animate-fade-in-delay-2">
           <p>232, M.L. Quezon St., Lower Jasaan</p>
           <p>Jasaan 9003, Misamis Oriental</p>

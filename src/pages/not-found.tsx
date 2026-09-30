@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
 const NotFound = () => {
   return (
@@ -7,6 +9,12 @@ const NotFound = () => {
           <h1 className="text-3xl sm:text-6xl">Not</h1>
           <h2 className="font-display text-3xl sm:text-5xl">Found</h2>
         </div>
+      </div>
+      <div className="flex justify-center">
+        <Link to="/" className="w-fit flex items-center gap-x-2 white-button">
+          <MdOutlineKeyboardArrowLeft size={20} />
+          Back to Home
+        </Link>
       </div>
     </div>
   );
