@@ -6,7 +6,6 @@ import {
   LuAward,
   LuBriefcase,
   LuChevronDown,
-  LuChevronLeft,
   LuExternalLink,
   LuFolderOpen,
   LuStickyNote,
@@ -730,17 +729,6 @@ const About = () => {
           </FolderSection>
         </FolderGroup>
       </div>
-
-      <footer className="flex justify-center pt-2">
-        <Link
-          to="/#"
-          target="_top"
-          className="w-fit flex items-center gap-x-2 white-button"
-        >
-          <LuChevronLeft size={20} />
-          Back to Home
-        </Link>
-      </footer>
     </div>
   );
 };
