@@ -27,12 +27,12 @@ const ProjectsPage = () => {
       {filtered.length === 0 ? (
         <p className="text-cream/70">No projects in this category yet.</p>
       ) : (
-        <div className="grid grid-cols-1 gap-x-4 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-2 sm:gap-x-4 lg:grid-cols-3">
           {filtered.map((project) => (
             <Link
               to={project.url}
               key={project.title}
-              className="group flex flex-col gap-3 rounded-2xl p-3 text-left transition-colors hover:bg-cream/10"
+              className="group flex flex-col gap-2 rounded-2xl p-2 text-left sm:gap-3 sm:p-3 transition-colors hover:bg-cream/10"
             >
               <img
                 src={project.image}
