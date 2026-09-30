@@ -50,7 +50,7 @@ export const Rail = () => {
                 isActive || (alsoMatch && pathname.startsWith(alsoMatch));
               return `relative flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-300 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                 on
-                  ? "bg-accent text-ink max-lg:w-auto max-lg:gap-2 max-lg:px-3 min-[360px]:max-lg:px-4 lg:h-auto lg:flex-col lg:gap-0.5 lg:py-1 lg:bg-transparent lg:text-accent lg:before:absolute lg:before:-left-[0.375rem] lg:before:h-8 lg:before:w-1.5 lg:before:rounded-full lg:before:bg-accent lg:before:content-['']"
+                  ? "bg-accent text-ink max-lg:w-auto max-lg:gap-2 max-lg:px-3 min-[360px]:max-lg:px-4 lg:flex-col lg:gap-1.5 lg:bg-transparent lg:text-accent lg:before:absolute lg:before:-left-[0.375rem] lg:before:h-8 lg:before:w-1.5 lg:before:rounded-full lg:before:bg-accent lg:before:content-['']"
                   : "text-cream hover:bg-cream/15"
               }`;
             }}
