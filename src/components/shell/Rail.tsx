@@ -1,5 +1,12 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { LuBriefcase, LuHouse, LuNewspaper, LuUser } from "react-icons/lu";
+import {
+  LuBatteryFull,
+  LuBriefcase,
+  LuHouse,
+  LuNewspaper,
+  LuUser,
+  LuWifi,
+} from "react-icons/lu";
 import { TrayClock } from "./TrayClock";
 
 const items: {
@@ -74,8 +81,12 @@ export const Rail = () => {
           </NavLink>
         ))}
       </div>
-      {/* Phones: the taskbar's tray clock, only when the bar is wide enough to spare the room. */}
-      <TrayClock className="hidden pr-2 min-[440px]:max-lg:block" />
+      {/* Phones: the taskbar's tray (wifi and battery from 380px, plus the clock from 440px). */}
+      <div className="hidden items-center gap-1.5 pr-2 text-cream/70 min-[380px]:max-lg:flex">
+        <LuWifi size={13} aria-hidden />
+        <LuBatteryFull size={15} aria-hidden />
+        <TrayClock className="hidden min-[440px]:block" />
+      </div>
       {/* Desktop: the dock's tray, with the avatar and the Philippine time under it. */}
       <div className="hidden shrink-0 flex-col items-center gap-1.5 lg:flex">
         <Link

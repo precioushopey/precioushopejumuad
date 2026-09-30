@@ -365,6 +365,48 @@ const About = () => {
     return groups;
   }, []);
 
+  // Task-Manager-style summary at the top of each experience card: one row per role.
+  const processTable = (group: Job[]) => (
+    <table className="w-full border-b border-line/40 text-left text-xs">
+      <thead className="text-cream/50">
+        <tr>
+          <th className="px-6 py-2 font-normal">Name</th>
+          <th className="py-2 pr-3 font-normal">Status</th>
+          <th className="hidden py-2 pr-3 font-normal sm:table-cell">
+            Started
+          </th>
+          <th className="py-2 pr-6 text-right font-normal">Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        {group.map((job, index) => {
+          const range = rangeOf(job.date);
+          const running = job.date.endsWith("Present");
+          return (
+            <tr key={index} className="border-t border-line/20">
+              <td className="px-6 py-2 font-medium">{job.title}</td>
+              <td className="whitespace-nowrap py-2 pr-3">
+                <span className="flex items-center gap-1.5">
+                  <span
+                    aria-hidden
+                    className={`h-1.5 w-1.5 rounded-full ${running ? "bg-accent" : "bg-cream/40"}`}
+                  />
+                  {running ? "Running" : "Ended"}
+                </span>
+              </td>
+              <td className="hidden whitespace-nowrap py-2 pr-3 text-cream/70 sm:table-cell">
+                {job.date.split(" - ")[0]}
+              </td>
+              <td className="whitespace-nowrap py-2 pr-6 text-right text-cream/70">
+                {durationLabel(range.end - range.start + 1)}
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+
   return (
     <div className="space-y-6 p-5 text-sm sm:p-8">
       <header className="animate-fade-in">
@@ -442,16 +484,6 @@ const About = () => {
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           {companies.map((group) => {
             const first = group[0];
-            const running = group.some((job) => job.date.endsWith("Present"));
-            const status = (
-              <span className="flex items-center gap-1.5">
-                <span
-                  aria-hidden
-                  className={`h-1.5 w-1.5 rounded-full ${running ? "bg-accent" : "bg-cream/40"}`}
-                />
-                {running ? "Running" : "Ended"}
-              </span>
-            );
             if (group.length === 1) {
               return (
                 <div
@@ -461,8 +493,8 @@ const About = () => {
                   <WindowBar
                     icon={<LuBriefcase size={14} />}
                     title={first.company}
-                    status={status}
                   />
+                  {processTable(group)}
                   <div className="flex flex-col gap-4 p-5">
                     <div className="flex flex-col sm:flex-row gap-6">
                       <figure className="w-full md:w-1/8 text-center">
@@ -505,8 +537,8 @@ const About = () => {
                 <WindowBar
                   icon={<LuBriefcase size={14} />}
                   title={first.company}
-                  status={status}
                 />
+                {processTable(group)}
                 <div className="flex flex-col gap-5 p-5">
                   <div className="flex flex-col sm:flex-row gap-6">
                     <figure className="w-full md:w-1/8 text-center">

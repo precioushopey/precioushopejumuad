@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { LuArrowRight } from "react-icons/lu";
+import { LuActivity, LuArrowRight, LuFolderOpen } from "react-icons/lu";
+import { WindowBar } from "../components/WindowBar";
 import { projects } from "../data/projects";
 import { blogPosts } from "../data/blogPosts";
 import { WorkExperience } from "../components/WorkExperience";
@@ -30,75 +31,80 @@ const Home = () => {
       <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:flex-1 lg:grid-cols-2">
         <section
           aria-label="Recent Projects"
-          className="glass-card animate-fade-in-delay-1 space-y-2 p-4 opacity-0"
+          className="glass-card animate-fade-in-delay-1 opacity-0"
         >
-          <div className="flex items-center justify-between px-1">
-            <h2 className="text-sm text-cream/70">Recent Projects</h2>
-            <Link
-              to="/projects"
-              aria-label="See all projects"
-              title="See all projects"
-              className="flex h-8 w-8 items-center justify-center rounded-full text-white transition-transform duration-300 hover:scale-110"
-            >
-              <LuArrowRight size={20} aria-hidden />
-            </Link>
+          <WindowBar
+            icon={<LuFolderOpen size={14} />}
+            title="Recent Projects"
+            status={
+              <Link
+                to="/projects"
+                aria-label="See all projects"
+                title="See all projects"
+                className="flex h-6 w-6 items-center justify-center rounded-full text-white transition-transform duration-300 hover:scale-110"
+              >
+                <LuArrowRight size={16} aria-hidden />
+              </Link>
+            }
+          />
+          <div className="space-y-2 p-4 pt-3">
+            {recent.map((p) => (
+              <Link
+                key={p.url}
+                to={p.url}
+                className="flex min-w-0 items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
+              >
+                <img
+                  src={p.image}
+                  alt=""
+                  className="h-14 w-16 shrink-0 rounded-xl object-cover"
+                />
+                <span className="min-w-0">
+                  <span className="block truncate text-sm font-medium">
+                    {p.title}
+                  </span>
+                  <span className="block truncate text-xs text-cream/70">
+                    {p.tags.slice(0, 3).join(" · ")}
+                  </span>
+                </span>
+              </Link>
+            ))}
           </div>
-          {recent.map((p) => (
-            <Link
-              key={p.url}
-              to={p.url}
-              className="flex min-w-0 items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
-            >
-              <img
-                src={p.image}
-                alt=""
-                className="h-14 w-16 shrink-0 rounded-xl object-cover"
-              />
-              <span className="min-w-0">
-                <span className="block truncate text-sm font-medium">
-                  {p.title}
-                </span>
-                <span className="block truncate text-xs text-cream/70">
-                  {p.tags.slice(0, 3).join(" · ")}
-                </span>
-              </span>
-            </Link>
-          ))}
         </section>
 
         <div className="flex animate-fade-in-delay-2 flex-col gap-5 opacity-0">
-          <section
-            aria-label="At a glance"
-            className="glass-card flex flex-wrap items-center justify-around gap-x-4 gap-y-3 p-4"
-          >
-            <PhilippineClock />
-            <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
-            <RingGauge
-              value={projects.length}
-              max={projects.length}
-              label="Projects"
-            />
-            <RingGauge
-              value={blogPosts.length}
-              max={BLOG_GOAL}
-              label="Blog posts"
-              tipAlign="right"
-              tip={
-                <>
-                  <strong className="block font-medium text-accent">
-                    Goal: {BLOG_GOAL} blogs by age {GOAL_LAST_AGE}
-                  </strong>
-                  <span className="block text-cream/80">
-                    1 blog at {GOAL_FIRST_AGE}, 2 at {GOAL_FIRST_AGE + 1}, 3 at{" "}
-                    {GOAL_FIRST_AGE + 2} … {GOAL_YEARS} at {GOAL_LAST_AGE}. That
-                    adds up to {BLOG_GOAL}.
-                  </span>
-                  <span className="block font-medium">
-                    {blogPosts.length} of {BLOG_GOAL} so far = {blogPercent}%
-                  </span>
-                </>
-              }
-            />
+          <section aria-label="At a glance" className="glass-card">
+            <WindowBar icon={<LuActivity size={14} />} title="At a glance" />
+            <div className="flex flex-wrap items-center justify-around gap-x-4 gap-y-3 p-4">
+              <PhilippineClock />
+              <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
+              <RingGauge
+                value={projects.length}
+                max={projects.length}
+                label="Projects"
+              />
+              <RingGauge
+                value={blogPosts.length}
+                max={BLOG_GOAL}
+                label="Blog posts"
+                tipAlign="right"
+                tip={
+                  <>
+                    <strong className="block font-medium text-accent">
+                      Goal: {BLOG_GOAL} blogs by age {GOAL_LAST_AGE}
+                    </strong>
+                    <span className="block text-cream/80">
+                      1 blog at {GOAL_FIRST_AGE}, 2 at {GOAL_FIRST_AGE + 1}, 3
+                      at {GOAL_FIRST_AGE + 2} … {GOAL_YEARS} at {GOAL_LAST_AGE}.
+                      That adds up to {BLOG_GOAL}.
+                    </span>
+                    <span className="block font-medium">
+                      {blogPosts.length} of {BLOG_GOAL} so far = {blogPercent}%
+                    </span>
+                  </>
+                }
+              />
+            </div>
           </section>
 
           <SkillsCard />
