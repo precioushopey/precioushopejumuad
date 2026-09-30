@@ -16,8 +16,11 @@ export const ProfileCard = () => (
       <span className="whitespace-nowrap">Product Designer</span>
     </p>
     <p className="mt-3 text-sm leading-6 text-cream/80">
-      Computer Engineering graduate who believes design and technology should
-      make life easier, more beautiful, and more meaningful.
+      I’m passionate about designing and building great products that make
+      people’s lives easier. I’ve spent over two and a half years creating
+      digital experiences, from payroll systems for local government to game UI.
+      A Computer Engineering graduate who also draws pixel art, I’m excited to
+      build something great with you!
     </p>
     <Link to="/about" className="white-button mt-4">
       About me
