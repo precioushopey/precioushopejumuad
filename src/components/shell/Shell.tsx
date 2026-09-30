@@ -54,13 +54,15 @@ export const Shell = () => {
   return (
     <div className="relative min-h-dvh overflow-x-clip text-cream lg:h-dvh lg:overflow-hidden">
       <div aria-hidden className="shell-bg" />
-      <div className="relative z-10 mx-auto flex min-h-dvh max-w-[1500px] flex-col gap-4 p-3 sm:p-6 lg:h-full lg:min-h-0 lg:p-10">
+      <div className="relative z-10 mx-auto flex min-h-dvh max-w-[1500px] flex-col gap-4 p-3 sm:p-6 lg:h-full lg:min-h-0 lg:justify-center lg:p-10">
         <TopBar />
         {/* Relative so the rail can span the row's height; the panel sits above it and tucks over its edge. */}
-        <div className="relative flex min-h-0 flex-1 flex-col gap-4 lg:pl-[4.5rem] xl:flex-row">
+        {/* On desktop the row is only as tall as its content (up to the window height), so the panel
+            and the right column always end on the same line instead of the panel stretching alone. */}
+        <div className="relative flex min-h-0 flex-1 flex-col gap-4 lg:flex-initial lg:pl-[4.5rem] xl:flex-row">
           <main
             ref={scrollRef}
-            className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:relative lg:z-20 lg:min-h-0 lg:overflow-y-auto"
+            className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:relative lg:z-20 lg:flex lg:min-h-0 lg:flex-col lg:overflow-y-auto"
           >
             <Outlet />
             {showSide && (

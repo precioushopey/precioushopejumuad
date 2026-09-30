@@ -14,14 +14,14 @@ const Home = () => {
   const max = Math.max(projects.length, blogPosts.length);
 
   return (
-    <div className="space-y-5 p-5 sm:p-8">
+    <div className="flex flex-col gap-5 p-5 sm:p-8 lg:flex-1">
       <header className="animate-fade-in space-y-4 text-left">
         <h1 className="text-2xl font-medium sm:text-3xl">Featured</h1>
         <PillTabs active="all" />
       </header>
 
       {/* Two rows of two. Cards in a row stretch to the same height; the Skills card fills its cell. */}
-      <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-2">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:flex-1 lg:grid-cols-2">
         <section
           aria-label="Recent Projects"
           className="glass-card space-y-2 p-4"
