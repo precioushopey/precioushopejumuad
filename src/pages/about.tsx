@@ -530,9 +530,9 @@ const About = () => {
           </h2>
         </div>
 
-        <section className="flex flex-col gap-6 glass-card p-5 animate-fade-in-delay-3">
+        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
           {educationData.map((edu, index) => (
-            <div key={index} className="flex flex-col gap-4">
+            <div key={index} className="glass-card flex flex-col gap-4 p-5">
               <div className="flex flex-col sm:flex-row gap-6">
                 <figure className="w-full md:w-1/8 text-center">
                   <img
