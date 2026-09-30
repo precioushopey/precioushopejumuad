@@ -10,7 +10,7 @@ export const ProfileCard = () => {
   return (
     <section
       aria-label="Profile"
-      className="glass-card relative p-6 text-center"
+      className="glass-card relative p-6 pb-8 text-center"
     >
       <span className="absolute left-5 top-5 rounded-full border border-line px-3 py-0.5 text-xs">
         Profile
