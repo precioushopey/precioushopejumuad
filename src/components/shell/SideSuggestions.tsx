@@ -54,16 +54,11 @@ const Suggestions = ({
   </section>
 );
 
-// Other posts, same category first, then the rest newest first. The current post is left out.
+// Every other post, newest first. The current post is left out.
 export const BlogSuggestions = ({ currentPath }: { currentPath: string }) => {
-  const current = blogPosts.find((p) => p.to === currentPath);
   const items = blogPosts
     .filter((p) => p.to !== currentPath)
-    .sort((a, b) => {
-      const sameA = current && a.category === current.category ? 0 : 1;
-      const sameB = current && b.category === current.category ? 0 : 1;
-      return sameA - sameB || b.date.localeCompare(a.date);
-    })
+    .sort((a, b) => b.date.localeCompare(a.date))
     .map((p) => ({
       to: p.to,
       image: p.image,
