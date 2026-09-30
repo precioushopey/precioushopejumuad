@@ -49,18 +49,38 @@ export const ContactForm = ({
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const uid = useId();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  // Posts the form to /api/contact (api/contact.ts), which emails it through Resend.
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
 
     setIsSubmitting(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error);
 
-    setTimeout(() => {
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Message not sent",
+        description:
+          error instanceof Error && error.message
+            ? error.message
+            : "Something went wrong. Please try again, or email me directly.",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -68,6 +88,15 @@ export const ContactForm = ({
       <Heading className={s.heading}>Send a Message</Heading>
 
       <form className={s.form} onSubmit={handleSubmit}>
+        {/* Spam trap: hidden from people and screen readers, bots tend to fill it in. */}
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden
+          className="absolute left-[-9999px] h-0 w-0 opacity-0"
+        />
         <div className={s.group}>
           <label htmlFor={`${uid}-name`} className={s.label}>
             Your Name
