@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LuEllipsis } from "react-icons/lu";
+import { LuArrowUpRight } from "react-icons/lu";
 import { projects } from "../data/projects";
 import { blogPosts } from "../data/blogPosts";
 import { AnalogClock } from "../components/AnalogClock";
@@ -31,9 +31,10 @@ const Home = () => {
             <Link
               to="/projects"
               aria-label="See all projects"
-              className="rounded-full p-1 hover:bg-cream/15"
+              title="See all projects"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-ink transition-transform duration-300 hover:scale-110"
             >
-              <LuEllipsis size={22} aria-hidden />
+              <LuArrowUpRight size={18} aria-hidden />
             </Link>
           </div>
           {featured.map((p) => (
