@@ -19,7 +19,7 @@ const ProjectsPage = () => {
 
   return (
     <div className="space-y-6 p-0 lg:p-8">
-      <header className="animate-fade-in space-y-4 text-left">
+      <header className="animate-fade-in space-y-4 text-center lg:text-left">
         <h1 className="text-2xl font-medium sm:text-3xl">Projects</h1>
         <PillTabs active={active} markCurrent />
       </header>

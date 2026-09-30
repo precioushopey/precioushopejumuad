@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { LuActivity, LuArrowRight, LuFolderOpen } from "react-icons/lu";
 import { WindowBar } from "../components/WindowBar";
+import { ProfileCard } from "../components/ProfileCard";
+import { ContactCard } from "../components/ContactCard";
 import { projects } from "../data/projects";
 import { blogPosts } from "../data/blogPosts";
 import { WorkExperience } from "../components/WorkExperience";
@@ -22,7 +24,13 @@ const Home = () => {
 
   return (
     <div className="flex flex-col gap-3 p-0 lg:gap-5 lg:flex-1 lg:p-8">
-      <header className="animate-fade-in space-y-4 text-left">
+      {/* Phones and tablets: the profile card leads the page and the message form closes it. From lg
+          up they live in the right-hand column instead. */}
+      <div className="lg:hidden">
+        <ProfileCard />
+      </div>
+
+      <header className="animate-fade-in space-y-4 text-center lg:text-left">
         <h1 className="text-2xl font-medium sm:text-3xl">Featured</h1>
         <PillTabs active="all" />
       </header>
@@ -136,6 +144,10 @@ const Home = () => {
             </Link>
           ))}
         </section>
+      </div>
+
+      <div className="lg:hidden">
+        <ContactCard />
       </div>
     </div>
   );

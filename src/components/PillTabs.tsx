@@ -8,7 +8,10 @@ export const PillTabs = ({
   active?: Category;
   markCurrent?: boolean;
 }) => (
-  <nav aria-label="Project categories" className="flex flex-wrap gap-3">
+  <nav
+    aria-label="Project categories"
+    className="flex flex-wrap justify-center gap-3 lg:justify-start"
+  >
     {categories.map((c) => (
       <Link
         key={c}
