@@ -1,4 +1,4 @@
-import { FormEvent, useId, useState } from "react";
+import { FormEvent, useId, useRef, useState } from "react";
 import { LuSend } from "react-icons/lu";
 import { useToast } from "../hooks/use-toast";
 
@@ -48,12 +48,27 @@ export const ContactForm = ({
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const uid = useId();
+  // When the form appeared and when a message last went out: the server ignores forms filled in faster
+  // than a person could type, and a short cooldown stops accidental double sends.
+  const shownAt = useRef(Date.now());
+  const lastSentAt = useRef(0);
 
   // Posts the form to /api/contact (api/contact.ts), which emails it through Resend.
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
+    if (Date.now() - lastSentAt.current < 30_000) {
+      toast({
+        title: "Message already sent",
+        description: "Please wait a moment before sending another one.",
+      });
+      return;
+    }
+    const data = {
+      ...Object.fromEntries(new FormData(form)),
+      elapsedMs: Date.now() - shownAt.current,
+      page: window.location.pathname,
+    };
 
     setIsSubmitting(true);
     try {
@@ -70,6 +85,7 @@ export const ContactForm = ({
         description: "Thank you for your message. I'll get back to you soon.",
       });
       form.reset();
+      lastSentAt.current = Date.now();
     } catch (error) {
       toast({
         title: "Message not sent",
