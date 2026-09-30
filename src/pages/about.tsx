@@ -451,7 +451,7 @@ const About = () => {
   );
 
   return (
-    <div className="space-y-6 p-5 text-sm sm:p-8">
+    <div className="space-y-6 p-0 text-sm lg:p-8">
       <div className="tracking-normal leading-6 text-left space-y-6">
         <section className="flex flex-col items-center gap-6 animate-fade-in-delay-1">
           <h1 className="sr-only">About Precious Hope Jumuad</h1>

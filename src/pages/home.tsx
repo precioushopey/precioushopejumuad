@@ -21,7 +21,7 @@ const Home = () => {
   const blogPercent = Math.round((blogPosts.length / BLOG_GOAL) * 100);
 
   return (
-    <div className="flex flex-col gap-5 p-5 sm:p-8 lg:flex-1">
+    <div className="flex flex-col gap-5 p-0 lg:flex-1 lg:p-8">
       <header className="animate-fade-in space-y-4 text-left">
         <h1 className="text-2xl font-medium sm:text-3xl">Featured</h1>
         <PillTabs active="all" />
