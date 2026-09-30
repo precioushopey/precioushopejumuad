@@ -117,9 +117,10 @@ export const SkillsSection = () => {
       id="skills"
       className="container mx-auto max-w-5xl space-y-4 pt-20 px-8"
     >
-      <div className="flex justify-center gap-x-2 font-bold text-glow">
-        <h2 className="text-3xl sm:text-4xl">My</h2>
-        <h2 className="font-display text-3xl sm:text-4xl">Skills</h2>
+      <div className="flex justify-center font-bold text-glow">
+        <h2 className="text-3xl sm:text-4xl">
+          My <span className="font-display">Skills</span>
+        </h2>
       </div>
 
       <div className="flex flex-wrap justify-center gap-4">
@@ -151,7 +152,7 @@ export const SkillsSection = () => {
               </div>
             </div>
 
-            <div className="w-full bg-ink/10 h-2 rounded-full overflow-hidden">
+            <div className="w-full bg-cream/15 h-2 rounded-full overflow-hidden">
               <div
                 className="bg-accent h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
                 style={{ width: `${skill.level}%` }}

@@ -20,7 +20,7 @@ const ProjectsPage = () => {
     <div className="space-y-6 p-5 sm:p-8">
       <header className="animate-fade-in space-y-4">
         <h1 className="text-2xl font-medium sm:text-3xl">Projects</h1>
-        <PillTabs active={active} />
+        <PillTabs active={active} markCurrent />
       </header>
 
       {filtered.length === 0 ? (

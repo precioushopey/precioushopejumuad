@@ -62,10 +62,9 @@ export const ContactSection = () => {
       id="contact"
       className="container mx-auto max-w-5xl space-y-4 py-20 px-8"
     >
-      <div className="flex justify-center gap-x-2 font-bold text-glow">
-        <h2 className="text-3xl sm:text-4xl">Get In</h2>
-        <h2 className="font-display text-3xl sm:text-4xl ">
-          Touch
+      <div className="flex justify-center font-bold text-glow">
+        <h2 className="text-3xl sm:text-4xl">
+          Get In <span className="font-display">Touch</span>
         </h2>
       </div>
 

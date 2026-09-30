@@ -209,7 +209,7 @@ const TaleMakers = () => {
                     <h3 className="font-medium text-lg">{skill.name}</h3>
                   </div>
                 </div>
-                <div className="w-full bg-ink/10 h-2 rounded-full overflow-hidden">
+                <div className="w-full bg-cream/15 h-2 rounded-full overflow-hidden">
                   <div
                     className="bg-accent h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
                     style={{ width: `${skill.level}%` }}

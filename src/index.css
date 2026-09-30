@@ -56,7 +56,7 @@
   :root {
     --border-color: rgb(245 234 214 / 0.2);
     --button-color: #fff;
-    --text-color: #1f1a17;
+    --text-color: #f5ead6;
     --yellow-accent: #ffc93c;
     --brown-accent: #1f1a17;
   }
@@ -76,7 +76,7 @@
 
   body {
     color: var(--text-color);
-    background-color: #f3e9d2;
+    background-color: #1c1410;
     font-family: var(--font-sans);
     font-weight: 400;
     font-size: 14px;
@@ -235,5 +235,5 @@
 
 .panel-scroll {
   scrollbar-width: thin;
-  scrollbar-color: rgb(31 26 23 / 0.25) transparent;
+  scrollbar-color: rgb(245 234 214 / 0.3) transparent;
 }
