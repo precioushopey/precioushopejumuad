@@ -24,10 +24,13 @@ export const ProfileCard = () => {
       </p>
       <p className="mt-3 text-sm leading-6 text-cream/80">
         I’m passionate about designing and building great products that make
-        people’s lives easier. I’ve spent over {experience} creating digital
-        experiences for SaaS startups to local government units. A Computer
-        Engineering graduate who also draws pixel art, I’m excited to build
-        something great with you!
+        people’s lives easier. I’ve spent over{" "}
+        <strong className="whitespace-nowrap font-semibold text-cream">
+          {experience}
+        </strong>{" "}
+        creating digital experiences for SaaS startups to local government
+        units. A Computer Engineering graduate who also draws pixel art, I’m
+        excited to build something great with you!
       </p>
       <Link to="/about" className="white-button mt-4">
         About me
