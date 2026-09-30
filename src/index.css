@@ -158,17 +158,21 @@
 
 /* The big main panel. Falls back to a near-opaque dark fill without backdrop-filter. */
 @utility glass-panel {
-  border-radius: 2.5rem;
-  background: var(--color-panel);
-  border: 1px solid rgb(245 234 214 / 0.14);
-  box-shadow: 0 24px 70px rgb(0 0 0 / 0.35);
-  -webkit-backdrop-filter: blur(24px) saturate(1.1);
-  backdrop-filter: blur(24px) saturate(1.1);
+  /* Below lg (phones and tablets) the page content sits directly on the background, with no
+     panel around it; the panel look only applies on desktop. */
+  @media (min-width: 1024px) {
+    border-radius: 2.5rem;
+    background: var(--color-panel);
+    border: 1px solid rgb(245 234 214 / 0.14);
+    box-shadow: 0 24px 70px rgb(0 0 0 / 0.35);
+    -webkit-backdrop-filter: blur(24px) saturate(1.1);
+    backdrop-filter: blur(24px) saturate(1.1);
 
-  @supports not (
-    (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
-  ) {
-    background: rgb(28 20 16 / 0.96);
+    @supports not (
+      (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+    ) {
+      background: rgb(28 20 16 / 0.96);
+    }
   }
 }
 
