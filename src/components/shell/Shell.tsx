@@ -8,16 +8,48 @@ import { TopBar } from "./TopBar";
 const WITH_SIDEBAR = new Set(["/", "/about", "/projects", "/blog"]);
 
 export const Shell = () => {
-  const { pathname } = useLocation();
+  // `key` changes on every navigation, so clicking a link to the page we're already on still scrolls.
+  const { pathname, hash, key } = useLocation();
   const scrollRef = useRef<HTMLElement>(null);
+  const previousPath = useRef(pathname);
   const path = pathname.replace(/\/+$/, "") || "/";
   const showSide = WITH_SIDEBAR.has(path);
 
-  // The panel scrolls internally on desktop, the window on mobile.
+  // The panel scrolls internally on desktop, the window on mobile. A new page starts at the
+  // top; a link with a #section (e.g. /about#contact) then jumps to that section.
   useEffect(() => {
-    scrollRef.current?.scrollTo({ top: 0, behavior: "instant" });
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
+    const panel = scrollRef.current;
+    if (previousPath.current !== pathname || !hash) {
+      previousPath.current = pathname;
+      panel?.scrollTo({ top: 0, behavior: "instant" });
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+    if (!hash || !panel) return;
+
+    const scrollToSection = () => {
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (!target) return;
+      const skipPadding = 48; // sections carry a large top padding; land near their heading
+      const panelScrolls = getComputedStyle(panel).overflowY === "auto";
+      if (panelScrolls) {
+        const top =
+          target.getBoundingClientRect().top -
+          panel.getBoundingClientRect().top +
+          panel.scrollTop +
+          skipPadding;
+        panel.scrollTo({ top, behavior: "instant" });
+      } else {
+        const top =
+          target.getBoundingClientRect().top + window.scrollY + skipPadding;
+        window.scrollTo({ top, behavior: "instant" });
+      }
+    };
+
+    scrollToSection();
+    // Images above the target can finish loading and shift it; correct once.
+    const retry = window.setTimeout(scrollToSection, 500);
+    return () => window.clearTimeout(retry);
+  }, [pathname, hash, key]);
 
   return (
     <div className="relative min-h-dvh overflow-x-clip text-cream lg:h-dvh lg:overflow-hidden">

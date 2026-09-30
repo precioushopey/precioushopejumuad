@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { LuArrowRight } from "react-icons/lu";
+import { LuArrowRight, LuFileText, LuMail } from "react-icons/lu";
+import { CV_URL } from "../data/links";
 import { experienceLabel } from "../lib/experience";
 
 export const ProfileCard = () => {
@@ -39,6 +40,26 @@ export const ProfileCard = () => {
         units. A Computer Engineering graduate who loves art and design in
         technology, I’m excited to build with you!
       </p>
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+        <Link
+          to="/about#contact"
+          className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-2 text-sm font-medium text-ink transition-transform duration-300 hover:scale-105 active:scale-95"
+        >
+          <LuMail size={18} aria-hidden />
+          Hire me
+        </Link>
+        {CV_URL && (
+          <a
+            href={CV_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-cream/10 px-5 py-2 text-sm font-medium text-cream transition-transform duration-300 hover:scale-105 hover:bg-cream/20 active:scale-95"
+          >
+            <LuFileText size={18} aria-hidden />
+            View my CV
+          </a>
+        )}
+      </div>
     </section>
   );
 };
