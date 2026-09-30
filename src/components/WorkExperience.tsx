@@ -5,13 +5,13 @@ const highlights = [
     title: "Product Designer/Developer",
     detail: "OJT Connect · Feb 2026 to present",
     logo: "/assets/images/ojtconnect_logo.png",
-    tile: "bg-white p-1.5",
+    tile: "bg-white p-1",
   },
   {
     title: "Designer/Artist",
     detail: "Roostercat LLC · Jun 2025 to present",
     logo: "/assets/images/roostercat.png",
-    tile: "bg-black p-1.5",
+    tile: "bg-black p-1",
   },
   {
     title: "Frontend Web Developer",
@@ -34,7 +34,7 @@ export const WorkExperience = () => (
           className="flex flex-1 items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left"
         >
           <span
-            className={`h-11 w-11 shrink-0 overflow-hidden rounded-xl ${tile}`}
+            className={`h-12 w-12 shrink-0 overflow-hidden rounded-xl ${tile}`}
           >
             <img src={logo} alt="" className="h-full w-full object-contain" />
           </span>
