@@ -1,35 +1,34 @@
-import { } from "react-icons/lu";
+import {} from "react-icons/lu";
 import { BlogPostLayout } from "../components/BlogPostLayout";
 
 const Blog11 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            <em>“Coins for the Child”</em> is a nostalgic reflection on my
-            father’s childhood labor and the healing joy he finds in continuing
-            that simple work as an adult. The coins he earns today bring the
-            same joy to the child within him, reminding him, and us, that some
-            treasures are timeless. This piece was written for{" "}
-            <b>
-              The Trailblazer Publication’s Reflections Folio 2025, themed “A
-              Toy’s Story”
-            </b>
-            , which celebrates healing the inner child through memory and
-            meaning.
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          <em>“Coins for the Child”</em> is a nostalgic reflection on my
+          father’s childhood labor and the healing joy he finds in continuing
+          that simple work as an adult. The coins he earns today bring the same
+          joy to the child within him, reminding him, and us, that some
+          treasures are timeless. This piece was written for{" "}
+          <b>
+            The Trailblazer Publication’s Reflections Folio 2025, themed “A
+            Toy’s Story”
+          </b>
+          , which celebrates healing the inner child through memory and meaning.
+        </p>
+      </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
-          <figure className="w-full lg:w-3/5 space-y-4 text-center">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="animate-fade-in-delay-4">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-3/5 lg:float-left lg:mr-6">
             <img
               src="/assets/images/poem.jpg"
               alt="Coins for the Child"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
             />
           </figure>
-          <article className="w-full lg:w-2/5 space-y-4">
+          <article className="space-y-4">
             <p>
               <div>We scaled the winding mountain’s spine,</div>
               <div>Past trees where morning stars still shine.</div>
@@ -61,7 +60,7 @@ const Blog11 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row justify-center gap-x-24 animate-fade-in-delay-4">
+        <section className="flex flex-col lg:flex-row justify-center gap-x-24 animate-fade-in-delay-4 lg:clear-both">
           <article className="space-y-4">
             <p>
               <cite>

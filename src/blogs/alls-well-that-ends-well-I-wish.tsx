@@ -1,26 +1,26 @@
-import { } from "react-icons/lu";
+import {} from "react-icons/lu";
 import { BlogPostLayout } from "../components/BlogPostLayout";
 
 const Blog15 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            <cite>"Success must not come at the cost of conscience."</cite> –
-            Vico Sotto
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          <cite>"Success must not come at the cost of conscience."</cite> – Vico
+          Sotto
+        </p>
+      </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
-          <figure className="w-full lg:w-1/2 space-y-4">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="animate-fade-in-delay-2">
+          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/essay3.png"
               alt="“all’s well that ends well,” I wish"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
             />
           </figure>
-          <article className="w-full lg:w-1/2 space-y-4">
+          <article className="space-y-4">
             <p>
               They say,{" "}
               <cite>“College is a preparation for the real world.”</cite> I

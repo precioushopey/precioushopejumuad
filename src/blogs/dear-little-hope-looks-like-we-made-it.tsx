@@ -1,21 +1,21 @@
-import { } from "react-icons/lu";
+import {} from "react-icons/lu";
 import { BlogPostLayout } from "../components/BlogPostLayout";
 
 const Blog14 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            <em>
-              "Childhood is the most valuable coin in the pocket of memory.
-              Spend it wisely, for it buys you more than nostalgia."
-            </em>
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          <em>
+            "Childhood is the most valuable coin in the pocket of memory. Spend
+            it wisely, for it buys you more than nostalgia."
+          </em>
+        </p>
+      </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-1">
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="animate-fade-in-delay-1">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/college.png"
               alt="My College Graduation Photo"
@@ -23,7 +23,7 @@ const Blog14 = () => {
             />
             <figcaption>Fig. 1 - My College Graduation Photo</figcaption>
           </figure>
-          <article className="w-full lg:w-1/2 space-y-4">
+          <article className="space-y-4">
             <p>
               There’s a memory I keep tucked in the deepest folds of my mind,
               fourth grade, just after the morning flag ceremony. I stood at the
@@ -66,8 +66,18 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
-          <article className="w-full lg:w-1/2 space-y-4">
+        <section className="animate-fade-in-delay-2">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-right lg:ml-6">
+            <img
+              src="/assets/images/vale1.jpg"
+              alt="My Senior High School Graduatioj Photo"
+              className="w-full aspect-[4/5] rounded-4xl border object-cover"
+            />
+            <figcaption>
+              Fig. 2 - My Senior High School Graduation Photo
+            </figcaption>
+          </figure>
+          <article className="space-y-4">
             <p>
               One of the earliest milestones of growing up was learning to
               commute alone. I was a country bumpkin, wide-eyed and confused by
@@ -91,16 +101,6 @@ const Blog14 = () => {
               <em>What would that version of me say if she saw me now?</em>
             </p>
           </article>
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
-            <img
-              src="/assets/images/vale1.jpg"
-              alt="My Senior High School Graduatioj Photo"
-              className="w-full aspect-[4/5] rounded-4xl border object-cover"
-            />
-            <figcaption>
-              Fig. 2 - My Senior High School Graduation Photo
-            </figcaption>
-          </figure>
         </section>
 
         <section className="flex flex-col gap-6 animate-fade-in-delay-3">
@@ -119,8 +119,8 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-3">
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
+        <section className="animate-fade-in-delay-3">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/jhs.jpg"
               alt="My Junior High School Completion Photo"
@@ -130,7 +130,7 @@ const Blog14 = () => {
               Fig. 3 - My Junior High School Completion Photo
             </figcaption>
           </figure>
-          <article className="w-full lg:w-1/2 space-y-4">
+          <article className="space-y-4">
             <p>
               But I would also tell her that strength doesn’t always look like a
               gold medal. That real triumph sometimes means simply standing back

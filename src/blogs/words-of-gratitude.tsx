@@ -4,23 +4,22 @@ import { BlogPostLayout } from "../components/BlogPostLayout";
 const Blog2 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            This speech was written during the height of the COVID-19 pandemic,
-            a time of immense disruption, uncertainty, and emotional strain for
-            students around the world. As the batch valedictorian of St. Rita's
-            College of Balingasag Senior High School Class of 2021, I delivered
-            this message to honor not only our academic journey but the strength
-            and resilience our batch showed despite the loss of traditional
-            graduation rites. It was my way of expressing heartfelt gratitude to
-            our families, teachers, and school leaders who supported us through
-            remote learning, and to reflect on how our faith, grit, and
-            Ignacian-Marian values carried us through a once-in-a-lifetime
-            crisis.
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          This speech was written during the height of the COVID-19 pandemic, a
+          time of immense disruption, uncertainty, and emotional strain for
+          students around the world. As the batch valedictorian of St. Rita's
+          College of Balingasag Senior High School Class of 2021, I delivered
+          this message to honor not only our academic journey but the strength
+          and resilience our batch showed despite the loss of traditional
+          graduation rites. It was my way of expressing heartfelt gratitude to
+          our families, teachers, and school leaders who supported us through
+          remote learning, and to reflect on how our faith, grit, and
+          Ignacian-Marian values carried us through a once-in-a-lifetime crisis.
+        </p>
+      </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
@@ -68,8 +67,8 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-3">
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
+        <section className="animate-fade-in-delay-3">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/vale1.jpg"
               alt="My Graduation Photo"
@@ -77,7 +76,7 @@ const Blog2 = () => {
             />
             <figcaption>Fig. 2 - My Graduation Photo.</figcaption>
           </figure>
-          <article className="w-full lg:w-1/2 space-y-4">
+          <article className="space-y-4">
             <p>
               Think of it, for more than a decade, we toil hard and travel back
               and forth to school. But with schools closed due to the pandemic,
@@ -139,8 +138,18 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
-          <article className="w-full lg:w-1/2 space-y-4">
+        <section className="animate-fade-in-delay-4">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-right lg:ml-6">
+            <img
+              src="/assets/images/vale3.jpg"
+              alt="My Classmates at Grade 12- STEM B St. Luke"
+              className="w-full aspect-[1/1] rounded-4xl border object-cover"
+            />
+            <figcaption>
+              Fig. 3 - My Classmates at Grade 12- STEM B St. Luke.
+            </figcaption>
+          </figure>
+          <article className="space-y-4">
             <p>
               We will miss everything in our school year. It would be way easier
               to reminisce about engaging activities the school had once before.
@@ -160,19 +169,9 @@ const Blog2 = () => {
               we are now.
             </p>
           </article>
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
-            <img
-              src="/assets/images/vale3.jpg"
-              alt="My Classmates at Grade 12- STEM B St. Luke"
-              className="w-full aspect-[1/1] rounded-4xl border object-cover"
-            />
-            <figcaption>
-              Fig. 3 - My Classmates at Grade 12- STEM B St. Luke.
-            </figcaption>
-          </figure>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4 lg:clear-both">
           <article className="space-y-4">
             <p>
               It made us contemplate, "Do we deserve this?" Friends, we are

@@ -13,16 +13,16 @@ const Blog12 = () => {
         </p>
       </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
-          <figure className="w-full lg:w-1/2 space-y-4">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="animate-fade-in-delay-2">
+          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/all's_well.png"
               alt="All's Well That Ends Well"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
             />
           </figure>
-          <article className="w-full lg:w-1/2 space-y-4">
+          <article className="space-y-4">
             <p>
               As I close the chapter of my college journey, I’ve realized that
               growth was never confined to the walls of a laboratory or the
@@ -57,8 +57,15 @@ const Blog12 = () => {
           </p>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
-          <article className="w-full lg:w-1/2 space-y-4">
+        <section className="animate-fade-in-delay-4">
+          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-1/2 lg:float-right lg:ml-6">
+            <img
+              src="/assets/images/collage.png"
+              alt="All's Well That Ends Well"
+              className="w-full aspect-[4/5] rounded-4xl border object-cover"
+            />
+          </figure>
+          <article className="space-y-4">
             <p>
               Awards and milestones were affirming, but they weren’t what
               defined my experience. What stayed with me were the smaller
@@ -79,13 +86,6 @@ const Blog12 = () => {
               in life.
             </p>
           </article>
-          <figure className="w-full lg:w-1/2 space-y-4">
-            <img
-              src="/assets/images/collage.png"
-              alt="All's Well That Ends Well"
-              className="w-full aspect-[4/5] rounded-4xl border object-cover"
-            />
-          </figure>
         </section>
 
         <section className="space-y-4 animate-fade-in-delay-4">

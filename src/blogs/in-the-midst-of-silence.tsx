@@ -1,27 +1,27 @@
-import { } from "react-icons/lu";
+import {} from "react-icons/lu";
 import { BlogPostLayout } from "../components/BlogPostLayout";
 
 const Blog1 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            I wrote this personal essay at the height of the COVID-19 pandemic,
-            a time when the world seemed to pause, yet our inner lives grew
-            louder than ever. As someone who observes more than speaks, I felt
-            the need to process the chaos, fear, and quiet blessings brought by
-            that period. Writing became my outlet, a way to make sense of the
-            global disruption and the unexpected gifts it gave. This piece is
-            not just a reflection on the physical toll of the virus, but a
-            deeply personal account of growth, surrender, and introspection
-            during a time of isolation. Through it, I hoped to express the
-            paradox of pain and peace that the pandemic planted in my life.
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          I wrote this personal essay at the height of the COVID-19 pandemic, a
+          time when the world seemed to pause, yet our inner lives grew louder
+          than ever. As someone who observes more than speaks, I felt the need
+          to process the chaos, fear, and quiet blessings brought by that
+          period. Writing became my outlet, a way to make sense of the global
+          disruption and the unexpected gifts it gave. This piece is not just a
+          reflection on the physical toll of the virus, but a deeply personal
+          account of growth, surrender, and introspection during a time of
+          isolation. Through it, I hoped to express the paradox of pain and
+          peace that the pandemic planted in my life.
+        </p>
+      </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="animate-fade-in-delay-2">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/photos1.jpg"
               alt="In the Midst of Silence"
@@ -32,7 +32,7 @@ const Blog1 = () => {
               Oriental.
             </figcaption>
           </figure>
-          <article className="w-full lg:w-1/2 space-y-6">
+          <article className="space-y-6">
             <p>
               The world then stopped, the ever-crowded downtown now next to
               deserted ghost towns. Distances are widened, yet there is no brawl

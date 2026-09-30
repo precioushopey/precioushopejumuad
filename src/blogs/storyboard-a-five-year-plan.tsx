@@ -1,36 +1,37 @@
-import {
-  LuBookOpen,
-  LuBrain,
-  LuCross,
-  LuUsers,
-} from "react-icons/lu";
+import { LuBookOpen, LuBrain, LuCross, LuUsers } from "react-icons/lu";
 import { BlogPostLayout } from "../components/BlogPostLayout";
 
 const Blog3 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            This storyboard was created as my final Performance Innovative Task
-            for the subject Understanding the Self in my first year, where we
-            were asked to map out a personal five-year development plan. It
-            became an opportunity to reflect on who I am, the roles I currently
-            play, and the person I am intentionally becoming. Rooted in my own
-            values, experiences, and ambitions, this piece expresses my
-            commitment to personal growth, spiritual grounding, and
-            psychological resilience. The plan targets key aspects of the
-            self—philosophical, psychological, spiritual, and
-            political—highlighting my aspirations not only to be excellent in
-            academics and leadership but also to pursue authentic happiness and
-            self-actualization. My teacher appreciated the clarity and depth of
-            this vision and chose to showcase it as a sample for the next batch,
-            which affirmed its worthiness to be shared and remembered.
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          This storyboard was created as my final Performance Innovative Task
+          for the subject Understanding the Self in my first year, where we were
+          asked to map out a personal five-year development plan. It became an
+          opportunity to reflect on who I am, the roles I currently play, and
+          the person I am intentionally becoming. Rooted in my own values,
+          experiences, and ambitions, this piece expresses my commitment to
+          personal growth, spiritual grounding, and psychological resilience.
+          The plan targets key aspects of the self—philosophical, psychological,
+          spiritual, and political—highlighting my aspirations not only to be
+          excellent in academics and leadership but also to pursue authentic
+          happiness and self-actualization. My teacher appreciated the clarity
+          and depth of this vision and chose to showcase it as a sample for the
+          next batch, which affirmed its worthiness to be shared and remembered.
+        </p>
+      </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
-          <article className="w-full lg:w-3/5 space-y-4">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="animate-fade-in-delay-2">
+          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-2/5 lg:float-right lg:ml-6">
+            <img
+              src="/assets/images/storyboard.jfif"
+              alt="Me in Umaru-chan merchandise hood III"
+              className="w-full aspect-[3/4] rounded-4xl border object-cover"
+            />
+          </figure>
+          <article className="space-y-4">
             <h3 className="font-display text-xl sm:text-2xl font-bold text-glow">
               General Plan
             </h3>
@@ -90,13 +91,6 @@ const Blog3 = () => {
               </li>
             </ul>
           </article>
-          <figure className="w-full lg:w-2/5 space-y-4">
-            <img
-              src="/assets/images/storyboard.jfif"
-              alt="Me in Umaru-chan merchandise hood III"
-              className="w-full aspect-[3/4] rounded-4xl border object-cover"
-            />
-          </figure>
         </section>
 
         <section className="space-y-4 animate-fade-in-delay-3">

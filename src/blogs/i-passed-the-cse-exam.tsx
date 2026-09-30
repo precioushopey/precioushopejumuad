@@ -4,19 +4,19 @@ import { BlogPostLayout } from "../components/BlogPostLayout";
 const Blog16 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            I passed the Civil Service Professional Examination! But here’s the
-            part I can’t stop thinking about: I was only one or two items away
-            from hitting my personal goal of a 90% rating. After 10 weeks of
-            building my own syllabus, creating a study plan, scheduling my time,
-            and reviewing every subject area without skipping anything… I ended
-            with 89.72% — a familiar kind of “almost,” reaching for an elusive
-            prize that’s almost within reach, yet still slips away. But what
-            that near-miss taught me changed everything. Sometimes the “almost”
-            has more to say than the win.
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          I passed the Civil Service Professional Examination! But here’s the
+          part I can’t stop thinking about: I was only one or two items away
+          from hitting my personal goal of a 90% rating. After 10 weeks of
+          building my own syllabus, creating a study plan, scheduling my time,
+          and reviewing every subject area without skipping anything… I ended
+          with 89.72% — a familiar kind of “almost,” reaching for an elusive
+          prize that’s almost within reach, yet still slips away. But what that
+          near-miss taught me changed everything. Sometimes the “almost” has
+          more to say than the win.
+        </p>
+      </section>
 
       <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">

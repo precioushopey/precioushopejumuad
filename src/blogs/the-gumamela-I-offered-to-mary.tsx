@@ -4,24 +4,24 @@ import { BlogPostLayout } from "../components/BlogPostLayout";
 const Blog6 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            I wrote this short story during the height of the pandemic, when the
-            silence of isolation gave me the space to reflect on the vibrant
-            memories of my childhood, faith, and the quiet beauty of my hometown
-            church. I have always turned to writing to express the emotions I
-            could not say aloud. This piece captures not only my early religious
-            experiences but also a tender moment of first love, wrapped in
-            nostalgia and reverence for the Immaculate Conception Parish Church
-            of Jasaan. It is a deeply personal tribute to a place that shaped my
-            spiritual and emotional journey. This story was honored with "The
-            Trailblazer Editor’s Choice" award in{" "}
-            <em>Reflections 2023: 8-Bit Memory — Reimagined</em>, a recognition
-            that affirmed the quiet sincerity and cultural weight it carries.
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          I wrote this short story during the height of the pandemic, when the
+          silence of isolation gave me the space to reflect on the vibrant
+          memories of my childhood, faith, and the quiet beauty of my hometown
+          church. I have always turned to writing to express the emotions I
+          could not say aloud. This piece captures not only my early religious
+          experiences but also a tender moment of first love, wrapped in
+          nostalgia and reverence for the Immaculate Conception Parish Church of
+          Jasaan. It is a deeply personal tribute to a place that shaped my
+          spiritual and emotional journey. This story was honored with "The
+          Trailblazer Editor’s Choice" award in{" "}
+          <em>Reflections 2023: 8-Bit Memory — Reimagined</em>, a recognition
+          that affirmed the quiet sincerity and cultural weight it carries.
+        </p>
+      </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
@@ -76,8 +76,8 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-3">
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
+        <section className="animate-fade-in-delay-3">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/gumamela2.jpg"
               alt="Me and My Sibling's First Communion"
@@ -87,7 +87,7 @@ const Blog6 = () => {
               Fig. 2 - Me and My Sibling's First Communion.
             </figcaption>
           </figure>
-          <article className="w-full lg:w-1/2 space-y-4">
+          <article className="space-y-4">
             <p>
               As a young girl growing up in a devout Catholic family, and from a
               very young age, I was introduced to the church's teachings and
@@ -141,8 +141,25 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
-          <article className="w-full lg:w-1/2 space-y-4">
+        <section className="animate-fade-in-delay-4">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-right lg:ml-6">
+            <img
+              src="/assets/images/gumamela3.jpg"
+              alt="The Restored Retablo (photo courtesy of Arellano J. Galdo III)."
+              className="w-full aspect-[4/3] rounded-4xl border object-cover"
+            />
+            <figcaption>
+              Fig. 3 - The Restored Retablo (photo courtesy of Arellano J. Galdo
+              III){" "}
+              <a
+                href="https://www.metrocagayandemisamis.com/2025/04/24/historic-jasaan-church-finally-gets-a-historical-marker/"
+                target="_blank"
+              >
+                <cite>(Source: Baños, 2025).</cite>
+              </a>
+            </figcaption>
+          </figure>
+          <article className="space-y-4">
             <p>
               His surroundings seemed to soften as he played his beloved piano.
               It was like soft flowers came bursting from behind; suddenly
@@ -160,26 +177,9 @@ const Blog6 = () => {
               the universe just conspires for this moment to happen.
             </p>
           </article>
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
-            <img
-              src="/assets/images/gumamela3.jpg"
-              alt="The Restored Retablo (photo courtesy of Arellano J. Galdo III)."
-              className="w-full aspect-[4/3] rounded-4xl border object-cover"
-            />
-            <figcaption>
-              Fig. 3 - The Restored Retablo (photo courtesy of Arellano J. Galdo
-              III){" "}
-              <a
-                href="https://www.metrocagayandemisamis.com/2025/04/24/historic-jasaan-church-finally-gets-a-historical-marker/"
-                target="_blank"
-              >
-                <cite>(Source: Baños, 2025).</cite>
-              </a>
-            </figcaption>
-          </figure>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4 lg:clear-both">
           <article className="space-y-4">
             <p>
               Oh, to be in love. Suddenly, the music stopped. My trance dance in

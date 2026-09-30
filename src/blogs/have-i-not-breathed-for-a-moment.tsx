@@ -4,28 +4,27 @@ import { BlogPostLayout } from "../components/BlogPostLayout";
 const Blog4 = () => {
   return (
     <BlogPostLayout>
-<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
-          <p>
-            This essay was born in the quiet chaos of the pandemic, a period
-            where isolation was no longer a choice but a collective reality.
-            Amidst the monotony of online classes, emotional fatigue, and the
-            relentless pressure to stay productive, I found myself desperately
-            reaching for meaning, for pause, for breath. Writing became a
-            sanctuary. This essay submitted to The Trailblazer Publication -
-            USTP for their Reflections Portfolio on 2022, was a deeply personal
-            meditation on stillness, self-awareness, and the emotional
-            undercurrents often buried beneath academic demands and social
-            expectations. Through seemingly ordinary moments like sunrises,
-            moonlight, and melodies, I began to witness the extraordinary grace
-            of simply being. This piece captures how, even in confinement, we
-            can reconnect with beauty, with nature, and ultimately, with
-            ourselves. I wrote this not only to reflect but to remind others: in
-            the weight of living, don’t forget to stop, feel, and breathe. Even
-            just for a moment.
-          </p>
-        </section>
+      <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+        <p>
+          This essay was born in the quiet chaos of the pandemic, a period where
+          isolation was no longer a choice but a collective reality. Amidst the
+          monotony of online classes, emotional fatigue, and the relentless
+          pressure to stay productive, I found myself desperately reaching for
+          meaning, for pause, for breath. Writing became a sanctuary. This essay
+          submitted to The Trailblazer Publication - USTP for their Reflections
+          Portfolio on 2022, was a deeply personal meditation on stillness,
+          self-awareness, and the emotional undercurrents often buried beneath
+          academic demands and social expectations. Through seemingly ordinary
+          moments like sunrises, moonlight, and melodies, I began to witness the
+          extraordinary grace of simply being. This piece captures how, even in
+          confinement, we can reconnect with beauty, with nature, and
+          ultimately, with ourselves. I wrote this not only to reflect but to
+          remind others: in the weight of living, don’t forget to stop, feel,
+          and breathe. Even just for a moment.
+        </p>
+      </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
@@ -88,8 +87,8 @@ const Blog4 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-3">
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
+        <section className="animate-fade-in-delay-3">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/photos2.jpg"
               alt="Sunset on the Rubber Trees at Gumaod, Claveria, Misamis"
@@ -100,7 +99,7 @@ const Blog4 = () => {
               Oriental.
             </figcaption>
           </figure>
-          <article className="w-full lg:w-1/2">
+          <article>
             <p>
               Later on, the day seemed just as a blink of God's eyes. The
               morning ended, and the afternoon is at its inevitable end. I'm
@@ -160,8 +159,18 @@ const Blog4 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
-          <article className="w-full lg:w-1/2">
+        <section className="animate-fade-in-delay-4">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-right lg:ml-6">
+            <img
+              src="/assets/images/photos4.jpg"
+              alt="Flowers at Gumaod, Claveria, Misamis Oriental"
+              className="w-full aspect-[4/3] rounded-4xl border object-cover"
+            />
+            <figcaption>
+              Fig. 3 - Flowers at Gumaod, Claveria, Misamis Oriental.
+            </figcaption>
+          </figure>
+          <article>
             <p>
               And then I found myself in the middle of a personal revelation, a
               moment of surrender to all of the things I squelch down during the
@@ -181,19 +190,9 @@ const Blog4 = () => {
               high in the skies, hiding in a canopy of clouds.
             </p>
           </article>
-          <figure className="w-full lg:w-1/2 space-y-4 text-center">
-            <img
-              src="/assets/images/photos4.jpg"
-              alt="Flowers at Gumaod, Claveria, Misamis Oriental"
-              className="w-full aspect-[4/3] rounded-4xl border object-cover"
-            />
-            <figcaption>
-              Fig. 3 - Flowers at Gumaod, Claveria, Misamis Oriental.
-            </figcaption>
-          </figure>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4 lg:clear-both">
           <article className="space-y-4">
             <p>
               Tonight, it is an impossibly large globe of yellow-orange rose
