@@ -31,21 +31,24 @@ const FolderIcon = ({ peek, open }: { peek: string; open: boolean }) => {
       <svg
         viewBox="0 0 224 176"
         aria-hidden
-        className="absolute inset-0 h-full w-full drop-shadow-md"
+        className="absolute inset-0 h-full w-full drop-shadow-lg"
       >
         <defs>
           <linearGradient id={`${uid}-back`} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#f7b911" />
-            <stop offset="1" stopColor="#f0a90e" />
+            <stop offset="0" stopColor="#ffc93c" stopOpacity="0.32" />
+            <stop offset="1" stopColor="#ffc93c" stopOpacity="0.12" />
           </linearGradient>
         </defs>
         <path
           fill={`url(#${uid}-back)`}
+          stroke="#ffc93c"
+          strokeOpacity="0.55"
+          strokeWidth="1.5"
           d="M12 14 Q12 8 20 8 H78 Q86 8 92 15 L98 23 Q102 28 110 28 H204 Q212 28 212 36 V164 Q212 172 204 172 H20 Q12 172 12 164 Z"
         />
       </svg>
       <div
-        className={`absolute inset-x-[10%] top-[24%] h-[34%] overflow-hidden rounded-md bg-[#fff3cf] transition-transform duration-300 ${
+        className={`absolute inset-x-[10%] top-[24%] h-[34%] overflow-hidden rounded-md bg-white/85 transition-transform duration-300 ${
           open ? "-translate-y-[10%]" : "group-hover:-translate-y-[6%]"
         }`}
       >
@@ -58,12 +61,15 @@ const FolderIcon = ({ peek, open }: { peek: string; open: boolean }) => {
       >
         <defs>
           <linearGradient id={`${uid}-front`} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#ffe08a" />
-            <stop offset="1" stopColor="#ffc93c" />
+            <stop offset="0" stopColor="#fff1c2" stopOpacity="0.42" />
+            <stop offset="1" stopColor="#ffc93c" stopOpacity="0.14" />
           </linearGradient>
         </defs>
         <path
           fill={`url(#${uid}-front)`}
+          stroke="#fff1c2"
+          strokeOpacity="0.5"
+          strokeWidth="1.5"
           d="M12 100 Q12 92 20 92 H96 Q104 92 110 97 Q116 102 124 102 H204 Q212 102 212 110 V164 Q212 172 204 172 H20 Q12 172 12 164 Z"
         />
       </svg>
@@ -94,8 +100,8 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
               aria-expanded={open}
               aria-controls={`${uid}-panel`}
               onClick={() => setOpenIndex(open ? null : index)}
-              className={`group flex flex-col items-center gap-2 rounded-2xl px-2 py-3 text-center transition-colors focus-visible:outline-2 focus-visible:outline-accent ${
-                open ? "bg-cream/10" : "hover:bg-cream/5"
+              className={`glass-card group flex flex-col items-center gap-2 px-2 py-4 text-center transition-colors focus-visible:outline-2 focus-visible:outline-accent ${
+                open ? "border-accent/60" : "hover:border-accent/30"
               }`}
             >
               <FolderIcon peek={peek} open={open} />
