@@ -131,7 +131,7 @@ const AtHomes = () => {
                   {step.icon}
                   <h3 className="font-medium text-lg">{step.title}</h3>
                 </div>
-                <p>{step.description}</p>
+                <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">{step.description}</p>
               </div>
             ))}
           </div>
@@ -154,7 +154,7 @@ const AtHomes = () => {
             <div className="w-full lg:w-2/3">
               <Carousel images={images1} />
             </div>
-            <p className="w-full lg:w-1/3">
+            <p className="w-full lg:w-1/3 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
               Real estate platforms tend to fall into two extremes: overwhelming
               with clutter or stripped so bare they lose personality. Designing
               AtHomes meant walking the tightrope between function and emotion.
@@ -170,7 +170,7 @@ const AtHomes = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             The Impact
           </h2>
-          <p>
+          <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             Though still evolving, AtHomes is already demonstrating how
             thoughtful design can make something as complex as real estate feel
             approachable. It’s more than a site; it’s a bridge connecting people

@@ -134,7 +134,7 @@ const TaleMakers = () => {
                   {step.icon}
                   <h3 className="font-medium text-lg">{step.title}</h3>
                 </div>
-                <p>{step.description}</p>
+                <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">{step.description}</p>
               </div>
             ))}
           </div>
@@ -157,7 +157,7 @@ const TaleMakers = () => {
             <div className="w-full lg:w-2/3">
               <Carousel images={images1} />
             </div>
-            <p className="w-full lg:w-1/3">
+            <p className="w-full lg:w-1/3 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
               Designing for children is never just about making things “cute.”
               It’s about clarity, accessibility, emotional safety, and deep
               engagement, all in one seamless experience. The biggest challenge
@@ -173,7 +173,7 @@ const TaleMakers = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             The Impact
           </h2>
-          <p>
+          <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             Though still in its early stages, TaleMakers is already beginning to
             spark excitement among creatives. Its vision which is to empower
             every child to become a storyteller, holds the potential to foster

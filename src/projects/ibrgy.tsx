@@ -128,7 +128,7 @@ const Ibrgy = () => {
                   {step.icon}
                   <h3 className="font-medium text-lg">{step.title}</h3>
                 </div>
-                <p>{step.description}</p>
+                <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">{step.description}</p>
               </div>
             ))}
           </div>
@@ -151,7 +151,7 @@ const Ibrgy = () => {
             <div className="w-full lg:w-2/3">
               <Carousel images={images1} />
             </div>
-            <p className="w-full lg:w-1/3">
+            <p className="w-full lg:w-1/3 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
               Translating traditional barangay workflows into an online space
               wasn’t just a technical hurdle, it was a cultural shift. The root
               challenge lay in reshaping deeply ingrained paper-driven processes
@@ -177,7 +177,7 @@ const Ibrgy = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             The Impact
           </h2>
-          <p>
+          <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             The transformation has been profound. Residents no longer wait in
             restless lines, they request documents from home, track progress
             instantly, and step into the barangay only to pick up finalized

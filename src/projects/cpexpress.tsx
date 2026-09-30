@@ -130,7 +130,7 @@ const CpExpress = () => {
                   {step.icon}
                   <h3 className="font-medium text-lg">{step.title}</h3>
                 </div>
-                <p>{step.description}</p>
+                <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">{step.description}</p>
               </div>
             ))}
           </div>
@@ -153,7 +153,7 @@ const CpExpress = () => {
             <div className="w-full lg:w-2/3">
               <Carousel images={images1} />
             </div>
-            <p className="w-full lg:w-1/3">
+            <p className="w-full lg:w-1/3 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
               The real challenge was creating an environment where anonymity
               could thrive without inviting toxicity. It required striking a
               delicate balance between freedom of expression and responsible
@@ -169,7 +169,7 @@ const CpExpress = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             The Impact
           </h2>
-          <p>
+          <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             By framing CpE Confessions as a Valentine’s Day campaign, we were
             able to tap into a moment of heightened emotional engagement and
             curiosity among students. This approach generated organic traction

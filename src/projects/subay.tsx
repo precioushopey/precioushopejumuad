@@ -220,7 +220,7 @@ const Subay = () => {
               allowFullScreen
             />
             <div className="w-full lg:w-1/3 flex flex-col justify-center space-y-6">
-              <p className="text-base lg:text-sm">
+              <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
                 To make the data actionable, I designed and developed a
                 web-based analytics dashboard that visualizes customer flow
                 through interactive heat maps and charts, offering automated
@@ -365,7 +365,7 @@ const Subay = () => {
               />
             </div>
           </div>
-          <p>
+          <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             The system has proven to be a practical and effective tool for
             generating data-driven insights that support retail space planning
             and marketing strategies. Our work on SUBAY earned us the{" "}

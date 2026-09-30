@@ -138,7 +138,7 @@ const Payroll = () => {
                   {step.icon}
                   <h3 className="font-medium text-lg">{step.title}</h3>
                 </div>
-                <p>{step.description}</p>
+                <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">{step.description}</p>
               </div>
             ))}
           </div>
@@ -161,7 +161,7 @@ const Payroll = () => {
             <div className="w-full lg:w-2/3">
               <Carousel images={images2} />
             </div>
-            <p className="w-full lg:w-1/3">
+            <p className="w-full lg:w-1/3 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
               The biggest hurdle wasn’t just building a payroll system rather,
               it was designing one that <em>understood</em> the nuances of local
               government operations. Integrating biometric data posed technical
@@ -188,7 +188,7 @@ const Payroll = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             The Impact
           </h2>
-          <p>
+          <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             Since its launch, the Payroll Management System has transformed how
             Jasaan’s HRMO operates. What once took days is now managed in
             minutes. Biometric logs flow seamlessly into payroll calculations.
