@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme {
+  /* The desktop layout (dock, panel, side column) starts at 768px, not the default 1024px, so lg: and
+     max-lg: switch there: only phones (below 768px) get the bottom bar layout. */
+  --breakpoint-lg: 48rem;
   --font-display: "Unbounded", system-ui, sans-serif;
   --font-sans: "Poppins", sans-serif;
   --color-accent: #ffc93c;
@@ -129,7 +132,7 @@
   /* No side padding on phones and tablets: the shell already insets the page. */
   padding-inline: 0;
 
-  @media (width >= 1024px) {
+  @media (width >= 768px) {
     padding-inline: 2rem;
   }
 
@@ -163,9 +166,9 @@
 
 /* The big main panel. Falls back to a near-opaque dark fill without backdrop-filter. */
 @utility glass-panel {
-  /* Below lg (phones and tablets) the page content sits directly on the background, with no
+  /* Below lg (phones, below 768px) the page content sits directly on the background, with no
      panel around it; the panel look only applies on desktop. */
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     border-radius: 2.5rem;
     background: var(--color-panel);
     border: 1px solid rgb(245 234 214 / 0.14);
@@ -328,7 +331,7 @@
    moves and the pill's inset transitions to it. Browsers without anchor positioning (Firefox at
    the moment) keep the plain look where the active item paints its own yellow background. */
 @supports (anchor-name: --nav-pill) {
-  @media (max-width: 1023.98px) {
+  @media (max-width: 767.98px) {
     nav[aria-label="Main"] a[data-active] {
       anchor-name: --nav-pill;
     }
@@ -381,7 +384,7 @@
    slides up and down between icons when the page changes. Without anchor positioning the active
    icon keeps drawing its own bar (Rail.tsx's lg:before classes). */
 @supports (anchor-name: --nav-pill) {
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     nav[aria-label="Main"] a[data-active] {
       anchor-name: --nav-pill;
     }
