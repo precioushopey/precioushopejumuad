@@ -33,7 +33,7 @@ export const SearchPill = () => {
   const go = (to: string) => navigate(to);
 
   return (
-    <div ref={wrapRef} className="relative">
+    <div ref={wrapRef} className="relative xl:w-[22rem]">
       <label className="flex items-center gap-2 rounded-full border-2 border-line bg-black/25 px-4 py-2 text-cream focus-within:border-accent">
         <MdOutlineSearch size={18} aria-hidden />
         <input
@@ -63,7 +63,7 @@ export const SearchPill = () => {
               go(results[active].to);
             }
           }}
-          className="w-28 bg-transparent text-sm outline-none placeholder:text-cream/60 sm:w-44 lg:w-64"
+          className="w-28 bg-transparent text-sm outline-none placeholder:text-cream/60 sm:w-44 lg:w-64 xl:w-full"
         />
       </label>
 
@@ -89,7 +89,9 @@ export const SearchPill = () => {
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-cream/60">
                   {r.kind}
                 </span>
-                <span className="block truncate text-sm font-medium">{r.title}</span>
+                <span className="block truncate text-sm font-medium">
+                  {r.title}
+                </span>
               </button>
             </li>
           ))}

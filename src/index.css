@@ -237,3 +237,11 @@
   scrollbar-width: thin;
   scrollbar-color: rgb(245 234 214 / 0.3) transparent;
 }
+
+/* Scrolls with the wheel/touch but shows no bar, so cards keep their exact width. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
