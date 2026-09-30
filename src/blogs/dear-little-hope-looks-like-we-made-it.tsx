@@ -54,14 +54,19 @@ const Blog14 = () => {
             <p>
               They believed in me. They made me feel safe, smart, and seen. And
               while the world was far from perfect, it was simple enough to
-              believe that if you tried your best, things would work out.My
-              family was my first fortress. Supportive, grounded, and nurturing.
-              They stood by me in every academic contest, applauded every small
-              win, and reminded me that being kind was just as important as
-              being smart. Then there were my classmates. Chaotic, joyful,
-              beautifully unpredictable. We were dreamers, pranksters,
-              playground philosophers. We shared snacks, secrets, and songs.
-              Together, we believed the world was ours to conquer.
+              believe that if you tried your best, things would work out.
+            </p>
+            <p>
+              My family was my first fortress. Supportive, grounded, and
+              nurturing. They stood by me in every academic contest, applauded
+              every small win, and reminded me that being kind was just as
+              important as being smart.
+            </p>
+            <p>
+              Then there were my classmates. Chaotic, joyful, beautifully
+              unpredictable. We were dreamers, pranksters, playground
+              philosophers. We shared snacks, secrets, and songs. Together, we
+              believed the world was ours to conquer.
             </p>
           </article>
         </section>
