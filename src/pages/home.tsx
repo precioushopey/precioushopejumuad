@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { LuArrowRight } from "react-icons/lu";
 import { projects } from "../data/projects";
 import { blogPosts } from "../data/blogPosts";
-import { CareerHighlights } from "../components/CareerHighlights";
+import { WorkExperience } from "../components/WorkExperience";
 import { PhilippineClock } from "../components/PhilippineClock";
 import { PillTabs } from "../components/PillTabs";
 import { RingGauge } from "../components/RingGauge";
@@ -66,7 +66,7 @@ const Home = () => {
             ))}
           </section>
 
-          <CareerHighlights />
+          <WorkExperience />
         </div>
 
         <div className="flex flex-col gap-5">
