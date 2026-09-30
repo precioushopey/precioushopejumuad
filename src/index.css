@@ -60,6 +60,11 @@
     @apply scroll-smooth;
   }
 
+  /* The display face has a single weight; never fake a bold from a parent's font-bold. */
+  .font-display {
+    font-synthesis-weight: none;
+  }
+
   body {
     color: var(--text-color);
     background-color: #f3e9d2;

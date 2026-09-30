@@ -36,7 +36,7 @@ export const Rail = () => {
   return (
     <nav
       aria-label="Main"
-      className="sticky bottom-4 z-40 order-last mx-auto mb-4 flex w-fit gap-3 rounded-full border border-white/70 bg-white/80 p-2 shadow-lg backdrop-blur-md lg:static lg:order-none lg:mx-0 lg:mb-0 lg:flex-col lg:self-center lg:border-0 lg:bg-transparent lg:p-0 lg:pl-6 lg:shadow-none lg:backdrop-blur-none"
+      className="sticky bottom-4 z-40 order-last mx-auto mb-4 flex w-fit gap-3 rounded-full border border-white/70 bg-white/80 p-2 shadow-lg backdrop-blur-md lg:static lg:order-first lg:mx-0 lg:mb-0 lg:flex-col lg:self-center lg:border-0 lg:bg-transparent lg:p-0 lg:pl-6 lg:shadow-none lg:backdrop-blur-none"
     >
       {items.map(({ to, label, Icon, end, alsoMatch }) => (
         <NavLink

@@ -12,7 +12,7 @@ const Blog = () => {
         </div>
       </header>
 
-      <main className="space-y-6">
+      <div className="space-y-6">
         {blogPosts.map((post) => (
           <Link
             key={post.to}
@@ -48,7 +48,7 @@ const Blog = () => {
             </div>
           </Link>
         ))}
-      </main>
+      </div>
     </div>
   );
 };

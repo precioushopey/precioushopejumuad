@@ -30,7 +30,7 @@ const ProjectsPage = () => {
         </div>
       </header>
 
-      <main className="space-y-6">
+      <div className="space-y-6">
         <div className="flex flex-wrap justify-center gap-4">
           {categories.map((category) => (
             <button
@@ -84,7 +84,7 @@ const ProjectsPage = () => {
             </Link>
           ))}
         </div>
-      </main>
+      </div>
     </div>
   );
 };

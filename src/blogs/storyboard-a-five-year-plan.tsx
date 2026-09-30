@@ -46,7 +46,7 @@ const Blog3 = () => {
         </section>
       </header>
 
-      <main className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <div className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
           <article className="w-full lg:w-3/5 space-y-4">
             <h3 className="font-display text-xl sm:text-2xl font-bold text-glow">
@@ -231,7 +231,7 @@ const Blog3 = () => {
             </li>
           </ul>
         </section>
-      </main>
+      </div>
 
       <footer className="flex justify-center pt-2">
         <Link

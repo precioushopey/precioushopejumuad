@@ -153,7 +153,7 @@ const Subay = () => {
         </div>
       </header>
 
-      <main className="space-y-18">
+      <div className="space-y-18">
         <section className="space-y-6">
           <iframe
             src="https://www.youtube.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
@@ -426,7 +426,7 @@ const Subay = () => {
             Back to Projects
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

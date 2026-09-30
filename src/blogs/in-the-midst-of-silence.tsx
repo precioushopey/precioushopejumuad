@@ -34,7 +34,7 @@ const Blog1 = () => {
         </section>
       </header>
 
-      <main className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <div className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
           <figure className="w-full lg:w-1/2 space-y-4 text-center">
             <img
@@ -86,7 +86,7 @@ const Blog1 = () => {
           we are all soldiers. We must not fright but fight this enemy by
           washing our hands, staying calm, and praying always.
         </article>
-      </main>
+      </div>
 
       <footer className="flex justify-center pt-2">
         <Link

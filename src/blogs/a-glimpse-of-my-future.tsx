@@ -40,7 +40,7 @@ const Blog5 = () => {
         </section>
       </header>
 
-      <main className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <div className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="text-right animate-fade-in-delay-2">
           <p>232, M.L. Quezon St., Lower Jasaan</p>
           <p>Jasaan 9003, Misamis Oriental</p>
@@ -198,7 +198,7 @@ const Blog5 = () => {
           </p>
           <p>- 5 years ago</p>
         </section>
-      </main>
+      </div>
 
       <footer className="flex justify-center pt-2">
         <Link

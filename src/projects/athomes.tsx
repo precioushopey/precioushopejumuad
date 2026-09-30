@@ -89,7 +89,7 @@ const AtHomes = () => {
         </div>
       </header>
 
-      <main className="space-y-18 pt-6">
+      <div className="space-y-18 pt-6">
         <section className="space-y-6">
           <Carousel images={images1} />
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
@@ -230,7 +230,7 @@ const AtHomes = () => {
             Back to Projects
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

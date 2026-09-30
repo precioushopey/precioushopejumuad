@@ -276,7 +276,7 @@ const About = () => {
         </div>
       </header>
 
-      <main className="tracking-normal leading-7 text-left space-y-6">
+      <div className="tracking-normal leading-7 text-left space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 border-b-2 pb-6 animate-fade-in-delay-1">
           <figure className="w-full lg:w-1/2 text-center">
             <img
@@ -436,7 +436,7 @@ const About = () => {
         </section>
         <SkillsSection />
         <ContactSection />
-      </main>
+      </div>
 
       <footer className="flex justify-center pt-2">
         <Link

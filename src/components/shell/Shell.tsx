@@ -18,7 +18,6 @@ export const Shell = () => {
       <div aria-hidden className="shell-bg" />
       <div className="relative z-10 mx-auto flex min-h-dvh max-w-[1400px] p-3 sm:p-6 lg:h-full lg:p-10">
         <div className="glass-panel flex w-full min-w-0 flex-col lg:flex-row lg:overflow-hidden">
-          <Rail />
           <div className="flex min-w-0 flex-1 flex-col lg:min-h-0">
             <TopBar />
             <main
@@ -28,6 +27,7 @@ export const Shell = () => {
               <Outlet />
             </main>
           </div>
+          <Rail />
         </div>
       </div>
     </div>

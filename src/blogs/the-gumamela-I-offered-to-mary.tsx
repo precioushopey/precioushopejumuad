@@ -44,7 +44,7 @@ const Blog6 = () => {
         </section>
       </header>
 
-      <main className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <div className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
@@ -269,7 +269,7 @@ const Blog6 = () => {
           </a>
           <MdOutlineOpenInNew size={20} />
         </section>
-      </main>
+      </div>
 
       <footer className="flex justify-center pt-2">
         <Link
