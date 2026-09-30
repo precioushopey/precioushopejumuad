@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { LuArrowRight } from "react-icons/lu";
 import { projects } from "../data/projects";
 import { blogPosts } from "../data/blogPosts";
-import { AnalogClock } from "../components/AnalogClock";
+import { PhilippineClock } from "../components/PhilippineClock";
 import { PillTabs } from "../components/PillTabs";
 import { RingGauge } from "../components/RingGauge";
 
@@ -65,7 +65,7 @@ const Home = () => {
             aria-label="At a glance"
             className="glass-card flex flex-wrap items-center justify-around gap-x-4 gap-y-3 p-4"
           >
-            <AnalogClock className="h-24 w-24 shrink-0 text-cream" />
+            <PhilippineClock />
             <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
             <RingGauge value={projects.length} max={max} label="Projects" />
             <RingGauge value={blogPosts.length} max={max} label="Blog posts" />
