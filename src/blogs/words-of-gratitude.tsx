@@ -20,7 +20,7 @@ const Blog2 = () => {
             </p>
           </div>
         </div>
-        <section className="text-justify animate-fade-in-delay-1">
+        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] animate-fade-in-delay-1">
           <p>
             This speech was written during the height of the COVID-19 pandemic,
             a time of immense disruption, uncertainty, and emotional strain for
@@ -37,7 +37,7 @@ const Blog2 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal leading-7 text-justify p-4 lg:p-8 space-y-6">
+      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] p-4 lg:p-8 space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img

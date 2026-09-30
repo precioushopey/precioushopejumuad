@@ -26,7 +26,7 @@ const Blog6 = () => {
             </p>
           </div>
         </div>
-        <section className="text-justify animate-fade-in-delay-1">
+        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] animate-fade-in-delay-1">
           <p>
             I wrote this short story during the height of the pandemic, when the
             silence of isolation gave me the space to reflect on the vibrant
@@ -44,7 +44,7 @@ const Blog6 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal leading-7 text-justify p-4 lg:p-8 space-y-6">
+      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] p-4 lg:p-8 space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img

@@ -94,7 +94,7 @@ const AtHomes = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Project Overview
           </h2>
-          <p className="-mt-2">
+          <p className="-mt-2 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             AtHomes was imagined with one goal in mind and that is to make
             finding a home feel less like a chore and more like a conversation.
             It’s a real estate platform in the making, built to simplify

@@ -26,7 +26,7 @@ const Blog3 = () => {
             </p>
           </div>
         </div>
-        <section className="text-justify animate-fade-in-delay-1">
+        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] animate-fade-in-delay-1">
           <p>
             This storyboard was created as my final Performance Innovative Task
             for the subject Understanding the Self in my first year, where we
@@ -46,7 +46,7 @@ const Blog3 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal leading-7 text-justify p-4 lg:p-8 space-y-6">
+      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] p-4 lg:p-8 space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
           <article className="w-full lg:w-3/5 space-y-4">
             <h3 className="font-display text-xl sm:text-2xl font-bold text-glow">

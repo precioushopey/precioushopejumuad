@@ -101,7 +101,7 @@ const Payroll = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Project Overview
           </h2>
-          <p className="-mt-2">
+          <p className="-mt-2 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             In the heart of LGU Jasaan’s Human Resource operations, manual
             payroll processes once consumed hours of tedious work—cross-checking
             biometric logs, calculating deductions, and generating payslips by

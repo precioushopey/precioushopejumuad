@@ -20,7 +20,7 @@ const Blog12 = () => {
             </p>
           </div>
         </div>
-        <section className="text-justify animate-fade-in-delay-1">
+        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] animate-fade-in-delay-1">
           <p>
             After four years of trials and tribulations, navigating a path
             beyond my passion but fueled by purpose, I can finally say — I am an
@@ -30,7 +30,7 @@ const Blog12 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal leading-7 text-justify p-4 lg:p-8 space-y-6">
+      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] p-4 lg:p-8 space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
           <figure className="w-full lg:w-1/2 space-y-4">
             <img

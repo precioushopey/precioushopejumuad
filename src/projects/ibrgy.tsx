@@ -91,7 +91,7 @@ const Ibrgy = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Project Overview
           </h2>
-          <p className="-mt-2">
+          <p className="-mt-2 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             Imagine a bustling barangay hall where residents once queued
             endlessly for documents like clearances, indigency certificates,
             even routine permits. iBRGY transforms that scene with empathy and

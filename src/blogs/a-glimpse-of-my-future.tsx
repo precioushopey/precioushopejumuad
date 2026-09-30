@@ -20,7 +20,7 @@ const Blog5 = () => {
             </p>
           </div>
         </div>
-        <section className="text-justify animate-fade-in-delay-1">
+        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] animate-fade-in-delay-1">
           <p>
             This time capsule letter is a deeply personal message written by my
             20-year-old self to the woman I hope to become. I created it as part
@@ -40,7 +40,7 @@ const Blog5 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal leading-7 text-justify p-4 lg:p-8 space-y-6">
+      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center] p-4 lg:p-8 space-y-6">
         <section className="text-right animate-fade-in-delay-2">
           <p>232, M.L. Quezon St., Lower Jasaan</p>
           <p>Jasaan 9003, Misamis Oriental</p>

@@ -95,7 +95,7 @@ const CpExpress = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Project Overview
           </h2>
-          <p className="-mt-2">
+          <p className="-mt-2 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             CpExpress: CpE Confessions is a moderated anonymous confession
             platform developed and launched during Valentine’s Day 2024. This
             digital initiative was built to create a safe, expressive space
