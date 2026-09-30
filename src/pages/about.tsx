@@ -317,15 +317,15 @@ const About = () => {
       </header>
 
       <div className="tracking-normal leading-6 text-left space-y-6">
-        <section className="flex flex-col items-center gap-6 lg:flex-row animate-fade-in-delay-1">
-          <figure className="w-full lg:w-1/2">
+        <section className="flex flex-col items-center gap-6 animate-fade-in-delay-1">
+          <figure className="w-full max-w-2xl">
             <img
               src="/assets/images/hero.png"
               alt="Precious Hope Jumuad in her graduation gown"
               className="h-auto w-full"
             />
           </figure>
-          <article className="w-full lg:w-1/2 space-y-4">
+          <article className="w-full space-y-4 text-justify">
             <p>
               I’m <strong>Precious Hope T. Jumuad</strong>, a Design Engineer
               (Product/UI/UX Designer and Front-End Developer) and Computer
