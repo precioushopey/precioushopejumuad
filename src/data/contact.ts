@@ -1,5 +1,11 @@
 import type { IconType } from "react-icons";
-import { LuFacebook, LuInstagram, LuLinkedin, LuMail } from "react-icons/lu";
+import {
+  LuFacebook,
+  LuFileText,
+  LuInstagram,
+  LuLinkedin,
+  LuMail,
+} from "react-icons/lu";
 
 export type ContactItem = {
   label: string;
@@ -35,5 +41,11 @@ export const contactItems: ContactItem[] = [
     href: "https://www.instagram.com/yourprecioushope/",
     display: "yourprecioushope",
     Icon: LuInstagram,
+  },
+  {
+    label: "Resume",
+    href: "https://docs.google.com/document/d/1zl6_bG0WykXz8j1jHngdFQK-kYEAgqRSFzTJx6s1EPo/edit?usp=sharing",
+    display: "View my resume",
+    Icon: LuFileText,
   },
 ];
