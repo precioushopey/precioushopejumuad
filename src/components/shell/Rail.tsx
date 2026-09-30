@@ -90,9 +90,9 @@ export const Rail = () => {
         className="hidden rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:block"
       >
         <img
-          src="/assets/images/profile.jpg"
+          src="/assets/images/precious.png"
           alt=""
-          className="h-11 w-11 rounded-full border border-line object-cover"
+          className="h-11 w-11 rounded-full border border-line bg-white object-cover"
         />
       </Link>
     </nav>

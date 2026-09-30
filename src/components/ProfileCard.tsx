@@ -6,9 +6,9 @@ export const ProfileCard = () => (
       Profile
     </span>
     <img
-      src="/assets/images/profile.jpg"
+      src="/assets/images/precious.png"
       alt="Precious Hope T. Jumuad"
-      className="mx-auto mt-4 h-36 w-36 rounded-full border-2 border-line object-cover"
+      className="mx-auto mt-4 h-36 w-36 rounded-full border-2 border-line bg-white object-cover"
     />
     <h2 className="mt-4 text-2xl font-medium">Precious Hope</h2>
     <p className="text-sm text-accent">Computer Engineer · UI/UX Designer</p>
