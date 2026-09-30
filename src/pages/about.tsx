@@ -1,6 +1,15 @@
 import { Link } from "react-router-dom";
 import { SkillsSection } from "../components/SkillsSection";
-import { LuChevronLeft, LuExternalLink } from "react-icons/lu";
+import {
+  LuAward,
+  LuBriefcase,
+  LuChevronDown,
+  LuChevronLeft,
+  LuExternalLink,
+  LuFolderOpen,
+  LuStickyNote,
+} from "react-icons/lu";
+import { WindowBar } from "../components/WindowBar";
 
 const About = () => {
   type Job = {
@@ -189,7 +198,7 @@ const About = () => {
     {
       imgSrc: "/assets/images/cisco.jfif",
       alt: "CCNA: Switching, Routing, and Wireless Essentials",
-      certificate: "CCCNA: Switching, Routing, and Wireless Essentials",
+      certificate: "CCNA: Switching, Routing, and Wireless Essentials",
       organization: "Cisco Systems",
       issued: "Issued Feb 2024",
       link: "https://www.credly.com/badges/8e389c6a-6003-4b6c-8bee-c126162530bb/linked_in_profile",
@@ -376,13 +385,7 @@ const About = () => {
             />
           </figure>
           <article className="glass-card w-full overflow-hidden bg-cream/[0.07] text-justify">
-            <div className="flex items-center gap-2 border-b border-line/40 px-5 py-3 text-left text-xs text-cream/70">
-              <span
-                aria-hidden
-                className="h-2.5 w-2.5 rounded-full bg-accent"
-              />
-              <span>About me</span>
-            </div>
+            <WindowBar icon={<LuStickyNote size={14} />} title="About me" />
             <div className="space-y-6 bg-[repeating-linear-gradient(transparent_0_23px,rgb(245_234_214/0.08)_23px_24px)] bg-[position:0_1.25rem] px-5 pt-5 pb-6">
               <p>
                 I’m <strong>Precious Hope T. Jumuad</strong>, a Design Engineer
@@ -439,36 +442,53 @@ const About = () => {
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           {companies.map((group) => {
             const first = group[0];
+            const running = group.some((job) => job.date.endsWith("Present"));
+            const status = (
+              <span className="flex items-center gap-1.5">
+                <span
+                  aria-hidden
+                  className={`h-1.5 w-1.5 rounded-full ${running ? "bg-accent" : "bg-cream/40"}`}
+                />
+                {running ? "Running" : "Ended"}
+              </span>
+            );
             if (group.length === 1) {
               return (
                 <div
                   key={first.company + first.date}
-                  className="glass-card flex flex-col gap-4 p-5"
+                  className="glass-card overflow-hidden"
                 >
-                  <div className="flex flex-col sm:flex-row gap-6">
-                    <figure className="w-full md:w-1/8 text-center">
-                      <img
-                        src={first.imgSrc}
-                        alt={first.imgAlt}
-                        className="w-full aspect-[1/1] rounded-4xl border object-cover"
-                      />
-                    </figure>
-                    <ul className="w-full md:w-7/8">
-                      <li className="text-base font-semibold">
-                        <u>{first.title}</u>
-                      </li>
-                      <li className="font-semibold">
-                        {first.company} • {first.employmentType}
-                      </li>
-                      <li>{first.date}</li>
-                      <li>{first.location}</li>
+                  <WindowBar
+                    icon={<LuBriefcase size={14} />}
+                    title={first.company}
+                    status={status}
+                  />
+                  <div className="flex flex-col gap-4 p-5">
+                    <div className="flex flex-col sm:flex-row gap-6">
+                      <figure className="w-full md:w-1/8 text-center">
+                        <img
+                          src={first.imgSrc}
+                          alt={first.imgAlt}
+                          className="w-full aspect-[1/1] rounded-4xl border object-cover"
+                        />
+                      </figure>
+                      <ul className="w-full md:w-7/8">
+                        <li className="text-base font-semibold">
+                          <u>{first.title}</u>
+                        </li>
+                        <li className="font-semibold">
+                          {first.company} • {first.employmentType}
+                        </li>
+                        <li>{first.date}</li>
+                        <li>{first.location}</li>
+                      </ul>
+                    </div>
+                    <ul className="ml-6 list-disc">
+                      {first.responsibilities.map((task, idx) => (
+                        <li key={idx}>{task}</li>
+                      ))}
                     </ul>
                   </div>
-                  <ul className="ml-6 list-disc">
-                    {first.responsibilities.map((task, idx) => (
-                      <li key={idx}>{task}</li>
-                    ))}
-                  </ul>
                 </div>
               );
             }
@@ -481,53 +501,57 @@ const About = () => {
               (job) => job.employmentType === first.employmentType,
             );
             return (
-              <div
-                key={first.company}
-                className="glass-card flex flex-col gap-5 p-5"
-              >
-                <div className="flex flex-col sm:flex-row gap-6">
-                  <figure className="w-full md:w-1/8 text-center">
-                    <img
-                      src={first.imgSrc}
-                      alt={first.imgAlt}
-                      className="w-full aspect-[1/1] rounded-4xl border object-cover"
-                    />
-                  </figure>
-                  <ul className="w-full md:w-7/8">
-                    <li className="text-base font-semibold">
-                      <u>{first.company}</u>
-                    </li>
-                    <li>
-                      {sameType && `${first.employmentType} • `}
-                      {durationLabel(total)}
-                    </li>
-                    <li>{first.location}</li>
-                  </ul>
-                </div>
-                <ol className="ml-2 space-y-6 border-l border-line pl-6">
-                  {group.map((job, index) => {
-                    const range = rangeOf(job.date);
-                    return (
-                      <li key={index} className="relative">
-                        <span
-                          aria-hidden
-                          className="absolute top-2 -left-[29.5px] h-2.5 w-2.5 rounded-full bg-cream/50"
-                        />
-                        <p className="text-base font-semibold">{job.title}</p>
-                        {!sameType && <p>{job.employmentType}</p>}
-                        <p>
-                          {job.date} •{" "}
-                          {durationLabel(range.end - range.start + 1)}
-                        </p>
-                        <ul className="mt-3 ml-6 list-disc">
-                          {job.responsibilities.map((task, idx) => (
-                            <li key={idx}>{task}</li>
-                          ))}
-                        </ul>
+              <div key={first.company} className="glass-card overflow-hidden">
+                <WindowBar
+                  icon={<LuBriefcase size={14} />}
+                  title={first.company}
+                  status={status}
+                />
+                <div className="flex flex-col gap-5 p-5">
+                  <div className="flex flex-col sm:flex-row gap-6">
+                    <figure className="w-full md:w-1/8 text-center">
+                      <img
+                        src={first.imgSrc}
+                        alt={first.imgAlt}
+                        className="w-full aspect-[1/1] rounded-4xl border object-cover"
+                      />
+                    </figure>
+                    <ul className="w-full md:w-7/8">
+                      <li className="text-base font-semibold">
+                        <u>{first.company}</u>
                       </li>
-                    );
-                  })}
-                </ol>
+                      <li>
+                        {sameType && `${first.employmentType} • `}
+                        {durationLabel(total)}
+                      </li>
+                      <li>{first.location}</li>
+                    </ul>
+                  </div>
+                  <ol className="ml-2 space-y-6 border-l border-line pl-6">
+                    {group.map((job, index) => {
+                      const range = rangeOf(job.date);
+                      return (
+                        <li key={index} className="relative">
+                          <span
+                            aria-hidden
+                            className="absolute top-2 -left-[29.5px] h-2.5 w-2.5 rounded-full bg-cream/50"
+                          />
+                          <p className="text-base font-semibold">{job.title}</p>
+                          {!sameType && <p>{job.employmentType}</p>}
+                          <p>
+                            {job.date} •{" "}
+                            {durationLabel(range.end - range.start + 1)}
+                          </p>
+                          <ul className="mt-3 ml-6 list-disc">
+                            {job.responsibilities.map((task, idx) => (
+                              <li key={idx}>{task}</li>
+                            ))}
+                          </ul>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
               </div>
             );
           })}
@@ -539,28 +563,55 @@ const About = () => {
           </h2>
         </div>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+        <section
+          aria-label="Education"
+          className="glass-card overflow-hidden animate-fade-in-delay-3"
+        >
+          <WindowBar icon={<LuFolderOpen size={14} />} title="Education" />
+          <div className="border-b border-line/40 px-6 py-2 text-left text-xs text-cream/60">
+            This PC <span aria-hidden>›</span> Education
+          </div>
+          <div
+            aria-hidden
+            className="hidden grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1.4fr)_9.5rem] gap-3 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
+          >
+            <span />
+            <span>Name</span>
+            <span>Degree</span>
+            <span>Date</span>
+          </div>
           {educationData.map((edu, index) => (
-            <div key={index} className="glass-card flex flex-col gap-4 p-5">
-              <div className="flex flex-col sm:flex-row gap-6">
-                <figure className="w-full md:w-1/8 text-center">
-                  <img
-                    src={edu.imgSrc}
-                    alt={edu.alt}
-                    className="w-full aspect-[1/1] rounded-4xl border object-cover"
+            <details
+              key={index}
+              open={index === 0}
+              className="group border-b border-line/30 last:border-b-0"
+            >
+              <summary className="grid cursor-pointer list-none grid-cols-[2rem_minmax(0,1fr)] items-center gap-x-3 gap-y-0.5 px-6 py-3 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1.4fr)_9.5rem] [&::-webkit-details-marker]:hidden">
+                <img
+                  src={edu.imgSrc}
+                  alt=""
+                  className="row-span-3 h-8 w-8 rounded-lg border bg-white object-cover md:row-span-1"
+                />
+                <span className="flex items-center gap-2 font-semibold">
+                  <span className="min-w-0">{edu.school}</span>
+                  <LuChevronDown
+                    aria-hidden
+                    size={14}
+                    className="shrink-0 text-cream/50 transition-transform group-open:rotate-180"
                   />
-                </figure>
-                <ul className="w-full md:w-7/8">
-                  <li className="text-base font-semibold">
-                    <u>{edu.school}</u>
-                  </li>
-                  <li className="font-semibold">{edu.degree}</li>
-                  <li>{edu.location}</li>
-                  <li>{edu.dates}</li>
-                </ul>
+                </span>
+                <span className="col-start-2 text-cream/70 md:col-start-auto">
+                  {edu.degree}
+                </span>
+                <span className="col-start-2 text-cream/70 md:col-start-auto">
+                  {edu.dates}
+                </span>
+              </summary>
+              <div className="space-y-2 px-6 pb-4 text-left md:pl-[4.25rem]">
+                <p className="text-cream/60">{edu.location}</p>
+                <p className="text-justify">{edu.description}</p>
               </div>
-              <p>{edu.description}</p>
-            </div>
+            </details>
           ))}
         </section>
 
@@ -570,37 +621,64 @@ const About = () => {
           </h2>
         </div>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-6 glass-card p-5 animate-fade-in-delay-3">
-          {certificationData.map((cert, index) => (
-            <div key={index} className="flex flex-col gap-4">
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-6">
-                <figure className="w-full md:w-1/8 text-center">
+        <section
+          aria-label="Certifications"
+          className="glass-card overflow-hidden animate-fade-in-delay-3"
+        >
+          <WindowBar
+            icon={<LuAward size={14} />}
+            title={`Certifications (${certificationData.length} items)`}
+          />
+          <div
+            aria-hidden
+            className="hidden grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem] gap-3 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
+          >
+            <span />
+            <span>Name</span>
+            <span>Issuer</span>
+            <span>Issued</span>
+            <span />
+          </div>
+          <ul>
+            {certificationData.map((cert, index) => (
+              <li
+                key={index}
+                className="border-b border-line/30 last:border-b-0"
+              >
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-3 px-6 py-2.5 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem]"
+                >
                   <img
                     src={cert.imgSrc}
-                    alt={cert.alt}
-                    className="hidden sm:block w-full aspect-[1/1] rounded-4xl border object-cover"
+                    alt=""
+                    className="h-8 w-8 rounded-lg border bg-white object-cover"
                   />
-                </figure>
-                <ul className="w-full md:w-7/8">
-                  <li className="text-base font-semibold">
-                    <u>{cert.certificate}</u>
-                  </li>
-                  <li className="font-semibold">{cert.organization}</li>
-                  <li>{cert.issued}</li>
-                  <li>
-                    <a
-                      className="flex items-center gap-2"
-                      href={cert.link}
-                      target="_blank"
-                    >
-                      <span>Show Credential</span>
-                      <LuExternalLink />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          ))}
+                  <span className="min-w-0">
+                    <span className="block truncate font-medium">
+                      {cert.certificate}
+                    </span>
+                    <span className="block truncate text-xs text-cream/60 md:hidden">
+                      {cert.organization} · {cert.issued.replace("Issued ", "")}
+                    </span>
+                  </span>
+                  <span className="hidden truncate text-cream/70 md:block">
+                    {cert.organization}
+                  </span>
+                  <span className="hidden text-cream/70 md:block">
+                    {cert.issued.replace("Issued ", "")}
+                  </span>
+                  <LuExternalLink
+                    aria-hidden
+                    size={14}
+                    className="text-cream/50"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
         <SkillsSection />
       </div>

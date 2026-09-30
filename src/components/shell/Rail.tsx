@@ -1,5 +1,6 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { LuBriefcase, LuHouse, LuNewspaper, LuUser } from "react-icons/lu";
+import { TrayClock } from "./TrayClock";
 
 const items: {
   to: string;
@@ -73,17 +74,23 @@ export const Rail = () => {
           </NavLink>
         ))}
       </div>
-      <Link
-        to="/about"
-        aria-label="About me"
-        className="hidden h-11 w-11 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:block"
-      >
-        <img
-          src="/assets/images/precious.png"
-          alt=""
-          className="h-11 w-11 rounded-full border border-line bg-white object-cover"
-        />
-      </Link>
+      {/* Phones: the taskbar's tray clock, only when the bar is wide enough to spare the room. */}
+      <TrayClock className="hidden pr-2 min-[440px]:max-lg:block" />
+      {/* Desktop: the dock's tray, with the avatar and the Philippine time under it. */}
+      <div className="hidden shrink-0 flex-col items-center gap-1.5 lg:flex">
+        <Link
+          to="/about"
+          aria-label="About me"
+          className="h-11 w-11 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        >
+          <img
+            src="/assets/images/precious.png"
+            alt=""
+            className="h-11 w-11 rounded-full border border-line bg-white object-cover"
+          />
+        </Link>
+        <TrayClock className="w-11" />
+      </div>
     </nav>
   );
 };

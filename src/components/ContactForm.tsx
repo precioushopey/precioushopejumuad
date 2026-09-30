@@ -12,16 +12,24 @@ const styles = {
     label: "block text-lg font-medium",
     field:
       "w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent",
+    messageGroup: "space-y-2",
+    messageLabel: "block text-lg font-medium",
+    messageField: "",
     button:
       "white-button w-full flex items-center justify-center text-base gap-x-2",
   },
+  // The "New message" window in the right column: a mail compose sheet, with each field on a ruled
+  // row (label on the left) and the message body below.
   card: {
-    heading: "px-1 text-center text-sm font-normal text-cream/70",
+    heading: "sr-only",
     form: "space-y-3",
-    group: "space-y-1.5",
-    label: "block px-1 text-left text-sm font-medium",
+    group: "flex items-center gap-2 border-b border-line/40",
+    label: "w-20 shrink-0 text-left text-xs text-cream/60",
     field:
-      "w-full rounded-2xl bg-black/20 px-3 py-2.5 text-sm text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent",
+      "min-w-0 flex-1 rounded-md bg-transparent px-1 py-2 text-sm text-cream placeholder:text-cream/40 focus:outline-hidden focus:ring-2 focus:ring-accent",
+    messageGroup: "block",
+    messageLabel: "sr-only",
+    messageField: "block h-28 w-full",
     button:
       "white-button w-full flex items-center justify-center gap-x-2 text-sm sm:text-sm",
   },
@@ -88,15 +96,15 @@ export const ContactForm = ({
           />
         </div>
 
-        <div className={s.group}>
-          <label htmlFor={`${uid}-message`} className={s.label}>
+        <div className={s.messageGroup}>
+          <label htmlFor={`${uid}-message`} className={s.messageLabel}>
             Your Message
           </label>
           <textarea
             id={`${uid}-message`}
             name="message"
             required
-            className={`${s.field} resize-none`}
+            className={`${s.field} ${s.messageField} resize-none`}
             placeholder="Hi! Just wanted to share or talk about..."
           />
         </div>
