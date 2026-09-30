@@ -1,24 +1,10 @@
-import { Link } from "react-router-dom";
-import { LuChevronLeft } from "react-icons/lu";
+import { } from "react-icons/lu";
+import { BlogPostLayout } from "../components/BlogPostLayout";
 
 const Blog1 = () => {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 lg:px-8 text-sm sm:text-base">
-      <header className="space-y-6">
-        <div className="flex flex-col items-center justify-center animate-fade-in">
-          <h1 className="text-3xl sm:text-4xl font-bold text-glow">
-            In the Midst of Silence
-          </h1>
-          <h2 className="font-display text-2xl sm:text-3xl font-bold text-glow">
-            Reflections of a Bystander in a Time of Crisis
-          </h2>
-          <div className="flex items-center text-[10px] sm:text-sm gap-x-2 pt-4">
-            <p>
-              <time dateTime="2025-07-06">July 6, 2025</time>
-            </p>
-          </div>
-        </div>
-        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+    <BlogPostLayout>
+<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
           <p>
             I wrote this personal essay at the height of the COVID-19 pandemic,
             a time when the world seemed to pause, yet our inner lives grew
@@ -32,9 +18,8 @@ const Blog1 = () => {
             paradox of pain and peace that the pandemic planted in my life.
           </p>
         </section>
-      </header>
 
-      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] p-4 lg:p-8 space-y-6">
+      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
           <figure className="w-full lg:w-1/2 space-y-4 text-center">
             <img
@@ -87,18 +72,7 @@ const Blog1 = () => {
           washing our hands, staying calm, and praying always.
         </article>
       </div>
-
-      <footer className="flex justify-center pt-2">
-        <Link
-          to="/blog"
-          target="_top"
-          className="w-fit flex items-center gap-x-2 white-button"
-        >
-          <LuChevronLeft size={20} />
-          Back to Blog
-        </Link>
-      </footer>
-    </div>
+    </BlogPostLayout>
   );
 };
 

@@ -1,26 +1,10 @@
-import { Link } from "react-router-dom";
-import { LuChevronLeft } from "react-icons/lu";
+import { } from "react-icons/lu";
+import { BlogPostLayout } from "../components/BlogPostLayout";
 
 const Blog11 = () => {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 lg:px-8 text-sm sm:text-base">
-      <header className="space-y-6">
-        <div className="flex flex-col items-center justify-center animate-fade-in">
-          <div className="flex flex-col lg:flex-row gap-x-2">
-            <h1 className="text-3xl sm:text-4xl font-bold text-glow">
-              Coins for
-            </h1>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-glow">
-              the Child
-            </h2>
-          </div>
-          <div className="flex items-center text-[10px] sm:text-sm gap-x-2">
-            <p>
-              <time dateTime="2025-08-02">August 2, 2025</time>
-            </p>
-          </div>
-        </div>
-        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+    <BlogPostLayout>
+<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
           <p>
             <em>“Coins for the Child”</em> is a nostalgic reflection on my
             father’s childhood labor and the healing joy he finds in continuing
@@ -35,9 +19,8 @@ const Blog11 = () => {
             meaning.
           </p>
         </section>
-      </header>
 
-      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] p-4 lg:p-8 space-y-6">
+      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4">
           <figure className="w-full lg:w-3/5 space-y-4 text-center">
             <img
@@ -167,18 +150,7 @@ const Blog11 = () => {
           </article>
         </section>
       </div>
-
-      <footer className="flex justify-center pt-2">
-        <Link
-          to="/blog"
-          target="_top"
-          className="w-fit flex items-center gap-x-2 white-button"
-        >
-          <LuChevronLeft size={20} />
-          Back to Blog
-        </Link>
-      </footer>
-    </div>
+    </BlogPostLayout>
   );
 };
 

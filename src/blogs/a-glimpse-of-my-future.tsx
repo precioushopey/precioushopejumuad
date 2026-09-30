@@ -1,26 +1,10 @@
-import { Link } from "react-router-dom";
-import { LuChevronLeft } from "react-icons/lu";
+import { } from "react-icons/lu";
+import { BlogPostLayout } from "../components/BlogPostLayout";
 
 const Blog5 = () => {
   return (
-    <div className="container mx-auto max-w-5xl space-y-6 py-4 lg:px-8 text-sm sm:text-base">
-      <header className="space-y-6">
-        <div className="flex flex-col items-center justify-center animate-fade-in">
-          <div className="flex flex-col lg:flex-row gap-x-2">
-            <h1 className="text-3xl sm:text-4xl font-bold text-glow">
-              A Glimpse Of
-            </h1>
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-glow">
-              My Future
-            </h2>
-          </div>
-          <div className="flex items-center text-[10px] sm:text-sm gap-x-2">
-            <p>
-              <time dateTime="2025-07-19">July 19, 2025</time>
-            </p>
-          </div>
-        </div>
-        <section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
+    <BlogPostLayout>
+<section className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] animate-fade-in-delay-1">
           <p>
             This time capsule letter is a deeply personal message written by my
             20-year-old self to the woman I hope to become. I created it as part
@@ -38,9 +22,8 @@ const Blog5 = () => {
             and stay strong.
           </p>
         </section>
-      </header>
 
-      <div className="glass-card tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] p-4 lg:p-8 space-y-6">
+      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="text-right animate-fade-in-delay-2">
           <p>232, M.L. Quezon St., Lower Jasaan</p>
           <p>Jasaan 9003, Misamis Oriental</p>
@@ -199,18 +182,7 @@ const Blog5 = () => {
           <p>- 5 years ago</p>
         </section>
       </div>
-
-      <footer className="flex justify-center pt-2">
-        <Link
-          to="/blog"
-          target="_top"
-          className="w-fit flex items-center gap-x-2 white-button"
-        >
-          <LuChevronLeft size={20} />
-          Back to Blog
-        </Link>
-      </footer>
-    </div>
+    </BlogPostLayout>
   );
 };
 
