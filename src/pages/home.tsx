@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { LuArrowRight } from "react-icons/lu";
 import { projects } from "../data/projects";
 import { blogPosts } from "../data/blogPosts";
+import { CareerHighlights } from "../components/CareerHighlights";
 import { PhilippineClock } from "../components/PhilippineClock";
 import { PillTabs } from "../components/PillTabs";
 import { RingGauge } from "../components/RingGauge";
@@ -24,46 +25,50 @@ const Home = () => {
         <PillTabs active="all" />
       </header>
 
+      {/* Two stacks of cards. The last card in each stretches, so both columns end on the same line. */}
       <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-2">
-        <section
-          aria-label="Recent Projects"
-          className="glass-card space-y-2 p-4"
-        >
-          <div className="flex items-center justify-between px-1">
-            <h2 className="text-sm text-cream/70">Recent Projects</h2>
-            <Link
-              to="/projects"
-              aria-label="See all projects"
-              title="See all projects"
-              className="flex h-8 w-8 items-center justify-center rounded-full text-white transition-transform duration-300 hover:scale-110"
-            >
-              <LuArrowRight size={20} aria-hidden />
-            </Link>
-          </div>
-          {featured.map((p) => (
-            <Link
-              key={p.url}
-              to={p.url}
-              className="flex min-w-0 items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
-            >
-              <img
-                src={p.image}
-                alt=""
-                className="h-14 w-16 shrink-0 rounded-xl object-cover"
-              />
-              <span className="min-w-0">
-                <span className="block truncate text-sm font-medium">
-                  {p.title}
+        <div className="flex flex-col gap-5">
+          <section
+            aria-label="Recent Projects"
+            className="glass-card space-y-2 p-4"
+          >
+            <div className="flex items-center justify-between px-1">
+              <h2 className="text-sm text-cream/70">Recent Projects</h2>
+              <Link
+                to="/projects"
+                aria-label="See all projects"
+                title="See all projects"
+                className="flex h-8 w-8 items-center justify-center rounded-full text-white transition-transform duration-300 hover:scale-110"
+              >
+                <LuArrowRight size={20} aria-hidden />
+              </Link>
+            </div>
+            {featured.map((p) => (
+              <Link
+                key={p.url}
+                to={p.url}
+                className="flex min-w-0 items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
+              >
+                <img
+                  src={p.image}
+                  alt=""
+                  className="h-14 w-16 shrink-0 rounded-xl object-cover"
+                />
+                <span className="min-w-0">
+                  <span className="block truncate text-sm font-medium">
+                    {p.title}
+                  </span>
+                  <span className="block truncate text-xs text-cream/70">
+                    {p.tags.slice(0, 3).join(" · ")}
+                  </span>
                 </span>
-                <span className="block truncate text-xs text-cream/70">
-                  {p.tags.slice(0, 3).join(" · ")}
-                </span>
-              </span>
-            </Link>
-          ))}
-        </section>
+              </Link>
+            ))}
+          </section>
 
-        {/* flex column so the tools card can stretch to the bottom of the row, level with Recent Projects */}
+          <CareerHighlights />
+        </div>
+
         <div className="flex flex-col gap-5">
           <section
             aria-label="At a glance"
@@ -80,7 +85,7 @@ const Home = () => {
             className="glass-card flex flex-1 flex-col p-4"
           >
             <h2 className="px-1 text-left text-sm text-cream/70">
-              Tools I use
+              Tools I Use
             </h2>
             <ul className="mt-2 grid w-full flex-1 grid-cols-4 content-center gap-3">
               {tools.map((t) => (
@@ -97,30 +102,35 @@ const Home = () => {
               ))}
             </ul>
           </section>
+
+          <section
+            aria-label="Featured projects"
+            className="glass-card flex flex-1 flex-col p-4"
+          >
+            <h2 className="px-1 text-left text-sm text-cream/70">
+              Featured Projects
+            </h2>
+            <div className="mt-2 grid flex-1 grid-cols-[repeat(3,minmax(0,1fr))] gap-3">
+              {featured.map((p) => (
+                <Link
+                  key={p.url}
+                  to={p.url}
+                  className="group relative aspect-[3/4] min-w-0 overflow-hidden rounded-2xl border border-line lg:aspect-auto lg:min-h-32"
+                >
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-2 pt-8 text-left text-[11px] font-medium leading-tight">
+                    {p.title}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
-
-      <section
-        aria-label="Featured projects"
-        className="grid grid-cols-3 gap-3 sm:gap-5"
-      >
-        {featured.map((p) => (
-          <Link
-            key={p.url}
-            to={p.url}
-            className="group relative aspect-[3/4] overflow-hidden rounded-3xl border border-line"
-          >
-            <img
-              src={p.image}
-              alt={p.title}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-            />
-            <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-3 pt-10 text-left text-xs font-medium sm:text-sm">
-              {p.title}
-            </span>
-          </Link>
-        ))}
-      </section>
     </div>
   );
 };

@@ -58,7 +58,7 @@ export const Rail = () => {
       <Link
         to="/about"
         aria-label="About me"
-        className="hidden rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:block"
+        className="hidden h-11 w-11 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent lg:block"
       >
         <img
           src="/assets/images/precious.png"
