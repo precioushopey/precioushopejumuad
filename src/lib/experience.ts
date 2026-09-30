@@ -47,21 +47,43 @@ export const manilaMidnight = (
   day: number,
 ): Date => new Date(Date.UTC(year, month, day) - 8 * 60 * 60 * 1000);
 
+/** The day all experience is measured from (March 1, 2024). */
+export const EXPERIENCE_START = manilaMidnight(
+  DESIGN_START.year,
+  DESIGN_START.month,
+  DESIGN_START.day,
+);
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
 /**
- * How much of my total experience (since DESIGN_START) I have spent on a skill I started on
- * `start`, as a whole percent from 0 to 100. The first skill (started on DESIGN_START) is 100%,
+ * How much of my total experience (since EXPERIENCE_START) I have spent on a skill I started on
+ * `start`, as a whole percent from 0 to 100. The first skill (started on EXPERIENCE_START) is 100%,
  * and every later one is the share of the time since then, so the numbers keep growing.
  * Use manilaMidnight() for start dates so the result is the same in every visitor's timezone.
  */
 export const skillShare = (start: Date, now: Date = new Date()): number => {
-  const total =
-    now.getTime() -
-    manilaMidnight(
-      DESIGN_START.year,
-      DESIGN_START.month,
-      DESIGN_START.day,
-    ).getTime();
+  const total = now.getTime() - EXPERIENCE_START.getTime();
   if (total <= 0) return 0;
   const spent = now.getTime() - start.getTime();
   return Math.round(Math.max(0, Math.min(1, spent / total)) * 100);
 };
+
+/** The numbers behind skillShare, for showing how a ring was worked out (whole days). */
+export const skillBreakdown = (start: Date, now: Date = new Date()) => ({
+  percent: skillShare(start, now),
+  days: Math.max(0, Math.floor((now.getTime() - start.getTime()) / DAY_MS)),
+  totalDays: Math.max(
+    0,
+    Math.floor((now.getTime() - EXPERIENCE_START.getTime()) / DAY_MS),
+  ),
+});
+
+/** e.g. "Sep 1, 2025", always as the date in the Philippines. */
+export const formatManilaDate = (date: Date): string =>
+  date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "Asia/Manila",
+  });
