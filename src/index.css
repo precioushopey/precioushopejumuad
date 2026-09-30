@@ -126,12 +126,7 @@
 
 @utility container {
   margin-inline: auto;
-  /* 1rem (px-4) on phones and tablets, 2rem on desktop. */
-  padding-inline: 1rem;
-
-  @media (width >= 1024px) {
-    padding-inline: 2rem;
-  }
+  padding-inline: 2rem;
 
   @media (width >= 640px) {
     max-width: 640px;
