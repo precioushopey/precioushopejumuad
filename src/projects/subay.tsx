@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { AiFillInstagram } from "react-icons/ai";
 import {
-  MdEmail,
-  MdFacebook,
-  MdInsights,
-  MdOutlineKeyboardArrowLeft,
-} from "react-icons/md";
+  LuChartLine,
+  LuChevronLeft,
+  LuFacebook,
+  LuInstagram,
+  LuMail,
+} from "react-icons/lu";
 
 type Contributor = {
   name: string;
@@ -135,9 +135,7 @@ const Subay = () => {
       <header>
         <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
           <h1 className="text-3xl sm:text-6xl">SUBAY</h1>
-          <h2 className="font-display  text-3xl sm:text-5xl">
-            Thesis
-          </h2>
+          <h2 className="font-display  text-3xl sm:text-5xl">Thesis</h2>
         </div>
         <div>
           <div className="flex flex-wrap justify-center gap-4 text-sm animate-fade-in-delay-1">
@@ -252,7 +250,7 @@ const Subay = () => {
               >
                 <div className="flex items-start gap-4">
                   <div className="bg-white rounded-full p-2">
-                    <MdInsights
+                    <LuChartLine
                       size={20}
                       className="text-[var(--brown-accent)]"
                     />
@@ -302,7 +300,7 @@ const Subay = () => {
                   </p>
                   <ul className="text-xs space-y-1">
                     <li className="flex gap-x-2">
-                      <MdEmail size={16} />
+                      <LuMail size={16} />
                       <a
                         href={contributor.email.address}
                         target="_blank"
@@ -312,7 +310,7 @@ const Subay = () => {
                       </a>
                     </li>
                     <li className="flex gap-x-2">
-                      <MdFacebook size={16} />
+                      <LuFacebook size={16} />
                       <a
                         href={contributor.facebook.url}
                         target="_blank"
@@ -322,7 +320,7 @@ const Subay = () => {
                       </a>
                     </li>
                     <li className="flex gap-x-2">
-                      <AiFillInstagram size={16} />
+                      <LuInstagram size={16} />
                       <a
                         href={contributor.instagram.url}
                         target="_blank"
@@ -422,7 +420,7 @@ const Subay = () => {
             target="_top"
             className="w-fit flex items-center gap-x-2 white-button"
           >
-            <MdOutlineKeyboardArrowLeft size={20} />
+            <LuChevronLeft size={20} />
             Back to Projects
           </Link>
         </div>

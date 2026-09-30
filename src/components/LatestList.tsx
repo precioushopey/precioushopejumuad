@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MdMoreVert } from "react-icons/md";
+import { LuEllipsisVertical } from "react-icons/lu";
 import { latestItems } from "../data/latest";
 
 export const LatestList = () => (
@@ -10,14 +10,19 @@ export const LatestList = () => (
         key={item.to}
         className="flex items-center gap-3 rounded-2xl bg-black/20 p-2.5"
       >
-        <Link to={item.to} className="flex min-w-0 flex-1 items-center gap-3 text-left">
+        <Link
+          to={item.to}
+          className="flex min-w-0 flex-1 items-center gap-3 text-left"
+        >
           <img
             src={item.image}
             alt=""
             className="h-14 w-16 shrink-0 rounded-xl object-cover"
           />
           <span className="min-w-0">
-            <span className="block truncate text-sm font-medium">{item.title}</span>
+            <span className="block truncate text-sm font-medium">
+              {item.title}
+            </span>
             <span className="line-clamp-2 text-xs text-cream/70">
               {item.description}
             </span>
@@ -30,7 +35,7 @@ export const LatestList = () => (
           aria-hidden
           className="rounded-full p-1.5 hover:bg-cream/15"
         >
-          <MdMoreVert size={20} />
+          <LuEllipsisVertical size={20} />
         </Link>
       </div>
     ))}

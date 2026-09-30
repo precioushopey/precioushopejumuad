@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import {
-  MdOutlineKeyboardArrowLeft,
-  MdOutlineDiversity1,
-} from "react-icons/md";
-import { FiBookOpen } from "react-icons/fi";
-import { LuBrain } from "react-icons/lu";
-import { TbCross } from "react-icons/tb";
+  LuBookOpen,
+  LuBrain,
+  LuChevronLeft,
+  LuCross,
+  LuUsers,
+} from "react-icons/lu";
 
 const Blog3 = () => {
   return (
@@ -140,7 +140,7 @@ const Blog3 = () => {
           <article className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <span className="flex items-center gap-2">
-                <FiBookOpen size={20} />
+                <LuBookOpen size={20} />
                 <h4 className="text-xl font-semibold">Philosophical</h4>
               </span>
               <p>
@@ -171,7 +171,7 @@ const Blog3 = () => {
             </div>
             <div className="space-y-2">
               <span className="flex items-center gap-2">
-                <TbCross size={20} />
+                <LuCross size={20} />
                 <h4 className="text-xl font-semibold">Spiritual</h4>
               </span>
               <p>
@@ -191,7 +191,7 @@ const Blog3 = () => {
             </div>
             <div className="space-y-2">
               <span className="flex items-center gap-2">
-                <MdOutlineDiversity1 size={20} />
+                <LuUsers size={20} />
                 <h4 className="text-xl font-semibold">Political</h4>
               </span>
               <p>
@@ -239,7 +239,7 @@ const Blog3 = () => {
           target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
-          <MdOutlineKeyboardArrowLeft size={20} />
+          <LuChevronLeft size={20} />
           Back to Blog
         </Link>
       </footer>

@@ -1,50 +1,21 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import {
-  MdArticle,
-  MdHome,
-  MdOutlineArticle,
-  MdOutlineHome,
-  MdOutlinePersonOutline,
-  MdOutlineWorkOutline,
-  MdPerson,
-  MdWork,
-} from "react-icons/md";
+import { LuBriefcase, LuHouse, LuNewspaper, LuUser } from "react-icons/lu";
 
 const items: {
   to: string;
   label: string;
-  Icon: typeof MdOutlineHome;
-  ActiveIcon: typeof MdOutlineHome;
+  Icon: typeof LuHouse;
   end: boolean;
   alsoMatch?: string;
 }[] = [
-  {
-    to: "/",
-    label: "Home",
-    Icon: MdOutlineHome,
-    ActiveIcon: MdHome,
-    end: true,
-  },
-  {
-    to: "/about",
-    label: "About",
-    Icon: MdOutlinePersonOutline,
-    ActiveIcon: MdPerson,
-    end: false,
-  },
-  {
-    to: "/projects",
-    label: "Projects",
-    Icon: MdOutlineWorkOutline,
-    ActiveIcon: MdWork,
-    end: false,
-  },
+  { to: "/", label: "Home", Icon: LuHouse, end: true },
+  { to: "/about", label: "About", Icon: LuUser, end: false },
+  { to: "/projects", label: "Projects", Icon: LuBriefcase, end: false },
   // Posts live under /blogs/<slug>, the listing under /blog.
   {
     to: "/blog",
     label: "Blog",
-    Icon: MdOutlineArticle,
-    ActiveIcon: MdArticle,
+    Icon: LuNewspaper,
     end: false,
     alsoMatch: "/blogs/",
   },
@@ -58,7 +29,7 @@ export const Rail = () => {
       className="sticky bottom-4 z-40 mx-auto flex w-fit items-center gap-3 rounded-full border border-line bg-black/50 p-2 shadow-lg backdrop-blur-md lg:absolute lg:bottom-auto lg:left-0 lg:top-1/2 lg:z-10 lg:mx-0 lg:w-24 lg:-translate-y-1/2 lg:h-[28rem] lg:max-h-full lg:flex-col lg:justify-between lg:rounded-l-[2rem] lg:rounded-r-none lg:border-cream/20 lg:bg-cream/15 lg:p-6 lg:shadow-none lg:backdrop-blur-xl"
     >
       <div className="flex gap-3 lg:flex-col lg:gap-4">
-        {items.map(({ to, label, Icon, ActiveIcon, end, alsoMatch }) => (
+        {items.map(({ to, label, Icon, end, alsoMatch }) => (
           <NavLink
             key={to}
             to={to}
@@ -78,8 +49,8 @@ export const Rail = () => {
             {({ isActive }) => {
               const on =
                 isActive || (alsoMatch && pathname.startsWith(alsoMatch));
-              const Glyph = on ? ActiveIcon : Icon;
-              return <Glyph size={24} />;
+              // Lucide has no filled icons: the active page gets a heavier line instead.
+              return <Icon size={24} strokeWidth={on ? 2.6 : 2} />;
             }}
           </NavLink>
         ))}

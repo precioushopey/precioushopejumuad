@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 
 type CarouselProps = {
   images: string[];
@@ -29,7 +29,7 @@ const Carousel: React.FC<CarouselProps> = ({
 
   const prevSlide = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length,
     );
   };
 
@@ -56,14 +56,14 @@ const Carousel: React.FC<CarouselProps> = ({
         className="absolute top-1/2 left-2 transform -translate-y-1/2 white-button p-1.5"
         onClick={prevSlide}
       >
-        <MdNavigateBefore size={20} />
+        <LuChevronLeft size={20} />
       </button>
 
       <button
         className="absolute top-1/2 right-2 transform -translate-y-1/2 white-button p-1.5"
         onClick={nextSlide}
       >
-        <MdNavigateNext size={20} />
+        <LuChevronRight size={20} />
       </button>
     </div>
   );

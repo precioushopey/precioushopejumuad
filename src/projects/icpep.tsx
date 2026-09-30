@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import { FiHeart, FiTarget } from "react-icons/fi";
 import {
-  MdLightbulbOutline,
-  MdOutlineBuild,
-  MdOutlineChecklist,
-  MdOutlineKeyboardArrowLeft,
-  MdOutlineWbSunny,
-} from "react-icons/md";
+  LuChevronLeft,
+  LuHeart,
+  LuLightbulb,
+  LuListChecks,
+  LuSun,
+  LuTarget,
+  LuWrench,
+} from "react-icons/lu";
 
 const ICpEP = () => {
   const tags = ["Figma", "Canva", "Photoshop"];
@@ -19,37 +20,37 @@ const ICpEP = () => {
 
   const designSteps = [
     {
-      icon: <FiHeart size={20} />,
+      icon: <LuHeart size={20} />,
       title: "Empathize",
       description:
         "As the sitting president of ICpEP.SE – USTP, I had firsthand insight into the struggles students and officers faced with our outdated website. I regularly engaged with members, gathered concerns during meetings, and observed how limited the current site was in representing our activities.",
     },
     {
-      icon: <FiTarget size={20} />,
+      icon: <LuTarget size={20} />,
       title: "Define",
       description:
         "With clear feedback from the organization and personal experience managing its digital presence, I defined our pain points: lack of visual appeal, cluttered information flow, and no clear platform to showcase our achievements. The site failed to reflect the vibrant, innovative spirit of our members.",
     },
     {
-      icon: <MdLightbulbOutline size={20} />,
+      icon: <LuLightbulb size={20} />,
       title: "Ideate",
       description:
         "Taking everything I knew from both leadership and design perspectives, I began drafting solutions. I explored ways to simplify navigation, amplify storytelling through visuals, and create dedicated sections for projects, events, and member engagement.",
     },
     {
-      icon: <MdOutlineBuild size={20} />,
+      icon: <LuWrench size={20} />,
       title: "Prototype",
       description:
         "I translated these ideas into high-fidelity prototypes using Figma, iterating on structure, colors, and component systems that would bring consistency and impact. The design aimed to be modular and scalable, considering future content and organizational growth. Every element, from the homepage hero to the blogs, was crafted to be a bold yet professional representation of our org.",
     },
     {
-      icon: <MdOutlineChecklist size={20} />,
+      icon: <LuListChecks size={20} />,
       title: "Test",
       description:
         "Even in the design stage, I circulated the prototypes to fellow officers and members for feedback. As president, I facilitated open discussions on what worked and what didn’t. These feedback sessions were incredibly valuable in refining user flow, content placement, and visual clarity. Design choices were revisited and adjusted based on what resonated most with our community.",
     },
     {
-      icon: <MdOutlineWbSunny size={20} />,
+      icon: <LuSun size={20} />,
       title: "Result",
       description:
         "The result is a comprehensive website redesign that not only looks modern and cohesive but serves as a powerful tool for engagement, communication, and pride. Though still in the design phase, the prototype is aligned with the real-world needs of the organization, offering a future-ready foundation for implementation.",
@@ -228,7 +229,7 @@ const ICpEP = () => {
             target="_top"
             className="w-fit flex items-center gap-x-2 white-button"
           >
-            <MdOutlineKeyboardArrowLeft size={20} />
+            <LuChevronLeft size={20} />
             Back to Projects
           </Link>
         </div>

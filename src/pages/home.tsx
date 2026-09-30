@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MdMoreHoriz } from "react-icons/md";
+import { LuEllipsis } from "react-icons/lu";
 import { projects } from "../data/projects";
 import { blogPosts } from "../data/blogPosts";
 import { AnalogClock } from "../components/AnalogClock";
@@ -33,7 +33,7 @@ const Home = () => {
               aria-label="See all projects"
               className="rounded-full p-1 hover:bg-cream/15"
             >
-              <MdMoreHoriz size={22} aria-hidden />
+              <LuEllipsis size={22} aria-hidden />
             </Link>
           </div>
           {featured.map((p) => (
@@ -48,7 +48,9 @@ const Home = () => {
                 className="h-14 w-16 shrink-0 rounded-xl object-cover"
               />
               <span className="min-w-0">
-                <span className="block truncate text-sm font-medium">{p.title}</span>
+                <span className="block truncate text-sm font-medium">
+                  {p.title}
+                </span>
                 <span className="block truncate text-xs text-cream/70">
                   {p.tags.slice(0, 3).join(" · ")}
                 </span>
@@ -71,8 +73,15 @@ const Home = () => {
           <section aria-label="Tools" className="glass-card p-4">
             <ul className="grid grid-cols-4 gap-3">
               {tools.map((t) => (
-                <li key={t.name} className="tile-outline aspect-square bg-cream/90 p-3">
-                  <img src={t.src} alt={t.name} className="h-full w-full object-contain" />
+                <li
+                  key={t.name}
+                  className="tile-outline aspect-square bg-cream/90 p-3"
+                >
+                  <img
+                    src={t.src}
+                    alt={t.name}
+                    className="h-full w-full object-contain"
+                  />
                 </li>
               ))}
             </ul>
@@ -80,7 +89,10 @@ const Home = () => {
         </div>
       </div>
 
-      <section aria-label="Featured projects" className="grid grid-cols-3 gap-3 sm:gap-5">
+      <section
+        aria-label="Featured projects"
+        className="grid grid-cols-3 gap-3 sm:gap-5"
+      >
         {featured.map((p) => (
           <Link
             key={p.url}

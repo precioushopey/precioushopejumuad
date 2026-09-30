@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { LuChevronLeft } from "react-icons/lu";
 
 const Blog14 = () => {
   return (
@@ -260,7 +260,7 @@ const Blog14 = () => {
           target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
-          <MdOutlineKeyboardArrowLeft size={20} />
+          <LuChevronLeft size={20} />
           Back to Blog
         </Link>
       </footer>

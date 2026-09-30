@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MdArrowOutward } from "react-icons/md";
+import { LuArrowUpRight } from "react-icons/lu";
 import { blogPosts } from "../data/blogPosts";
 
 const Blog = () => {
@@ -40,7 +40,7 @@ const Blog = () => {
                 </p>
               </div>
               <span className="arrow-button self-end" aria-hidden>
-                <MdArrowOutward size={18} />
+                <LuArrowUpRight size={18} />
               </span>
             </div>
           </Link>

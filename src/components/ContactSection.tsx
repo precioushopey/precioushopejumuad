@@ -1,7 +1,12 @@
 import { FormEvent, useState } from "react";
 import { useToast } from "../hooks/use-toast";
-import { MdOutlineEmail, MdOutlineSend } from "react-icons/md";
-import { FiLinkedin, FiFacebook, FiInstagram } from "react-icons/fi";
+import {
+  LuFacebook,
+  LuInstagram,
+  LuLinkedin,
+  LuMail,
+  LuSend,
+} from "react-icons/lu";
 
 type ContactItem = {
   label: string;
@@ -16,26 +21,26 @@ const contactItems: ContactItem[] = [
     label: "Email",
     href: "mailto:jumuad.precious@gmail.com",
     display: "jumuad.precious@gmail",
-    Icon: MdOutlineEmail,
+    Icon: LuMail,
     isEmail: true,
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/precioushopejumuad/",
     display: "in/precioushopejumuad",
-    Icon: FiLinkedin,
+    Icon: LuLinkedin,
   },
   {
     label: "Facebook",
     href: "https://www.facebook.com/precioushope.jumuad",
     display: "precioushope.jumuad",
-    Icon: FiFacebook,
+    Icon: LuFacebook,
   },
   {
     label: "Instagram",
     href: "https://www.instagram.com/yourprecioushope/",
     display: "yourprecioushope",
-    Icon: FiInstagram,
+    Icon: LuInstagram,
   },
 ];
 
@@ -130,7 +135,7 @@ export const ContactSection = () => {
                 name="name"
                 required
                 className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent"
-placeholder="Precious Hope Jumuad..."
+                placeholder="Precious Hope Jumuad..."
               />
             </div>
 
@@ -144,7 +149,7 @@ placeholder="Precious Hope Jumuad..."
                 name="email"
                 required
                 className="w-full px-4 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent"
-placeholder="jumuad.precious@gmail.com"
+                placeholder="jumuad.precious@gmail.com"
               />
             </div>
 
@@ -167,7 +172,7 @@ placeholder="jumuad.precious@gmail.com"
               className={`white-button w-full flex items-center justify-center text-base gap-x-2`}
             >
               {isSubmitting ? "Sending..." : "Send Message"}
-              <MdOutlineSend
+              <LuSend
                 size={20}
                 className="text-[var(--brown-accent)] hover:text-[var(--yellow-accent)]"
               />

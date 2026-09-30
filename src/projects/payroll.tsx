@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import { FiHeart, FiTarget } from "react-icons/fi";
 import {
-  MdLightbulbOutline,
-  MdOutlineBuild,
-  MdOutlineChecklist,
-  MdOutlineKeyboardArrowLeft,
-  MdOutlineWbSunny,
-} from "react-icons/md";
+  LuChevronLeft,
+  LuHeart,
+  LuLightbulb,
+  LuListChecks,
+  LuSun,
+  LuTarget,
+  LuWrench,
+} from "react-icons/lu";
 
 const Payroll = () => {
   const tags = ["Next.js", "TypeScript", "TailwindCSS", "Figma", "Canva"];
@@ -25,37 +26,37 @@ const Payroll = () => {
 
   const designSteps = [
     {
-      icon: <FiHeart size={20} />,
+      icon: <LuHeart size={20} />,
       title: "Empathize",
       description:
         "It started with listening and understanding the frustrations of HR staff bogged down by repetitive tasks and error-prone manual entries.",
     },
     {
-      icon: <FiTarget size={20} />,
+      icon: <LuTarget size={20} />,
       title: "Define",
       description:
         "Their pain was clear: scattered data, inconsistent records, and a lack of centralized tools to manage payroll and attendance efficiently.",
     },
     {
-      icon: <MdLightbulbOutline size={20} />,
+      icon: <LuLightbulb size={20} />,
       title: "Ideate",
       description:
         "I explored solutions that would reduce friction—automated syncing, real-time payroll previews, and a clean dashboard.",
     },
     {
-      icon: <MdOutlineBuild size={20} />,
+      icon: <LuWrench size={20} />,
       title: "Prototype",
       description:
         "Wireframes turned into interactive mockups, guided by HR’s feedback.",
     },
     {
-      icon: <MdOutlineChecklist size={20} />,
+      icon: <LuListChecks size={20} />,
       title: "Test",
       description:
         "Through live trials and continuous iterations, the system evolved into a responsive, reliable, and user-centric tool built specifically for their needs.",
     },
     {
-      icon: <MdOutlineWbSunny size={20} />,
+      icon: <LuSun size={20} />,
       title: "Result",
       description:
         "The result was a fully deployed, dependable payroll system that seamlessly met HR’s real-world needs with accuracy, usability, and trust.",
@@ -243,7 +244,7 @@ const Payroll = () => {
             target="_top"
             className="w-fit flex items-center gap-x-2 white-button"
           >
-            <MdOutlineKeyboardArrowLeft size={20} />
+            <LuChevronLeft size={20} />
             Back to Projects
           </Link>
         </div>

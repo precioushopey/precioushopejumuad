@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { SkillsSection } from "../components/SkillsSection";
 import { ContactSection } from "../components/ContactSection";
-import { MdOutlineKeyboardArrowLeft, MdOutlineOpenInNew } from "react-icons/md";
+import { LuChevronLeft, LuExternalLink } from "react-icons/lu";
 
 const About = () => {
   type Job = {
@@ -422,7 +422,7 @@ const About = () => {
                       target="_blank"
                     >
                       <span>Show Credential</span>
-                      <MdOutlineOpenInNew />
+                      <LuExternalLink />
                     </a>
                   </li>
                 </ul>
@@ -440,7 +440,7 @@ const About = () => {
           target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
-          <MdOutlineKeyboardArrowLeft size={20} />
+          <LuChevronLeft size={20} />
           Back to Home
         </Link>
       </footer>

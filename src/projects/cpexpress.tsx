@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import { FiHeart, FiTarget } from "react-icons/fi";
 import {
-  MdLightbulbOutline,
-  MdOutlineBuild,
-  MdOutlineChecklist,
-  MdOutlineKeyboardArrowLeft,
-  MdOutlineWbSunny,
-} from "react-icons/md";
+  LuChevronLeft,
+  LuHeart,
+  LuLightbulb,
+  LuListChecks,
+  LuSun,
+  LuTarget,
+  LuWrench,
+} from "react-icons/lu";
 
 const CpExpress = () => {
   const tags = ["Figma", "Canva", "Photoshop"];
@@ -19,37 +20,37 @@ const CpExpress = () => {
 
   const designSteps = [
     {
-      icon: <FiHeart size={20} />,
+      icon: <LuHeart size={20} />,
       title: "Empathize",
       description:
         "I noticed that many students longed for an outlet to express unspoken thoughts, especially around Valentine’s Day. This inspired the idea of an anonymous platform where they could share freely and safely.",
     },
     {
-      icon: <FiTarget size={20} />,
+      icon: <LuTarget size={20} />,
       title: "Define",
       description:
         "The challenge was clear: build a space for anonymous confessions that felt safe, moderated, and inviting, ensuring emotional honesty without risking misuse.",
     },
     {
-      icon: <MdLightbulbOutline size={20} />,
+      icon: <LuLightbulb size={20} />,
       title: "Ideate",
       description:
         "I brainstormed various formats and features, ultimately deciding on a minimalist submission system with a moderation layer to maintain trust and community standards.",
     },
     {
-      icon: <MdOutlineBuild size={20} />,
+      icon: <LuWrench size={20} />,
       title: "Prototype",
       description:
         "I developed a simple, themed prototype with a user-friendly form and backend moderation, allowing for quick, safe interaction while keeping the experience visually engaging.",
     },
     {
-      icon: <MdOutlineChecklist size={20} />,
+      icon: <LuListChecks size={20} />,
       title: "Test",
       description:
         "Launching the platform on Valentine’s Day revealed key insights about user behavior and moderation flow, allowing us to iterate in real time and enhance the experience.",
     },
     {
-      icon: <MdOutlineWbSunny size={20} />,
+      icon: <LuSun size={20} />,
       title: "Result",
       description:
         "The platform collected a total of 94 confessions from our target audience, validating both the concept and the need for a space like this, building user interest ahead of the next initiative, CpExpress: Speak Now.",
@@ -72,9 +73,7 @@ const CpExpress = () => {
       <header>
         <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
           <h1 className="text-3xl sm:text-6xl">CpExpress:</h1>
-          <h2 className="font-display text-3xl sm:text-5xl">
-            CpE Confessions
-          </h2>
+          <h2 className="font-display text-3xl sm:text-5xl">CpE Confessions</h2>
         </div>
         <div>
           <div className="flex flex-wrap justify-center gap-4 text-sm animate-fade-in-delay-1">
@@ -230,7 +229,7 @@ const CpExpress = () => {
             target="_top"
             className="w-fit flex items-center gap-x-2 white-button"
           >
-            <MdOutlineKeyboardArrowLeft size={20} />
+            <LuChevronLeft size={20} />
             Back to Projects
           </Link>
         </div>

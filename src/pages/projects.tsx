@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from "react-router-dom";
-import { MdArrowOutward } from "react-icons/md";
+import { LuArrowUpRight } from "react-icons/lu";
 import { categories, projects, type Category } from "../data/projects";
 import { PillTabs } from "../components/PillTabs";
 
@@ -13,7 +13,7 @@ const ProjectsPage = () => {
   const active: Category = isCategory(raw) ? raw : "all";
 
   const filtered = projects.filter(
-    (project) => active === "all" || project.category === active
+    (project) => active === "all" || project.category === active,
   );
 
   return (
@@ -50,9 +50,11 @@ const ProjectsPage = () => {
                   ))}
                 </div>
                 <div className="flex flex-row items-center justify-between gap-3">
-                  <h2 className="text-left text-xl font-semibold">{project.title}</h2>
+                  <h2 className="text-left text-xl font-semibold">
+                    {project.title}
+                  </h2>
                   <span className="arrow-button" aria-hidden>
-                    <MdArrowOutward size={18} />
+                    <LuArrowUpRight size={18} />
                   </span>
                 </div>
               </div>

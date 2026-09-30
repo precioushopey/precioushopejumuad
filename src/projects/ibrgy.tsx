@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import { FiHeart, FiTarget } from "react-icons/fi";
 import {
-  MdLightbulbOutline,
-  MdOutlineBuild,
-  MdOutlineChecklist,
-  MdOutlineKeyboardArrowLeft,
-  MdOutlineWbSunny,
-} from "react-icons/md";
+  LuChevronLeft,
+  LuHeart,
+  LuLightbulb,
+  LuListChecks,
+  LuSun,
+  LuTarget,
+  LuWrench,
+} from "react-icons/lu";
 
 const Ibrgy = () => {
   const tags = ["React", "JavaScript", "TailwindCSS", "Figma"];
@@ -15,37 +16,37 @@ const Ibrgy = () => {
 
   const designSteps = [
     {
-      icon: <FiHeart size={20} />,
+      icon: <LuHeart size={20} />,
       title: "Empathize",
       description:
         "We stood at the heart of community life, listening to residents’ frustrations over long queues and barangay staff’s struggle with manual logs and paperwork.",
     },
     {
-      icon: <FiTarget size={20} />,
+      icon: <LuTarget size={20} />,
       title: "Define",
       description:
         "We heard the call clearly: our barangays needed a system that made document requests transparent, traceable, and fast.",
     },
     {
-      icon: <MdLightbulbOutline size={20} />,
+      icon: <LuLightbulb size={20} />,
       title: "Ideate",
       description:
         "We sketched out solutions: a dashboard for staff, a user-friendly form flow for residents, and real-time status updates to keep both sides informed.",
     },
     {
-      icon: <MdOutlineBuild size={20} />,
+      icon: <LuWrench size={20} />,
       title: "Prototype",
       description:
         "Early wireframes evolved into a working UI, using Figma prototypes and user-testing sessions to fine-tune every button and message.",
     },
     {
-      icon: <MdOutlineChecklist size={20} />,
+      icon: <LuListChecks size={20} />,
       title: "Test",
       description:
         "Live trials confirmed it worked—no bugs, no errors—just satisfied residents and barangay officials praising its efficiency.",
     },
     {
-      icon: <MdOutlineWbSunny size={20} />,
+      icon: <LuSun size={20} />,
       title: "Result",
       description:
         "The final version surpassed expectations: A+ usability, seamless performance, and glowing feedback. Residents found it intuitive, personnel found it reliable, and everyone found time saved. It wasn't just accepted, it was embraced.",
@@ -232,7 +233,7 @@ const Ibrgy = () => {
             target="_top"
             className="w-fit flex items-center gap-x-2 white-button"
           >
-            <MdOutlineKeyboardArrowLeft size={20} />
+            <LuChevronLeft size={20} />
             Back to Projects
           </Link>
         </div>

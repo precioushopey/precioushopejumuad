@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MdOutlineKeyboardArrowLeft, MdOutlineOpenInNew } from "react-icons/md";
+import { LuChevronLeft, LuExternalLink } from "react-icons/lu";
 
 const Blog6 = () => {
   return (
@@ -267,7 +267,7 @@ const Blog6 = () => {
           >
             <p>Reflections 2023: 8-Bit Memory — Reimagined.</p>
           </a>
-          <MdOutlineOpenInNew size={20} />
+          <LuExternalLink size={20} />
         </section>
       </div>
 
@@ -277,7 +277,7 @@ const Blog6 = () => {
           target="_top"
           className="w-fit flex items-center gap-x-2 white-button"
         >
-          <MdOutlineKeyboardArrowLeft size={20} />
+          <LuChevronLeft size={20} />
           Back to Blog
         </Link>
       </footer>

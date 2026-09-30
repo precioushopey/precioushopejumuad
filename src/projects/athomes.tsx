@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import { FiHeart, FiTarget } from "react-icons/fi";
 import {
-  MdLightbulbOutline,
-  MdOutlineBuild,
-  MdOutlineChecklist,
-  MdOutlineKeyboardArrowLeft,
-  MdOutlineWbSunny,
-} from "react-icons/md";
+  LuChevronLeft,
+  LuHeart,
+  LuLightbulb,
+  LuListChecks,
+  LuSun,
+  LuTarget,
+  LuWrench,
+} from "react-icons/lu";
 
 const AtHomes = () => {
   const tags = ["Figma", "Canva", "Photoshop"];
@@ -18,37 +19,37 @@ const AtHomes = () => {
 
   const designSteps = [
     {
-      icon: <FiHeart size={20} />,
+      icon: <LuHeart size={20} />,
       title: "Empathize",
       description:
         "It started with researching and listening to the agents. We heard the frustrations: cluttered listings, dead-end inquiries, and impersonal platforms that treat home buying like a transaction instead of a journey. These insights shaped the heartbeat of AtHomes.",
     },
     {
-      icon: <FiTarget size={20} />,
+      icon: <LuTarget size={20} />,
       title: "Define",
       description:
         "The core problem became crystal clear: users needed clarity and connection. They wanted to browse properties effortlessly while also being able to talk to real people and those are the agents who could guide them, not just algorithms that filtered listings.",
     },
     {
-      icon: <MdLightbulbOutline size={20} />,
+      icon: <LuLightbulb size={20} />,
       title: "Ideate",
       description:
         "I sketched out experiences that felt more like discovery and less like data entry. From filters that made sense to card designs that highlighted what matters: price, location, and photos. We envisioned a browsing journey that was welcoming and smart.",
     },
     {
-      icon: <MdOutlineBuild size={20} />,
+      icon: <LuWrench size={20} />,
       title: "Prototype",
       description:
         "Using Figma, I designed high-fidelity mockups that reflect the minimal, modern identity of AtHomes. The prototype showcases listing cards, agent profiles, and an interface optimized for both curious first-time buyers and seasoned property seekers.",
     },
     {
-      icon: <MdOutlineChecklist size={20} />,
+      icon: <LuListChecks size={20} />,
       title: "Test",
       description:
         "While full-scale testing is still ahead, early walkthroughs with target users revealed moments of delight like how quick it was to find listings, how intuitive the layout felt, and how refreshing it was to see an agent’s face tied to a property. Their feedback is now shaping the next iteration.",
     },
     {
-      icon: <MdOutlineWbSunny size={20} />,
+      icon: <LuSun size={20} />,
       title: "Result",
       description:
         "Even in this early phase, AtHomes is proving that a warm, human touch can exist in the digital real estate space. The prototype has already sparked excitement, and as development continues, it’s paving the way for a platform that could truly reimagine how people find and feel at home.",
@@ -71,9 +72,7 @@ const AtHomes = () => {
       <header>
         <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
           <h1 className="text-3xl sm:text-6xl">At</h1>
-          <h2 className="font-display text-3xl sm:text-5xl">
-            Homes
-          </h2>
+          <h2 className="font-display text-3xl sm:text-5xl">Homes</h2>
         </div>
         <div>
           <div className="flex flex-wrap justify-center gap-4 text-sm animate-fade-in-delay-1">
@@ -226,7 +225,7 @@ const AtHomes = () => {
             target="_top"
             className="w-fit flex items-center gap-x-2 white-button"
           >
-            <MdOutlineKeyboardArrowLeft size={20} />
+            <LuChevronLeft size={20} />
             Back to Projects
           </Link>
         </div>

@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import { FiHeart, FiTarget } from "react-icons/fi";
 import {
-  MdLightbulbOutline,
-  MdOutlineBuild,
-  MdOutlineChecklist,
-  MdOutlineKeyboardArrowLeft,
-  MdOutlineWbSunny,
-} from "react-icons/md";
+  LuChevronLeft,
+  LuHeart,
+  LuLightbulb,
+  LuListChecks,
+  LuSun,
+  LuTarget,
+  LuWrench,
+} from "react-icons/lu";
 
 const TaleMakers = () => {
   const tags = ["Figma", "Canva", "Ibis Paint", "Aseprite"];
@@ -22,37 +23,37 @@ const TaleMakers = () => {
 
   const designSteps = [
     {
-      icon: <FiHeart size={20} />,
+      icon: <LuHeart size={20} />,
       title: "Empathize",
       description:
         "I began by placing myself in a child’s shoes, wondering what makes storytelling exciting, what captures attention, and how to make it feel magical yet simple. I observed how kids interact with games and educational apps, noticing patterns of play, moments of frustration, and bursts of joy.",
     },
     {
-      icon: <FiTarget size={20} />,
+      icon: <LuTarget size={20} />,
       title: "Define",
       description:
         "One clear insight surfaced: children needed more than just content, they needed agency. The challenge was to design an environment that felt intuitive, joyful, and empowering, while also respecting short attention spans and varied developmental levels.",
     },
     {
-      icon: <MdLightbulbOutline size={20} />,
+      icon: <LuLightbulb size={20} />,
       title: "Ideate",
       description:
         "I explored interactive features like drag-and-drop scenes, tap-to-animate characters, and background music, and imagined a playful interface that felt more like a toy chest than a textbook. I brainstormed endlessly: What if kids could make their stories move? What if they could hear them come alive?",
     },
     {
-      icon: <MdOutlineBuild size={20} />,
+      icon: <LuWrench size={20} />,
       title: "Prototype",
       description:
         "I crafted interactive mockups using Figma and built animated UI samples that brought characters and scenes to life. The prototype focused on showcasing a minimal yet rich user experience, emphasizing ease of use, playful feedback, and visual clarity.",
     },
     {
-      icon: <MdOutlineChecklist size={20} />,
+      icon: <LuListChecks size={20} />,
       title: "Test",
       description:
         "Early testing sessions with peers and feedback from my client helped validate the app’s direction. While the current version is still evolving, those small tests gave insights into what works, what delights, and where the design needs to simplify or expand.",
     },
     {
-      icon: <MdOutlineWbSunny size={20} />,
+      icon: <LuSun size={20} />,
       title: "Result",
       description:
         "While not yet launched, the prototype has already resonated with my peers and client who see its potential. The early results highlight a user experience that is both approachable and imaginative, laying the groundwork for the next stages of development.",
@@ -75,9 +76,7 @@ const TaleMakers = () => {
       <header>
         <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
           <h1 className="text-3xl sm:text-6xl">Tale</h1>
-          <h2 className="font-display text-3xl sm:text-5xl">
-            Makers
-          </h2>
+          <h2 className="font-display text-3xl sm:text-5xl">Makers</h2>
         </div>
         <div>
           <div className="flex flex-wrap justify-center gap-4 text-sm animate-fade-in-delay-1">
@@ -229,7 +228,7 @@ const TaleMakers = () => {
             target="_top"
             className="w-fit flex items-center gap-x-2 white-button"
           >
-            <MdOutlineKeyboardArrowLeft size={20} />
+            <LuChevronLeft size={20} />
             Back to Projects
           </Link>
         </div>
