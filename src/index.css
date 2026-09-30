@@ -238,6 +238,35 @@
   scrollbar-color: rgb(245 234 214 / 0.3) transparent;
 }
 
+/* Chrome/Safari: a slim pill scrollbar inset from the panel's rounded corners, no arrow buttons.
+   The standard properties above are reset because they override ::-webkit-scrollbar styling. */
+@supports selector(::-webkit-scrollbar) {
+  .panel-scroll {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+  .panel-scroll::-webkit-scrollbar {
+    width: 16px;
+  }
+  .panel-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    margin-block: 2rem;
+  }
+  .panel-scroll::-webkit-scrollbar-thumb {
+    background: rgb(245 234 214 / 0.3);
+    background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 9999px;
+  }
+  .panel-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgb(245 234 214 / 0.5);
+    background-clip: content-box;
+  }
+  .panel-scroll::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
 /* Scrolls with the wheel/touch but shows no bar, so cards keep their exact width. */
 .no-scrollbar {
   scrollbar-width: none;
