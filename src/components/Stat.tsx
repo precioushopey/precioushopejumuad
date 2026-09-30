@@ -48,7 +48,7 @@ export const Stat = ({ value, label, tip, tipAlign = "center" }: Props) => {
     >
       <span
         aria-hidden={tip ? true : undefined}
-        className="text-4xl font-medium leading-none"
+        className="text-4xl font-medium leading-none text-accent"
       >
         {shown}
       </span>
