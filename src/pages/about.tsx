@@ -7,7 +7,10 @@ import {
   LuBriefcase,
   LuChevronDown,
   LuExternalLink,
+  LuFacebook,
   LuFolderOpen,
+  LuGlobe,
+  LuInstagram,
   LuStickyNote,
 } from "react-icons/lu";
 import { WindowBar } from "../components/WindowBar";
@@ -19,6 +22,8 @@ const About = () => {
     imgAlt: string;
     /** Extra classes for the logo, e.g. a white tile with padding. */
     imgClass?: string;
+    /** Where the card's link icon goes; set on the first role of each company. */
+    site?: { href: string; kind: "web" | "facebook" | "instagram" };
     title: string;
     company: string;
     employmentType: string;
@@ -51,6 +56,7 @@ const About = () => {
       imgSrc: "/assets/images/ojtconnect_logo.png",
       imgAlt: "OJT Connect",
       imgClass: "bg-white p-2",
+      site: { href: "https://ojtconnect.com/", kind: "web" },
       title: "Product Designer/Developer",
       company: "OJT Connect",
       employmentType: "Part-time",
@@ -83,6 +89,7 @@ const About = () => {
     {
       imgSrc: "/assets/images/roostercat.png",
       imgAlt: "Roostercat LLC",
+      site: { href: "https://roostercat.games/", kind: "web" },
       title: "Designer/Artist",
       company: "Roostercat LLC",
       employmentType: "Part-time",
@@ -99,6 +106,10 @@ const About = () => {
     {
       imgSrc: "/assets/images/lgu_jasaan_hrmo.png",
       imgAlt: "LGU Jasaan - Human Resource Management Office",
+      site: {
+        href: "https://www.facebook.com/profile.php?id=61572533124170",
+        kind: "facebook",
+      },
       title: "Frontend Web Developer",
       company: "LGU Jasaan - Human Resource Management Office",
       employmentType: "Contract",
@@ -124,6 +135,10 @@ const About = () => {
     {
       imgSrc: "/assets/images/rikersiv.jfif",
       imgAlt: "rikersiv",
+      site: {
+        href: "https://www.facebook.com/rikersiv.whatmattersperfectlydesigned",
+        kind: "facebook",
+      },
       title: "Marketing Intern",
       company: "rikersiv",
       employmentType: "Internship",
@@ -371,6 +386,20 @@ const About = () => {
     return groups;
   }, []);
 
+  const siteLink = (job: Job) => {
+    if (!job.site) return undefined;
+    const { href, kind } = job.site;
+    const label = {
+      web: `Open the ${job.company} website`,
+      facebook: `Open ${job.company} on Facebook`,
+      instagram: `Open ${job.company} on Instagram`,
+    }[kind];
+    const Icon = { web: LuGlobe, facebook: LuFacebook, instagram: LuInstagram }[
+      kind
+    ];
+    return { href, label, icon: <Icon size={16} /> };
+  };
+
   // Task-Manager-style summary at the top of each experience card: one row per role.
   const processTable = (group: Job[]) => (
     <table className="w-full table-fixed border-b border-line/40 text-left text-xs">
@@ -494,6 +523,7 @@ const About = () => {
                     <AccordionCard
                       key={first.company + first.date}
                       icon={<LuBriefcase size={14} />}
+                      link={siteLink(first)}
                       title={first.company}
                       summary={processTable(group)}
                     >
@@ -538,6 +568,7 @@ const About = () => {
                   <AccordionCard
                     key={first.company}
                     icon={<LuBriefcase size={14} />}
+                    link={siteLink(first)}
                     title={first.company}
                     summary={processTable(group)}
                   >
