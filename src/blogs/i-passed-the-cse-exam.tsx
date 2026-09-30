@@ -20,7 +20,7 @@ const Blog16 = () => {
 
       <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="space-y-6 animate-fade-in-delay-2">
-          <figure className="space-y-4 text-center">
+          <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/csc1.png"
               alt="Immaculate Conception Parish Church of Jasaan"
@@ -68,7 +68,7 @@ const Blog16 = () => {
         </section>
 
         <section className="space-y-6 animate-fade-in-delay-3">
-          <figure className="space-y-4 text-center">
+          <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/csc2.png"
               alt="Immaculate Conception Parish Church of Jasaan"

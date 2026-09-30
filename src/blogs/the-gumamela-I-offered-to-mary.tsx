@@ -23,7 +23,7 @@ const Blog6 = () => {
 
       <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="space-y-6 animate-fade-in-delay-2">
-          <figure className="space-y-4 text-center">
+          <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/gumamela1.jpg"
               alt="Immaculate Conception Parish Church of Jasaan"
@@ -77,7 +77,7 @@ const Blog6 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/gumamela2.jpg"
               alt="Me and My Sibling's First Communion"
@@ -142,7 +142,7 @@ const Blog6 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-right lg:ml-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
               src="/assets/images/gumamela3.jpg"
               alt="The Restored Retablo (photo courtesy of Arellano J. Galdo III)."
@@ -202,7 +202,7 @@ const Blog6 = () => {
               coming-of-age core memories, my <em>rondalla</em> recitals, and my
               forbidden romantic rendezvous. More importantly, this is my HOME.
             </p>
-            <figure className="space-y-4 text-center">
+            <figure className="space-y-4 text-center [text-align-last:center]">
               <img
                 src="/assets/images/gumamela4.webp"
                 alt="Our Rondalla Performance in front of the Church"

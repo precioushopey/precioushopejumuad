@@ -15,7 +15,7 @@ const Blog14 = () => {
 
       <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="animate-fade-in-delay-1">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/college.png"
               alt="My College Graduation Photo"
@@ -72,7 +72,7 @@ const Blog14 = () => {
         </section>
 
         <section className="animate-fade-in-delay-2">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-right lg:ml-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
               src="/assets/images/vale1.jpg"
               alt="My Senior High School Graduatioj Photo"
@@ -125,7 +125,7 @@ const Blog14 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/jhs.jpg"
               alt="My Junior High School Completion Photo"
@@ -187,7 +187,7 @@ const Blog14 = () => {
         </section>
 
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-delay-4 clear-both">
-          <figure className="space-y-4 text-center">
+          <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/elementary.jpg"
               alt="My Elementary Graduation Photo"
@@ -210,7 +210,7 @@ const Blog14 = () => {
               everything.
             </p>
           </article>
-          <figure className="space-y-4 text-center">
+          <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/preschool.jpg"
               alt="My Pre-School Graduation Photo"

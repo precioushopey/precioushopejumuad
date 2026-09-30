@@ -190,19 +190,19 @@ const Blog3 = () => {
             Success Indicator
           </h3>
           <ul className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            <li className="flex justify-center items-center text-center rounded-4xl border p-2">
+            <li className="flex justify-center items-center text-center [text-align-last:center] rounded-4xl border p-2">
               Self-Actualization
             </li>
-            <li className="flex justify-center items-center text-center rounded-4xl border p-2">
+            <li className="flex justify-center items-center text-center [text-align-last:center] rounded-4xl border p-2">
               Health and Beauty
             </li>
-            <li className="flex justify-center items-center text-center rounded-4xl border p-2">
+            <li className="flex justify-center items-center text-center [text-align-last:center] rounded-4xl border p-2">
               Respectable Status
             </li>
-            <li className="flex justify-center items-center text-center rounded-4xl border p-2">
+            <li className="flex justify-center items-center text-center [text-align-last:center] rounded-4xl border p-2">
               Financial Independence
             </li>
-            <li className="flex justify-center items-center text-center rounded-4xl border p-2">
+            <li className="flex justify-center items-center text-center [text-align-last:center] rounded-4xl border p-2">
               Selective but Authentic Connections
             </li>
           </ul>

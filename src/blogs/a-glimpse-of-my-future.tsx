@@ -23,7 +23,7 @@ const Blog5 = () => {
       </section>
 
       <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="text-right animate-fade-in-delay-2">
+        <section className="text-right [text-align-last:right] animate-fade-in-delay-2">
           <p>232, M.L. Quezon St., Lower Jasaan</p>
           <p>Jasaan 9003, Misamis Oriental</p>
           <p>March 10, 2023</p>
@@ -39,7 +39,7 @@ const Blog5 = () => {
         <section className="space-y-6 animate-fade-in-delay-4">
           <p className="text-left">Dear Engr. Jumuad,</p>
           <article className="space-y-4">
-            <p className="text-center">
+            <p className="text-center [text-align-last:center]">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>Out of the night that covers me,</p>
@@ -67,7 +67,7 @@ const Blog5 = () => {
               a moment to slow down, lie your back somewhere comfortable, and
               give all your attention to this message.
             </p>
-            <p className="text-center">
+            <p className="text-center [text-align-last:center]">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>In the fell clutch of circumstance</p>
@@ -103,7 +103,7 @@ const Blog5 = () => {
               spiritually.{" "}
               <u>I hope we illuminate that radiance to our fellows.</u>
             </p>
-            <p className="text-center">
+            <p className="text-center [text-align-last:center]">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>Beyond this place of wrath and tears</p>
@@ -139,7 +139,7 @@ const Blog5 = () => {
               feel proud that we did this to ourselves by the time you read
               this. Cheers to loving ourselves.
             </p>
-            <p className="text-center">
+            <p className="text-center [text-align-last:center]">
               <blockquote cite="https://www.poetryfoundation.org/poems/51642/invictus">
                 <em>
                   <p>It matters not how strait the gate,</p>
@@ -173,7 +173,7 @@ const Blog5 = () => {
           </article>
         </section>
 
-        <section className="text-right">
+        <section className="text-right [text-align-last:right]">
           <p>Always loving,</p>
           <p>
             <b>PRECIOUS HOPE T. JUMUAD</b>

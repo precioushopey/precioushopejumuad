@@ -21,7 +21,7 @@ const Blog11 = () => {
 
       <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-3/5 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-3/5 lg:float-left lg:mr-6">
             <img
               src="/assets/images/poem.jpg"
               alt="Coins for the Child"

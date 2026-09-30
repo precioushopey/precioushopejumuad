@@ -21,7 +21,7 @@ const Blog2 = () => {
 
       <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="space-y-6 animate-fade-in-delay-2">
-          <figure className="space-y-4 text-center">
+          <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/vale2.jpg"
               alt="Delivery of the Words of Gratitude Speech by Yours Truly"
@@ -68,7 +68,7 @@ const Blog2 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/vale1.jpg"
               alt="My Graduation Photo"
@@ -139,7 +139,7 @@ const Blog2 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-right lg:ml-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
               src="/assets/images/vale3.jpg"
               alt="My Classmates at Grade 12- STEM B St. Luke"
@@ -207,7 +207,7 @@ const Blog2 = () => {
               know that things will go on and things will always change, but the
               future is absolute, and it's coming upon us.
             </p>
-            <figure className="space-y-4 text-center">
+            <figure className="space-y-4 text-center [text-align-last:center]">
               <img
                 src="/assets/images/vale4.jpg"
                 alt="Presentation Slide with My Awards"

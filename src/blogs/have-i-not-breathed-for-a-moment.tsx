@@ -26,7 +26,7 @@ const Blog4 = () => {
 
       <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="space-y-6 animate-fade-in-delay-2">
-          <figure className="space-y-4 text-center">
+          <figure className="space-y-4 text-center [text-align-last:center]">
             <img
               src="/assets/images/photos3.jpg"
               alt="Lake Gumaod at Gumaod, Claveria, Misamis Oriental"
@@ -88,7 +88,7 @@ const Blog4 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-left lg:mr-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/photos2.jpg"
               alt="Sunset on the Rubber Trees at Gumaod, Claveria, Misamis"
@@ -160,7 +160,7 @@ const Blog4 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center lg:w-1/2 lg:float-right lg:ml-6">
+          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
               src="/assets/images/photos4.jpg"
               alt="Flowers at Gumaod, Claveria, Misamis Oriental"
@@ -228,7 +228,7 @@ const Blog4 = () => {
               thousand other things to gladden the soul. That was more than
               enough for happiness.
             </p>
-            <figure className="space-y-4 text-center">
+            <figure className="space-y-4 text-center [text-align-last:center]">
               <img
                 src="/assets/images/photos5.jpg"
                 alt="Lake Gumaod at Gumaod, Claveria, Misamis Oriental"
