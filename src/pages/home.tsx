@@ -75,7 +75,7 @@ const Home = () => {
         <div className="flex animate-fade-in-delay-2 flex-col gap-5 opacity-0">
           <section aria-label="At a glance" className="glass-card">
             <WindowBar icon={<LuActivity size={14} />} title="At a glance" />
-            <div className="flex flex-wrap items-center justify-around gap-x-4 gap-y-3 p-4">
+            <div className="flex flex-wrap items-center justify-around gap-x-2 gap-y-3 p-3">
               <PhilippineClock />
               <span aria-hidden className="hidden h-20 w-px bg-line sm:block" />
               <RingGauge

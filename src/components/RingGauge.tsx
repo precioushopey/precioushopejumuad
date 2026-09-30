@@ -66,7 +66,7 @@ export const RingGauge = ({
         tip ? "group cursor-help rounded-2xl" : ""
       }`}
     >
-      <div className="relative h-24 w-24">
+      <div className="relative h-20 w-20">
         <svg
           viewBox="0 0 100 100"
           aria-hidden
@@ -95,7 +95,7 @@ export const RingGauge = ({
             style={{ "--ring-full": CIRCUMFERENCE } as CSSProperties}
           />
         </svg>
-        <span className="absolute inset-0 flex items-center justify-center text-2xl font-medium">
+        <span className="absolute inset-0 flex items-center justify-center text-xl font-medium">
           {shown}
         </span>
       </div>

@@ -19,7 +19,7 @@ export const PhilippineClock = () => {
         hours={hours}
         minutes={minutes}
         seconds={seconds}
-        className="h-24 w-24"
+        className="h-20 w-20"
       />
       {/* Same style as the labels under the ring gauges. */}
       <p className="text-xs text-cream/70">
