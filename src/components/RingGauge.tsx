@@ -11,8 +11,12 @@ export const RingGauge = ({ value, max, label }: Props) => {
       aria-label={`${value} ${label}`}
       className="flex flex-col items-center gap-1"
     >
-      <div className="relative h-20 w-20">
-        <svg viewBox="0 0 100 100" aria-hidden className="h-full w-full -rotate-90">
+      <div className="relative h-24 w-24">
+        <svg
+          viewBox="0 0 100 100"
+          aria-hidden
+          className="h-full w-full -rotate-90"
+        >
           <circle
             cx="50"
             cy="50"
@@ -34,7 +38,7 @@ export const RingGauge = ({ value, max, label }: Props) => {
             strokeDashoffset={CIRCUMFERENCE * (1 - fraction)}
           />
         </svg>
-        <span className="absolute inset-0 flex items-center justify-center text-xl font-medium">
+        <span className="absolute inset-0 flex items-center justify-center text-2xl font-medium">
           {value}
         </span>
       </div>
