@@ -31,7 +31,7 @@ const Suggestions = ({
   seeAllTo: string;
   items: Item[];
 }) => (
-  <section aria-label={label} className="glass-card">
+  <section aria-label={label} className="xl:glass-card">
     <WindowBar
       icon={icon}
       title={title}
@@ -46,7 +46,7 @@ const Suggestions = ({
         </Link>
       }
     />
-    <div className="grid grid-cols-2 gap-x-2 gap-y-1 p-3 lg:grid-cols-3 xl:grid-cols-1">
+    <div className="grid grid-cols-2 gap-x-2 gap-y-1 pt-3 lg:grid-cols-3 xl:grid-cols-1 xl:p-3">
       {items.map((item, index) => (
         // Under the page (below xl) only three are shown, two while the grid has two columns (below lg, so
         // no tile is left alone on a second row); the column at xl shows all.
