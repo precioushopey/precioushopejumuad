@@ -274,3 +274,75 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* Phones: one yellow pill that glides between the bottom-nav items. The active link (marked
+   data-active by Rail.tsx) becomes the pill's CSS anchor, so when the page changes the anchor
+   moves and the pill's inset transitions to it. Browsers without anchor positioning (Firefox at
+   the moment) keep the plain look where the active item paints its own yellow background. */
+@supports (anchor-name: --nav-pill) {
+  @media (max-width: 1023.98px) {
+    nav[aria-label="Main"] a[data-active] {
+      anchor-name: --nav-pill;
+    }
+    nav[aria-label="Main"]::before {
+      content: "";
+      position: absolute;
+      position-anchor: --nav-pill;
+      inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
+      z-index: 0;
+      border-radius: 9999px;
+      background: var(--color-accent);
+      transition: inset 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    nav[aria-label="Main"] a {
+      position: relative;
+      z-index: 1;
+      background: transparent;
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+    nav[aria-label="Main"] .nav-label {
+      animation: nav-label-in 0.25s ease-out 0.12s both;
+    }
+  }
+}
+
+@keyframes nav-label-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Desktop side rail: the yellow indicator bar is one element anchored to the active icon, so it
+   slides up and down between icons when the page changes. Without anchor positioning the active
+   icon keeps drawing its own bar (Rail.tsx's lg:before classes). */
+@supports (anchor-name: --nav-pill) {
+  @media (min-width: 1024px) {
+    nav[aria-label="Main"] a[data-active] {
+      anchor-name: --nav-pill;
+    }
+    nav[aria-label="Main"] a[data-active]::before {
+      display: none;
+    }
+    nav[aria-label="Main"]::before {
+      content: "";
+      position: absolute;
+      position-anchor: --nav-pill;
+      left: 7px;
+      width: 6px;
+      top: calc(anchor(top) + 6px);
+      bottom: calc(anchor(bottom) + 6px);
+      border-radius: 9999px;
+      background: var(--color-accent);
+      transition:
+        top 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    nav[aria-label="Main"] a {
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+  }
+}
