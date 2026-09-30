@@ -5,6 +5,10 @@
   --font-sans: "Poppins", sans-serif;
   --color-accent: #ffc93c;
   --color-ink: #1f1a17;
+  --color-cream: #f5ead6;
+  --color-panel: rgb(28 20 16 / 0.8);
+  --color-card: rgb(40 29 22 / 0.78);
+  --color-line: rgb(245 234 214 / 0.35);
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
@@ -45,7 +49,7 @@
 
 @layer base {
   :root {
-    --border-color: rgb(31 26 23 / 0.12);
+    --border-color: rgb(245 234 214 / 0.2);
     --button-color: #fff;
     --text-color: #1f1a17;
     --yellow-accent: #ffc93c;
@@ -108,35 +112,37 @@
   position: fixed;
   inset: -40px;
   z-index: 0;
-  background: center / cover no-repeat url("/assets/images/background.jpg");
+  background:
+    linear-gradient(rgb(14 9 6 / 0.55), rgb(14 9 6 / 0.72)),
+    center / cover no-repeat url("/assets/images/background.jpg");
   filter: blur(28px) saturate(1.15);
 }
 
-/* The big frosted panel. Falls back to near-opaque white without backdrop-filter. */
+/* The big main panel. Falls back to a near-opaque dark fill without backdrop-filter. */
 @utility glass-panel {
   border-radius: 2.5rem;
-  background: rgb(255 255 255 / 0.72);
-  border: 1px solid rgb(255 255 255 / 0.7);
-  box-shadow: 0 20px 60px rgb(0 0 0 / 0.12);
-  -webkit-backdrop-filter: blur(24px) saturate(1.2);
-  backdrop-filter: blur(24px) saturate(1.2);
+  background: var(--color-panel);
+  border: 1px solid rgb(245 234 214 / 0.14);
+  box-shadow: 0 24px 70px rgb(0 0 0 / 0.35);
+  -webkit-backdrop-filter: blur(24px) saturate(1.1);
+  backdrop-filter: blur(24px) saturate(1.1);
 
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    background: rgb(255 255 255 / 0.92);
+    background: rgb(28 20 16 / 0.96);
   }
 }
 
-/* Nested cards inside the panel (bento cards, listing tiles). */
+/* Cards inside the panel and the right column. */
 @utility glass-card {
   border-radius: 2rem;
-  background: rgb(255 255 255 / 0.55);
-  border: 1px solid rgb(255 255 255 / 0.75);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 0.06);
+  background: var(--color-card);
+  border: 1px solid rgb(245 234 214 / 0.12);
+  box-shadow: 0 10px 28px rgb(0 0 0 / 0.25);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    background: rgb(255 255 255 / 0.9);
+    background: rgb(40 29 22 / 0.96);
   }
 }
 
@@ -153,6 +159,46 @@
   color: var(--color-ink);
 }
 
+/* Filled pill (inactive tab). */
+@utility pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background: rgb(245 234 214 / 0.1);
+  color: var(--color-cream);
+  padding: 0.4rem 1.4rem;
+  font-size: 0.875rem;
+  transition: background 0.3s, transform 0.3s;
+
+  &:hover {
+    background: rgb(245 234 214 / 0.2);
+  }
+}
+
+/* Outlined pill (active tab). Self-contained: use instead of `pill`, not with it. */
+@utility pill-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1.5px solid var(--color-accent);
+  background: rgb(255 201 60 / 0.14);
+  color: var(--color-accent);
+  padding: 0.4rem 1.4rem;
+  font-size: 0.875rem;
+}
+
+/* Outlined rounded square (tool tiles). No background so callers can add one. */
+@utility tile-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--color-line);
+  border-radius: 1.25rem;
+}
+
 @utility text-glow {
   /* Legacy no-op: old pages still reference it. */
   text-shadow: none;
@@ -167,7 +213,7 @@
 }
 
 @utility transparent-button {
-  @apply inline-flex items-center justify-center px-6 py-1.5 text-xs sm:text-base rounded-full bg-white/40 border-white/70 backdrop-blur-sm font-medium transition-all duration-300 hover:bg-white/70 hover:scale-105 active:scale-95 cursor-pointer;
+  @apply inline-flex items-center justify-center px-6 py-1.5 text-xs sm:text-base rounded-full bg-cream/10 border-[var(--color-line)] text-cream backdrop-blur-sm font-medium transition-all duration-300 hover:bg-cream/20 hover:scale-105 active:scale-95 cursor-pointer;
 }
 
 #root {
