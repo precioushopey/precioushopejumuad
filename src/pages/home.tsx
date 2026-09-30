@@ -6,16 +6,11 @@ import { WorkExperience } from "../components/WorkExperience";
 import { PhilippineClock } from "../components/PhilippineClock";
 import { PillTabs } from "../components/PillTabs";
 import { RingGauge } from "../components/RingGauge";
-
-const tools = [
-  { name: "Figma", src: "/assets/images/figma.png" },
-  { name: "React", src: "/assets/images/react.png" },
-  { name: "TypeScript", src: "/assets/images/ts.png" },
-  { name: "Tailwind CSS", src: "/assets/images/tailwind.png" },
-];
+import { SkillsCard } from "../components/SkillsCard";
 
 const Home = () => {
   const featured = projects.slice(0, 3);
+  const recent = projects.slice(0, 3);
   const max = Math.max(projects.length, blogPosts.length);
 
   return (
@@ -25,7 +20,7 @@ const Home = () => {
         <PillTabs active="all" />
       </header>
 
-      {/* Two rows of two. Cards in a row stretch to the same height; the Tools card fills its cell. */}
+      {/* Two rows of two. Cards in a row stretch to the same height; the Skills card fills its cell. */}
       <div className="grid grid-cols-[minmax(0,1fr)] gap-5 lg:grid-cols-2">
         <section
           aria-label="Recent Projects"
@@ -42,7 +37,7 @@ const Home = () => {
               <LuArrowRight size={20} aria-hidden />
             </Link>
           </div>
-          {featured.map((p) => (
+          {recent.map((p) => (
             <Link
               key={p.url}
               to={p.url}
@@ -76,28 +71,7 @@ const Home = () => {
             <RingGauge value={blogPosts.length} max={max} label="Blog posts" />
           </section>
 
-          <section
-            aria-label="Tools"
-            className="glass-card flex flex-1 flex-col p-4"
-          >
-            <h2 className="px-1 text-left text-sm text-cream/70">
-              Tools I Use
-            </h2>
-            <ul className="mt-2 grid w-full flex-1 grid-cols-4 content-center gap-3">
-              {tools.map((t) => (
-                <li
-                  key={t.name}
-                  className="tile-outline aspect-square bg-white p-3"
-                >
-                  <img
-                    src={t.src}
-                    alt={t.name}
-                    className="h-full w-full object-contain"
-                  />
-                </li>
-              ))}
-            </ul>
-          </section>
+          <SkillsCard />
         </div>
 
         <WorkExperience />
