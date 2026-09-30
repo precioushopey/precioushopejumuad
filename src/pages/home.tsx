@@ -76,7 +76,7 @@ const Home = () => {
               {tools.map((t) => (
                 <li
                   key={t.name}
-                  className="tile-outline aspect-square bg-cream/90 p-3"
+                  className="tile-outline aspect-square bg-white p-3"
                 >
                   <img
                     src={t.src}
