@@ -33,7 +33,7 @@ const Blog3 = () => {
             />
           </figure>
           <article className="space-y-4">
-            <h3 className="font-display text-xl sm:text-2xl font-bold text-glow">
+            <h3 className="text-xl sm:text-2xl font-bold text-glow">
               General Plan
             </h3>
             <ul className="flex flex-col gap-2">
@@ -95,9 +95,7 @@ const Blog3 = () => {
         </section>
 
         <section className="space-y-4 animate-fade-in-delay-3">
-          <h3 className="font-display text-xl sm:text-2xl font-bold text-glow">
-            Rationale
-          </h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-glow">Rationale</h3>
           <p>
             For the next five years of my life, I’ll just be a student, a
             daughter, a friend, a co-worker or even maybe become someone’s
@@ -111,7 +109,7 @@ const Blog3 = () => {
         </section>
 
         <section className="space-y-4 animate-fade-in-delay-4">
-          <h3 className="font-display text-xl sm:text-2xl font-bold text-glow">
+          <h3 className="text-xl sm:text-2xl font-bold text-glow">
             Abilities and Resources
           </h3>
           <article className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -187,7 +185,7 @@ const Blog3 = () => {
         </section>
 
         <section className="space-y-4 animate-fade-in-delay-4">
-          <h3 className="font-display text-xl sm:text-2xl font-bold text-glow">
+          <h3 className="text-xl sm:text-2xl font-bold text-glow">
             Success Indicator
           </h3>
           <ul className="grid grid-cols-1 md:grid-cols-5 gap-6">

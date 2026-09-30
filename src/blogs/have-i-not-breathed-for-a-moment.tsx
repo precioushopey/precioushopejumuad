@@ -251,7 +251,7 @@ const Blog4 = () => {
               cosmos. Even just for a moment, be but one momentary breath,
               one-millionth of a billion nebulas.
             </p>
-            <p className="font-display text-lg sm:text-xl font-semibold">
+            <p className="text-lg sm:text-xl font-semibold">
               <em>Breathe!</em>
             </p>
           </article>
