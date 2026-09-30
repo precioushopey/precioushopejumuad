@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { LuWrench } from "react-icons/lu";
 import { skills } from "../data/skills";
+import { WindowBar } from "./WindowBar";
 
 const categories = ["all", "frontend", "design", "multimedia"] as const;
 type Category = (typeof categories)[number];
 
+// Skills as a file-list window, like the certifications: a title bar, category filters, and one
+// row per skill (icon, name, category and a proficiency bar).
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
 
@@ -12,49 +16,68 @@ export const SkillsSection = () => {
   );
 
   return (
-    <section id="skills" className="space-y-4">
-      <div className="flex flex-wrap justify-center gap-4">
+    <section
+      id="skills"
+      aria-label="Skills"
+      className="glass-card overflow-hidden"
+    >
+      <WindowBar
+        icon={<LuWrench size={14} />}
+        title={`Skills (${filteredSkills.length} items)`}
+      />
+      <div className="flex flex-wrap gap-2 border-b border-line/40 px-6 py-3">
         {categories.map((category) => (
           <button
             key={category}
+            type="button"
             onClick={() => setActiveCategory(category)}
-            className={`px-4 py-1 text-base rounded-full transition-colors duration-300 capitalize ${
-              activeCategory === category
-                ? "white-button"
-                : "transparent-button border"
+            aria-pressed={activeCategory === category}
+            className={`capitalize ${
+              activeCategory === category ? "pill-outline" : "pill"
             }`}
           >
             {category}
           </button>
         ))}
       </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-        {filteredSkills.map((skill) => (
-          <div
-            key={skill.name}
-            className="flex flex-col justify-center glass-card gap-3 p-4 card-hover"
-          >
-            <div className="flex flex-row items-center gap-x-4">
-              <img src={skill.logo} alt="Logo" width={50} />
-              <div className="text-left">
-                <h3 className="font-semibold text-lg">{skill.name}</h3>
-              </div>
-            </div>
-
-            <div className="w-full bg-cream/15 h-2 rounded-full overflow-hidden">
-              <div
-                className="bg-accent h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                style={{ width: `${skill.level}%` }}
-              />
-            </div>
-
-            <div className="text-right -mt-2">
-              <span>{skill.level}%</span>
-            </div>
-          </div>
-        ))}
+      <div
+        aria-hidden
+        className="hidden grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1.6fr)] gap-3 border-b border-line/40 px-6 py-2 text-left text-xs text-cream/50 md:grid"
+      >
+        <span />
+        <span>Name</span>
+        <span>Category</span>
+        <span>Proficiency</span>
       </div>
+      <ul>
+        {filteredSkills.map((skill) => (
+          <li
+            key={skill.name}
+            className="grid grid-cols-[2rem_minmax(0,1fr)_8rem] items-center gap-3 border-b border-line/30 px-6 py-2.5 text-left last:border-b-0 md:grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1.6fr)]"
+          >
+            <img
+              src={skill.logo}
+              alt=""
+              className="h-8 w-8 rounded-lg border bg-white object-contain p-0.5"
+            />
+            <span className="min-w-0 truncate font-medium">{skill.name}</span>
+            <span className="hidden capitalize text-cream/70 md:block">
+              {skill.category}
+            </span>
+            <span className="flex items-center gap-3">
+              <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-cream/15">
+                <span
+                  className="block h-full rounded-full bg-accent"
+                  style={{ width: `${skill.level}%` }}
+                />
+              </span>
+              <span className="w-9 shrink-0 text-right text-cream/70">
+                {skill.level}%
+              </span>
+            </span>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };
