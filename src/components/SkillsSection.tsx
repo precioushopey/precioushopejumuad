@@ -1,112 +1,10 @@
 import { useState } from "react";
-import { FolderSection } from "./FolderSection";
-
-type Skill = {
-  name: string;
-  level: number;
-  logo: string;
-  category: "frontend" | "design" | "multimedia";
-};
-
-const skills: Skill[] = [
-  {
-    name: "HTML/CSS",
-    level: 95,
-    category: "frontend",
-    logo: "/assets/images/html_css.png",
-  },
-  {
-    name: "JavaScript",
-    level: 80,
-    category: "frontend",
-    logo: "/assets/images/js.png",
-  },
-  {
-    name: "TypeScript",
-    level: 85,
-    category: "frontend",
-    logo: "/assets/images/ts.png",
-  },
-  {
-    name: "React",
-    level: 70,
-    category: "frontend",
-    logo: "/assets/images/react.png",
-  },
-  {
-    name: "Next.js",
-    level: 75,
-    category: "frontend",
-    logo: "/assets/images/next.png",
-  },
-  {
-    name: "Tailwind CSS",
-    level: 90,
-    category: "frontend",
-    logo: "/assets/images/tailwind.png",
-  },
-
-  {
-    name: "Figma",
-    level: 90,
-    category: "design",
-    logo: "/assets/images/figma.png",
-  },
-  {
-    name: "Canva",
-    level: 95,
-    category: "design",
-    logo: "/assets/images/canva.png",
-  },
-  {
-    name: "Adobe Photoshop",
-    level: 85,
-    category: "design",
-    logo: "/assets/images/photoshop.png",
-  },
-  {
-    name: "Adobe Illustrator",
-    level: 75,
-    category: "design",
-    logo: "/assets/images/illustrator.png",
-  },
-  {
-    name: "Aseprite",
-    level: 80,
-    category: "design",
-    logo: "/assets/images/aseprite.png",
-  },
-
-  {
-    name: "CapCut",
-    level: 95,
-    category: "multimedia",
-    logo: "/assets/images/capcut.png",
-  },
-  {
-    name: "Adobe Lightroom",
-    level: 85,
-    category: "multimedia",
-    logo: "/assets/images/lightroom.png",
-  },
-  {
-    name: "IbisPaint",
-    level: 90,
-    category: "multimedia",
-    logo: "/assets/images/ibispaint.png",
-  },
-  {
-    name: "Meta Business Suite",
-    level: 80,
-    category: "multimedia",
-    logo: "/assets/images/meta.png",
-  },
-];
+import { skills } from "../data/skills";
 
 const categories = ["all", "frontend", "design", "multimedia"] as const;
 type Category = (typeof categories)[number];
 
-const SkillsList = () => {
+export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
 
   const filteredSkills = skills.filter(
@@ -160,17 +58,3 @@ const SkillsList = () => {
     </section>
   );
 };
-
-// The Skills folder for the About page: closed until clicked, then shows the filterable list.
-export const SkillsSection = () => (
-  <FolderSection
-    title={
-      <>
-        My <span className="font-display">Skills</span>
-      </>
-    }
-    count={skills.length}
-  >
-    <SkillsList />
-  </FolderSection>
-);
