@@ -7,12 +7,20 @@ export const WindowBar = ({
   icon,
   title,
   status,
+  onClick,
 }: {
   icon?: ReactNode;
   title: string;
   status?: ReactNode;
+  /** Makes the whole bar clickable (the caller still provides a real button for keyboards). */
+  onClick?: () => void;
 }) => (
-  <div className="flex items-center gap-2 border-b border-line/40 px-6 py-2.5 text-left text-xs text-cream/70">
+  <div
+    onClick={onClick}
+    className={`flex items-center gap-2 border-b border-line/40 px-6 py-2.5 text-left text-xs text-cream/70 ${
+      onClick ? "cursor-pointer transition-colors hover:bg-cream/5" : ""
+    }`}
+  >
     {icon && (
       <span aria-hidden className="shrink-0 text-accent">
         {icon}

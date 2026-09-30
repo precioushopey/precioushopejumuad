@@ -26,6 +26,7 @@ export const AccordionCard = ({
       <WindowBar
         icon={icon}
         title={title}
+        onClick={() => setOpen(!open)}
         status={
           <span className="flex items-center gap-1">
             {link && (
@@ -33,6 +34,7 @@ export const AccordionCard = ({
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(event) => event.stopPropagation()}
                 aria-label={link.label}
                 title={link.label}
                 className="flex h-6 w-6 items-center justify-center rounded-full text-cream/50 transition-colors hover:text-cream"
@@ -45,7 +47,6 @@ export const AccordionCard = ({
               aria-expanded={open}
               aria-controls={panelId}
               aria-label={`${open ? "Hide" : "Show"} details for ${title}`}
-              onClick={() => setOpen(!open)}
               className="flex h-6 w-6 items-center justify-center rounded-full text-cream/50 transition-colors hover:text-cream"
             >
               <LuChevronDown
