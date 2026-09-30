@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import { Navbar } from "../components/Navbar";
-import { SparkleBackground } from "../components/SparkleBackground";
 import { FiHeart, FiTarget } from "react-icons/fi";
 import {
   MdLightbulbOutline,
@@ -69,14 +67,11 @@ const AtHomes = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
       <header>
-        <Navbar />
-        <div className="flex justify-center font-bold text-glow animate-fade-in">
-          <h1 className="font-noto text-3xl sm:text-6xl">At</h1>
-          <h2 className="pinyon-script -ml-0 sm:-ml-4 text-5xl sm:text-8xl">
+        <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
+          <h1 className="text-3xl sm:text-6xl">At</h1>
+          <h2 className="font-display text-3xl sm:text-5xl">
             Homes
           </h2>
         </div>
@@ -94,7 +89,7 @@ const AtHomes = () => {
         </div>
       </header>
 
-      <main className="space-y-18 pt-6">
+      <div className="space-y-18 pt-6">
         <section className="space-y-6">
           <Carousel images={images1} />
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
@@ -131,7 +126,7 @@ const AtHomes = () => {
             {designSteps.map((step, index) => (
               <div
                 key={index}
-                className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs space-y-4 p-6 card-hover"
+                className="group overflow-hidden glass-card space-y-4 p-6 card-hover"
               >
                 <div className="flex items-center justify-center border-b pb-2 gap-x-3">
                   {step.icon}
@@ -204,16 +199,16 @@ const AtHomes = () => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center rounded-4xl backdrop-blur-sm border shadow-xs card-hover gap-2 p-4"
+                className="flex flex-col justify-center glass-card card-hover gap-2 p-4"
               >
                 <div className="flex items-center gap-x-4">
                   <div className="text-left">
                     <h3 className="font-medium text-lg">{skill.name}</h3>
                   </div>
                 </div>
-                <div className="w-full bg-white/50 h-2 rounded-full overflow-hidden">
+                <div className="w-full bg-ink/10 h-2 rounded-full overflow-hidden">
                   <div
-                    className="bg-white h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
+                    className="bg-accent h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
                     style={{ width: `${skill.level}%` }}
                   />
                 </div>
@@ -235,7 +230,7 @@ const AtHomes = () => {
             Back to Projects
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

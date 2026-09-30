@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
 import { AiFillInstagram } from "react-icons/ai";
-import { SparkleBackground } from "../components/SparkleBackground";
 import {
   MdEmail,
   MdFacebook,
@@ -133,14 +131,11 @@ const Subay = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-12 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
+    <div className="container mx-auto max-w-5xl space-y-12 py-4 px-8 text-sm sm:text-base">
       <header>
-        <Navbar />
-        <div className="flex justify-center font-bold text-glow animate-fade-in">
-          <h1 className="font-noto text-3xl sm:text-6xl">SUBAY</h1>
-          <h2 className="pinyon-script -ml-2 sm:-ml-4 text-5xl sm:text-8xl">
+        <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
+          <h1 className="text-3xl sm:text-6xl">SUBAY</h1>
+          <h2 className="font-display  text-3xl sm:text-5xl">
             Thesis
           </h2>
         </div>
@@ -158,7 +153,7 @@ const Subay = () => {
         </div>
       </header>
 
-      <main className="space-y-18">
+      <div className="space-y-18">
         <section className="space-y-6">
           <iframe
             src="https://www.youtube.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
@@ -276,7 +271,7 @@ const Subay = () => {
           <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
             Contributors
           </h2>
-          <div className="flex overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover">
+          <div className="flex overflow-hidden glass-card card-hover">
             <img
               src="/assets/images/team.jpg"
               alt="Team"
@@ -293,7 +288,7 @@ const Subay = () => {
                 href={contributor.driveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col md:flex-row overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover"
+                className="group flex flex-col md:flex-row overflow-hidden glass-card card-hover"
               >
                 <img
                   src={contributor.image}
@@ -357,14 +352,14 @@ const Subay = () => {
             We Won Best Thesis and Best Prototype!
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="flex overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover">
+            <div className="flex overflow-hidden glass-card card-hover">
               <img
                 src="/assets/images/best_thesis.jpg"
                 alt="Team"
                 className="w-full aspect-[85/73] object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
-            <div className="flex overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover">
+            <div className="flex overflow-hidden glass-card card-hover">
               <img
                 src="/assets/images/best_prototype.jpg"
                 alt="Team"
@@ -400,16 +395,16 @@ const Subay = () => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center rounded-4xl backdrop-blur-sm border shadow-xs card-hover gap-2 p-4"
+                className="flex flex-col justify-center glass-card card-hover gap-2 p-4"
               >
                 <div className="flex items-center gap-x-4">
                   <div className="text-left">
                     <h3 className="font-medium text-lg">{skill.name}</h3>
                   </div>
                 </div>
-                <div className="w-full bg-white/50 h-2 rounded-full overflow-hidden">
+                <div className="w-full bg-ink/10 h-2 rounded-full overflow-hidden">
                   <div
-                    className="bg-white h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
+                    className="bg-accent h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
                     style={{ width: `${skill.level}%` }}
                   />
                 </div>
@@ -431,7 +426,7 @@ const Subay = () => {
             Back to Projects
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

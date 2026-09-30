@@ -1,21 +1,16 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
-import { SparkleBackground } from "../components/SparkleBackground";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
 const Blog12 = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
       <header className="space-y-6">
-        <Navbar />
         <div className="flex flex-col items-center justify-center animate-fade-in">
           <div className="flex flex-col lg:flex-row gap-x-2">
-            <h1 className="font-noto text-3xl sm:text-4xl font-bold text-glow">
+            <h1 className="text-3xl sm:text-4xl font-bold text-glow">
               All's Well
             </h1>
-            <h2 className="pinyon-script text-4xl sm:text-5xl font-bold text-glow">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-glow">
               That Ends Well
             </h2>
           </div>
@@ -35,7 +30,7 @@ const Blog12 = () => {
         </section>
       </header>
 
-      <main className="bg-[#462317]/80 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
+      <div className="bg-white/60 rounded-4xl backdrop-blur-xs border shadow-xs tracking-normal leading-7 text-left p-8 space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-2">
           <figure className="w-full lg:w-1/2 space-y-4">
             <img
@@ -125,7 +120,7 @@ const Blog12 = () => {
             and building something meaningful.
           </p>
         </section>
-      </main>
+      </div>
 
       <footer className="flex justify-center pt-2">
         <Link

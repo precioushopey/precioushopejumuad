@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
+import { Shell } from "./components/shell/Shell";
 import NotFound from "./pages/not-found";
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -42,6 +43,7 @@ function App() {
       <Analytics />
       <BrowserRouter>
         <Routes>
+          <Route element={<Shell />}>
           <Route index element={<Home />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/projects" element={<ProjectsPage />} />
@@ -95,6 +97,7 @@ function App() {
             element={<Blog15 />}
           />
           <Route path="/blogs/i-passed-the-cse-exam" element={<Blog16 />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

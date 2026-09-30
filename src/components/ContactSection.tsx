@@ -62,9 +62,9 @@ export const ContactSection = () => {
       id="contact"
       className="container mx-auto max-w-5xl space-y-4 py-20 px-8"
     >
-      <div className="flex justify-center font-bold text-glow">
-        <h2 className="font-noto text-3xl sm:text-4xl">Get In</h2>
-        <h2 className="pinyon-script text-5xl sm:text-6xl -ml-2 sm:-ml-3">
+      <div className="flex justify-center gap-x-2 font-bold text-glow">
+        <h2 className="text-3xl sm:text-4xl">Get In</h2>
+        <h2 className="font-display text-3xl sm:text-4xl ">
           Touch
         </h2>
       </div>
@@ -117,7 +117,7 @@ export const ContactSection = () => {
           </div>
         </div>
 
-        <div className="group overflow-hidden rounded-4xl backdrop-blur-sm border shadow-xs card-hover p-8 space-y-4 mt-0 sm:mt-4">
+        <div className="group overflow-hidden glass-card card-hover p-8 space-y-4 mt-0 sm:mt-4">
           <h3 className="text-2xl font-semibold">Send a Message</h3>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -130,8 +130,8 @@ export const ContactSection = () => {
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                placeholder="Precious Hope Jumuad..."
+                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent"
+placeholder="Precious Hope Jumuad..."
               />
             </div>
 
@@ -144,8 +144,8 @@ export const ContactSection = () => {
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                placeholder="jumuad.precious@gmail.com"
+                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent"
+placeholder="jumuad.precious@gmail.com"
               />
             </div>
 
@@ -157,7 +157,7 @@ export const ContactSection = () => {
                 id="message"
                 name="message"
                 required
-                className="w-full px-4 py-3 rounded-md border bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                className="w-full px-4 py-3 rounded-md border bg-white/70 focus:outline-hidden focus:ring-2 focus:ring-accent resize-none"
                 placeholder="Hi! Just wanted to share or talk about..."
               />
             </div>

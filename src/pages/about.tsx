@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Navbar } from "../components/Navbar";
-import { SparkleBackground } from "../components/SparkleBackground";
+import { SkillsSection } from "../components/SkillsSection";
+import { ContactSection } from "../components/ContactSection";
 import { MdOutlineKeyboardArrowLeft, MdOutlineOpenInNew } from "react-icons/md";
 
 const About = () => {
@@ -268,18 +268,15 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden container mx-auto max-w-5xl space-y-6 py-24 px-8 text-sm sm:text-base">
-      <SparkleBackground />
-
+    <div className="container mx-auto max-w-5xl space-y-6 py-4 px-8 text-sm sm:text-base">
       <header>
-        <Navbar />
-        <div className="flex justify-center font-bold text-glow animate-fade-in">
-          <h1 className="font-noto text-3xl sm:text-6xl">About</h1>
-          <h2 className="pinyon-script text-5xl sm:text-8xl">Page</h2>
+        <div className="flex justify-center gap-x-2 font-bold text-glow animate-fade-in">
+          <h1 className="text-3xl sm:text-6xl">About</h1>
+          <h2 className="font-display text-3xl sm:text-5xl">Page</h2>
         </div>
       </header>
 
-      <main className="tracking-normal leading-7 text-left space-y-6">
+      <div className="tracking-normal leading-7 text-left space-y-6">
         <section className="flex flex-col lg:flex-row gap-6 border-b-2 pb-6 animate-fade-in-delay-1">
           <figure className="w-full lg:w-1/2 text-center">
             <img
@@ -331,8 +328,8 @@ const About = () => {
         </section>
 
         <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-2">
-          <h1 className="font-noto text-2xl sm:text-3xl">My</h1>
-          <h2 className="pinyon-script text-4xl sm:text-5xl ml-1">
+          <h1 className="text-2xl sm:text-3xl">My</h1>
+          <h2 className="font-display text-2xl sm:text-3xl ml-1">
             Experiences
           </h2>
         </div>
@@ -369,8 +366,8 @@ const About = () => {
         </section>
 
         <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-3">
-          <h1 className="font-noto text-2xl sm:text-3xl">My</h1>
-          <h2 className="pinyon-script text-4xl sm:text-5xl ml-1">Education</h2>
+          <h1 className="text-2xl sm:text-3xl">My</h1>
+          <h2 className="font-display text-2xl sm:text-3xl ml-1">Education</h2>
         </div>
 
         <section className="flex flex-col gap-6 border-b-2 pb-6 animate-fade-in-delay-3">
@@ -399,8 +396,8 @@ const About = () => {
         </section>
 
         <div className="flex font-bold text-glow pt-6 animate-fade-in-delay-4">
-          <h1 className="font-noto text-2xl sm:text-3xl">My</h1>
-          <h2 className="pinyon-script text-4xl sm:text-5xl ml-1">
+          <h1 className="text-2xl sm:text-3xl">My</h1>
+          <h2 className="font-display text-2xl sm:text-3xl ml-1">
             Certifications
           </h2>
         </div>
@@ -437,7 +434,9 @@ const About = () => {
             </div>
           ))}
         </section>
-      </main>
+        <SkillsSection />
+        <ContactSection />
+      </div>
 
       <footer className="flex justify-center pt-2">
         <Link
