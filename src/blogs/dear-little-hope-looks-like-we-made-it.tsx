@@ -49,7 +49,7 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-2">
+        <section className="space-y-6 animate-fade-in-delay-2">
           <article className="space-y-4">
             <p>
               They believed in me. They made me feel safe, smart, and seen. And
@@ -108,7 +108,7 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+        <section className="space-y-6 animate-fade-in-delay-3">
           <article className="space-y-4">
             <p>
               Would she recognize this more jaded, tired, adult self? Would she
@@ -163,7 +163,7 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-4">
+        <section className="space-y-6 animate-fade-in-delay-4">
           <article className="space-y-4">
             <p>
               They shape our beliefs about self-worth, love, failure, and trust.
@@ -186,7 +186,7 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-delay-4">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-delay-4 clear-both">
           <figure className="space-y-4 text-center">
             <img
               src="/assets/images/elementary.jpg"
@@ -220,7 +220,7 @@ const Blog14 = () => {
           </figure>
         </section>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-4">
+        <section className="space-y-6 animate-fade-in-delay-4">
           <article className="space-y-4">
             <p>
               So I’ll keep going, stumbling, and striving, because you’re still

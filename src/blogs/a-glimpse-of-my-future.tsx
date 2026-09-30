@@ -36,7 +36,7 @@ const Blog5 = () => {
           <p>Computer Engineer</p>
         </section>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-4">
+        <section className="space-y-6 animate-fade-in-delay-4">
           <p className="text-left">Dear Engr. Jumuad,</p>
           <article className="space-y-4">
             <p className="text-center">

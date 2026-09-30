@@ -27,28 +27,33 @@ export const DocumentWindow = ({
   meta?: ReactNode;
   children: ReactNode;
 }) => (
-  <article className="shrink-0 animate-fade-in overflow-hidden max-lg:glass-card">
-    <WindowBar icon={icon} title={fileName} />
-    <div className="flex items-center gap-2 border-b border-line/40 px-4 py-2 text-left text-xs text-cream/60 sm:px-6">
-      <Link
-        to={backTo}
-        aria-label={backLabel}
-        title={backLabel}
-        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-cream/50 transition-colors hover:text-cream"
-      >
-        <LuArrowLeft size={16} aria-hidden />
-      </Link>
-      <span className="min-w-0 truncate">
-        This PC
-        {crumbs
-          .filter((c): c is string => Boolean(c))
-          .map((c) => (
-            <span key={c}>
-              {" "}
-              <span aria-hidden>›</span> <span className="capitalize">{c}</span>
-            </span>
-          ))}
-      </span>
+  <article className="shrink-0 animate-fade-in overflow-clip max-lg:glass-card">
+    {/* Both bars stay at the top while the post scrolls. The article clips with overflow-clip (not
+        hidden) so it is not a scroll container of its own and the bars stick to the panel. */}
+    <div className="sticky top-0 z-10 bg-[rgb(28_20_16/0.99)] backdrop-blur-md">
+      <WindowBar icon={icon} title={fileName} />
+      <div className="flex items-center gap-2 border-b border-line/40 px-4 py-2 text-left text-xs text-cream/60 sm:px-6">
+        <Link
+          to={backTo}
+          aria-label={backLabel}
+          title={backLabel}
+          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-cream/50 transition-colors hover:text-cream"
+        >
+          <LuArrowLeft size={16} aria-hidden />
+        </Link>
+        <span className="min-w-0 truncate">
+          This PC
+          {crumbs
+            .filter((c): c is string => Boolean(c))
+            .map((c) => (
+              <span key={c}>
+                {" "}
+                <span aria-hidden>›</span>{" "}
+                <span className="capitalize">{c}</span>
+              </span>
+            ))}
+        </span>
+      </div>
     </div>
 
     <div className="mx-auto max-w-5xl space-y-6 p-4 text-sm sm:p-6 sm:text-base lg:p-8">

@@ -19,7 +19,7 @@ const Blog16 = () => {
       </section>
 
       <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col gap-6 animate-fade-in-delay-2">
+        <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
               src="/assets/images/csc1.png"
@@ -67,7 +67,7 @@ const Blog16 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+        <section className="space-y-6 animate-fade-in-delay-3">
           <figure className="space-y-4 text-center">
             <img
               src="/assets/images/csc2.png"
@@ -118,7 +118,7 @@ const Blog16 = () => {
           </article>
         </section>
 
-        <section className="flex justify-center border-t-2 gap-2 pt-8">
+        <section className="flex justify-center border-t-2 gap-2 pt-8 clear-both">
           <p>See results here:</p>
           <a
             target="_blank"

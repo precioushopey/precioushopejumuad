@@ -20,7 +20,7 @@ const Blog2 = () => {
       </section>
 
       <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col gap-6 animate-fade-in-delay-2">
+        <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
               src="/assets/images/vale2.jpg"
@@ -101,7 +101,7 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+        <section className="space-y-6 animate-fade-in-delay-3">
           <article className="space-y-4">
             <p>
               We saw families spending more time together. We saw new
@@ -230,7 +230,7 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="flex justify-center border-t-2 gap-2 pt-8">
+        <section className="flex justify-center border-t-2 gap-2 pt-8 clear-both">
           <a
             target="_blank"
             href="https://www.facebook.com/share/v/1PE37PXddC/"

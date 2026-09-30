@@ -25,7 +25,7 @@ const Blog4 = () => {
       </section>
 
       <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col gap-6 animate-fade-in-delay-2">
+        <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
               src="/assets/images/photos3.jpg"
@@ -118,7 +118,7 @@ const Blog4 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+        <section className="space-y-6 animate-fade-in-delay-3">
           <article className="space-y-4">
             <p>
               Mathematical equations came flying onto my face like some visual
@@ -257,7 +257,7 @@ const Blog4 = () => {
           </article>
         </section>
 
-        <section className="flex justify-center border-t-2 gap-2 pt-8">
+        <section className="flex justify-center border-t-2 gap-2 pt-8 clear-both">
           <a
             target="_blank"
             href="https://drive.google.com/file/d/1-hlM-3s_r_WvBfA_jC7Qx5awlJ4WM8_i/view"

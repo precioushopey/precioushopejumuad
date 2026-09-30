@@ -22,7 +22,7 @@ const Blog6 = () => {
       </section>
 
       <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
-        <section className="flex flex-col gap-6 animate-fade-in-delay-2">
+        <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
               src="/assets/images/gumamela1.jpg"
@@ -116,7 +116,7 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col gap-6 animate-fade-in-delay-3">
+        <section className="space-y-6 animate-fade-in-delay-3">
           <article className="space-y-4">
             <p>
               Everyone was out taking their snacks and playing outside the
@@ -236,7 +236,7 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="flex justify-center border-t-2 gap-2 pt-8">
+        <section className="flex justify-center border-t-2 gap-2 pt-8 clear-both">
           <a
             target="_blank"
             href="https://online.fliphtml5.com/yxrgv/tcvk/#p=32"
