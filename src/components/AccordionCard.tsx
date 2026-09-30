@@ -58,8 +58,22 @@ export const AccordionCard = ({
         }
       />
       {summary}
-      <div id={panelId} hidden={!open}>
-        {children}
+      {/* Animates the height by growing a 0fr grid row to 1fr. While closed the content is
+          invisible and inert, so it can't be tabbed into or read out. */}
+      <div
+        id={panelId}
+        inert={!open}
+        className={`grid transition-[grid-template-rows,visibility] duration-300 ease-out motion-reduce:transition-none ${
+          open ? "visible grid-rows-[1fr]" : "invisible grid-rows-[0fr]"
+        }`}
+      >
+        <div
+          className={`min-h-0 overflow-hidden transition-opacity duration-300 motion-reduce:transition-none ${
+            open ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
