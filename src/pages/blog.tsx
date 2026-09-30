@@ -46,10 +46,14 @@ const Blog = () => {
       {filtered.length === 0 ? (
         <p className="text-cream/70">No posts in this category yet.</p>
       ) : (
-        <div className="grid grid-cols-2 gap-x-3 gap-y-2 sm:gap-x-4 lg:grid-cols-3">
-          {filtered.map((post) => (
+        <div
+          key={active}
+          className="grid grid-cols-2 gap-x-3 gap-y-2 sm:gap-x-4 lg:grid-cols-3"
+        >
+          {filtered.map((post, index) => (
             <ThumbnailTile
               key={post.to}
+              index={index}
               to={post.to}
               image={post.image}
               title={post.title}

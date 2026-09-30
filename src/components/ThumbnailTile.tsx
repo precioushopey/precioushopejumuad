@@ -8,15 +8,19 @@ export const ThumbnailTile = ({
   image,
   title,
   subtitle,
+  index = 0,
 }: {
   to: string;
   image: string;
   title: string;
   subtitle: ReactNode;
+  /** Position in the grid; later tiles fade in a little after earlier ones. */
+  index?: number;
 }) => (
   <Link
     to={to}
-    className="group flex flex-col gap-2 rounded-2xl p-2 text-left transition-colors hover:bg-cream/10 sm:gap-3 sm:p-3"
+    style={{ animationDelay: `${Math.min(index, 11) * 60}ms` }}
+    className="animate-fade-in opacity-0 motion-reduce:animate-none motion-reduce:opacity-100 group flex flex-col gap-2 rounded-2xl p-2 text-left transition-colors hover:bg-cream/10 sm:gap-3 sm:p-3"
   >
     <img
       src={image}

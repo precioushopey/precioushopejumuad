@@ -28,10 +28,14 @@ const ProjectsPage = () => {
       {filtered.length === 0 ? (
         <p className="text-cream/70">No projects in this category yet.</p>
       ) : (
-        <div className="grid grid-cols-2 gap-x-3 gap-y-2 sm:gap-x-4 lg:grid-cols-3">
-          {filtered.map((project) => (
+        <div
+          key={active}
+          className="grid grid-cols-2 gap-x-3 gap-y-2 sm:gap-x-4 lg:grid-cols-3"
+        >
+          {filtered.map((project, index) => (
             <ThumbnailTile
               key={project.title}
+              index={index}
               to={project.url}
               image={project.image}
               title={project.title}
