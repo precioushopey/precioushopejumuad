@@ -373,15 +373,17 @@ const About = () => {
 
   // Task-Manager-style summary at the top of each experience card: one row per role.
   const processTable = (group: Job[]) => (
-    <table className="w-full border-b border-line/40 text-left text-xs">
+    <table className="w-full table-fixed border-b border-line/40 text-left text-xs">
       <thead className="text-cream/50">
         <tr>
           <th className="px-6 py-2 font-normal">Name</th>
-          <th className="py-2 pr-3 font-normal">Status</th>
-          <th className="hidden py-2 pr-3 font-normal sm:table-cell">
+          <th className="w-24 py-2 pr-3 font-normal sm:w-28">Status</th>
+          <th className="hidden w-36 py-2 pr-3 font-normal sm:table-cell">
             Started
           </th>
-          <th className="py-2 pr-6 text-right font-normal">Duration</th>
+          <th className="w-28 py-2 pr-6 text-right font-normal sm:w-32">
+            Duration
+          </th>
         </tr>
       </thead>
       <tbody>
