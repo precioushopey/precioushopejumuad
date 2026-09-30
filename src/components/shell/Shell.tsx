@@ -1,10 +1,12 @@
 import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Rail } from "./Rail";
+import { BlogSuggestions } from "./BlogSuggestions";
 import { RightColumn } from "./RightColumn";
 import { TopBar } from "./TopBar";
 
-// Only the top-level pages get the profile/latest column; detail pages use the full panel.
+// The top-level pages get the profile/contact column; a blog post gets a column of other posts
+// instead. Project pages use the full panel.
 const WITH_SIDEBAR = new Set(["/", "/about", "/projects", "/blog"]);
 
 export const Shell = () => {
@@ -13,7 +15,13 @@ export const Shell = () => {
   const scrollRef = useRef<HTMLElement>(null);
   const previousPath = useRef(pathname);
   const path = pathname.replace(/\/+$/, "") || "/";
-  const showSide = WITH_SIDEBAR.has(path);
+  const isPost = path.startsWith("/blogs/");
+  const showSide = WITH_SIDEBAR.has(path) || isPost;
+  const sideContent = isPost ? (
+    <BlogSuggestions currentPath={path} />
+  ) : (
+    <RightColumn />
+  );
 
   // The panel scrolls internally on desktop, the window on mobile. A new page starts at the
   // top; a link with a #section (e.g. /about#contact) then jumps to that section.
@@ -66,19 +74,26 @@ export const Shell = () => {
           >
             <Outlet />
             {showSide && (
-              // From lg to xl the column sits at the bottom of the panel. Below lg it is its own
-              // page (/profile), reached from the phone bar.
-              <div className="hidden px-5 pt-6 sm:px-8 lg:block xl:hidden">
-                <RightColumn />
+              // From lg to xl the column sits at the bottom of the panel. Below lg the profile is its
+              // own page (/profile), reached from the phone bar; a blog post's other posts go at
+              // the bottom of the page at every size below xl.
+              <div
+                className={
+                  isPost
+                    ? "pt-3 lg:px-8 lg:pt-6 xl:hidden"
+                    : "hidden px-5 pt-6 sm:px-8 lg:block xl:hidden"
+                }
+              >
+                {sideContent}
               </div>
             )}
           </main>
           {showSide && (
             <aside
-              aria-label="Profile and contact"
+              aria-label={isPost ? "More posts" : "Profile and contact"}
               className="no-scrollbar hidden w-[22rem] shrink-0 xl:-mx-4 xl:block xl:w-[24rem] xl:overflow-y-auto xl:px-4"
             >
-              <RightColumn />
+              {sideContent}
             </aside>
           )}
           {/* Last in the DOM so keyboard users reach content first; placed by CSS. */}
