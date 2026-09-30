@@ -51,10 +51,7 @@ export const SkillsCard = () => {
       aria-label="Skills and expertise"
       className="glass-card flex flex-1 flex-col p-4"
     >
-      <h2 className="px-1 text-left text-sm text-cream/70">
-        Skills &amp; Expertise
-      </h2>
-      <ul className="mt-2 grid flex-1 grid-cols-2 content-center gap-x-0 gap-y-5 min-[420px]:grid-cols-4">
+      <ul className="grid flex-1 grid-cols-2 content-center gap-x-0 gap-y-5 min-[420px]:grid-cols-4">
         {skills.map(({ label, Icon, since }, index) => {
           const { percent, days, totalDays } = skillBreakdown(since, now);
           const tipId = `${uid}-tip-${index}`;
