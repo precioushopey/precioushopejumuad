@@ -57,7 +57,7 @@ export const Rail = () => {
       aria-label="Main"
       className="sticky bottom-4 z-40 mx-auto flex w-fit items-center gap-3 rounded-full border border-line bg-black/50 p-2 shadow-lg backdrop-blur-md lg:absolute lg:bottom-auto lg:left-0 lg:top-1/2 lg:z-10 lg:mx-0 lg:w-24 lg:-translate-y-1/2 lg:flex-col lg:justify-start lg:gap-12 lg:rounded-l-[2rem] lg:rounded-r-none lg:border-cream/20 lg:bg-cream/15 lg:px-0 lg:py-12 lg:[@media(max-height:680px)]:gap-9 lg:[@media(max-height:680px)]:py-8 lg:shadow-none lg:backdrop-blur-xl"
     >
-      <div className="flex gap-3 lg:flex-col lg:gap-12 lg:[@media(max-height:680px)]:gap-9">
+      <div className="flex gap-3 lg:flex-col lg:gap-6">
         {items.map(({ to, label, Icon, ActiveIcon, end, alsoMatch }) => (
           <NavLink
             key={to}
