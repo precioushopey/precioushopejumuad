@@ -42,7 +42,7 @@ const Blog4 = () => {
         </section>
       </header>
 
-      <div className="glass-card tracking-normal leading-7 text-left p-0 lg:p-8 space-y-6 max-lg:border-0 max-lg:bg-transparent max-lg:shadow-none max-lg:backdrop-blur-none">
+      <div className="glass-card tracking-normal leading-7 text-left p-4 lg:p-8 space-y-6">
         <section className="flex flex-col gap-6 animate-fade-in-delay-2">
           <figure className="space-y-4 text-center">
             <img
