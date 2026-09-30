@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FolderSection } from "./FolderSection";
 
 type Skill = {
   name: string;
@@ -105,24 +106,15 @@ const skills: Skill[] = [
 const categories = ["all", "frontend", "design", "multimedia"] as const;
 type Category = (typeof categories)[number];
 
-export const SkillsSection = () => {
+const SkillsList = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
 
   const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
+    (skill) => activeCategory === "all" || skill.category === activeCategory,
   );
 
   return (
-    <section
-      id="skills"
-      className="container mx-auto max-w-5xl space-y-4 pt-20 px-8"
-    >
-      <div className="flex justify-center font-bold text-glow">
-        <h2 className="text-3xl sm:text-4xl">
-          My <span className="font-display">Skills</span>
-        </h2>
-      </div>
-
+    <section id="skills" className="space-y-4">
       <div className="flex flex-wrap justify-center gap-4">
         {categories.map((category) => (
           <button
@@ -139,7 +131,7 @@ export const SkillsSection = () => {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
         {filteredSkills.map((skill) => (
           <div
             key={skill.name}
@@ -168,3 +160,17 @@ export const SkillsSection = () => {
     </section>
   );
 };
+
+// The Skills folder for the About page: closed until clicked, then shows the filterable list.
+export const SkillsSection = () => (
+  <FolderSection
+    title={
+      <>
+        My <span className="font-display">Skills</span>
+      </>
+    }
+    count={skills.length}
+  >
+    <SkillsList />
+  </FolderSection>
+);
