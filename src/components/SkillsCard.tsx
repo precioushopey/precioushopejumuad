@@ -1,16 +1,8 @@
-import {
-  LuCodeXml,
-  LuLayoutDashboard,
-  LuMousePointerClick,
-  LuPackage,
-  LuPencilRuler,
-} from "react-icons/lu";
+import { LuCodeXml, LuLayoutDashboard, LuPencilRuler } from "react-icons/lu";
 
 const skills = [
   { label: "Design Engineering", Icon: LuPencilRuler },
-  { label: "UX Engineering", Icon: LuMousePointerClick },
-  { label: "Product Design", Icon: LuPackage },
-  { label: "UI/UX Design", Icon: LuLayoutDashboard },
+  { label: "Product Design (UI/UX)", Icon: LuLayoutDashboard },
   { label: "Frontend Development", Icon: LuCodeXml },
 ];
 
@@ -26,7 +18,7 @@ export const SkillsCard = () => (
           className="flex items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left"
         >
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent">
-            <Icon size={22} aria-hidden />
+            <Icon size={20} aria-hidden />
           </span>
           <span className="min-w-0 text-sm font-medium">{label}</span>
         </li>
