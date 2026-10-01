@@ -7,6 +7,7 @@ import {
   type ReactElement,
   type ReactNode,
 } from "react";
+import { thumb } from "../lib/thumb";
 
 type FolderProps = {
   /** Name shown under the folder. */
@@ -55,7 +56,13 @@ const FolderIcon = ({ peek, open }: { peek: string; open: boolean }) => {
           open ? "-translate-y-[10%]" : "group-hover:-translate-y-[6%]"
         }`}
       >
-        <img src={peek} alt="" className="h-full w-full object-contain p-1" />
+        <img
+          loading="lazy"
+          decoding="async"
+          src={thumb(peek)}
+          alt=""
+          className="h-full w-full object-contain p-1"
+        />
       </div>
       <svg
         viewBox="0 0 224 176"
@@ -103,7 +110,7 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
               aria-expanded={open}
               aria-controls={`${uid}-panel`}
               onClick={() => setOpenIndex(open ? null : index)}
-              className="group flex flex-col items-center gap-1.5 rounded-2xl px-0.5 py-3 text-center sm:gap-2 sm:px-2 focus-visible:outline-2 focus-visible:outline-accent"
+              className="group flex flex-col items-center gap-1.5 rounded-xl md:rounded-2xl px-0.5 py-3 text-center sm:gap-2 sm:px-2 focus-visible:outline-2 focus-visible:outline-accent"
             >
               <FolderIcon peek={peek} open={open} />
               <span>

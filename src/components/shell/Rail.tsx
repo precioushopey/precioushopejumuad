@@ -8,6 +8,7 @@ import {
   LuWifi,
 } from "react-icons/lu";
 import { TrayClock } from "./TrayClock";
+import { thumb } from "../../lib/thumb";
 
 const items: {
   to: string;
@@ -84,7 +85,7 @@ export const Rail = () => {
                   <>
                     {avatar ? (
                       <img
-                        src={avatar}
+                        src={thumb(avatar)}
                         alt=""
                         className="h-[26px] w-[26px] rounded-full border border-line bg-white object-cover"
                       />
@@ -126,7 +127,7 @@ export const Rail = () => {
           className="h-12 w-12 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent xl:hidden"
         >
           <img
-            src="/assets/images/profile/precious.png"
+            src={thumb("/assets/images/profile/precious.png")}
             alt=""
             className="h-12 w-12 rounded-full border border-line bg-white object-cover"
           />
@@ -137,7 +138,7 @@ export const Rail = () => {
           className="h-12 w-12 shrink-0 rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent max-xl:hidden"
         >
           <img
-            src="/assets/images/profile/precious.png"
+            src={thumb("/assets/images/profile/precious.png")}
             alt=""
             className="h-12 w-12 rounded-full border border-line bg-white object-cover"
           />

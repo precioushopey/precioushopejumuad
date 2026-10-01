@@ -22,6 +22,10 @@ const Blog16 = () => {
         <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-3 text-center [text-align-last:center]">
             <img
+              width={1045}
+              height={397}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/csc1.png"
               alt="Immaculate Conception Parish Church of Jasaan"
               className="w-full aspect-[600/228] rounded-4xl border object-cover"
@@ -45,16 +49,18 @@ const Blog16 = () => {
               different. I prepared for this exam with intention and structure,
               the same way I’ve always approached my academics.
             </p>
-            <ul>
-              For 10 weeks, I locked in:
-              <li>- I created a study plan.</li>
-              <li>- I built my own syllabus.</li>
-              <li>- I scheduled my time.</li>
-              <li>
-                - And I reviewed every subject area thoroughly, making sure I
-                didn’t skip anything.
-              </li>
-            </ul>
+            <div>
+              <p>For 10 weeks, I locked in:</p>
+              <ul>
+                <li>- I created a study plan.</li>
+                <li>- I built my own syllabus.</li>
+                <li>- I scheduled my time.</li>
+                <li>
+                  - And I reviewed every subject area thoroughly, making sure I
+                  didn’t skip anything.
+                </li>
+              </ul>
+            </div>
             <p>
               I wanted to step into the exam room steady, confident, and fully
               prepared.
@@ -70,6 +76,10 @@ const Blog16 = () => {
         <section className="space-y-6 animate-fade-in-delay-3">
           <figure className="space-y-3 text-center [text-align-last:center]">
             <img
+              width={1107}
+              height={560}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/csc2.png"
               alt="Immaculate Conception Parish Church of Jasaan"
               className="w-full aspect-[600/304] rounded-4xl border object-cover"

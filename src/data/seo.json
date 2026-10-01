@@ -1,0 +1,30 @@
+{
+  "staticPages": {
+    "/about": {
+      "title": "About",
+      "description": "About Precious Hope Jumuad: a Design Engineer working across product design, UX, design systems and front-end development, with her experience, education, certifications and skills."
+    },
+    "/projects": {
+      "title": "Projects",
+      "description": "Projects by Precious Hope Jumuad: web apps, UI/UX and product design, social media, multimedia and game art, from a multi-camera detection system to a payroll platform."
+    },
+    "/blog": {
+      "title": "Blog",
+      "description": "Writing by Precious Hope Jumuad: milestones, reflections, stories and school memories."
+    },
+    "/profile": {
+      "title": "Profile and contact",
+      "description": "Profile and contact details for Precious Hope Jumuad, with a form to send a message.",
+      "noindex": true
+    },
+    "/privacy": {
+      "title": "Privacy Policy",
+      "description": "How this site handles your data: the messages you send through the contact form, anonymous visit counts, and the services involved."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page does not exist.",
+    "noindex": true
+  }
+}

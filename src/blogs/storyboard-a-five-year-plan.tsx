@@ -27,15 +27,17 @@ const Blog3 = () => {
         <section className="animate-fade-in-delay-2">
           <figure className="mb-3 lg:mb-2 space-y-3 lg:w-2/5 lg:float-right lg:ml-6">
             <img
+              width={480}
+              height={640}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/storyboard.jfif"
               alt="Me in Umaru-chan merchandise hood III"
               className="w-full aspect-[3/4] rounded-4xl border object-cover"
             />
           </figure>
           <article className="space-y-3">
-            <h3 className="text-xl sm:text-2xl font-bold">
-              General Plan
-            </h3>
+            <h3 className="text-xl sm:text-2xl font-bold">General Plan</h3>
             <ul className="flex flex-col gap-2">
               <li>
                 <s>Be an exemplary student</s>{" "}
@@ -185,9 +187,7 @@ const Blog3 = () => {
         </section>
 
         <section className="space-y-3 animate-fade-in-delay-4">
-          <h3 className="text-xl sm:text-2xl font-bold">
-            Success Indicator
-          </h3>
+          <h3 className="text-xl sm:text-2xl font-bold">Success Indicator</h3>
           <ul className="grid grid-cols-1 md:grid-cols-5 gap-6">
             <li className="flex justify-center items-center text-center [text-align-last:center] rounded-4xl border p-2">
               Self-Actualization

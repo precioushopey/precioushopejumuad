@@ -1,4 +1,4 @@
-import { useId, type CSSProperties } from "react";
+import { memo, useId, type CSSProperties } from "react";
 import {
   LuCodeXml,
   LuLayoutDashboard,
@@ -43,7 +43,7 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 // Laid out like the ring gauges: a ring with the icon inside and the label underneath.
 // Hovering (or focusing/tapping) a skill explains how its ring was worked out.
 // flex-1 lets the card stretch to fill whatever cell it is placed in.
-export const SkillsCard = () => {
+const SkillsCardBase = () => {
   const now = new Date();
   const uid = useId();
   return (
@@ -60,7 +60,7 @@ export const SkillsCard = () => {
               key={label}
               tabIndex={0}
               aria-describedby={tipId}
-              className="group relative flex min-w-0 cursor-help flex-col items-center gap-2 rounded-2xl"
+              className="group relative flex min-w-0 cursor-help flex-col items-center gap-2 rounded-xl md:rounded-2xl"
             >
               <div className="relative h-16 w-16 text-cream">
                 <svg
@@ -121,3 +121,6 @@ export const SkillsCard = () => {
     </section>
   );
 };
+
+// Memoized so the Home page's once-a-second clock tick doesn't redraw it.
+export const SkillsCard = memo(SkillsCardBase);

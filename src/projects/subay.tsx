@@ -127,7 +127,8 @@ const Subay = () => {
       <div className="space-y-15">
         <section className="space-y-6">
           <iframe
-            src="https://www.youtube.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
+            loading="lazy"
+            src="https://www.youtube-nocookie.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
             title="SUBAY Promotion"
             allow="autoplay; encrypted-media; accelerometer; mute; clipboard-write; gyroscope; picture-in-picture; web-share"
             className="w-full aspect-[16/9] object-cover rounded-4xl border z-50 animate-fade-in-delay-2"
@@ -180,12 +181,11 @@ const Subay = () => {
         </section>
 
         <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">
-            Demonstration
-          </h2>
+          <h2 className="font-semibold text-2xl sm:text-3xl">Demonstration</h2>
           <div className="w-full flex flex-col md:flex-row items-center gap-6">
             <iframe
-              src="https://www.youtube.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&mute=1&controls=1"
+              loading="lazy"
+              src="https://www.youtube-nocookie.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&mute=1&controls=1"
               title="SUBAY Demonstration"
               allow="autoplay; encrypted-media; accelerometer; mute; clipboard-write; gyroscope; picture-in-picture; web-share"
               className="w-full lg:w-2/3 aspect-[16/9] object-cover rounded-4xl border z-50 animate-fade-in-delay-3"
@@ -229,7 +229,7 @@ const Subay = () => {
                     />
                   </div>
                   <div className="text-left">
-                    <h4 className="font-medium text-lg">{metric.value}</h4>
+                    <h3 className="font-medium text-lg">{metric.value}</h3>
                     <p>{metric.label}</p>
                   </div>
                 </div>
@@ -239,11 +239,13 @@ const Subay = () => {
         </section>
 
         <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">
-            Contributors
-          </h2>
+          <h2 className="font-semibold text-2xl sm:text-3xl">Contributors</h2>
           <div className="flex overflow-hidden glass-card card-hover">
             <img
+              width={1440}
+              height={960}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/projects/subay/contributors/team.jpg"
               alt="Team"
               className="w-full aspect-[16/9] object-cover transition-transform duration-500 hover:scale-110"
@@ -262,6 +264,8 @@ const Subay = () => {
                 className="group flex flex-col md:flex-row overflow-hidden glass-card card-hover"
               >
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={contributor.image}
                   alt={contributor.alt}
                   className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
@@ -325,6 +329,10 @@ const Subay = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="flex overflow-hidden glass-card card-hover">
               <img
+                width={850}
+                height={730}
+                loading="lazy"
+                decoding="async"
                 src="/assets/images/projects/subay/best_thesis.jpg"
                 alt="Team"
                 className="w-full aspect-[85/73] object-cover transition-transform duration-500 hover:scale-110"
@@ -332,6 +340,10 @@ const Subay = () => {
             </div>
             <div className="flex overflow-hidden glass-card card-hover">
               <img
+                width={850}
+                height={730}
+                loading="lazy"
+                decoding="async"
                 src="/assets/images/projects/subay/best_prototype.jpg"
                 alt="Team"
                 className="w-full aspect-[85/73] object-cover transition-transform duration-500 hover:scale-110"
@@ -359,9 +371,7 @@ const Subay = () => {
         </section>
 
         <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">
-            Skills Earned
-          </h2>
+          <h2 className="font-semibold text-2xl sm:text-3xl">Skills Earned</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <div

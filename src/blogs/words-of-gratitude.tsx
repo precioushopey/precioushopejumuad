@@ -23,6 +23,10 @@ const Blog2 = () => {
         <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-3 text-center [text-align-last:center]">
             <img
+              width={960}
+              height={540}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/vale2.jpg"
               alt="Delivery of the Words of Gratitude Speech by Yours Truly"
               className="w-full aspect-[16/9] rounded-4xl border object-cover"
@@ -70,6 +74,10 @@ const Blog2 = () => {
         <section className="animate-fade-in-delay-3">
           <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
+              width={768}
+              height={960}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/vale1.jpg"
               alt="My Graduation Photo"
               className="w-full aspect-[4/5] rounded-4xl border object-cover"
@@ -141,6 +149,10 @@ const Blog2 = () => {
         <section className="animate-fade-in-delay-4">
           <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
+              width={960}
+              height={960}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/vale3.jpg"
               alt="My Classmates at Grade 12- STEM B St. Luke"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
@@ -209,6 +221,10 @@ const Blog2 = () => {
             </p>
             <figure className="space-y-3 text-center [text-align-last:center]">
               <img
+                width={960}
+                height={541}
+                loading="lazy"
+                decoding="async"
                 src="/assets/images/blog/vale4.jpg"
                 alt="Presentation Slide with My Awards"
                 className="w-full aspect-[16/9] rounded-4xl border object-cover"

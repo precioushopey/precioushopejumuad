@@ -5,6 +5,8 @@ export type Project = {
   tags: string[];
   url: string;
   category: "frontend" | "design" | "socials" | "multimedia";
+  /** The page is only a "Coming Soon" placeholder, so it stays out of search results and the sitemap. */
+  comingSoon?: boolean;
 };
 
 export const categories = [
@@ -86,6 +88,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/cpengage/cpengage1.jpg",
     tags: ["Canva", "Photoshop", "Meta Business"],
     url: "/projects/cpengage",
+    comingSoon: true,
     category: "socials",
   },
   {
@@ -95,6 +98,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/bbtime/bbtime1.jpg",
     tags: ["Canva", "Photoshop", "Meta Business"],
     url: "/projects/bbtime",
+    comingSoon: true,
     category: "socials",
   },
   {
@@ -104,6 +108,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/cpexpo/cpexpo1.png",
     tags: ["Canva", "Photoshop", "Meta Business"],
     url: "/projects/cpexpo",
+    comingSoon: true,
     category: "socials",
   },
   {
@@ -113,6 +118,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/cpedays/cpedays1.jpg",
     tags: ["Canva", "Photoshop", "Meta Business"],
     url: "/projects/cpedays",
+    comingSoon: true,
     category: "socials",
   },
   {
@@ -122,6 +128,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/genass/genass1.jpg",
     tags: ["Canva", "Photoshop", "Meta Business"],
     url: "/projects/genass",
+    comingSoon: true,
     category: "socials",
   },
   {
@@ -131,6 +138,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/icpepse/icpepse1.png",
     tags: ["Figma", "Canva", "Photoshop", "Aseprite", "IbisPaint", "Meta"],
     url: "/projects/icpepse",
+    comingSoon: true,
     category: "multimedia",
   },
   {
@@ -140,6 +148,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/uda/uda1.jpg",
     tags: ["Canva", "Photoshop", "Illustrator", "Lightroom", "IbisPaint"],
     url: "/projects/uda",
+    comingSoon: true,
     category: "multimedia",
   },
   {
@@ -149,6 +158,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/meinaot/meinaot1.jpg",
     tags: ["Canva", "Photoshop", "Illustrator", "IbisPaint"],
     url: "/projects/meinaot",
+    comingSoon: true,
     category: "multimedia",
   },
   {
@@ -158,6 +168,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/pixels/pixel1.png",
     tags: ["Aseprite", "Canva", "Photoshop"],
     url: "/projects/pixels",
+    comingSoon: true,
     category: "multimedia",
   },
   {
@@ -167,6 +178,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/videos/videos1.png",
     tags: ["Capcut", "Blender"],
     url: "/projects/videos",
+    comingSoon: true,
     category: "multimedia",
   },
   {
@@ -176,6 +188,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/photos/photos1.jpg",
     tags: ["Lightroom"],
     url: "/projects/photos",
+    comingSoon: true,
     category: "multimedia",
   },
   // optional: cpexpo micro display, and cpexpress with sir mark

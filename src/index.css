@@ -1,11 +1,30 @@
 @import "tailwindcss";
 
+/* Stand-ins for the web fonts while they load. They are Arial resized to take the same room as
+   Poppins and Unbounded, so the text doesn't jump when the real fonts arrive. */
+@font-face {
+  font-family: "Poppins Fallback";
+  src: local("Arial");
+  size-adjust: 112.17%;
+  ascent-override: 93.75%;
+  descent-override: 31.25%;
+  line-gap-override: 8.93%;
+}
+@font-face {
+  font-family: "Unbounded Fallback";
+  src: local("Arial");
+  size-adjust: 128%;
+  ascent-override: 88%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
 @theme {
   /* The desktop layout (dock, panel, side column) starts at 768px, not the default 1024px, so lg: and
      max-lg: switch there: only phones (below 768px) get the bottom bar layout. */
   --breakpoint-lg: 48rem;
-  --font-display: "Unbounded", system-ui, sans-serif;
-  --font-sans: "Poppins", sans-serif;
+  --font-display: "Unbounded", "Unbounded Fallback", system-ui, sans-serif;
+  --font-sans: "Poppins", "Poppins Fallback", sans-serif;
   --color-accent: #ffc93c;
   --color-ink: #1f1a17;
   --color-cream: #f5ead6;

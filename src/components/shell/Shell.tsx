@@ -1,15 +1,18 @@
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Rail } from "./Rail";
 import { BlogSuggestions, ProjectSuggestions } from "./SideSuggestions";
 import { RightColumn } from "./RightColumn";
 import { TopBar } from "./TopBar";
+import { PageSkeleton } from "../PageSkeleton";
+import { useSeo } from "../../hooks/use-seo";
 
 // The top-level pages get the profile/contact column; a blog post or a project page gets a column
 // of other posts / projects instead.
 const WITH_SIDEBAR = new Set(["/", "/about", "/projects", "/blog"]);
 
 export const Shell = () => {
+  useSeo();
   // `key` changes on every navigation, so clicking a link to the page we're already on still scrolls.
   const { pathname, hash, key } = useLocation();
   const scrollRef = useRef<HTMLElement>(null);
@@ -81,15 +84,18 @@ export const Shell = () => {
             ref={scrollRef}
             className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:relative lg:z-20 lg:flex lg:min-h-0 lg:flex-col lg:overflow-y-auto"
           >
-            <Outlet />
-            {isDetail && (
-              // Other posts / projects at the bottom of the page below xl, where there is no room
-              // for the column beside the panel. (The profile and message form have no bottom slot:
-              // below xl they are their own page, /profile.)
-              <div className="pt-3 lg:px-6 lg:pt-6 xl:hidden">
-                {sideContent}
-              </div>
-            )}
+            <Suspense fallback={<PageSkeleton />}>
+              <Outlet />
+              {isDetail && (
+                // Other posts / projects at the bottom of the page below xl, where there is no room
+                // for the column beside the panel. (The profile and message form have no bottom slot:
+                // below xl they are their own page, /profile.) Inside the same Suspense as the page,
+                // so it appears with the page instead of being pushed down when the page loads.
+                <div className="pt-3 lg:px-6 lg:pt-6 xl:hidden">
+                  {sideContent}
+                </div>
+              )}
+            </Suspense>
           </main>
           {showSide && (
             <aside

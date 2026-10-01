@@ -44,7 +44,7 @@ const Carousel: React.FC<CarouselProps> = ({
               : "opacity-0 z-0 absolute inset-0"
           }`}
         >
-          <img
+          <img loading="lazy" decoding="async"
             src={image}
             alt="Project Images"
             className="w-full aspect-[16/9] rounded-4xl border object-cover transition-transform duration-500"

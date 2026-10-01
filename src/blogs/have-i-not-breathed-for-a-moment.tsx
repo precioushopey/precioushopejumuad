@@ -28,6 +28,10 @@ const Blog4 = () => {
         <section className="space-y-6 animate-fade-in-delay-2">
           <figure className="space-y-3 text-center [text-align-last:center]">
             <img
+              width={736}
+              height={292}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/photos3.jpg"
               alt="Lake Gumaod at Gumaod, Claveria, Misamis Oriental"
               className="w-full aspect-[184/73] rounded-4xl border object-cover"
@@ -90,6 +94,10 @@ const Blog4 = () => {
         <section className="animate-fade-in-delay-3">
           <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
+              width={736}
+              height={552}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/photos2.jpg"
               alt="Sunset on the Rubber Trees at Gumaod, Claveria, Misamis"
               className="w-full aspect-[4/3] rounded-4xl border object-cover"
@@ -162,6 +170,10 @@ const Blog4 = () => {
         <section className="animate-fade-in-delay-4">
           <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
+              width={736}
+              height={552}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/photos4.jpg"
               alt="Flowers at Gumaod, Claveria, Misamis Oriental"
               className="w-full aspect-[4/3] rounded-4xl border object-cover"
@@ -230,6 +242,10 @@ const Blog4 = () => {
             </p>
             <figure className="space-y-3 text-center [text-align-last:center]">
               <img
+                width={735}
+                height={345}
+                loading="lazy"
+                decoding="async"
                 src="/assets/images/blog/photos5.jpg"
                 alt="Lake Gumaod at Gumaod, Claveria, Misamis Oriental"
                 className="w-full aspect-[184/73] rounded-4xl border object-cover"

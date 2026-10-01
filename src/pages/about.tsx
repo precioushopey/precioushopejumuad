@@ -15,6 +15,7 @@ import { certifications } from "../data/about";
 import { skills } from "../data/skills";
 import { useAboutData } from "../hooks/use-about-data";
 import { siteLink } from "../lib/site-link";
+import { thumb } from "../lib/thumb";
 
 const cardIcons = {
   job: <LuBriefcase size={14} />,
@@ -35,7 +36,7 @@ const About = () => {
               aria-hidden
               className="pointer-events-none absolute inset-x-0 -inset-y-[5%] bg-[radial-gradient(ellipse_at_58%_55%,rgb(255_201_60/0.5),rgb(255_201_60/0.16)_40%,transparent_70%)] blur-2xl"
             />
-            <img
+            <img width={1420} height={1080}
               src="/assets/images/profile/hero.png"
               alt="Precious Hope Jumuad in her graduation gown"
               className="relative h-auto w-full"
@@ -115,7 +116,9 @@ const About = () => {
                       <div className="flex flex-col sm:flex-row gap-6">
                         <figure className="w-full md:w-1/8 text-center">
                           <img
-                            src={card.image.src}
+                            loading="lazy"
+                            decoding="async"
+                            src={thumb(card.image.src)}
                             alt={card.image.alt}
                             className={`w-full aspect-[1/1] rounded-4xl border object-cover ${card.image.className ?? ""}`}
                           />
@@ -211,7 +214,9 @@ const About = () => {
                       className="grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-3 px-6 py-3 text-left hover:bg-cream/5 md:grid-cols-[2rem_minmax(0,2.2fr)_minmax(0,1fr)_6rem_1rem]"
                     >
                       <img
-                        src={cert.imgSrc}
+                        loading="lazy"
+                        decoding="async"
+                        src={thumb(cert.imgSrc)}
                         alt=""
                         className="h-8 w-8 rounded-lg border bg-white object-cover"
                       />

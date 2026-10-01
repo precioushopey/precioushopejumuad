@@ -1,10 +1,12 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { LuArrowRight, LuFileText } from "react-icons/lu";
 import { contactItems } from "../data/contact";
 import { CV_URL } from "../data/links";
 import { experienceLabel } from "../lib/experience";
+import { thumb } from "../lib/thumb";
 
-export const ProfileCard = () => {
+const ProfileCardBase = () => {
   // Counted from March 1, 2024 up to today, so the wording keeps itself current.
   const experience = experienceLabel();
   return (
@@ -25,7 +27,7 @@ export const ProfileCard = () => {
         <LuArrowRight size={14} aria-hidden />
       </Link>
       <img
-        src="/assets/images/profile/precious.png"
+        src={thumb("/assets/images/profile/precious.png")}
         alt="Precious Hope T. Jumuad"
         className="mx-auto mt-3 h-36 w-36 rounded-full border-2 border-line bg-white object-cover"
       />
@@ -74,3 +76,6 @@ export const ProfileCard = () => {
     </section>
   );
 };
+
+// Memoized so the Home page's once-a-second clock tick doesn't redraw it.
+export const ProfileCard = memo(ProfileCardBase);

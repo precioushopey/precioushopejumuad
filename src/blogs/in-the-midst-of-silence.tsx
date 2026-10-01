@@ -23,6 +23,10 @@ const Blog1 = () => {
         <section className="animate-fade-in-delay-2">
           <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
+              width={736}
+              height={981}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/projects/photos/photos1.jpg"
               alt="In the Midst of Silence"
               className="aspect-[1/1] rounded-4xl border object-cover transition-transform duration-500 group-hover:scale-110"

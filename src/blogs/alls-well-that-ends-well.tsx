@@ -17,6 +17,10 @@ const Blog12 = () => {
         <section className="animate-fade-in-delay-2">
           <figure className="mb-3 lg:mb-2 space-y-3 lg:w-1/2 lg:float-left lg:mr-6">
             <img
+              width={1200}
+              height={1200}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/all's_well.png"
               alt="All's Well That Ends Well"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
@@ -60,6 +64,10 @@ const Blog12 = () => {
         <section className="animate-fade-in-delay-4">
           <figure className="mb-3 lg:mb-2 space-y-3 lg:w-1/2 lg:float-right lg:ml-6">
             <img
+              width={1080}
+              height={1350}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/collage.png"
               alt="All's Well That Ends Well"
               className="w-full aspect-[4/5] rounded-4xl border object-cover"

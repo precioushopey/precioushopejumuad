@@ -43,11 +43,12 @@ export const WindowBar = ({
     return (
       <Link
         to={to}
-        aria-label={toLabel}
         title={toLabel}
         className={`${base} group cursor-pointer rounded-t-[2rem] transition-colors hover:bg-cream/5`}
       >
         {content}
+        {/* The link's name keeps the visible title and adds where it goes, e.g. "Recent Projects, See all projects". */}
+        {toLabel && <span className="sr-only">, {toLabel}</span>}
         <span
           aria-hidden
           className="flex h-4 w-4 shrink-0 items-center justify-center text-cream/50 transition-colors group-hover:text-cream"

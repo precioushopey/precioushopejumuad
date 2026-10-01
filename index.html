@@ -2,23 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Precious Hope Jumuad | Design Engineer, Product Designer and Front-End Developer</title>
+    <meta name="description" content="Precious Hope Jumuad is a Design Engineer: a Product/UI/UX Designer and Front-End Developer who turns ideas and complex problems into intuitive, purposeful digital experiences. Explore projects, writing and experience." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Precious Hope Jumuad" />
+    <meta name="theme-color" content="#1c1410" />
+    <link rel="canonical" href="https://precioushopejumuad.vercel.app/" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
     <meta property="og:site_name" content="Precious Hope Jumuad" />
-    <meta property=“og:title” content="Precious Hope Jumuad - Computer Engineer and UI/UX Designer" />
-    <meta property="og:description" content="Precious Hope Jumuad is a Computer Engineer, front-end developer, user interface and user experience designer, game designer and artist, multimedia artist, digital artist, and social media manager." />
+    <meta property="og:title" content="Precious Hope Jumuad | Design Engineer, Product Designer and Front-End Developer" />
+    <meta property="og:description" content="Precious Hope Jumuad is a Design Engineer: a Product/UI/UX Designer and Front-End Developer who turns ideas and complex problems into intuitive, purposeful digital experiences. Explore projects, writing and experience." />
     <meta property="og:url" content="https://precioushopejumuad.vercel.app/" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/assets/images/site/jumuad-portfolio.jpg" />
-    <meta property="og:image:width" content="1920" />
-    <meta property="og:image:height" content="1080" />
-    <link rel="icon" type="image/png" href="/assets/images/site/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://precioushopejumuad.vercel.app/assets/images/site/jumuad-portfolio.jpg" />
+    <meta property="og:image:width" content="1600" />
+    <meta property="og:image:height" content="900" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Precious Hope Jumuad | Design Engineer, Product Designer and Front-End Developer" />
+    <meta name="twitter:description" content="Precious Hope Jumuad is a Design Engineer: a Product/UI/UX Designer and Front-End Developer who turns ideas and complex problems into intuitive, purposeful digital experiences. Explore projects, writing and experience." />
+    <meta name="twitter:image" content="https://precioushopejumuad.vercel.app/assets/images/site/jumuad-portfolio.jpg" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    <title>Precious Hope Jumuad</title>
+    <!-- Fonts load without blocking the first paint: the page shows in a fallback font, then swaps. src/main.tsx turns this preload into the stylesheet once the app starts (no inline script, so the content security policy can stay strict). -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"></noscript>
+
+    <!-- Structured data for the home page. Each page swaps in its own once it loads (src/lib/seo.ts). -->
+    <script id="page-jsonld" type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Precious Hope Jumuad",
+            "url": "https://precioushopejumuad.vercel.app/"
+          },
+          {
+            "@type": "Person",
+            "name": "Precious Hope Jumuad",
+            "url": "https://precioushopejumuad.vercel.app/",
+            "jobTitle": "Design Engineer",
+            "image": "https://precioushopejumuad.vercel.app/assets/images/site/jumuad-portfolio.jpg",
+            "sameAs": [
+              "https://www.linkedin.com/in/precioushopejumuad/",
+              "https://www.facebook.com/precioushope.jumuad"
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <!-- For crawlers and visitors without JavaScript: the main pages as plain links. -->
+    <noscript>
+      <h1>Precious Hope Jumuad, Design Engineer</h1>
+      <p>Product/UI/UX Designer and Front-End Developer. This site needs JavaScript to show its pages.</p>
+      <nav aria-label="Site pages">
+        <a href="/about">About</a> · <a href="/projects">Projects</a> · <a href="/blog">Blog</a>
+      </nav>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

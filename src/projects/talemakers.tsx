@@ -131,9 +131,7 @@ const TaleMakers = () => {
         </section>
 
         <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">
-            The Challenge
-          </h2>
+          <h2 className="font-semibold text-2xl sm:text-3xl">The Challenge</h2>
           <div className="w-full flex flex-col lg:flex-row items-center gap-6">
             <div className="w-full lg:w-2/3">
               <Carousel images={images1} />
@@ -151,9 +149,7 @@ const TaleMakers = () => {
         </section>
 
         <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">
-            The Impact
-          </h2>
+          <h2 className="font-semibold text-2xl sm:text-3xl">The Impact</h2>
           <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
             Though still in its early stages, TaleMakers is already beginning to
             spark excitement among creatives. Its vision which is to empower
@@ -175,9 +171,7 @@ const TaleMakers = () => {
         </section>
 
         <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">
-            Skills Earned
-          </h2>
+          <h2 className="font-semibold text-2xl sm:text-3xl">Skills Earned</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <div

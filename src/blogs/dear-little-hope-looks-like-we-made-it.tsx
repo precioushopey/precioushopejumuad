@@ -17,6 +17,10 @@ const Blog14 = () => {
         <section className="animate-fade-in-delay-1">
           <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
+              width={1200}
+              height={1200}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/college.png"
               alt="My College Graduation Photo"
               className="w-full aspect-[4/5] rounded-4xl border object-cover"
@@ -74,6 +78,10 @@ const Blog14 = () => {
         <section className="animate-fade-in-delay-2">
           <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
+              width={768}
+              height={960}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/vale1.jpg"
               alt="My Senior High School Graduatioj Photo"
               className="w-full aspect-[4/5] rounded-4xl border object-cover"
@@ -127,6 +135,10 @@ const Blog14 = () => {
         <section className="animate-fade-in-delay-3">
           <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
+              width={1536}
+              height={2048}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/jhs.jpg"
               alt="My Junior High School Completion Photo"
               className="w-full aspect-[3/4] rounded-4xl border object-cover"
@@ -189,6 +201,10 @@ const Blog14 = () => {
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-delay-4 clear-both">
           <figure className="space-y-3 text-center [text-align-last:center]">
             <img
+              width={1600}
+              height={2269}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/elementary.jpg"
               alt="My Elementary Graduation Photo"
               className="w-full aspect-[208/295] rounded-4xl border object-cover"
@@ -212,6 +228,10 @@ const Blog14 = () => {
           </article>
           <figure className="space-y-3 text-center [text-align-last:center]">
             <img
+              width={1600}
+              height={2284}
+              loading="lazy"
+              decoding="async"
               src="/assets/images/blog/preschool.jpg"
               alt="My Pre-School Graduation Photo"
               className="w-full aspect-[194/269] rounded-4xl border object-cover"

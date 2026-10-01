@@ -7,13 +7,10 @@ import { PillTabs } from "../components/PillTabs";
 import { SkillsCard } from "../components/SkillsCard";
 import { ListRow } from "../components/ListRow";
 import { AnalogClock } from "../components/AnalogClock";
-import {
-  featuredProjects,
-  recentProjects,
-  workHighlights,
-} from "../data/home";
+import { featuredProjects, recentProjects, workHighlights } from "../data/home";
 import { useHomeStats } from "../hooks/use-home-stats";
 import { usePhilippineClock } from "../hooks/use-philippine-clock";
+import { thumb } from "../lib/thumb";
 
 const Home = () => {
   const clock = usePhilippineClock();
@@ -58,7 +55,10 @@ const Home = () => {
         </section>
 
         <div className="flex flex-col gap-3 lg:gap-6 opacity-0 max-lg:order-first animate-fade-in-delay-2">
-          <section aria-label="At a glance" className="glass-card overflow-hidden">
+          <section
+            aria-label="At a glance"
+            className="glass-card overflow-hidden"
+          >
             <WindowBar icon={<LuActivity size={14} />} title="At a glance" />
             <div className="flex flex-row items-center justify-around gap-3 p-3">
               <div className="flex flex-col shrink-0 items-center gap-1 text-cream">
@@ -77,7 +77,7 @@ const Home = () => {
                 {stats.map(({ shown, label }) => (
                   <div
                     key={label}
-                    className="flex flex-col size-24 shrink-0 items-center justify-center gap-1 rounded-2xl bg-accent/10"
+                    className="flex flex-col size-24 shrink-0 items-center justify-center gap-1 rounded-xl md:rounded-2xl bg-accent/10"
                   >
                     <span className="font-medium text-4xl text-accent">
                       {shown}
@@ -130,7 +130,9 @@ const Home = () => {
               className="group relative min-h-32 min-w-0 flex-1 max-lg:aspect-video overflow-hidden rounded-3xl border border-line"
             >
               <img
-                src={p.image}
+                loading="lazy"
+                decoding="async"
+                src={thumb(p.image)}
                 alt={p.title}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />

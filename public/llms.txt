@@ -1,0 +1,32 @@
+# Precious Hope Jumuad
+
+> Precious Hope Jumuad is a Design Engineer: a Product/UI/UX Designer and Front-End Developer who turns ideas and complex problems into intuitive, purposeful digital experiences. Explore projects, writing and experience.
+
+## Pages
+- [Home](https://precioushopejumuad.vercel.app/)
+- [About](https://precioushopejumuad.vercel.app/about): experience, education, certifications and skills
+- [Projects](https://precioushopejumuad.vercel.app/projects): all projects
+- [Blog](https://precioushopejumuad.vercel.app/blog): all posts
+
+## Projects
+- [SUBAY](https://precioushopejumuad.vercel.app/projects/subay)
+- [HRMO Payroll System](https://precioushopejumuad.vercel.app/projects/payroll)
+- [iBRGY](https://precioushopejumuad.vercel.app/projects/ibrgy)
+- [TaleMakers](https://precioushopejumuad.vercel.app/projects/talemakers)
+- [ATHOMES](https://precioushopejumuad.vercel.app/projects/athomes)
+- [ICpEP.SE - USTP Redesign](https://precioushopejumuad.vercel.app/projects/icpep)
+- [CpExpress: CpE Confessions](https://precioushopejumuad.vercel.app/projects/cpexpress)
+
+## Blog posts
+- [I passed the Civil Service Professional Examination!](https://precioushopejumuad.vercel.app/blogs/i-passed-the-cse-exam)
+- [“all’s well that ends well,” I wish](https://precioushopejumuad.vercel.app/blogs/alls-well-that-ends-well-I-wish)
+- [Dear little Hope, looks like we made it..](https://precioushopejumuad.vercel.app/blogs/dear-little-hope-looks-like-we-made-it)
+- [I know everything, that I know nothing](https://precioushopejumuad.vercel.app/blogs/i-know-that-i-know-nothing)
+- [All's Well That Ends Well](https://precioushopejumuad.vercel.app/blogs/alls-well-that-ends-well)
+- [Coins for the Child](https://precioushopejumuad.vercel.app/blogs/coins-for-the-child)
+- [The gumamela I offered to Mary](https://precioushopejumuad.vercel.app/blogs/the-gumamela-I-offered-to-mary)
+- [A Glimpse Of My Future](https://precioushopejumuad.vercel.app/blogs/a-glimpse-of-my-future)
+- [Have I Not Breathed For A Moment](https://precioushopejumuad.vercel.app/blogs/have-i-not-breathed-for-a-moment)
+- [Storyboard: A Five-Year Plan for the Development of Myself](https://precioushopejumuad.vercel.app/blogs/storyboard-a-five-year-plan)
+- [Words of Gratitude on Behalf of the Graduates](https://precioushopejumuad.vercel.app/blogs/words-of-gratitude)
+- [In the Midst of Silence: Reflections of a Bystander in a Time of Crisis](https://precioushopejumuad.vercel.app/blogs/in-the-midst-of-silence)

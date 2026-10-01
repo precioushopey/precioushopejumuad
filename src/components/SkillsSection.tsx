@@ -29,7 +29,7 @@ export const SkillsSection = () => {
             key={skill.name}
             className="grid grid-cols-[2rem_minmax(0,1fr)_8rem] items-center gap-3 border-b border-line/30 px-6 py-3 text-left last:border-b-0 md:grid-cols-[2rem_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1.6fr)]"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={skill.logo}
               alt=""
               className="h-8 w-8 rounded-lg border bg-white object-contain p-0.5"

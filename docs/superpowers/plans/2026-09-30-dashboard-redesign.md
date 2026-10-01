@@ -287,7 +287,7 @@ export const LatestList = () => (
     {latestItems().map((item) => (
       <div
         key={item.to}
-        className="flex items-center gap-3 rounded-2xl bg-black/20 p-2.5"
+        className="flex items-center gap-3 rounded-xl md:rounded-2xl bg-black/20 p-2.5"
       >
         <Link to={item.to} className="flex min-w-0 flex-1 items-center gap-3 text-left">
           <img
@@ -719,7 +719,7 @@ const Home = () => {
             <Link
               key={p.url}
               to={p.url}
-              className="flex items-center gap-3 rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
+              className="flex items-center gap-3 rounded-xl md:rounded-2xl bg-black/20 p-2.5 text-left transition-colors hover:bg-black/35"
             >
               <img
                 src={p.image}

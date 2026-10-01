@@ -1,9 +1,11 @@
+import { memo } from "react";
+import { Link } from "react-router-dom";
 import { LuMail } from "react-icons/lu";
 import { ContactForm } from "./ContactForm";
 import { WindowBar } from "./WindowBar";
 
 // The "Send a Message" form in the right-hand column, dressed as a mail app's "New message" window.
-export const ContactCard = () => (
+const ContactCardBase = () => (
   <section
     aria-label="Send a message"
     className="glass-card overflow-hidden pb-2"
@@ -17,6 +19,15 @@ export const ContactCard = () => (
         </span>
       </p>
       <ContactForm heading="h2" variant="card" />
+      <p className="px-1 text-center text-xs text-cream/60">
+        How your message is used:{" "}
+        <Link to="/privacy" className="underline hover:text-cream">
+          Privacy Policy
+        </Link>
+      </p>
     </div>
   </section>
 );
+
+// Memoized so the Home page's once-a-second clock tick doesn't redraw it.
+export const ContactCard = memo(ContactCardBase);

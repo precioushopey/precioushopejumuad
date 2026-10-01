@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { thumb } from "../lib/thumb";
 
 // A large-icon tile like File Explorer's: a rounded, bordered thumbnail with the name and a muted
 // line of details underneath. Shared by the Projects and Blog pages.
@@ -20,10 +21,12 @@ export const ThumbnailTile = ({
   <Link
     to={to}
     style={{ animationDelay: `${Math.min(index, 11) * 60}ms` }}
-    className="animate-fade-in opacity-0 motion-reduce:animate-none motion-reduce:opacity-100 group flex flex-col gap-2 rounded-2xl p-2 text-left transition-colors hover:bg-cream/10 sm:gap-3 sm:p-3"
+    className="animate-fade-in opacity-0 motion-reduce:animate-none motion-reduce:opacity-100 group flex flex-col gap-2 rounded-xl md:rounded-2xl p-2 text-left transition-colors hover:bg-cream/10 sm:gap-3 sm:p-3"
   >
     <img
-      src={image}
+      loading="lazy"
+      decoding="async"
+      src={thumb(image)}
       alt=""
       className="aspect-[16/10] w-full rounded-xl border border-line object-cover shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
     />

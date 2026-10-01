@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { memo, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { categories as projectCategories } from "../data/projects";
 
@@ -6,7 +6,7 @@ import { categories as projectCategories } from "../data/projects";
 // the project categories; the Blog page passes its own. Below lg they stay on one row that scrolls
 // sideways (centred when it fits: the auto margins on the first and last pill do that without
 // cutting off the start of the row the way justify-center would).
-export const PillTabs = ({
+const PillTabsBase = ({
   active,
   markCurrent = false,
   categories = projectCategories,
@@ -52,3 +52,6 @@ export const PillTabs = ({
     </nav>
   );
 };
+
+// Memoized so the Home page's once-a-second clock tick doesn't redraw it.
+export const PillTabs = memo(PillTabsBase);

@@ -10,6 +10,10 @@ const FROM = "Portfolio Contact <onboarding@resend.dev>";
 // Abuse protection (the free Resend plan allows 100 emails a day, so one person must not use them up).
 const MIN_FILL_MS = 3000; // a human needs a few seconds to type a message; bots submit instantly
 const MAX_LINKS = 2; // messages stuffed with links are almost always spam
+const MAX_BODY_BYTES = 20_000; // a real message is a few KB at most (5000 characters plus the other fields)
+// One plain address: letters, digits and . _ % + ' - before the @, and a dotted domain after it. This
+// keeps commas, spaces and brackets out, so it cannot name several recipients or inject anything.
+const EMAIL = /^[A-Za-z0-9._%+'-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+$/;
 const PER_IP_SHORT = { limit: 3, windowMs: 10 * 60 * 1000 }; // 3 messages per 10 minutes per visitor
 const PER_IP_DAY = { limit: 8, windowMs: 24 * 60 * 60 * 1000 }; // 8 per day per visitor
 const ALL_HOUR = { limit: 30, windowMs: 60 * 60 * 1000 }; // 30 per hour in total, well under the daily cap
@@ -71,14 +75,29 @@ export async function POST(request: Request) {
     } catch {
       /* treated as a mismatch below */
     }
-    const local = /^(localhost|127\.0\.0\.1)(:\d+)?$/.test(originHost);
+    // Local development is only allowed outside production.
+    const local =
+      process.env.VERCEL_ENV !== "production" &&
+      /^(localhost|127\.0\.0\.1)(:\d+)?$/.test(originHost);
     if (originHost !== host && !local)
       return json({ error: "Not allowed." }, 403);
   }
 
+  // Refuse oversized bodies before reading them (the header can be missing or wrong, so the text is
+  // measured again after reading).
+  if (Number(request.headers.get("content-length") ?? 0) > MAX_BODY_BYTES)
+    return json({ error: "That message is too long." }, 413);
+
   let data: Record<string, unknown>;
   try {
-    data = await request.json();
+    const text = await request.text();
+    if (text.length > MAX_BODY_BYTES)
+      return json({ error: "That message is too long." }, 413);
+    const parsed: unknown = JSON.parse(text);
+    // Valid JSON is not always an object (null, a number, a list), so check before using it.
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed))
+      return json({ error: "Invalid request." }, 400);
+    data = parsed as Record<string, unknown>;
   } catch {
     return json({ error: "Invalid request." }, 400);
   }
@@ -93,7 +112,7 @@ export async function POST(request: Request) {
   const email = clean(data.email, 200);
   const message = clean(data.message, 5000, true);
 
-  if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!name || !message || email.length > 254 || !EMAIL.test(email)) {
     return json(
       { error: "Please fill in your name, a valid email and a message." },
       400,

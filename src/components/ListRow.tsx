@@ -1,4 +1,6 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
+import { thumb } from "../lib/thumb";
 
 type Props = {
   image: string;
@@ -15,7 +17,7 @@ type Props = {
 
 // A dark rounded row with a small image tile, a title and a muted detail line. Used for the
 // Recent Projects and Work Experience cards on Home.
-export const ListRow = ({
+const ListRowBase = ({
   image,
   title,
   detail,
@@ -24,7 +26,7 @@ export const ListRow = ({
   contain = false,
   className = "",
 }: Props) => {
-  const classes = `flex min-w-0 items-center gap-3 rounded-2xl bg-black/20 p-3 text-left ${
+  const classes = `flex min-w-0 items-center gap-3 rounded-xl md:rounded-2xl bg-black/20 p-3 text-left ${
     to ? "transition-colors hover:bg-black/35" : ""
   } ${className}`;
   const content = (
@@ -33,7 +35,9 @@ export const ListRow = ({
         className={`aspect-square w-12 shrink-0 overflow-hidden rounded-xl ${tile}`}
       >
         <img
-          src={image}
+          loading="lazy"
+          decoding="async"
+          src={thumb(image)}
           alt=""
           className={`h-full w-full ${contain ? "object-contain" : "object-cover"}`}
         />
@@ -55,3 +59,6 @@ export const ListRow = ({
     <div className={classes}>{content}</div>
   );
 };
+
+// Memoized so the Home page's once-a-second clock tick doesn't redraw it.
+export const ListRow = memo(ListRowBase);

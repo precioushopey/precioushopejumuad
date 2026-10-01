@@ -82,7 +82,7 @@ export const SearchPill = () => {
                 type="button"
                 onMouseEnter={() => setActive(i)}
                 onClick={() => go(r.to)}
-                className={`block w-full rounded-2xl px-3 py-2 text-left ${
+                className={`block w-full rounded-xl md:rounded-2xl px-3 py-2 text-left ${
                   i === active ? "bg-accent/25" : ""
                 }`}
               >

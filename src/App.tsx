@@ -1,42 +1,46 @@
+import { lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { Shell } from "./components/shell/Shell";
 import NotFound from "./pages/not-found";
 import Home from "./pages/home";
-import About from "./pages/about";
+const About = lazy(() => import("./pages/about"));
 import ProfilePage from "./pages/profile";
 import ProjectsPage from "./pages/projects";
 import Blog from "./pages/blog";
-import Subay from "./projects/subay";
-import Payroll from "./projects/payroll";
-import Ibrgy from "./projects/ibrgy";
-import TaleMakers from "./projects/talemakers";
-import AtHomes from "./projects/athomes";
-import ICpEP from "./projects/icpep";
-import CpExpress from "./projects/cpexpress";
-import CpEngage from "./projects/cpengage";
-import BBTime from "./projects/bbtime";
-import CpEDays from "./projects/cpedays";
-import GenAss from "./projects/genass";
-import CpExpo from "./projects/cpexpo";
-import ICpEPSE from "./projects/icpepse";
-import UDA from "./projects/uda";
-import MeInAOT from "./projects/meinaot";
-import Pixels from "./projects/pixels";
-import Videos from "./projects/videos";
-import Photos from "./projects/photos";
-import Blog1 from "./blogs/in-the-midst-of-silence";
-import Blog2 from "./blogs/words-of-gratitude";
-import Blog3 from "./blogs/storyboard-a-five-year-plan";
-import Blog4 from "./blogs/have-i-not-breathed-for-a-moment";
-import Blog5 from "./blogs/a-glimpse-of-my-future";
-import Blog6 from "./blogs/the-gumamela-I-offered-to-mary";
-import Blog11 from "./blogs/coins-for-the-child";
-import Blog12 from "./blogs/alls-well-that-ends-well";
-import Blog13 from "./blogs/i-know-that-i-know-nothing";
-import Blog14 from "./blogs/dear-little-hope-looks-like-we-made-it";
-import Blog15 from "./blogs/alls-well-that-ends-well-I-wish";
-import Blog16 from "./blogs/i-passed-the-cse-exam";
+const Subay = lazy(() => import("./projects/subay"));
+const Payroll = lazy(() => import("./projects/payroll"));
+const Ibrgy = lazy(() => import("./projects/ibrgy"));
+const TaleMakers = lazy(() => import("./projects/talemakers"));
+const AtHomes = lazy(() => import("./projects/athomes"));
+const ICpEP = lazy(() => import("./projects/icpep"));
+const CpExpress = lazy(() => import("./projects/cpexpress"));
+const CpEngage = lazy(() => import("./projects/cpengage"));
+const BBTime = lazy(() => import("./projects/bbtime"));
+const CpEDays = lazy(() => import("./projects/cpedays"));
+const GenAss = lazy(() => import("./projects/genass"));
+const CpExpo = lazy(() => import("./projects/cpexpo"));
+const ICpEPSE = lazy(() => import("./projects/icpepse"));
+const UDA = lazy(() => import("./projects/uda"));
+const MeInAOT = lazy(() => import("./projects/meinaot"));
+const Pixels = lazy(() => import("./projects/pixels"));
+const Videos = lazy(() => import("./projects/videos"));
+const Photos = lazy(() => import("./projects/photos"));
+const Blog1 = lazy(() => import("./blogs/in-the-midst-of-silence"));
+const Blog2 = lazy(() => import("./blogs/words-of-gratitude"));
+const Blog3 = lazy(() => import("./blogs/storyboard-a-five-year-plan"));
+const Blog4 = lazy(() => import("./blogs/have-i-not-breathed-for-a-moment"));
+const Blog5 = lazy(() => import("./blogs/a-glimpse-of-my-future"));
+const Blog6 = lazy(() => import("./blogs/the-gumamela-I-offered-to-mary"));
+const Blog11 = lazy(() => import("./blogs/coins-for-the-child"));
+const Blog12 = lazy(() => import("./blogs/alls-well-that-ends-well"));
+const Blog13 = lazy(() => import("./blogs/i-know-that-i-know-nothing"));
+const Blog14 = lazy(
+  () => import("./blogs/dear-little-hope-looks-like-we-made-it"),
+);
+const Blog15 = lazy(() => import("./blogs/alls-well-that-ends-well-I-wish"));
+const Blog16 = lazy(() => import("./blogs/i-passed-the-cse-exam"));
+const PrivacyPage = lazy(() => import("./pages/privacy"));
 
 function App() {
   return (
@@ -50,6 +54,7 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/projects/subay" element={<Subay />} />
             <Route path="/projects/payroll" element={<Payroll />} />
