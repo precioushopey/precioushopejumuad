@@ -1,4 +1,4 @@
-import { FormEvent, useId, useRef, useState } from "react";
+import { FormEvent, useEffect, useId, useRef, useState } from "react";
 import { LuSend } from "react-icons/lu";
 import { useToast } from "../hooks/use-toast";
 
@@ -35,6 +35,14 @@ const styles = {
   },
 };
 
+// Asks the server for the signed timestamp that goes with the message (see api/contact.ts). It
+// resolves to null when the server can't be reached, e.g. under `npm run dev`, which has no /api.
+const requestFormToken = (): Promise<string | null> =>
+  fetch("/api/contact", { cache: "no-store" })
+    .then((response) => (response.ok ? response.json() : null))
+    .then((body) => (typeof body?.token === "string" ? body.token : null))
+    .catch(() => null);
+
 // The heading and form only (no card around them), so it can sit inside any card.
 // Field ids come from useId so the form can appear twice on one page without clashing.
 export const ContactForm = ({
@@ -48,10 +56,14 @@ export const ContactForm = ({
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const uid = useId();
-  // When the form appeared and when a message last went out: the server ignores forms filled in faster
-  // than a person could type, and a short cooldown stops accidental double sends.
-  const shownAt = useRef(Date.now());
+  // The server's token for this form (it works out how long the form was open from it), and when a
+  // message last went out: a short cooldown stops accidental double sends.
+  const formToken = useRef<Promise<string | null> | null>(null);
   const lastSentAt = useRef(0);
+
+  useEffect(() => {
+    formToken.current = requestFormToken();
+  }, []);
 
   // Posts the form to /api/contact (api/contact.ts), which emails it through Resend.
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -64,21 +76,24 @@ export const ContactForm = ({
       });
       return;
     }
-    const data = {
-      ...Object.fromEntries(new FormData(form)),
-      elapsedMs: Date.now() - shownAt.current,
-      page: window.location.pathname,
-    };
-
     setIsSubmitting(true);
     try {
+      const data = {
+        ...Object.fromEntries(new FormData(form)),
+        token: (await (formToken.current ?? requestFormToken())) ?? "",
+        page: window.location.pathname,
+      };
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
       const result = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(result.error);
+      if (!response.ok) {
+        // A stale or missing token: get a fresh one so the next try can work without a reload.
+        if (result.code) formToken.current = requestFormToken();
+        throw new Error(result.error);
+      }
 
       toast({
         title: "Message sent!",

@@ -14,6 +14,7 @@ import { ProcessTable } from "../components/ProcessTable";
 import { certifications } from "../data/about";
 import { skills } from "../data/skills";
 import { useAboutData } from "../hooks/use-about-data";
+import { useDisclosure } from "../hooks/use-disclosure";
 import { siteLink } from "../lib/site-link";
 import { thumb } from "../lib/thumb";
 
@@ -24,6 +25,7 @@ const cardIcons = {
 
 const About = () => {
   const folders = useAboutData();
+  const bio = useDisclosure();
 
   return (
     <div className="flex flex-col lg:flex-1 gap-3 lg:gap-6 p-0 lg:p-6">
@@ -36,7 +38,9 @@ const About = () => {
               aria-hidden
               className="pointer-events-none absolute inset-x-0 -inset-y-[5%] bg-[radial-gradient(ellipse_at_58%_55%,rgb(255_201_60/0.5),rgb(255_201_60/0.16)_40%,transparent_70%)] blur-2xl"
             />
-            <img width={1420} height={1080}
+            <img
+              width={1420}
+              height={1080}
               src="/assets/images/profile/hero.png"
               alt="Precious Hope Jumuad in her graduation gown"
               className="relative h-auto w-full"
@@ -44,7 +48,7 @@ const About = () => {
           </figure>
           <article className="glass-card w-full overflow-hidden bg-cream/[0.07] text-justify">
             <WindowBar icon={<LuStickyNote size={14} />} title="About me" />
-            <div className="space-y-6 bg-[repeating-linear-gradient(transparent_0_23px,rgb(245_234_214/0.08)_23px_24px)] bg-[position:0_1.25rem] px-6 pt-6 pb-6">
+            <div className="bg-[repeating-linear-gradient(transparent_0_23px,rgb(245_234_214/0.08)_23px_24px)] bg-[position:0_1.25rem] px-6 pt-6 pb-6">
               <p>
                 I’m <strong>Precious Hope T. Jumuad</strong>, a Design Engineer
                 (Product/UI/UX Designer and Front-End Developer) who believes
@@ -54,39 +58,71 @@ const About = () => {
                 front-end development, turning ideas and complex problems into
                 digital experiences that feel intuitive and purposeful.
               </p>
-              <p>
-                I work across startups and digital projects, designing and
-                building web and mobile products, SaaS platforms, design
-                systems, and interactive prototypes. I enjoy taking products
-                from the early stages of an idea (understanding the problem,
-                defining requirements, mapping user flows, and exploring
-                solutions) to creating working interfaces that can be tested,
-                refined, and brought closer to production. I work primarily with
-                Figma, React, TypeScript, Tailwind, and AI-powered tools to move
-                quickly without losing sight of thoughtful design.
-              </p>
-              <p>
-                As a Design Engineer, I care about the space between design and
-                development. My workflow combines UX research and analysis,
-                product requirements, rapid prototyping, reusable components,
-                responsive behavior, accessibility, technical feasibility,
-                documentation, and developer handoff. I believe design shouldn’t
-                stop at static screens; sometimes the best way to communicate an
-                idea is to make it real, interactive, and something people can
-                experience.
-              </p>
-              <p>
-                I’m always curious about better ways to design, build, and solve
-                problems, especially where creativity and technology meet. I
-                want to work with people who value thoughtful design,
-                collaboration, experimentation, and purposeful products. If
-                you’re building something interesting, I’d love to connect. You
-                can explore my work{" "}
-                <Link to="/projects">
-                  <u>here</u>
-                </Link>
-                .
-              </p>
+              {/* The rest of the bio is hidden until "Read more". Every gap is a multiple of the
+                  24px line height so the ruled lines stay under the text. While closed it is
+                  invisible and inert, so it can't be tabbed into or read out. */}
+              <div
+                id={bio.panelId}
+                inert={!bio.open}
+                className={`grid transition-[grid-template-rows,visibility] duration-300 ease-out motion-reduce:transition-none ${
+                  bio.open
+                    ? "visible grid-rows-[1fr]"
+                    : "invisible grid-rows-[0fr]"
+                }`}
+              >
+                <div
+                  className={`min-h-0 overflow-hidden transition-opacity duration-300 motion-reduce:transition-none ${
+                    bio.open ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <div className="space-y-6 pt-6">
+                    <p>
+                      I work across startups and digital projects, designing and
+                      building web and mobile products, SaaS platforms, design
+                      systems, and interactive prototypes. I enjoy taking
+                      products from the early stages of an idea (understanding
+                      the problem, defining requirements, mapping user flows,
+                      and exploring solutions) to creating working interfaces
+                      that can be tested, refined, and brought closer to
+                      production. I work primarily with Figma, React,
+                      TypeScript, Tailwind, and AI-powered tools to move quickly
+                      without losing sight of thoughtful design.
+                    </p>
+                    <p>
+                      As a Design Engineer, I care about the space between
+                      design and development. My workflow combines UX research
+                      and analysis, product requirements, rapid prototyping,
+                      reusable components, responsive behavior, accessibility,
+                      technical feasibility, documentation, and developer
+                      handoff. I believe design shouldn’t stop at static
+                      screens; sometimes the best way to communicate an idea is
+                      to make it real, interactive, and something people can
+                      experience.
+                    </p>
+                    <p>
+                      I’m always curious about better ways to design, build, and
+                      solve problems, especially where creativity and technology
+                      meet. I want to work with people who value thoughtful
+                      design, collaboration, experimentation, and purposeful
+                      products. If you’re building something interesting, I’d
+                      love to connect. You can explore my work{" "}
+                      <Link to="/projects">
+                        <u>here</u>
+                      </Link>
+                      .
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                aria-expanded={bio.open}
+                aria-controls={bio.panelId}
+                onClick={bio.toggle}
+                className="mt-6 block text-left leading-6 text-accent underline underline-offset-4 transition-colors hover:text-cream"
+              >
+                {bio.open ? "Show less" : "Read more"}
+              </button>
             </div>
           </article>
         </section>

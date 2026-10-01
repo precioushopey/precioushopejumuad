@@ -4,11 +4,14 @@
 //   RESEND_API_KEY   the API key from resend.com (keep it secret, never put it in src/)
 //   CONTACT_TO_EMAIL optional; where messages go (defaults to the address below). With Resend's free
 //                    sender (onboarding@resend.dev) this must be the email the Resend account uses.
+//   FORM_SECRET      optional; the secret that signs the form's timestamp token (see below). Without
+//                    it the signing key is derived from RESEND_API_KEY, so nothing extra is needed.
 const DEFAULT_TO = "jumuad.precious@gmail.com";
 const FROM = "Portfolio Contact <onboarding@resend.dev>";
 
 // Abuse protection (the free Resend plan allows 100 emails a day, so one person must not use them up).
 const MIN_FILL_MS = 3000; // a human needs a few seconds to type a message; bots submit instantly
+const TOKEN_MAX_AGE_MS = 60 * 60 * 1000; // a form left open longer than an hour must be reloaded
 const MAX_LINKS = 2; // messages stuffed with links are almost always spam
 const MAX_BODY_BYTES = 20_000; // a real message is a few KB at most (5000 characters plus the other fields)
 // One plain address: letters, digits and . _ % + ' - before the @, and a dotted domain after it. This
@@ -64,6 +67,73 @@ const safeDecode = (value: string | null) => {
   }
 };
 
+// The form's timestamp token. When the form appears, the page asks GET for a token: the time it was
+// issued plus a signature only this server can make. When the message comes back, the server checks
+// the signature and works out for itself how long the form was open. The browser can no longer just
+// claim "I took 9 seconds", which is what the old elapsedMs field allowed. A determined bot can still
+// fetch a token and wait, so this raises the cost of spamming rather than ruling it out.
+const encoder = new TextEncoder();
+
+const signingKey = async () => {
+  const secret = process.env.FORM_SECRET || process.env.RESEND_API_KEY;
+  if (!secret) return null;
+  return crypto.subtle.importKey(
+    "raw",
+    encoder.encode(`form-token:${secret}`),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+};
+
+const sign = async (key: CryptoKey, text: string) => {
+  const bytes = new Uint8Array(
+    await crypto.subtle.sign("HMAC", key, encoder.encode(text)),
+  );
+  return btoa(String.fromCharCode(...bytes))
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
+};
+
+// Compares without stopping at the first difference, so timing reveals nothing about the signature.
+const sameText = (a: string, b: string) => {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+};
+
+const checkToken = async (
+  key: CryptoKey,
+  token: unknown,
+): Promise<{ ok: true; ageMs: number } | { ok: false; expired: boolean }> => {
+  if (typeof token !== "string" || token.length > 100)
+    return { ok: false, expired: false };
+  const [issued, signature, ...extra] = token.split(".");
+  const issuedAt = Number(issued);
+  if (extra.length || !signature || !Number.isSafeInteger(issuedAt))
+    return { ok: false, expired: false };
+  if (!sameText(signature, await sign(key, issued)))
+    return { ok: false, expired: false };
+  const ageMs = Date.now() - issuedAt;
+  if (ageMs > TOKEN_MAX_AGE_MS) return { ok: false, expired: true };
+  // A timestamp from the future can only come from a forged or broken clock.
+  if (ageMs < 0) return { ok: false, expired: false };
+  return { ok: true, ageMs };
+};
+
+// Hands out a fresh token when the form appears.
+export async function GET() {
+  const key = await signingKey();
+  if (!key) {
+    console.error("FORM_SECRET and RESEND_API_KEY are both unset");
+    return json({ error: "Messages can't be sent right now." }, 500);
+  }
+  const issued = String(Date.now());
+  return json({ token: `${issued}.${await sign(key, issued)}` });
+}
+
 export async function POST(request: Request) {
   // Only the site itself may post here (blocks other websites; command-line tools can still fake it).
   const origin = request.headers.get("origin");
@@ -102,11 +172,31 @@ export async function POST(request: Request) {
     return json({ error: "Invalid request." }, 400);
   }
 
-  // Hidden field that real visitors never fill in, and a form filled in faster than a person can
-  // type: both mean a bot. Pretend it worked so the bot doesn't try again.
-  const elapsed = Number(data.elapsedMs);
-  if (clean(data.website, 200) || !(elapsed >= MIN_FILL_MS))
-    return json({ ok: true });
+  // Hidden field that real visitors never fill in: only a bot does. Pretend it worked so the bot
+  // doesn't try again.
+  if (clean(data.website, 200)) return json({ ok: true });
+
+  // The form must come with a token this server signed (see above). A missing, altered or old token
+  // is most likely a real visitor with a stale page, so they get an honest message, not silence.
+  const key = await signingKey();
+  if (!key) {
+    console.error("FORM_SECRET and RESEND_API_KEY are both unset");
+    return json({ error: "Messages can't be sent right now." }, 500);
+  }
+  const token = await checkToken(key, data.token);
+  if (!token.ok) {
+    return json(
+      {
+        error: token.expired
+          ? "This form has been open for a while. Please try sending again."
+          : "Please reload the page and try again.",
+        code: token.expired ? "expired" : "invalid",
+      },
+      400,
+    );
+  }
+  // Filled in faster than a person can type: a bot. Pretend it worked.
+  if (token.ageMs < MIN_FILL_MS) return json({ ok: true });
 
   const name = clean(data.name, 100);
   const email = clean(data.email, 200);
