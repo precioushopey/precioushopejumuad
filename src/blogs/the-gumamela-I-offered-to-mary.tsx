@@ -21,9 +21,9 @@ const Blog6 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
-        <section className="space-y-8 animate-fade-in-delay-2">
-          <figure className="space-y-4 text-center [text-align-last:center]">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="space-y-6 animate-fade-in-delay-2">
+          <figure className="space-y-3 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/gumamela1.jpg"
               alt="Immaculate Conception Parish Church of Jasaan"
@@ -40,7 +40,7 @@ const Blog6 = () => {
               </a>
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               The month of May always brought with it a sense of excitement and
               anticipation. It was the month of <em>Flores de Mayo</em>, a
@@ -77,7 +77,7 @@ const Blog6 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/blog/gumamela2.jpg"
               alt="Me and My Sibling's First Communion"
@@ -87,7 +87,7 @@ const Blog6 = () => {
               Fig. 2 - Me and My Sibling's First Communion.
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               As a young girl growing up in a devout Catholic family, and from a
               very young age, I was introduced to the church's teachings and
@@ -116,8 +116,8 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="space-y-8 animate-fade-in-delay-3">
-          <article className="space-y-4">
+        <section className="space-y-6 animate-fade-in-delay-3">
+          <article className="space-y-3">
             <p>
               Everyone was out taking their snacks and playing outside the
               church grounds. While I was walking along the church aisle, just
@@ -142,7 +142,7 @@ const Blog6 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
               src="/assets/images/blog/gumamela3.jpg"
               alt="The Restored Retablo (photo courtesy of Arellano J. Galdo III)."
@@ -159,7 +159,7 @@ const Blog6 = () => {
               </a>
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               His surroundings seemed to soften as he played his beloved piano.
               It was like soft flowers came bursting from behind; suddenly
@@ -179,8 +179,8 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-8 animate-fade-in-delay-4 lg:clear-both">
-          <article className="space-y-4">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4 lg:clear-both">
+          <article className="space-y-3">
             <p>
               Oh, to be in love. Suddenly, the music stopped. My trance dance in
               the astral plane was disconnected. The children came running
@@ -202,7 +202,7 @@ const Blog6 = () => {
               coming-of-age core memories, my <em>rondalla</em> recitals, and my
               forbidden romantic rendezvous. More importantly, this is my HOME.
             </p>
-            <figure className="space-y-4 text-center [text-align-last:center]">
+            <figure className="space-y-3 text-center [text-align-last:center]">
               <img
                 src="/assets/images/blog/gumamela4.webp"
                 alt="Our Rondalla Performance in front of the Church"
@@ -236,7 +236,7 @@ const Blog6 = () => {
           </article>
         </section>
 
-        <section className="flex justify-center border-t-2 gap-2 pt-8 clear-both">
+        <section className="flex justify-center border-t-2 gap-2 pt-6 clear-both">
           <a
             target="_blank"
             href="https://online.fliphtml5.com/yxrgv/tcvk/#p=32"

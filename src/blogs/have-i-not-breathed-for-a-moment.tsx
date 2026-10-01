@@ -24,9 +24,9 @@ const Blog4 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
-        <section className="space-y-8 animate-fade-in-delay-2">
-          <figure className="space-y-4 text-center [text-align-last:center]">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="space-y-6 animate-fade-in-delay-2">
+          <figure className="space-y-3 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/photos3.jpg"
               alt="Lake Gumaod at Gumaod, Claveria, Misamis Oriental"
@@ -36,7 +36,7 @@ const Blog4 = () => {
               Fig. 1 - Lake Gumaod at Gumaod, Claveria, Misamis Oriental.
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               Activities and quizzes accumulate in my virtual classroom, but I'm
               no longer afraid. Rather, I took small, shivering steps upwards to
@@ -88,7 +88,7 @@ const Blog4 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/blog/photos2.jpg"
               alt="Sunset on the Rubber Trees at Gumaod, Claveria, Misamis"
@@ -118,8 +118,8 @@ const Blog4 = () => {
           </article>
         </section>
 
-        <section className="space-y-8 animate-fade-in-delay-3">
-          <article className="space-y-4">
+        <section className="space-y-6 animate-fade-in-delay-3">
+          <article className="space-y-3">
             <p>
               Mathematical equations came flying onto my face like some visual
               effects portrayed in that particular meme I usually share on
@@ -160,7 +160,7 @@ const Blog4 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
               src="/assets/images/blog/photos4.jpg"
               alt="Flowers at Gumaod, Claveria, Misamis Oriental"
@@ -192,8 +192,8 @@ const Blog4 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-8 animate-fade-in-delay-4 lg:clear-both">
-          <article className="space-y-4">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4 lg:clear-both">
+          <article className="space-y-3">
             <p>
               Tonight, it is an impossibly large globe of yellow-orange rose
               quickly, as if thrown up by a giant, invisible hand. I watched in
@@ -228,7 +228,7 @@ const Blog4 = () => {
               thousand other things to gladden the soul. That was more than
               enough for happiness.
             </p>
-            <figure className="space-y-4 text-center [text-align-last:center]">
+            <figure className="space-y-3 text-center [text-align-last:center]">
               <img
                 src="/assets/images/blog/photos5.jpg"
                 alt="Lake Gumaod at Gumaod, Claveria, Misamis Oriental"
@@ -257,7 +257,7 @@ const Blog4 = () => {
           </article>
         </section>
 
-        <section className="flex justify-center border-t-2 gap-2 pt-8 clear-both">
+        <section className="flex justify-center border-t-2 gap-2 pt-6 clear-both">
           <a
             target="_blank"
             href="https://drive.google.com/file/d/1-hlM-3s_r_WvBfA_jC7Qx5awlJ4WM8_i/view"

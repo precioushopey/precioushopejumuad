@@ -11,16 +11,16 @@ const Blog15 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="animate-fade-in-delay-2">
-          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-1/2 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/blog/essay3.png"
               alt="“all’s well that ends well,” I wish"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
             />
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               They say,{" "}
               <cite>“College is a preparation for the real world.”</cite> I
@@ -41,7 +41,7 @@ const Blog15 = () => {
           </article>
         </section>
 
-        <section className="space-y-4 animate-fade-in-delay-3">
+        <section className="space-y-3 animate-fade-in-delay-3">
           <p>
             That I could be called “Engineer” without too much red tape. But no
             one warned me that this course, and the system behind it, would do

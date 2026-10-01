@@ -34,7 +34,7 @@ export const SearchPill = () => {
 
   return (
     <div ref={wrapRef} className="relative w-full md:w-auto xl:w-[22rem]">
-      <label className="flex items-center gap-2 rounded-full border-2 border-line bg-black/25 px-4 py-2 text-cream focus-within:border-accent">
+      <label className="flex items-center gap-2 rounded-full border-2 border-line bg-black/25 px-3 py-2 text-cream focus-within:border-accent">
         <LuSearch size={18} aria-hidden />
         <input
           type="search"
@@ -74,7 +74,7 @@ export const SearchPill = () => {
           className="glass-card absolute right-0 top-full z-50 mt-2 w-72 overflow-hidden p-2 text-left sm:w-96"
         >
           {results.length === 0 && (
-            <li className="px-4 py-2 text-sm text-cream/60">No matches</li>
+            <li className="px-3 py-2 text-sm text-cream/60">No matches</li>
           )}
           {results.map((r, i) => (
             <li key={r.to} role="option" aria-selected={i === active}>
@@ -82,7 +82,7 @@ export const SearchPill = () => {
                 type="button"
                 onMouseEnter={() => setActive(i)}
                 onClick={() => go(r.to)}
-                className={`block w-full rounded-2xl px-4 py-2 text-left ${
+                className={`block w-full rounded-2xl px-3 py-2 text-left ${
                   i === active ? "bg-accent/25" : ""
                 }`}
               >

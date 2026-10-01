@@ -68,10 +68,10 @@ const ICpEP = () => {
 
   return (
     <ProjectLayout>
-      <div className="space-y-20 pt-8">
-        <section className="space-y-8">
+      <div className="space-y-15 pt-6">
+        <section className="space-y-6">
           <Carousel images={images1} />
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             Project Overview
           </h2>
           <p className="-mt-2 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
@@ -98,17 +98,17 @@ const ICpEP = () => {
           </button>
         </section>
 
-        <section className="space-y-8">
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+        <section className="space-y-6">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             Design Thinking Process
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {designSteps.map((step, index) => (
               <div
                 key={index}
-                className="group overflow-hidden glass-card space-y-4 p-8 card-hover"
+                className="group overflow-hidden glass-card space-y-3 p-6 card-hover"
               >
-                <div className="flex items-center justify-center border-b pb-2 gap-x-4">
+                <div className="flex items-center justify-center border-b pb-2 gap-x-3">
                   {step.icon}
                   <h3 className="font-medium text-lg">{step.title}</h3>
                 </div>
@@ -129,11 +129,11 @@ const ICpEP = () => {
           </button>
         </section>
 
-        <section className="space-y-8">
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+        <section className="space-y-6">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             The Challenge
           </h2>
-          <div className="w-full flex flex-col lg:flex-row items-center gap-8">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-6">
             <div className="w-full lg:w-2/3">
               <Carousel images={images1} />
             </div>
@@ -150,8 +150,8 @@ const ICpEP = () => {
           </div>
         </section>
 
-        <section className="space-y-8">
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+        <section className="space-y-6">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             The Impact
           </h2>
           <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
@@ -175,17 +175,17 @@ const ICpEP = () => {
           </button>
         </section>
 
-        <section className="space-y-8">
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+        <section className="space-y-6">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             Skills Earned
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center glass-card card-hover gap-2 p-4"
+                className="flex flex-col justify-center glass-card card-hover gap-2 p-3"
               >
-                <div className="flex items-center gap-x-4">
+                <div className="flex items-center gap-x-3">
                   <div className="text-left">
                     <h3 className="font-medium text-lg">{skill.name}</h3>
                   </div>

@@ -19,9 +19,9 @@ const Blog2 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
-        <section className="space-y-8 animate-fade-in-delay-2">
-          <figure className="space-y-4 text-center [text-align-last:center]">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="space-y-6 animate-fade-in-delay-2">
+          <figure className="space-y-3 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/vale2.jpg"
               alt="Delivery of the Words of Gratitude Speech by Yours Truly"
@@ -31,7 +31,7 @@ const Blog2 = () => {
               Fig. 1 - Delivery of the Words of Gratitude Speech by Yours Truly.
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               To our beloved School President, Sr. Ma. Rufina B. Guillano, RVM.,
               Sr. Ma. Anecita C. Navaja, RVM – our dynamic Vice President for
@@ -68,7 +68,7 @@ const Blog2 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/blog/vale1.jpg"
               alt="My Graduation Photo"
@@ -76,7 +76,7 @@ const Blog2 = () => {
             />
             <figcaption>Fig. 2 - My Graduation Photo.</figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               Think of it, for more than a decade, we toil hard and travel back
               and forth to school. But with schools closed due to the pandemic,
@@ -101,8 +101,8 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="space-y-8 animate-fade-in-delay-3">
-          <article className="space-y-4">
+        <section className="space-y-6 animate-fade-in-delay-3">
+          <article className="space-y-3">
             <p>
               We saw families spending more time together. We saw new
               perspectives on our situations that we had never seen before, when
@@ -139,7 +139,7 @@ const Blog2 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
               src="/assets/images/blog/vale3.jpg"
               alt="My Classmates at Grade 12- STEM B St. Luke"
@@ -149,7 +149,7 @@ const Blog2 = () => {
               Fig. 3 - My Classmates at Grade 12- STEM B St. Luke.
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               We will miss everything in our school year. It would be way easier
               to reminisce about engaging activities the school had once before.
@@ -171,8 +171,8 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row gap-8 animate-fade-in-delay-4 lg:clear-both">
-          <article className="space-y-4">
+        <section className="flex flex-col lg:flex-row gap-6 animate-fade-in-delay-4 lg:clear-both">
+          <article className="space-y-3">
             <p>
               It made us contemplate, "Do we deserve this?" Friends, we are
               exactly where God wants us to be, and the good God wants us to be
@@ -207,7 +207,7 @@ const Blog2 = () => {
               know that things will go on and things will always change, but the
               future is absolute, and it's coming upon us.
             </p>
-            <figure className="space-y-4 text-center [text-align-last:center]">
+            <figure className="space-y-3 text-center [text-align-last:center]">
               <img
                 src="/assets/images/blog/vale4.jpg"
                 alt="Presentation Slide with My Awards"
@@ -230,7 +230,7 @@ const Blog2 = () => {
           </article>
         </section>
 
-        <section className="flex justify-center border-t-2 gap-2 pt-8 clear-both">
+        <section className="flex justify-center border-t-2 gap-2 pt-6 clear-both">
           <a
             target="_blank"
             href="https://www.facebook.com/share/v/1PE37PXddC/"

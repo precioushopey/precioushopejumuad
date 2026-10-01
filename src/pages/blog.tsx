@@ -1,41 +1,19 @@
-import { useSearchParams } from "react-router-dom";
 import { PillTabs } from "../components/PillTabs";
-import { ThumbnailTile } from "../components/ThumbnailTile";
-import {
-  blogCategories,
-  blogPosts,
-  type BlogCategory,
-} from "../data/blogPosts";
+import { ThumbnailGallery } from "../components/ThumbnailGallery";
+import { blogCategories } from "../data/blogPosts";
+import { useBlogPosts } from "../hooks/use-blog-posts";
 
-const isCategory = (value: string | null): value is BlogCategory =>
-  blogCategories.some((c) => c === value);
-
-const formatDate = (date: string) =>
-  new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  });
-
-// The posts as the same thumbnail tiles the Projects page uses, with the date as the details line
+// The posts as the same thumbnail gallery the Projects page uses, with the date as the details line
 // and category pills (kept in the URL, /blog?category=<c>) above them.
 const Blog = () => {
-  const [params] = useSearchParams();
-  const raw = params.get("category");
-  // Unknown or missing values fall back to "all".
-  const active: BlogCategory = isCategory(raw) ? raw : "all";
-
-  const filtered = blogPosts.filter(
-    (post) => active === "all" || post.category === active,
-  );
+  const { active, posts } = useBlogPosts();
 
   return (
-    <div className="space-y-8 p-0 lg:p-8">
-      <header className="animate-fade-in text-center lg:space-y-4 lg:text-left">
-        <h1 className="text-2xl font-medium max-lg:sr-only sm:text-3xl">
-          Blog
-        </h1>
+    <ThumbnailGallery
+      title="Blog Posts"
+      activeKey={active}
+      emptyText="No posts in this category yet."
+      pills={
         <PillTabs
           active={active}
           markCurrent
@@ -43,30 +21,15 @@ const Blog = () => {
           basePath="/blog"
           label="Blog categories"
         />
-      </header>
-
-      {filtered.length === 0 ? (
-        <p className="text-cream/70">No posts in this category yet.</p>
-      ) : (
-        <div
-          key={active}
-          className="grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3 sm:gap-x-4"
-        >
-          {filtered.map((post, index) => (
-            <ThumbnailTile
-              key={post.to}
-              index={index}
-              to={post.to}
-              image={post.image}
-              title={post.title}
-              subtitle={
-                <time dateTime={post.date}>{formatDate(post.date)}</time>
-              }
-            />
-          ))}
-        </div>
-      )}
-    </div>
+      }
+      items={posts.map((post) => ({
+        key: post.to,
+        to: post.to,
+        image: post.image,
+        title: post.title,
+        subtitle: <time dateTime={post.date}>{post.dateLabel}</time>,
+      }))}
+    />
   );
 };
 

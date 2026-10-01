@@ -28,7 +28,7 @@ export const AccordionCard = ({
         title={title}
         onClick={() => setOpen(!open)}
         status={
-          <span className="flex items-center gap-1">
+          <span className="flex items-center gap-3">
             {link && (
               <a
                 href={link.href}
@@ -37,7 +37,7 @@ export const AccordionCard = ({
                 onClick={(event) => event.stopPropagation()}
                 aria-label={link.label}
                 title={link.label}
-                className="flex h-8 w-8 items-center justify-center rounded-full text-cream/50 transition-colors hover:text-cream"
+                className="flex h-4 w-4 items-center justify-center text-cream/50 transition-colors hover:text-cream"
               >
                 {link.icon}
               </a>
@@ -47,11 +47,11 @@ export const AccordionCard = ({
               aria-expanded={open}
               aria-controls={panelId}
               aria-label={`${open ? "Hide" : "Show"} details for ${title}`}
-              className="flex h-8 w-8 items-center justify-center rounded-full text-cream/50 transition-colors hover:text-cream"
+              className="flex h-4 w-4 items-center justify-center text-cream/50 transition-colors group-hover:text-cream"
             >
               <LuChevronDown
                 aria-hidden
-                size={16}
+                size={14}
                 className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
               />
             </button>

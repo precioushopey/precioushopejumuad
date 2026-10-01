@@ -10,9 +10,9 @@ export const ProfileCard = () => {
   return (
     <section
       aria-label="Profile"
-      className="glass-card relative p-8 pb-8 text-center"
+      className="glass-card relative p-6 pb-6 text-center"
     >
-      <span className="pointer-events-none absolute left-8 top-8 z-10 rounded-full border border-line px-4 py-0.5 text-xs">
+      <span className="pointer-events-none absolute left-6 top-8 z-10 -translate-y-1/2 rounded-full border border-line px-3 py-0.5 text-xs">
         Profile
       </span>
       {/* The whole top strip (the "Profile" tag and the arrow) links to the About page. */}
@@ -20,30 +20,30 @@ export const ProfileCard = () => {
         to="/about"
         aria-label="About me"
         title="About me"
-        className="group absolute inset-x-0 top-0 flex h-16 items-center justify-end rounded-t-[2rem] pr-8 text-cream/50 transition-colors hover:bg-cream/5 hover:text-cream"
+        className="group absolute inset-x-0 top-0 flex h-16 items-center justify-end rounded-t-[2rem] pr-6 text-cream/50 transition-colors hover:bg-cream/5 hover:text-cream"
       >
         <LuArrowRight size={14} aria-hidden />
       </Link>
       <img
         src="/assets/images/profile/precious.png"
         alt="Precious Hope T. Jumuad"
-        className="mx-auto mt-4 h-36 w-36 rounded-full border-2 border-line bg-white object-cover"
+        className="mx-auto mt-3 h-36 w-36 rounded-full border-2 border-line bg-white object-cover"
       />
-      <h2 className="mt-4 text-2xl font-medium">Precious Hope Jumuad</h2>
+      <h2 className="mt-3 text-2xl font-medium">Precious Hope Jumuad</h2>
       <p className="text-sm text-accent">
         <span className="whitespace-nowrap">Design Engineer ·</span>{" "}
         <span className="whitespace-nowrap">Product Designer</span>
       </p>
-      <p className="mt-4 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
+      <p className="mt-3 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
         I’m passionate about designing and building great products that make
         people’s lives easier. I’ve spent over{" "}
         <strong className="font-semibold text-cream">{experience}</strong>{" "}
         creating digital experiences for SaaS startups to local government
         units. A Computer Engineering graduate who loves art and design in
-        technology, I’m excited to build with you!
+        technology, I’m excited to build something great with you!
       </p>
-      <div className="mt-4 flex flex-col items-center gap-4">
-        <ul className="flex items-center justify-center gap-4">
+      <div className="mt-3 flex flex-col items-center gap-3">
+        <ul className="flex items-center justify-center gap-3">
           {contactItems.map(({ label, href, Icon, isEmail }) => (
             <li key={label}>
               <a
@@ -52,7 +52,7 @@ export const ProfileCard = () => {
                 rel="noopener noreferrer"
                 aria-label={label}
                 title={label}
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-ink transition-transform duration-300 hover:scale-110"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition duration-300 hover:scale-110 hover:bg-accent/20"
               >
                 <Icon size={20} aria-hidden />
               </a>
@@ -64,7 +64,7 @@ export const ProfileCard = () => {
             href={CV_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-cream/10 px-8 py-2 text-sm font-medium text-cream transition-transform duration-300 hover:scale-105 hover:bg-cream/20 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-cream/10 px-6 py-2 text-sm font-medium text-cream transition-transform duration-300 hover:scale-105 hover:bg-cream/20 active:scale-95"
           >
             <LuFileText size={18} aria-hidden />
             View my CV

@@ -19,16 +19,16 @@ const Blog11 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-3/5 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-3/5 lg:float-left lg:mr-6">
             <img
               src="/assets/images/blog/poem.jpg"
               alt="Coins for the Child"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
             />
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               <div>We scaled the winding mountain’s spine,</div>
               <div>Past trees where morning stars still shine.</div>
@@ -60,8 +60,8 @@ const Blog11 = () => {
           </article>
         </section>
 
-        <section className="flex flex-col lg:flex-row justify-center gap-x-24 animate-fade-in-delay-4 lg:clear-both">
-          <article className="space-y-4">
+        <section className="flex flex-col lg:flex-row justify-center gap-x-18 animate-fade-in-delay-4 lg:clear-both">
+          <article className="space-y-3">
             <p>
               <cite>
                 <div>At dawn I’d lift a woven sack,</div>
@@ -109,7 +109,7 @@ const Blog11 = () => {
               </cite>
             </p>
           </article>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               <cite>
                 <div>I see the child I used to be,</div>

@@ -14,7 +14,6 @@ export const categories = [
   "socials",
   "multimedia",
 ] as const;
-export type Category = (typeof categories)[number];
 
 export const projects: Project[] = [
   {

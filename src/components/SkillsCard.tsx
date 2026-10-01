@@ -49,9 +49,9 @@ export const SkillsCard = () => {
   return (
     <section
       aria-label="Skills and expertise"
-      className="glass-card flex flex-1 flex-col p-4"
+      className="glass-card flex flex-1 flex-col p-3"
     >
-      <ul className="grid flex-1 grid-cols-2 content-center gap-x-0 gap-y-8 min-[420px]:grid-cols-4">
+      <ul className="grid grid-cols-2 md:grid-cols-4 flex-1 content-center gap-x-0 gap-y-6 max-lg:min-[420px]:grid-cols-4">
         {skills.map(({ label, Icon, since }, index) => {
           const { percent, days, totalDays } = skillBreakdown(since, now);
           const tipId = `${uid}-tip-${index}`;
@@ -101,7 +101,7 @@ export const SkillsCard = () => {
               <span
                 id={tipId}
                 role="tooltip"
-                className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 w-44 -translate-x-1/2 rounded-xl border border-line bg-black/90 px-4 py-2 text-left text-[11px] leading-snug text-cream opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100"
+                className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 w-44 -translate-x-1/2 rounded-xl border border-line bg-black/90 px-3 py-2 text-left text-[11px] leading-snug text-cream opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100"
               >
                 <strong className="block font-medium text-accent">
                   Since {formatManilaDate(since)}

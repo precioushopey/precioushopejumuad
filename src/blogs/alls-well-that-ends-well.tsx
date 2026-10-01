@@ -13,16 +13,16 @@ const Blog12 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="animate-fade-in-delay-2">
-          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-1/2 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/blog/all's_well.png"
               alt="All's Well That Ends Well"
               className="w-full aspect-[1/1] rounded-4xl border object-cover"
             />
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               As I close the chapter of my college journey, I’ve realized that
               growth was never confined to the walls of a laboratory or the
@@ -48,7 +48,7 @@ const Blog12 = () => {
           </article>
         </section>
 
-        <section className="space-y-4 animate-fade-in-delay-3">
+        <section className="space-y-3 animate-fade-in-delay-3">
           <p>
             From building a multi-camera customer tracking system in our thesis
             to designing and developing web applications during my internships,
@@ -58,14 +58,14 @@ const Blog12 = () => {
         </section>
 
         <section className="animate-fade-in-delay-4">
-          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-1/2 lg:float-right lg:ml-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 lg:w-1/2 lg:float-right lg:ml-6">
             <img
               src="/assets/images/blog/collage.png"
               alt="All's Well That Ends Well"
               className="w-full aspect-[4/5] rounded-4xl border object-cover"
             />
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               Awards and milestones were affirming, but they weren’t what
               defined my experience. What stayed with me were the smaller
@@ -88,7 +88,7 @@ const Blog12 = () => {
           </article>
         </section>
 
-        <section className="space-y-4 animate-fade-in-delay-4">
+        <section className="space-y-3 animate-fade-in-delay-4">
           <p>
             Now, as I move forward, I carry not just technical skills but
             stories of grit, of grace, and of genuine connection. If there’s one

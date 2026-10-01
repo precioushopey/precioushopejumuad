@@ -23,17 +23,17 @@ const Blog3 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="animate-fade-in-delay-2">
-          <figure className="mb-4 lg:mb-2 space-y-4 lg:w-2/5 lg:float-right lg:ml-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 lg:w-2/5 lg:float-right lg:ml-6">
             <img
               src="/assets/images/blog/storyboard.jfif"
               alt="Me in Umaru-chan merchandise hood III"
               className="w-full aspect-[3/4] rounded-4xl border object-cover"
             />
           </figure>
-          <article className="space-y-4">
-            <h3 className="text-xl sm:text-2xl font-bold text-glow">
+          <article className="space-y-3">
+            <h3 className="text-xl sm:text-2xl font-bold">
               General Plan
             </h3>
             <ul className="flex flex-col gap-2">
@@ -43,7 +43,7 @@ const Blog3 = () => {
                   (PS. Hope here 3 years later, we did our "best" though, not so
                   "exemplary". After first year, it was literally HELL!)
                 </p>
-                <ul className="ml-4">
+                <ul className="ml-3">
                   <li>
                     <s>Ace</s> Finished my classes
                     <p className="font-light italic text-xs">
@@ -94,8 +94,8 @@ const Blog3 = () => {
           </article>
         </section>
 
-        <section className="space-y-4 animate-fade-in-delay-3">
-          <h3 className="text-xl sm:text-2xl font-bold text-glow">Rationale</h3>
+        <section className="space-y-3 animate-fade-in-delay-3">
+          <h3 className="text-xl sm:text-2xl font-bold">Rationale</h3>
           <p>
             For the next five years of my life, I’ll just be a student, a
             daughter, a friend, a co-worker or even maybe become someone’s
@@ -108,11 +108,11 @@ const Blog3 = () => {
           </p>
         </section>
 
-        <section className="space-y-4 animate-fade-in-delay-4">
-          <h3 className="text-xl sm:text-2xl font-bold text-glow">
+        <section className="space-y-3 animate-fade-in-delay-4">
+          <h3 className="text-xl sm:text-2xl font-bold">
             Abilities and Resources
           </h3>
-          <article className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <article className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <span className="flex items-center gap-2">
                 <LuBookOpen size={20} />
@@ -184,11 +184,11 @@ const Blog3 = () => {
           </article>
         </section>
 
-        <section className="space-y-4 animate-fade-in-delay-4">
-          <h3 className="text-xl sm:text-2xl font-bold text-glow">
+        <section className="space-y-3 animate-fade-in-delay-4">
+          <h3 className="text-xl sm:text-2xl font-bold">
             Success Indicator
           </h3>
-          <ul className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <ul className="grid grid-cols-1 md:grid-cols-5 gap-6">
             <li className="flex justify-center items-center text-center [text-align-last:center] rounded-4xl border p-2">
               Self-Actualization
             </li>

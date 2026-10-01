@@ -7,14 +7,14 @@ import { useToast } from "../hooks/use-toast";
 const styles = {
   roomy: {
     heading: "text-2xl font-semibold",
-    form: "space-y-4",
+    form: "space-y-3",
     group: "space-y-2",
     label: "block text-lg font-medium",
     field:
-      "w-full px-4 py-4 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent",
+      "w-full px-3 py-3 rounded-md border bg-black/30 text-cream placeholder:text-cream/50 focus:outline-hidden focus:ring-2 focus:ring-accent",
     messageGroup: "space-y-2",
     messageLabel: "block text-lg font-medium",
-    messageField: "",
+    messageField: "resize-none",
     button:
       "white-button w-full flex items-center justify-center text-base gap-x-2",
   },
@@ -22,14 +22,14 @@ const styles = {
   // row (label on the left) and the message body below.
   card: {
     heading: "sr-only",
-    form: "space-y-4",
+    form: "space-y-3",
     group: "flex items-center gap-2 border-b border-line/40",
     label: "w-20 shrink-0 text-left text-xs text-cream/60",
     field:
       "min-w-0 flex-1 rounded-md bg-transparent px-1 py-2 text-sm text-cream placeholder:text-cream/40 focus:outline-hidden focus:ring-2 focus:ring-accent",
     messageGroup: "block",
     messageLabel: "sr-only",
-    messageField: "block h-28 w-full",
+    messageField: "block h-36 min-h-24 max-h-96 w-full resize-y",
     button:
       "white-button w-full flex items-center justify-center gap-x-2 text-sm sm:text-sm",
   },
@@ -123,7 +123,7 @@ export const ContactForm = ({
             name="name"
             required
             className={s.field}
-            placeholder="Precious Hope Jumuad..."
+            placeholder="What should I call you?"
           />
         </div>
 
@@ -137,7 +137,7 @@ export const ContactForm = ({
             name="email"
             required
             className={s.field}
-            placeholder="jumuad.precious@gmail.com"
+            placeholder="Where can I reply?"
           />
         </div>
 
@@ -149,8 +149,8 @@ export const ContactForm = ({
             id={`${uid}-message`}
             name="message"
             required
-            className={`${s.field} ${s.messageField} resize-none`}
-            placeholder="Hi! Just wanted to share or talk about..."
+            className={`${s.field} ${s.messageField}`}
+            placeholder="What’s been getting in your way? A design that isn’t working, a product that’s stuck, a bug you can’t crack. No problem is too small. Tell me about it and let’s find how I can help."
           />
         </div>
 

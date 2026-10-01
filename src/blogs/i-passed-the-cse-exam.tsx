@@ -18,9 +18,9 @@ const Blog16 = () => {
         </p>
       </section>
 
-      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
-        <section className="space-y-8 animate-fade-in-delay-2">
-          <figure className="space-y-4 text-center [text-align-last:center]">
+      <div className="tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
+        <section className="space-y-6 animate-fade-in-delay-2">
+          <figure className="space-y-3 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/csc1.png"
               alt="Immaculate Conception Parish Church of Jasaan"
@@ -31,7 +31,7 @@ const Blog16 = () => {
               Paper Test Exam Result from the Civil Service Commission Website
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               <strong>
                 I’m grateful and proud to share that I passed the Civil Service
@@ -67,8 +67,8 @@ const Blog16 = () => {
           </article>
         </section>
 
-        <section className="space-y-8 animate-fade-in-delay-3">
-          <figure className="space-y-4 text-center [text-align-last:center]">
+        <section className="space-y-6 animate-fade-in-delay-3">
+          <figure className="space-y-3 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/csc2.png"
               alt="Immaculate Conception Parish Church of Jasaan"
@@ -80,7 +80,7 @@ const Blog16 = () => {
               Examination Result Generation System (OCSERGS) Website
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               However, I fell a little short of my personal target of a 90%
               general rating. I was only one or two items away from hitting that
@@ -118,7 +118,7 @@ const Blog16 = () => {
           </article>
         </section>
 
-        <section className="flex justify-center border-t-2 gap-2 pt-8 clear-both">
+        <section className="flex justify-center border-t-2 gap-2 pt-6 clear-both">
           <p>See results here:</p>
           <a
             target="_blank"

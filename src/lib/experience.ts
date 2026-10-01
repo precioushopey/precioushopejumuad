@@ -17,7 +17,7 @@ const WORDS = [
 const word = (n: number) => WORDS[n] ?? String(n);
 
 /** Whole months from the design start date to `now` (never negative). */
-export const monthsOfExperience = (now: Date = new Date()): number => {
+const monthsOfExperience = (now: Date = new Date()): number => {
   const months =
     (now.getFullYear() - DESIGN_START.year) * 12 +
     (now.getMonth() - DESIGN_START.month) -
@@ -62,7 +62,7 @@ const DAY_MS = 24 * 60 * 60 * 1000;
  * and every later one is the share of the time since then, so the numbers keep growing.
  * Use manilaMidnight() for start dates so the result is the same in every visitor's timezone.
  */
-export const skillShare = (start: Date, now: Date = new Date()): number => {
+const skillShare = (start: Date, now: Date = new Date()): number => {
   const total = now.getTime() - EXPERIENCE_START.getTime();
   if (total <= 0) return 0;
   const spent = now.getTime() - start.getTime();

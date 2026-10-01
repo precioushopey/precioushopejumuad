@@ -13,9 +13,9 @@ const Blog14 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="animate-fade-in-delay-1">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/blog/college.png"
               alt="My College Graduation Photo"
@@ -23,7 +23,7 @@ const Blog14 = () => {
             />
             <figcaption>Fig. 1 - My College Graduation Photo</figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               There’s a memory I keep tucked in the deepest folds of my mind,
               fourth grade, just after the morning flag ceremony. I stood at the
@@ -49,8 +49,8 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="space-y-8 animate-fade-in-delay-2">
-          <article className="space-y-4">
+        <section className="space-y-6 animate-fade-in-delay-2">
+          <article className="space-y-3">
             <p>
               They believed in me. They made me feel safe, smart, and seen. And
               while the world was far from perfect, it was simple enough to
@@ -72,7 +72,7 @@ const Blog14 = () => {
         </section>
 
         <section className="animate-fade-in-delay-2">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-right lg:ml-6">
             <img
               src="/assets/images/blog/vale1.jpg"
               alt="My Senior High School Graduatioj Photo"
@@ -82,7 +82,7 @@ const Blog14 = () => {
               Fig. 2 - My Senior High School Graduation Photo
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               One of the earliest milestones of growing up was learning to
               commute alone. I was a country bumpkin, wide-eyed and confused by
@@ -108,8 +108,8 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="space-y-8 animate-fade-in-delay-3">
-          <article className="space-y-4">
+        <section className="space-y-6 animate-fade-in-delay-3">
+          <article className="space-y-3">
             <p>
               Would she recognize this more jaded, tired, adult self? Would she
               be proud of the battles I fought, or would she mourn the sparkle
@@ -125,7 +125,7 @@ const Blog14 = () => {
         </section>
 
         <section className="animate-fade-in-delay-3">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/blog/jhs.jpg"
               alt="My Junior High School Completion Photo"
@@ -135,7 +135,7 @@ const Blog14 = () => {
               Fig. 3 - My Junior High School Completion Photo
             </figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               But I would also tell her that strength doesn’t always look like a
               gold medal. That real triumph sometimes means simply standing back
@@ -163,8 +163,8 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="space-y-8 animate-fade-in-delay-4">
-          <article className="space-y-4">
+        <section className="space-y-6 animate-fade-in-delay-4">
+          <article className="space-y-3">
             <p>
               They shape our beliefs about self-worth, love, failure, and trust.
               And for those of us lucky enough to have had safe, meaningful
@@ -186,8 +186,8 @@ const Blog14 = () => {
           </article>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-delay-4 clear-both">
-          <figure className="space-y-4 text-center [text-align-last:center]">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-delay-4 clear-both">
+          <figure className="space-y-3 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/elementary.jpg"
               alt="My Elementary Graduation Photo"
@@ -195,7 +195,7 @@ const Blog14 = () => {
             />
             <figcaption>Fig. 4 - My Elementary Graduation</figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               And yet, I’m grateful. Because that clarity, that simple joy, is
               still inside me. It flickers every now and then, in the warmth of
@@ -210,7 +210,7 @@ const Blog14 = () => {
               everything.
             </p>
           </article>
-          <figure className="space-y-4 text-center [text-align-last:center]">
+          <figure className="space-y-3 text-center [text-align-last:center]">
             <img
               src="/assets/images/blog/preschool.jpg"
               alt="My Pre-School Graduation Photo"
@@ -220,8 +220,8 @@ const Blog14 = () => {
           </figure>
         </section>
 
-        <section className="space-y-8 animate-fade-in-delay-4">
-          <article className="space-y-4">
+        <section className="space-y-6 animate-fade-in-delay-4">
+          <article className="space-y-3">
             <p>
               So I’ll keep going, stumbling, and striving, because you’re still
               watching from the sidelines, waiting to see if the world you

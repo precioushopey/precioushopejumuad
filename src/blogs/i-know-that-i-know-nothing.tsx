@@ -10,9 +10,9 @@ const Blog13 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="animate-fade-in-delay-2">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/blog/college.png"
               alt="My College Graduation Photo"
@@ -20,7 +20,7 @@ const Blog13 = () => {
             />
             <figcaption>Fig. 1 - My College Graduation Photo</figcaption>
           </figure>
-          <article className="space-y-4">
+          <article className="space-y-3">
             <p>
               When I was researching courses to take in college, I was torn
               between three choices: Doctor, Lawyer, or Engineer. As the eldest
@@ -46,7 +46,7 @@ const Blog13 = () => {
           </article>
         </section>
 
-        <section className="space-y-4 animate-fade-in-delay-3">
+        <section className="space-y-3 animate-fade-in-delay-3">
           <p>
             I was a valedictorian, the “girl who always wins.” I was used to
             excellence and being congratulated on podiums, with proud teachers

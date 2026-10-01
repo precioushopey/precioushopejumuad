@@ -27,7 +27,7 @@ export const WindowBar = ({
   toLabel?: string;
 }) => {
   const base =
-    "flex items-center gap-2 border-b border-line/40 px-8 py-4 text-left text-xs text-cream/70";
+    "flex items-center gap-2 border-b border-line/40 px-6 py-3 text-left text-xs text-cream/70";
   const content = (
     <>
       {icon && (
@@ -50,7 +50,7 @@ export const WindowBar = ({
         {content}
         <span
           aria-hidden
-          className="flex h-8 w-8 shrink-0 items-center justify-center text-cream/50 transition-colors group-hover:text-cream"
+          className="flex h-4 w-4 shrink-0 items-center justify-center text-cream/50 transition-colors group-hover:text-cream"
         >
           <LuArrowRight size={14} />
         </span>
@@ -62,7 +62,7 @@ export const WindowBar = ({
     <div
       onClick={onClick}
       className={`${base} ${
-        onClick ? "cursor-pointer transition-colors hover:bg-cream/5" : ""
+        onClick ? "group cursor-pointer transition-colors hover:bg-cream/5" : ""
       }`}
     >
       {content}

@@ -53,10 +53,10 @@ export const Rail = () => {
   return (
     <nav
       aria-label="Main"
-      className="sticky bottom-4 z-40 mx-auto flex w-full items-center gap-4 rounded-full border border-line bg-black/50 p-2 shadow-lg max-lg:px-2 min-[360px]:max-lg:px-4 backdrop-blur-md lg:absolute lg:bottom-auto lg:left-0 lg:top-1/2 lg:z-10 lg:mx-0 lg:w-24 lg:-translate-y-1/2 lg:h-[28rem] lg:max-h-[calc(100%-5rem)] lg:flex-col lg:justify-between lg:rounded-l-[2rem] lg:rounded-r-none lg:border-cream/20 lg:bg-cream/15 lg:p-8 lg:pr-12 lg:shadow-none lg:backdrop-blur-xl"
+      className="sticky bottom-4 z-40 mx-auto flex w-full items-center gap-3 rounded-full border border-line bg-black/50 p-2 shadow-lg max-lg:px-2 min-[360px]:max-lg:px-3 backdrop-blur-md lg:absolute lg:bottom-auto lg:left-0 lg:top-1/2 lg:z-10 lg:mx-0 lg:w-24 lg:-translate-y-1/2 lg:h-[28rem] lg:max-h-[calc(100%-5rem)] lg:flex-col lg:justify-between lg:rounded-l-[2rem] lg:rounded-r-none lg:border-cream/20 lg:bg-cream/15 lg:p-6 lg:pr-9 lg:shadow-none lg:backdrop-blur-xl"
     >
       {/* On phones the icons spread across the whole bar; the active one expands to show its title. */}
-      <div className="flex flex-1 items-center justify-between max-lg:gap-0 lg:flex-none lg:flex-col lg:justify-start lg:gap-2 2xl:gap-4">
+      <div className="flex flex-1 items-center justify-between max-lg:gap-0 lg:flex-none lg:flex-col lg:justify-start lg:gap-2 2xl:gap-3">
         {items.map(
           ({ to, label, Icon, avatar, end, alsoMatch, mobileOnly }) => (
             <NavLink
@@ -71,7 +71,7 @@ export const Rail = () => {
                   isActive || (alsoMatch && pathname.startsWith(alsoMatch));
                 return `${mobileOnly ? "lg:hidden " : ""}relative flex h-12 w-12 max-lg:h-12 items-center justify-center rounded-full transition-transform duration-300 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                   on
-                    ? "bg-accent text-ink max-lg:w-auto max-lg:gap-1.5 max-lg:px-2 min-[360px]:max-lg:px-4 max-[359px]:gap-1 min-[480px]:max-lg:gap-2 min-[480px]:max-lg:px-4 lg:flex-col lg:gap-1.5 lg:bg-transparent lg:text-accent lg:before:absolute lg:before:-left-[0.375rem] lg:before:h-8 lg:before:w-1.5 lg:before:rounded-full lg:before:bg-accent lg:before:content-['']"
+                    ? "bg-accent text-ink max-lg:w-auto max-lg:gap-1.5 max-lg:px-2 min-[360px]:max-lg:px-3 max-[359px]:gap-1 min-[480px]:max-lg:gap-2 min-[480px]:max-lg:px-3 lg:flex-col lg:gap-1.5 lg:bg-transparent lg:text-accent lg:before:absolute lg:before:-left-[0.375rem] lg:before:h-8 lg:before:w-1.5 lg:before:rounded-full lg:before:bg-accent lg:before:content-['']"
                     : "text-cream max-lg:w-8 min-[360px]:max-lg:w-12 hover:bg-cream/15"
                 }`;
               }}

@@ -71,22 +71,22 @@ export const Shell = () => {
   return (
     <div className="relative min-h-dvh overflow-x-clip text-cream lg:h-dvh lg:overflow-hidden">
       <div aria-hidden className="shell-bg" />
-      <div className="relative z-10 mx-auto flex min-h-dvh max-w-[1500px] flex-col gap-4 p-4 sm:p-8 lg:h-full lg:min-h-0 lg:justify-center lg:p-12">
+      <div className="relative z-10 mx-auto flex min-h-dvh max-w-[1500px] flex-col gap-3 p-3 sm:p-6 lg:h-full lg:min-h-0 lg:justify-center lg:p-9">
         <TopBar />
         {/* Relative so the rail can span the row's height; the panel sits above it and tucks over its edge. */}
         {/* On desktop the row is only as tall as its content (up to the window height), so the panel
             and the right column always end on the same line instead of the panel stretching alone. */}
-        <div className="relative flex min-h-0 flex-1 flex-col gap-4 lg:flex-initial lg:pl-[4.5rem] xl:flex-row">
+        <div className="relative flex min-h-0 flex-1 flex-col gap-3 lg:flex-initial lg:pl-[4.5rem] xl:flex-row">
           <main
             ref={scrollRef}
-            className="glass-panel panel-scroll min-w-0 flex-1 pb-8 lg:relative lg:z-20 lg:flex lg:min-h-0 lg:flex-col lg:overflow-y-auto"
+            className="glass-panel panel-scroll min-w-0 flex-1 pb-6 lg:relative lg:z-20 lg:flex lg:min-h-0 lg:flex-col lg:overflow-y-auto"
           >
             <Outlet />
             {isDetail && (
               // Other posts / projects at the bottom of the page below xl, where there is no room
               // for the column beside the panel. (The profile and message form have no bottom slot:
               // below xl they are their own page, /profile.)
-              <div className="pt-4 lg:px-8 lg:pt-8 xl:hidden">
+              <div className="pt-3 lg:px-6 lg:pt-6 xl:hidden">
                 {sideContent}
               </div>
             )}
@@ -94,7 +94,7 @@ export const Shell = () => {
           {showSide && (
             <aside
               aria-label={sideLabel}
-              className="no-scrollbar hidden w-[22rem] shrink-0 xl:-mx-4 xl:block xl:w-[24rem] xl:overflow-y-auto xl:px-4"
+              className="no-scrollbar hidden w-[22rem] shrink-0 xl:-mx-3 xl:block xl:w-[24rem] xl:overflow-y-auto xl:px-3"
             >
               {sideContent}
             </aside>

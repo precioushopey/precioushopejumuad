@@ -5,7 +5,7 @@ export const blogCategories = [
   "stories",
   "school",
 ] as const;
-export type BlogCategory = (typeof blogCategories)[number];
+type BlogCategory = (typeof blogCategories)[number];
 
 export type BlogPost = {
   to: string;

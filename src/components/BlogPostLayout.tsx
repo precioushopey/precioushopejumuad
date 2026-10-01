@@ -32,7 +32,7 @@ export const BlogPostLayout = ({ children }: { children: ReactNode }) => {
           <>
             <span>Date modified:</span>
             <time dateTime={post.date}>{formatDate(post.date)}</time>
-            <span className="rounded-full border border-line bg-cream/10 px-4 py-0.5 capitalize text-cream/80">
+            <span className="rounded-full border border-line bg-cream/10 px-3 py-0.5 capitalize text-cream/80">
               {post.category}
             </span>
           </>

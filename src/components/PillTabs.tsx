@@ -36,7 +36,7 @@ export const PillTabs = ({
     <nav
       ref={navRef}
       aria-label={label}
-      className="no-scrollbar flex gap-2 max-lg:overflow-x-auto lg:flex-wrap lg:gap-4"
+      className="no-scrollbar flex gap-2 max-lg:overflow-x-auto lg:flex-wrap lg:gap-3"
     >
       {categories.map((c) => (
         <Link
@@ -44,7 +44,7 @@ export const PillTabs = ({
           to={c === "all" ? basePath : `${basePath}?category=${c}`}
           aria-current={markCurrent && c === active ? "page" : undefined}
           data-active-pill={c === active ? "" : undefined}
-          className={`${c === active ? "pill-outline" : "pill"} shrink-0 capitalize max-lg:px-4 max-lg:py-1 max-lg:text-xs max-lg:first:ml-auto max-lg:last:mr-auto`}
+          className={`${c === active ? "pill-outline" : "pill"} shrink-0 capitalize max-lg:px-3 max-lg:py-1 max-lg:text-xs max-lg:first:ml-auto max-lg:last:mr-auto`}
         >
           {c}
         </Link>

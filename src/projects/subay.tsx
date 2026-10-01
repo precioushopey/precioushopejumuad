@@ -124,8 +124,8 @@ const Subay = () => {
 
   return (
     <ProjectLayout>
-      <div className="space-y-20">
-        <section className="space-y-8">
+      <div className="space-y-15">
+        <section className="space-y-6">
           <iframe
             src="https://www.youtube.com/embed/SwW-KC5U4Zo?playlist=SwW-KC5U4Zo&loop=1&autoplay=1&controls=1"
             title="SUBAY Promotion"
@@ -134,7 +134,7 @@ const Subay = () => {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             Project Overview
           </h2>
           <p className="-mt-2 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
@@ -161,7 +161,7 @@ const Subay = () => {
             effective tool for generating data-driven insights to inform retail
             space planning and marketing strategies.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-8">
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
             <a
               href="https://drive.google.com/file/d/1AjZTAdm0_rqY1ojUwzVSy6Km6fNDVAbA/view?usp=sharing"
               target="_blank"
@@ -179,11 +179,11 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-8">
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+        <section className="space-y-6">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             Demonstration
           </h2>
-          <div className="w-full flex flex-col md:flex-row items-center gap-8">
+          <div className="w-full flex flex-col md:flex-row items-center gap-6">
             <iframe
               src="https://www.youtube.com/embed/jaL1tzv0Qgo?playlist=jaL1tzv0Qgo&loop=1&autoplay=1&mute=1&controls=1"
               title="SUBAY Demonstration"
@@ -192,7 +192,7 @@ const Subay = () => {
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             />
-            <div className="w-full lg:w-1/3 flex flex-col justify-center space-y-8">
+            <div className="w-full lg:w-1/3 flex flex-col justify-center space-y-6">
               <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
                 To make the data actionable, I designed and developed a
                 web-based analytics dashboard that visualizes customer flow
@@ -215,13 +215,13 @@ const Subay = () => {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-8 lg:pt-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 lg:pt-0">
             {metrics.map((metric, index) => (
               <div
                 key={index}
-                className="backdrop-blur-sm border rounded-4xl p-4 card-hover"
+                className="backdrop-blur-sm border rounded-4xl p-3 card-hover"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3">
                   <div className="bg-white rounded-full p-2">
                     <LuChartLine
                       size={20}
@@ -238,8 +238,8 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-8">
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+        <section className="space-y-6">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             Contributors
           </h2>
           <div className="flex overflow-hidden glass-card card-hover">
@@ -252,7 +252,7 @@ const Subay = () => {
           <h3 className="font-medium">
             The Team with adviser Engr. Jodie Rey D. Fernandez
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contributors.map((contributor, index) => (
               <a
                 key={index}
@@ -266,7 +266,7 @@ const Subay = () => {
                   alt={contributor.alt}
                   className="w-full md:w-[200px] aspect-[1/1] object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="flex flex-col items-center justify-center p-4 space-y-2">
+                <div className="flex flex-col items-center justify-center p-3 space-y-2">
                   <h3 className="font-medium">{contributor.name}</h3>
                   <p className="font-light italic text-sm">
                     {contributor.description}
@@ -318,11 +318,11 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-8">
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+        <section className="space-y-6">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             We Won Best Thesis and Best Prototype!
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="flex overflow-hidden glass-card card-hover">
               <img
                 src="/assets/images/projects/subay/best_thesis.jpg"
@@ -358,17 +358,17 @@ const Subay = () => {
           </div>
         </section>
 
-        <section className="space-y-8">
-          <h2 className="font-semibold text-2xl sm:text-3xl text-glow">
+        <section className="space-y-6">
+          <h2 className="font-semibold text-2xl sm:text-3xl">
             Skills Earned
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center glass-card card-hover gap-2 p-4"
+                className="flex flex-col justify-center glass-card card-hover gap-2 p-3"
               >
-                <div className="flex items-center gap-x-4">
+                <div className="flex items-center gap-x-3">
                   <div className="text-left">
                     <h3 className="font-medium text-lg">{skill.name}</h3>
                   </div>

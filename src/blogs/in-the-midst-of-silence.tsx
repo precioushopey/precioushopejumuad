@@ -19,9 +19,9 @@ const Blog1 = () => {
         </p>
       </section>
 
-      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-8">
+      <div className="flow-root tracking-normal hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:left] space-y-6">
         <section className="animate-fade-in-delay-2">
-          <figure className="mb-4 lg:mb-2 space-y-4 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-8">
+          <figure className="mb-3 lg:mb-2 space-y-3 text-center [text-align-last:center] lg:w-1/2 lg:float-left lg:mr-6">
             <img
               src="/assets/images/projects/photos/photos1.jpg"
               alt="In the Midst of Silence"
@@ -32,7 +32,7 @@ const Blog1 = () => {
               Oriental.
             </figcaption>
           </figure>
-          <article className="space-y-8">
+          <article className="space-y-6">
             <p>
               The world then stopped, the ever-crowded downtown now next to
               deserted ghost towns. Distances are widened, yet there is no brawl
