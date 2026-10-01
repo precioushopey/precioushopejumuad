@@ -9,6 +9,7 @@
 - [Blog](https://precioushopejumuad.vercel.app/blog): all posts
 
 ## Projects
+- [OJT Connect](https://precioushopejumuad.vercel.app/projects/ojtconnect)
 - [SUBAY](https://precioushopejumuad.vercel.app/projects/subay)
 - [HRMO Payroll System](https://precioushopejumuad.vercel.app/projects/payroll)
 - [iBRGY](https://precioushopejumuad.vercel.app/projects/ibrgy)

@@ -19,6 +19,15 @@ export const categories = [
 
 export const projects: Project[] = [
   {
+    title: "OJT Connect",
+    description:
+      "OJT Connect is a web platform that connects interns, employers, universities and colleges, and government stakeholders around on-the-job training. I designed and built its dashboards, its public site, and a shared design system as a product designer and frontend developer.",
+    image: "/assets/images/projects/ojtconnect/ojtconnect.png",
+    tags: ["Figma", "React", "TypeScript", "TailwindCSS"],
+    url: "/projects/ojtconnect",
+    category: "frontend",
+  },
+  {
     title: "SUBAY",
     description:
       "SUBAY is a multi-camera detection system for customer tracking using YOLOv10, DeepSORT, and OSNet for re-identification in retail environments. This research won Best Thesis and Best Prototype at CpE Research Colloquium!",

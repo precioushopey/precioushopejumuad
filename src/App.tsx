@@ -10,6 +10,7 @@ import ProjectsPage from "./pages/projects";
 import Blog from "./pages/blog";
 const Subay = lazy(() => import("./projects/subay"));
 const Payroll = lazy(() => import("./projects/payroll"));
+const OjtConnect = lazy(() => import("./projects/ojtconnect"));
 const Ibrgy = lazy(() => import("./projects/ibrgy"));
 const TaleMakers = lazy(() => import("./projects/talemakers"));
 const AtHomes = lazy(() => import("./projects/athomes"));
@@ -57,6 +58,7 @@ function App() {
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/projects/subay" element={<Subay />} />
+            <Route path="/projects/ojtconnect" element={<OjtConnect />} />
             <Route path="/projects/payroll" element={<Payroll />} />
             <Route path="/projects/ibrgy" element={<Ibrgy />} />
             <Route path="/projects/talemakers" element={<TaleMakers />} />

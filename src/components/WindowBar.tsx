@@ -15,9 +15,12 @@ export const WindowBar = ({
   onClick,
   to,
   toLabel,
+  headingLevel,
 }: {
   icon?: ReactNode;
   title: string;
+  /** Makes the title a heading (h2 to h5) so the window shows up in the page's outline. */
+  headingLevel?: 2 | 3 | 4 | 5;
   status?: ReactNode;
   /** Makes the whole bar clickable (the caller still provides a real button for keyboards). */
   onClick?: () => void;
@@ -28,6 +31,7 @@ export const WindowBar = ({
 }) => {
   const base =
     "flex items-center gap-2 border-b border-line/40 px-6 py-3 text-left text-xs text-cream/70";
+  const Title = headingLevel ? (`h${headingLevel}` as const) : "span";
   const content = (
     <>
       {icon && (
@@ -35,7 +39,7 @@ export const WindowBar = ({
           {icon}
         </span>
       )}
-      <span className="min-w-0 flex-1 truncate">{title}</span>
+      <Title className="min-w-0 flex-1 truncate">{title}</Title>
     </>
   );
 

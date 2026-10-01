@@ -20,7 +20,7 @@ export const DocumentWindow = ({
   fileName: string;
   backTo: string;
   backLabel: string;
-  /** Path segments after "This PC"; missing ones are skipped. */
+  /** Path segments after "This Portfolio"; missing ones are skipped. */
   crumbs: (string | undefined)[];
   title?: string;
   meta?: ReactNode;
@@ -41,7 +41,7 @@ export const DocumentWindow = ({
           <LuArrowLeft size={16} aria-hidden />
         </Link>
         <span className="min-w-0 truncate">
-          This PC
+          This Portfolio
           {crumbs
             .filter((c): c is string => Boolean(c))
             .map((c) => (
