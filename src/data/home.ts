@@ -4,6 +4,12 @@ import { projects } from "./projects";
 // black for the Roostercat cat, which is white.
 export const workHighlights = [
   {
+    title: "Product Designer, Design Engineering",
+    detail: "Freelance · Aug 2026 to present",
+    logo: "/apple-touch-icon.png",
+    tile: "",
+  },
+  {
     title: "Product Designer/Developer",
     detail: "OJT Connect · Feb 2026 to present",
     logo: "/assets/images/experience/ojtconnect_logo.png",
@@ -14,12 +20,6 @@ export const workHighlights = [
     detail: "Roostercat LLC · Jun 2025 to present",
     logo: "/assets/images/experience/roostercat.png",
     tile: "bg-black p-1",
-  },
-  {
-    title: "Frontend Web Developer",
-    detail: "LGU Jasaan · Mar 2025 to present",
-    logo: "/assets/images/experience/lgu_jasaan_hrmo.png",
-    tile: "bg-white",
   },
 ];
 
