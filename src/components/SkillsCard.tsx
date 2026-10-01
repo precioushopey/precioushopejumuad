@@ -95,13 +95,13 @@ const SkillsCardBase = () => {
                   <Icon size={24} aria-hidden />
                 </span>
               </div>
-              <span className="text-center text-[11px] leading-tight text-cream/70 xl:text-[10px] 2xl:text-[11px]">
+              <span className="text-center text-xs leading-tight text-cream/70">
                 {label}
               </span>
               <span
                 id={tipId}
                 role="tooltip"
-                className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 w-44 -translate-x-1/2 rounded-xl border border-line bg-black/90 px-3 py-2 text-left text-[11px] leading-snug text-cream opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100"
+                className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 w-44 -translate-x-1/2 rounded-xl border border-line bg-black/90 px-3 py-2 text-left text-xs leading-snug text-cream opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100"
               >
                 <strong className="block font-medium text-accent">
                   Since {formatManilaDate(since)}

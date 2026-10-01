@@ -14,7 +14,7 @@ export const TrayClock = ({ className = "" }: { className?: string }) => {
     <time
       dateTime={now.toISOString()}
       title="Philippine time"
-      className={`whitespace-nowrap text-center text-[10px] leading-none text-cream/70 ${className}`}
+      className={`whitespace-nowrap text-center text-xs leading-none text-cream/70 ${className}`}
     >
       {manilaTimeLabel(now)}
     </time>

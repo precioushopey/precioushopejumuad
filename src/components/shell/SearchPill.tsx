@@ -86,7 +86,7 @@ export const SearchPill = () => {
                   i === active ? "bg-accent/25" : ""
                 }`}
               >
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-cream/60">
+                <span className="text-xs font-semibold uppercase tracking-wider text-cream/60">
                   {r.kind}
                 </span>
                 <span className="block truncate text-sm font-medium">

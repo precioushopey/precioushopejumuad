@@ -99,7 +99,7 @@ export const Rail = () => {
                       )
                     )}
                     {on && (
-                      <span className="nav-label text-sm font-medium max-[359px]:text-xs lg:text-[10px] lg:leading-none">
+                      <span className="nav-label text-sm font-medium max-[359px]:text-xs lg:text-xs lg:leading-none">
                         {label}
                       </span>
                     )}

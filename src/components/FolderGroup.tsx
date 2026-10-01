@@ -115,11 +115,11 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
               <FolderIcon peek={peek} open={open} />
               <span>
                 <span
-                  className={`block text-[11px] font-semibold leading-tight max-[359px]:text-[10px] max-[339px]:text-[9px] transition-colors min-[400px]:text-xs sm:text-base ${open ? "text-accent" : ""}`}
+                  className={`block break-words text-xs font-semibold leading-tight transition-colors sm:text-base ${open ? "text-accent" : ""}`}
                 >
                   {label}
                 </span>
-                <span className="block text-[10px] text-cream/60 sm:text-xs">
+                <span className="block text-xs text-cream/60">
                   {count} {count === 1 ? "item" : "items"}
                 </span>
               </span>
