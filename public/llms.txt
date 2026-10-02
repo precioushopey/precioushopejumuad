@@ -10,6 +10,9 @@
 
 ## Projects
 - [OJT Connect](https://precioushopejumuad.vercel.app/projects/ojtconnect)
+- [ROOTÉ](https://precioushopejumuad.vercel.app/projects/roote)
+- [WeCare](https://precioushopejumuad.vercel.app/projects/wecare)
+- [SanoVida](https://precioushopejumuad.vercel.app/projects/sanovida)
 - [SUBAY](https://precioushopejumuad.vercel.app/projects/subay)
 - [HRMO Payroll System](https://precioushopejumuad.vercel.app/projects/payroll)
 - [iBRGY](https://precioushopejumuad.vercel.app/projects/ibrgy)

@@ -28,7 +28,7 @@ export const ThumbnailTile = ({
       decoding="async"
       src={thumb(image)}
       alt=""
-      className="aspect-[16/10] w-full rounded-xl border border-line object-cover shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
+      className="aspect-square w-full rounded-xl border border-line object-cover shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
     />
     <span className="min-w-0">
       <span className="line-clamp-2 block font-semibold sm:text-base">

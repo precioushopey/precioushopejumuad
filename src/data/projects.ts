@@ -2,6 +2,10 @@ export type Project = {
   title: string;
   description: string;
   image: string;
+  /** A taller picture for the Featured Projects cards on Home; falls back to `image`. */
+  featuredImage?: string;
+  /** Where the Featured Projects card on Home goes instead of the project page (the live site). */
+  featuredLink?: string;
   tags: string[];
   url: string;
   category: "frontend" | "design" | "socials" | "multimedia";
@@ -21,10 +25,43 @@ export const projects: Project[] = [
   {
     title: "OJT Connect",
     description:
-      "OJT Connect is a web platform that connects interns, employers, universities and colleges, and government stakeholders around on-the-job training. I designed and built its dashboards, its public site, and a shared design system as a product designer and frontend developer.",
-    image: "/assets/images/projects/ojtconnect/ojtconnect.png",
-    tags: ["Figma", "React", "TypeScript", "TailwindCSS"],
+      "OJT Connect is a web platform that connects early-career Filipino talent with verified employers and helps universities, colleges, and the government run and oversee on-the-job training. I designed and built its four portals (On-the-Job Trainee, Host Training Establishment, Higher Education Institution, and Government Regulator), its public website, and a shared design system as a product designer and frontend developer.",
+    image: "/assets/images/projects/ojtconnect/cover.png",
+    featuredImage: "/assets/images/projects/ojtconnect/thumbnail.png",
+    featuredLink: "https://ojtconnect.com/",
+    tags: ["Figma", "React", "Claude Code", "TypeScript"],
     url: "/projects/ojtconnect",
+    category: "frontend",
+  },
+  {
+    title: "ROOTÉ",
+    description:
+      "ROOTÉ.US is a web app for people with hair loss: a free hair diagnosis, a personal report, a treatment plan with checkout, and a daily program app, in six languages including right-to-left. I designed the journey and built the front end as a UX/UI designer and front-end developer.",
+    image: "/assets/images/projects/roote/cover.png",
+    featuredImage: "/assets/images/projects/roote/thumbnail.png",
+    featuredLink: "https://roote.us/",
+    tags: ["UX/UI Design", "Front-End", "Accessibility"],
+    url: "/projects/roote",
+    category: "frontend",
+  },
+  {
+    title: "WeCare",
+    description:
+      "WeCare is a problem-first health platform for Germany and Austria: a short assessment leads to one recommended solution, a doctor's review, and delivery. I designed the journey and built the front end as a UX designer and front-end developer on the TLH Team.",
+    image: "/assets/images/projects/wecare/cover.png",
+    featuredImage: "/assets/images/projects/wecare/thumbnail.png",
+    featuredLink: "https://www.wecare360.de/",
+    tags: ["UX Design", "React", "TailwindCSS"],
+    url: "/projects/wecare",
+    category: "frontend",
+  },
+  {
+    title: "SanoVida",
+    description:
+      "SanoVida is a mobile companion app for a 21-day health, fitness, and routine program, guiding Spanish-speaking women in Mexico from quiz and checkout through daily habits, tracking, and AI coaching. I designed the journey, wrote the UX copy, and built an interactive prototype for the Google UX Design Certificate.",
+    image: "/assets/images/projects/sanovida/cover.png",
+    tags: ["UX Design", "React", "UX Writing"],
+    url: "/projects/sanovida",
     category: "frontend",
   },
   {

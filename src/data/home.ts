@@ -38,4 +38,10 @@ export const recentProjects = projects
 // The Featured Projects photo cards.
 export const featuredProjects = projects
   .slice(0, HOME_PROJECT_COUNT)
-  .map(({ url, image, title }) => ({ url, image, title }));
+  .map(({ url, image, featuredImage, featuredLink, title }) => ({
+    url,
+    image: featuredImage ?? image,
+    title,
+    external: featuredLink !== undefined,
+    href: featuredLink ?? url,
+  }));

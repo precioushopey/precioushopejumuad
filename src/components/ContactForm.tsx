@@ -165,7 +165,7 @@ export const ContactForm = ({
             name="message"
             required
             className={`${s.field} ${s.messageField}`}
-            placeholder="What’s been getting in your way? A design that isn’t working, a product that’s stuck, a bug you can’t crack. No problem is too small. Tell me about it and let’s find how I can help."
+            placeholder="What’s getting in your users’ way? A design that feels off, a flow that confuses people, an experience that’s hard to use. No design or UX problem is too small. Tell me about it and let’s find how I can help."
           />
         </div>
 

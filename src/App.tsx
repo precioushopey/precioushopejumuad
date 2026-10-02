@@ -11,6 +11,9 @@ import Blog from "./pages/blog";
 const Subay = lazy(() => import("./projects/subay"));
 const Payroll = lazy(() => import("./projects/payroll"));
 const OjtConnect = lazy(() => import("./projects/ojtconnect"));
+const Roote = lazy(() => import("./projects/roote"));
+const WeCare = lazy(() => import("./projects/wecare"));
+const SanoVida = lazy(() => import("./projects/sanovida"));
 const Ibrgy = lazy(() => import("./projects/ibrgy"));
 const TaleMakers = lazy(() => import("./projects/talemakers"));
 const AtHomes = lazy(() => import("./projects/athomes"));
@@ -59,6 +62,9 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/projects/subay" element={<Subay />} />
             <Route path="/projects/ojtconnect" element={<OjtConnect />} />
+            <Route path="/projects/roote" element={<Roote />} />
+            <Route path="/projects/wecare" element={<WeCare />} />
+            <Route path="/projects/sanovida" element={<SanoVida />} />
             <Route path="/projects/payroll" element={<Payroll />} />
             <Route path="/projects/ibrgy" element={<Ibrgy />} />
             <Route path="/projects/talemakers" element={<TaleMakers />} />

@@ -49,6 +49,8 @@ const Home = () => {
                 image={p.image}
                 title={p.title}
                 detail={p.detail}
+                contain
+                tile="bg-black/20"
               />
             ))}
           </div>
@@ -123,24 +125,39 @@ const Home = () => {
           aria-label="Featured projects"
           className="grid grid-cols-3 gap-3 opacity-0 animate-fade-in-delay-4"
         >
-          {featuredProjects.map((p) => (
-            <Link
-              key={p.url}
-              to={p.url}
-              className="group relative min-h-32 min-w-0 flex-1 max-lg:aspect-video overflow-hidden rounded-3xl border border-line"
-            >
-              <img
-                loading="lazy"
-                decoding="async"
-                src={thumb(p.image)}
-                alt={p.title}
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <span className="absolute inset-x-0 bottom-0 flex h-20 items-end bg-gradient-to-t from-black/80 to-transparent p-3 text-left text-xs font-medium leading-tight">
-                {p.title}
-              </span>
-            </Link>
-          ))}
+          {featuredProjects.map((p) => {
+            const className =
+              "group relative min-h-32 min-w-0 flex-1 max-lg:aspect-video overflow-hidden rounded-3xl border border-line";
+            const card = (
+              <>
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={thumb(p.image)}
+                  alt={p.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <span className="absolute inset-x-0 bottom-0 flex h-20 items-end bg-gradient-to-t from-black/80 to-transparent p-3 text-left text-xs font-medium leading-tight">
+                  {p.title}
+                </span>
+              </>
+            );
+            return p.external ? (
+              <a
+                key={p.url}
+                href={p.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={className}
+              >
+                {card}
+              </a>
+            ) : (
+              <Link key={p.url} to={p.href} className={className}>
+                {card}
+              </Link>
+            );
+          })}
         </section>
       </div>
 
