@@ -14,6 +14,7 @@ const OjtConnect = lazy(() => import("./projects/ojtconnect"));
 const Roote = lazy(() => import("./projects/roote"));
 const WeCare = lazy(() => import("./projects/wecare"));
 const SanoVida = lazy(() => import("./projects/sanovida"));
+const Coco = lazy(() => import("./projects/coco"));
 const Ibrgy = lazy(() => import("./projects/ibrgy"));
 const TaleMakers = lazy(() => import("./projects/talemakers"));
 const AtHomes = lazy(() => import("./projects/athomes"));
@@ -65,6 +66,7 @@ function App() {
             <Route path="/projects/roote" element={<Roote />} />
             <Route path="/projects/wecare" element={<WeCare />} />
             <Route path="/projects/sanovida" element={<SanoVida />} />
+            <Route path="/projects/coco" element={<Coco />} />
             <Route path="/projects/payroll" element={<Payroll />} />
             <Route path="/projects/ibrgy" element={<Ibrgy />} />
             <Route path="/projects/talemakers" element={<TaleMakers />} />

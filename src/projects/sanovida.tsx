@@ -1,6 +1,9 @@
 import type { ReactNode } from "react";
 import {
   LuAccessibility,
+  LuBell,
+  LuCalendarDays,
+  LuCamera,
   LuCircleCheck,
   LuImage,
   LuInfo,
@@ -72,6 +75,7 @@ const parts: Part[] = [
     topics: [
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
+      { id: "progress-tracking", label: "Progress tracking" },
       { id: "accessibility", label: "Accessibility" },
     ],
   },
@@ -123,12 +127,41 @@ const painPoints = [
 ];
 
 const journeyStages = [
-  { title: "Discover", detail: "Browses the plan on the landing page" },
-  { title: "Quiz", detail: "Answers six questions" },
+  {
+    title: "Discover",
+    detail:
+      "Sees an ad that says “Discover my plan”, then a landing page for a 21-day program, not a single product",
+  },
+  {
+    title: "Quiz",
+    detail:
+      "Answers five to seven questions in about a minute. The first asks her main goal; wake-up and sleep times are part of the answers",
+  },
+  {
+    title: "Plan reveal",
+    detail:
+      "Sees “This is your plan” with her program and the products picked for her",
+  },
+  {
+    title: "Consult",
+    detail:
+      "Can chat on WhatsApp with an advisor who has seen her answers. It is for questions, not for paying",
+  },
   { title: "Checkout", detail: "Pays and enters the delivery address" },
+  {
+    title: "Instant access",
+    detail: "Payment opens the app straight away: “Activate my app”",
+  },
   { title: "Wait", detail: "The kit ships: the lowest point" },
+  {
+    title: "Arrival",
+    detail: "The app says it arrived and Day 1 starts tomorrow",
+  },
   { title: "Daily", detail: "Follows the 21-day routine" },
-  { title: "Day 21", detail: "Reviews results, then repurchases or shares" },
+  {
+    title: "Day 21",
+    detail: "Sees her results first, then repurchases or shares",
+  },
 ];
 
 const wireframes = [
@@ -235,8 +268,67 @@ const accessibility = [
 
 const nextSteps = [
   "Usability-test with 5 to 8 target users in Mexico to validate onboarding, the daily stepper, and the Day 21 flow.",
+  "Test that the daily check-in really takes 10 to 15 seconds, and that customers keep it up for all 21 days.",
   "Run an accessibility audit (contrast, focus order, screen reader) and fix known gaps: input validation and the WhatsApp tab.",
   "Build for production with a real backend, auth, payments, email activation, and notifications, porting from the spec.",
+];
+
+const tracked = [
+  {
+    title: "Weight",
+    detail:
+      "A trend from starting weight to now, updated once or twice a week, never a daily weigh-in",
+  },
+  {
+    title: "Energy",
+    detail: "A rating from 1 to 10, or Low, Normal, and Great",
+  },
+  {
+    title: "Adherence",
+    detail:
+      "A daily checklist (morning, nutrition, workout, products, water, evening) becomes a percentage",
+  },
+  {
+    title: "Workouts",
+    detail:
+      "Start and Complete inside the app, with a count, minutes, a streak, and the next workout. Wearables can come later",
+  },
+  {
+    title: "Photos",
+    detail: "Front, side, and an optional back photo on Day 0, 7, 14, and 21",
+  },
+  {
+    title: "Measurements",
+    detail: "Optional waist, hips, chest, and thigh, repeated on Day 21",
+  },
+  {
+    title: "Product routine",
+    detail: "Each product is checked off at its time of day",
+  },
+];
+
+const programArc = [
+  {
+    title: "Day 0: baseline",
+    detail:
+      "Her starting point: weight, measurements, photos, energy, goals, and 0 of 21 days",
+  },
+  {
+    title: "Days 1 to 20: live progress",
+    detail:
+      "My Progress updates from her check-ins: weight change, average energy, adherence, workouts, days done, and streak",
+  },
+  {
+    title: "Day 21: final summary",
+    detail:
+      "A comparison of Day 0 and Day 21, with before and after photos and 21 of 21 days, then a celebration",
+  },
+];
+
+const nudges = [
+  "No workout for a few days: offer a shorter one today.",
+  "Energy lower this week: suggest reviewing the routine.",
+  "Most of the routine done: say so and praise her.",
 ];
 
 const BeforeAfter = ({
@@ -301,11 +393,11 @@ const SanoVida = () => (
     <div className="space-y-15 pt-6">
       <Section id="overview" level={2} title="Project Overview" hideTitle>
         <img
-          src={`${IMAGES}/hero.jpg`}
+          src={`${IMAGES}/sanovida.webp`}
           width={1600}
           height={900}
-          alt="Three SanoVida app screens: Home with an adherence ring, Plan with meal cards, and Progress with a weekly chart"
-          className="w-full rounded-xl md:rounded-2xl border"
+          alt="SanoVida landing page on a laptop with the headline “Tu transformación comienza aquí” and a smiling woman holding a water bottle, beside the app’s loading screen on a phone"
+          className="w-full"
         />
         <NoteWindow title="About this project">
           <p className={noteText}>
@@ -346,6 +438,11 @@ const SanoVida = () => (
               Design one end-to-end journey (quiz, plan, 21-day program,
               repurchase) that keeps customers engaged, builds daily habits, and
               makes progress visible.
+            </p>
+            <p className={noteText}>
+              The customer is not buying supplements. She finds the right 21-day
+              plan, and the first purchase is only her way into a whole system:
+              plan, products, nutrition, workouts, an AI coach, and tracking.
             </p>
           </NoteWindow>
         </div>
@@ -395,7 +492,7 @@ const SanoVida = () => (
                 <p className={noteText}>
                   Research was desk-based, not participant interviews. A
                   stakeholder customer-journey document (ad, landing page, quiz,
-                  checkout, app) and the 21-day program defined the audience:
+                  plan reveal, WhatsApp consult, checkout, app) and the 21-day program defined the audience:
                   Spanish-speaking women in Mexico. I assumed the app had to
                   collect everything itself. The journey showed the landing quiz
                   and checkout already capture most data, so in-app onboarding
@@ -454,7 +551,9 @@ const SanoVida = () => (
               <NoteWindow title="Journey notes">
                 <p className={noteText}>
                   The goal is to keep Ana engaged at every handoff. The lowest
-                  point is the shipping wait, so Day 0 gets its own home.
+                  point is the shipping wait, so Day 0 gets its own home. The
+                  map condenses the path into six stages; the list below is the
+                  full path, from the ad to the next plan.
                 </p>
               </NoteWindow>
               <Window
@@ -716,6 +815,99 @@ const SanoVida = () => (
             </Section>
 
             <Section
+              id="progress-tracking"
+              title="Progress Tracking"
+              trail={parts[2].title}
+            >
+              <NoteWindow title="Tracking notes">
+                <p className={noteText}>
+                  Tracking has to stay light or it stops. Nothing asks for a long
+                  form: the daily check-in takes 10 to 15 seconds, and each
+                  measure has one simple input. All of it feeds one My Progress
+                  screen.
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuTrendingUp size={16} />}
+                title="What is tracked"
+                level={4}
+                footer={`${tracked.length} measures`}
+              >
+                <dl className="divide-y divide-line/40 text-sm">
+                  {tracked.map((item) => (
+                    <div
+                      key={item.title}
+                      className="grid grid-cols-1 gap-1 px-6 py-3 sm:grid-cols-[9rem_1fr] sm:gap-3"
+                    >
+                      <dt className="font-medium">{item.title}</dt>
+                      <dd className="text-cream/70">{item.detail}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </Window>
+              <Window
+                icon={<LuCalendarDays size={16} />}
+                title="From Day 0 to Day 21"
+                level={4}
+                footer="A soft hint about the next plan appears around Day 18 to 20. The full offer waits until Day 21."
+              >
+                <ol className="divide-y divide-line/40">
+                  {programArc.map((item, index) => (
+                    <li
+                      key={item.title}
+                      className="flex items-start gap-3 px-6 py-3"
+                    >
+                      <span
+                        aria-hidden
+                        className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-medium text-accent"
+                      >
+                        {index + 1}
+                      </span>
+                      <p className="min-w-0 flex-1 text-left text-sm">
+                        <span className="font-medium">{item.title}</span>
+                        <span className="text-cream/70"> · {item.detail}</span>
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </Window>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <Window
+                  icon={<LuBell size={16} />}
+                  title="Sano AI nudges"
+                  level={4}
+                  footer="Sent as in-app notifications, each tied to her own data."
+                >
+                  <ul className="divide-y divide-line/40">
+                    {nudges.map((nudge) => (
+                      <li
+                        key={nudge}
+                        className="flex items-start gap-3 px-6 py-3"
+                      >
+                        <LuCircleCheck
+                          size={16}
+                          aria-hidden
+                          className="mt-1 shrink-0 text-accent"
+                        />
+                        <p className={cardText}>{nudge}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Window>
+                <Window
+                  icon={<LuCamera size={16} />}
+                  title="Photo privacy"
+                  level={4}
+                >
+                  <p className={`p-6 ${cardText}`}>
+                    Progress photos stay in her private area. They are never
+                    public and never used in ads without her clear permission.
+                  </p>
+                </Window>
+              </div>
+            </Section>
+
+            <Section
               id="accessibility"
               title="Accessibility Considerations"
               trail={parts[2].title}
@@ -756,7 +948,8 @@ const SanoVida = () => (
                   <p className={noteText}>
                     The handoff between the marketing site and the app mattered
                     more than any single screen. Tying every AI nudge to real
-                    data kept the product honest. Next time I would test with
+                    data kept the product honest, and showing her results before
+                    the repurchase offer felt fairer than a hard sell. Next time I would test with
                     real users sooner.
                   </p>
                 </NoteWindow>

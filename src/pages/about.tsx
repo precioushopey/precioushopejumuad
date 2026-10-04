@@ -84,20 +84,37 @@ const About = () => {
                       the problem, defining requirements, mapping user flows,
                       and exploring solutions) to creating working interfaces
                       that can be tested, refined, and brought closer to
-                      production. I work primarily with Figma, React,
-                      TypeScript, Tailwind, and AI-powered tools to move quickly
-                      without losing sight of thoughtful design.
+                      production. I work primarily with Figma, React, Next.js,
+                      JavaScript, TypeScript, Tailwind, Claude Code, and other
+                      AI-powered tools to move quickly without losing sight of
+                      thoughtful design.
                     </p>
                     <p>
-                      As a Design Engineer, I care about the space between
-                      design and development. My workflow combines UX research
-                      and analysis, product requirements, rapid prototyping,
-                      reusable components, responsive behavior, accessibility,
-                      technical feasibility, documentation, and developer
-                      handoff. I believe design shouldn’t stop at static
-                      screens; sometimes the best way to communicate an idea is
-                      to make it real, interactive, and something people can
-                      experience.
+                      I don’t only work on user experience. As a developer, I
+                      care just as much about developer experience. On my team,
+                      I design, I implement the design in our web app, and I
+                      help the team check whether a design is intuitive and
+                      technically feasible before anyone builds it. My
+                      workflow combines UX research and analysis, product
+                      requirements, reusable components, responsive behavior,
+                      accessibility, technical feasibility, documentation, and
+                      developer handoff.
+                    </p>
+                    <p>
+                      Rapid prototyping is how I like to work. I turn a brief
+                      into a written design specification (requirements, user
+                      flows, business rules, edge cases, and acceptance
+                      criteria), using AI as an analysis partner, then build it
+                      as a working interface in Figma Make and VS Code instead
+                      of a stack of static frames. Stakeholders can click
+                      through the real thing, and their feedback goes straight
+                      into the build. Once a design is approved, I document it
+                      in Figma and hand developers a repository, the published
+                      prototype, and the design file, so nobody has to guess the
+                      intended behavior. I believe design shouldn’t stop at
+                      static screens; sometimes the best way to communicate an
+                      idea is to make it real, interactive, and something people
+                      can experience.
                     </p>
                     <p>
                       I’m always curious about better ways to design, build, and

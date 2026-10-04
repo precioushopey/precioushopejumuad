@@ -3,12 +3,17 @@ import {
   LuAccessibility,
   LuBookOpen,
   LuCircleCheck,
+  LuCircleX,
   LuExternalLink,
   LuImage,
   LuInfo,
   LuKeyboard,
+  LuLayoutDashboard,
   LuListChecks,
+  LuPalette,
+  LuRefreshCw,
   LuRoute,
+  LuShieldCheck,
   LuSquare,
   LuStore,
   LuTriangleAlert,
@@ -31,7 +36,7 @@ const facts = [
   { label: "Duration", value: "August 2026 to October 2026 (ongoing)" },
   { label: "Market", value: "Germany and Austria" },
   { label: "Languages", value: "German and English" },
-  { label: "Tools", value: "React, Vite, Tailwind CSS, shadcn/ui" },
+  { label: "Tools", value: "Figma, React, Vite, Tailwind CSS, shadcn/ui, Claude Code" },
   {
     label: "Status",
     value: "Private preview and local only for now",
@@ -64,6 +69,8 @@ const parts: Part[] = [
     peek: `${IMAGES}/ia.jpg`,
     topics: [
       { id: "information-architecture", label: "Information architecture" },
+      { id: "problem-pages", label: "Problem pages" },
+      { id: "recommendation-logic", label: "Recommendation logic" },
       { id: "digital-screens", label: "Digital screens" },
       { id: "working-prototype", label: "Working prototype" },
       { id: "feedback", label: "Audit and stakeholder feedback" },
@@ -76,6 +83,8 @@ const parts: Part[] = [
     topics: [
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
+      { id: "wording-and-trust", label: "Wording and trust" },
+      { id: "follow-up", label: "Dashboard and follow-up" },
       { id: "accessibility", label: "Accessibility" },
     ],
   },
@@ -138,6 +147,11 @@ const journeySteps = [
   { title: "Checkout", detail: "Phone code by SMS, address, summary" },
   { title: "Thank you", detail: "Order summary and shipping cut-off" },
   { title: "Track your order", detail: "Phone code sign-in, no password" },
+  {
+    title: "Follow-up",
+    detail:
+      "Planned: a check-in after 14 to 21 days leads to a reorder or a new match",
+  },
 ];
 
 const screens = [
@@ -231,7 +245,80 @@ const accessibility = [
 const nextSteps = [
   "Run moderated usability tests with first-time users on phones, plus a real-device and accessibility pass.",
   "Connect real services: SMS verification, payment, pharmacy prices and certificates, and order emails.",
+  "Build the follow-up check-in and the dashboard, then test the repeat-order path.",
   "Have counsel review claims, legal texts, and delivery promises before launch.",
+];
+
+const problemPageParts = [
+  "Hero: a question about the problem and one assessment button",
+  "A short explanation in plain words",
+  "Common situations people recognise",
+  "How WeCare helps, in four steps",
+  "Products only after the assessment, never as the main focus",
+];
+
+const matchRules = [
+  "Each problem has one main match and one secondary option.",
+  "A stronger answer or earlier experience can move the secondary option up to a stronger one.",
+  "New users are led with the gentlest format. Stronger formats are never the first recommendation.",
+  "Items that are not for a health problem, like lifestyle formats and accessories, stay out of the match.",
+];
+
+const productRoles = [
+  {
+    role: "Main solutions",
+    detail: "Oils, shown as the match after the assessment",
+  },
+  {
+    role: "Advanced formats",
+    detail: "Only for experienced users, after the assessment",
+  },
+  { role: "Lifestyle formats", detail: "Not tied to any of the four problems" },
+  { role: "Accessories", detail: "Offered after checkout, never as a solution" },
+];
+
+const sayWords = [
+  "“Your recommended solution is ready”",
+  "“Body comfort”, “daily balance”, “head tension support”",
+  "“Continue” or “Check availability”",
+  "“This does not replace medical advice”",
+];
+
+const avoidWords = [
+  "“You are approved for treatment”",
+  "“Cure”, “migraine treatment”, or “treats anxiety”",
+  "“Buy cannabis”, “Order CBD now”, “Get treatment now”",
+  "Strong medical claims of any kind",
+];
+
+const trustItems = [
+  "A lab-test page for each product: CBD, CBG, CBN, and THC levels, batch number, test date, and safety testing",
+  "Nine legal and trust pages: terms, privacy, cookies, imprint, product disclaimer, shipping, refunds, contact, and lab tests",
+  "A required checkbox that the product is not meant to diagnose, treat, cure, or prevent disease",
+];
+
+const dashboardMenu = [
+  "My assessment",
+  "My recommendation",
+  "My orders",
+  "Follow-up",
+  "Support",
+  "Profile",
+];
+
+const followUpAnswers = [
+  "Good",
+  "I want something stronger",
+  "I want something lighter",
+  "I want to try another format",
+  "I need support",
+];
+
+const followUpOutcomes = [
+  "Reorder the same product",
+  "Try the secondary recommendation",
+  "Retake the assessment",
+  "Contact support",
 ];
 
 // A phone-sized screenshot with a caption.
@@ -267,11 +354,11 @@ const WeCare = () => (
     <div className="space-y-15 pt-6">
       <Section id="overview" level={2} title="Project Overview" hideTitle>
         <img
-          src={`${IMAGES}/home-desktop.jpg`}
+          src={`${IMAGES}/wecare.webp`}
           width={1600}
-          height={950}
-          alt="WeCare home page: a navigation bar with four problems, the headline “Find the right support for Sleep”, a Start Free Assessment button, and a photo of a woman with a tablet"
-          className="w-full rounded-xl md:rounded-2xl border"
+          height={900}
+          alt="WeCare home page shown on a desktop monitor, a laptop, a tablet, and a phone, with the headline “Find the right support for Stress & Anxiety”, a Start Free Assessment button, and a photo of a woman with a tablet"
+          className="w-full"
         />
         <NoteWindow title="About this project">
           <p className={noteText}>
@@ -323,6 +410,11 @@ const WeCare = () => (
               Lead with the problem, not the product: six short questions, one
               clear match, and a doctor’s review before anything is dispensed.
             </p>
+            <p className={noteText}>
+              The path is problem, short assessment, matched solution, product
+              or support, then follow-up. It should never feel like a cannabis
+              shop, a product catalogue, or a heavy medical system.
+            </p>
           </NoteWindow>
         </div>
       </Section>
@@ -369,7 +461,9 @@ const WeCare = () => (
               <NoteWindow title="Research notes">
                 <p className={noteText}>
                   We did not run interviews. Research was desk-based: a teardown
-                  of a competing service (quick-green), a UX audit of our own
+                  of a competing service (quick-green), a look at how
+                  established digital healthcare platforms lead with health
+                  problems before products, a UX audit of our own
                   build, and repeated walkthroughs with the product owner and
                   partners. We assumed visitors would want to browse products
                   first. The research showed they need a problem-first path,
@@ -426,8 +520,8 @@ const WeCare = () => (
               <NoteWindow title="Journey notes">
                 <p className={noteText}>
                   The goal is to get from a problem to a placed order in
-                  minutes. Each stage has one job, and the doctor step stays
-                  visible.
+                  minutes, then keep helping afterward. Each stage has one job,
+                  and the doctor step stays visible.
                 </p>
               </NoteWindow>
               <Window
@@ -493,6 +587,100 @@ const WeCare = () => (
                   className="w-full"
                 />
               </Window>
+            </Section>
+
+            <Section
+              id="problem-pages"
+              title="Problem Pages"
+              trail={parts[1].title}
+            >
+              <NoteWindow title="Page notes">
+                <p className={noteText}>
+                  Only four problems are shown at the start, and each has its
+                  own landing page. Ads speak about the problem, not a product,
+                  so the page a visitor lands on starts with the same question.
+                  The navigation lists the four problems, How it works, and the
+                  FAQ, with Login and the assessment button on the right. It has
+                  no shop links.
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuListChecks size={16} />}
+                title="Every problem page"
+                level={4}
+                footer={`${problemPageParts.length} parts`}
+              >
+                <ol className="divide-y divide-line/40">
+                  {problemPageParts.map((part, index) => (
+                    <li
+                      key={part}
+                      className="flex items-start gap-3 px-6 py-3"
+                    >
+                      <span
+                        aria-hidden
+                        className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-medium text-accent"
+                      >
+                        {index + 1}
+                      </span>
+                      <p className={cardText}>{part}</p>
+                    </li>
+                  ))}
+                </ol>
+              </Window>
+            </Section>
+
+            <Section
+              id="recommendation-logic"
+              title="Recommendation Logic"
+              trail={parts[1].title}
+            >
+              <NoteWindow title="Logic notes">
+                <p className={noteText}>
+                  The six answers are the input to a simple set of rules. The
+                  rules decide what is recommended and, as importantly, what is
+                  kept out of the first result.
+                </p>
+              </NoteWindow>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <Window
+                  icon={<LuRoute size={16} />}
+                  title="Matching rules"
+                  level={4}
+                  footer={`${matchRules.length} rules`}
+                >
+                  <ul className="divide-y divide-line/40">
+                    {matchRules.map((rule, index) => (
+                      <li
+                        key={rule}
+                        className="flex items-start gap-3 px-6 py-3"
+                      >
+                        <span
+                          aria-hidden
+                          className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-medium text-accent"
+                        >
+                          {index + 1}
+                        </span>
+                        <p className={cardText}>{rule}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Window>
+                <Window
+                  icon={<LuStore size={16} />}
+                  title="What each product is for"
+                  level={4}
+                  footer={`${productRoles.length} roles`}
+                >
+                  <dl className="divide-y divide-line/40 text-sm">
+                    {productRoles.map((item) => (
+                      <div key={item.role} className="space-y-1 px-6 py-3">
+                        <dt className="font-medium">{item.role}</dt>
+                        <dd className="text-cream/70">{item.detail}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </Window>
+              </div>
             </Section>
 
             <Section
@@ -677,6 +865,18 @@ const WeCare = () => (
                   English. It is a private preview and runs locally for now.
                 </p>
               </NoteWindow>
+              <Window
+                icon={<LuPalette size={16} />}
+                title="Design direction"
+                level={4}
+              >
+                <p className={`p-6 ${cardText}`}>
+                  Clean, premium, calm, European, and trustworthy: soft colors,
+                  clean cards, an icon for each problem, large buttons, short
+                  text, and a progress bar. No cannabis-heavy visuals, no
+                  discounts, and no “buy now” feeling.
+                </p>
+              </Window>
               <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
                 {gallery.map((screen) => (
                   <Shot
@@ -686,6 +886,146 @@ const WeCare = () => (
                     caption={screen.title}
                   />
                 ))}
+              </div>
+            </Section>
+
+            <Section
+              id="wording-and-trust"
+              title="Wording and Trust"
+              trail={parts[2].title}
+            >
+              <NoteWindow title="Wording notes">
+                <p className={noteText}>
+                  In a regulated space the words are part of the design. Copy
+                  follows a short list of rules about what the page may and may
+                  not promise, and the result page says a recommendation is
+                  ready, never that someone is approved.
+                </p>
+              </NoteWindow>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <Window
+                  icon={<LuCircleCheck size={16} />}
+                  title="Use"
+                  level={4}
+                  footer={`${sayWords.length} examples`}
+                >
+                  <ul className="divide-y divide-line/40">
+                    {sayWords.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 px-6 py-3"
+                      >
+                        <LuCircleCheck
+                          size={16}
+                          aria-hidden
+                          className="mt-1 shrink-0 text-accent"
+                        />
+                        <p className={cardText}>{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Window>
+                <Window
+                  icon={<LuCircleX size={16} />}
+                  title="Never use"
+                  level={4}
+                  footer={`${avoidWords.length} examples`}
+                >
+                  <ul className="divide-y divide-line/40">
+                    {avoidWords.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 px-6 py-3"
+                      >
+                        <LuCircleX
+                          size={16}
+                          aria-hidden
+                          className="mt-1 shrink-0 text-cream/60"
+                        />
+                        <p className={cardText}>{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Window>
+              </div>
+              <Window
+                icon={<LuShieldCheck size={16} />}
+                title="Trust and compliance"
+                level={4}
+                footer={`${trustItems.length} items`}
+              >
+                <ul className="divide-y divide-line/40">
+                  {trustItems.map((item) => (
+                    <li key={item} className="flex items-start gap-3 px-6 py-3">
+                      <LuCircleCheck
+                        size={16}
+                        aria-hidden
+                        className="mt-1 shrink-0 text-accent"
+                      />
+                      <p className={cardText}>{item}</p>
+                    </li>
+                  ))}
+                </ul>
+              </Window>
+            </Section>
+
+            <Section
+              id="follow-up"
+              title="Dashboard and Follow-Up"
+              trail={parts[2].title}
+            >
+              <NoteWindow title="Follow-up notes">
+                <p className={noteText}>
+                  The structure plans for repeat orders without pressure. The
+                  dashboard stays small, and a check-in after 14 to 21 days asks
+                  how the recommended solution is working.
+                </p>
+              </NoteWindow>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <Window
+                  icon={<LuLayoutDashboard size={16} />}
+                  title="Dashboard menu"
+                  level={4}
+                  footer={`${dashboardMenu.length} items`}
+                >
+                  <ul className="divide-y divide-line/40">
+                    {dashboardMenu.map((item) => (
+                      <li key={item} className="px-6 py-3">
+                        <p className={cardText}>{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </Window>
+                <div className="space-y-6">
+                  <Window
+                    icon={<LuRefreshCw size={16} />}
+                    title="“How was your experience?”"
+                    level={4}
+                    footer={`${followUpAnswers.length} answers`}
+                  >
+                    <ul className="divide-y divide-line/40">
+                      {followUpAnswers.map((item) => (
+                        <li key={item} className="px-6 py-3">
+                          <p className={cardText}>{item}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </Window>
+                  <Window
+                    icon={<LuRoute size={16} />}
+                    title="What happens next"
+                    level={4}
+                    footer={`${followUpOutcomes.length} options`}
+                  >
+                    <ul className="divide-y divide-line/40">
+                      {followUpOutcomes.map((item) => (
+                        <li key={item} className="px-6 py-3">
+                          <p className={cardText}>{item}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </Window>
+                </div>
               </div>
             </Section>
 
@@ -729,7 +1069,9 @@ const WeCare = () => (
                   <p className={noteText}>
                     Problem-first beats product-first. Honest placeholders, with
                     no invented prices or claims, build trust. Legal and doctor
-                    steps need design, not just copy.
+                    steps need design, not just copy, and so do the words: a
+                    short list of what the page may and may not say kept the
+                    whole flow consistent.
                   </p>
                 </NoteWindow>
               </div>

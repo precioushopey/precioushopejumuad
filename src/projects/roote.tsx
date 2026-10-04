@@ -2,8 +2,10 @@ import type { ReactNode } from "react";
 import {
   LuAccessibility,
   LuBadgeCheck,
+  LuCalendarDays,
   LuCircleCheck,
   LuExternalLink,
+  LuFileText,
   LuGithub,
   LuImage,
   LuInfo,
@@ -11,6 +13,7 @@ import {
   LuListChecks,
   LuLock,
   LuMousePointerClick,
+  LuPalette,
   LuRoute,
   LuSmartphone,
   LuSquare,
@@ -19,7 +22,6 @@ import {
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import { ProjectLayout } from "../components/ProjectLayout";
 import {
-  ImagePlaceholder,
   NoteWindow,
   Section,
   Window,
@@ -30,13 +32,13 @@ import {
 const IMAGES = "/assets/images/projects/roote";
 
 const facts = [
-  { label: "Role", value: "UX/UI Designer and Front-End Developer" },
+  { label: "Role", value: "UX/UI Designer, Front-End Developer, and Packaging Designer" },
   { label: "Duration", value: "September 2026 to October 2026" },
   {
     label: "Languages",
     value: "Six, including right-to-left layouts for Hebrew and Arabic",
   },
-  { label: "Status", value: "Concept build, no live users yet" },
+  { label: "Status", value: "Live at roote.us, built as a concept for stakeholder review" },
 ];
 
 type Topic = { id: string; label: string };
@@ -62,11 +64,11 @@ const parts: Part[] = [
   {
     number: 2,
     title: "Starting the design",
-    peek: `${IMAGES}/wireframe-goal.png`,
+    peek: `${IMAGES}/digital-wireframes-overview.webp`,
     topics: [
-      { id: "paper-wireframes", label: "Paper wireframes" },
       { id: "digital-wireframes", label: "Digital wireframes" },
       { id: "low-fidelity-prototype", label: "Low-fidelity prototype" },
+      { id: "diagnosis-flow", label: "Diagnosis flow" },
       { id: "stakeholder-feedback", label: "Stakeholder feedback" },
     ],
   },
@@ -77,6 +79,7 @@ const parts: Part[] = [
     topics: [
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
+      { id: "report-plan-app", label: "Report, plan and app" },
       { id: "accessibility", label: "Accessibility" },
     ],
   },
@@ -98,6 +101,7 @@ const responsibilities = [
   "Right-to-left layouts",
   "Accessibility",
   "Building the front end",
+  "Bottle, label artwork, and carton design",
   "Acting on stakeholder feedback",
 ];
 
@@ -124,51 +128,118 @@ const painPoints = [
     icon: <LuLanguages size={20} />,
     title: "Language and reading direction",
     problem:
-      "The primary market reads Hebrew, so the whole journey must work in six languages, including right-to-left layouts.",
+      "Most customers are in Israel, so visitors from there get Hebrew with right-to-left layout by default, with a switch to other languages.",
   },
 ];
 
-const journeySteps = [
-  "Discover",
-  "Analyze",
-  "Report",
-  "Plan",
-  "Checkout",
-  "Daily program",
+const journeyMap = [
+  {
+    stage: "Discover",
+    does: "Arrives from a search or a social ad with a hair-loss worry",
+    response: "A clear promise and one action: start the free analysis",
+  },
+  {
+    stage: "Analyze",
+    does: "Uploads photos and answers five short questions",
+    response: "An animated analysis and a questionnaire that fills the wait",
+  },
+  {
+    stage: "Report",
+    does: "Gives an email address to get the results",
+    response: "A personal PDF that explains the situation in plain words",
+  },
+  {
+    stage: "Plan",
+    does: "Reads the recommended treatment and plan length",
+    response: "One recommended plan, with no products to choose between",
+  },
+  {
+    stage: "Checkout",
+    does: "Opens an account, confirms the plan, and pays",
+    response: "A clear summary, visible security cues, and a way to get help",
+  },
+  {
+    stage: "Daily program",
+    does: "Follows the plan day by day",
+    response: "The app shows what to do today and sends reminders",
+  },
+  {
+    stage: "Follow-up",
+    does: "Tracks progress over months",
+    response: "Progress photos, before and after, and a repeat analysis",
+  },
 ];
 
 const flowSteps = [
-  { title: "Home", detail: "One primary action: start the free analysis" },
+  {
+    title: "Home",
+    detail: "One primary action: start the free hair analysis, never “Shop now”",
+  },
   {
     title: "Free analysis",
-    detail: "Short questionnaire, one choice per step",
+    detail: "Photos and a short questionnaire, one choice per step",
   },
-  { title: "Report", detail: "A personal report built from the answers" },
-  { title: "Plan", detail: "A treatment plan with products and prices" },
-  { title: "Checkout", detail: "Order summary, then payment" },
+  { title: "Report", detail: "A personal report built from the analysis" },
+  {
+    title: "Plan",
+    detail: "A recommended plan, so the customer does not pick products",
+  },
+  { title: "Checkout", detail: "Account, plan length, order summary, payment" },
 ];
 
-const wireframes = [
+const diagnosisSteps = [
   {
-    file: "wireframe-goal.png",
-    title: "Hair-goal step",
-    alt: "Wireframe of the hair-goal step: a progress rail across the top and a list of goal cards, each with a title and a one-line description",
-    notes: [
-      "The hair-goal step offers clear choices with short descriptions.",
-      "Cards with a title and one-line description are easy to scan.",
-      "A progress rail shows where the user is and how much is left.",
-    ],
+    title: "Introduction",
+    detail: "A short screen: a few minutes, an AI analysis, then a personal plan",
+  },
+  { title: "Gender", detail: "Two large visual choices" },
+  {
+    title: "Hair photos",
+    detail: "Upload, with a guide to shooting the front, top, crown, and hairline",
   },
   {
-    file: "wireframe-checkout.png",
-    title: "Checkout",
-    alt: "Wireframe of checkout: the order summary with the product, subtotal, shipping, and total, and the payment form under it ending in a Place order button",
-    notes: [
-      "The order summary sits beside the checkout form.",
-      "The summary lists each product with photo, quantity, and price.",
-      "Payment sits under the summary and ends in one Place order button.",
-    ],
+    title: "AI analysis",
+    detail:
+      "An animated screen shows density, hair-loss area, hairline, scalp, and thinning being checked",
   },
+  {
+    title: "Questionnaire",
+    detail: "Shown while the analysis runs, so the wait is never a loading screen",
+  },
+  {
+    title: "Email",
+    detail: "“Send my personalized results” delivers the report",
+  },
+];
+
+const questions = [
+  "Where the hair loss is",
+  "When it first started",
+  "Past treatments",
+  "Family history",
+  "The main goal",
+];
+
+const reportParts = [
+  "The customer's photo",
+  "AI analysis: what was found in the photo",
+  "Hair-loss type and problem area",
+  "Current situation, in a short plain explanation",
+  "Personalized treatment plan: treatments, how often, how long",
+  "Recommended program length",
+  "Pricing for the full plan",
+  "One large button: Start my program",
+];
+
+const planLengths = ["90 days", "120 days", "180 days", "270 days", "360 days"];
+
+const appFeatures = [
+  "The personal plan and what to do each day",
+  "Reminders for each treatment",
+  "Progress photos and before and after comparison",
+  "Messages and guidance",
+  "A prompt when it is time to order the next stage",
+  "A repeat AI hair analysis later on",
 ];
 
 const feedback = [
@@ -236,6 +307,7 @@ const accessibility = [
 
 const nextSteps = [
   "Define what each questionnaire answer recommends.",
+  "Have every medical claim and price checked by the client's regulatory and legal review before it goes live.",
   "Add test payment mode and coupon codes to checkout.",
   "Run usability tests with real customers and iterate.",
 ];
@@ -271,11 +343,11 @@ const Roote = () => (
     <div className="space-y-15 pt-6">
       <Section id="overview" level={2} title="Project Overview" hideTitle>
         <img
-          src={`${IMAGES}/report-desktop.png`}
-          width={1440}
+          src={`${IMAGES}/roote.us.webp`}
+          width={1600}
           height={900}
-          alt="ROOTÉ personalized plan page: the heading “Your personalized plan is ready”, a download button, and photos of the front, top, crown, and hairline"
-          className="w-full rounded-xl md:rounded-2xl border"
+          alt="ROOTÉ home page shown on a desktop monitor, a laptop, a tablet, and a phone, with the headline “A personalized hair growth system for you” and a Start Free Hair Analysis button"
+          className="w-full"
         />
         <NoteWindow title="About this project">
           <p className={noteText}>
@@ -283,6 +355,16 @@ const Roote = () => (
             diagnosis, a personal report, a treatment plan with checkout, and a
             daily program app. It is available in six languages, including
             right-to-left.
+          </p>
+          <p className={noteText}>
+            Beyond the app, I designed the bottles, the label artwork, and the
+            carton for the product line.
+          </p>
+          <p className={noteText}>
+            ROOTÉ.US is an American brand based in California, but most of its
+            customers are in Israel, so the experience is built first for them:
+            Hebrew and right-to-left by default for visitors from Israel, with
+            English and more languages one switch away.
           </p>
         </NoteWindow>
         <Window icon={<LuInfo size={16} />} title="Properties">
@@ -329,11 +411,20 @@ const Roote = () => (
               People with hair loss want a credible, personal plan without a
               clinic visit. Most sites feel like a quiz made to sell shampoo.
             </p>
+            <p className={noteText}>
+              ROOTÉ.US sells a personal solution to hair loss, not a catalog, so
+              it cannot work like a regular online store.
+            </p>
           </NoteWindow>
           <NoteWindow title="The goal" level={3}>
             <p className={noteText}>
               Design one journey (diagnose, explain, plan, buy, follow up) that
               feels personal and never invents medical or pricing claims.
+            </p>
+            <p className={noteText}>
+              The customer should feel that ROOTÉ.US studied their hair, built
+              a plan for them, and stays with them afterward. That is why the
+              main button reads “Free hair analysis”, not “Shop now”.
             </p>
           </NoteWindow>
         </div>
@@ -343,7 +434,8 @@ const Roote = () => (
         <NoteWindow title="My role">
           <p className={noteText}>
             I worked on this project as a UX/UI designer and front-end
-            developer. My responsibilities were:
+            developer, and I also designed the product packaging. My
+            responsibilities were:
           </p>
         </NoteWindow>
         <Window
@@ -425,6 +517,13 @@ const Roote = () => (
                     A prospective customer has hair loss, and needs a credible,
                     personal plan, because generic quizzes feel untrustworthy.
                   </p>
+                  <p className="text-xs text-cream/60">Context</p>
+                  <p className={cardText}>
+                    Men and women who arrive from Google, Instagram, Facebook,
+                    TikTok, or other ads, mostly from Israel. They decide
+                    quickly, so the site uses little text, short cards, and
+                    visual explanations.
+                  </p>
                 </div>
               </Window>
             </Section>
@@ -436,30 +535,36 @@ const Roote = () => (
             >
               <Window
                 icon={<LuRoute size={16} />}
-                title="Journey stages"
-                footer={`${journeySteps.length} stages`}
+                title="Journey map"
+                footer={`${journeyMap.length} stages`}
               >
-                <ol className="grid grid-cols-2 gap-3 p-6 sm:grid-cols-3">
-                  {journeySteps.map((step, index) => (
+                <ol className="divide-y divide-line/40">
+                  {journeyMap.map((item, index) => (
                     <li
-                      key={step}
-                      className="flex items-center gap-3 text-sm font-medium"
+                      key={item.stage}
+                      className="flex items-start gap-3 px-6 py-3"
                     >
                       <span
                         aria-hidden
-                        className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs text-accent"
+                        className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-medium text-accent"
                       >
                         {index + 1}
                       </span>
-                      {step}
+                      <div className="min-w-0 flex-1 space-y-1 text-left text-sm">
+                        <p className="font-medium">{item.stage}</p>
+                        <p className="text-cream/70">
+                          <span className="text-cream/60">Customer: </span>
+                          {item.does}
+                        </p>
+                        <p className="text-cream/70">
+                          <span className="text-cream/60">ROOTÉ: </span>
+                          {item.response}
+                        </p>
+                      </div>
                     </li>
                   ))}
                 </ol>
               </Window>
-              <ImagePlaceholder>
-                User journey map: discover, analyze, report, plan, checkout, and
-                daily program
-              </ImagePlaceholder>
             </Section>
           </div>
         </FolderSection>
@@ -471,64 +576,32 @@ const Roote = () => (
         >
           <div className="space-y-15">
             <Section
-              id="paper-wireframes"
-              title="Paper Wireframes"
-              trail={parts[1].title}
-            >
-              <NoteWindow title="Wireframe notes">
-                <p className={noteText}>
-                  The questionnaire, report, and checkout were sketched as short
-                  steps with one primary action each.
-                </p>
-              </NoteWindow>
-              <ImagePlaceholder>
-                Photos of the paper wireframes: the questionnaire steps, the
-                report layout, and checkout
-              </ImagePlaceholder>
-            </Section>
-
-            <Section
               id="digital-wireframes"
               title="Digital Wireframes"
               trail={parts[1].title}
             >
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                {wireframes.map((wireframe) => (
-                  <Window
-                    key={wireframe.file}
-                    icon={<LuSmartphone size={16} />}
-                    title={wireframe.title}
-                    level={4}
-                  >
-                    <div className="space-y-3 p-6">
-                      <img
-                        src={`${IMAGES}/${wireframe.file}`}
-                        width={780}
-                        height={1360}
-                        loading="lazy"
-                        decoding="async"
-                        alt={wireframe.alt}
-                        className="mx-auto aspect-[9/16] w-full max-w-64 rounded-xl border object-cover object-top"
-                      />
-                      <ul className="space-y-1.5">
-                        {wireframe.notes.map((note) => (
-                          <li
-                            key={note}
-                            className="flex items-start gap-3 text-left text-xs leading-5 text-cream/70"
-                          >
-                            <LuCircleCheck
-                              size={14}
-                              aria-hidden
-                              className="mt-0.5 shrink-0 text-accent"
-                            />
-                            {note}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </Window>
-                ))}
-              </div>
+              <NoteWindow title="Wireframe notes">
+                <p className={noteText}>
+                  No paper sketches were kept. The questionnaire, report, and
+                  checkout were drawn straight into digital wireframes as short
+                  steps with one primary action each.
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuImage size={16} />}
+                title="Figma files"
+                footer="The bottle and box label file, and the ROOTÉ.US web design file with its page designs and flow screens."
+              >
+                <img
+                  src={`${IMAGES}/digital-wireframes-overview.webp`}
+                  width={1600}
+                  height={860}
+                  loading="lazy"
+                  decoding="async"
+                  alt="Two Figma files side by side. On the left, ROOTÉ bottle and box label designs with bottles and label artwork. On the right, ROOTÉ.US Web Design zoomed out: tall page designs for Home, Magazine, Products, AI Section, FAQ, Hair Thinning, Gray hair, Support, Account, and Cart, and two rows of smaller flow screens underneath"
+                  className="w-full"
+                />
+              </Window>
             </Section>
 
             <Section
@@ -539,7 +612,8 @@ const Roote = () => (
               <NoteWindow title="Prototype notes">
                 <p className={noteText}>
                   The flow runs from home to the free analysis, the report, the
-                  plan, and checkout. The prototype link is still to be added.
+                  plan, and checkout, and carries on into the app. You can try it
+                  on the live site.
                 </p>
               </NoteWindow>
               <Window
@@ -583,6 +657,79 @@ const Roote = () => (
                   ))}
                 </ol>
               </Window>
+            </Section>
+
+            <Section
+              id="diagnosis-flow"
+              title="Diagnosis Flow"
+              trail={parts[1].title}
+            >
+              <NoteWindow title="Flow notes">
+                <p className={noteText}>
+                  The free analysis is its own focused flow, away from the main
+                  site. It has to feel like a real analysis, not a marketing
+                  form, so the AI step is shown on screen. The questionnaire
+                  runs while the analysis does, which turns the waiting time
+                  into progress.
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuRoute size={16} />}
+                title="Free analysis steps"
+                level={4}
+                footer={`${diagnosisSteps.length} steps`}
+              >
+                <ol className="divide-y divide-line/40">
+                  {diagnosisSteps.map((step, index) => (
+                    <li
+                      key={step.title}
+                      className="flex items-center gap-3 px-6 py-3"
+                    >
+                      <span
+                        aria-hidden
+                        className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-medium text-accent"
+                      >
+                        {index + 1}
+                      </span>
+                      <p className="min-w-0 flex-1 text-left text-sm">
+                        <span className="font-medium">{step.title}</span>
+                        <span className="text-cream/70"> · {step.detail}</span>
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </Window>
+              <Window
+                icon={<LuListChecks size={16} />}
+                title="Questionnaire"
+                level={4}
+                footer={`${questions.length} questions`}
+              >
+                <ul className="divide-y divide-line/40">
+                  {questions.map((question, index) => (
+                    <li
+                      key={question}
+                      className="flex items-start gap-3 px-6 py-3"
+                    >
+                      <span
+                        aria-hidden
+                        className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-medium text-accent"
+                      >
+                        {index + 1}
+                      </span>
+                      <p className={cardText}>{question}</p>
+                    </li>
+                  ))}
+                </ul>
+              </Window>
+              <NoteWindow title="Design choice">
+                <p className={noteText}>
+                  Five questions, each on its own screen with about three
+                  answers to pick from, in a modern, animated style. A long
+                  form would feel like a chore, and a short one keeps people
+                  moving until the report is ready.
+                </p>
+              </NoteWindow>
             </Section>
 
             <Section
@@ -725,9 +872,21 @@ const Roote = () => (
               <NoteWindow title="Design notes">
                 <p className={noteText}>
                   The polished screens from home to the daily program. The
-                  prototype link is still to be added; the code is on GitHub.
+                  live site and the code on GitHub are linked at the top.
                 </p>
               </NoteWindow>
+              <Window
+                icon={<LuPalette size={16} />}
+                title="Design direction"
+                level={4}
+              >
+                <p className={`p-6 ${cardText}`}>
+                  Modern, premium, clean, and medical but approachable. Little
+                  text, with cards, short statements, icons, animated sections,
+                  and short AI videos explaining the problem, the analysis, and
+                  the plan.
+                </p>
+              </Window>
               <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
                 {screens.map((screen) => (
                   <Shot
@@ -737,6 +896,81 @@ const Roote = () => (
                     caption={screen.title}
                   />
                 ))}
+              </div>
+            </Section>
+
+            <Section
+              id="report-plan-app"
+              title="Report, Plan and App"
+              trail={parts[2].title}
+            >
+              <NoteWindow title="From report to results">
+                <p className={noteText}>
+                  The report is emailed as a personal PDF. Its button brings the
+                  customer back to the site with the plan already chosen, so
+                  there is nothing to shop for: they open an account, confirm the
+                  plan length, and pay. Checkout is where the app picks up.
+                </p>
+              </NoteWindow>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <Window
+                  icon={<LuFileText size={16} />}
+                  title="Personal report"
+                  level={4}
+                  footer={`${reportParts.length} parts`}
+                >
+                  <ol className="divide-y divide-line/40">
+                    {reportParts.map((part, index) => (
+                      <li
+                        key={part}
+                        className="flex items-start gap-3 px-6 py-3"
+                      >
+                        <span
+                          aria-hidden
+                          className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-medium text-accent"
+                        >
+                          {index + 1}
+                        </span>
+                        <p className={cardText}>{part}</p>
+                      </li>
+                    ))}
+                  </ol>
+                </Window>
+                <div className="space-y-6">
+                  <Window
+                    icon={<LuCalendarDays size={16} />}
+                    title="Plan length"
+                    level={4}
+                    footer="The report recommends one of these."
+                  >
+                    <ul className="flex flex-wrap gap-3 p-6">
+                      {planLengths.map((length) => (
+                        <li key={length} className="pill-outline text-xs">
+                          {length}
+                        </li>
+                      ))}
+                    </ul>
+                  </Window>
+                  <Window
+                    icon={<LuSmartphone size={16} />}
+                    title="After checkout: the app"
+                    level={4}
+                    footer={`${appFeatures.length} features`}
+                  >
+                    <ul className="space-y-3 p-6 text-sm leading-6">
+                      {appFeatures.map((feature) => (
+                        <li key={feature} className="flex items-start gap-3">
+                          <LuCircleCheck
+                            size={16}
+                            aria-hidden
+                            className="mt-1 shrink-0 text-accent"
+                          />
+                          <span className="text-cream/80">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Window>
+                </div>
               </div>
             </Section>
 
@@ -771,8 +1005,9 @@ const Roote = () => (
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>
                   <p className={noteText}>
-                    A concept build with no live users yet: a complete journey
-                    in six languages that stakeholders can review end to end.
+                    A concept build for stakeholder review, now live: a complete
+                    journey in six languages that stakeholders can review end
+                    to end.
                   </p>
                 </NoteWindow>
                 <NoteWindow title="What I learned" level={4}>
