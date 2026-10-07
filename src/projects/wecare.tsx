@@ -41,7 +41,10 @@ const facts = [
   { label: "Duration", value: "August 2026 to October 2026 (ongoing)" },
   { label: "Market", value: "Germany and Austria" },
   { label: "Languages", value: "German and English" },
-  { label: "Tools", value: "Figma, React, Vite, Tailwind CSS, shadcn/ui, Claude Code" },
+  {
+    label: "Tools",
+    value: "Figma, React, Vite, Tailwind CSS, shadcn/ui, Claude Code",
+  },
   {
     label: "Status",
     value: "Private preview and local only for now",
@@ -59,20 +62,30 @@ type Part = {
 const parts: Part[] = [
   {
     number: 1,
+    title: "Project overview",
+    peek: `${IMAGES}/cover.png`,
+    topics: [
+      { id: "problem-and-goal", label: "The problem and the goal" },
+      { id: "scope-and-standards", label: "Scope and standards" },
+      { id: "my-role", label: "My role" },
+      { id: "process", label: "Design process" },
+    ],
+  },
+  {
+    number: 2,
     title: "Understanding the user",
     peek: `${IMAGES}/persona.jpg`,
     topics: [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
       { id: "user-stories", label: "User stories" },
-      { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
   },
   {
-    number: 2,
-    title: "Starting the design",
-    peek: `${IMAGES}/ia.jpg`,
+    number: 3,
+    title: "Design",
+    peek: `${IMAGES}/match.jpg`,
     topics: [
       { id: "information-architecture", label: "Information architecture" },
       { id: "problem-pages", label: "Problem pages" },
@@ -80,13 +93,6 @@ const parts: Part[] = [
       { id: "digital-screens", label: "Digital screens" },
       { id: "working-prototype", label: "Working prototype" },
       { id: "feedback", label: "Audit and stakeholder feedback" },
-    ],
-  },
-  {
-    number: 3,
-    title: "Refining the design",
-    peek: `${IMAGES}/match.jpg`,
-    topics: [
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
       { id: "wording-and-trust", label: "Wording and trust" },
@@ -287,7 +293,10 @@ const productRoles = [
     detail: "Only for experienced users, after the assessment",
   },
   { role: "Lifestyle formats", detail: "Not tied to any of the four problems" },
-  { role: "Accessories", detail: "Offered after checkout, never as a solution" },
+  {
+    role: "Accessories",
+    detail: "Offered after checkout, never as a solution",
+  },
 ];
 
 const sayWords = [
@@ -409,118 +418,142 @@ const WeCare = () => (
         </div>
       </Section>
 
-      <Section id="problem-and-goal" level={2} title="The Problem and the Goal">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <NoteWindow title="The problem" level={3}>
-            <p className={noteText}>
-              Medical cannabis sites feel like shops and lead with strains and
-              THC. People who want help with sleep, pain, stress, or migraine
-              get lost before they reach a doctor.
-            </p>
-          </NoteWindow>
-          <NoteWindow title="The goal" level={3}>
-            <p className={noteText}>
-              Lead with the problem, not the product: six short questions, one
-              clear match, and a doctor’s review before anything is dispensed.
-            </p>
-            <p className={noteText}>
-              The path is problem, short assessment, matched solution, product
-              or support, then follow-up. It should never feel like a cannabis
-              shop, a product catalogue, or a heavy medical system.
-            </p>
-          </NoteWindow>
-        </div>
-      </Section>
-
-      <ScopeAndStandards
-        rows={[
-          {
-            label: "Scope",
-            text: "The assessment, match, checkout, and order tracking, with follow-up planned.",
-          },
-          {
-            label: "Not connected yet",
-            text: "SMS verification, payment, pharmacy prices and certificates, and order emails.",
-          },
-          {
-            label: "Standards",
-            text: "Careful wording with no medical claims, nine legal and trust pages, and counsel review before launch.",
-          },
-        ]}
-      />
-
-      <Section id="my-role" level={2} title="My Role">
-        <NoteWindow title="My role">
-          <p className={noteText}>
-            I worked on this project as a UX designer and front-end developer on
-            the TLH Team. My responsibilities were:
-          </p>
-        </NoteWindow>
-        <Window
-          icon={<LuListChecks size={16} />}
-          title="Responsibilities"
-          footer={`${responsibilities.length} items`}
-        >
-          <ul className="space-y-3 p-6 text-sm leading-6">
-            {responsibilities.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <LuCircleCheck
-                  size={16}
-                  aria-hidden
-                  className="mt-1 shrink-0 text-accent"
-                />
-                <span className="text-cream/80">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </Window>
-      </Section>
-
-      <ProcessStrip
-        empathize={{
-          status: "Partly",
-          text: "Desk-based, no interviews: a teardown of a competing service, a look at digital healthcare platforms, and walkthroughs with the product owner and partners.",
-        }}
-        define={{
-          status: "Done",
-          text: "Four everyday problems, a persona, problem statements, and a journey from homepage to follow-up.",
-        }}
-        ideate={{
-          status: "To add",
-          text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: no sketches were kept, and ideas took shape in the written spec, the information architecture, and the recommendation rules.",
-        }}
-        prototype={{
-          status: "Done",
-          text: "A working prototype, mockups, and high-fidelity designs for phone and desktop.",
-        }}
-        test={{
-          status: "Partly",
-          text: "A UX audit and stakeholder walkthroughs led to changes. Moderated usability tests are still to come.",
-        }}
-      />
-
       <FolderGroup>
         <FolderSection
           label={`${parts[0].number}. ${parts[0].title}`}
           count={parts[0].topics.length}
           peek={parts[0].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              trail={parts[0].title}
+              collapsible
+              id="problem-and-goal"
+              title="The Problem and the Goal"
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <NoteWindow title="The problem" level={3}>
+                  <p className={noteText}>
+                    Medical cannabis sites feel like shops and lead with strains
+                    and THC. People who want help with sleep, pain, stress, or
+                    migraine get lost before they reach a doctor.
+                  </p>
+                </NoteWindow>
+                <NoteWindow title="The goal" level={3}>
+                  <p className={noteText}>
+                    Lead with the problem, not the product: six short questions,
+                    one clear match, and a doctor’s review before anything is
+                    dispensed.
+                  </p>
+                  <p className={noteText}>
+                    The path is problem, short assessment, matched solution,
+                    product or support, then follow-up. It should never feel
+                    like a cannabis shop, a product catalogue, or a heavy
+                    medical system.
+                  </p>
+                </NoteWindow>
+              </div>
+            </Section>
+
+            <ScopeAndStandards
+              trail={parts[0].title}
+              collapsible
+              rows={[
+                {
+                  label: "Scope",
+                  text: "The assessment, match, checkout, and order tracking, with follow-up planned.",
+                },
+                {
+                  label: "Not connected yet",
+                  text: "SMS verification, payment, pharmacy prices and certificates, and order emails.",
+                },
+                {
+                  label: "Standards",
+                  text: "Careful wording with no medical claims, nine legal and trust pages, and counsel review before launch.",
+                },
+              ]}
+            />
+
+            <Section
+              trail={parts[0].title}
+              collapsible
+              id="my-role"
+              title="My Role"
+            >
+              <NoteWindow title="My role">
+                <p className={noteText}>
+                  I worked on this project as a UX designer and front-end
+                  developer on the TLH Team. My responsibilities were:
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuListChecks size={16} />}
+                title="Responsibilities"
+                footer={`${responsibilities.length} items`}
+              >
+                <ul className="space-y-3 p-6 text-sm leading-6">
+                  {responsibilities.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <LuCircleCheck
+                        size={16}
+                        aria-hidden
+                        className="mt-1 shrink-0 text-accent"
+                      />
+                      <span className="text-cream/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Window>
+            </Section>
+
+            <ProcessStrip
+              trail={parts[0].title}
+              collapsible
+              empathize={{
+                status: "Partly",
+                text: "Desk-based, no interviews: a teardown of a competing service, a look at digital healthcare platforms, and walkthroughs with the product owner and partners.",
+              }}
+              define={{
+                status: "Done",
+                text: "Four everyday problems, a persona, problem statements, and a journey from homepage to follow-up.",
+              }}
+              ideate={{
+                status: "To add",
+                text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: no sketches were kept, and ideas took shape in the written spec, the information architecture, and the recommendation rules.",
+              }}
+              prototype={{
+                status: "Done",
+                text: "A working prototype, mockups, and high-fidelity designs for phone and desktop.",
+              }}
+              test={{
+                status: "Partly",
+                text: "A UX audit and stakeholder walkthroughs led to changes. Moderated usability tests are still to come.",
+              }}
+            />
+          </div>
+        </FolderSection>
+        <FolderSection
+          label={`${parts[1].number}. ${parts[1].title}`}
+          count={parts[1].topics.length}
+          peek={parts[1].peek}
+        >
+          <div className="space-y-6">
+            <Section
+              collapsible
               id="user-research"
               title="User Research"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Research notes">
                 <p className={noteText}>
                   We did not run interviews. Research was desk-based: a teardown
                   of a competing service (quick-green), a look at how
                   established digital healthcare platforms lead with health
-                  problems before products, a UX audit of our own
-                  build, and repeated walkthroughs with the product owner and
-                  partners. We assumed visitors would want to browse products
-                  first. The research showed they need a problem-first path,
-                  plain language, and a visible doctor step.
+                  problems before products, a UX audit of our own build, and
+                  repeated walkthroughs with the product owner and partners. We
+                  assumed visitors would want to browse products first. The
+                  research showed they need a problem-first path, plain
+                  language, and a visible doctor step.
                 </p>
               </NoteWindow>
               <h4 className="text-left font-medium text-lg">Pain points</h4>
@@ -538,7 +571,12 @@ const WeCare = () => (
               </div>
             </Section>
 
-            <Section id="persona" title="Persona" trail={parts[0].title}>
+            <Section
+              collapsible
+              id="persona"
+              title="Persona"
+              trail={parts[1].title}
+            >
               <Window
                 icon={<LuUserRound size={16} />}
                 title="Role-based persona"
@@ -566,7 +604,8 @@ const WeCare = () => (
             </Section>
 
             <UserStories
-              trail={parts[0].title}
+              collapsible
+              trail={parts[1].title}
               stories={[
                 {
                   who: "Adult in Germany or Austria",
@@ -577,9 +616,10 @@ const WeCare = () => (
             />
 
             <Section
+              collapsible
               id="user-journey"
               title="User Journey"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Journey notes">
                 <p className={noteText}>
@@ -617,17 +657,17 @@ const WeCare = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
-          label={`${parts[1].number}. ${parts[1].title}`}
-          count={parts[1].topics.length}
-          peek={parts[1].peek}
+          label={`${parts[2].number}. ${parts[2].title}`}
+          count={parts[2].topics.length}
+          peek={parts[2].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              collapsible
               id="information-architecture"
               title="Information Architecture"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Structure notes">
                 <p className={noteText}>
@@ -654,9 +694,10 @@ const WeCare = () => (
             </Section>
 
             <Section
+              collapsible
               id="problem-pages"
               title="Problem Pages"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Page notes">
                 <p className={noteText}>
@@ -676,10 +717,7 @@ const WeCare = () => (
               >
                 <ol className="divide-y divide-line/40">
                   {problemPageParts.map((part, index) => (
-                    <li
-                      key={part}
-                      className="flex items-start gap-3 px-6 py-3"
-                    >
+                    <li key={part} className="flex items-start gap-3 px-6 py-3">
                       <span
                         aria-hidden
                         className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-medium text-accent"
@@ -694,9 +732,10 @@ const WeCare = () => (
             </Section>
 
             <Section
+              collapsible
               id="recommendation-logic"
               title="Recommendation Logic"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Logic notes">
                 <p className={noteText}>
@@ -748,9 +787,10 @@ const WeCare = () => (
             </Section>
 
             <Section
+              collapsible
               id="digital-screens"
               title="Digital Screens"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {screens.map((screen) => (
@@ -793,9 +833,10 @@ const WeCare = () => (
             </Section>
 
             <Section
+              collapsible
               id="working-prototype"
               title="Working Prototype"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Prototype notes">
                 <p className={noteText}>
@@ -822,9 +863,10 @@ const WeCare = () => (
             </Section>
 
             <Section
+              collapsible
               id="feedback"
               title="Audit and Stakeholder Feedback"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Feedback notes">
                 <p className={noteText}>
@@ -862,16 +904,13 @@ const WeCare = () => (
                 ))}
               </div>
             </Section>
-          </div>
-        </FolderSection>
 
-        <FolderSection
-          label={`${parts[2].number}. ${parts[2].title}`}
-          count={parts[2].topics.length}
-          peek={parts[2].peek}
-        >
-          <div className="space-y-15">
-            <Section id="mockups" title="Mockups" trail={parts[2].title}>
+            <Section
+              collapsible
+              id="mockups"
+              title="Mockups"
+              trail={parts[2].title}
+            >
               <NoteWindow title="Mockup notes">
                 <p className={noteText}>
                   Before: one long checkbox with a draft note. After: a fifth
@@ -919,6 +958,7 @@ const WeCare = () => (
             </Section>
 
             <Section
+              collapsible
               id="high-fidelity-designs"
               title="High-Fidelity Designs"
               trail={parts[2].title}
@@ -954,6 +994,7 @@ const WeCare = () => (
             </Section>
 
             <Section
+              collapsible
               id="wording-and-trust"
               title="Wording and Trust"
               trail={parts[2].title}
@@ -1034,6 +1075,7 @@ const WeCare = () => (
             </Section>
 
             <Section
+              collapsible
               id="follow-up"
               title="Dashboard and Follow-Up"
               trail={parts[2].title}
@@ -1094,6 +1136,7 @@ const WeCare = () => (
             </Section>
 
             <Section
+              collapsible
               id="accessibility"
               title="Accessibility Considerations"
               trail={parts[2].title}
@@ -1113,14 +1156,14 @@ const WeCare = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
           label={`${parts[3].number}. ${parts[3].title}`}
           count={parts[3].topics.length}
           peek={parts[3].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <UxQualities
+              collapsible
               trail={parts[3].title}
               usable="Every step says what happens next: a progress line (“Question 4 of 6”), a delivery cut-off on the match screen, and a thank-you page that explains the doctor review. After the UX audit, checkout errors show in a summary above the submit button."
               equitable="Plain hints explain jargon, and first-time users are never led with the stronger option. The pages are in German and English. They support keyboards and screen readers, with a skip link, 3:1 contrast on option circles, and reduced-motion support."
@@ -1128,7 +1171,12 @@ const WeCare = () => (
               useful="A short assessment ends in one recommended solution and one alternative, so people do not have to pick a product themselves. A doctor reviews before any order."
             />
 
-            <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="takeaways"
+              title="Takeaways"
+              trail={parts[3].title}
+            >
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>
                   <p className={noteText}>
@@ -1149,7 +1197,12 @@ const WeCare = () => (
               </div>
             </Section>
 
-            <Section id="next-steps" title="Next Steps" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="next-steps"
+              title="Next Steps"
+              trail={parts[3].title}
+            >
               <Window
                 icon={<LuListChecks size={16} />}
                 title="To do"

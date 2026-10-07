@@ -52,32 +52,35 @@ type Part = {
 const parts: Part[] = [
   {
     number: 1,
+    title: "Project overview",
+    peek: `${IMAGES}/cover.jpg`,
+    topics: [
+      { id: "problem-and-goal", label: "The problem and the goal" },
+      { id: "scope-and-standards", label: "Scope and standards" },
+      { id: "my-role", label: "My role" },
+      { id: "process", label: "Design process" },
+    ],
+  },
+  {
+    number: 2,
     title: "Understanding the user",
     peek: `${IMAGES}/home-before.webp`,
     topics: [
       { id: "user-research", label: "Audience assumptions" },
       { id: "persona", label: "Audience profiles" },
       { id: "user-stories", label: "User stories" },
-      { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User flows" },
     ],
   },
   {
-    number: 2,
-    title: "Starting the design",
-    peek: `${IMAGES}/home-after.webp`,
+    number: 3,
+    title: "Design",
+    peek: `${IMAGES}/studio.webp`,
     topics: [
       { id: "early-sketches", label: "Early sketches" },
       { id: "page-layouts", label: "Page layouts" },
       { id: "working-prototype", label: "Working prototype" },
       { id: "design-review", label: "Design review" },
-    ],
-  },
-  {
-    number: 3,
-    title: "Refining the design",
-    peek: `${IMAGES}/studio.webp`,
-    topics: [
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
       { id: "accessibility", label: "Accessibility" },
@@ -278,10 +281,9 @@ const Roostercat = () => (
         />
         <NoteWindow title="About this project">
           <p className={noteText}>
-            A responsive website for Roostercat LLC, an independent game
-            studio. It presents three mobile games in development and the
-            studio’s client services to two audiences: players and prospective
-            clients.
+            A responsive website for Roostercat LLC, an independent game studio.
+            It presents three mobile games in development and the studio’s
+            client services to two audiences: players and prospective clients.
           </p>
         </NoteWindow>
         <Window icon={<LuInfo size={16} />} title="Properties">
@@ -301,103 +303,125 @@ const Roostercat = () => (
         </Window>
       </Section>
 
-      <Section id="problem-and-goal" level={2} title="The Problem and the Goal">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <NoteWindow title="The problem" level={3}>
-            <p className={noteText}>
-              The studio had no public home. Players could not discover or
-              follow its three games, and potential clients could not see what
-              the studio builds or how to reach it.
-            </p>
-          </NoteWindow>
-          <NoteWindow title="The goal" level={3}>
-            <p className={noteText}>
-              Ship one fast, consistent site that gives players and clients each
-              a clear path: follow a game, understand a service, or get in
-              touch.
-            </p>
-          </NoteWindow>
-        </div>
-      </Section>
-
-      <ScopeAndStandards
-        rows={[
-          {
-            label: "Scope",
-            text: "Ten pages, including three game detail pages and a 404, covering three games, five services, and a contact path.",
-          },
-          {
-            label: "Not connected yet",
-            text: "The newsletter and contact forms, which are handled in the browser only, and a build step: the script bundle is maintained by hand.",
-          },
-          {
-            label: "Standards",
-            text: "A language set on every page, alt text on images, aria-labels on navigation and social links, and layouts that adapt at 900, 768, 560, and 480px.",
-          },
-        ]}
-      />
-
-      <Section id="my-role" level={2} title="My Role">
-        <NoteWindow title="My role">
-          <p className={noteText}>
-            I worked on this project as the lead designer and front-end
-            developer. My responsibilities were:
-          </p>
-        </NoteWindow>
-        <Window
-          icon={<LuListChecks size={16} />}
-          title="Responsibilities"
-          footer={`${responsibilities.length} items`}
-        >
-          <ul className="space-y-3 p-6 text-sm leading-6">
-            {responsibilities.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <LuCircleCheck
-                  size={16}
-                  aria-hidden
-                  className="mt-1 shrink-0 text-accent"
-                />
-                <span className="text-cream/80">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </Window>
-      </Section>
-
-      <ProcessStrip
-        empathize={{
-          status: "Partly",
-          text: "No formal user research was run. The design rests on two assumed audiences, players and clients.",
-        }}
-        define={{
-          status: "Partly",
-          text: "A problem statement for each assumed audience and the main user flows. None of it came from interviews.",
-        }}
-        ideate={{
-          status: "To add",
-          text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: no sketches were kept, and layout was explored directly in code, starting from a five-link navigation and a games-first home page.",
-        }}
-        prototype={{
-          status: "Done",
-          text: "Built directly as a working static site instead of a clickable mockup, with before and after mockups for the home and games pages and the finished ten-page site.",
-        }}
-        test={{
-          status: "Partly",
-          text: "Two internal design-review passes (May 20 to 22) led to changes. A usability study with real players and clients is the next step.",
-        }}
-      />
-
       <FolderGroup>
         <FolderSection
           label={`${parts[0].number}. ${parts[0].title}`}
           count={parts[0].topics.length}
           peek={parts[0].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              trail={parts[0].title}
+              collapsible
+              id="problem-and-goal"
+              title="The Problem and the Goal"
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <NoteWindow title="The problem" level={3}>
+                  <p className={noteText}>
+                    The studio had no public home. Players could not discover or
+                    follow its three games, and potential clients could not see
+                    what the studio builds or how to reach it.
+                  </p>
+                </NoteWindow>
+                <NoteWindow title="The goal" level={3}>
+                  <p className={noteText}>
+                    Ship one fast, consistent site that gives players and
+                    clients each a clear path: follow a game, understand a
+                    service, or get in touch.
+                  </p>
+                </NoteWindow>
+              </div>
+            </Section>
+
+            <ScopeAndStandards
+              trail={parts[0].title}
+              collapsible
+              rows={[
+                {
+                  label: "Scope",
+                  text: "Ten pages, including three game detail pages and a 404, covering three games, five services, and a contact path.",
+                },
+                {
+                  label: "Not connected yet",
+                  text: "The newsletter and contact forms, which are handled in the browser only, and a build step: the script bundle is maintained by hand.",
+                },
+                {
+                  label: "Standards",
+                  text: "A language set on every page, alt text on images, aria-labels on navigation and social links, and layouts that adapt at 900, 768, 560, and 480px.",
+                },
+              ]}
+            />
+
+            <Section
+              trail={parts[0].title}
+              collapsible
+              id="my-role"
+              title="My Role"
+            >
+              <NoteWindow title="My role">
+                <p className={noteText}>
+                  I worked on this project as the lead designer and front-end
+                  developer. My responsibilities were:
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuListChecks size={16} />}
+                title="Responsibilities"
+                footer={`${responsibilities.length} items`}
+              >
+                <ul className="space-y-3 p-6 text-sm leading-6">
+                  {responsibilities.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <LuCircleCheck
+                        size={16}
+                        aria-hidden
+                        className="mt-1 shrink-0 text-accent"
+                      />
+                      <span className="text-cream/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Window>
+            </Section>
+
+            <ProcessStrip
+              trail={parts[0].title}
+              collapsible
+              empathize={{
+                status: "Partly",
+                text: "No formal user research was run. The design rests on two assumed audiences, players and clients.",
+              }}
+              define={{
+                status: "Partly",
+                text: "A problem statement for each assumed audience and the main user flows. None of it came from interviews.",
+              }}
+              ideate={{
+                status: "To add",
+                text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: no sketches were kept, and layout was explored directly in code, starting from a five-link navigation and a games-first home page.",
+              }}
+              prototype={{
+                status: "Done",
+                text: "Built directly as a working static site instead of a clickable mockup, with before and after mockups for the home and games pages and the finished ten-page site.",
+              }}
+              test={{
+                status: "Partly",
+                text: "Two internal design-review passes (May 20 to 22) led to changes. A usability study with real players and clients is the next step.",
+              }}
+            />
+          </div>
+        </FolderSection>
+        <FolderSection
+          label={`${parts[1].number}. ${parts[1].title}`}
+          count={parts[1].topics.length}
+          peek={parts[1].peek}
+        >
+          <div className="space-y-6">
+            <Section
+              collapsible
               id="user-research"
               title="Audience Assumptions"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Research notes">
                 <p className={noteText}>
@@ -430,9 +454,10 @@ const Roostercat = () => (
             </Section>
 
             <Section
+              collapsible
               id="persona"
               title="Audience Profiles"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Persona notes">
                 <p className={noteText}>
@@ -474,7 +499,8 @@ const Roostercat = () => (
             </Section>
 
             <UserStories
-              trail={parts[0].title}
+              collapsible
+              trail={parts[1].title}
               stories={[
                 {
                   who: "Player",
@@ -490,9 +516,10 @@ const Roostercat = () => (
             />
 
             <Section
+              collapsible
               id="user-journey"
               title="User Flows"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Flow notes">
                 <p className={noteText}>
@@ -535,17 +562,17 @@ const Roostercat = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
-          label={`${parts[1].number}. ${parts[1].title}`}
-          count={parts[1].topics.length}
-          peek={parts[1].peek}
+          label={`${parts[2].number}. ${parts[2].title}`}
+          count={parts[2].topics.length}
+          peek={parts[2].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              collapsible
               id="early-sketches"
               title="Early Sketches"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Sketch notes">
                 <p className={noteText}>
@@ -557,9 +584,10 @@ const Roostercat = () => (
             </Section>
 
             <Section
+              collapsible
               id="page-layouts"
               title="Page Layouts"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Layout notes">
                 <p className={noteText}>
@@ -603,9 +631,10 @@ const Roostercat = () => (
             </Section>
 
             <Section
+              collapsible
               id="working-prototype"
               title="Working Prototype"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Prototype notes">
                 <p className={noteText}>
@@ -633,9 +662,10 @@ const Roostercat = () => (
             </Section>
 
             <Section
+              collapsible
               id="design-review"
               title="Design Review"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Review notes">
                 <p className={noteText}>
@@ -674,16 +704,13 @@ const Roostercat = () => (
                 ))}
               </div>
             </Section>
-          </div>
-        </FolderSection>
 
-        <FolderSection
-          label={`${parts[2].number}. ${parts[2].title}`}
-          count={parts[2].topics.length}
-          peek={parts[2].peek}
-        >
-          <div className="space-y-15">
-            <Section id="mockups" title="Mockups" trail={parts[2].title}>
+            <Section
+              collapsible
+              id="mockups"
+              title="Mockups"
+              trail={parts[2].title}
+            >
               <NoteWindow title="Mockup notes">
                 <p className={noteText}>
                   Two pages are shown before and after refinement, between the
@@ -717,6 +744,7 @@ const Roostercat = () => (
             </Section>
 
             <Section
+              collapsible
               id="high-fidelity-designs"
               title="High-Fidelity Designs"
               trail={parts[2].title}
@@ -764,6 +792,7 @@ const Roostercat = () => (
             </Section>
 
             <Section
+              collapsible
               id="accessibility"
               title="Accessibility Considerations"
               trail={parts[2].title}
@@ -783,14 +812,14 @@ const Roostercat = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
           label={`${parts[3].number}. ${parts[3].title}`}
           count={parts[3].topics.length}
           peek={parts[3].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <UxQualities
+              collapsible
               trail={parts[3].title}
               usable="A split “For Players / For Clients” call-to-action gives each audience its own path, and game cards share one structure with status and store buttons. Usability has only been checked in two internal review passes."
               equitable="A language is set on every page, images have alt text, navigation and social links have aria-labels, and the menu button reports aria-expanded. Layouts adapt down to 480px."
@@ -798,7 +827,12 @@ const Roostercat = () => (
               useful="One site where players can follow three games, and clients can see the five services and reach the studio through a contact path."
             />
 
-            <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="takeaways"
+              title="Takeaways"
+              trail={parts[3].title}
+            >
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>
                   <p className={noteText}>
@@ -819,7 +853,12 @@ const Roostercat = () => (
               </div>
             </Section>
 
-            <Section id="next-steps" title="Next Steps" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="next-steps"
+              title="Next Steps"
+              trail={parts[3].title}
+            >
               <Window
                 icon={<LuListChecks size={16} />}
                 title="To do"

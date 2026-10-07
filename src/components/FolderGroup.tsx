@@ -2,11 +2,13 @@ import {
   Children,
   isValidElement,
   useId,
+  useRef,
   useState,
   type CSSProperties,
   type ReactElement,
   type ReactNode,
 } from "react";
+import { LuArrowUp } from "react-icons/lu";
 import { thumb } from "../lib/thumb";
 
 type FolderProps = {
@@ -95,11 +97,33 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
   );
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const uid = useId();
+  const gridRef = useRef<HTMLDivElement>(null);
   const openFolder = openIndex === null ? null : folders[openIndex];
+
+  // Back up to the folder row from the end of an open folder: a smooth scroll (instant with reduced
+  // motion), then focus on the open folder so keyboard users land in the same place.
+  const backToFolders = () => {
+    const grid = gridRef.current;
+    if (!grid) return;
+    const reduce = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    grid.scrollIntoView({
+      behavior: reduce ? "auto" : "smooth",
+      block: "start",
+    });
+    grid
+      .querySelector<HTMLButtonElement>('button[aria-expanded="true"]')
+      ?.focus({ preventScroll: true });
+  };
 
   return (
     <div className="animate-fade-in-delay-2 opacity-0">
-      <div className="grid grid-cols-4 gap-x-1 gap-y-3 sm:gap-x-3">
+      {/* Four folders sit in one row; five get five columns, wrapping 3 + 2 on phones. */}
+      <div
+        ref={gridRef}
+        className={`grid scroll-mt-24 gap-x-1 gap-y-3 sm:gap-x-3 ${folders.length === 5 ? "grid-cols-3 sm:grid-cols-5" : "grid-cols-4"}`}
+      >
         {folders.map((folder, index) => {
           const open = index === openIndex;
           const { label, count, peek } = folder.props;
@@ -145,6 +169,16 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
             className="animate-folder-emerge space-y-6 pt-6 [transform-origin:var(--ox)_0] motion-reduce:animate-none"
           >
             {openFolder.props.children}
+            <div className="flex justify-center">
+              <button
+                type="button"
+                onClick={backToFolders}
+                className="flex items-center gap-2 transparent-button"
+              >
+                <LuArrowUp size={16} aria-hidden />
+                Back to folders
+              </button>
+            </div>
           </div>
         )}
       </div>

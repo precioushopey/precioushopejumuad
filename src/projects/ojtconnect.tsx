@@ -8,7 +8,6 @@ import {
   LuFileStack,
   LuGauge,
   LuImage,
-  LuImages,
   LuInfo,
   LuLayoutDashboard,
   LuListChecks,
@@ -22,7 +21,6 @@ import {
   LuUsers,
   LuBuilding2,
   LuLandmark,
-  LuLayers,
   LuMap,
   LuEyeOff,
 } from "react-icons/lu";
@@ -30,7 +28,6 @@ import { ProjectLayout } from "../components/ProjectLayout";
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import {
   Anchor,
-  ImagePlaceholder,
   NoteWindow,
   Section,
   Window,
@@ -41,7 +38,6 @@ import {
   UxQualities,
   noteText,
 } from "../components/CaseStudy";
-import { useScrollRows } from "../hooks/use-scroll-rows";
 
 const IMAGES = "/assets/images/projects/ojtconnect";
 
@@ -53,7 +49,7 @@ const facts = [
     value:
       "On-the-Job Trainee, Host Training Establishment, Higher Education Institution, and Government Regulator",
   },
-  { label: "Release", value: "Version 2.0, June 2026" },
+  { label: "Release", value: "Version 2.0, October 2026" },
   { label: "Works on", value: "All screen sizes" },
   {
     label: "Tools",
@@ -83,6 +79,19 @@ type Part = {
 const parts: Part[] = [
   {
     number: 1,
+    id: "project-overview",
+    title: "Project overview",
+    peek: `${IMAGES}/cover.png`,
+    topics: [
+      { id: "portals", label: "The four portals" },
+      { id: "problem-and-goal", label: "The problem and the goal" },
+      { id: "scope-and-standards", label: "Scope and standards" },
+      { id: "my-role", label: "My role" },
+      { id: "process", label: "Design process" },
+    ],
+  },
+  {
+    number: 2,
     id: "understanding-the-users",
     title: "Understanding the users",
     peek: `${IMAGES}/intern_dashboard_original.png`,
@@ -90,26 +99,16 @@ const parts: Part[] = [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
       { id: "user-stories", label: "User stories" },
-      { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
   },
   {
-    number: 2,
-    id: "starting-the-design",
-    title: "Starting the design",
-    peek: `${IMAGES}/digital_wireframe.png`,
-    topics: [
-      { id: "digital-wireframes", label: "Digital wireframes" },
-      { id: "low-fidelity-prototype", label: "Low-fidelity prototype" },
-    ],
-  },
-  {
     number: 3,
-    id: "refining-the-design",
-    title: "Refining the design",
+    id: "design",
+    title: "Design",
     peek: `${IMAGES}/intern_dashboard_redesign.png`,
     topics: [
+      { id: "low-fidelity-prototype", label: "Low-fidelity prototype" },
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
       { id: "accessibility", label: "Accessibility" },
@@ -128,14 +127,23 @@ const parts: Part[] = [
   },
 ];
 
+// In order, from research to delivery.
 const responsibilities = [
+  "Requirements and user experience analysis",
+  "User flows and information architecture",
+  "Wireframing and prototyping in Figma and Figma Make",
+  "High-fidelity interface designs, with responsive states and edge cases",
+  "A shared component library and design system, documented for the team",
   "Designing and building the On-the-Job Trainee, Host Training Establishment, Higher Education Institution, and Government Regulator portals, and the public website",
-  "Wireframing and prototyping in Figma",
-  "Building a shared component library and design system",
+  "Frontend development in React, TypeScript, and Tailwind CSS, working with backend developers and stakeholders",
   "Mobile-first card and table views",
   "Onboarding flows",
+  "Light, dark, and high-contrast modes",
   "Accessibility and performance improvements",
+  "SEO and content writing",
   "Quality assurance testing across portals",
+  "Developer handoff and documentation",
+  "An AI-assisted design-to-code workflow with Figma, Figma Make, VS Code, GitHub, and Claude Code",
 ];
 
 // The four portals and what each one offers. The features come from the functional requirements
@@ -297,49 +305,6 @@ const portals = [
           "Filter by period, region, school, program, industry, and company. Every figure shows its change and benchmark, and individual student data stays protected.",
       },
     ],
-  },
-];
-
-// What each Higher Education Institution plan includes (BRD v1.0, FRD v2.0).
-const tiers = [
-  {
-    name: "Starter",
-    who: "Small colleges, or one department",
-    price: "₱20,000/term + ₱300 per student",
-    rows: [
-      ["Students", "Up to 500"],
-      ["Applications", "3 per term"],
-      ["Resume versions", "1"],
-      ["Evaluation", "1 final"],
-    ],
-    includes:
-      "Verified institution badge, opportunities hub, contract capture, basic analytics, and the daily time log and supervisor feedback CHED asks for.",
-  },
-  {
-    name: "Plus",
-    who: "Medium schools, or several departments",
-    price: "₱40,000/term + ₱450 per student",
-    rows: [
-      ["Students", "Up to 1,000"],
-      ["Applications", "5 per term"],
-      ["Resume versions", "3"],
-      ["Evaluation", "1 detailed final"],
-    ],
-    includes:
-      "Everything in Starter, plus OJT monitoring and documentation, real-time funnel metrics, bulk student upload with help from the team, and advanced analytics.",
-  },
-  {
-    name: "Pro",
-    who: "Large schools with full OJT programs",
-    price: "₱70,000/term + ₱600 per student",
-    rows: [
-      ["Students", "Up to 1,500"],
-      ["Applications", "10 per term"],
-      ["Resume versions", "5"],
-      ["Evaluation", "Mid-term and final"],
-    ],
-    includes:
-      "Everything in Plus, plus partner company management, profile score ranking, a certified completion repository, monthly feedback reports, and benchmarking with a leaderboard.",
   },
 ];
 
@@ -807,160 +772,6 @@ const mockups = [
   },
 ];
 
-// The high-fidelity screens, one row per portal. Each row slides sideways as the page scrolls, and
-// the rows take turns: left, right, left, right. A screen without a `file` shows an "Image needed"
-// placeholder; add the image to `mockup/` and set `file` to fill it. `contain` shows the whole
-// picture instead of cropping it to a 16:9 frame.
-type Screen = {
-  file?: string;
-  title: string;
-  alt: string;
-  needs?: string;
-  contain?: boolean;
-};
-const screenRows: {
-  portal: string;
-  direction: "left" | "right";
-  screens: Screen[];
-}[] = [
-  {
-    portal: "On-the-Job Trainee portal",
-    direction: "left",
-    screens: [
-      {
-        file: "1.webp",
-        title: "Dashboard",
-        alt: "Trainee dashboard with a welcome message, an application limit notice, a company filter, and company analytics",
-      },
-      {
-        file: "2.webp",
-        title: "Find OJT",
-        alt: "Find OJT screen with a position's details open and recommended positions below",
-      },
-      {
-        file: "3.webp",
-        title: "My Applications",
-        alt: "My Applications screen with application status counts, an application limit notice, and a table of applications",
-      },
-      {
-        file: "4.webp",
-        title: "My Resume",
-        alt: "My Resume screen with a step-by-step resume builder and a resume preview",
-      },
-      {
-        file: "5.webp",
-        title: "Profile Score",
-        alt: "Profile Score screen with an overall score, a score breakdown, and recommendations",
-      },
-    ],
-  },
-  {
-    portal: "Host Training Establishment portal",
-    direction: "right",
-    screens: [
-      {
-        file: "6.webp",
-        title: "Dashboard",
-        alt: "Host dashboard with key counts, a calendar, and active job postings",
-      },
-      {
-        file: "7.webp",
-        title: "Create Position",
-        alt: "Create Position screen with a step-by-step form and the job details",
-      },
-      {
-        file: "8.webp",
-        title: "Applicant Pool",
-        alt: "Applicant Pool screen with counts, an interview notice, filters, and a table of applicants",
-      },
-      {
-        file: "9.webp",
-        title: "Employed Talents",
-        alt: "Employed Talents screen with trainee counts, a feedback reminder, filters, and a table of trainees",
-      },
-      {
-        file: "10.webp",
-        title: "Feedback History",
-        alt: "Feedback History screen with feedback counts, a confirmation notice, filters, and a table of trainees",
-      },
-    ],
-  },
-  {
-    portal: "Higher Education Institution portal",
-    direction: "left",
-    screens: [
-      {
-        file: "11.webp",
-        title: "Dashboard",
-        alt: "Institution dashboard with an institutional overview of enrollment, placement, and conversion numbers",
-      },
-      {
-        file: "12.webp",
-        title: "Students",
-        alt: "Students screen with counts, an on-track notice, import and export buttons, filters, and a table of students",
-      },
-      {
-        file: "13.webp",
-        title: "OJT Monitoring",
-        alt: "OJT Monitoring screen with progress counts, weekly average hours, and hours completion",
-      },
-      {
-        file: "14.webp",
-        title: "Employer Feedback",
-        alt: "Employer Feedback screen with rating counts, average rating by category, and common feedback themes",
-      },
-      {
-        file: "15.webp",
-        title: "Benchmarks",
-        alt: "Benchmarks screen comparing the institution's placement rate with regional and national averages",
-      },
-    ],
-  },
-  {
-    portal: "Government Regulator portal",
-    direction: "right",
-    screens: [
-      {
-        file: "gov-1.png",
-        title: "Student and school: conversion and outcomes",
-        alt: "Chart mockups: a placement funnel, a student outcome trend, a school benchmark against the national figure, and an opportunity gap",
-        contain: true,
-      },
-      {
-        file: "gov-2.png",
-        title: "Student and school: matching and access",
-        alt: "Chart mockups: program and demand alignment, regional distribution, time to placement, and top destinations and roles",
-        contain: true,
-      },
-      {
-        file: "gov-3.png",
-        title: "Jobs and company: recruitment performance",
-        alt: "Chart mockups: jobs and applications over time, a jobs-to-hire funnel, a company benchmark, and industry demand",
-        contain: true,
-      },
-      {
-        file: "gov-4.png",
-        title: "Jobs and company: market capacity",
-        alt: "Chart mockups: top companies by hires, supply and demand gap, regional job demand, and time to fill",
-        contain: true,
-      },
-      {
-        title: "Headline dashboard",
-        alt: "",
-        needs:
-          "Government dashboard: the headline count cards and portal-wide filters",
-      },
-    ],
-  },
-];
-
-// How a row moves with --p (0 to 1, set by useScrollRows): left shifts it from its start toward its
-// end, right does the opposite. With reduced motion the row stays put and can be scrolled by hand.
-const rowMotion = {
-  left: "[transform:translateX(calc(var(--shift,0px)*var(--p,0)*-1))]",
-  right: "[transform:translateX(calc(var(--shift,0px)*(var(--p,0)_-_1)))]",
-};
-
 const accessibility = [
   {
     icon: <LuMonitorSmartphone size={20} />,
@@ -991,60 +802,32 @@ const accessibility = [
 const nextSteps = [
   "Close the remaining gaps in the internship process: contracts, training plans, exit interviews, and grievance flows.",
   "Build the next release of analytics: advanced employer analytics and benchmark data, such as graduate tracer studies for accreditation.",
-  "Run formal interviews and usability studies with each user group and feed the results back into the designs.",
+  "Keep meeting with each user group, run usability studies on the live portals, and feed the results back into the designs.",
   "Run an accessibility check with a screen reader, the keyboard alone, and large text across the four portals, and fix what it finds.",
 ];
 
-// The rows of final screens. A component of its own so the scroll hook starts when the folder that
-// holds it is opened, not when the page loads.
-const ScreenRows = () => {
-  const rowsRef = useScrollRows<HTMLDivElement>();
-  return (
-    <div ref={rowsRef} className="space-y-6 [--p:0]">
-      {screenRows.map((row) => (
-        <Window
-          key={row.portal}
-          icon={<LuImages size={16} />}
-          title={row.portal}
-          level={4}
-          status={`${row.screens.length} screens`}
-        >
-          <div
-            data-row
-            className="overflow-hidden motion-reduce:overflow-x-auto"
-          >
-            <ul
-              className={`flex w-max gap-3 p-6 will-change-transform motion-reduce:[transform:none] ${rowMotion[row.direction]}`}
-            >
-              {row.screens.map((screen) => (
-                <li key={screen.title} className="w-72 shrink-0 sm:w-[26rem]">
-                  <figure className="space-y-3">
-                    {screen.file ? (
-                      <img
-                        src={`${IMAGES}/mockup/${screen.file}`}
-                        width={1280}
-                        height={720}
-                        loading="lazy"
-                        decoding="async"
-                        alt={screen.alt}
-                        className={`aspect-video w-full rounded-xl md:rounded-2xl border ${screen.contain ? "bg-cream/5 object-contain" : "object-cover object-top"}`}
-                      />
-                    ) : (
-                      <ImagePlaceholder>{screen.needs}</ImagePlaceholder>
-                    )}
-                    <figcaption className="text-left text-xs text-cream/60">
-                      {screen.title}
-                    </figcaption>
-                  </figure>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Window>
-      ))}
-    </div>
-  );
-};
+// The Figma file of each portal, zoomed out to show its whole set of high-fidelity designs.
+const designFiles = [
+  {
+    file: "intern.png",
+    title: "On-the-Job Trainee portal in Figma",
+    caption: "All the high-fidelity designs of the trainee portal in Figma.",
+    alt: "Screenshot of the Figma file with all the high-fidelity designs of the trainee portal, laid out in columns under the Starter, Plus, and Pro plan headers, with the design system's text and color styles in the side panel",
+  },
+  {
+    file: "employer.png",
+    title: "Host Training Establishment portal in Figma",
+    caption: "All the high-fidelity designs of the host portal in Figma.",
+    alt: "Screenshot of the Figma file with all the high-fidelity designs of the host company portal, spread across the canvas, with a group marked for edge cases",
+  },
+  {
+    file: "institution.png",
+    title: "Higher Education Institution portal in Figma",
+    caption:
+      "All the high-fidelity designs of the institution portal in Figma.",
+    alt: "Screenshot of the Figma file with all the high-fidelity designs of the university portal, laid out under a University View header",
+  },
+];
 
 const OjtConnect = () => (
   <ProjectLayout>
@@ -1113,203 +896,200 @@ const OjtConnect = () => (
         </div>
       </Section>
 
-      <Section id="portals" level={2} title="The Four Portals">
-        <NoteWindow title="One platform, four portals">
-          <p className={noteText}>
-            Each group gets a portal made for what it needs to get done. These
-            are the features each one offers, taken from the functional
-            requirements (FRD v2.0) and the Government Portal metrics framework,
-            and, for trainees and host companies, from the feature sections of
-            the live site.
-          </p>
-        </NoteWindow>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {portals.map((portal) => (
-            <Window
-              key={portal.id}
-              icon={portal.icon}
-              title={portal.title}
-              level={3}
-              footer={`${portal.features.length} features`}
-            >
-              <p className={`px-6 pt-6 ${cardText}`}>{portal.audience}</p>
-              <ul className="divide-y divide-line/40 pt-3">
-                {portal.features.map((feature) => (
-                  <li
-                    key={feature.title}
-                    className="flex items-start gap-3 px-6 py-3"
-                  >
-                    <LuCircleCheck
-                      size={16}
-                      aria-hidden
-                      className="mt-1 shrink-0 text-accent"
-                    />
-                    <p className={cardText}>
-                      <strong className="font-medium text-cream">
-                        {feature.title}.{" "}
-                      </strong>
-                      {feature.detail}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </Window>
-          ))}
-        </div>
-        <h3 className="text-left font-medium text-lg">
-          What each institution plan includes
-        </h3>
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {tiers.map((tier) => (
-            <Window
-              key={tier.name}
-              icon={<LuLayers size={16} />}
-              title={tier.name}
-              level={4}
-              footer={tier.who}
-            >
-              <div className="space-y-3 p-6">
-                <p className="text-left text-sm font-medium">{tier.price}</p>
-                <dl className="divide-y divide-line/40 text-sm">
-                  {tier.rows.map(([term, detail]) => (
-                    <div
-                      key={term}
-                      className="flex justify-between gap-3 py-1.5"
-                    >
-                      <dt className="text-xs text-cream/60">{term}</dt>
-                      <dd className="text-right">{detail}</dd>
-                    </div>
-                  ))}
-                </dl>
-                <p className={cardText}>{tier.includes}</p>
-              </div>
-            </Window>
-          ))}
-        </div>
-        <p className="text-xs text-cream/60">
-          Every plan includes one admin seat. Extra seats: Coordinator
-          ₱5,000/term, Read-only ₱2,000/term.
-        </p>
-      </Section>
-
-      <Section id="problem-and-goal" level={2} title="The Problem and the Goal">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <NoteWindow title="The problem" level={3}>
-            <p className={noteText}>
-              On-the-job training is still handled by hand across emails, group
-              chats, paper, and spreadsheets. Trainees can’t easily tell real
-              listings from scams, host companies sort applications and hours by
-              hand, schools check progress through chats and site visits, and
-              regulators have no national view of what happens.
-            </p>
-          </NoteWindow>
-          <NoteWindow title="The goal" level={3}>
-            <p className={noteText}>
-              Give trainees, host companies, institutions, and government one
-              platform to match, apply, hire, monitor, evaluate, and report on
-              training placements, with a portal built for each group, on all
-              screen sizes.
-            </p>
-          </NoteWindow>
-        </div>
-      </Section>
-
-      <ScopeAndStandards
-        rows={[
-          {
-            label: "Scope",
-            text: "Four portals, one for each user group, and a public website.",
-          },
-          {
-            label: "Plans",
-            text: "Three institution plans (Starter, Plus, and Pro) set the application, resume, and evaluation limits.",
-          },
-          {
-            label: "Not covered yet",
-            text: "Contracts, training plans, exit interviews, and grievance flows.",
-          },
-          {
-            label: "Standards",
-            text: "Commission on Higher Education Memorandum Order No. 23 (2009) and accreditation needs, with individual student data protected from regulators.",
-          },
-        ]}
-      />
-
-      <Section id="my-role" level={2} title="My Role">
-        <NoteWindow title="My role">
-          <p className={noteText}>
-            I worked on this project as a product designer and frontend
-            developer. Designing a screen and then building it myself, instead
-            of handing it off, is what made this project my gateway to becoming
-            a design engineer. My responsibilities were:
-          </p>
-        </NoteWindow>
-        <Window
-          icon={<LuListChecks size={16} />}
-          title="Responsibilities"
-          footer={`${responsibilities.length} items`}
-        >
-          <ul className="space-y-3 p-6 text-sm leading-6">
-            {responsibilities.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <LuCircleCheck
-                  size={16}
-                  aria-hidden
-                  className="mt-1 shrink-0 text-accent"
-                />
-                <span className="text-cream/80">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </Window>
-      </Section>
-
-      <ProcessStrip
-        empathize={{
-          status: "Partly",
-          text: "Requirements-based: written user stories for each group, checked against the Commission on Higher Education’s internship policy. Direct interviews are still to come.",
-        }}
-        define={{
-          status: "Done",
-          text: "Personas, pain points for four user groups, problem statements, and journey maps.",
-        }}
-        ideate={{
-          status: "To add",
-          text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: there is no separate record of ideation, and ideas show up in the wireframes and the low-fidelity prototype.",
-        }}
-        prototype={{
-          status: "Done",
-          text: "Wireframes, a low-fidelity prototype, mockups, and high-fidelity designs for four portals, then built.",
-        }}
-        test={{
-          status: "Partly",
-          text: "Quality-assurance testing across portals and early checks on real screen sizes. Formal interviews and usability studies are still to come.",
-        }}
-      />
-
       <FolderGroup>
         <FolderSection
           label={`${parts[0].number}. ${parts[0].title}`}
           count={parts[0].topics.length}
           peek={parts[0].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              trail={parts[0].title}
+              id="portals"
+              title="The Four Portals"
+              collapsible
+            >
+              <NoteWindow title="One platform, four portals">
+                <p className={noteText}>
+                  Each group gets a portal made for what it needs to get done.
+                  These are the features each one offers, taken from the
+                  functional requirements (FRD v2.0) and the Government Portal
+                  metrics framework, and, for trainees and host companies, from
+                  the feature sections of the live site.
+                </p>
+              </NoteWindow>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                {portals.map((portal) => (
+                  <Window
+                    key={portal.id}
+                    icon={portal.icon}
+                    title={portal.title}
+                    level={3}
+                    footer={`${portal.features.length} features`}
+                  >
+                    <p className={`px-6 pt-6 ${cardText}`}>{portal.audience}</p>
+                    <ul className="divide-y divide-line/40 pt-3">
+                      {portal.features.map((feature) => (
+                        <li
+                          key={feature.title}
+                          className="flex items-start gap-3 px-6 py-3"
+                        >
+                          <LuCircleCheck
+                            size={16}
+                            aria-hidden
+                            className="mt-1 shrink-0 text-accent"
+                          />
+                          <p className={cardText}>
+                            <strong className="font-medium text-cream">
+                              {feature.title}.{" "}
+                            </strong>
+                            {feature.detail}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </Window>
+                ))}
+              </div>
+            </Section>
+
+            <Section
+              trail={parts[0].title}
+              id="problem-and-goal"
+
+              title="The Problem and the Goal"
+              collapsible
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <NoteWindow title="The problem" level={3}>
+                  <p className={noteText}>
+                    On-the-job training is still handled by hand across emails,
+                    group chats, paper, and spreadsheets. Trainees can’t easily
+                    tell real listings from scams, host companies sort
+                    applications and hours by hand, schools check progress
+                    through chats and site visits, and regulators have no
+                    national view of what happens.
+                  </p>
+                </NoteWindow>
+                <NoteWindow title="The goal" level={3}>
+                  <p className={noteText}>
+                    Give trainees, host companies, institutions, and government
+                    one platform to match, apply, hire, monitor, evaluate, and
+                    report on training placements, with a portal built for each
+                    group, on all screen sizes.
+                  </p>
+                </NoteWindow>
+              </div>
+            </Section>
+
+            <ScopeAndStandards
+              trail={parts[0].title}
+              collapsible
+              rows={[
+                {
+                  label: "Scope",
+                  text: "Four portals, one for each user group, and a public website.",
+                },
+                {
+                  label: "Plans",
+                  text: "A limited free plan for students and institutions that leads them toward a paid plan, three paid institution plans (Starter, Plus, and Pro) that set the application, resume, and evaluation limits, and a freemium model for host companies.",
+                },
+                {
+                  label: "Not covered yet",
+                  text: "Contracts, training plans, exit interviews, and grievance flows.",
+                },
+                {
+                  label: "Standards",
+                  text: "Commission on Higher Education Memorandum Order No. 23 (2009) and accreditation needs, with individual student data protected from regulators.",
+                },
+              ]}
+            />
+
+            <Section
+              trail={parts[0].title}
+              collapsible
+              id="my-role"
+              title="My Role"
+            >
+              <NoteWindow title="My role">
+                <p className={noteText}>
+                  I worked on this project as a product designer and frontend
+                  developer. Designing a screen and then building it myself,
+                  instead of handing it off, is what made this project my
+                  gateway to becoming a design engineer. My responsibilities
+                  were:
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuListChecks size={16} />}
+                title="Responsibilities"
+                footer={`${responsibilities.length} items`}
+              >
+                <ul className="space-y-3 p-6 text-sm leading-6">
+                  {responsibilities.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <LuCircleCheck
+                        size={16}
+                        aria-hidden
+                        className="mt-1 shrink-0 text-accent"
+                      />
+                      <span className="text-cream/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Window>
+            </Section>
+
+            <ProcessStrip
+              trail={parts[0].title}
+              collapsible
+              empathize={{
+                status: "Done",
+                text: "Meetings and surveys with our partners at CHED, DOST, and DICT, and with higher education institutions, host companies, and interns, about what each group needs.",
+              }}
+              define={{
+                status: "Done",
+                text: "Those needs were defined in a comprehensive Business Requirements Document and Technical Requirements Document, then turned into personas, pain points, problem statements, and journey maps.",
+              }}
+              ideate={{
+                status: "Done",
+                text: "An intensive series of meetings turned the requirements into the ideas and direction for each portal.",
+              }}
+              prototype={{
+                status: "Done",
+                text: "A low-fidelity prototype first, then straight to high-fidelity designs in Figma, then development, which I did myself.",
+              }}
+              test={{
+                status: "Done",
+                text: "Automated tests with Jest, end-to-end browser tests with Puppeteer, and AI-assisted browser testing with Claude in Chrome, alongside quality-assurance checks across portals and on real screen sizes.",
+              }}
+            />
+          </div>
+        </FolderSection>
+        <FolderSection
+          label={`${parts[1].number}. ${parts[1].title}`}
+          count={parts[1].topics.length}
+          peek={parts[1].peek}
+        >
+          <div className="space-y-6">
+            <Section
+              collapsible
               id="user-research"
               title="User Research"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Research notes">
                 <p className={noteText}>
-                  Research for this project was requirements-based. I worked
-                  from written user stories for each user group and checked them
-                  against the Commission on Higher Education’s internship policy
-                  (Memorandum Order No. 23, series of 2009) and its draft policy
-                  for virtual and hybrid internships. Accreditation
+                  Research started with the people OJT Connect serves. We met
+                  with our partners at CHED, DOST, and DICT, and with higher
+                  education institutions, host companies, and interns, and
+                  gathered surveys on what each group needs. We checked those
+                  needs against the Commission on Higher Education’s internship
+                  policy (Memorandum Order No. 23, series of 2009) and its draft
+                  policy for virtual and hybrid internships. Accreditation
                   expectations, such as graduate tracer studies, and the data
                   institutions need before, during, and after internships also
-                  shaped the scope. Direct user interviews and usability studies
-                  are still to come.
+                  shaped the scope.
                 </p>
               </NoteWindow>
               <h4 className="text-left font-medium text-lg">
@@ -1338,7 +1118,12 @@ const OjtConnect = () => (
               </div>
             </Section>
 
-            <Section id="persona" title="Personas" trail={parts[0].title}>
+            <Section
+              collapsible
+              id="persona"
+              title="Personas"
+              trail={parts[1].title}
+            >
               <Anchor id="problem-statement" />
               <NoteWindow title="Persona notes">
                 <p className={noteText}>
@@ -1377,7 +1162,8 @@ const OjtConnect = () => (
             </Section>
 
             <UserStories
-              trail={parts[0].title}
+              collapsible
+              trail={parts[1].title}
               stories={[
                 {
                   who: "On-the-Job Trainee",
@@ -1403,15 +1189,17 @@ const OjtConnect = () => (
             />
 
             <Section
+              collapsible
               id="user-journey"
               title="User Journeys"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Journey notes">
                 <p className={noteText}>
                   The journey of each group across three phases: before, during,
-                  and after the internship. I built them from the functional
-                  requirements and the metrics framework, not from interviews.
+                  and after the internship. I built them from what the meetings
+                  and surveys showed, as captured in the requirements documents
+                  and the metrics framework.
                 </p>
               </NoteWindow>
               {journeys.map((journey) => (
@@ -1444,73 +1232,16 @@ const OjtConnect = () => (
           </div>
         </FolderSection>
         <FolderSection
-          label={`${parts[1].number}. ${parts[1].title}`}
-          count={parts[1].topics.length}
-          peek={parts[1].peek}
+          label={`${parts[2].number}. ${parts[2].title}`}
+          count={parts[2].topics.length}
+          peek={parts[2].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
-              id="digital-wireframes"
-              title="Digital Wireframes"
-              trail={parts[1].title}
-            >
-              <NoteWindow title="Wireframe notes">
-                <p className={noteText}>
-                  The whole set of digital wireframes for the intern portal,
-                  laid out in one Figma file. Every screen is drawn for the
-                  Starter, Plus, and Pro plans, so I could compare how each plan
-                  looks side by side. The other three portals are shown below
-                  it.
-                </p>
-              </NoteWindow>
-              <Window
-                icon={<LuImage size={16} />}
-                title="digital_wireframe.png"
-                footer="All the digital wireframes of the intern portal in Figma."
-              >
-                <img
-                  src={`${IMAGES}/digital_wireframe.png`}
-                  width={1600}
-                  height={900}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Screenshot of the Figma file holding all the digital wireframes of the intern portal, with every screen laid out for the Starter, Plus, and Pro plans"
-                  className="w-full"
-                />
-              </Window>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                {[
-                  [
-                    "Host Training Establishment portal",
-                    "Figma overview of the host wireframes",
-                  ],
-                  [
-                    "Higher Education Institution portal",
-                    "Figma overview of the institution wireframes",
-                  ],
-                  [
-                    "Government Regulator portal",
-                    "Figma overview of the government wireframes",
-                  ],
-                ].map(([title, needs]) => (
-                  <Window
-                    key={title}
-                    icon={<LuImage size={16} />}
-                    title={title}
-                    level={4}
-                  >
-                    <div className="p-6">
-                      <ImagePlaceholder>{needs}</ImagePlaceholder>
-                    </div>
-                  </Window>
-                ))}
-              </div>
-            </Section>
-
-            <Section
+              collapsible
               id="low-fidelity-prototype"
               title="Low-Fidelity Prototype"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Prototype notes">
                 <p className={noteText}>
@@ -1557,15 +1288,13 @@ const OjtConnect = () => (
                 ))}
               </div>
             </Section>
-          </div>
-        </FolderSection>
-        <FolderSection
-          label={`${parts[2].number}. ${parts[2].title}`}
-          count={parts[2].topics.length}
-          peek={parts[2].peek}
-        >
-          <div className="space-y-15">
-            <Section id="mockups" title="Mockups" trail={parts[2].title}>
+
+            <Section
+              collapsible
+              id="mockups"
+              title="Mockups"
+              trail={parts[2].title}
+            >
               <NoteWindow title="Mockup notes">
                 <p className={noteText}>
                   Each portal began as a simple first mockup and was then
@@ -1606,25 +1335,41 @@ const OjtConnect = () => (
             </Section>
 
             <Section
+              collapsible
               id="high-fidelity-designs"
               title="High-Fidelity Designs"
               trail={parts[2].title}
             >
               <NoteWindow title="Design notes">
                 <p className={noteText}>
-                  The final screens: five from each of the trainee, host, and
-                  institution portals, and the chart mockups for the Government
-                  Regulator portal. Scroll the page and the rows slide in turn,
-                  one way and then the other.
+                  The whole set of high-fidelity designs of the trainee, host,
+                  and institution portals in Figma, built on the design
+                  system’s text and color styles.
                 </p>
               </NoteWindow>
-              <ScreenRows />
-              <p className="text-xs text-cream/60">
-                All screens use sample data.
-              </p>
+              {designFiles.map((frame) => (
+                <Window
+                  key={frame.file}
+                  icon={<LuImage size={16} />}
+                  title={frame.title}
+                  level={4}
+                  footer={frame.caption}
+                >
+                  <img
+                    src={`${IMAGES}/${frame.file}`}
+                    width={1600}
+                    height={900}
+                    loading="lazy"
+                    decoding="async"
+                    alt={frame.alt}
+                    className="w-full"
+                  />
+                </Window>
+              ))}
             </Section>
 
             <Section
+              collapsible
               id="accessibility"
               title="Accessibility Considerations"
               trail={parts[2].title}
@@ -1649,8 +1394,9 @@ const OjtConnect = () => (
           count={parts[3].topics.length}
           peek={parts[3].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <UxQualities
+              collapsible
               trail={parts[3].title}
               usable="Table data becomes cards and filters open in bottom drawers, so every portal works on small screens. Loading, empty, and error states explain what happened and what to do next."
               equitable="Four role-based portals each show one group only what it needs. The regulator sees counts and rates, never individual student data."
@@ -1658,19 +1404,38 @@ const OjtConnect = () => (
               useful="The designs answer eight pain points across four groups: verified listings for students, applicant comparison and hour review for companies, centralized Commission on Higher Education paperwork for schools, and a national view for regulators."
             />
 
-            <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
-              <NoteWindow title="Takeaways">
-                <p className={noteText}>
-                  Designing for four very different groups taught me to build
-                  shared patterns (components, cards, empty states) so each
-                  portal feels consistent, while still respecting each group’s
-                  permissions and goals. Testing on real screen sizes early
-                  caught problems that desktop-only checks missed.
-                </p>
-              </NoteWindow>
+            <Section
+              collapsible
+              id="takeaways"
+              title="Takeaways"
+              trail={parts[3].title}
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <NoteWindow title="Impact" level={4}>
+                  <p className={noteText}>
+                    As of October 2, 2026, the live site shows 502+
+                    universities, 2,226+ interns, and 108 internship positions
+                    across 23 job categories.
+                  </p>
+                </NoteWindow>
+                <NoteWindow title="What I learned" level={4}>
+                  <p className={noteText}>
+                    Designing for four very different groups taught me to build
+                    shared patterns (components, cards, empty states) so each
+                    portal feels consistent, while still respecting each group’s
+                    permissions and goals. Testing on real screen sizes early
+                    caught problems that desktop-only checks missed.
+                  </p>
+                </NoteWindow>
+              </div>
             </Section>
 
-            <Section id="next-steps" title="Next Steps" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="next-steps"
+              title="Next Steps"
+              trail={parts[3].title}
+            >
               <Window
                 icon={<LuListChecks size={16} />}
                 title="To do"

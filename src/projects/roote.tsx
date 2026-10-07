@@ -36,13 +36,19 @@ import {
 const IMAGES = "/assets/images/projects/roote";
 
 const facts = [
-  { label: "Role", value: "UX/UI Designer, Front-End Developer, and Packaging Designer" },
+  {
+    label: "Role",
+    value: "UX/UI Designer, Front-End Developer, and Packaging Designer",
+  },
   { label: "Duration", value: "September 2026 to October 2026" },
   {
     label: "Languages",
     value: "Six, including right-to-left layouts for Hebrew and Arabic",
   },
-  { label: "Status", value: "Live at roote.us, built as a concept for stakeholder review" },
+  {
+    label: "Status",
+    value: "Live at roote.us, built as a concept for stakeholder review",
+  },
 ];
 
 type Topic = { id: string; label: string };
@@ -56,35 +62,39 @@ type Part = {
 const parts: Part[] = [
   {
     number: 1,
+    title: "Project overview",
+    peek: `${IMAGES}/cover.png`,
+    topics: [
+      { id: "problem-and-goal", label: "The problem and the goal" },
+      { id: "scope-and-standards", label: "Scope and standards" },
+      { id: "my-role", label: "My role" },
+      { id: "process", label: "Design process" },
+    ],
+  },
+  {
+    number: 2,
     title: "Understanding the user",
     peek: `${IMAGES}/home.png`,
     topics: [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
       { id: "user-stories", label: "User stories" },
-      { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
   },
   {
-    number: 2,
-    title: "Starting the design",
-    peek: `${IMAGES}/digital-wireframes-overview.webp`,
+    number: 3,
+    title: "Design",
+    peek: `${IMAGES}/report.png`,
     topics: [
       { id: "digital-wireframes", label: "Digital wireframes" },
       { id: "low-fidelity-prototype", label: "Low-fidelity prototype" },
       { id: "diagnosis-flow", label: "Diagnosis flow" },
       { id: "stakeholder-feedback", label: "Stakeholder feedback" },
-    ],
-  },
-  {
-    number: 3,
-    title: "Refining the design",
-    peek: `${IMAGES}/report.png`,
-    topics: [
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
       { id: "report-plan-app", label: "Report, plan and app" },
+      { id: "packaging-design", label: "Packaging design" },
       { id: "accessibility", label: "Accessibility" },
     ],
   },
@@ -179,7 +189,8 @@ const journeyMap = [
 const flowSteps = [
   {
     title: "Home",
-    detail: "One primary action: start the free hair analysis, never “Shop now”",
+    detail:
+      "One primary action: start the free hair analysis, never “Shop now”",
   },
   {
     title: "Free analysis",
@@ -196,12 +207,14 @@ const flowSteps = [
 const diagnosisSteps = [
   {
     title: "Introduction",
-    detail: "A short screen: a few minutes, an AI analysis, then a personal plan",
+    detail:
+      "A short screen: a few minutes, an AI analysis, then a personal plan",
   },
   { title: "Gender", detail: "Two large visual choices" },
   {
     title: "Hair photos",
-    detail: "Upload, with a guide to shooting the front, top, crown, and hairline",
+    detail:
+      "Upload, with a guide to shooting the front, top, crown, and hairline",
   },
   {
     title: "AI analysis",
@@ -210,7 +223,8 @@ const diagnosisSteps = [
   },
   {
     title: "Questionnaire",
-    detail: "Shown while the analysis runs, so the wait is never a loading screen",
+    detail:
+      "Shown while the analysis runs, so the wait is never a loading screen",
   },
   {
     title: "Email",
@@ -411,111 +425,136 @@ const Roote = () => (
         </div>
       </Section>
 
-      <Section id="problem-and-goal" level={2} title="The Problem and the Goal">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <NoteWindow title="The problem" level={3}>
-            <p className={noteText}>
-              People with hair loss want a credible, personal plan without a
-              clinic visit. Most sites feel like a quiz made to sell shampoo.
-            </p>
-            <p className={noteText}>
-              ROOTÉ.US sells a personal solution to hair loss, not a catalog, so
-              it cannot work like a regular online store.
-            </p>
-          </NoteWindow>
-          <NoteWindow title="The goal" level={3}>
-            <p className={noteText}>
-              Design one journey (diagnose, explain, plan, buy, follow up) that
-              feels personal and never invents medical or pricing claims.
-            </p>
-            <p className={noteText}>
-              The customer should feel that ROOTÉ.US studied their hair, built
-              a plan for them, and stays with them afterward. That is why the
-              main button reads “Free hair analysis”, not “Shop now”.
-            </p>
-          </NoteWindow>
-        </div>
-      </Section>
-
-      <ScopeAndStandards
-        rows={[
-          {
-            label: "Scope",
-            text: "The web app (analysis, report, plan, checkout, and daily program) plus bottle, label, and carton design.",
-          },
-          {
-            label: "Still to define",
-            text: "What each questionnaire answer recommends, and test payment mode and coupon codes.",
-          },
-          {
-            label: "Standards",
-            text: "Claims and prices go through the client’s regulatory and legal review before going live.",
-          },
-        ]}
-      />
-
-      <Section id="my-role" level={2} title="My Role">
-        <NoteWindow title="My role">
-          <p className={noteText}>
-            I worked on this project as a UX/UI designer and front-end
-            developer, and I also designed the product packaging. My
-            responsibilities were:
-          </p>
-        </NoteWindow>
-        <Window
-          icon={<LuListChecks size={16} />}
-          title="Responsibilities"
-          footer={`${responsibilities.length} items`}
-        >
-          <ul className="space-y-3 p-6 text-sm leading-6">
-            {responsibilities.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <LuCircleCheck
-                  size={16}
-                  aria-hidden
-                  className="mt-1 shrink-0 text-accent"
-                />
-                <span className="text-cream/80">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </Window>
-      </Section>
-
-      <ProcessStrip
-        empathize={{
-          status: "Partly",
-          text: "From the client brief, requirements, user flows, and stakeholder reviews. These are team findings, not user interviews.",
-        }}
-        define={{
-          status: "Done",
-          text: "Pain points, personas, problem statements, and a journey from discovery to follow-up.",
-        }}
-        ideate={{
-          status: "To add",
-          text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: no sketches were kept, and the questionnaire, report, and checkout took shape in the requirements and the diagnosis flow.",
-        }}
-        prototype={{
-          status: "Done",
-          text: "Digital wireframes, a low-fidelity prototype, mockups, high-fidelity designs, and a built front end.",
-        }}
-        test={{
-          status: "Partly",
-          text: "Two rounds of stakeholder feedback changed the design. Tests with real customers are still to come.",
-        }}
-      />
-
       <FolderGroup>
         <FolderSection
           label={`${parts[0].number}. ${parts[0].title}`}
           count={parts[0].topics.length}
           peek={parts[0].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              trail={parts[0].title}
+              collapsible
+              id="problem-and-goal"
+              title="The Problem and the Goal"
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <NoteWindow title="The problem" level={3}>
+                  <p className={noteText}>
+                    People with hair loss want a credible, personal plan without
+                    a clinic visit. Most sites feel like a quiz made to sell
+                    shampoo.
+                  </p>
+                  <p className={noteText}>
+                    ROOTÉ.US sells a personal solution to hair loss, not a
+                    catalog, so it cannot work like a regular online store.
+                  </p>
+                </NoteWindow>
+                <NoteWindow title="The goal" level={3}>
+                  <p className={noteText}>
+                    Design one journey (diagnose, explain, plan, buy, follow up)
+                    that feels personal and never invents medical or pricing
+                    claims.
+                  </p>
+                  <p className={noteText}>
+                    The customer should feel that ROOTÉ.US studied their hair,
+                    built a plan for them, and stays with them afterward. That
+                    is why the main button reads “Free hair analysis”, not “Shop
+                    now”.
+                  </p>
+                </NoteWindow>
+              </div>
+            </Section>
+
+            <ScopeAndStandards
+              trail={parts[0].title}
+              collapsible
+              rows={[
+                {
+                  label: "Scope",
+                  text: "The web app (analysis, report, plan, checkout, and daily program) plus bottle, label, and carton design.",
+                },
+                {
+                  label: "Still to define",
+                  text: "What each questionnaire answer recommends, and test payment mode and coupon codes.",
+                },
+                {
+                  label: "Standards",
+                  text: "Claims and prices go through the client’s regulatory and legal review before going live.",
+                },
+              ]}
+            />
+
+            <Section
+              trail={parts[0].title}
+              collapsible
+              id="my-role"
+              title="My Role"
+            >
+              <NoteWindow title="My role">
+                <p className={noteText}>
+                  I worked on this project as a UX/UI designer and front-end
+                  developer, and I also designed the product packaging. My
+                  responsibilities were:
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuListChecks size={16} />}
+                title="Responsibilities"
+                footer={`${responsibilities.length} items`}
+              >
+                <ul className="space-y-3 p-6 text-sm leading-6">
+                  {responsibilities.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <LuCircleCheck
+                        size={16}
+                        aria-hidden
+                        className="mt-1 shrink-0 text-accent"
+                      />
+                      <span className="text-cream/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Window>
+            </Section>
+
+            <ProcessStrip
+              trail={parts[0].title}
+              collapsible
+              empathize={{
+                status: "Partly",
+                text: "From the client brief, requirements, user flows, and stakeholder reviews. These are team findings, not user interviews.",
+              }}
+              define={{
+                status: "Done",
+                text: "Pain points, personas, problem statements, and a journey from discovery to follow-up.",
+              }}
+              ideate={{
+                status: "To add",
+                text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: no sketches were kept, and the questionnaire, report, and checkout took shape in the requirements and the diagnosis flow.",
+              }}
+              prototype={{
+                status: "Done",
+                text: "Digital wireframes, a low-fidelity prototype, mockups, high-fidelity designs, and a built front end.",
+              }}
+              test={{
+                status: "Partly",
+                text: "Two rounds of stakeholder feedback changed the design. Tests with real customers are still to come.",
+              }}
+            />
+          </div>
+        </FolderSection>
+        <FolderSection
+          label={`${parts[1].number}. ${parts[1].title}`}
+          count={parts[1].topics.length}
+          peek={parts[1].peek}
+        >
+          <div className="space-y-6">
+            <Section
+              collapsible
               id="user-research"
               title="User Research"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Research notes">
                 <p className={noteText}>
@@ -542,7 +581,12 @@ const Roote = () => (
               </div>
             </Section>
 
-            <Section id="persona" title="Persona" trail={parts[0].title}>
+            <Section
+              collapsible
+              id="persona"
+              title="Persona"
+              trail={parts[1].title}
+            >
               <Window
                 icon={<LuUserRound size={16} />}
                 title="Role-based persona"
@@ -576,7 +620,8 @@ const Roote = () => (
             </Section>
 
             <UserStories
-              trail={parts[0].title}
+              collapsible
+              trail={parts[1].title}
               stories={[
                 {
                   who: "Prospective customer",
@@ -587,9 +632,10 @@ const Roote = () => (
             />
 
             <Section
+              collapsible
               id="user-journey"
               title="User Journey"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <Window
                 icon={<LuRoute size={16} />}
@@ -626,17 +672,17 @@ const Roote = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
-          label={`${parts[1].number}. ${parts[1].title}`}
-          count={parts[1].topics.length}
-          peek={parts[1].peek}
+          label={`${parts[2].number}. ${parts[2].title}`}
+          count={parts[2].topics.length}
+          peek={parts[2].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              collapsible
               id="digital-wireframes"
               title="Digital Wireframes"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Wireframe notes">
                 <p className={noteText}>
@@ -645,50 +691,21 @@ const Roote = () => (
                   steps with one primary action each.
                 </p>
               </NoteWindow>
-              <Window
-                icon={<LuImage size={16} />}
-                title="Figma files"
-                footer="The bottle and box label file, and the ROOTÉ.US web design file with its page designs and flow screens."
-              >
-                <img
-                  src={`${IMAGES}/digital-wireframes-overview.webp`}
-                  width={1600}
-                  height={860}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Two Figma files side by side. On the left, ROOTÉ bottle and box label designs with bottles and label artwork. On the right, ROOTÉ.US Web Design zoomed out: tall page designs for Home, Magazine, Products, AI Section, FAQ, Hair Thinning, Gray hair, Support, Account, and Cart, and two rows of smaller flow screens underneath"
-                  className="w-full"
-                />
-              </Window>
             </Section>
 
             <Section
+              collapsible
               id="low-fidelity-prototype"
               title="Low-Fidelity Prototype"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Prototype notes">
                 <p className={noteText}>
                   The flow runs from home to the free analysis, the report, the
-                  plan, and checkout, and carries on into the app. You can try it
-                  on the live site.
+                  plan, and checkout, and carries on into the app. You can try
+                  it on the live site.
                 </p>
               </NoteWindow>
-              <Window
-                icon={<LuImage size={16} />}
-                title="goal-desktop.png"
-                footer="The hair-goal step on desktop."
-              >
-                <img
-                  src={`${IMAGES}/goal-desktop.png`}
-                  width={1440}
-                  height={900}
-                  loading="lazy"
-                  decoding="async"
-                  alt="Desktop version of the hair-goal step with a progress rail and a list of goal cards"
-                  className="w-full"
-                />
-              </Window>
               <Window
                 icon={<LuRoute size={16} />}
                 title="Customer flow"
@@ -718,9 +735,10 @@ const Roote = () => (
             </Section>
 
             <Section
+              collapsible
               id="diagnosis-flow"
               title="Diagnosis Flow"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Flow notes">
                 <p className={noteText}>
@@ -783,17 +801,18 @@ const Roote = () => (
               <NoteWindow title="Design choice">
                 <p className={noteText}>
                   Five questions, each on its own screen with about three
-                  answers to pick from, in a modern, animated style. A long
-                  form would feel like a chore, and a short one keeps people
-                  moving until the report is ready.
+                  answers to pick from, in a modern, animated style. A long form
+                  would feel like a chore, and a short one keeps people moving
+                  until the report is ready.
                 </p>
               </NoteWindow>
             </Section>
 
             <Section
+              collapsible
               id="stakeholder-feedback"
               title="Stakeholder Feedback"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Feedback notes">
                 <p className={noteText}>
@@ -830,16 +849,13 @@ const Roote = () => (
                 ))}
               </div>
             </Section>
-          </div>
-        </FolderSection>
 
-        <FolderSection
-          label={`${parts[2].number}. ${parts[2].title}`}
-          count={parts[2].topics.length}
-          peek={parts[2].peek}
-        >
-          <div className="space-y-15">
-            <Section id="mockups" title="Mockups" trail={parts[2].title}>
+            <Section
+              collapsible
+              id="mockups"
+              title="Mockups"
+              trail={parts[2].title}
+            >
               <NoteWindow title="Mockup notes">
                 <p className={noteText}>
                   Two changes came out of the stakeholder reviews, shown here
@@ -923,14 +939,15 @@ const Roote = () => (
             </Section>
 
             <Section
+              collapsible
               id="high-fidelity-designs"
               title="High-Fidelity Designs"
               trail={parts[2].title}
             >
               <NoteWindow title="Design notes">
                 <p className={noteText}>
-                  The polished screens from home to the daily program. The
-                  live site and the code on GitHub are linked at the top.
+                  The polished screens from home to the daily program. The live
+                  site and the code on GitHub are linked at the top.
                 </p>
               </NoteWindow>
               <Window
@@ -958,6 +975,7 @@ const Roote = () => (
             </Section>
 
             <Section
+              collapsible
               id="report-plan-app"
               title="Report, Plan and App"
               trail={parts[2].title}
@@ -966,8 +984,8 @@ const Roote = () => (
                 <p className={noteText}>
                   The report is emailed as a personal PDF. Its button brings the
                   customer back to the site with the plan already chosen, so
-                  there is nothing to shop for: they open an account, confirm the
-                  plan length, and pay. Checkout is where the app picks up.
+                  there is nothing to shop for: they open an account, confirm
+                  the plan length, and pay. Checkout is where the app picks up.
                 </p>
               </NoteWindow>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -1033,6 +1051,38 @@ const Roote = () => (
             </Section>
 
             <Section
+              collapsible
+              id="packaging-design"
+              title="Packaging Design"
+              trail={parts[2].title}
+            >
+              <NoteWindow title="Packaging notes">
+                <p className={noteText}>
+                  I designed the bottle and carton labels for the six-product
+                  line, working from a written brief. Each product has a teal
+                  and a cream version with the gold logo, shown on bottle and
+                  box mockups.
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuImage size={16} />}
+                title="Final products"
+                footer="The Final Products page in Figma: the Levels 6, 10 and 15 labels, the regrowth shampoo, and the gray serum and supplement."
+              >
+                <img
+                  src={`${IMAGES}/packaging-overview.webp`}
+                  width={1600}
+                  height={900}
+                  loading="lazy"
+                  decoding="async"
+                  alt="The Final Products page in Figma, zoomed out: bottle and box label designs in teal and cream for Levels 6, 10 and 15, the gray serum, the regrowth shampoo and the gray support supplement, with bottle mockups below"
+                  className="w-full"
+                />
+              </Window>
+            </Section>
+
+            <Section
+              collapsible
               id="accessibility"
               title="Accessibility Considerations"
               trail={parts[2].title}
@@ -1052,14 +1102,14 @@ const Roote = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
           label={`${parts[3].number}. ${parts[3].title}`}
           count={parts[3].topics.length}
           peek={parts[3].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <UxQualities
+              collapsible
               trail={parts[3].title}
               usable="Every page ends in one primary action, and the plan screen shows one recommended plan with no products to choose between. Checkout shows security cues, a clear summary, and a way to get help."
               equitable="Six languages, with Hebrew and right-to-left layout by default for visitors from Israel. Reduced-motion fallbacks, strong contrast, marked required fields, and inline errors with focus on the first one."
@@ -1067,13 +1117,18 @@ const Roote = () => (
               useful="It turns a hair-loss worry into a path: a free analysis, a personal report, one recommended plan, and a daily program app with progress photos."
             />
 
-            <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="takeaways"
+              title="Takeaways"
+              trail={parts[3].title}
+            >
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>
                   <p className={noteText}>
                     A concept build for stakeholder review, now live: a complete
-                    journey in six languages that stakeholders can review end
-                    to end.
+                    journey in six languages that stakeholders can review end to
+                    end.
                   </p>
                 </NoteWindow>
                 <NoteWindow title="What I learned" level={4}>
@@ -1085,7 +1140,12 @@ const Roote = () => (
               </div>
             </Section>
 
-            <Section id="next-steps" title="Next Steps" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="next-steps"
+              title="Next Steps"
+              trail={parts[3].title}
+            >
               <Window
                 icon={<LuListChecks size={16} />}
                 title="To do"

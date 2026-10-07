@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import {
   LuAccessibility,
+  LuChevronDown,
   LuCircleCheck,
   LuFolderOpen,
   LuImagePlus,
@@ -12,6 +13,7 @@ import {
   LuUserRound,
 } from "react-icons/lu";
 import { WindowBar } from "./WindowBar";
+import { useDisclosure } from "../hooks/use-disclosure";
 
 // Building blocks shared by the case-study pages in `src/projects/` (OJT Connect, ROOTÉ): app
 // windows, ruled notes, and the address-bar section headings.
@@ -79,12 +81,16 @@ export const NoteWindow = ({
 
 // The heading of a section, drawn as the address bar of a file explorer: the part it belongs to,
 // then its own title.
+// With `collapsible`, the address bar is a button that opens and closes the section like an
+// accordion: closed at first, then the content grows open smoothly (instantly with reduced motion),
+// and while closed it is invisible and inert, so it can't be tabbed into or read out.
 export const Section = ({
   id,
   level = 3,
   title,
   trail,
   hideTitle,
+  collapsible,
   children,
 }: {
   id: string;
@@ -92,9 +98,62 @@ export const Section = ({
   title: string;
   trail?: string;
   hideTitle?: boolean;
+  collapsible?: boolean;
   children: ReactNode;
 }) => {
   const Heading = level === 2 ? "h2" : "h3";
+  const panel = useDisclosure();
+  if (collapsible) {
+    return (
+      <section className="relative">
+        <Anchor id={id} />
+        <Heading className="font-semibold text-base">
+          <button
+            type="button"
+            aria-expanded={panel.open}
+            aria-controls={panel.panelId}
+            onClick={panel.toggle}
+            className="flex w-full items-center gap-x-2 rounded-full border border-line bg-cream/[0.07] px-6 py-2 text-left transition-colors hover:bg-cream/[0.12]"
+          >
+            <LuFolderOpen
+              size={16}
+              aria-hidden
+              className="shrink-0 text-accent"
+            />
+            {/* Below sm the trail sits over the title in a column; from sm up they share a row. */}
+            <span className="flex min-w-0 flex-1 flex-col sm:flex-row sm:items-center sm:gap-x-2">
+              {trail && (
+                <span aria-hidden className="text-xs font-normal text-cream/60">
+                  {trail} ›
+                </span>
+              )}
+              <span className="min-w-0">{title}</span>
+            </span>
+            <LuChevronDown
+              size={16}
+              aria-hidden
+              className={`shrink-0 text-cream/60 transition-transform duration-300 motion-reduce:transition-none ${panel.open ? "rotate-180" : ""}`}
+            />
+          </button>
+        </Heading>
+        <div
+          id={panel.panelId}
+          inert={!panel.open}
+          className={`grid transition-[grid-template-rows,visibility] duration-300 ease-out motion-reduce:transition-none ${
+            panel.open ? "visible grid-rows-[1fr]" : "invisible grid-rows-[0fr]"
+          }`}
+        >
+          <div
+            className={`min-h-0 overflow-hidden transition-opacity duration-300 motion-reduce:transition-none ${
+              panel.open ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <div className="space-y-6 pt-6">{children}</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
     <section className="relative space-y-6">
       <Anchor id={id} />
@@ -124,8 +183,22 @@ type Row = { label: string; text: string };
 
 // What the project covers and what it must follow. Goals, timeline, languages and tools are already
 // in "The goal" and Properties, so this holds only the rest: scope, limits, and standards.
-export const ScopeAndStandards = ({ rows }: { rows: Row[] }) => (
-  <Section id="scope-and-standards" level={2} title="Scope and Standards">
+export const ScopeAndStandards = ({
+  rows,
+  collapsible,
+  trail,
+}: {
+  rows: Row[];
+  collapsible?: boolean;
+  trail?: string;
+}) => (
+  <Section
+    id="scope-and-standards"
+    level={trail ? 3 : 2}
+    trail={trail}
+    title="Scope and Standards"
+    collapsible={collapsible}
+  >
     <Window
       icon={<LuListChecks size={16} />}
       title="Requirements"
@@ -151,11 +224,18 @@ export const ScopeAndStandards = ({ rows }: { rows: Row[] }) => (
 export const UserStories = ({
   trail,
   stories,
+  collapsible,
 }: {
   trail?: string;
   stories: { who: string; story: string }[];
+  collapsible?: boolean;
 }) => (
-  <Section id="user-stories" title="User Stories" trail={trail}>
+  <Section
+    id="user-stories"
+    title="User Stories"
+    trail={trail}
+    collapsible={collapsible}
+  >
     <Window
       icon={<LuUserRound size={16} />}
       title="User stories"
@@ -195,10 +275,21 @@ export const ProcessStrip = ({
   ideate,
   prototype,
   test,
-}: Record<(typeof phaseMeta)[number]["key"], Phase>) => {
+  collapsible,
+  trail,
+}: Record<(typeof phaseMeta)[number]["key"], Phase> & {
+  collapsible?: boolean;
+  trail?: string;
+}) => {
   const phases = { empathize, define, ideate, prototype, test };
   return (
-    <Section id="process" level={2} title="Design Process">
+    <Section
+      id="process"
+      level={trail ? 3 : 2}
+      trail={trail}
+      title="Design Process"
+      collapsible={collapsible}
+    >
       <Window
         icon={<LuRoute size={16} />}
         title="Design thinking"
@@ -240,16 +331,23 @@ export const UxQualities = ({
   equitable,
   enjoyable,
   useful,
+  collapsible,
 }: {
   trail?: string;
   usable: string;
   equitable: string;
   enjoyable: string;
   useful: string;
+  collapsible?: boolean;
 }) => {
   const text = { usable, equitable, enjoyable, useful };
   return (
-    <Section id="ux-qualities" title="Good UX Check" trail={trail}>
+    <Section
+      id="ux-qualities"
+      title="Good UX Check"
+      trail={trail}
+      collapsible={collapsible}
+    >
       <p className={cardText}>
         Good UX is usable, equitable, enjoyable, and useful. Here is how this
         project holds up against each.

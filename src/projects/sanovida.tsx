@@ -52,32 +52,35 @@ type Part = {
 const parts: Part[] = [
   {
     number: 1,
+    title: "Project overview",
+    peek: `${IMAGES}/cover.png`,
+    topics: [
+      { id: "problem-and-goal", label: "The problem and the goal" },
+      { id: "scope-and-standards", label: "Scope and standards" },
+      { id: "my-role", label: "My role" },
+      { id: "process", label: "Design process" },
+    ],
+  },
+  {
+    number: 2,
     title: "Understanding the user",
     peek: `${IMAGES}/persona.jpg`,
     topics: [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
       { id: "user-stories", label: "User stories" },
-      { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
   },
   {
-    number: 2,
-    title: "Starting the design",
-    peek: `${IMAGES}/screen-map.jpg`,
+    number: 3,
+    title: "Design",
+    peek: `${IMAGES}/plan-mockup.jpg`,
     topics: [
       { id: "flows-and-screen-map", label: "Flows and screen map" },
       { id: "digital-wireframes", label: "Digital wireframes" },
       { id: "low-fidelity-prototype", label: "Low-fidelity prototype" },
       { id: "walkthrough-findings", label: "Walkthrough findings" },
-    ],
-  },
-  {
-    number: 3,
-    title: "Refining the design",
-    peek: `${IMAGES}/plan-mockup.jpg`,
-    topics: [
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
       { id: "progress-tracking", label: "Progress tracking" },
@@ -430,116 +433,140 @@ const SanoVida = () => (
         </Window>
       </Section>
 
-      <Section id="problem-and-goal" level={2} title="The Problem and the Goal">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <NoteWindow title="The problem" level={3}>
-            <p className={noteText}>
-              Customers of a 21-day wellness kit had no guided companion:
-              nothing to do while the kit ships, no daily structure once it
-              arrives, and no visible progress or coaching.
-            </p>
-          </NoteWindow>
-          <NoteWindow title="The goal" level={3}>
-            <p className={noteText}>
-              Design one end-to-end journey (quiz, plan, 21-day program,
-              repurchase) that keeps customers engaged, builds daily habits, and
-              makes progress visible.
-            </p>
-            <p className={noteText}>
-              The customer is not buying supplements. She finds the right 21-day
-              plan, and the first purchase is only her way into a whole system:
-              plan, products, nutrition, workouts, an AI coach, and tracking.
-            </p>
-          </NoteWindow>
-        </div>
-      </Section>
-
-      <ScopeAndStandards
-        rows={[
-          {
-            label: "Scope",
-            text: "One end-to-end journey from quiz to repurchase, delivered as an interactive prototype.",
-          },
-          {
-            label: "Not included yet",
-            text: "A real backend, sign-in, payments, email activation, and notifications.",
-          },
-        ]}
-      />
-
-      <Section id="my-role" level={2} title="My Role">
-        <NoteWindow title="My role">
-          <p className={noteText}>
-            I worked on this project as a UX designer and front-end prototyper
-            for the SanoVida App, from flows and UX copy to a working
-            interactive prototype. My responsibilities were:
-          </p>
-        </NoteWindow>
-        <Window
-          icon={<LuListChecks size={16} />}
-          title="Responsibilities"
-          footer={`${responsibilities.length} items`}
-        >
-          <ul className="space-y-3 p-6 text-sm leading-6">
-            {responsibilities.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <LuCircleCheck
-                  size={16}
-                  aria-hidden
-                  className="mt-1 shrink-0 text-accent"
-                />
-                <span className="text-cream/80">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </Window>
-      </Section>
-
-      <ProcessStrip
-        empathize={{
-          status: "Partly",
-          text: "Desk-based: a stakeholder customer-journey document and the 21-day program defined the audience. No participant interviews.",
-        }}
-        define={{
-          status: "Done",
-          text: "Personas, problem statements, and a ten-stage journey.",
-        }}
-        ideate={{
-          status: "Partly",
-          text: "Flows and a screen map set the structure before the wireframes.",
-        }}
-        prototype={{
-          status: "Done",
-          text: "Wireframes, a low-fidelity prototype, mockups, high-fidelity designs, and an interactive React prototype.",
-        }}
-        test={{
-          status: "Partly",
-          text: "Two internal walkthrough rounds of the clickable prototype found problems that were fixed. Tests with 5 to 8 users in Mexico are still to come.",
-        }}
-      />
-
       <FolderGroup>
         <FolderSection
           label={`${parts[0].number}. ${parts[0].title}`}
           count={parts[0].topics.length}
           peek={parts[0].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              trail={parts[0].title}
+              collapsible
+              id="problem-and-goal"
+              title="The Problem and the Goal"
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <NoteWindow title="The problem" level={3}>
+                  <p className={noteText}>
+                    Customers of a 21-day wellness kit had no guided companion:
+                    nothing to do while the kit ships, no daily structure once
+                    it arrives, and no visible progress or coaching.
+                  </p>
+                </NoteWindow>
+                <NoteWindow title="The goal" level={3}>
+                  <p className={noteText}>
+                    Design one end-to-end journey (quiz, plan, 21-day program,
+                    repurchase) that keeps customers engaged, builds daily
+                    habits, and makes progress visible.
+                  </p>
+                  <p className={noteText}>
+                    The customer is not buying supplements. She finds the right
+                    21-day plan, and the first purchase is only her way into a
+                    whole system: plan, products, nutrition, workouts, an AI
+                    coach, and tracking.
+                  </p>
+                </NoteWindow>
+              </div>
+            </Section>
+
+            <ScopeAndStandards
+              trail={parts[0].title}
+              collapsible
+              rows={[
+                {
+                  label: "Scope",
+                  text: "One end-to-end journey from quiz to repurchase, delivered as an interactive prototype.",
+                },
+                {
+                  label: "Not included yet",
+                  text: "A real backend, sign-in, payments, email activation, and notifications.",
+                },
+              ]}
+            />
+
+            <Section
+              trail={parts[0].title}
+              collapsible
+              id="my-role"
+              title="My Role"
+            >
+              <NoteWindow title="My role">
+                <p className={noteText}>
+                  I worked on this project as a UX designer and front-end
+                  prototyper for the SanoVida App, from flows and UX copy to a
+                  working interactive prototype. My responsibilities were:
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuListChecks size={16} />}
+                title="Responsibilities"
+                footer={`${responsibilities.length} items`}
+              >
+                <ul className="space-y-3 p-6 text-sm leading-6">
+                  {responsibilities.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <LuCircleCheck
+                        size={16}
+                        aria-hidden
+                        className="mt-1 shrink-0 text-accent"
+                      />
+                      <span className="text-cream/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Window>
+            </Section>
+
+            <ProcessStrip
+              trail={parts[0].title}
+              collapsible
+              empathize={{
+                status: "Partly",
+                text: "Desk-based: a stakeholder customer-journey document and the 21-day program defined the audience. No participant interviews.",
+              }}
+              define={{
+                status: "Done",
+                text: "Personas, problem statements, and a ten-stage journey.",
+              }}
+              ideate={{
+                status: "Partly",
+                text: "Flows and a screen map set the structure before the wireframes.",
+              }}
+              prototype={{
+                status: "Done",
+                text: "Wireframes, a low-fidelity prototype, mockups, high-fidelity designs, and an interactive React prototype.",
+              }}
+              test={{
+                status: "Partly",
+                text: "Two internal walkthrough rounds of the clickable prototype found problems that were fixed. Tests with 5 to 8 users in Mexico are still to come.",
+              }}
+            />
+          </div>
+        </FolderSection>
+        <FolderSection
+          label={`${parts[1].number}. ${parts[1].title}`}
+          count={parts[1].topics.length}
+          peek={parts[1].peek}
+        >
+          <div className="space-y-6">
+            <Section
+              collapsible
               id="user-research"
               title="User Research"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Research notes">
                 <p className={noteText}>
                   Research was desk-based, not participant interviews. A
                   stakeholder customer-journey document (ad, landing page, quiz,
-                  plan reveal, WhatsApp consult, checkout, app) and the 21-day program defined the audience:
-                  Spanish-speaking women in Mexico. I assumed the app had to
-                  collect everything itself. The journey showed the landing quiz
-                  and checkout already capture most data, so in-app onboarding
-                  was cut to four short steps, and the wait while the kit ships
-                  became a design priority.
+                  plan reveal, WhatsApp consult, checkout, app) and the 21-day
+                  program defined the audience: Spanish-speaking women in
+                  Mexico. I assumed the app had to collect everything itself.
+                  The journey showed the landing quiz and checkout already
+                  capture most data, so in-app onboarding was cut to four short
+                  steps, and the wait while the kit ships became a design
+                  priority.
                 </p>
               </NoteWindow>
               <h4 className="text-left font-medium text-lg">Pain points</h4>
@@ -557,7 +584,12 @@ const SanoVida = () => (
               </div>
             </Section>
 
-            <Section id="persona" title="Persona" trail={parts[0].title}>
+            <Section
+              collapsible
+              id="persona"
+              title="Persona"
+              trail={parts[1].title}
+            >
               <Window
                 icon={<LuUserRound size={16} />}
                 title="Role-based persona"
@@ -586,7 +618,8 @@ const SanoVida = () => (
             </Section>
 
             <UserStories
-              trail={parts[0].title}
+              collapsible
+              trail={parts[1].title}
               stories={[
                 {
                   who: "Ana",
@@ -597,9 +630,10 @@ const SanoVida = () => (
             />
 
             <Section
+              collapsible
               id="user-journey"
               title="User Journey"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Journey notes">
                 <p className={noteText}>
@@ -652,17 +686,17 @@ const SanoVida = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
-          label={`${parts[1].number}. ${parts[1].title}`}
-          count={parts[1].topics.length}
-          peek={parts[1].peek}
+          label={`${parts[2].number}. ${parts[2].title}`}
+          count={parts[2].topics.length}
+          peek={parts[2].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              collapsible
               id="flows-and-screen-map"
               title="Flows and Screen Map"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Structure notes">
                 <p className={noteText}>
@@ -688,9 +722,10 @@ const SanoVida = () => (
             </Section>
 
             <Section
+              collapsible
               id="digital-wireframes"
               title="Digital Wireframes"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {wireframes.map((wireframe) => (
@@ -733,9 +768,10 @@ const SanoVida = () => (
             </Section>
 
             <Section
+              collapsible
               id="low-fidelity-prototype"
               title="Low-Fidelity Prototype"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Prototype notes">
                 <p className={noteText}>
@@ -762,9 +798,10 @@ const SanoVida = () => (
             </Section>
 
             <Section
+              collapsible
               id="walkthrough-findings"
               title="Walkthrough Findings"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Findings notes">
                 <p className={noteText}>
@@ -801,16 +838,13 @@ const SanoVida = () => (
                 ))}
               </div>
             </Section>
-          </div>
-        </FolderSection>
 
-        <FolderSection
-          label={`${parts[2].number}. ${parts[2].title}`}
-          count={parts[2].topics.length}
-          peek={parts[2].peek}
-        >
-          <div className="space-y-15">
-            <Section id="mockups" title="Mockups" trail={parts[2].title}>
+            <Section
+              collapsible
+              id="mockups"
+              title="Mockups"
+              trail={parts[2].title}
+            >
               {comparisons.map((comparison) => (
                 <Window
                   key={comparison.title}
@@ -830,6 +864,7 @@ const SanoVida = () => (
             </Section>
 
             <Section
+              collapsible
               id="high-fidelity-designs"
               title="High-Fidelity Designs"
               trail={parts[2].title}
@@ -868,14 +903,15 @@ const SanoVida = () => (
             </Section>
 
             <Section
+              collapsible
               id="progress-tracking"
               title="Progress Tracking"
               trail={parts[2].title}
             >
               <NoteWindow title="Tracking notes">
                 <p className={noteText}>
-                  Tracking has to stay light or it stops. Nothing asks for a long
-                  form: the daily check-in takes 10 to 15 seconds, and each
+                  Tracking has to stay light or it stops. Nothing asks for a
+                  long form: the daily check-in takes 10 to 15 seconds, and each
                   measure has one simple input. All of it feeds one My Progress
                   screen.
                 </p>
@@ -961,6 +997,7 @@ const SanoVida = () => (
             </Section>
 
             <Section
+              collapsible
               id="accessibility"
               title="Accessibility Considerations"
               trail={parts[2].title}
@@ -980,14 +1017,14 @@ const SanoVida = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
           label={`${parts[3].number}. ${parts[3].title}`}
           count={parts[3].topics.length}
           peek={parts[3].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <UxQualities
+              collapsible
               trail={parts[3].title}
               usable="Home answers “what do I do now?” at a glance with a Morning, Afternoon, and Evening stepper. Onboarding keeps only the questions not yet asked. Two walkthrough rounds caught problems like an off-screen Next button."
               equitable="Full Spanish and English for Spanish-speaking women in Mexico, 16px base type, light and dark themes, and labelled icon buttons. Locked actions say why they are locked. A formal contrast audit is still pending."
@@ -995,7 +1032,12 @@ const SanoVida = () => (
               useful="A Day 0 home with a delivery tracker and “while you wait” actions fills the shipping gap. After that, the stepper turns meals, workouts, and five products into a daily routine."
             />
 
-            <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="takeaways"
+              title="Takeaways"
+              trail={parts[3].title}
+            >
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>
                   <p className={noteText}>
@@ -1010,14 +1052,19 @@ const SanoVida = () => (
                     The handoff between the marketing site and the app mattered
                     more than any single screen. Tying every AI nudge to real
                     data kept the product honest, and showing her results before
-                    the repurchase offer felt fairer than a hard sell. Next time I would test with
-                    real users sooner.
+                    the repurchase offer felt fairer than a hard sell. Next time
+                    I would test with real users sooner.
                   </p>
                 </NoteWindow>
               </div>
             </Section>
 
-            <Section id="next-steps" title="Next Steps" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="next-steps"
+              title="Next Steps"
+              trail={parts[3].title}
+            >
               <Window
                 icon={<LuListChecks size={16} />}
                 title="To do"

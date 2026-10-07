@@ -67,33 +67,36 @@ type Part = {
 const parts: Part[] = [
   {
     number: 1,
+    title: "Project overview",
+    peek: `${IMAGES}/cover.png`,
+    topics: [
+      { id: "problem-and-goal", label: "The problem and the goal" },
+      { id: "scope-and-standards", label: "Scope and standards" },
+      { id: "my-role", label: "My role" },
+      { id: "process", label: "Design process" },
+    ],
+  },
+  {
+    number: 2,
     title: "Understanding the user",
     peek: `${IMAGES}/dfd-officer.webp`,
     topics: [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
       { id: "user-stories", label: "User stories" },
-      { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
   },
   {
-    number: 2,
-    title: "Starting the design",
-    peek: `${IMAGES}/context.webp`,
+    number: 3,
+    title: "Design",
+    peek: `${IMAGES}/architecture.webp`,
     topics: [
       { id: "requirements", label: "Requirements and scope" },
       { id: "context-and-data-flow", label: "Context and data flow" },
       { id: "use-cases", label: "Use cases" },
       { id: "activity-diagrams", label: "Activity diagrams" },
       { id: "data-and-architecture", label: "Data and architecture" },
-    ],
-  },
-  {
-    number: 3,
-    title: "Refining the design",
-    peek: `${IMAGES}/architecture.webp`,
-    topics: [
       { id: "design-system", label: "Design system" },
       { id: "screens", label: "Screens" },
       { id: "design-decisions", label: "Design decisions" },
@@ -323,8 +326,7 @@ const dataFlows: (Figure & { summary: string })[] = [
     height: 1365,
     title: "Administrator",
     alt: "Data flow diagram for the Administrator: login, manage users, generate reports, and view the audit trail, with their data stores",
-    summary:
-      "Login, manage users, generate reports, view the audit trail.",
+    summary: "Login, manage users, generate reports, view the audit trail.",
   },
   {
     file: "dfd-officer.webp",
@@ -651,8 +653,8 @@ const Coco = () => (
             CoCo: Coop Companion is a mobile-first, offline-capable app for
             Philippine cooperatives. It brings membership, share capital,
             investments, fee collection, accounting, and CDA and BIR compliance
-            reports into one Android app, with a separate interface for each
-            of three roles: Administrator, Officer, and Member.
+            reports into one Android app, with a separate interface for each of
+            three roles: Administrator, Officer, and Member.
           </p>
         </NoteWindow>
         <Window icon={<LuInfo size={16} />} title="Properties">
@@ -683,124 +685,148 @@ const Coco = () => (
         </div>
       </Section>
 
-      <Section id="problem-and-goal" level={2} title="The Problem and the Goal">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <NoteWindow title="The problem" level={3}>
-            <p className={noteText}>
-              As of 2022, over 20,000 cooperatives were registered in the
-              Philippines, and many small ones still keep paper books. Financial management is
-              the biggest problem category for cooperatives, at 34.45% of all
-              problems found in one review of Philippine studies (Padua and
-              Cuevas, 2020). Existing software needs the internet, which
-              rural cooperatives often lack.
-            </p>
-          </NoteWindow>
-          <NoteWindow title="The goal" level={3}>
-            <p className={noteText}>
-              Design one mobile app that handles members, share capital,
-              fees, and accounting offline, produces the CDA and BIR reports,
-              and lets every member check their own records, without a
-              visit to the office.
-            </p>
-          </NoteWindow>
-        </div>
-      </Section>
-
-      <ScopeAndStandards
-        rows={[
-          {
-            label: "In scope",
-            text: "Membership, share capital, investments and savings, fees, accounting, statutory funds and refunds, CDA reports, and a member portal.",
-          },
-          {
-            label: "Out of scope",
-            text: "Online payments, loans, links to banks or government platforms, and managing a federation of cooperatives.",
-          },
-          {
-            label: "Performance",
-            text: "Android 8.0 and above, every core function offline, any query or posting within three seconds, and sync within sixty seconds of reconnecting.",
-          },
-          {
-            label: "Standards",
-            text: "The CDA chart of accounts and report formats, role-based access, and an audit trail.",
-          },
-        ]}
-      />
-
-      <Section id="my-role" level={2} title="My Role">
-        <NoteWindow title="My role">
-          <p className={noteText}>
-            I worked on this project as the UX/UI designer, from the
-            requirements to the screens and the prototype. My responsibilities
-            were:
-          </p>
-        </NoteWindow>
-        <Window
-          icon={<LuListChecks size={16} />}
-          title="Responsibilities"
-          footer={`${responsibilities.length} items`}
-        >
-          <ul className="space-y-3 p-6 text-sm leading-6">
-            {responsibilities.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <LuCircleCheck
-                  size={16}
-                  aria-hidden
-                  className="mt-1 shrink-0 text-accent"
-                />
-                <span className="text-cream/80">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </Window>
-      </Section>
-
-      <ProcessStrip
-        empathize={{
-          status: "Done",
-          text: "Structured interviews with a cooperative treasurer and a board secretary, plus observation of the office. One cooperative, not a large survey.",
-        }}
-        define={{
-          status: "Done",
-          text: "Personas, problem statements, journeys, and requirements and scope.",
-        }}
-        ideate={{
-          status: "Partly",
-          text: "Context and data-flow diagrams, use cases, and activity diagrams worked out how the three roles use the system.",
-        }}
-        prototype={{
-          status: "Done",
-          text: "A design system, screens for three roles, and a Figma prototype.",
-        }}
-        test={{
-          status: "Planned",
-          text: "Three test layers: functional, offline, and usability with the System Usability Scale. Results are not in yet.",
-        }}
-      />
-
       <FolderGroup>
         <FolderSection
           label={`${parts[0].number}. ${parts[0].title}`}
           count={parts[0].topics.length}
           peek={parts[0].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              trail={parts[0].title}
+              collapsible
+              id="problem-and-goal"
+              title="The Problem and the Goal"
+            >
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <NoteWindow title="The problem" level={3}>
+                  <p className={noteText}>
+                    As of 2022, over 20,000 cooperatives were registered in the
+                    Philippines, and many small ones still keep paper books.
+                    Financial management is the biggest problem category for
+                    cooperatives, at 34.45% of all problems found in one review
+                    of Philippine studies (Padua and Cuevas, 2020). Existing
+                    software needs the internet, which rural cooperatives often
+                    lack.
+                  </p>
+                </NoteWindow>
+                <NoteWindow title="The goal" level={3}>
+                  <p className={noteText}>
+                    Design one mobile app that handles members, share capital,
+                    fees, and accounting offline, produces the CDA and BIR
+                    reports, and lets every member check their own records,
+                    without a visit to the office.
+                  </p>
+                </NoteWindow>
+              </div>
+            </Section>
+
+            <ScopeAndStandards
+              trail={parts[0].title}
+              collapsible
+              rows={[
+                {
+                  label: "In scope",
+                  text: "Membership, share capital, investments and savings, fees, accounting, statutory funds and refunds, CDA reports, and a member portal.",
+                },
+                {
+                  label: "Out of scope",
+                  text: "Online payments, loans, links to banks or government platforms, and managing a federation of cooperatives.",
+                },
+                {
+                  label: "Performance",
+                  text: "Android 8.0 and above, every core function offline, any query or posting within three seconds, and sync within sixty seconds of reconnecting.",
+                },
+                {
+                  label: "Standards",
+                  text: "The CDA chart of accounts and report formats, role-based access, and an audit trail.",
+                },
+              ]}
+            />
+
+            <Section
+              trail={parts[0].title}
+              collapsible
+              id="my-role"
+              title="My Role"
+            >
+              <NoteWindow title="My role">
+                <p className={noteText}>
+                  I worked on this project as the UX/UI designer, from the
+                  requirements to the screens and the prototype. My
+                  responsibilities were:
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuListChecks size={16} />}
+                title="Responsibilities"
+                footer={`${responsibilities.length} items`}
+              >
+                <ul className="space-y-3 p-6 text-sm leading-6">
+                  {responsibilities.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <LuCircleCheck
+                        size={16}
+                        aria-hidden
+                        className="mt-1 shrink-0 text-accent"
+                      />
+                      <span className="text-cream/80">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Window>
+            </Section>
+
+            <ProcessStrip
+              trail={parts[0].title}
+              collapsible
+              empathize={{
+                status: "Done",
+                text: "Structured interviews with a cooperative treasurer and a board secretary, plus observation of the office. One cooperative, not a large survey.",
+              }}
+              define={{
+                status: "Done",
+                text: "Personas, problem statements, journeys, and requirements and scope.",
+              }}
+              ideate={{
+                status: "Partly",
+                text: "Context and data-flow diagrams, use cases, and activity diagrams worked out how the three roles use the system.",
+              }}
+              prototype={{
+                status: "Done",
+                text: "A design system, screens for three roles, and a Figma prototype.",
+              }}
+              test={{
+                status: "Planned",
+                text: "Three test layers: functional, offline, and usability with the System Usability Scale. Results are not in yet.",
+              }}
+            />
+          </div>
+        </FolderSection>
+        <FolderSection
+          label={`${parts[1].number}. ${parts[1].title}`}
+          count={parts[1].topics.length}
+          peek={parts[1].peek}
+        >
+          <div className="space-y-6">
+            <Section
+              collapsible
               id="user-research"
               title="User Research"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Research notes">
                 <p className={noteText}>
-                  Requirements came from two methods: structured interviews
-                  with a cooperative treasurer and a board secretary, and
-                  observation of the office during working hours, both done with
-                  the respondents’ permission. The interviews showed no way to
-                  send collection reminders, no way for members to check their
-                  balances, a risk of losing paper ledgers, and difficulty preparing the CDA
-                  reports from handwritten records. They also showed that cloud-only software
-                  is not practical for members with patchy internet. These are
-                  findings from one cooperative, not a large survey.
+                  Requirements came from two methods: structured interviews with
+                  a cooperative treasurer and a board secretary, and observation
+                  of the office during working hours, both done with the
+                  respondents’ permission. The interviews showed no way to send
+                  collection reminders, no way for members to check their
+                  balances, a risk of losing paper ledgers, and difficulty
+                  preparing the CDA reports from handwritten records. They also
+                  showed that cloud-only software is not practical for members
+                  with patchy internet. These are findings from one cooperative,
+                  not a large survey.
                 </p>
               </NoteWindow>
               <h4 className="text-left font-medium text-lg">Pain points</h4>
@@ -836,7 +862,12 @@ const Coco = () => (
               </Window>
             </Section>
 
-            <Section id="persona" title="Persona" trail={parts[0].title}>
+            <Section
+              collapsible
+              id="persona"
+              title="Persona"
+              trail={parts[1].title}
+            >
               <NoteWindow title="Persona notes">
                 <p className={noteText}>
                   There are three kinds of user, and each gets its own
@@ -888,7 +919,8 @@ const Coco = () => (
             </Section>
 
             <UserStories
-              trail={parts[0].title}
+              collapsible
+              trail={parts[1].title}
               stories={[
                 {
                   who: "Administrator",
@@ -909,9 +941,10 @@ const Coco = () => (
             />
 
             <Section
+              collapsible
               id="user-journey"
               title="User Journey"
-              trail={parts[0].title}
+              trail={parts[1].title}
             >
               <NoteWindow title="Journey notes">
                 <p className={noteText}>
@@ -957,17 +990,17 @@ const Coco = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
-          label={`${parts[1].number}. ${parts[1].title}`}
-          count={parts[1].topics.length}
-          peek={parts[1].peek}
+          label={`${parts[2].number}. ${parts[2].title}`}
+          count={parts[2].topics.length}
+          peek={parts[2].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <Section
+              collapsible
               id="requirements"
               title="Requirements and Scope"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Requirements notes">
                 <p className={noteText}>
@@ -1051,9 +1084,10 @@ const Coco = () => (
             </Section>
 
             <Section
+              collapsible
               id="context-and-data-flow"
               title="Context and Data Flow"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Flow notes">
                 <p className={noteText}>
@@ -1083,9 +1117,10 @@ const Coco = () => (
             </Section>
 
             <Section
+              collapsible
               id="use-cases"
               title="Use Cases"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Use case notes">
                 <p className={noteText}>
@@ -1139,9 +1174,10 @@ const Coco = () => (
             </Section>
 
             <Section
+              collapsible
               id="activity-diagrams"
               title="Activity Diagrams"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Activity notes">
                 <p className={noteText}>
@@ -1162,17 +1198,18 @@ const Coco = () => (
             </Section>
 
             <Section
+              collapsible
               id="data-and-architecture"
               title="Data and Architecture"
-              trail={parts[1].title}
+              trail={parts[2].title}
             >
               <NoteWindow title="Structure notes">
                 <p className={noteText}>
-                  Everything the screens show comes from a small set of
-                  records: members, share capital accounts and transactions,
-                  investments, fees, ledger entries, patronage refunds, user
-                  accounts, and an audit log. The audit log is written by the
-                  system, and users cannot edit it.
+                  Everything the screens show comes from a small set of records:
+                  members, share capital accounts and transactions, investments,
+                  fees, ledger entries, patronage refunds, user accounts, and an
+                  audit log. The audit log is written by the system, and users
+                  cannot edit it.
                 </p>
               </NoteWindow>
               <FigureWindow
@@ -1202,16 +1239,9 @@ const Coco = () => (
                 </dl>
               </Window>
             </Section>
-          </div>
-        </FolderSection>
 
-        <FolderSection
-          label={`${parts[2].number}. ${parts[2].title}`}
-          count={parts[2].topics.length}
-          peek={parts[2].peek}
-        >
-          <div className="space-y-15">
             <Section
+              collapsible
               id="design-system"
               title="Design System"
               trail={parts[2].title}
@@ -1270,7 +1300,12 @@ const Coco = () => (
               </div>
             </Section>
 
-            <Section id="screens" title="Screens" trail={parts[2].title}>
+            <Section
+              collapsible
+              id="screens"
+              title="Screens"
+              trail={parts[2].title}
+            >
               <NoteWindow title="Screen notes">
                 <p className={noteText}>
                   Ten key screens cover the three roles. The prototype link at
@@ -1312,6 +1347,7 @@ const Coco = () => (
             </Section>
 
             <Section
+              collapsible
               id="design-decisions"
               title="Design Decisions"
               trail={parts[2].title}
@@ -1331,14 +1367,14 @@ const Coco = () => (
             </Section>
           </div>
         </FolderSection>
-
         <FolderSection
           label={`${parts[3].number}. ${parts[3].title}`}
           count={parts[3].topics.length}
           peek={parts[3].peek}
         >
-          <div className="space-y-15">
+          <div className="space-y-6">
             <UxQualities
+              collapsible
               trail={parts[3].title}
               usable="Each role gets its own interface and menu. Zero amounts and overpayments get a clear message, and Submit stays off until required fields are filled. The contribution form shows the member’s name and balance first so the officer can confirm. Usability scores are still to come."
               equitable="Every core task works offline for cooperatives with weak connections, and the app shows when changes are waiting to sync. Members can check their balance without visiting the office."
@@ -1346,11 +1382,16 @@ const Coco = () => (
               useful="It replaces handwritten ledgers and two to three weeks of year-end compiling with live balances, an automatic double-entry journal, and the four statements generated for any period."
             />
 
-            <Section id="testing" title="Testing" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="testing"
+              title="Testing"
+              trail={parts[3].title}
+            >
               <NoteWindow title="Testing notes">
                 <p className={noteText}>
-                  Testing is planned in three layers. The usability results
-                  are still to come, so there is no score to report yet.
+                  Testing is planned in three layers. The usability results are
+                  still to come, so there is no score to report yet.
                 </p>
               </NoteWindow>
               <Window
@@ -1373,7 +1414,12 @@ const Coco = () => (
               </Window>
             </Section>
 
-            <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="takeaways"
+              title="Takeaways"
+              trail={parts[3].title}
+            >
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>
                   <p className={noteText}>
@@ -1392,7 +1438,12 @@ const Coco = () => (
               </div>
             </Section>
 
-            <Section id="next-steps" title="Next Steps" trail={parts[3].title}>
+            <Section
+              collapsible
+              id="next-steps"
+              title="Next Steps"
+              trail={parts[3].title}
+            >
               <Window
                 icon={<LuListChecks size={16} />}
                 title="To do"

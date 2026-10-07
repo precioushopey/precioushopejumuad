@@ -23,7 +23,7 @@ const walk = (dir) =>
 const sources = [
   ...FOLDERS.flatMap((folder) => walk(join(ROOT, folder))),
   ...SINGLES.map((file) => join(ROOT, file)),
-].filter((file) => /\.(png|jpe?g|jfif)$/i.test(file));
+].filter((file) => /\.(png|jpe?g|jfif|webp)$/i.test(file));
 
 let made = 0;
 for (const source of sources) {
