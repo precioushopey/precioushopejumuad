@@ -20,7 +20,7 @@ export const contactItems: ContactItem[] = [
   {
     label: "Email",
     href: "mailto:jumuad.precious@gmail.com",
-    display: "jumuad.precious@gmail",
+    display: "jumuad.precious@gmail.com",
     Icon: LuMail,
     isEmail: true,
   },

@@ -3,6 +3,7 @@ import {
   LuAccessibility,
   LuChartColumn,
   LuCircleCheck,
+  LuContrast,
   LuExternalLink,
   LuFileStack,
   LuGauge,
@@ -34,6 +35,10 @@ import {
   Section,
   Window,
   cardText,
+  ProcessStrip,
+  ScopeAndStandards,
+  UserStories,
+  UxQualities,
   noteText,
 } from "../components/CaseStudy";
 import { useScrollRows } from "../hooks/use-scroll-rows";
@@ -84,6 +89,7 @@ const parts: Part[] = [
     topics: [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
+      { id: "user-stories", label: "User stories" },
       { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
@@ -115,6 +121,7 @@ const parts: Part[] = [
     title: "Going forward",
     peek: `${IMAGES}/ojtconnect.png`,
     topics: [
+      { id: "ux-qualities", label: "Good UX check" },
       { id: "takeaways", label: "Takeaways" },
       { id: "next-steps", label: "Next steps" },
     ],
@@ -973,12 +980,19 @@ const accessibility = [
     description:
       "Loading, empty, and error messages explain what happened and what to do next.",
   },
+  {
+    icon: <LuContrast size={20} />,
+    title: "Color modes",
+    description:
+      "Light, dark, and high-contrast modes across the dashboards and the public website.",
+  },
 ];
 
 const nextSteps = [
   "Close the remaining gaps in the internship process: contracts, training plans, exit interviews, and grievance flows.",
   "Build the next release of analytics: advanced employer analytics and benchmark data, such as graduate tracer studies for accreditation.",
   "Run formal interviews and usability studies with each user group and feed the results back into the designs.",
+  "Run an accessibility check with a screen reader, the keyboard alone, and large text across the four portals, and fix what it finds.",
 ];
 
 // The rows of final screens. A component of its own so the scroll hook starts when the folder that
@@ -1200,6 +1214,27 @@ const OjtConnect = () => (
         </div>
       </Section>
 
+      <ScopeAndStandards
+        rows={[
+          {
+            label: "Scope",
+            text: "Four portals, one for each user group, and a public website.",
+          },
+          {
+            label: "Plans",
+            text: "Three institution plans (Starter, Plus, and Pro) set the application, resume, and evaluation limits.",
+          },
+          {
+            label: "Not covered yet",
+            text: "Contracts, training plans, exit interviews, and grievance flows.",
+          },
+          {
+            label: "Standards",
+            text: "Commission on Higher Education Memorandum Order No. 23 (2009) and accreditation needs, with individual student data protected from regulators.",
+          },
+        ]}
+      />
+
       <Section id="my-role" level={2} title="My Role">
         <NoteWindow title="My role">
           <p className={noteText}>
@@ -1228,6 +1263,29 @@ const OjtConnect = () => (
           </ul>
         </Window>
       </Section>
+
+      <ProcessStrip
+        empathize={{
+          status: "Partly",
+          text: "Requirements-based: written user stories for each group, checked against the Commission on Higher Education’s internship policy. Direct interviews are still to come.",
+        }}
+        define={{
+          status: "Done",
+          text: "Personas, pain points for four user groups, problem statements, and journey maps.",
+        }}
+        ideate={{
+          status: "To add",
+          text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: there is no separate record of ideation, and ideas show up in the wireframes and the low-fidelity prototype.",
+        }}
+        prototype={{
+          status: "Done",
+          text: "Wireframes, a low-fidelity prototype, mockups, and high-fidelity designs for four portals, then built.",
+        }}
+        test={{
+          status: "Partly",
+          text: "Quality-assurance testing across portals and early checks on real screen sizes. Formal interviews and usability studies are still to come.",
+        }}
+      />
 
       <FolderGroup>
         <FolderSection
@@ -1317,6 +1375,32 @@ const OjtConnect = () => (
                 ))}
               </div>
             </Section>
+
+            <UserStories
+              trail={parts[0].title}
+              stories={[
+                {
+                  who: "On-the-Job Trainee",
+                  story:
+                    "As an on-the-job trainee, I want a legitimate placement that fits my course and skills, and one place to follow every application, hour, and evaluation, so that I know where I stand.",
+                },
+                {
+                  who: "Host Training Establishment Supervisor",
+                  story:
+                    "As a host company supervisor, I want to post verified roles, shortlist applicants quickly, and follow each trainee’s hours and performance, so that hiring is not slowed by sorting applications and chasing updates.",
+                },
+                {
+                  who: "OJT Coordinator",
+                  story:
+                    "As an OJT coordinator, I want to track students’ hours, documents, and employer feedback in one place, so that internships are documented and auditable for the Commission on Higher Education and accreditors.",
+                },
+                {
+                  who: "Government Regulator Analyst",
+                  story:
+                    "As a government regulator analyst, I want to see placement, completion, and employer demand across schools and regions without seeing individual students, so that oversight rests on trustworthy numbers and protected data.",
+                },
+              ]}
+            />
 
             <Section
               id="user-journey"
@@ -1545,7 +1629,7 @@ const OjtConnect = () => (
               title="Accessibility Considerations"
               trail={parts[2].title}
             >
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {accessibility.map((item) => (
                   <Window
                     key={item.title}
@@ -1566,6 +1650,14 @@ const OjtConnect = () => (
           peek={parts[3].peek}
         >
           <div className="space-y-15">
+            <UxQualities
+              trail={parts[3].title}
+              usable="Table data becomes cards and filters open in bottom drawers, so every portal works on small screens. Loading, empty, and error states explain what happened and what to do next."
+              equitable="Four role-based portals each show one group only what it needs. The regulator sees counts and rates, never individual student data."
+              enjoyable="Warning banners, a profile score with recommendations, and a guided resume builder steer trainees before they hit an application limit."
+              useful="The designs answer eight pain points across four groups: verified listings for students, applicant comparison and hour review for companies, centralized Commission on Higher Education paperwork for schools, and a national view for regulators."
+            />
+
             <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
               <NoteWindow title="Takeaways">
                 <p className={noteText}>

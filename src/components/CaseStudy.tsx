@@ -1,5 +1,16 @@
 import type { ReactNode } from "react";
-import { LuFolderOpen, LuImagePlus, LuStickyNote } from "react-icons/lu";
+import {
+  LuAccessibility,
+  LuCircleCheck,
+  LuFolderOpen,
+  LuImagePlus,
+  LuListChecks,
+  LuRoute,
+  LuSmile,
+  LuStickyNote,
+  LuTarget,
+  LuUserRound,
+} from "react-icons/lu";
 import { WindowBar } from "./WindowBar";
 
 // Building blocks shared by the case-study pages in `src/projects/` (OJT Connect, ROOTÉ): app
@@ -106,6 +117,156 @@ export const Section = ({
       )}
       {children}
     </section>
+  );
+};
+
+type Row = { label: string; text: string };
+
+// What the project covers and what it must follow. Goals, timeline, languages and tools are already
+// in "The goal" and Properties, so this holds only the rest: scope, limits, and standards.
+export const ScopeAndStandards = ({ rows }: { rows: Row[] }) => (
+  <Section id="scope-and-standards" level={2} title="Scope and Standards">
+    <Window
+      icon={<LuListChecks size={16} />}
+      title="Requirements"
+      footer={`${rows.length} items`}
+    >
+      <dl className="divide-y divide-line/40 text-sm">
+        {rows.map((row) => (
+          <div
+            key={row.label}
+            className="grid grid-cols-1 gap-1 px-6 py-3 sm:grid-cols-[10rem_1fr] sm:gap-3"
+          >
+            <dt className="font-medium">{row.label}</dt>
+            <dd className="text-cream/70">{row.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </Window>
+  </Section>
+);
+
+// One "As a ..., I want ..., so that ..." line for each persona, in the words of the persona and
+// problem statement it comes from.
+export const UserStories = ({
+  trail,
+  stories,
+}: {
+  trail?: string;
+  stories: { who: string; story: string }[];
+}) => (
+  <Section id="user-stories" title="User Stories" trail={trail}>
+    <Window
+      icon={<LuUserRound size={16} />}
+      title="User stories"
+      level={4}
+      footer={`${stories.length} ${stories.length === 1 ? "story" : "stories"}`}
+    >
+      <dl className="divide-y divide-line/40 text-sm">
+        {stories.map((item) => (
+          <div
+            key={item.who}
+            className="grid grid-cols-1 gap-1 px-6 py-3 sm:grid-cols-[10rem_1fr] sm:gap-3"
+          >
+            <dt className="font-medium">{item.who}</dt>
+            <dd className="text-cream/70">{item.story}</dd>
+          </div>
+        ))}
+      </dl>
+    </Window>
+  </Section>
+);
+
+type Phase = { status: string; text: string };
+
+const phaseMeta = [
+  { key: "empathize", title: "1. Empathize" },
+  { key: "define", title: "2. Define" },
+  { key: "ideate", title: "3. Ideate" },
+  { key: "prototype", title: "4. Prototype" },
+  { key: "test", title: "5. Test" },
+] as const;
+
+// The design thinking phases at a glance, one honest line each. `status` is Done, Partly, Planned,
+// or To add (a placeholder for work still to be written up); the folders below hold the detail.
+export const ProcessStrip = ({
+  empathize,
+  define,
+  ideate,
+  prototype,
+  test,
+}: Record<(typeof phaseMeta)[number]["key"], Phase>) => {
+  const phases = { empathize, define, ideate, prototype, test };
+  return (
+    <Section id="process" level={2} title="Design Process">
+      <Window
+        icon={<LuRoute size={16} />}
+        title="Design thinking"
+        footer="The phases repeat as feedback comes in."
+      >
+        <dl className="divide-y divide-line/40 text-sm">
+          {phaseMeta.map((phase) => (
+            <div
+              key={phase.key}
+              className="grid grid-cols-1 gap-1 px-6 py-3 sm:grid-cols-[10rem_1fr] sm:gap-3"
+            >
+              <dt>
+                <span className="block font-medium">{phase.title}</span>
+                <span className="block text-xs text-cream/60">
+                  {phases[phase.key].status}
+                </span>
+              </dt>
+              <dd className="text-cream/70">{phases[phase.key].text}</dd>
+            </div>
+          ))}
+        </dl>
+      </Window>
+    </Section>
+  );
+};
+
+const qualityMeta = [
+  { key: "usable", title: "Usable", icon: <LuCircleCheck size={16} /> },
+  { key: "equitable", title: "Equitable", icon: <LuAccessibility size={16} /> },
+  { key: "enjoyable", title: "Enjoyable", icon: <LuSmile size={16} /> },
+  { key: "useful", title: "Useful", icon: <LuTarget size={16} /> },
+] as const;
+
+// How a project holds up against the four qualities of good UX: usable, equitable, enjoyable, and
+// useful. Each case study passes one short, honest sentence or two per quality.
+export const UxQualities = ({
+  trail,
+  usable,
+  equitable,
+  enjoyable,
+  useful,
+}: {
+  trail?: string;
+  usable: string;
+  equitable: string;
+  enjoyable: string;
+  useful: string;
+}) => {
+  const text = { usable, equitable, enjoyable, useful };
+  return (
+    <Section id="ux-qualities" title="Good UX Check" trail={trail}>
+      <p className={cardText}>
+        Good UX is usable, equitable, enjoyable, and useful. Here is how this
+        project holds up against each.
+      </p>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {qualityMeta.map((quality) => (
+          <Window
+            key={quality.key}
+            icon={quality.icon}
+            title={quality.title}
+            level={4}
+          >
+            <p className={`p-6 ${cardText}`}>{text[quality.key]}</p>
+          </Window>
+        ))}
+      </div>
+    </Section>
   );
 };
 

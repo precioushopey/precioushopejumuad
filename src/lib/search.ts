@@ -8,12 +8,14 @@ export type SearchResult = {
 };
 
 const entries: (SearchResult & { haystack: string })[] = [
-  ...projects.map((p) => ({
-    kind: "Project" as const,
-    title: p.title,
-    to: p.url,
-    haystack: `${p.title} ${p.description} ${p.tags.join(" ")}`.toLowerCase(),
-  })),
+  ...projects
+    .filter((p) => !p.comingSoon)
+    .map((p) => ({
+      kind: "Project" as const,
+      title: p.title,
+      to: p.url,
+      haystack: `${p.title} ${p.description} ${p.tags.join(" ")}`.toLowerCase(),
+    })),
   ...blogPosts.map((b) => ({
     kind: "Blog" as const,
     title: b.title,

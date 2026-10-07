@@ -26,6 +26,10 @@ import {
   Section,
   Window,
   cardText,
+  ProcessStrip,
+  ScopeAndStandards,
+  UserStories,
+  UxQualities,
   noteText,
 } from "../components/CaseStudy";
 
@@ -57,6 +61,7 @@ const parts: Part[] = [
     topics: [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
+      { id: "user-stories", label: "User stories" },
       { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
@@ -88,6 +93,7 @@ const parts: Part[] = [
     title: "Going forward",
     peek: `${IMAGES}/today.png`,
     topics: [
+      { id: "ux-qualities", label: "Good UX check" },
       { id: "takeaways", label: "Takeaways" },
       { id: "next-steps", label: "Next steps" },
     ],
@@ -310,6 +316,7 @@ const nextSteps = [
   "Have every medical claim and price checked by the client's regulatory and legal review before it goes live.",
   "Add test payment mode and coupon codes to checkout.",
   "Run usability tests with real customers and iterate.",
+  "Run an accessibility check with a screen reader, the keyboard alone, and large text, including the right-to-left layouts, and fix what it finds.",
 ];
 
 // A phone-sized screenshot with a caption.
@@ -430,6 +437,23 @@ const Roote = () => (
         </div>
       </Section>
 
+      <ScopeAndStandards
+        rows={[
+          {
+            label: "Scope",
+            text: "The web app (analysis, report, plan, checkout, and daily program) plus bottle, label, and carton design.",
+          },
+          {
+            label: "Still to define",
+            text: "What each questionnaire answer recommends, and test payment mode and coupon codes.",
+          },
+          {
+            label: "Standards",
+            text: "Claims and prices go through the client’s regulatory and legal review before going live.",
+          },
+        ]}
+      />
+
       <Section id="my-role" level={2} title="My Role">
         <NoteWindow title="My role">
           <p className={noteText}>
@@ -457,6 +481,29 @@ const Roote = () => (
           </ul>
         </Window>
       </Section>
+
+      <ProcessStrip
+        empathize={{
+          status: "Partly",
+          text: "From the client brief, requirements, user flows, and stakeholder reviews. These are team findings, not user interviews.",
+        }}
+        define={{
+          status: "Done",
+          text: "Pain points, personas, problem statements, and a journey from discovery to follow-up.",
+        }}
+        ideate={{
+          status: "To add",
+          text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: no sketches were kept, and the questionnaire, report, and checkout took shape in the requirements and the diagnosis flow.",
+        }}
+        prototype={{
+          status: "Done",
+          text: "Digital wireframes, a low-fidelity prototype, mockups, high-fidelity designs, and a built front end.",
+        }}
+        test={{
+          status: "Partly",
+          text: "Two rounds of stakeholder feedback changed the design. Tests with real customers are still to come.",
+        }}
+      />
 
       <FolderGroup>
         <FolderSection
@@ -527,6 +574,17 @@ const Roote = () => (
                 </div>
               </Window>
             </Section>
+
+            <UserStories
+              trail={parts[0].title}
+              stories={[
+                {
+                  who: "Prospective customer",
+                  story:
+                    "As a prospective customer with hair loss, I want a credible, personal plan, so that it does not feel like a generic quiz.",
+                },
+              ]}
+            />
 
             <Section
               id="user-journey"
@@ -1001,6 +1059,14 @@ const Roote = () => (
           peek={parts[3].peek}
         >
           <div className="space-y-15">
+            <UxQualities
+              trail={parts[3].title}
+              usable="Every page ends in one primary action, and the plan screen shows one recommended plan with no products to choose between. Checkout shows security cues, a clear summary, and a way to get help."
+              equitable="Six languages, with Hebrew and right-to-left layout by default for visitors from Israel. Reduced-motion fallbacks, strong contrast, marked required fields, and inline errors with focus on the first one."
+              enjoyable="The questionnaire runs while the animated analysis works, so the wait never looks like a loading screen. Results arrive as a personal report in plain words."
+              useful="It turns a hair-loss worry into a path: a free analysis, a personal report, one recommended plan, and a daily program app with progress photos."
+            />
+
             <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>

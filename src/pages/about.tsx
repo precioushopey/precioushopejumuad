@@ -87,7 +87,10 @@ const About = () => {
                       production. I work primarily with Figma, React, Next.js,
                       JavaScript, TypeScript, Tailwind, Claude Code, and other
                       AI-powered tools to move quickly without losing sight of
-                      thoughtful design.
+                      thoughtful design. I follow the design thinking process
+                      (empathize, define, ideate, prototype, and test), moving
+                      back and forth between phases as feedback comes in, and
+                      each case study shows which phases it went through.
                     </p>
                     <p>
                       I don’t only work on user experience. As a developer, I
@@ -115,6 +118,18 @@ const About = () => {
                       static screens; sometimes the best way to communicate an
                       idea is to make it real, interactive, and something people
                       can experience.
+                    </p>
+                    <p>
+                      I think of myself as a T-shaped designer: product and
+                      interface design are my deepest skills, with front-end
+                      development, prototyping, UX research, and documentation
+                      around them. I judge my work against four qualities of
+                      good UX: is it usable, equitable, enjoyable, and useful?
+                      Each of my case studies ends with a short check against
+                      them. I also design for the widest range of users, from
+                      assistive technology and unreliable connections to
+                      several languages, as in the offline-first CoCo, the
+                      right-to-left ROOTÉ, and the mobile-first OJT Connect.
                     </p>
                     <p>
                       I’m always curious about better ways to design, build, and

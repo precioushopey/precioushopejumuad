@@ -23,6 +23,10 @@ import {
   Section,
   Window,
   cardText,
+  ProcessStrip,
+  ScopeAndStandards,
+  UserStories,
+  UxQualities,
   noteText,
 } from "../components/CaseStudy";
 
@@ -53,6 +57,7 @@ const parts: Part[] = [
     topics: [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
+      { id: "user-stories", label: "User stories" },
       { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
@@ -84,6 +89,7 @@ const parts: Part[] = [
     title: "Going forward",
     peek: `${IMAGES}/home-mockup.jpg`,
     topics: [
+      { id: "ux-qualities", label: "Good UX check" },
       { id: "takeaways", label: "Takeaways" },
       { id: "next-steps", label: "Next steps" },
     ],
@@ -448,6 +454,19 @@ const SanoVida = () => (
         </div>
       </Section>
 
+      <ScopeAndStandards
+        rows={[
+          {
+            label: "Scope",
+            text: "One end-to-end journey from quiz to repurchase, delivered as an interactive prototype.",
+          },
+          {
+            label: "Not included yet",
+            text: "A real backend, sign-in, payments, email activation, and notifications.",
+          },
+        ]}
+      />
+
       <Section id="my-role" level={2} title="My Role">
         <NoteWindow title="My role">
           <p className={noteText}>
@@ -475,6 +494,29 @@ const SanoVida = () => (
           </ul>
         </Window>
       </Section>
+
+      <ProcessStrip
+        empathize={{
+          status: "Partly",
+          text: "Desk-based: a stakeholder customer-journey document and the 21-day program defined the audience. No participant interviews.",
+        }}
+        define={{
+          status: "Done",
+          text: "Personas, problem statements, and a ten-stage journey.",
+        }}
+        ideate={{
+          status: "Partly",
+          text: "Flows and a screen map set the structure before the wireframes.",
+        }}
+        prototype={{
+          status: "Done",
+          text: "Wireframes, a low-fidelity prototype, mockups, high-fidelity designs, and an interactive React prototype.",
+        }}
+        test={{
+          status: "Partly",
+          text: "Two internal walkthrough rounds of the clickable prototype found problems that were fixed. Tests with 5 to 8 users in Mexico are still to come.",
+        }}
+      />
 
       <FolderGroup>
         <FolderSection
@@ -542,6 +584,17 @@ const SanoVida = () => (
                 </div>
               </Window>
             </Section>
+
+            <UserStories
+              trail={parts[0].title}
+              stories={[
+                {
+                  who: "Ana",
+                  story:
+                    "As Ana, a Spanish-speaking woman starting my first structured wellness program, I want a simple daily routine and visible proof of progress, so that my motivation does not fade before results appear.",
+                },
+              ]}
+            />
 
             <Section
               id="user-journey"
@@ -934,6 +987,14 @@ const SanoVida = () => (
           peek={parts[3].peek}
         >
           <div className="space-y-15">
+            <UxQualities
+              trail={parts[3].title}
+              usable="Home answers “what do I do now?” at a glance with a Morning, Afternoon, and Evening stepper. Onboarding keeps only the questions not yet asked. Two walkthrough rounds caught problems like an off-screen Next button."
+              equitable="Full Spanish and English for Spanish-speaking women in Mexico, 16px base type, light and dark themes, and labelled icon buttons. Locked actions say why they are locked. A formal contrast audit is still pending."
+              enjoyable="An adherence ring, trend charts, a calendar, and Sano AI nudges keep motivation up while results take weeks. Day 21 shows her results first and then a celebration."
+              useful="A Day 0 home with a delivery tracker and “while you wait” actions fills the shipping gap. After that, the stepper turns meals, workouts, and five products into a daily routine."
+            />
+
             <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>

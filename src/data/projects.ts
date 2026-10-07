@@ -74,6 +74,15 @@ export const projects: Project[] = [
     category: "design",
   },
   {
+    title: "Roostercat Games Website",
+    description:
+      "A responsive website for Roostercat LLC, an independent game studio: ten pages that present three mobile games in development and the studio's client services to players and prospective clients. I led the design and hand-coded it in HTML, CSS, and JavaScript as the lead designer and front-end developer.",
+    image: "/assets/images/projects/roostercat/cover.jpg",
+    tags: ["HTML", "CSS", "JavaScript", "UX/UI Design"],
+    url: "/projects/roostercat",
+    category: "frontend",
+  },
+  {
     title: "SUBAY",
     description:
       "SUBAY is a multi-camera detection system for customer tracking using YOLOv10, DeepSORT, and OSNet for re-identification in retail environments. This research won Best Thesis and Best Prototype at CpE Research Colloquium!",

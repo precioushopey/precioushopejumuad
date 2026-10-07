@@ -13,6 +13,7 @@ import {
   LuPalette,
   LuRefreshCw,
   LuRoute,
+  LuSmartphone,
   LuShieldCheck,
   LuSquare,
   LuStore,
@@ -26,6 +27,10 @@ import {
   Section,
   Window,
   cardText,
+  ProcessStrip,
+  ScopeAndStandards,
+  UserStories,
+  UxQualities,
   noteText,
 } from "../components/CaseStudy";
 
@@ -59,6 +64,7 @@ const parts: Part[] = [
     topics: [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
+      { id: "user-stories", label: "User stories" },
       { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
@@ -93,6 +99,7 @@ const parts: Part[] = [
     title: "Going forward",
     peek: `${IMAGES}/home-mobile.jpg`,
     topics: [
+      { id: "ux-qualities", label: "Good UX check" },
       { id: "takeaways", label: "Takeaways" },
       { id: "next-steps", label: "Next steps" },
     ],
@@ -239,6 +246,12 @@ const accessibility = [
     title: "Contrast and motion",
     description:
       "Option circles keep 3:1 contrast, and entrance animation is off under reduced motion.",
+  },
+  {
+    icon: <LuSmartphone size={20} />,
+    title: "Context of use",
+    description:
+      "Phone-first for first-time buyers in Germany and Austria, in German and English, with a phone-code sign-in so there is no password to remember.",
   },
 ];
 
@@ -419,6 +432,23 @@ const WeCare = () => (
         </div>
       </Section>
 
+      <ScopeAndStandards
+        rows={[
+          {
+            label: "Scope",
+            text: "The assessment, match, checkout, and order tracking, with follow-up planned.",
+          },
+          {
+            label: "Not connected yet",
+            text: "SMS verification, payment, pharmacy prices and certificates, and order emails.",
+          },
+          {
+            label: "Standards",
+            text: "Careful wording with no medical claims, nine legal and trust pages, and counsel review before launch.",
+          },
+        ]}
+      />
+
       <Section id="my-role" level={2} title="My Role">
         <NoteWindow title="My role">
           <p className={noteText}>
@@ -445,6 +475,29 @@ const WeCare = () => (
           </ul>
         </Window>
       </Section>
+
+      <ProcessStrip
+        empathize={{
+          status: "Partly",
+          text: "Desk-based, no interviews: a teardown of a competing service, a look at digital healthcare platforms, and walkthroughs with the product owner and partners.",
+        }}
+        define={{
+          status: "Done",
+          text: "Four everyday problems, a persona, problem statements, and a journey from homepage to follow-up.",
+        }}
+        ideate={{
+          status: "To add",
+          text: "Ideation work still to come, such as “How might we” questions or rapid sketches. For now: no sketches were kept, and ideas took shape in the written spec, the information architecture, and the recommendation rules.",
+        }}
+        prototype={{
+          status: "Done",
+          text: "A working prototype, mockups, and high-fidelity designs for phone and desktop.",
+        }}
+        test={{
+          status: "Partly",
+          text: "A UX audit and stakeholder walkthroughs led to changes. Moderated usability tests are still to come.",
+        }}
+      />
 
       <FolderGroup>
         <FolderSection
@@ -511,6 +564,17 @@ const WeCare = () => (
                 </div>
               </Window>
             </Section>
+
+            <UserStories
+              trail={parts[0].title}
+              stories={[
+                {
+                  who: "Adult in Germany or Austria",
+                  story:
+                    "As an adult in Germany or Austria who knows my problem but not the product, I want to see what could help in a few minutes, so that I can reach a doctor’s review without browsing a catalogue.",
+                },
+              ]}
+            />
 
             <Section
               id="user-journey"
@@ -1034,7 +1098,7 @@ const WeCare = () => (
               title="Accessibility Considerations"
               trail={parts[2].title}
             >
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {accessibility.map((item) => (
                   <Window
                     key={item.title}
@@ -1056,6 +1120,14 @@ const WeCare = () => (
           peek={parts[3].peek}
         >
           <div className="space-y-15">
+            <UxQualities
+              trail={parts[3].title}
+              usable="Every step says what happens next: a progress line (“Question 4 of 6”), a delivery cut-off on the match screen, and a thank-you page that explains the doctor review. After the UX audit, checkout errors show in a summary above the submit button."
+              equitable="Plain hints explain jargon, and first-time users are never led with the stronger option. The pages are in German and English. They support keyboards and screen readers, with a skip link, 3:1 contrast on option circles, and reduced-motion support."
+              enjoyable="The site leads with four everyday problems, not strains and THC levels, so it does not feel like a shop. Six tap-through questions with auto-advance take 60 to 90 seconds."
+              useful="A short assessment ends in one recommended solution and one alternative, so people do not have to pick a product themselves. A doctor reviews before any order."
+            />
+
             <Section id="takeaways" title="Takeaways" trail={parts[3].title}>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>

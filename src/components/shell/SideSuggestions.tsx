@@ -91,15 +91,15 @@ export const BlogSuggestions = ({ currentPath }: { currentPath: string }) => {
   );
 };
 
-// The projects in the Projects page order, starting from the one after the current project and
-// wrapping round.
+// The finished projects in list order, starting from the one after the current project and
+// wrapping round. "Coming Soon" placeholders are left out.
 export const ProjectSuggestions = ({
   currentPath,
 }: {
   currentPath: string;
 }) => {
   const items = nextFirst(projects, (p) => p.url === currentPath)
-    .filter((p) => p.url !== currentPath)
+    .filter((p) => p.url !== currentPath && !p.comingSoon)
     .map((p) => ({
       to: p.url,
       image: p.image,

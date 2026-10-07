@@ -28,6 +28,10 @@ import {
   Section,
   Window,
   cardText,
+  ProcessStrip,
+  ScopeAndStandards,
+  UserStories,
+  UxQualities,
   noteText,
 } from "../components/CaseStudy";
 
@@ -68,6 +72,7 @@ const parts: Part[] = [
     topics: [
       { id: "user-research", label: "User research" },
       { id: "persona", label: "Personas" },
+      { id: "user-stories", label: "User stories" },
       { id: "problem-statement", label: "Problem statements" },
       { id: "user-journey", label: "User journey maps" },
     ],
@@ -99,6 +104,7 @@ const parts: Part[] = [
     title: "Going forward",
     peek: `${IMAGES}/erd.webp`,
     topics: [
+      { id: "ux-qualities", label: "Good UX check" },
       { id: "testing", label: "Testing" },
       { id: "takeaways", label: "Takeaways" },
       { id: "next-steps", label: "Next steps" },
@@ -596,6 +602,7 @@ const testing = [
 const nextSteps = [
   "Finish the System Usability Scale evaluation with officers and members, and publish the results.",
   "Test the Figma prototype with the pilot cooperative and refine the flows.",
+  "Run an accessibility check with a screen reader, large text, and contrast before the usability tests with officers and members, and fix what it finds.",
   "Add the screens to this case study.",
 ];
 
@@ -699,6 +706,27 @@ const Coco = () => (
         </div>
       </Section>
 
+      <ScopeAndStandards
+        rows={[
+          {
+            label: "In scope",
+            text: "Membership, share capital, investments and savings, fees, accounting, statutory funds and refunds, CDA reports, and a member portal.",
+          },
+          {
+            label: "Out of scope",
+            text: "Online payments, loans, links to banks or government platforms, and managing a federation of cooperatives.",
+          },
+          {
+            label: "Performance",
+            text: "Android 8.0 and above, every core function offline, any query or posting within three seconds, and sync within sixty seconds of reconnecting.",
+          },
+          {
+            label: "Standards",
+            text: "The CDA chart of accounts and report formats, role-based access, and an audit trail.",
+          },
+        ]}
+      />
+
       <Section id="my-role" level={2} title="My Role">
         <NoteWindow title="My role">
           <p className={noteText}>
@@ -726,6 +754,29 @@ const Coco = () => (
           </ul>
         </Window>
       </Section>
+
+      <ProcessStrip
+        empathize={{
+          status: "Done",
+          text: "Structured interviews with a cooperative treasurer and a board secretary, plus observation of the office. One cooperative, not a large survey.",
+        }}
+        define={{
+          status: "Done",
+          text: "Personas, problem statements, journeys, and requirements and scope.",
+        }}
+        ideate={{
+          status: "Partly",
+          text: "Context and data-flow diagrams, use cases, and activity diagrams worked out how the three roles use the system.",
+        }}
+        prototype={{
+          status: "Done",
+          text: "A design system, screens for three roles, and a Figma prototype.",
+        }}
+        test={{
+          status: "Planned",
+          text: "Three test layers: functional, offline, and usability with the System Usability Scale. Results are not in yet.",
+        }}
+      />
 
       <FolderGroup>
         <FolderSection
@@ -835,6 +886,27 @@ const Coco = () => (
                 </div>
               </Window>
             </Section>
+
+            <UserStories
+              trail={parts[0].title}
+              stories={[
+                {
+                  who: "Administrator",
+                  story:
+                    "As a cooperative administrator, I want to manage users and see every financial report and the audit trail, so that the books stay accurate and CDA deadlines are met.",
+                },
+                {
+                  who: "Cooperative Officer",
+                  story:
+                    "As a cooperative officer, I want to register members and record contributions, fees, and postings in one place, so that I stop working out balances by hand and the books close faster.",
+                },
+                {
+                  who: "Cooperative Member",
+                  story:
+                    "As a cooperative member, I want to check my share capital, contributions, and refund on my phone, so that I do not have to visit the office to see my balance.",
+                },
+              ]}
+            />
 
             <Section
               id="user-journey"
@@ -1266,6 +1338,14 @@ const Coco = () => (
           peek={parts[3].peek}
         >
           <div className="space-y-15">
+            <UxQualities
+              trail={parts[3].title}
+              usable="Each role gets its own interface and menu. Zero amounts and overpayments get a clear message, and Submit stays off until required fields are filled. The contribution form shows the member’s name and balance first so the officer can confirm. Usability scores are still to come."
+              equitable="Every core task works offline for cooperatives with weak connections, and the app shows when changes are waiting to sync. Members can check their balance without visiting the office."
+              enjoyable="The evidence here is small: a success screen that offers another entry, a deadline banner, and a receipt after each fee."
+              useful="It replaces handwritten ledgers and two to three weeks of year-end compiling with live balances, an automatic double-entry journal, and the four statements generated for any period."
+            />
+
             <Section id="testing" title="Testing" trail={parts[3].title}>
               <NoteWindow title="Testing notes">
                 <p className={noteText}>

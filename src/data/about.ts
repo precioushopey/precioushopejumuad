@@ -96,7 +96,7 @@ export const jobs: Job[] = [
     date: "June 2025 - Present",
     location: "Brookfield, Wisconsin, United States of America • Remote",
     responsibilities: [
-      "Designed and built Roostercat’s web presence from concept to implementation, as measured by a responsive landing page and Squarespace website delivered, by translating brand direction and business goals into cohesive digital experiences.",
+      "Designed and built Roostercat’s web presence from concept to implementation, as measured by a responsive landing page, a Squarespace website, and a ten-page hand-coded studio website covering three games, five services, and a contact path, by translating brand direction and business goals into cohesive digital experiences.",
       "Designed user interface and user experience for web, mobile, and game products, as measured by the user flows, interfaces, and accessible experiences delivered that are feasible to build, by turning product requirements and creative concepts into designs with technical feasibility in mind.",
       "Kept digital products and marketing experiences consistent, as measured by the reusable user interface components, design patterns, and visual systems created, by collaborating with developers and cross-functional teams to bridge design and development.",
       "Produced two-dimensional game art, as measured by the game assets and user interface elements delivered in pixel and vector styles, by illustrating them in Aseprite, Photoshop, Canva, and IbisPaint.",
