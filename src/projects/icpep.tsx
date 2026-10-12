@@ -1,205 +1,100 @@
-import Carousel from "../components/Carousel";
 import {
-  LuHeart,
-  LuLightbulb,
-  LuListChecks,
-  LuSun,
-  LuTarget,
-  LuWrench,
-} from "react-icons/lu";
-import { ProjectLayout } from "../components/ProjectLayout";
+  SimpleCaseStudy,
+  type SimpleCaseStudyData,
+} from "../components/SimpleCaseStudy";
 
-const ICpEP = () => {
-  const images1 = [
-    "/assets/images/projects/icpep/icpep1.jpg",
-    "/assets/images/projects/icpep/icpep2.jpg",
-    "/assets/images/projects/icpep/icpep3.jpg",
-  ];
-
-  const designSteps = [
+const data: SimpleCaseStudyData = {
+  hero: {
+    images: [
+      "/assets/images/projects/icpep/icpep1.jpg",
+      "/assets/images/projects/icpep/icpep2.jpg",
+      "/assets/images/projects/icpep/icpep3.jpg",
+    ],
+    alt: "Preview images of the ICpEP.SE – USTP website redesign",
+  },
+  about:
+    "The ICpEP.SE – USTP Redesign was envisioned as a fresh, modern take on the digital identity of the Computer Engineering student organization at the University of Science and Technology of Southern Philippines. This project set out to elevate not only the aesthetic appeal of the site but also its usability, accessibility, and ability to tell the story of a vibrant student body. With a focus on showcasing activities, events, and initiatives, the redesign aimed to create a platform that students could be proud of and feel connected to. Though still in the design stage, this project represents a bold step forward in creating a purposeful and engaging online space for the organization.",
+  facts: [
     {
-      icon: <LuHeart size={20} />,
-      title: "Empathize",
-      description:
-        "As the sitting president of ICpEP.SE – USTP, I had firsthand insight into the struggles students and officers faced with our outdated website. I regularly engaged with members, gathered concerns during meetings, and observed how limited the current site was in representing our activities.",
+      label: "Type",
+      value: "Website redesign for a student organization",
     },
     {
-      icon: <LuTarget size={20} />,
-      title: "Define",
-      description:
-        "With clear feedback from the organization and personal experience managing its digital presence, I defined our pain points: lack of visual appeal, cluttered information flow, and no clear platform to showcase our achievements. The site failed to reflect the vibrant, innovative spirit of our members.",
+      label: "Role",
+      value: "Designer, and the organization’s sitting president",
     },
+    { label: "Status", value: "Design stage" },
+    { label: "Tools", value: "Figma, Canva, Photoshop" },
+  ],
+  links: [
     {
-      icon: <LuLightbulb size={20} />,
-      title: "Ideate",
-      description:
-        "Taking everything I knew from both leadership and design perspectives, I began drafting solutions. I explored ways to simplify navigation, amplify storytelling through visuals, and create dedicated sections for projects, events, and member engagement.",
+      label: "See Live Demo Here!",
+      href: "https://www.icpepse-ustp.org/",
     },
+  ],
+  problem:
+    "With clear feedback from the organization and personal experience managing its digital presence, I defined our pain points: lack of visual appeal, cluttered information flow, and no clear platform to showcase our achievements. The site failed to reflect the vibrant, innovative spirit of our members.",
+  goal: "A modern redesign that lifts the site’s looks, usability, and accessibility, and tells the story of the student body through its activities, events, and initiatives.",
+  challenge:
+    "The biggest challenge lay in reimagining a digital presence that felt outdated and overlooked. The existing site did not reflect the dynamic nature of ICpEP.SE or the pride its members had in their work. It was important to reframe the narrative, not just by making it look good, but by creating a space where students could see themselves, their projects, and their progress. Balancing information hierarchy with expressive design while staying true to the organization's identity was a constant, evolving process.",
+  process: {
+    empathize: {
+      status: "Done",
+      text: "As the sitting president, gathered concerns from members and officers and observed the old site’s limits.",
+    },
+    define: {
+      status: "Done",
+      text: "Lack of visual appeal, cluttered information flow, and no place to show achievements.",
+    },
+    ideate: {
+      status: "Done",
+      text: "Simpler navigation, visual storytelling, and sections for projects, events, and member engagement.",
+    },
+    prototype: {
+      status: "Done",
+      text: "High-fidelity Figma prototypes with a modular component system.",
+    },
+    test: {
+      status: "Partly",
+      text: "Informal feedback sessions with officers and members, not formal usability tests.",
+    },
+  },
+  research:
+    "As the sitting president of ICpEP.SE – USTP, I had firsthand insight into the struggles students and officers faced with our outdated website. I regularly engaged with members, gathered concerns during meetings, and observed how limited the current site was in representing our activities.",
+  ideation:
+    "Taking everything I knew from both leadership and design perspectives, I began drafting solutions. I explored ways to simplify navigation, amplify storytelling through visuals, and create dedicated sections for projects, events, and member engagement.",
+  prototype: {
+    text: "I translated these ideas into high-fidelity prototypes using Figma, iterating on structure, colors, and component systems that would bring consistency and impact. The design aimed to be modular and scalable, considering future content and organizational growth. Every element, from the homepage hero to the blogs, was crafted to be a bold yet professional representation of our org.",
+    link: {
+      label: "See Prototype",
+      href: "https://www.figma.com/design/pxDfxLLZKL8d22Asol61ha/ICpEP.SE---USTP-Website-Redesign-Mood-Board?node-id=0-1&t=yAHRFon0HpdcwOu1-1",
+    },
+  },
+  testing:
+    "Even in the design stage, I circulated the prototypes to fellow officers and members for feedback. As president, I facilitated open discussions on what worked and what didn’t. These feedback sessions were incredibly valuable in refining user flow, content placement, and visual clarity. Design choices were revisited and adjusted based on what resonated most with our community.",
+  quality: {
+    usable:
+      "Feedback sessions with officers and members refined the user flow, content placement, and visual clarity. They were open discussions, not usability tests.",
+    equitable:
+      "Accessibility is named as a goal in the overview, but no accessibility checks are documented.",
+    enjoyable:
+      "The design aims for a bold yet professional look that members can be proud of, and peers and student leaders reacted with interest.",
+    useful:
+      "Dedicated sections for projects, events, and member engagement give the organization a place to show its work. The page describes the redesign as still in the design stage, so there is no usage data.",
+  },
+  result:
+    "The result is a comprehensive website redesign that not only looks modern and cohesive but serves as a powerful tool for engagement, communication, and pride. Though still in the design phase, the prototype is aligned with the real-world needs of the organization, offering a future-ready foundation for implementation.",
+  impact:
+    "Even as a conceptual project, the redesigned ICpEP.SE website has already sparked meaningful conversations among peers and student leaders. It gave the organization a visual identity they could feel excited about and inspired others to think more critically about the role of digital design in student engagement. More than just a design exercise, this project served as a collaborative dialogue between designer and community, one that planted the seed for future innovation.",
+  closingLinks: [
     {
-      icon: <LuWrench size={20} />,
-      title: "Prototype",
-      description:
-        "I translated these ideas into high-fidelity prototypes using Figma, iterating on structure, colors, and component systems that would bring consistency and impact. The design aimed to be modular and scalable, considering future content and organizational growth. Every element, from the homepage hero to the blogs, was crafted to be a bold yet professional representation of our org.",
+      label: "See the Org's Facebook Page",
+      href: "https://www.facebook.com/icpep.se.ustp",
     },
-    {
-      icon: <LuListChecks size={20} />,
-      title: "Test",
-      description:
-        "Even in the design stage, I circulated the prototypes to fellow officers and members for feedback. As president, I facilitated open discussions on what worked and what didn’t. These feedback sessions were incredibly valuable in refining user flow, content placement, and visual clarity. Design choices were revisited and adjusted based on what resonated most with our community.",
-    },
-    {
-      icon: <LuSun size={20} />,
-      title: "Result",
-      description:
-        "The result is a comprehensive website redesign that not only looks modern and cohesive but serves as a powerful tool for engagement, communication, and pride. Though still in the design phase, the prototype is aligned with the real-world needs of the organization, offering a future-ready foundation for implementation.",
-    },
-  ];
-
-  const skills = [
-    { name: "Research", level: 100 },
-    { name: "UI/UX Design", level: 95 },
-    { name: "Multimedia Design", level: 85 },
-    { name: "Figma", level: 90 },
-    { name: "Canva", level: 80 },
-    { name: "Communication", level: 75 },
-    { name: "Adaptability", level: 70 },
-    { name: "Initiative", level: 70 },
-  ];
-
-  return (
-    <ProjectLayout>
-      <div className="space-y-15 pt-6">
-        <section className="space-y-6">
-          <Carousel images={images1} />
-          <h2 className="font-semibold text-2xl sm:text-3xl">
-            Project Overview
-          </h2>
-          <p className="-mt-2 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
-            The ICpEP.SE – USTP Redesign was envisioned as a fresh, modern take
-            on the digital identity of the Computer Engineering student
-            organization at the University of Science and Technology of Southern
-            Philippines. This project set out to elevate not only the aesthetic
-            appeal of the site but also its usability, accessibility, and
-            ability to tell the story of a vibrant student body. With a focus on
-            showcasing activities, events, and initiatives, the redesign aimed
-            to create a platform that students could be proud of and feel
-            connected to. Though still in the design stage, this project
-            represents a bold step forward in creating a purposeful and engaging
-            online space for the organization.
-          </p>
-          <button className="mx-auto flex justify-center">
-            <a
-              href="https://www.icpepse-ustp.org/"
-              target="_blank"
-              className="flex white-button"
-            >
-              See Live Demo Here!
-            </a>
-          </button>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">
-            Design Thinking Process
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {designSteps.map((step, index) => (
-              <div
-                key={index}
-                className="group overflow-hidden glass-card space-y-3 p-6 card-hover"
-              >
-                <div className="flex items-center justify-center border-b pb-2 gap-x-3">
-                  {step.icon}
-                  <h3 className="font-medium text-lg">{step.title}</h3>
-                </div>
-                <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-          <button className="mx-auto flex justify-center pt-2">
-            <a
-              href="https://www.figma.com/design/pxDfxLLZKL8d22Asol61ha/ICpEP.SE---USTP-Website-Redesign-Mood-Board?node-id=0-1&t=yAHRFon0HpdcwOu1-1"
-              target="_blank"
-              className="flex white-button"
-            >
-              See Prototype
-            </a>
-          </button>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">The Challenge</h2>
-          <div className="w-full flex flex-col lg:flex-row items-center gap-6">
-            <div className="w-full lg:w-2/3">
-              <Carousel images={images1} />
-            </div>
-            <p className="w-full lg:w-1/3 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
-              The biggest challenge lay in reimagining a digital presence that
-              felt outdated and overlooked. The existing site did not reflect
-              the dynamic nature of ICpEP.SE or the pride its members had in
-              their work. It was important to reframe the narrative, not just by
-              making it look good, but by creating a space where students could
-              see themselves, their projects, and their progress. Balancing
-              information hierarchy with expressive design while staying true to
-              the organization's identity was a constant, evolving process.
-            </p>
-          </div>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">The Impact</h2>
-          <p className="hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
-            Even as a conceptual project, the redesigned ICpEP.SE website has
-            already sparked meaningful conversations among peers and student
-            leaders. It gave the organization a visual identity they could feel
-            excited about and inspired others to think more critically about the
-            role of digital design in student engagement. More than just a
-            design exercise, this project served as a collaborative dialogue
-            between designer and community, one that planted the seed for future
-            innovation.
-          </p>
-          <button className="mx-auto flex justify-center">
-            <a
-              href="https://www.facebook.com/icpep.se.ustp"
-              target="_blank"
-              className="flex white-button"
-            >
-              See the Org's Facebook Page
-            </a>
-          </button>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="font-semibold text-2xl sm:text-3xl">Skills Earned</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="flex flex-col justify-center glass-card card-hover gap-2 p-3"
-              >
-                <div className="flex items-center gap-x-3">
-                  <div className="text-left">
-                    <h3 className="font-medium text-lg">{skill.name}</h3>
-                  </div>
-                </div>
-                <div className="w-full bg-cream/15 h-2 rounded-full overflow-hidden">
-                  <div
-                    className="bg-accent h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                    style={{ width: `${skill.level}%` }}
-                  />
-                </div>
-                <div className="text-right -mt-1">
-                  <span>{skill.level}%</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-    </ProjectLayout>
-  );
+  ],
+  nextSteps: ["Implement the prototype as the organization’s website."],
 };
+
+const ICpEP = () => <SimpleCaseStudy data={data} />;
 
 export default ICpEP;

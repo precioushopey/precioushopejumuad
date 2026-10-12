@@ -3,12 +3,15 @@ import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 
 type CarouselProps = {
   images: string[];
+  /** Describes the pictures; each slide adds "(n of N)". */
+  alt?: string;
   autoSlide?: boolean;
   autoSlideInterval?: number;
 };
 
 const Carousel: React.FC<CarouselProps> = ({
   images,
+  alt = "Project images",
   autoSlide = true,
   autoSlideInterval = 3000,
 }) => {
@@ -44,15 +47,19 @@ const Carousel: React.FC<CarouselProps> = ({
               : "opacity-0 z-0 absolute inset-0"
           }`}
         >
-          <img loading="lazy" decoding="async"
+          <img
+            loading="lazy"
+            decoding="async"
             src={image}
-            alt="Project Images"
+            alt={`${alt} (${index + 1} of ${images.length})`}
             className="w-full aspect-[16/9] rounded-4xl border object-cover transition-transform duration-500"
           />
         </div>
       ))}
 
       <button
+        type="button"
+        aria-label="Previous image"
         className="absolute top-1/2 left-2 transform -translate-y-1/2 white-button p-1.5"
         onClick={prevSlide}
       >
@@ -60,6 +67,8 @@ const Carousel: React.FC<CarouselProps> = ({
       </button>
 
       <button
+        type="button"
+        aria-label="Next image"
         className="absolute top-1/2 right-2 transform -translate-y-1/2 white-button p-1.5"
         onClick={nextSlide}
       >

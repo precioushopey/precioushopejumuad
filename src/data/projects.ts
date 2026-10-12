@@ -74,6 +74,15 @@ export const projects: Project[] = [
     category: "design",
   },
   {
+    title: "Relive X360",
+    description:
+      "Relive X360 is a platform for clinics, with a branded patient app that takes someone from a free longevity score to a medical intake, a plan, payment, and a home screen with an AI coach. I designed the patient app (53 mobile screens) and the design system behind it as a UX/UI designer on the TLH Team.",
+    image: "/assets/images/projects/relive/cover.png",
+    tags: ["Figma", "UX/UI Design", "Design System", "Mobile App"],
+    url: "/projects/relive",
+    category: "design",
+  },
+  {
     title: "Roostercat Games Website",
     description:
       "A responsive website for Roostercat LLC, an independent game studio: ten pages that present three mobile games in development and the studio's client services to players and prospective clients. I led the design and hand-coded it in HTML, CSS, and JavaScript as the lead designer and front-end developer.",
@@ -103,7 +112,7 @@ export const projects: Project[] = [
   {
     title: "iBRGY",
     description:
-      "An automated document request and issuance system for barangays, designed to streamline their services by digitizing and accelerating the processing of requests.",
+      "iBRGY is a web-based request management system for barangays: residents request documents such as a cedula or a barangay clearance online and follow them, and personnel verify every request from one dashboard. It scored 91.25 (A+) on the System Usability Scale with 8 testers. I worked on it in a team of four for our Software Design and Engineering capstone.",
     image: "/assets/images/projects/ibrgy/ibrgy1.png",
     tags: ["React", "JavaScript", "TailwindCSS", "Figma"],
     url: "/projects/ibrgy",
@@ -112,7 +121,7 @@ export const projects: Project[] = [
   {
     title: "TaleMakers",
     description:
-      "TaleMakers is an educational mobile game that empowers children to create interactive storybooks. It combines creative and accessible storytelling with engaging gameplay.",
+      "TaleMakers is a mobile app concept that lets children write, decorate, and share their own animated storybooks with characters, scenes, and music. I designed it for Roostercat as a UX/UI designer: grey wireframes, blue mid-fidelity screens, a brand book, and high-fidelity screens in Figma.",
     image: "/assets/images/projects/talemakers/talemakers1.png",
     tags: ["Figma", "Canva", "Illustrator", "Aseprite"],
     url: "/projects/talemakers",
