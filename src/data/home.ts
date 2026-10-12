@@ -11,7 +11,7 @@ export const workHighlights = [
   },
   {
     title: "Product Designer/Developer",
-    detail: "OJT Connect · Feb 2026 to present",
+    detail: "OJT Connect · Aug 2025 to present",
     logo: "/assets/images/experience/ojtconnect_logo.png",
     tile: "bg-white p-1",
   },

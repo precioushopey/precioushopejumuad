@@ -100,7 +100,7 @@ export const jobs: Job[] = [
       "Designed user interface and user experience for web, mobile, and game products, as measured by the user flows, interfaces, and accessible experiences delivered that are feasible to build, by turning product requirements and creative concepts into designs with technical feasibility in mind.",
       "Kept digital products and marketing experiences consistent, as measured by the reusable user interface components, design patterns, and visual systems created, by collaborating with developers and cross-functional teams to bridge design and development.",
       "Produced two-dimensional game art, as measured by the game assets and user interface elements delivered in pixel and vector styles, by illustrating them in Aseprite, Photoshop, Canva, and IbisPaint.",
-      "Supported Roostercat’s social media and digital campaigns, as measured by the graphic and marketing materials delivered for Facebook, Instagram, Threads, and X, by designing the materials for each channel.",
+      "Supported Roostercat’s social media and digital campaigns, as measured by the graphic and marketing materials delivered for Facebook, Instagram, Threads, TikTok, X, BlueSky, Mastodon, LinkedIn, and YouTube, by designing the materials for each channel.",
     ],
   },
   {
