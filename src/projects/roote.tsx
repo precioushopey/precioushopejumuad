@@ -22,6 +22,7 @@ import {
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import { ProjectLayout } from "../components/ProjectLayout";
 import {
+  BusinessCase,
   NoteWindow,
   Section,
   Window,
@@ -31,6 +32,7 @@ import {
   UserStories,
   UxQualities,
   noteText,
+  SdlcStrip,
 } from "../components/CaseStudy";
 
 const IMAGES = "/assets/images/projects/roote";
@@ -69,6 +71,7 @@ const parts: Part[] = [
       { id: "scope-and-standards", label: "Scope and standards" },
       { id: "my-role", label: "My role" },
       { id: "process", label: "Design process" },
+      { id: "sdlc", label: "Development life cycle" },
     ],
   },
   {
@@ -388,6 +391,13 @@ const Roote = () => (
             English and more languages one switch away.
           </p>
         </NoteWindow>
+        <BusinessCase
+          headline="The journey sells a plan, not a product: the main button reads “Free hair analysis”, not “Shop now”."
+          conversion="Visitors from a search or a social ad get one clear action, the free analysis, then a personal report and a treatment plan that lead straight into checkout, where reviews showed trust cues matter most."
+          efficiency="Photos and five short questions in a few minutes stand in for a clinic visit, and visitors from Israel, where most customers are, land in Hebrew and right-to-left without switching anything."
+          roi="The first order is not the end: the daily program app prompts the customer when it is time to order the next stage, and a repeat AI hair analysis brings them back."
+          evidence="These are design decisions from user flows and stakeholder reviews; no conversion figures are published."
+        />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
             {facts.map((fact) => (
@@ -540,6 +550,39 @@ const Roote = () => (
               test={{
                 status: "Partly",
                 text: "Two rounds of stakeholder feedback changed the design. Tests with real customers are still to come.",
+              }}
+            />
+
+            <SdlcStrip
+              trail={parts[0].title}
+              collapsible
+              planning={{
+                status: "Done",
+                text: "A client brief for a California brand whose customers are mostly in Israel, which made Hebrew and right-to-left the default.",
+              }}
+              requirements={{
+                status: "Done",
+                text: "The requirements, user flows, and diagnosis flow shaped the questionnaire, the report, the plan, and checkout.",
+              }}
+              design={{
+                status: "Done",
+                text: "Digital wireframes, a low-fidelity prototype, mockups, and high-fidelity designs, plus the bottles, label artwork, and carton.",
+              }}
+              development={{
+                status: "Done",
+                text: "I built the front end, in six languages with right-to-left layouts for Hebrew and Arabic; the code is on GitHub.",
+              }}
+              testing={{
+                status: "Partly",
+                text: "Two rounds of stakeholder feedback changed the design. Tests with real customers are still to come.",
+              }}
+              deployment={{
+                status: "Partly",
+                text: "Live at roote.us as a concept for stakeholder review. Every medical claim and price still needs the client’s regulatory and legal review before it goes live for customers.",
+              }}
+              maintenance={{
+                status: "Planned",
+                text: "Next: define what each questionnaire answer recommends, add test payment mode and coupon codes, and run usability and accessibility checks.",
               }}
             />
           </div>

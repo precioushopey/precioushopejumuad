@@ -19,6 +19,7 @@ import {
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import { ProjectLayout } from "../components/ProjectLayout";
 import {
+  BusinessCase,
   NoteWindow,
   Section,
   Window,
@@ -416,6 +417,13 @@ const SanoVida = () => (
             made it as a project for the Google UX Design Certificate.
           </p>
         </NoteWindow>
+        <BusinessCase
+          headline="The first purchase is the way into a whole 21-day system, designed so customers stay engaged and buy again."
+          conversion="A quiz of five to seven questions takes about a minute and ends on a “This is your plan” reveal before checkout, so she sees her plan before she pays for it."
+          efficiency="Onboarding asks only the questions the quiz and checkout have not, so nobody answers the same thing twice."
+          roi="Daily habits, visible progress, and an AI coach keep her going through the 21 days, and the journey is designed to end in a repurchase."
+          evidence="A Google UX Design Certificate project: an interactive prototype with no user or sales data yet."
+        />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
             {facts.map((fact) => (

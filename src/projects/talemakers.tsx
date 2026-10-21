@@ -17,6 +17,7 @@ import Carousel from "../components/Carousel";
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import { ProjectLayout } from "../components/ProjectLayout";
 import {
+  BusinessCase,
   NoteWindow,
   ProcessStrip,
   ScopeAndStandards,
@@ -526,6 +527,13 @@ const TaleMakers = () => (
             in an imaginative space.
           </p>
         </NoteWindow>
+        <BusinessCase
+          headline="TaleMakers is built so a child can start creating with nothing in the way."
+          conversion="A child signs in with just a name and an avatar, so there is no long sign-up between a child and the first story."
+          efficiency="Big labeled round buttons, and one element at a time in the editor with a cross and a tick to cancel or keep it, keep every step simple for short attention spans."
+          roi="The return is still untested: TaleMakers is a prototype that only peers and the client have tried, not children."
+          evidence="A prototype, not yet launched, so there are no usage figures."
+        />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
             {facts.map((fact) => (

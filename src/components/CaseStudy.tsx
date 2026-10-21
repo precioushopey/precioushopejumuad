@@ -3,6 +3,7 @@ import {
   LuAccessibility,
   LuChevronDown,
   LuCircleCheck,
+  LuCodeXml,
   LuFolderOpen,
   LuImagePlus,
   LuListChecks,
@@ -10,6 +11,7 @@ import {
   LuSmile,
   LuStickyNote,
   LuTarget,
+  LuTrendingUp,
   LuUserRound,
 } from "react-icons/lu";
 import { WindowBar } from "./WindowBar";
@@ -316,6 +318,65 @@ export const ProcessStrip = ({
   );
 };
 
+const sdlcMeta = [
+  { key: "planning", title: "1. Planning" },
+  { key: "requirements", title: "2. Requirements" },
+  { key: "design", title: "3. Design" },
+  { key: "development", title: "4. Development" },
+  { key: "testing", title: "5. Testing" },
+  { key: "deployment", title: "6. Deployment" },
+  { key: "maintenance", title: "7. Maintenance" },
+] as const;
+
+// The software development life cycle of a built project, from planning to maintenance, one honest
+// line per phase. `status` is Done, Partly, Ongoing, Planned, Not yet, or To add (the page doesn't
+// document that phase yet); `model` names the method only when the project's own records do.
+export const SdlcStrip = ({
+  model,
+  collapsible,
+  trail,
+  ...phases
+}: Record<(typeof sdlcMeta)[number]["key"], Phase> & {
+  model?: string;
+  collapsible?: boolean;
+  trail?: string;
+}) => (
+  <Section
+    id="sdlc"
+    level={trail ? 3 : 2}
+    trail={trail}
+    title="Development Life Cycle"
+    collapsible={collapsible}
+  >
+    <Window
+      icon={<LuCodeXml size={16} />}
+      title="Software development life cycle"
+      footer={
+        model
+          ? `Model: ${model}.`
+          : "From planning to maintenance; the folders below hold the detail."
+      }
+    >
+      <dl className="divide-y divide-line/40 text-sm">
+        {sdlcMeta.map((phase) => (
+          <div
+            key={phase.key}
+            className="grid grid-cols-1 gap-1 px-6 py-3 sm:grid-cols-[10rem_1fr] sm:gap-3"
+          >
+            <dt>
+              <span className="block font-medium">{phase.title}</span>
+              <span className="block text-xs text-cream/60">
+                {phases[phase.key].status}
+              </span>
+            </dt>
+            <dd className="text-cream/70">{phases[phase.key].text}</dd>
+          </div>
+        ))}
+      </dl>
+    </Window>
+  </Section>
+);
+
 const qualityMeta = [
   { key: "usable", title: "Usable", icon: <LuCircleCheck size={16} /> },
   { key: "equitable", title: "Equitable", icon: <LuAccessibility size={16} /> },
@@ -365,6 +426,53 @@ export const UxQualities = ({
         ))}
       </div>
     </Section>
+  );
+};
+
+const businessMeta = [
+  { key: "conversion", title: "Conversion" },
+  { key: "efficiency", title: "Efficiency" },
+  { key: "roi", title: "Faster ROI" },
+] as const;
+
+// The selling point of a project, shown in its overview: one headline, then how the design drives
+// conversion, saves time, and pays back sooner. Like the Good UX Check, every line must describe
+// something already on the page, and `evidence` says plainly whether there are measured results.
+export const BusinessCase = ({
+  headline,
+  conversion,
+  efficiency,
+  roi,
+  evidence,
+}: {
+  headline: string;
+  conversion: string;
+  efficiency: string;
+  roi: string;
+  evidence: string;
+}) => {
+  const text = { conversion, efficiency, roi };
+  return (
+    <Window
+      icon={<LuTrendingUp size={16} />}
+      title="Business case"
+      footer={evidence}
+    >
+      <p className="px-6 pt-6 text-left text-base font-medium leading-6 text-cream">
+        {headline}
+      </p>
+      <dl className="divide-y divide-line/40 pt-3 text-sm">
+        {businessMeta.map((row) => (
+          <div
+            key={row.key}
+            className="grid grid-cols-1 gap-1 px-6 py-3 sm:grid-cols-[8rem_1fr] sm:gap-3"
+          >
+            <dt className="font-medium text-accent">{row.title}</dt>
+            <dd className="text-cream/70">{text[row.key]}</dd>
+          </div>
+        ))}
+      </dl>
+    </Window>
   );
 };
 

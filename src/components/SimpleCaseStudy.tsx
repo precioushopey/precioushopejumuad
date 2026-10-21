@@ -1,10 +1,13 @@
+import type { ComponentProps } from "react";
 import { LuExternalLink, LuInfo, LuListChecks, LuSquare } from "react-icons/lu";
 import Carousel from "./Carousel";
 import { FolderGroup, FolderSection } from "./FolderGroup";
 import { ProjectLayout } from "./ProjectLayout";
 import {
+  BusinessCase,
   NoteWindow,
   ProcessStrip,
+  SdlcStrip,
   Section,
   UxQualities,
   Window,
@@ -24,6 +27,8 @@ export type SimpleCaseStudyData = {
   hero: { images: string[]; alt: string };
   /** The old "Project Overview" paragraph. */
   about: string;
+  /** The selling point under the overview; like `quality`, only what the page already says. */
+  businessCase: ComponentProps<typeof BusinessCase>;
   /** Rows of the Properties box; only facts the old page states. */
   facts: { label: string; value: string }[];
   /** Buttons under the Properties box (live demo, manual, files). */
@@ -42,6 +47,8 @@ export type SimpleCaseStudyData = {
     prototype: Phase;
     test: Phase;
   };
+  /** Only for projects that were built: the development life cycle, one honest line per phase. */
+  sdlc?: Omit<ComponentProps<typeof SdlcStrip>, "trail" | "collapsible">;
   /** The old "Empathize" paragraph. */
   research: string;
   /** The old "Ideate" paragraph. */
@@ -100,12 +107,14 @@ export const SimpleCaseStudy = ({ data }: { data: SimpleCaseStudyData }) => {
   const {
     hero,
     about,
+    businessCase,
     facts,
     links = [],
     problem,
     goal,
     challenge,
     process,
+    sdlc,
     research,
     ideation,
     prototype,
@@ -128,6 +137,7 @@ export const SimpleCaseStudy = ({ data }: { data: SimpleCaseStudyData }) => {
       topics: [
         { id: "problem-and-goal", label: "The problem and the goal" },
         { id: "process", label: "Design process" },
+        ...(sdlc ? [{ id: "sdlc", label: "Development life cycle" }] : []),
       ],
     },
     {
@@ -168,6 +178,7 @@ export const SimpleCaseStudy = ({ data }: { data: SimpleCaseStudyData }) => {
           <NoteWindow title="About this project">
             <p className={noteText}>{about}</p>
           </NoteWindow>
+          <BusinessCase {...businessCase} />
           <Window icon={<LuInfo size={16} />} title="Properties">
             <dl className="divide-y divide-line/40 text-sm">
               {facts.map((fact) => (
@@ -221,6 +232,10 @@ export const SimpleCaseStudy = ({ data }: { data: SimpleCaseStudyData }) => {
                 prototype={process.prototype}
                 test={process.test}
               />
+
+              {sdlc && (
+                <SdlcStrip trail={parts[0].title} collapsible {...sdlc} />
+              )}
             </div>
           </FolderSection>
 

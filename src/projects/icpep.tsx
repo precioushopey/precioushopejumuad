@@ -14,6 +14,16 @@ const data: SimpleCaseStudyData = {
   },
   about:
     "The ICpEP.SE – USTP Redesign was envisioned as a fresh, modern take on the digital identity of the Computer Engineering student organization at the University of Science and Technology of Southern Philippines. This project set out to elevate not only the aesthetic appeal of the site but also its usability, accessibility, and ability to tell the story of a vibrant student body. With a focus on showcasing activities, events, and initiatives, the redesign aimed to create a platform that students could be proud of and feel connected to. Though still in the design stage, this project represents a bold step forward in creating a purposeful and engaging online space for the organization.",
+  businessCase: {
+    headline:
+      "The redesign gives ICpEP.SE a site that shows its members’ work, so students and partners can see what the organization does.",
+    conversion:
+      "Dedicated sections for projects, events, and member engagement replace a cluttered information flow, so visitors find what the organization does in one place.",
+    efficiency:
+      "Simpler navigation and a modular component system make new events and posts easy to add as the organization grows.",
+    roi: "It has sparked conversations among student leaders, but it hasn’t launched, so there is no return to measure yet.",
+    evidence: "A Figma concept, still in the design phase.",
+  },
   facts: [
     {
       label: "Type",

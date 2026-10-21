@@ -17,6 +17,7 @@ import {
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import { ProjectLayout } from "../components/ProjectLayout";
 import {
+  BusinessCase,
   NoteWindow,
   Section,
   Window,
@@ -572,6 +573,13 @@ const Relive = () => (
             an AI coach called Dean AI, along with the design system under it.
           </p>
         </NoteWindow>
+        <BusinessCase
+          headline="The patient app gives value before it asks for anything: a free longevity score in about 90 seconds, before any account or medical question."
+          conversion="The long clinic intake (consent, medical history, safety questions, labs, identity, and payment) is earned one short screen at a time after the score, instead of greeting a new visitor with a form."
+          efficiency="Terms come as stacked cards with one agreement at the bottom instead of one long page, and review and pay sits on one screen with an order summary."
+          roi="Score, intake, plan, and payment run as one path, and once someone enrolls, the home screen and the Dean AI chat show what to do today, so patients keep going."
+          evidence="Based on the designed screens; no research or usage data is documented."
+        />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
             {facts.map((fact) => (

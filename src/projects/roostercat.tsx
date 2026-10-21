@@ -15,6 +15,7 @@ import {
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import { ProjectLayout } from "../components/ProjectLayout";
 import {
+  BusinessCase,
   ImagePlaceholder,
   NoteWindow,
   ProcessStrip,
@@ -25,6 +26,7 @@ import {
   Window,
   cardText,
   noteText,
+  SdlcStrip,
 } from "../components/CaseStudy";
 
 const IMAGES = "/assets/images/projects/roostercat";
@@ -59,6 +61,7 @@ const parts: Part[] = [
       { id: "scope-and-standards", label: "Scope and standards" },
       { id: "my-role", label: "My role" },
       { id: "process", label: "Design process" },
+      { id: "sdlc", label: "Development life cycle" },
     ],
   },
   {
@@ -286,6 +289,13 @@ const Roostercat = () => (
             client services to two audiences: players and prospective clients.
           </p>
         </NoteWindow>
+        <BusinessCase
+          headline="The studio’s first public home turns two kinds of visitors into two outcomes: players who follow a game and clients who get in touch."
+          conversion="A split Players / Clients section lets each visitor pick a path at once; every game has a status badge, store buttons, and a newsletter signup, and the contact form subject is preset to Client Project."
+          efficiency="The Services and The Stack pages list deliverables and ideal clients, so prospects can qualify themselves before they get in touch."
+          roi="Newsletter signups let players follow development, so the games can build an audience before they launch."
+          evidence="The newsletter and contact forms work in the browser only for now, and a usability study with real players and clients is still to come."
+        />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
             {facts.map((fact) => (
@@ -407,6 +417,39 @@ const Roostercat = () => (
               test={{
                 status: "Partly",
                 text: "Two internal design-review passes (May 20 to 22) led to changes. A usability study with real players and clients is the next step.",
+              }}
+            />
+
+            <SdlcStrip
+              trail={parts[0].title}
+              collapsible
+              planning={{
+                status: "Done",
+                text: "Five days, May 18 to 22, 2026, for a site that serves two assumed audiences: players and prospective clients.",
+              }}
+              requirements={{
+                status: "Partly",
+                text: "A problem statement for each assumed audience and the main user flows. None of it came from interviews.",
+              }}
+              design={{
+                status: "Done",
+                text: "Layout explored directly in code, with before and after mockups for the home and games pages.",
+              }}
+              development={{
+                status: "Done",
+                text: "Ten pages, including three game detail pages and a 404, hand-coded in HTML, CSS, and JavaScript with no build step.",
+              }}
+              testing={{
+                status: "Partly",
+                text: "Two internal design-review passes (May 20 to 22) led to changes. A usability study with real players and clients is next.",
+              }}
+              deployment={{
+                status: "Not yet",
+                text: "Pre-launch.",
+              }}
+              maintenance={{
+                status: "Planned",
+                text: "Next: connect the newsletter and contact forms to a real backend, and generate the script bundle from the component sources so the two never drift apart.",
               }}
             />
           </div>

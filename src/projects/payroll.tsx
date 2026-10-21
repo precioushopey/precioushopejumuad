@@ -13,6 +13,17 @@ const data: SimpleCaseStudyData = {
   },
   about:
     "In the heart of LGU Jasaan’s Human Resource operations, manual payroll processes once consumed hours of tedious work: cross-checking biometric logs, calculating deductions, and generating payslips by hand. To ease this burden, I, together with my partner, developed an automated Payroll Management System tailored to their workflow. Designed with seamless biometric integration, the system simplifies complex payroll tasks into an intuitive digital experience, empowering HR staff to focus more on people, not paperwork. It's more than automation, it's a tool that restores time and ensures accuracy where it matters most.",
+  businessCase: {
+    headline:
+      "The payroll system turns biometric logs into payroll and payslips automatically, giving HR staff back the time spent on manual entry.",
+    conversion:
+      "It was built around how LGU Jasaan’s HR office already works, with HR’s feedback guiding the mockups, and it is fully deployed.",
+    efficiency:
+      "Biometric attendance flows straight into payroll calculations, and payslips are generated automatically instead of by hand, with fewer errors.",
+    roi: "Since launch, payroll work that once took days is managed in minutes.",
+    evidence:
+      "The days-to-minutes change is described, not measured; no timed results are shown.",
+  },
   facts: [
     {
       label: "Type",
@@ -60,6 +71,36 @@ const data: SimpleCaseStudyData = {
     test: {
       status: "Done",
       text: "Live trials and repeated iterations. No test results or scores are shown here.",
+    },
+  },
+  sdlc: {
+    planning: {
+      status: "Done",
+      text: "Built with a partner for the HR office of LGU Jasaan, tailored to its workflow.",
+    },
+    requirements: {
+      status: "Done",
+      text: "Listening to HR staff about repetitive tasks and error-prone manual entries defined the need: scattered data, inconsistent records, and no central tool for payroll and attendance.",
+    },
+    design: {
+      status: "Done",
+      text: "Wireframes turned into interactive mockups in Figma, guided by HR’s feedback.",
+    },
+    development: {
+      status: "Done",
+      text: "Next.js, TypeScript, and Tailwind CSS, with biometric integration and a backend that handles edge cases from unexpected absences to multiple pay grades.",
+    },
+    testing: {
+      status: "Done",
+      text: "Rigorous testing for accuracy, live trials, and repeated iterations. No test results or scores are shown here.",
+    },
+    deployment: {
+      status: "Done",
+      text: "Fully deployed, with a live demo and a user manual.",
+    },
+    maintenance: {
+      status: "To add",
+      text: "The page doesn’t say what happened after launch.",
     },
   },
   research:

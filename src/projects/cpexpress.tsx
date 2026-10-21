@@ -14,6 +14,16 @@ const data: SimpleCaseStudyData = {
   },
   about:
     "CpExpress: CpE Confessions is a moderated anonymous confession platform developed and launched during Valentine’s Day 2024. This digital initiative was built to create a safe, expressive space where students could share their thoughts, feelings, and hidden confessions without fear of judgment. It was more than just a seasonal platform; it served as a moment of connection, laughter, and emotional relief during one of the most socially charged times of the year.",
+  businessCase: {
+    headline:
+      "CpExpress turned a Valentine’s Day moment into 94 confessions and an audience for the next initiative.",
+    conversion:
+      "A minimalist submission form kept the barrier low, and launching it as a Valentine’s Day campaign tapped into students’ curiosity.",
+    efficiency:
+      "Every submission went through a moderation layer, so the space stayed safe while posting stayed quick.",
+    roi: "The 94 confessions validated the idea and built interest ahead of CpExpress: Speak Now, so the next launch started with an audience.",
+    evidence: "The 94 confessions are the only figure recorded.",
+  },
   facts: [
     { label: "Type", value: "Moderated anonymous confession platform" },
     { label: "Launched", value: "Valentine’s Day 2024" },
@@ -50,6 +60,36 @@ const data: SimpleCaseStudyData = {
     test: {
       status: "Done",
       text: "Launched on Valentine’s Day and iterated in real time. No usability scores are shown.",
+    },
+  },
+  sdlc: {
+    planning: {
+      status: "Done",
+      text: "Timed for Valentine’s Day 2024, after seeing that many students longed for an outlet for unspoken thoughts.",
+    },
+    requirements: {
+      status: "Done",
+      text: "A space for anonymous confessions that felt safe, moderated, and inviting, so anonymity could thrive without inviting toxicity.",
+    },
+    design: {
+      status: "Done",
+      text: "A minimalist submission system with a moderation layer, designed in Figma.",
+    },
+    development: {
+      status: "Done",
+      text: "A simple, themed site with a user-friendly form and backend moderation.",
+    },
+    testing: {
+      status: "Done",
+      text: "The Valentine’s Day launch showed how people used it and how moderation flowed, and we iterated in real time.",
+    },
+    deployment: {
+      status: "Done",
+      text: "Launched on Valentine’s Day 2024, where it collected 94 confessions.",
+    },
+    maintenance: {
+      status: "Planned",
+      text: "The momentum carries into the next initiative, CpExpress: Speak Now.",
     },
   },
   research:

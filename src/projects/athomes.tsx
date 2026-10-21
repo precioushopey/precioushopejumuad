@@ -13,6 +13,17 @@ const data: SimpleCaseStudyData = {
   },
   about:
     "AtHomes was imagined with one goal in mind and that is to make finding a home feel less like a chore and more like a conversation. It’s a real estate platform in the making, built to simplify property discovery and make it easier for home seekers to connect with real estate agents in just a few clicks. The website introduces a clean, intuitive interface where users can explore listings and directly reach out to agents without the usual friction. Although still in its prototype phase, AtHomes lays the foundation for a smarter, more human-centered property search experience.",
+  businessCase: {
+    headline:
+      "AtHomes is built to get home seekers talking to a real agent in a few clicks, instead of leaving them alone with listings.",
+    conversion:
+      "Listing cards lead with what matters, price, location, and photos, and agent profiles are part of the browsing journey, so interest can turn into a conversation quickly.",
+    efficiency:
+      "Filters built around what home seekers care about help them skip listings that don’t fit.",
+    roi: "The aim is more agent conversations from the same visitors, which the next phase will need to measure.",
+    evidence:
+      "A Figma prototype; it hasn’t been built or tested with users yet.",
+  },
   facts: [
     { label: "Type", value: "Real estate website" },
     { label: "Status", value: "Prototype phase" },

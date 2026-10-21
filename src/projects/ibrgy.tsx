@@ -21,6 +21,7 @@ import Carousel from "../components/Carousel";
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import { ProjectLayout } from "../components/ProjectLayout";
 import {
+  BusinessCase,
   NoteWindow,
   ProcessStrip,
   ScopeAndStandards,
@@ -30,6 +31,7 @@ import {
   Window,
   cardText,
   noteText,
+  SdlcStrip,
 } from "../components/CaseStudy";
 
 const IMAGES = "/assets/images/projects/ibrgy";
@@ -84,6 +86,7 @@ const parts: Part[] = [
       { id: "scope-and-standards", label: "Scope and standards" },
       { id: "my-role", label: "My role" },
       { id: "process", label: "Design process" },
+      { id: "sdlc", label: "Development life cycle" },
     ],
   },
   {
@@ -435,6 +438,13 @@ const Ibrgy = () => (
             Software Design and Engineering.
           </p>
         </NoteWindow>
+        <BusinessCase
+          headline="iBRGY moves barangay document requests online, so residents stop queueing at the hall and coming back for missing requirements."
+          conversion="A resident picks a document, fills in one form, and gets a claiming slip, then follows the request’s status instead of waiting in line to ask."
+          efficiency="Personnel verify or deny each request and track all of them in one place, instead of a few staff serving a long queue by hand."
+          roi="In the usability test, 7 of 8 participants strongly agreed it was easy to use, and it scored 91.25 on the System Usability Scale."
+          evidence="A capstone project, tested with 8 people (5 residents and 3 personnel)."
+        />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
             {facts.map((fact) => (
@@ -572,6 +582,40 @@ const Ibrgy = () => (
               test={{
                 status: "Done",
                 text: "Four levels of testing. A usability test with 5 residents and 3 personnel scored 91.25 on the System Usability Scale.",
+              }}
+            />
+
+            <SdlcStrip
+              trail={parts[0].title}
+              collapsible
+              model="Modified Waterfall"
+              planning={{
+                status: "Done",
+                text: "Planned from March 2023 by a team of four as our Software Design and Engineering capstone.",
+              }}
+              requirements={{
+                status: "Done",
+                text: "An interview on May 2, 2023, with a barangay kagawad in Barangay Carmen, and an on-site observation of how documents are issued.",
+              }}
+              design={{
+                status: "Done",
+                text: "A context diagram, data flow diagrams for each user, use cases, activity diagrams, a database design, and a system architecture, then the screens.",
+              }}
+              development={{
+                status: "Done",
+                text: "The interface and the server in JavaScript (HTML5, React, and Tailwind CSS), with Firebase for the data, the sign-in, and the uploaded files.",
+              }}
+              testing={{
+                status: "Done",
+                text: "Unit, integration, and system testing, then user acceptance testing with 5 residents and 3 personnel, which scored 91.25 on the System Usability Scale.",
+              }}
+              deployment={{
+                status: "To add",
+                text: "The page doesn’t say whether the system was deployed for the barangay after the capstone; the code is on GitHub.",
+              }}
+              maintenance={{
+                status: "Planned",
+                text: "Next: a way for residents and personnel to communicate, features that take in residents’ feedback, and work on the usability test results.",
               }}
             />
           </div>

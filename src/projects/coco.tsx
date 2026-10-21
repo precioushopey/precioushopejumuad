@@ -23,6 +23,7 @@ import {
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import { ProjectLayout } from "../components/ProjectLayout";
 import {
+  BusinessCase,
   ImagePlaceholder,
   NoteWindow,
   Section,
@@ -657,6 +658,13 @@ const Coco = () => (
             three roles: Administrator, Officer, and Member.
           </p>
         </NoteWindow>
+        <BusinessCase
+          headline="CoCo puts a cooperative’s members, fees, books, and compliance reports in one offline app, so small cooperatives can stop working out balances by hand."
+          conversion="It works without the internet, which existing cooperative software needs and rural cooperatives often lack, so cooperatives still on paper books can actually make the switch."
+          efficiency="Officers record contributions, fees, and postings in one place, and the app produces the CDA and BIR reports, so the books close faster."
+          roi="The savings start with the first close: no more balances worked out by hand, and members check their own records without a visit to the office."
+          evidence="A Figma prototype with usability testing still to come, so there are no measured savings yet."
+        />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
             {facts.map((fact) => (

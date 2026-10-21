@@ -23,6 +23,7 @@ import {
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import { ProjectLayout } from "../components/ProjectLayout";
 import {
+  BusinessCase,
   NoteWindow,
   Section,
   Window,
@@ -32,6 +33,7 @@ import {
   UserStories,
   UxQualities,
   noteText,
+  SdlcStrip,
 } from "../components/CaseStudy";
 
 const IMAGES = "/assets/images/projects/wecare";
@@ -69,6 +71,7 @@ const parts: Part[] = [
       { id: "scope-and-standards", label: "Scope and standards" },
       { id: "my-role", label: "My role" },
       { id: "process", label: "Design process" },
+      { id: "sdlc", label: "Development life cycle" },
     ],
   },
   {
@@ -390,6 +393,13 @@ const WeCare = () => (
             review, and delivery.
           </p>
         </NoteWindow>
+        <BusinessCase
+          headline="WeCare leads with the problem, not the product, so visitors reach a doctor’s review instead of getting lost in a catalogue."
+          conversion="A Start Free Assessment button on the home screen leads to six short questions and one clear match, so a first-time visitor is never asked to compare strains and THC levels."
+          efficiency="One recommended solution and a doctor’s review replace browsing, and plain hints on format and strength mean first-timers don’t have to learn the jargon first."
+          roi="The path runs past the first order, from product or support to follow-up, so one assessment can turn into an ongoing relationship."
+          evidence="Stakeholder reviews shaped the flow; no conversion data is shown."
+        />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
             {facts.map((fact) => (
@@ -528,6 +538,39 @@ const WeCare = () => (
               test={{
                 status: "Partly",
                 text: "A UX audit and stakeholder walkthroughs led to changes. Moderated usability tests are still to come.",
+              }}
+            />
+
+            <SdlcStrip
+              trail={parts[0].title}
+              collapsible
+              planning={{
+                status: "Done",
+                text: "A written spec for adults in Germany and Austria with four everyday problems: sleep, pain, stress and anxiety, and migraine.",
+              }}
+              requirements={{
+                status: "Done",
+                text: "The spec set the structure, a guided funnel with the doctor layer behind the assessment, and the standards: careful wording with no medical claims, nine legal and trust pages, and counsel review before launch.",
+              }}
+              design={{
+                status: "Done",
+                text: "Information architecture, German and English copy, a design system, and high-fidelity designs for phone and desktop.",
+              }}
+              development={{
+                status: "Done",
+                text: "A working React app (Vite, Tailwind, shadcn/ui) in German and English.",
+              }}
+              testing={{
+                status: "Partly",
+                text: "A UX audit and stakeholder walkthroughs led to changes. Moderated usability tests are still to come.",
+              }}
+              deployment={{
+                status: "Not yet",
+                text: "A private preview that runs locally for now.",
+              }}
+              maintenance={{
+                status: "Planned",
+                text: "Next: connect SMS verification, payment, pharmacy prices and certificates, and order emails, then build the follow-up check-in and the dashboard.",
               }}
             />
           </div>

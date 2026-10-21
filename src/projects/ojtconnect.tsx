@@ -27,6 +27,7 @@ import {
 import { ProjectLayout } from "../components/ProjectLayout";
 import { FolderGroup, FolderSection } from "../components/FolderGroup";
 import {
+  BusinessCase,
   Anchor,
   NoteWindow,
   Section,
@@ -37,6 +38,7 @@ import {
   UserStories,
   UxQualities,
   noteText,
+  SdlcStrip,
 } from "../components/CaseStudy";
 
 const IMAGES = "/assets/images/projects/ojtconnect";
@@ -88,6 +90,7 @@ const parts: Part[] = [
       { id: "scope-and-standards", label: "Scope and standards" },
       { id: "my-role", label: "My role" },
       { id: "process", label: "Design process" },
+      { id: "sdlc", label: "Development life cycle" },
     ],
   },
   {
@@ -852,6 +855,13 @@ const OjtConnect = () => (
             Higher Education Institution, and Government Regulator.
           </p>
         </NoteWindow>
+        <BusinessCase
+          headline="I was first brought in to fix the landing page’s bounce rate: visitors left as soon as they arrived. My answer was to let them start searching right away and to ask for an account only when they apply."
+          conversion="The filter box sits in the hero, so a visitor’s first move is a search, not a sign-up form. Job posts can be browsed without an account; registration comes only when a student chooses to apply, the moment they have a reason to finish it."
+          efficiency="Host companies filter the applicant pool and compare candidates side by side instead of sorting applications by hand, and institutions bulk upload students by CSV instead of registering them one by one."
+          roi="Every visitor who stays to search is a step toward the paid plans: the free student and institution plans lead to the paid Starter, Plus, and Pro plans, and host companies start on a freemium model."
+          evidence="No before-and-after bounce rate is shown here; the live site’s own numbers are under “On the live site” below."
+        />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
             {facts.map((fact) => (
@@ -1062,6 +1072,39 @@ const OjtConnect = () => (
               test={{
                 status: "Done",
                 text: "Automated tests with Jest, end-to-end browser tests with Puppeteer, and AI-assisted browser testing with Claude in Chrome, alongside quality-assurance checks across portals and on real screen sizes.",
+              }}
+            />
+
+            <SdlcStrip
+              trail={parts[0].title}
+              collapsible
+              planning={{
+                status: "Done",
+                text: "Meetings and surveys with our partners at CHED, DOST, and DICT, and with institutions, host companies, and interns, set what each group needs and the scope: four portals and a public website.",
+              }}
+              requirements={{
+                status: "Done",
+                text: "A Business Requirements Document and a Technical Requirements Document, then the functional requirements (FRD v2.0) and the Government Portal metrics framework.",
+              }}
+              design={{
+                status: "Done",
+                text: "A low-fidelity prototype, then high-fidelity designs in Figma on a shared design system, with developer handoff and documentation.",
+              }}
+              development={{
+                status: "Done",
+                text: "I built the portals myself in React, TypeScript, and Tailwind CSS, with an AI-assisted design-to-code workflow in Figma Make, VS Code, GitHub, and Claude Code.",
+              }}
+              testing={{
+                status: "Done",
+                text: "Automated tests with Jest, end-to-end browser tests with Puppeteer, and AI-assisted browser testing with Claude in Chrome, plus quality-assurance checks across portals and on real screen sizes.",
+              }}
+              deployment={{
+                status: "Done",
+                text: "Live at ojtconnect.com, which showed 502+ universities and 2,226+ interns on October 2, 2026.",
+              }}
+              maintenance={{
+                status: "Ongoing",
+                text: "Next: contracts, training plans, exit interviews, and grievance flows, a new release of analytics, usability studies on the live portals, and an accessibility check.",
               }}
             />
           </div>
@@ -1343,8 +1386,8 @@ const OjtConnect = () => (
               <NoteWindow title="Design notes">
                 <p className={noteText}>
                   The whole set of high-fidelity designs of the trainee, host,
-                  and institution portals in Figma, built on the design
-                  system’s text and color styles.
+                  and institution portals in Figma, built on the design system’s
+                  text and color styles.
                 </p>
               </NoteWindow>
               {designFiles.map((frame) => (
