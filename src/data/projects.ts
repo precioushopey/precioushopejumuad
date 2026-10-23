@@ -58,7 +58,7 @@ export const projects: Project[] = [
   {
     title: "SanoVida",
     description:
-      "SanoVida is a mobile companion app for a 21-day health, fitness, and routine program, guiding Spanish-speaking women in Mexico from quiz and checkout through daily habits, tracking, and AI coaching. I designed the journey, wrote the UX copy, and built an interactive prototype for the Google UX Design Certificate.",
+      "SanoVida is a mobile companion app for a 21-day health, fitness, and routine program, guiding Spanish-speaking women in Mexico from quiz and checkout through daily habits, tracking, and AI coaching. I designed the journey, wrote the UX copy, and built an interactive prototype for a freelance client; the product is now built and live.",
     image: "/assets/images/projects/sanovida/cover.png",
     tags: ["Figma", "UX/UI Design", "UX Writing", "Prototyping"],
     url: "/projects/sanovida",

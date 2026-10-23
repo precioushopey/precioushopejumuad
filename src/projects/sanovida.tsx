@@ -36,10 +36,10 @@ const IMAGES = "/assets/images/projects/sanovida";
 const facts = [
   { label: "Role", value: "UX Designer and Front-End Prototyper" },
   { label: "Duration", value: "August 2026 to September 2026" },
-  { label: "Context", value: "Google UX Design Certificate" },
+  { label: "Context", value: "Freelance client project" },
   { label: "Audience", value: "Spanish-speaking women in Mexico" },
   { label: "Languages", value: "Spanish and English" },
-  { label: "Status", value: "Interactive prototype, no user data yet" },
+  { label: "Status", value: "Built custom and live; no results shared here" },
 ];
 
 type Topic = { id: string; label: string };
@@ -414,7 +414,8 @@ const SanoVida = () => (
             SanoVida is a mobile companion app for a 21-day health, fitness, and
             routine program. It guides Spanish-speaking women in Mexico from
             quiz and checkout through daily habits, tracking, and AI coaching. I
-            made it as a project for the Google UX Design Certificate.
+            designed it for a freelance client: first for Shopify, then for the
+            custom build that is now live.
           </p>
         </NoteWindow>
         <BusinessCase
@@ -422,7 +423,7 @@ const SanoVida = () => (
           conversion="A quiz of five to seven questions takes about a minute and ends on a “This is your plan” reveal before checkout, so she sees her plan before she pays for it."
           efficiency="Onboarding asks only the questions the quiz and checkout have not, so nobody answers the same thing twice."
           roi="Daily habits, visible progress, and an AI coach keep her going through the 21 days, and the journey is designed to end in a repurchase."
-          evidence="A Google UX Design Certificate project: an interactive prototype with no user or sales data yet."
+          evidence="A freelance client project, now built and live. No user or sales figures are shown here."
         />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
@@ -1049,8 +1050,8 @@ const SanoVida = () => (
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>
                   <p className={noteText}>
-                    There is no user data yet; this is a prototype. The result
-                    is a clickable end-to-end journey plus a specification (50
+                    No user or sales figures are shown here. My result was a
+                    clickable end-to-end journey plus a specification (50
                     requirements, 27 user stories, 19 business rules) that gives
                     stakeholders and developers one shared reference.
                   </p>
