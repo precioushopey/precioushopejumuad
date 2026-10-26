@@ -42,7 +42,7 @@ export const jobs: Job[] = [
     title: "Product Designer, Design Engineering",
     company: "Freelance",
     employmentType: "Freelance",
-    date: "August 2026 - Present",
+    date: "March 2024 - Present",
     location: "Worldwide • Remote",
     responsibilities: [
       "Delivered four client projects from brief to deployment, as measured by four products now live and publicly accessible, by designing in Figma Make and building with Claude Code.",

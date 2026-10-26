@@ -5,7 +5,7 @@ import { projects } from "./projects";
 export const workHighlights = [
   {
     title: "Product Designer, Design Engineering",
-    detail: "Freelance · Aug 2026 to present",
+    detail: "Freelance · Mar 2024 to present",
     logo: "/apple-touch-icon.png",
     tile: "",
   },
