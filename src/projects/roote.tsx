@@ -33,6 +33,7 @@ import {
   UxQualities,
   noteText,
   SdlcStrip,
+  LighthouseReport,
 } from "../components/CaseStudy";
 
 const IMAGES = "/assets/images/projects/roote";
@@ -99,6 +100,7 @@ const parts: Part[] = [
       { id: "report-plan-app", label: "Report, plan and app" },
       { id: "packaging-design", label: "Packaging design" },
       { id: "accessibility", label: "Accessibility" },
+      { id: "lighthouse", label: "Lighthouse report" },
     ],
   },
   {
@@ -1143,6 +1145,25 @@ const Roote = () => (
                 ))}
               </div>
             </Section>
+
+            <LighthouseReport
+              collapsible
+              trail={parts[2].title}
+              url="https://roote.us/"
+              date="October 28, 2026"
+              scores={{ performance: 92, accessibility: 96, bestPractices: 100, seo: 100 }}
+              metrics={[
+                { label: "First Contentful Paint", value: "0.5 s" },
+                { label: "Largest Contentful Paint", value: "1.6 s" },
+                { label: "Total Blocking Time", value: "50 ms" },
+                { label: "Cumulative Layout Shift", value: "0" },
+                { label: "Speed Index", value: "1.7 s" },
+              ]}
+              findings={[
+                "Colour contrast: 8 elements do not have a sufficient contrast ratio, and one element’s accessible name does not match its visible label.",
+                "Performance: about 50 KiB of unused JavaScript, and the page blocks back/forward cache restoration.",
+              ]}
+            />
           </div>
         </FolderSection>
         <FolderSection

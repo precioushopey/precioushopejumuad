@@ -34,6 +34,7 @@ import {
   UxQualities,
   noteText,
   SdlcStrip,
+  LighthouseReport,
 } from "../components/CaseStudy";
 
 const IMAGES = "/assets/images/projects/wecare";
@@ -101,6 +102,7 @@ const parts: Part[] = [
       { id: "wording-and-trust", label: "Wording and trust" },
       { id: "follow-up", label: "Dashboard and follow-up" },
       { id: "accessibility", label: "Accessibility" },
+      { id: "lighthouse", label: "Lighthouse report" },
     ],
   },
   {
@@ -1197,6 +1199,25 @@ const WeCare = () => (
                 ))}
               </div>
             </Section>
+
+            <LighthouseReport
+              collapsible
+              trail={parts[2].title}
+              url="https://www.wecare360.de/"
+              date="October 28, 2026"
+              scores={{ performance: 94, accessibility: 100, bestPractices: 100, seo: 100 }}
+              metrics={[
+                { label: "First Contentful Paint", value: "0.4 s" },
+                { label: "Largest Contentful Paint", value: "0.8 s" },
+                { label: "Total Blocking Time", value: "200 ms" },
+                { label: "Cumulative Layout Shift", value: "0" },
+                { label: "Speed Index", value: "0.9 s" },
+              ]}
+              findings={[
+                "Accessibility: the run found no failed checks.",
+                "Performance: about 84 KiB of unused JavaScript and 2.4 s of main-thread work.",
+              ]}
+            />
           </div>
         </FolderSection>
         <FolderSection

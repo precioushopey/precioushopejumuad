@@ -27,6 +27,7 @@ import {
   cardText,
   noteText,
   SdlcStrip,
+  LighthouseReport,
 } from "../components/CaseStudy";
 
 const IMAGES = "/assets/images/projects/roostercat";
@@ -87,6 +88,7 @@ const parts: Part[] = [
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
       { id: "accessibility", label: "Accessibility" },
+      { id: "lighthouse", label: "Lighthouse report" },
     ],
   },
   {
@@ -853,6 +855,25 @@ const Roostercat = () => (
                 ))}
               </div>
             </Section>
+
+            <LighthouseReport
+              collapsible
+              trail={parts[2].title}
+              url="https://roostercat.games/"
+              date="October 28, 2026"
+              scores={{ performance: 79, accessibility: 93, bestPractices: 100, seo: 100 }}
+              metrics={[
+                { label: "First Contentful Paint", value: "1.1 s" },
+                { label: "Largest Contentful Paint", value: "2.9 s" },
+                { label: "Total Blocking Time", value: "0 ms" },
+                { label: "Cumulative Layout Shift", value: "0.001" },
+                { label: "Speed Index", value: "1.6 s" },
+              ]}
+              findings={[
+                "Colour contrast: 23 elements do not have a sufficient contrast ratio, and the page has no main landmark.",
+                "Performance: a total page weight of 3,347 KiB, images without explicit width and height, and 3 KiB of unminified JavaScript.",
+              ]}
+            />
           </div>
         </FolderSection>
         <FolderSection

@@ -39,6 +39,7 @@ import {
   UxQualities,
   noteText,
   SdlcStrip,
+  LighthouseReport,
 } from "../components/CaseStudy";
 
 const IMAGES = "/assets/images/projects/ojtconnect";
@@ -115,6 +116,7 @@ const parts: Part[] = [
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
       { id: "accessibility", label: "Accessibility" },
+      { id: "lighthouse", label: "Lighthouse report" },
     ],
   },
   {
@@ -1430,6 +1432,25 @@ const OjtConnect = () => (
                 ))}
               </div>
             </Section>
+
+            <LighthouseReport
+              collapsible
+              trail={parts[2].title}
+              url="https://ojtconnect.com/"
+              date="October 28, 2026"
+              scores={{ performance: 91, accessibility: 95, bestPractices: 100, seo: 100 }}
+              metrics={[
+                { label: "First Contentful Paint", value: "0.6 s" },
+                { label: "Largest Contentful Paint", value: "1.3 s" },
+                { label: "Total Blocking Time", value: "160 ms" },
+                { label: "Cumulative Layout Shift", value: "0.028" },
+                { label: "Speed Index", value: "1.7 s" },
+              ]}
+              findings={[
+                "Colour contrast: 46 elements do not have a sufficient contrast ratio, and the page has no main landmark.",
+                "Performance: about 216 KiB of unused JavaScript, a total page weight of 3,084 KiB, and 2.6 s of main-thread work.",
+              ]}
+            />
           </div>
         </FolderSection>
         <FolderSection

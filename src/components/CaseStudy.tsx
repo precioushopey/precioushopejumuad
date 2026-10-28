@@ -5,6 +5,7 @@ import {
   LuCircleCheck,
   LuCodeXml,
   LuFolderOpen,
+  LuGauge,
   LuImagePlus,
   LuListChecks,
   LuRoute,
@@ -428,6 +429,82 @@ export const UxQualities = ({
     </Section>
   );
 };
+
+type LighthouseData = {
+  url: string;
+  date: string;
+  scores: {
+    performance: number;
+    accessibility: number;
+    bestPractices: number;
+    seo: number;
+  };
+  metrics: { label: string; value: string }[];
+  findings: string[];
+};
+
+const scoreMeta = [
+  { key: "performance", title: "Performance" },
+  { key: "accessibility", title: "Accessibility" },
+  { key: "bestPractices", title: "Best practices" },
+  { key: "seo", title: "SEO" },
+] as const;
+
+// A measured Lighthouse run of the live site: the four scores, the load metrics, and what the run
+// flagged. Pass only numbers copied from the report, and list findings that are still open.
+export const LighthouseReport = ({
+  trail,
+  collapsible,
+  url,
+  date,
+  scores,
+  metrics,
+  findings,
+}: LighthouseData & { trail?: string; collapsible?: boolean }) => (
+  <Section
+    id="lighthouse"
+    title="Lighthouse Report"
+    trail={trail}
+    collapsible={collapsible}
+  >
+    <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+      {scoreMeta.map((item) => (
+        <Window key={item.key} icon={<LuGauge size={16} />} title={item.title} level={4}>
+          <p className="p-6 text-center text-3xl font-semibold text-accent">
+            {scores[item.key]}
+          </p>
+        </Window>
+      ))}
+    </div>
+    <Window
+      icon={<LuGauge size={16} />}
+      title="Load metrics"
+      level={4}
+      footer={`Lighthouse 13.5.0, desktop, run on ${date} against ${url}.`}
+    >
+      <dl className="divide-y divide-line/40 text-sm">
+        {metrics.map((metric) => (
+          <div
+            key={metric.label}
+            className="grid grid-cols-1 gap-1 px-6 py-3 sm:grid-cols-[12rem_1fr] sm:gap-3"
+          >
+            <dt className="font-medium">{metric.label}</dt>
+            <dd className="text-cream/70">{metric.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </Window>
+    <NoteWindow title="What the report flagged" level={4}>
+      <ul className="space-y-3">
+        {findings.map((item) => (
+          <li key={item} className={noteText}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </NoteWindow>
+  </Section>
+);
 
 const businessMeta = [
   { key: "conversion", title: "Conversion" },
