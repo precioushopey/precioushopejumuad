@@ -92,6 +92,24 @@ export const projects: Project[] = [
     category: "frontend",
   },
   {
+    title: "Clawholics",
+    description:
+      "Clawholics is a booking and management web app for a nail salon: clients book and pay a downpayment online, earn loyalty stamps by QR scan, and track visits in a client app, while staff run bookings, sales, and the site's content from an admin area. I designed the experience and built the front end as a UX designer and front-end developer.",
+    image: "/assets/images/projects/clawholics/home.webp",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "UX/UI Design"],
+    url: "/projects/clawholics",
+    category: "frontend",
+  },
+  {
+    title: "Coop Feud",
+    description:
+      "Coop Feud is an offline survey-game system for a live event: one host runs the controls while the audience watches a read-only board on a second screen, with a bracket tournament, a name wheel, a Fast Money round, timers, and sound cues. I designed the experience and built the front end as a UX designer and front-end developer; it was used at the Coop Month event on October 23, 2026.",
+    image: "/assets/images/projects/coopfeud/board-welcome.webp",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Tauri", "UX/UI Design"],
+    url: "/projects/coopfeud",
+    category: "frontend",
+  },
+  {
     title: "SUBAY",
     description:
       "SUBAY is a multi-camera detection system for customer tracking using YOLOv10, DeepSORT, and OSNet for re-identification in retail environments. This research won Best Thesis and Best Prototype at CpE Research Colloquium!",
@@ -116,7 +134,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/ibrgy/ibrgy1.png",
     tags: ["React", "JavaScript", "TailwindCSS", "Figma"],
     url: "/projects/ibrgy",
-    category: "frontend",
+    category: "design",
   },
   {
     title: "TaleMakers",

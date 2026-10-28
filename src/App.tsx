@@ -17,6 +17,8 @@ const SanoVida = lazy(() => import("./projects/sanovida"));
 const Coco = lazy(() => import("./projects/coco"));
 const Relive = lazy(() => import("./projects/relive"));
 const Roostercat = lazy(() => import("./projects/roostercat"));
+const Clawholics = lazy(() => import("./projects/clawholics"));
+const CoopFeud = lazy(() => import("./projects/coopfeud"));
 const Ibrgy = lazy(() => import("./projects/ibrgy"));
 const TaleMakers = lazy(() => import("./projects/talemakers"));
 const AtHomes = lazy(() => import("./projects/athomes"));
@@ -71,6 +73,8 @@ function App() {
             <Route path="/projects/coco" element={<Coco />} />
             <Route path="/projects/relive" element={<Relive />} />
             <Route path="/projects/roostercat" element={<Roostercat />} />
+            <Route path="/projects/clawholics" element={<Clawholics />} />
+            <Route path="/projects/coopfeud" element={<CoopFeud />} />
             <Route path="/projects/payroll" element={<Payroll />} />
             <Route path="/projects/ibrgy" element={<Ibrgy />} />
             <Route path="/projects/talemakers" element={<TaleMakers />} />
