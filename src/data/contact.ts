@@ -44,7 +44,7 @@ export const contactItems: ContactItem[] = [
   },
   {
     label: "Resume",
-    href: "https://docs.google.com/document/d/1zl6_bG0WykXz8j1jHngdFQK-kYEAgqRSFzTJx6s1EPo/edit?usp=sharing",
+    href: "https://docs.google.com/document/d/1zl6_bG0WykXz8j1jHngdFQK-kYEAgqRSFzTJx6s1EPo/preview",
     display: "View my resume",
     Icon: LuFileText,
   },
