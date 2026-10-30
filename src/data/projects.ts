@@ -6,20 +6,14 @@ export type Project = {
   featuredImage?: string;
   /** Where the Featured Projects card on Home goes instead of the project page (the live site). */
   featuredLink?: string;
+  /** One line for the Projects card: what it is, who it is for, and the kind of product. */
+  summary?: string;
   tags: string[];
   url: string;
   category: "frontend" | "design" | "socials" | "multimedia";
   /** The page is only a "Coming Soon" placeholder, so it stays out of search results and the sitemap. */
   comingSoon?: boolean;
 };
-
-export const categories = [
-  "all",
-  "frontend",
-  "design",
-  "socials",
-  "multimedia",
-] as const;
 
 export const projects: Project[] = [
   {
@@ -29,6 +23,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/ojtconnect/cover.png",
     featuredImage: "/assets/images/projects/ojtconnect/thumbnail.png",
     featuredLink: "https://ojtconnect.com/",
+    summary: "Training platform linking Filipino students, companies and schools",
     tags: ["Figma", "React", "Claude Code", "SEO"],
     url: "/projects/ojtconnect",
     category: "frontend",
@@ -40,6 +35,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/roote/cover.png",
     featuredImage: "/assets/images/projects/roote/thumbnail.png",
     featuredLink: "https://roote.us/",
+    summary: "Hair loss diagnosis and treatment app for patients",
     tags: ["Figma", "React", "Claude Code", "UX/UI Design"],
     url: "/projects/roote",
     category: "frontend",
@@ -51,6 +47,7 @@ export const projects: Project[] = [
     image: "/assets/images/projects/wecare/cover.png",
     featuredImage: "/assets/images/projects/wecare/thumbnail.png",
     featuredLink: "https://www.wecare360.de/",
+    summary: "Health platform for adults in Germany and Austria",
     tags: ["Figma", "React", "Claude Code", "UX/UI Design"],
     url: "/projects/wecare",
     category: "frontend",
@@ -60,6 +57,7 @@ export const projects: Project[] = [
     description:
       "SanoVida is a mobile companion app for a 21-day health, fitness, and routine program, guiding Spanish-speaking women in Mexico from quiz and checkout through daily habits, tracking, and AI coaching. I designed the journey, wrote the UX copy, and built an interactive prototype for a freelance client; the product is now built and live.",
     image: "/assets/images/projects/sanovida/cover.png",
+    summary: "Mobile health and routine app for women in Mexico",
     tags: ["Figma", "UX/UI Design", "UX Writing", "Prototyping"],
     url: "/projects/sanovida",
     category: "design",
@@ -69,6 +67,7 @@ export const projects: Project[] = [
     description:
       "CoCo: Coop Companion is a mobile-first, offline-capable app for Philippine cooperatives that brings membership, share capital, fee collection, accounting, and CDA and BIR compliance reports into one place, with a separate interface for administrators, officers, and members. I designed the requirements, flows, design system, and screens as a UX/UI designer.",
     image: "/assets/images/projects/coco/cover.png",
+    summary: "Offline mobile app for Philippine cooperatives",
     tags: ["Figma", "UX/UI Design", "Design System", "Prototyping"],
     url: "/projects/coco",
     category: "design",
@@ -78,6 +77,7 @@ export const projects: Project[] = [
     description:
       "Relive X360 is a platform for clinics, with a branded patient app that takes someone from a free longevity score to a medical intake, a plan, payment, and a home screen with an AI coach. I designed the patient app (53 mobile screens) and the design system behind it as a UX/UI designer on the TLH Team.",
     image: "/assets/images/projects/relive/cover.png",
+    summary: "Patient app and design system for longevity clinics",
     tags: ["Figma", "UX/UI Design", "Design System", "Mobile App"],
     url: "/projects/relive",
     category: "design",
@@ -87,6 +87,7 @@ export const projects: Project[] = [
     description:
       "A responsive website for Roostercat LLC, an independent game studio: ten pages that present three mobile games in development and the studio's client services to players and prospective clients. I led the design and hand-coded it in HTML, CSS, and JavaScript as the lead designer and front-end developer.",
     image: "/assets/images/projects/roostercat/cover.jpg",
+    summary: "Website for an independent mobile game studio",
     tags: ["HTML", "CSS", "JavaScript", "UX/UI Design"],
     url: "/projects/roostercat",
     category: "frontend",
@@ -96,6 +97,7 @@ export const projects: Project[] = [
     description:
       "Clawholics is a booking and management web app for a nail salon: clients book and pay a downpayment online, earn loyalty stamps by QR scan, and track visits in a client app, while staff run bookings, sales, and the site's content from an admin area. I designed the experience and built the front end as a UX designer and front-end developer.",
     image: "/assets/images/projects/clawholics/home.webp",
+    summary: "Booking and loyalty web app for a nail salon",
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "UX/UI Design"],
     url: "/projects/clawholics",
     category: "frontend",
@@ -105,6 +107,7 @@ export const projects: Project[] = [
     description:
       "Coop Feud is an offline survey-game system for a live event: one host runs the controls while the audience watches a read-only board on a second screen, with a bracket tournament, a name wheel, a Fast Money round, timers, and sound cues. I designed the experience and built the front end as a UX designer and front-end developer; it was used at the Coop Month event on October 23, 2026.",
     image: "/assets/images/projects/coopfeud/board-welcome.webp",
+    summary: "Offline survey game system for a live event",
     tags: ["React", "TypeScript", "Tailwind CSS", "Tauri", "UX/UI Design"],
     url: "/projects/coopfeud",
     category: "frontend",
@@ -114,6 +117,7 @@ export const projects: Project[] = [
     description:
       "SUBAY is a multi-camera detection system for customer tracking using YOLOv10, DeepSORT, and OSNet for re-identification in retail environments. This research won Best Thesis and Best Prototype at CpE Research Colloquium!",
     image: "/assets/images/projects/subay/subay1.png",
+    summary: "Camera system that tracks customers in retail stores",
     tags: ["Next.js", "TypeScript", "TailwindCSS"],
     url: "/projects/subay",
     category: "frontend",
@@ -123,6 +127,7 @@ export const projects: Project[] = [
     description:
       "An automated payroll management system for LGU Jasaan’s HRMO, designed to streamline payroll processing by integrating directly with biometric data, reducing manual workload.",
     image: "/assets/images/projects/payroll/payroll1.png",
+    summary: "Payroll system for a local government HR office",
     tags: ["Next.js", "TypeScript", "TailwindCSS", "Figma", "Canva"],
     url: "/projects/payroll",
     category: "frontend",
@@ -132,6 +137,7 @@ export const projects: Project[] = [
     description:
       "iBRGY is a web-based request management system for barangays: residents request documents such as a cedula or a barangay clearance online and follow them, and personnel verify every request from one dashboard. It scored 91.25 (A+) on the System Usability Scale with 8 testers. I worked on it in a team of four for our Software Design and Engineering capstone.",
     image: "/assets/images/projects/ibrgy/ibrgy1.png",
+    summary: "Document request system for barangay residents",
     tags: ["React", "JavaScript", "TailwindCSS", "Figma"],
     url: "/projects/ibrgy",
     category: "design",
@@ -141,6 +147,7 @@ export const projects: Project[] = [
     description:
       "TaleMakers is a mobile app concept that lets children write, decorate, and share their own animated storybooks with characters, scenes, and music. I designed it for Roostercat as a UX/UI designer: grey wireframes, blue mid-fidelity screens, a brand book, and high-fidelity screens in Figma.",
     image: "/assets/images/projects/talemakers/talemakers1.png",
+    summary: "Storybook app concept for children",
     tags: ["Figma", "Canva", "Illustrator", "Aseprite"],
     url: "/projects/talemakers",
     category: "design",
@@ -150,6 +157,7 @@ export const projects: Project[] = [
     description:
       "ATHOMES is a real estate website designed to streamline property browsing and client-agent interaction, allowing users to explore property listings and connect directly with real estate agents simplifying the property search and inquiry process.",
     image: "/assets/images/projects/athomes/athomes1.png",
+    summary: "Real estate website for property search and inquiries",
     tags: ["Figma", "Canva", "Photoshop"],
     url: "/projects/athomes",
     category: "design",
@@ -159,6 +167,7 @@ export const projects: Project[] = [
     description:
       "A website redesign project for ICpEP.SE – USTP, USTP's Computer Engineering student organization. The project aimed to enhance the platform’s visual appeal and functionality while effectively showcasing the organization's activities, events, and initiatives.",
     image: "/assets/images/projects/icpep/icpep1.jpg",
+    summary: "Website redesign for a student organization",
     tags: ["Figma", "Canva", "Photoshop"],
     url: "/projects/icpep",
     category: "design",
@@ -168,6 +177,7 @@ export const projects: Project[] = [
     description:
       "A moderated anonymous confession platform launched during Valentines Day 2024. This project was designed to provide students with a safe space to share their confessions.",
     image: "/assets/images/projects/cpexpress/cpexpress1.png",
+    summary: "Anonymous confession platform for students",
     tags: ["Figma", "Canva", "Photoshop"],
     url: "/projects/cpexpress",
     category: "design",
@@ -283,4 +293,14 @@ export const projects: Project[] = [
     category: "multimedia",
   },
   // optional: cpexpo micro display, and cpexpress with sir mark
+];
+
+const categoryOrder = ["frontend", "design", "socials", "multimedia"] as const;
+
+// Pills only for categories with a finished project, so none opens an empty grid.
+export const categories: readonly ("all" | Project["category"])[] = [
+  "all",
+  ...categoryOrder.filter((category) =>
+    projects.some((p) => p.category === category && !p.comingSoon),
+  ),
 ];

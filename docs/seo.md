@@ -28,7 +28,7 @@ What was done for each point of the "20 things to show up in Google" list, and w
 
 - **Unique page titles, social share images, favicon:** every page has its own title and share image (see above). The favicon set is made from the logo with `npm run icons`.
 - **Privacy policy:** `/privacy`, linked under the contact form. The site sets no cookies and the analytics are cookie-free, so there is no cookie banner. If cookies or tracking tools are added later, add a consent banner then.
-- **Placeholder pages:** 11 projects are only "Coming Soon". They are marked `comingSoon: true` in `src/data/projects.ts`, so they are `noindex` and not in the sitemap.
+- **Placeholder pages:** 11 projects are only "Coming Soon". They are marked `comingSoon: true` in `src/data/projects.ts`, so they are `noindex`, not in the sitemap and not on the Projects grid.
 - **Not applicable to this site:** fake reviews, metrics and customer counters (none exist; the Projects and Experiences numbers are real counts), a made-with-AI tag (none), purple gradients (none), em dashes (none), a customer support page and terms and conditions (this is a personal portfolio with no customers or sales; the contact form covers enquiries).
 - **Custom domain:** needs a domain you buy; see the notes at the end of this file.
 

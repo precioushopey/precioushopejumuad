@@ -18,7 +18,14 @@ const ProjectsPage = () => {
         to: project.url,
         image: project.image,
         title: project.title,
-        subtitle: project.details,
+        subtitle: (
+          <>
+            <span className="line-clamp-2 block text-cream/80">
+              {project.summary}
+            </span>
+            <span className="line-clamp-1 block">{project.details}</span>
+          </>
+        ),
       }))}
     />
   );

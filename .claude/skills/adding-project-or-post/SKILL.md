@@ -22,7 +22,7 @@ Adding one touches three places. Miss one and the page is unreachable, unlisted 
 
 ## Coming Soon projects
 
-Set `comingSoon: true` in `src/data/projects.ts`. It keeps the page `noindex` and out of the sitemap. It also lists the project after finished ones in the Projects grid with "Coming soon" as the details line, and leaves it out of the "More projects" column, the top-bar search and Home's Projects count. `ProjectLayout` hides the contact form on these pages. Remove the flag when the page gets real content.
+Set `comingSoon: true` in `src/data/projects.ts`. It keeps the page `noindex` and out of the sitemap. It also leaves the project out of the Projects grid, the "More projects" column, the top-bar search and Home's Projects count (the page still opens by its address). A category pill shows only when it has a finished project. Finished projects need a one-line `summary:` (what it is, who it is for, the kind of product), shown on their Projects card. `ProjectLayout` hides the contact form on these pages. Remove the flag when the page gets real content.
 
 ## Contact form on project pages
 
