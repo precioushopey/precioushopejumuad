@@ -36,8 +36,9 @@ const ProfileCardBase = () => {
         <span className="whitespace-nowrap">Product Designer</span>
       </p>
       <p className="mt-3 hyphens-auto text-justify text-pretty text-sm leading-6 text-cream/80 [text-align-last:center]">
-        I’m passionate about designing and building great products that make
-        people’s lives easier. I’ve spent over{" "}
+        I design and build web products from research and Figma to working code,
+        like OJT Connect’s four portals for trainees, host companies, schools,
+        and the government. I’ve spent over{" "}
         <strong className="font-semibold text-cream">{experience}</strong>{" "}
         creating digital experiences for SaaS startups to local government
         units. A Computer Engineering graduate who loves art and design in
