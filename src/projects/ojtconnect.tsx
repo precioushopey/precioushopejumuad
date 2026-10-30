@@ -46,6 +46,16 @@ const IMAGES = "/assets/images/projects/ojtconnect";
 
 const facts = [
   { label: "Role", value: "Product Designer and Frontend Developer" },
+  {
+    label: "My part",
+    value:
+      "Designed and built the four portals, the public website, and the shared design system",
+  },
+  {
+    label: "With the team",
+    value:
+      "Backend developers handled the backend; stakeholders wrote the functional requirements",
+  },
   { label: "Duration", value: "February 2026 to present (ongoing)" },
   {
     label: "Portals",
@@ -862,7 +872,7 @@ const OjtConnect = () => (
           conversion="The filter box sits in the hero, so a visitor’s first move is a search, not a sign-up form. Job posts can be browsed without an account; registration comes only when a student chooses to apply, the moment they have a reason to finish it."
           efficiency="Host companies filter the applicant pool and compare candidates side by side instead of sorting applications by hand, and institutions bulk upload students by CSV instead of registering them one by one."
           roi="Every visitor who stays to search is a step toward the paid plans: the free student and institution plans lead to the paid Starter, Plus, and Pro plans, and host companies start on a freemium model."
-          evidence="No before-and-after bounce rate is shown here; the live site’s own numbers are under “On the live site” below."
+          evidence="Sign-ups rose from 1k to 2k after I started working on the site. The live site’s own numbers are under “On the live site” below."
         />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
@@ -1477,7 +1487,8 @@ const OjtConnect = () => (
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>
                   <p className={noteText}>
-                    As of October 2, 2026, the live site shows 502+
+                    Sign-ups rose from 1k to 2k after I started working on the
+                    site. As of October 2, 2026, the live site shows 502+
                     universities, 2,226+ interns, and 108 internship positions
                     across 23 job categories.
                   </p>

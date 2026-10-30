@@ -41,6 +41,12 @@ const IMAGES = "/assets/images/projects/wecare";
 
 const facts = [
   { label: "Role", value: "UX Designer and Front-End Developer, TLH Team" },
+  {
+    label: "My part",
+    value:
+      "Information architecture, German and English copy, the assessment and checkout flows, the design system, and accessibility",
+  },
+  { label: "With the team", value: "Worked alongside the team’s developers" },
   { label: "Duration", value: "August 2026 to October 2026 (ongoing)" },
   { label: "Market", value: "Germany and Austria" },
   { label: "Languages", value: "German and English" },
@@ -400,7 +406,7 @@ const WeCare = () => (
           conversion="A Start Free Assessment button on the home screen leads to six short questions and one clear match, so a first-time visitor is never asked to compare strains and THC levels."
           efficiency="One recommended solution and a doctor’s review replace browsing, and plain hints on format and strength mean first-timers don’t have to learn the jargon first."
           roi="The path runs past the first order, from product or support to follow-up, so one assessment can turn into an ongoing relationship."
-          evidence="Stakeholder reviews shaped the flow; no conversion data is shown."
+          evidence="Stakeholder reviews shaped the flow. A stakeholder reviewing the live preview wrote “Thank you page looks good now! well done”, and moderated usability tests with first-time users on phones are the next step (see Next Steps)."
         />
         <Window icon={<LuInfo size={16} />} title="Properties">
           <dl className="divide-y divide-line/40 text-sm">
