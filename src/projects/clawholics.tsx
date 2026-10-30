@@ -19,6 +19,7 @@ import { ProjectLayout } from "../components/ProjectLayout";
 import {
   BusinessCase,
   ImagePlaceholder,
+  LighthouseReport,
   NoteWindow,
   ProcessStrip,
   ScopeAndStandards,
@@ -85,6 +86,7 @@ const parts: Part[] = [
       { id: "design-system", label: "Design system" },
       { id: "responsive", label: "Responsive behavior and states" },
       { id: "accessibility", label: "Accessibility" },
+      { id: "lighthouse", label: "Lighthouse report" },
     ],
   },
   {
@@ -146,7 +148,7 @@ const decisions = [
     icon: <LuPalette size={20} />,
     title: "Pastel pink is never text",
     description:
-      "The brand pink is too light to read, so pink words use darker ink tokens and text on pink fills uses a dark on-colour token. That keeps colour contrast at WCAG AA 4.5:1 across the site.",
+      "The brand pink is too light to read, so pink words use darker ink tokens and text on pink fills uses a dark on-colour token. The rule is WCAG AA 4.5:1, but the Lighthouse run on the live home page still found six elements that miss it.",
   },
   {
     icon: <LuCreditCard size={20} />,
@@ -195,19 +197,19 @@ const accessibility = [
     icon: <LuAccessibility size={20} />,
     title: "Colour contrast",
     description:
-      "Ink and on-colour tokens hold text to a 4.5:1 contrast rule, so brand pink is only ever a fill.",
+      "Ink and on-colour tokens set a 4.5:1 text contrast rule, and brand pink is meant to be only a fill. The Lighthouse run found six home-page elements at 1.9:1, cream text on pink and the pink headline on cream, so the rule is not fully met yet.",
   },
   {
     icon: <LuCircleCheck size={20} />,
     title: "Tap targets and labels",
     description:
-      "An accessibility pass gave small controls a 24px tap target, matched an aria-label to its visible text, and fixed chip contrast.",
+      "An accessibility pass gave small controls a 24px tap target, matched an aria-label to its visible text, and fixed chip contrast. Lighthouse still flagged one link whose label leaves out its visible text.",
   },
   {
     icon: <LuListChecks size={20} />,
-    title: "Not yet measured",
+    title: "Measured, with issues open",
     description:
-      "No audit report is stored with the project, so no accessibility score is claimed here.",
+      "Lighthouse scored the live home page 96 for accessibility on October 30, 2026. The six contrast failures and the one label mismatch are still open.",
   },
 ];
 
@@ -726,6 +728,26 @@ const Clawholics = () => (
                 ))}
               </div>
             </Section>
+
+            <LighthouseReport
+              collapsible
+              trail={parts[2].title}
+              url="https://www.clawholicsbymax.com/"
+              date="October 30, 2026"
+              scores={{ performance: 95, accessibility: 96, bestPractices: 100, seo: 100 }}
+              metrics={[
+                { label: "First Contentful Paint", value: "0.7 s" },
+                { label: "Largest Contentful Paint", value: "1.1 s" },
+                { label: "Total Blocking Time", value: "140 ms" },
+                { label: "Cumulative Layout Shift", value: "0.033" },
+                { label: "Speed Index", value: "1.0 s" },
+              ]}
+              findings={[
+                "Colour contrast: 6 elements have a contrast ratio of 1.9:1, cream text on the brand pink and the pink headline on cream.",
+                "Labels: the floating Facebook message link's accessible name does not include its visible text.",
+                "Performance: a total page weight of 1,887 KiB, estimated savings of 323 KiB from image delivery and 230 KiB from unused JavaScript, and the largest-paint request without fetchpriority=high.",
+              ]}
+            />
           </div>
         </FolderSection>
 
@@ -739,7 +761,7 @@ const Clawholics = () => (
               collapsible
               trail={parts[3].title}
               usable="A client books through a clear sequence of pages, and paid bookings confirm without waiting for an admin. Phone layouts, skeletons, and retry screens support it. No usability sessions have been run yet."
-              equitable="Text colours are held to a 4.5:1 contrast rule, tap targets were enlarged to 24px, and labels match their visible text. No audit report is stored, so no score is claimed."
+              equitable="Text colours follow a 4.5:1 contrast rule and tap targets were enlarged to 24px. Lighthouse scored accessibility 96 on the live home page, but flagged six low-contrast elements and one label that leaves out its visible text, so those are still open."
               enjoyable="A soft pink, cream, and sand palette with a display font gives the app the salon’s look, and the loyalty stamps give visits a reward. There is no client feedback on it yet."
               useful="Clients can book, pay, reschedule, and track visits, and the owner can edit services, prices, and content without a developer."
             />
