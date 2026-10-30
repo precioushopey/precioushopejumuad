@@ -1250,9 +1250,11 @@ const WeCare = () => (
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <NoteWindow title="Impact" level={4}>
                   <p className={noteText}>
-                    No usage data yet. A stakeholder reviewing the live preview
-                    wrote “Thank you page looks good now! well done” and called
-                    the orders list “very clean and clear”.
+                    A stakeholder reviewing the live preview wrote “Thank you
+                    page looks good now! well done” and called the orders list
+                    “very clean and clear”. Moderated usability tests with
+                    first-time users on phones are the next step, to see how
+                    the assessment and checkout work for real people.
                   </p>
                 </NoteWindow>
                 <NoteWindow title="What I learned" level={4}>
