@@ -73,6 +73,7 @@ const parts: Part[] = [
       { id: "my-role", label: "My role" },
       { id: "process", label: "Design process" },
       { id: "sdlc", label: "Development life cycle" },
+      { id: "code-architecture", label: "Code architecture" },
     ],
   },
   {
@@ -587,6 +588,39 @@ const Roote = () => (
                 text: "Next: define what each questionnaire answer recommends, add test payment mode and coupon codes, and run usability and accessibility checks.",
               }}
             />
+            <Section
+              collapsible
+              id="code-architecture"
+              title="Code Architecture"
+              trail={parts[0].title}
+            >
+              <NoteWindow title="Architecture notes">
+                <p className={noteText}>
+                  How the ROOTÉ front end is organised: the customer journey from marketing site to questionnaire, report, checkout and program app, the logic behind the report and plan, the content and locale files, and the browser state.
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuImage size={16} />}
+                title="git-diagram.webp"
+                footer="Diagram generated from the GitHub repository with GitDiagram. Select it to open the full size."
+              >
+                <a
+                  href={`${IMAGES}/git-diagram.webp`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={`${IMAGES}/git-diagram.webp`}
+                    width={1600}
+                    height={2061}
+                    loading="lazy"
+                    decoding="async"
+                    alt="A GitDiagram of the ROOTÉ code. A visitor reaches the marketing site, then the hair questionnaire, product shop, plan checkout and program app. Domain logic turns answers into a hair analysis, a personalized report and a plan recommendation. Content and locale files supply products and translations, and browser state saves session and tracking data."
+                    className="w-full"
+                  />
+                </a>
+              </Window>
+            </Section>
           </div>
         </FolderSection>
         <FolderSection

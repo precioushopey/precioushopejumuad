@@ -65,6 +65,7 @@ const parts: Part[] = [
       { id: "my-role", label: "My role" },
       { id: "process", label: "Design process" },
       { id: "sdlc", label: "Development life cycle" },
+      { id: "code-architecture", label: "Code architecture" },
     ],
   },
   {
@@ -412,6 +413,39 @@ const Clawholics = () => (
                 text: "Dependency and security upgrades continue, including a Next.js security upgrade and npm audit fixes.",
               }}
             />
+            <Section
+              collapsible
+              id="code-architecture"
+              title="Code Architecture"
+              trail={parts[0].title}
+            >
+              <NoteWindow title="Architecture notes">
+                <p className={noteText}>
+                  How the Clawholics web app is organised: public discovery for visitors, client booking with downpayments, admin operations for the salon, and the application platform behind them (API routes, catalog cache, authentication, database, image storage and email).
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuImage size={16} />}
+                title="git-diagram.webp"
+                footer="Diagram generated from the GitHub repository with GitDiagram. Select it to open the full size."
+              >
+                <a
+                  href={`${IMAGES}/git-diagram.webp`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={`${IMAGES}/git-diagram.webp`}
+                    width={2400}
+                    height={1574}
+                    loading="lazy"
+                    decoding="async"
+                    alt="A GitDiagram of the Clawholics code. Visitors browse the salon website through a public query cache. Clients book visits, pay downpayments through Xendit, use QR stamps and submit reviews. Administrators manage content and appointments. API routes sit on Clerk, Supabase Postgres, Cloudflare R2 and Resend."
+                    className="w-full"
+                  />
+                </a>
+              </Window>
+            </Section>
           </div>
         </FolderSection>
 

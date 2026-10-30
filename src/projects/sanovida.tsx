@@ -84,6 +84,7 @@ const parts: Part[] = [
       { id: "walkthrough-findings", label: "Walkthrough findings" },
       { id: "mockups", label: "Mockups" },
       { id: "high-fidelity-designs", label: "High-fidelity designs" },
+      { id: "code-architecture", label: "Code architecture" },
       { id: "progress-tracking", label: "Progress tracking" },
       { id: "accessibility", label: "Accessibility" },
     ],
@@ -908,6 +909,40 @@ const SanoVida = () => (
                   alt="A smiling woman in a green sports top holding a water bottle in front of palm trees and the sea"
                   className="w-full"
                 />
+              </Window>
+            </Section>
+
+            <Section
+              collapsible
+              id="code-architecture"
+              title="Code Architecture"
+              trail={parts[2].title}
+            >
+              <NoteWindow title="Architecture notes">
+                <p className={noteText}>
+                  How the interactive prototype is organised: the landing page and checkout, onboarding quiz and plan selection, the 21-day program screens, and the shared app core. App state is kept in memory.
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuImage size={16} />}
+                title="git-diagram.webp"
+                footer="Diagram generated from the GitHub repository with GitDiagram. Select it to open the full size."
+              >
+                <a
+                  href={`${IMAGES}/git-diagram.webp`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={`${IMAGES}/git-diagram.webp`}
+                    width={1800}
+                    height={2063}
+                    loading="lazy"
+                    decoding="async"
+                    alt="A GitDiagram of the SanoVida prototype code. A customer starts the quiz on the landing page, completes a profile and quiz, gets a recommended program, then uses the 21-day program: daily checklist, tracking, plan and workouts, product routine, progress and Sano AI coaching. All screens read and write one in-memory app state."
+                    className="w-full"
+                  />
+                </a>
               </Window>
             </Section>
 

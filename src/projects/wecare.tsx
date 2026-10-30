@@ -79,6 +79,7 @@ const parts: Part[] = [
       { id: "my-role", label: "My role" },
       { id: "process", label: "Design process" },
       { id: "sdlc", label: "Development life cycle" },
+      { id: "code-architecture", label: "Code architecture" },
     ],
   },
   {
@@ -581,6 +582,39 @@ const WeCare = () => (
                 text: "Next: connect SMS verification, payment, pharmacy prices and certificates, and order emails, then build the follow-up check-in and the dashboard.",
               }}
             />
+            <Section
+              collapsible
+              id="code-architecture"
+              title="Code Architecture"
+              trail={parts[0].title}
+            >
+              <NoteWindow title="Architecture notes">
+                <p className={noteText}>
+                  How the WeCare front end is organised: discovery pages, the assessment and its recommendation logic, solution pages, commerce with cart, checkout and orders, and the account area. Sign-in is mock authentication.
+                </p>
+              </NoteWindow>
+              <Window
+                icon={<LuImage size={16} />}
+                title="git-diagram.webp"
+                footer="Diagram generated from the GitHub repository with GitDiagram. Select it to open the full size."
+              >
+                <a
+                  href={`${IMAGES}/git-diagram.webp`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={`${IMAGES}/git-diagram.webp`}
+                    width={1600}
+                    height={2686}
+                    loading="lazy"
+                    decoding="async"
+                    alt="A GitDiagram of the WeCare code. A visitor explores marketing and condition pages, takes the assessment, opens a matched solution, adds it to the cart and checks out with phone verification, and signs in to a patient dashboard with follow-up."
+                    className="w-full"
+                  />
+                </a>
+              </Window>
+            </Section>
           </div>
         </FolderSection>
         <FolderSection
