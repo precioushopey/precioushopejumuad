@@ -226,9 +226,9 @@ const Clawholics = () => (
     <div className="space-y-15 pt-6">
       <Section id="overview" level={2} title="Project Overview" hideTitle>
         <img
-          src={`${IMAGES}/home.webp`}
-          width={1568}
-          height={700}
+          src={`${IMAGES}/clawholics.webp`}
+          width={1600}
+          height={900}
           alt="Clawholics home page on a desktop: the navigation bar with a Book now button, the headline Clawholics, a short line about gel extensions and manicures in Cagayan de Oro, and a close-up photo of painted nails"
           className="w-full"
         />

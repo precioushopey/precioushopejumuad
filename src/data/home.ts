@@ -23,25 +23,39 @@ export const workHighlights = [
   },
 ];
 
-const HOME_PROJECT_COUNT = 3;
+// The Recent Projects rows: three chosen projects with their first three tags as the detail line.
+const RECENT_PROJECTS = [
+  "/projects/ojtconnect",
+  "/projects/clawholics",
+  "/projects/wecare",
+];
 
-// The Recent Projects rows: the newest projects with their first three tags as the detail line.
-export const recentProjects = projects
-  .slice(0, HOME_PROJECT_COUNT)
-  .map(({ url, image, title, tags }) => ({
-    url,
-    image,
-    title,
-    detail: tags.slice(0, 3).join(" · "),
-  }));
+export const recentProjects = RECENT_PROJECTS.flatMap((url) => {
+  const project = projects.find((p) => p.url === url);
+  return project
+    ? [
+        {
+          url,
+          image: project.image,
+          title: project.title,
+          detail: project.tags.slice(0, 3).join(" · "),
+        },
+      ]
+    : [];
+});
 
-// The Featured Projects photo cards.
-export const featuredProjects = projects
-  .slice(0, HOME_PROJECT_COUNT)
-  .map(({ url, image, featuredImage, featuredLink, title }) => ({
-    url,
-    image: featuredImage ?? image,
-    title,
-    external: featuredLink !== undefined,
-    href: featuredLink ?? url,
-  }));
+// The Featured Projects photo cards: the same three projects as Recent Projects.
+export const featuredProjects = recentProjects.flatMap(({ url }) => {
+  const project = projects.find((p) => p.url === url);
+  return project
+    ? [
+        {
+          url,
+          image: project.featuredImage ?? project.image,
+          title: project.title,
+          external: project.featuredLink !== undefined,
+          href: project.featuredLink ?? url,
+        },
+      ]
+    : [];
+});

@@ -29,15 +29,31 @@ export const projects: Project[] = [
     category: "frontend",
   },
   {
-    title: "ROOTÉ",
+    title: "Clawholics",
     description:
-      "ROOTÉ.US is a web app for people with hair loss: a free hair diagnosis, a personal report, a treatment plan with checkout, and a daily program app, in six languages including right-to-left. I designed the journey and the product packaging (bottles, label artwork, and carton) and built the front end as a UX/UI designer and front-end developer.",
-    image: "/assets/images/projects/roote/cover.png",
-    featuredImage: "/assets/images/projects/roote/thumbnail.png",
-    featuredLink: "https://roote.us/",
-    summary: "Hair loss diagnosis and treatment app for patients",
-    tags: ["Figma", "React", "Claude Code", "UX/UI Design"],
-    url: "/projects/roote",
+      "Clawholics is a booking and management web app for a nail salon: clients book and pay a downpayment online, earn loyalty stamps by QR scan, and track visits in a client app, while staff run bookings, sales, and the site's content from an admin area. I designed the experience and built the front end as a UX designer and front-end developer.",
+    image: "/assets/images/projects/clawholics/cover.png",
+    featuredImage: "/assets/images/projects/clawholics/thumbnail.png",
+    summary: "Booking and loyalty web app for a nail salon",
+    tags: [
+      "Next.js",
+      "React",
+      "Claude Code",
+      "TypeScript",
+      "Tailwind CSS",
+      "UX/UI Design",
+    ],
+    url: "/projects/clawholics",
+    category: "frontend",
+  },
+  {
+    title: "Coop Feud",
+    description:
+      "Coop Feud is an offline survey-game system for a live event: one host runs the controls while the audience watches a read-only board on a second screen, with a bracket tournament, a name wheel, a Fast Money round, timers, and sound cues. I designed the experience and built the front end as a UX designer and front-end developer; it was used at the Coop Month event on October 23, 2026.",
+    image: "/assets/images/projects/coopfeud/board-welcome.webp",
+    summary: "Offline survey game system for a live event",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Tauri", "UX/UI Design"],
+    url: "/projects/coopfeud",
     category: "frontend",
   },
   {
@@ -50,6 +66,18 @@ export const projects: Project[] = [
     summary: "Health platform for adults in Germany and Austria",
     tags: ["Figma", "React", "Claude Code", "UX/UI Design"],
     url: "/projects/wecare",
+    category: "frontend",
+  },
+  {
+    title: "ROOTÉ",
+    description:
+      "ROOTÉ.US is a web app for people with hair loss: a free hair diagnosis, a personal report, a treatment plan with checkout, and a daily program app, in six languages including right-to-left. I designed the journey and the product packaging (bottles, label artwork, and carton) and built the front end as a UX/UI designer and front-end developer.",
+    image: "/assets/images/projects/roote/cover.png",
+    featuredImage: "/assets/images/projects/roote/thumbnail.png",
+    featuredLink: "https://roote.us/",
+    summary: "Hair loss diagnosis and treatment app for patients",
+    tags: ["Figma", "React", "Claude Code", "UX/UI Design"],
+    url: "/projects/roote",
     category: "frontend",
   },
   {
@@ -93,23 +121,13 @@ export const projects: Project[] = [
     category: "frontend",
   },
   {
-    title: "Clawholics",
+    title: "HRMO Payroll System",
     description:
-      "Clawholics is a booking and management web app for a nail salon: clients book and pay a downpayment online, earn loyalty stamps by QR scan, and track visits in a client app, while staff run bookings, sales, and the site's content from an admin area. I designed the experience and built the front end as a UX designer and front-end developer.",
-    image: "/assets/images/projects/clawholics/home.webp",
-    summary: "Booking and loyalty web app for a nail salon",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "UX/UI Design"],
-    url: "/projects/clawholics",
-    category: "frontend",
-  },
-  {
-    title: "Coop Feud",
-    description:
-      "Coop Feud is an offline survey-game system for a live event: one host runs the controls while the audience watches a read-only board on a second screen, with a bracket tournament, a name wheel, a Fast Money round, timers, and sound cues. I designed the experience and built the front end as a UX designer and front-end developer; it was used at the Coop Month event on October 23, 2026.",
-    image: "/assets/images/projects/coopfeud/board-welcome.webp",
-    summary: "Offline survey game system for a live event",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Tauri", "UX/UI Design"],
-    url: "/projects/coopfeud",
+      "An automated payroll management system for LGU Jasaan’s HRMO, designed to streamline payroll processing by integrating directly with biometric data, reducing manual workload.",
+    image: "/assets/images/projects/payroll/payroll1.png",
+    summary: "Payroll system for a local government HR office",
+    tags: ["Next.js", "TypeScript", "TailwindCSS", "Figma", "Canva"],
+    url: "/projects/payroll",
     category: "frontend",
   },
   {
@@ -120,16 +138,6 @@ export const projects: Project[] = [
     summary: "Camera system that tracks customers in retail stores",
     tags: ["Next.js", "TypeScript", "TailwindCSS"],
     url: "/projects/subay",
-    category: "frontend",
-  },
-  {
-    title: "HRMO Payroll System",
-    description:
-      "An automated payroll management system for LGU Jasaan’s HRMO, designed to streamline payroll processing by integrating directly with biometric data, reducing manual workload.",
-    image: "/assets/images/projects/payroll/payroll1.png",
-    summary: "Payroll system for a local government HR office",
-    tags: ["Next.js", "TypeScript", "TailwindCSS", "Figma", "Canva"],
-    url: "/projects/payroll",
     category: "frontend",
   },
   {
