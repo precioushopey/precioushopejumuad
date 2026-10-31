@@ -6,6 +6,7 @@ import { RightColumn } from "./RightColumn";
 import { TopBar } from "./TopBar";
 import { PageSkeleton } from "../PageSkeleton";
 import { useSeo } from "../../hooks/use-seo";
+import { usePrefetchRoutes } from "../../hooks/use-prefetch-routes";
 
 // The top-level pages get the profile/contact column; a blog post or a project page gets a column
 // of other posts / projects instead.
@@ -13,6 +14,7 @@ const WITH_SIDEBAR = new Set(["/", "/about", "/projects", "/blog"]);
 
 export const Shell = () => {
   useSeo();
+  usePrefetchRoutes();
   // `key` changes on every navigation, so clicking a link to the page we're already on still scrolls.
   const { pathname, hash, key } = useLocation();
   const scrollRef = useRef<HTMLElement>(null);

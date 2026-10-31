@@ -52,7 +52,7 @@ export const AccordionCard = ({
               <LuChevronDown
                 aria-hidden
                 size={14}
-                className={`transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+                className={`transition-transform duration-400 ease-spring ${open ? "rotate-180" : ""}`}
               />
             </button>
           </span>
@@ -64,7 +64,7 @@ export const AccordionCard = ({
       <div
         id={panelId}
         inert={!open}
-        className={`grid transition-[grid-template-rows,visibility] duration-300 ease-out motion-reduce:transition-none ${
+        className={`grid transition-[grid-template-rows,visibility] duration-400 ease-spring motion-reduce:transition-none ${
           open ? "visible grid-rows-[1fr]" : "invisible grid-rows-[0fr]"
         }`}
       >

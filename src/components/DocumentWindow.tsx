@@ -29,9 +29,9 @@ export const DocumentWindow = ({
   <article className="shrink-0 animate-fade-in overflow-clip max-lg:glass-card">
     {/* Both bars stay at the top while the post scrolls. The article clips with overflow-clip (not
         hidden) so it is not a scroll container of its own and the bars stick to the panel. */}
-    <div className="sticky top-0 z-10 bg-[rgb(28_20_16/0.99)] backdrop-blur-md">
+    <div className="scroll-edge sticky top-0 z-10 bg-[rgb(28_20_16/0.99)] backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-[rgb(28_20_16/0.82)]">
       <WindowBar icon={icon} title={fileName} />
-      <div className="flex items-center gap-2 border-b border-line/40 px-3 py-2 text-left text-xs text-cream/60 sm:px-6">
+      <div className="flex items-center gap-2 px-3 py-2 text-left text-xs text-cream/70 sm:px-6">
         <Link
           to={backTo}
           aria-label={backLabel}

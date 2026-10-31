@@ -32,7 +32,7 @@ const FolderIcon = ({ peek, open }: { peek: string; open: boolean }) => {
   const uid = useId();
   return (
     <div
-      className={`relative aspect-[224/176] w-full max-w-40 transition-transform duration-300 ${open ? "scale-105" : "group-hover:scale-105"}`}
+      className={`relative aspect-[224/176] w-full max-w-40 transition-transform duration-400 ease-spring ${open ? "scale-105" : "group-hover:scale-105"}`}
     >
       <svg
         viewBox="0 0 224 176"
@@ -54,7 +54,7 @@ const FolderIcon = ({ peek, open }: { peek: string; open: boolean }) => {
         />
       </svg>
       <div
-        className={`absolute inset-x-[10%] top-[24%] h-[34%] overflow-hidden rounded-md bg-[#fff6dc] transition-transform duration-300 ${
+        className={`absolute inset-x-[10%] top-[24%] h-[34%] overflow-hidden rounded-md bg-[#fff6dc] transition-transform duration-400 ease-spring ${
           open ? "-translate-y-[10%]" : "group-hover:-translate-y-[6%]"
         }`}
       >
@@ -96,9 +96,22 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
     (child): child is ReactElement<FolderProps> => isValidElement(child),
   );
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  // The folder whose contents are on screen. It outlives `openIndex` while they retract, so closing
+  // plays the opening in reverse instead of cutting away.
+  const [shownIndex, setShownIndex] = useState<number | null>(null);
   const uid = useId();
   const gridRef = useRef<HTMLDivElement>(null);
-  const openFolder = openIndex === null ? null : folders[openIndex];
+  const openFolder = shownIndex === null ? null : folders[shownIndex];
+
+  const toggle = (index: number, open: boolean) => {
+    const next = open ? null : index;
+    setOpenIndex(next);
+    if (next !== null) setShownIndex(next);
+    // Without motion there is no retract to wait for.
+    else if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShownIndex(null);
+    }
+  };
 
   // Back up to the folder row from the end of an open folder: a smooth scroll (instant with reduced
   // motion), then focus on the open folder so keyboard users land in the same place.
@@ -133,7 +146,7 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
               type="button"
               aria-expanded={open}
               aria-controls={`${uid}-panel`}
-              onClick={() => setOpenIndex(open ? null : index)}
+              onClick={() => toggle(index, open)}
               className="group flex flex-col items-center gap-1.5 rounded-xl md:rounded-2xl px-0.5 py-3 text-center sm:gap-2 sm:px-2 focus-visible:outline-2 focus-visible:outline-accent"
             >
               <FolderIcon peek={peek} open={open} />
@@ -160,13 +173,24 @@ export const FolderGroup = ({ children }: { children: ReactNode }) => {
           // The key restarts the animation whenever another folder is opened. It grows out of the
           // clicked folder: the origin's x is that folder's centre (always 4 columns).
           <div
-            key={openIndex}
+            key={shownIndex}
             style={
               {
-                "--ox": `${(((openIndex ?? 0) + 0.5) / folders.length) * 100}%`,
+                "--ox": `${(((shownIndex ?? 0) + 0.5) / folders.length) * 100}%`,
               } as CSSProperties
             }
-            className="animate-folder-emerge space-y-6 pt-6 [transform-origin:var(--ox)_0] motion-reduce:animate-none"
+            inert={openIndex === null}
+            onAnimationEnd={(e) => {
+              // Children have their own animations; only this one's end removes the contents.
+              if (e.target === e.currentTarget && openIndex === null) {
+                setShownIndex(null);
+              }
+            }}
+            className={`space-y-6 pt-6 [transform-origin:var(--ox)_0] motion-reduce:animate-none ${
+              openIndex === null
+                ? "animate-folder-retract"
+                : "animate-folder-emerge"
+            }`}
           >
             {openFolder.props.children}
             <div className="flex justify-center">

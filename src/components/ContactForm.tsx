@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useId, useRef, useState } from "react";
 import { LuSend } from "react-icons/lu";
 import { useToast } from "../hooks/use-toast";
+import { hapticError, hapticSuccess } from "../lib/haptics";
 
 // Two looks: the roomy one for the About page's contact section, and a compact "card" one that
 // matches the small cards in the panel (muted title, small labels, dark rounded fields).
@@ -95,6 +96,7 @@ export const ContactForm = ({
         throw new Error(result.error);
       }
 
+      hapticSuccess();
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
@@ -102,6 +104,7 @@ export const ContactForm = ({
       form.reset();
       lastSentAt.current = Date.now();
     } catch (error) {
+      hapticError();
       toast({
         title: "Message not sent",
         description:

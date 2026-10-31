@@ -135,7 +135,7 @@ const Home = () => {
                   decoding="async"
                   src={thumb(p.image)}
                   alt={p.title}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-400 ease-spring group-hover:scale-110"
                 />
                 <span className="absolute inset-x-0 bottom-0 flex h-20 items-end bg-gradient-to-t from-black/80 to-transparent p-3 text-left text-xs font-medium leading-tight">
                   {p.title}

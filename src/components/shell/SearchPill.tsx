@@ -71,7 +71,7 @@ export const SearchPill = () => {
         <ul
           id={listId}
           role="listbox"
-          className="glass-card absolute right-0 top-full z-50 mt-2 w-72 overflow-hidden p-2 text-left sm:w-96"
+          className="glass-card absolute right-0 top-full z-50 mt-2 w-72 origin-top-right animate-pop-in overflow-hidden p-2 text-left sm:w-96"
         >
           {results.length === 0 && (
             <li className="px-3 py-2 text-sm text-cream/60">No matches</li>

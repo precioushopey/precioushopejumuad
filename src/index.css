@@ -31,13 +31,33 @@
   --color-panel: rgb(28 20 16 / 0.8);
   --color-card: rgb(40 29 22 / 0.78);
   --color-line: rgb(245 234 214 / 0.35);
-  --animate-fade-in: fade-in 0.7s ease-out forwards;
-  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
-  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
-  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+  /* Tracking follows size: small text opens up a little for legibility, large text tightens. Each
+     text-* step carries its own value, so no one fixed letter-spacing is wrong somewhere. */
+  --text-xs--letter-spacing: 0.02em;
+  --text-sm--letter-spacing: 0.01em;
+  --text-2xl--letter-spacing: -0.01em;
+  --text-3xl--letter-spacing: -0.015em;
+  --text-4xl--letter-spacing: -0.02em;
+  --text-5xl--letter-spacing: -0.025em;
+  /* Springs as easing curves: critically damped (no overshoot) for ordinary UI, a touch of bounce
+     only for things that carry momentum. Used with ~0.4s durations. */
+  --ease-spring: linear(0, 0.136, 0.368, 0.574, 0.727, 0.831, 0.897, 0.939, 0.964, 0.979, 0.988, 0.993, 0.996, 0.998, 1);
+  --ease-spring-bounce: linear(0, 0.211, 0.562, 0.835, 0.984, 1.04, 1.044, 1.03, 1.014, 1.004, 0.999, 0.998, 0.998, 0.999, 1);
+  /* Content is visible almost at once: short fade, and the stagger is a few frames per step so
+     nothing waits on a timer (it used to be 0.2s per step, up to 0.8s before the last section). */
+  --animate-fade-in: fade-in 0.45s var(--ease-spring) forwards;
+  --animate-fade-in-delay-1: fade-in 0.45s var(--ease-spring) 0.05s forwards;
+  --animate-fade-in-delay-2: fade-in 0.45s var(--ease-spring) 0.1s forwards;
+  --animate-fade-in-delay-3: fade-in 0.45s var(--ease-spring) 0.15s forwards;
+  --animate-fade-in-delay-4: fade-in 0.45s var(--ease-spring) 0.2s forwards;
   --animate-folder-emerge: folder-emerge 0.55s cubic-bezier(0.22, 1, 0.36, 1)
     backwards;
+  /* The way back out: the same path in reverse, with the mirrored curve, and shorter because it is
+     leaving. The fill keeps it hidden until the component unmounts it. */
+  --animate-folder-retract: folder-retract 0.35s cubic-bezier(0.64, 0, 0.78, 0)
+    forwards;
+  /* A popover grows out of the control that opened it (set transform-origin to that corner). */
+  --animate-pop-in: pop-in 0.25s var(--ease-spring) backwards;
 
   /* Contents rising out of the folder that was clicked: revealed from the top edge downward,
      growing from the folder's position. No forwards fill, so no clip-path is left behind. */
@@ -46,6 +66,21 @@
       opacity: 0;
       transform: translateY(-2rem) scale(0.9);
       clip-path: inset(0 0 100% 0);
+    }
+  }
+  @keyframes folder-retract {
+    to {
+      opacity: 0;
+      transform: translateY(-2rem) scale(0.9);
+      clip-path: inset(0 0 100% 0);
+    }
+  }
+  /* The surface arrives as a material: it comes into focus while it grows. */
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+      filter: blur(4px);
     }
   }
   @keyframes fade-in {
@@ -112,16 +147,59 @@
     background-color: #1c1410;
     font-family: var(--font-sans);
     font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.2px;
+    /* rem, so the visitor's own text-size setting scales the page. */
+    font-size: 0.875rem;
+    letter-spacing: 0.01em;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;
   }
 
+  /* Tracking and leading follow size: large type is tightened, body stays near 0. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  h1 {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  h2 {
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+  h3 {
+    letter-spacing: -0.01em;
+  }
+  .font-display {
+    letter-spacing: -0.02em;
+  }
+
+  /* Feedback lands on pointer-down, not on release. Uses the individual `scale` property so it
+     never fights Tailwind's own transform utilities; utilities (white-button's active:scale-95)
+     still win. */
+  button:not(:disabled):active,
+  .pill:active,
+  nav[aria-label="Main"] a:active {
+    scale: 0.96;
+  }
+
+  /* No double-tap-to-zoom wait on anything clickable, so a tap registers at once. */
+  a[href],
+  button,
+  summary,
+  select,
+  label[for],
+  [role="button"] {
+    touch-action: manipulation;
+    /* The press has its own feedback (:active), so the browser's grey flash is not needed. */
+    -webkit-tap-highlight-color: transparent;
+  }
+
   @media (max-width: 640px) {
     body {
-      font-size: 12px;
+      font-size: 0.75rem;
     }
   }
 }
@@ -171,7 +249,10 @@
     border-radius: 2.5rem;
     background: var(--color-panel);
     border: 1px solid rgb(245 234 214 / 0.14);
-    box-shadow: 0 24px 70px rgb(0 0 0 / 0.35);
+    /* Bright top edge: light catching the material. Biggest surface, deepest shadow. */
+    box-shadow:
+      inset 0 1px 0 rgb(245 234 214 / 0.1),
+      0 24px 70px rgb(0 0 0 / 0.35);
     -webkit-backdrop-filter: blur(24px) saturate(1.1);
     backdrop-filter: blur(24px) saturate(1.1);
 
@@ -188,7 +269,9 @@
   border-radius: 2rem;
   background: var(--color-card);
   border: 1px solid rgb(245 234 214 / 0.12);
-  box-shadow: 0 10px 28px rgb(0 0 0 / 0.25);
+  box-shadow:
+    inset 0 1px 0 rgb(245 234 214 / 0.08),
+    0 10px 28px rgb(0 0 0 / 0.25);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 
@@ -212,7 +295,7 @@
   font-size: 0.875rem;
   transition:
     background 0.3s,
-    transform 0.3s;
+    transform 0.4s var(--ease-spring);
 
   &:hover {
     background: rgb(245 234 214 / 0.2);
@@ -233,15 +316,55 @@
 }
 
 @utility card-hover {
-  @apply cursor-pointer transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)];
+  @apply cursor-pointer transition-transform duration-400 ease-spring hover:scale-[1.02] hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)];
 }
 
 @utility white-button {
-  @apply inline-flex items-center justify-center px-6 py-1.5 text-xs sm:text-base rounded-full bg-white text-[var(--color-ink)] font-medium transition-all duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.12)] hover:scale-105 active:scale-95 cursor-pointer;
+  @apply inline-flex items-center justify-center px-6 py-1.5 text-xs sm:text-base rounded-full bg-white text-[var(--color-ink)] font-medium transition-[background-color,box-shadow,scale] duration-400 ease-spring hover:shadow-[0_6px_18px_rgba(0,0,0,0.12)] hover:scale-105 active:scale-95 active:duration-100 cursor-pointer;
 }
 
 @utility transparent-button {
-  @apply inline-flex items-center justify-center px-6 py-1.5 text-xs sm:text-base rounded-full bg-cream/10 border-[var(--color-line)] text-cream backdrop-blur-sm font-medium transition-all duration-300 hover:bg-cream/20 hover:scale-105 active:scale-95 cursor-pointer;
+  @apply inline-flex items-center justify-center px-6 py-1.5 text-xs sm:text-base rounded-full bg-cream/10 border-[var(--color-line)] text-cream backdrop-blur-sm font-medium transition-[background-color,scale] duration-400 ease-spring hover:bg-cream/20 hover:scale-105 active:scale-95 active:duration-100 cursor-pointer;
+}
+
+/* Inline validation: a field that was visited and left in a wrong state is marked straight away,
+   not only when the form is submitted. :user-invalid waits until the visitor has interacted. */
+input:user-invalid:not(:focus),
+textarea:user-invalid:not(:focus) {
+  box-shadow: 0 0 0 2px rgb(255 138 122 / 0.8);
+}
+
+/* A small control's tappable area reaches 8px past what is drawn, so a thumb that lands near it
+   still counts. Needs a positioned element. */
+.hit-area::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+}
+
+/* A floating bar over scrolling content: no hard divider, a soft shadow fades in under it once the
+   content starts to pass beneath (scroll-driven where supported, always on elsewhere). */
+.scroll-edge::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  height: 12px;
+  pointer-events: none;
+  background: linear-gradient(rgb(0 0 0 / 0.28), transparent);
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-edge::after {
+    opacity: 0;
+    animation: scroll-edge-in linear both;
+    animation-timeline: scroll(nearest);
+    animation-range: 0 24px;
+  }
+  @keyframes scroll-edge-in {
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 #root {
@@ -293,6 +416,9 @@
 /* Scrolls with the wheel/touch but shows no bar, so cards keep their exact width. */
 .no-scrollbar {
   scrollbar-width: none;
+  /* Reaching the end of a strip softens in place (the browser's own edge bounce or glow) instead of
+     handing the swipe to the page, which would read as "back". */
+  overscroll-behavior: contain;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -315,7 +441,7 @@
       z-index: 0;
       border-radius: 9999px;
       background: var(--color-accent);
-      transition: inset 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: inset 0.4s var(--ease-spring);
     }
     nav[aria-label="Main"] a {
       position: relative;
@@ -323,7 +449,7 @@
       background: transparent;
       transition:
         color 0.3s ease,
-        transform 0.3s ease;
+        transform 0.4s var(--ease-spring);
     }
     nav[aria-label="Main"] .nav-label {
       animation: nav-label-in 0.25s ease-out 0.12s both;
@@ -331,9 +457,9 @@
   }
 }
 
-/* Donut gauges sweep from empty to their value once on load, once the cards have finished fading in (about 1s). */
+/* Donut gauges sweep from empty to their value once on load, once the cards have finished fading in (about 0.6s). */
 .ring-sweep {
-  animation: ring-sweep 1.6s cubic-bezier(0.65, 0, 0.35, 1) 1s backwards;
+  animation: ring-sweep 1.6s cubic-bezier(0.65, 0, 0.35, 1) 0.6s backwards;
 }
 @keyframes ring-sweep {
   from {
@@ -374,13 +500,106 @@
       border-radius: 9999px;
       background: var(--color-accent);
       transition:
-        top 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-        bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        top 0.4s var(--ease-spring),
+        bottom 0.4s var(--ease-spring);
     }
     nav[aria-label="Main"] a {
       transition:
         color 0.3s ease,
-        transform 0.3s ease;
+        transform 0.4s var(--ease-spring);
+    }
+  }
+}
+
+/* Reduced motion: cross-fade instead of sliding or springing; no smooth scrolling. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  /* Nothing travels, scales or resizes: those changes happen at once. Colour and opacity changes
+     still ease, since they aid comprehension without moving anything. */
+  *,
+  ::before,
+  ::after {
+    transition-property:
+      color, background-color, border-color, text-decoration-color, fill, stroke,
+      opacity, box-shadow !important;
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: none;
+    }
+  }
+  @keyframes folder-emerge {
+    from {
+      opacity: 0;
+      transform: none;
+      clip-path: none;
+    }
+  }
+  @keyframes folder-retract {
+    to {
+      opacity: 0;
+      transform: none;
+      clip-path: none;
+    }
+  }
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: none;
+      filter: none;
+    }
+  }
+  button:not(:disabled):active,
+  .pill:active,
+  nav[aria-label="Main"] a:active {
+    scale: 1;
+  }
+  nav[aria-label="Main"]::before {
+    transition: none;
+  }
+}
+
+/* Reduced transparency: frosted surfaces become solid. */
+@media (prefers-reduced-transparency: reduce) {
+  .glass-panel,
+  .glass-card,
+  .transparent-button,
+  nav[aria-label="Main"] {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .glass-card {
+    background: rgb(40 29 22 / 0.98);
+  }
+  .scroll-edge {
+    background-color: rgb(28 20 16 / 0.99);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  /* The panel has no background of its own below 768px, so keep it that way there. */
+  @media (min-width: 768px) {
+    .glass-panel {
+      background: rgb(28 20 16 / 0.98);
+    }
+  }
+}
+
+/* Increased contrast: near-solid surfaces with a defined edge. */
+@media (prefers-contrast: more) {
+  .glass-card {
+    border-color: rgb(245 234 214 / 0.6);
+    background: rgb(40 29 22 / 0.98);
+  }
+  .scroll-edge {
+    background-color: rgb(28 20 16 / 0.99);
+  }
+  @media (min-width: 768px) {
+    .glass-panel {
+      border-color: rgb(245 234 214 / 0.6);
+      background: rgb(28 20 16 / 0.98);
     }
   }
 }

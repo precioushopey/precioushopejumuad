@@ -64,7 +64,7 @@ const About = () => {
               <div
                 id={bio.panelId}
                 inert={!bio.open}
-                className={`grid transition-[grid-template-rows,visibility] duration-300 ease-out motion-reduce:transition-none ${
+                className={`grid transition-[grid-template-rows,visibility] duration-400 ease-spring motion-reduce:transition-none ${
                   bio.open
                     ? "visible grid-rows-[1fr]"
                     : "invisible grid-rows-[0fr]"

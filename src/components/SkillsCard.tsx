@@ -101,7 +101,7 @@ const SkillsCardBase = () => {
               <span
                 id={tipId}
                 role="tooltip"
-                className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 w-44 -translate-x-1/2 rounded-xl border border-line bg-black/90 px-3 py-2 text-left text-xs leading-snug text-cream opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 group-focus:opacity-100"
+                className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 w-44 -translate-x-1/2 origin-bottom scale-95 rounded-xl border border-line bg-black/90 px-3 py-2 text-left text-xs leading-snug text-cream opacity-0 shadow-lg transition-[opacity,scale] duration-200 ease-spring group-hover:scale-100 group-hover:opacity-100 group-focus:scale-100 group-focus:opacity-100"
               >
                 <strong className="block font-medium text-accent">
                   Since {formatManilaDate(since)}

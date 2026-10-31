@@ -15,7 +15,7 @@ export const ContactLinks = () => (
             rel="noopener noreferrer"
             aria-label={label}
             title={label}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition duration-300 hover:scale-110 hover:bg-accent/20"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent transition duration-400 ease-spring hover:scale-110 hover:bg-accent/20"
           >
             <Icon size={20} aria-hidden />
           </a>
@@ -27,7 +27,7 @@ export const ContactLinks = () => (
         href={CV_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 rounded-full border border-line bg-cream/10 px-6 py-2 text-sm font-medium text-cream transition-transform duration-300 hover:scale-105 hover:bg-cream/20 active:scale-95"
+        className="inline-flex items-center gap-2 rounded-full border border-line bg-cream/10 px-6 py-2 text-sm font-medium text-cream transition-transform duration-400 ease-spring hover:scale-105 hover:bg-cream/20 active:scale-95"
       >
         <LuFileText size={18} aria-hidden />
         View my CV

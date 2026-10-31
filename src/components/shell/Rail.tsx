@@ -70,7 +70,7 @@ export const Rail = () => {
               className={({ isActive }) => {
                 const on =
                   isActive || (alsoMatch && pathname.startsWith(alsoMatch));
-                return `${mobileOnly ? "lg:hidden " : ""}relative flex h-12 w-12 max-lg:h-12 items-center justify-center rounded-full transition-transform duration-300 hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+                return `${mobileOnly ? "lg:hidden " : ""}relative flex h-12 w-12 max-lg:h-12 items-center justify-center rounded-full transition-transform duration-400 ease-spring hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                   on
                     ? "bg-accent text-ink max-lg:w-auto max-lg:gap-1.5 max-lg:px-2 min-[360px]:max-lg:px-3 max-[359px]:gap-1 min-[480px]:max-lg:gap-2 min-[480px]:max-lg:px-3 lg:flex-col lg:gap-1.5 lg:bg-transparent lg:text-accent lg:before:absolute lg:before:-left-[0.375rem] lg:before:h-8 lg:before:w-1.5 lg:before:rounded-full lg:before:bg-accent lg:before:content-['']"
                     : "text-cream max-lg:w-8 min-[360px]:max-lg:w-12 hover:bg-cream/15"
